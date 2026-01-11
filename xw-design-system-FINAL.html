@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Xperience Wave - COMPLETE Design System</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    :root{
+      --accent:#FF0023;--accent-hover:#e6001f;--accent-light:rgba(255,0,35,0.08);--accent-50:rgba(255,0,35,0.5);--accent-15:rgba(255,0,35,0.15);--accent-10:rgba(255,0,35,0.1);--accent-05:rgba(255,0,35,0.05);
+      --carbon:#18181B;--white:#FDFDFD;--alice:#DCEEFF;--alice-dark:#c5e4ff;--alice-mid:#E8F4FF;--alice-light:#f0f8ff;--alice-border:#a8d4f5;--bg:#F9F9F9;
+      --success:#2FB83C;--success-light:#EBFFEE;--warning:#F59E0B;--warning-light:#FEF3C7;
+      --g50:#FAFAFA;--g100:#F4F4F5;--g200:#E4E4E7;--g300:#D4D4D8;--g400:#A1A1AA;--g500:#71717A;--g600:#52525B;--g700:#3F3F46;
+      --heading:'Plus Jakarta Sans',sans-serif;--body:'Inter',sans-serif;
+      --radius:6px;--radius-sm:4px;--radius-lg:10px;
+      --shadow-sm:0 2px 8px rgba(0,0,0,0.04);--shadow-md:0 4px 16px rgba(0,0,0,0.08);--shadow-lg:0 12px 32px rgba(0,0,0,0.12);--shadow-xl:0 24px 48px rgba(0,0,0,0.16)
+    }
+    body{font-family:var(--body);background:var(--bg);color:var(--carbon);line-height:1.6;-webkit-font-smoothing:antialiased}
+    .header{background:var(--carbon);color:#fff;padding:60px 24px;text-align:center;position:relative;overflow:hidden}
+    .header::before{content:'X';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--heading);font-size:400px;font-weight:800;color:rgba(220,238,255,0.05);pointer-events:none}
+    .header-logo{font-family:var(--heading);font-weight:800;font-size:24px;margin-bottom:16px;position:relative}
+    .header-logo span{color:var(--accent)}
+    .header h1{font-family:var(--heading);font-size:32px;font-weight:800;margin-bottom:12px;position:relative}
+    .header p{font-size:15px;opacity:0.7;max-width:500px;margin:0 auto;position:relative}
+    .header-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:20px;font-size:12px;margin-top:24px;position:relative}
+    .header-badge-dot{width:6px;height:6px;background:var(--success);border-radius:50%}
+    @media(min-width:768px){.header{padding:80px 40px}.header h1{font-size:44px}}
+    .section{padding:60px 20px;max-width:1400px;margin:0 auto}
+    .section-title{font-family:var(--heading);font-size:24px;font-weight:700;margin-bottom:6px}
+    .section-num{font-family:var(--heading);font-size:12px;font-weight:600;color:var(--accent);margin-bottom:6px;letter-spacing:1px}
+    .section-sub{font-size:14px;color:var(--g500);margin-bottom:32px;max-width:600px}
+    .section-dark{background:var(--carbon);color:#fff;max-width:none;position:relative;overflow:hidden}
+    .section-dark::before{content:'X';position:absolute;top:50%;right:-100px;transform:translateY(-50%);font-family:var(--heading);font-size:500px;font-weight:800;color:rgba(220,238,255,0.05);pointer-events:none}
+    .section-dark .section-title{color:#fff}
+    .section-dark .section-sub{color:var(--g400)}
+    .section-inner{max-width:1400px;margin:0 auto;padding:0 20px;position:relative;z-index:1}
+    .section-white{background:#fff;max-width:none}
+    .section-dots{background-color:var(--bg);background-image:radial-gradient(var(--g300) 1px,transparent 1px);background-size:24px 24px;max-width:none}
+    /* DOTS PATTERN: Use .section-dots for form sections, FAQ, pricing, comparison, and any content-heavy areas needing visual texture without distraction. Dot color: G300 (#D4D4D8), 1px size, 24px spacing. */
+    @media(min-width:768px){.section{padding:80px 40px}.section-title{font-size:28px}.section-inner{padding:0 40px}}
+    .label{font-size:11px;color:var(--g500);text-transform:uppercase;letter-spacing:1px;font-weight:600;margin-bottom:14px;display:block}
+    .mt-24{margin-top:24px}.mt-32{margin-top:32px}.mt-48{margin-top:48px}.mb-16{margin-bottom:16px}.mb-24{margin-bottom:24px}
+    .divider{height:1px;background:var(--g200);margin:32px 0}
+    .spec-table{width:100%;border-collapse:collapse;font-size:13px;background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm)}
+    .spec-table th{text-align:left;padding:14px 16px;background:var(--g100);font-family:var(--heading);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:0.5px;color:var(--g600)}
+    .spec-table td{padding:12px 16px;border-top:1px solid var(--g100)}
+    .spec-table tr:hover td{background:var(--g50)}
+    .spec-val{font-family:'SF Mono',Monaco,monospace;font-size:12px;background:var(--g100);padding:2px 6px;border-radius:3px}
+    .color-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    @media(min-width:768px){.color-grid{grid-template-columns:repeat(4,1fr);gap:16px}}
+    .color-card{border-radius:var(--radius);overflow:hidden;background:#fff;box-shadow:var(--shadow-sm)}
+    .color-swatch{height:80px;display:flex;align-items:flex-end;padding:10px;font-family:var(--heading);font-weight:700;font-size:12px}
+    @media(min-width:768px){.color-swatch{height:100px;font-size:13px}}
+    .color-info{padding:12px}
+    .color-name{font-family:var(--heading);font-weight:600;font-size:13px;margin-bottom:2px}
+    .color-use{font-size:11px;color:var(--g500)}
+    .color-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+    @media(min-width:768px){.color-row{grid-template-columns:repeat(6,1fr);gap:12px}}
+    .color-chip{height:44px;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:600;text-align:center;padding:4px}
+    .type-scale{display:flex;flex-direction:column}
+    .type-item{display:flex;flex-direction:column;gap:6px;padding:20px 0;border-bottom:1px solid var(--g200)}
+    @media(min-width:768px){.type-item{display:grid;grid-template-columns:100px 1fr 160px;align-items:baseline;gap:20px;padding:24px 0}}
+    .type-label{font-size:10px;color:var(--g400);text-transform:uppercase;letter-spacing:1px;font-weight:600}
+    .type-specs{font-size:10px;color:var(--g400)}
+    .type-h1{font-family:var(--heading);font-size:36px;font-weight:800;line-height:1.1;letter-spacing:-0.5px}
+    @media(min-width:768px){.type-h1{font-size:56px;letter-spacing:-1px}}
+    .type-h2{font-family:var(--heading);font-size:28px;font-weight:700;line-height:1.2}
+    @media(min-width:768px){.type-h2{font-size:40px}}
+    .type-h3{font-family:var(--heading);font-size:20px;font-weight:600;line-height:1.3}
+    @media(min-width:768px){.type-h3{font-size:28px}}
+    .type-body{font-family:var(--body);font-size:15px;line-height:1.6}
+    @media(min-width:768px){.type-body{font-size:16px}}
+    .type-small{font-family:var(--body);font-size:13px;color:var(--g600)}
+    .btn{font-family:var(--heading);font-weight:600;font-size:13px;padding:11px 22px;border-radius:var(--radius);border:none;cursor:pointer;transition:all 0.25s cubic-bezier(0.4,0,0.2,1);display:inline-flex;align-items:center;gap:8px;text-decoration:none}
+    @media(min-width:768px){.btn{font-size:14px;padding:12px 24px}}
+    .btn-primary{background:var(--accent);color:#fff}
+    .btn-primary:hover{background:var(--accent-hover);transform:translateY(-2px);box-shadow:0 8px 20px rgba(255,0,35,0.25)}
+    .btn-secondary{background:var(--alice);color:var(--carbon)}
+    .btn-secondary:hover{background:var(--alice-dark);transform:translateY(-2px)}
+    .btn-outline{background:transparent;color:var(--carbon);border:2px solid var(--g300)}
+    .btn-outline:hover{border-color:var(--carbon);background:var(--g100)}
+    .btn-dark{background:var(--carbon);color:#fff}
+    .btn-dark:hover{background:#2d2d32;transform:translateY(-2px)}
+    .btn-ghost{background:transparent;color:var(--g600)}
+    .btn-ghost:hover{background:var(--g100);color:var(--carbon)}
+    .btn-sm{padding:9px 16px;font-size:12px}
+    .btn-lg{padding:14px 28px;font-size:14px}
+    @media(min-width:768px){.btn-lg{padding:16px 32px;font-size:15px}}
+    .btn svg{width:16px;height:16px;transition:transform 0.2s}
+    .btn:hover svg{transform:translateX(4px)}
+    .btn-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+    .card-grid{display:grid;grid-template-columns:1fr;gap:16px}
+    @media(min-width:768px){.card-grid{grid-template-columns:repeat(3,1fr);gap:20px}}
+    .card{background:#fff;border-radius:var(--radius);overflow:hidden;transition:all 0.3s cubic-bezier(0.4,0,0.2,1)}
+    .card-click{cursor:pointer;box-shadow:var(--shadow-sm)}
+    .card-click:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+    .card-static{border:1px solid var(--g200);box-shadow:none}
+    .card-img{height:140px;background:linear-gradient(135deg,var(--alice) 0%,var(--alice-light) 100%);display:flex;align-items:center;justify-content:center;position:relative}
+    @media(min-width:768px){.card-img{height:160px}}
+    .card-icon{width:48px;height:48px;background:#fff;border-radius:var(--radius);display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-md)}
+    .card-icon svg{width:24px;height:24px}
+    .card-body{padding:18px}
+    @media(min-width:768px){.card-body{padding:20px}}
+    .card-tag{display:inline-block;font-size:10px;font-weight:600;padding:4px 10px;background:var(--alice);color:var(--carbon);border-radius:4px;margin-bottom:10px;text-transform:uppercase;letter-spacing:0.5px}
+    .card-tag-accent{background:var(--accent-light);color:var(--accent)}
+    .card-title{font-family:var(--heading);font-size:16px;font-weight:600;margin-bottom:6px;line-height:1.3}
+    @media(min-width:768px){.card-title{font-size:18px}}
+    .card-desc{font-size:13px;color:var(--g600);line-height:1.5}
+    .card-footer{padding:14px 18px;border-top:1px solid var(--g100)}
+    .card-link{font-family:var(--heading);font-size:13px;font-weight:600;color:var(--accent);text-decoration:none;display:flex;align-items:center;gap:6px;transition:gap 0.2s}
+    .card-link:hover{gap:10px}
+    .card-link svg{width:16px;height:16px}
+    .card-xframe{position:relative}
+    .card-xframe::before{content:'';position:absolute;top:12px;left:12px;width:20px;height:20px;border-left:2px solid var(--accent-50);border-top:2px solid var(--accent-50);z-index:2;pointer-events:none}
+    .card-xframe::after{content:'';position:absolute;bottom:12px;right:12px;width:20px;height:20px;border-right:2px solid var(--accent-50);border-bottom:2px solid var(--accent-50);z-index:2;pointer-events:none}
+    .nav-mobile{background:#fff;border-radius:var(--radius);padding:0 16px;display:flex;align-items:center;justify-content:space-between;height:56px;box-shadow:var(--shadow-md)}
+    .nav-logo{font-family:var(--heading);font-weight:800;font-size:16px;display:flex;align-items:center;gap:2px;color:var(--carbon);text-decoration:none}
+    .nav-logo span{color:var(--accent)}
+    .nav-hamburger{width:36px;height:36px;display:flex;align-items:center;justify-content:center;background:var(--g100);border-radius:var(--radius);cursor:pointer;transition:background 0.2s}
+    .nav-hamburger:hover{background:var(--g200)}
+    .nav-hamburger svg{width:18px;height:18px}
+    .nav-cta-mobile{font-family:var(--heading);font-weight:600;font-size:12px;padding:8px 14px;background:var(--accent);color:#fff;border:none;border-radius:var(--radius)}
+    .nav-desktop{background:#fff;border-radius:var(--radius);padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:60px;box-shadow:var(--shadow-md)}
+    .nav-links{display:flex;gap:24px;list-style:none}
+    .nav-link{font-family:var(--body);font-size:13px;font-weight:500;color:var(--g600);text-decoration:none;transition:color 0.2s;position:relative}
+    .nav-link:hover{color:var(--carbon)}
+    .nav-link::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--accent);transition:width 0.2s}
+    .nav-link:hover::after{width:100%}
+    .nav-cta{font-family:var(--heading);font-weight:600;font-size:13px;padding:10px 18px;background:var(--accent);color:#fff;border:none;border-radius:var(--radius);cursor:pointer;transition:all 0.2s}
+    .nav-cta:hover{background:var(--accent-hover)}
+    
+    /* HERO DARK */
+    .hero-dark{background:linear-gradient(180deg,#18181B 0%,#141417 50%,#0f0f12 100%);border-radius:var(--radius-lg);padding:48px 24px 0;text-align:center;position:relative;overflow:hidden}
+    @media(min-width:768px){.hero-dark{padding:60px 48px 0}}
+    .hero-dark::before{content:'X';position:absolute;top:50%;right:-150px;transform:translateY(-50%);font-family:var(--heading);font-size:600px;font-weight:800;color:rgba(220,238,255,0.06);pointer-events:none;z-index:0}
+    .hero-dark-content{position:relative;z-index:1;max-width:800px;margin:0 auto}
+    .hero-dark-title{font-family:var(--heading);font-size:32px;font-weight:800;line-height:1.1;margin-bottom:20px;letter-spacing:-0.5px;color:#fff}
+    @media(min-width:768px){.hero-dark-title{font-size:48px;letter-spacing:-1px}}
+    .hero-dark-subtitle{font-family:var(--heading);font-size:18px;font-weight:600;color:var(--g300);margin-bottom:12px;line-height:1.4}
+    @media(min-width:768px){.hero-dark-subtitle{font-size:20px}}
+    .hero-dark-target{font-size:14px;color:var(--g500);margin-bottom:40px;line-height:1.6}
+    @media(min-width:768px){.hero-dark-target{font-size:15px}}
+    .hero-dark-video{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:var(--radius-lg);padding:48px 32px 56px;margin-bottom:28px}
+    .hero-dark-video-label{font-family:var(--heading);font-size:24px;font-weight:600;color:var(--g600);margin-bottom:6px}
+    .hero-dark-video-title{font-family:var(--heading);font-size:18px;font-weight:700;color:#fff;margin-bottom:20px}
+    .hero-dark-play{width:52px;height:52px;border:2px solid var(--g500);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;cursor:pointer;transition:all 0.2s}
+    .hero-dark-play:hover{border-color:#fff;background:rgba(255,255,255,0.05)}
+    .hero-dark-play svg{width:18px;height:18px;color:var(--g400);margin-left:2px}
+    .hero-dark-play:hover svg{color:#fff}
+    .hero-dark-duration{font-size:13px;color:var(--g600)}
+    .hero-dark-ctas{display:flex;flex-direction:column;align-items:center;gap:14px;margin-bottom:40px}
+    .hero-dark-link{font-size:14px;font-weight:500;color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+    .hero-dark-stats{background:rgba(255,255,255,0.03);border-top:1px solid rgba(255,255,255,0.08);padding:20px 24px;display:flex;justify-content:center;gap:32px;flex-wrap:wrap;margin:0 -24px}
+    @media(min-width:768px){.hero-dark-stats{gap:48px;padding:24px 48px;margin:0 -48px}}
+    .hero-dark-stat{display:flex;align-items:baseline;gap:8px}
+    .hero-dark-stat-val{font-family:var(--heading);font-size:20px;font-weight:800;color:#fff}
+    @media(min-width:768px){.hero-dark-stat-val{font-size:24px}}
+    .hero-dark-stat-label{font-size:12px;color:var(--g500)}
+    @media(min-width:768px){.hero-dark-stat-label{font-size:14px}}
+    
+    .video-parallax{position:relative;height:400px;overflow:hidden;border-radius:var(--radius-lg)}
+    @media(min-width:768px){.video-parallax{height:500px}}
+    .video-parallax-bg{position:absolute;inset:-50px;background:linear-gradient(135deg,#1a1a1a 0%,#2a2a2a 100%)}
+    .video-parallax-x{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--heading);font-size:300px;font-weight:800;color:rgba(220,238,255,0.05);pointer-events:none}
+    @media(min-width:768px){.video-parallax-x{font-size:500px}}
+    .video-parallax-content{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:2;padding:24px}
+    .video-parallax-play{width:80px;height:80px;background:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 40px rgba(0,0,0,0.4);cursor:pointer;transition:transform 0.3s,box-shadow 0.3s;margin-bottom:24px}
+    @media(min-width:768px){.video-parallax-play{width:100px;height:100px}}
+    .video-parallax-play:hover{transform:scale(1.1);box-shadow:0 16px 50px rgba(0,0,0,0.5)}
+    .video-parallax-play svg{width:32px;height:32px;fill:var(--accent);margin-left:4px}
+    @media(min-width:768px){.video-parallax-play svg{width:40px;height:40px}}
+    .video-parallax-title{font-family:var(--heading);font-size:20px;font-weight:700;color:#fff;text-align:center;margin-bottom:8px}
+    @media(min-width:768px){.video-parallax-title{font-size:28px}}
+    .video-parallax-sub{font-size:14px;color:var(--g400);text-align:center}
+    .video-parallax::before{content:'';position:absolute;top:24px;left:24px;width:60px;height:60px;border-left:3px solid var(--accent);border-top:3px solid var(--accent);z-index:3}
+    .video-parallax::after{content:'';position:absolute;bottom:24px;right:24px;width:60px;height:60px;border-right:3px solid var(--accent);border-bottom:3px solid var(--accent);z-index:3}
+    
+    .x-divider{display:flex;align-items:center;justify-content:center;gap:20px;padding:32px 0}
+    .x-divider-line{height:1px;flex:1;max-width:200px;background:linear-gradient(90deg,transparent,var(--accent-15),transparent)}
+    .x-divider-mark{font-family:var(--heading);font-size:24px;font-weight:800;background:linear-gradient(135deg,var(--accent),#ff4d4d);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    
+    .faq-list{display:flex;flex-direction:column;gap:10px;max-width:800px}
+    .faq-item{background:#fff;border-radius:var(--radius);border:1px solid var(--g200);overflow:hidden;transition:all 0.2s}
+    .faq-item:hover{border-color:var(--g300)}
+    .faq-item.active{border-color:var(--alice-border);box-shadow:0 0 0 3px var(--alice)}
+    .faq-q{padding:18px 20px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-family:var(--heading);font-weight:600;font-size:14px;gap:16px}
+    .faq-q:hover{background:var(--g50)}
+    .faq-icon{width:28px;height:28px;min-width:28px;border-radius:var(--radius-sm);background:var(--alice);display:flex;align-items:center;justify-content:center;transition:all 0.3s;flex-shrink:0}
+    .faq-icon svg{width:16px;height:16px;color:var(--alice-border);transition:all 0.3s}
+    .faq-item.active .faq-icon{background:var(--alice-dark)}
+    .faq-item.active .faq-icon svg{color:var(--carbon);transform:rotate(45deg)}
+    .faq-a{padding:0 20px 20px;font-size:14px;color:var(--g600);line-height:1.6;display:none}
+    .faq-item.active .faq-a{display:block}
+    
+    .success-grid{display:grid;grid-template-columns:1fr;gap:20px}
+    @media(min-width:768px){.success-grid{grid-template-columns:repeat(2,1fr);gap:24px}}
+    .success-card{background:#fff;border-radius:var(--radius);overflow:hidden;border:1px solid var(--g200);transition:all 0.3s}
+    .success-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-4px)}
+    .success-img{height:280px;position:relative;overflow:hidden}
+    @media(min-width:768px){.success-img{height:320px}}
+    .success-photo{position:absolute;inset:0;background:linear-gradient(135deg,var(--g200) 0%,var(--g300) 100%);display:flex;align-items:center;justify-content:center}
+    .success-photo svg{width:80px;height:80px;color:var(--g400)}
+    .success-blob{position:absolute;bottom:-40px;right:-40px;width:180px;height:180px;background:var(--alice);border-radius:50%;opacity:0.7}
+    .success-outcome{position:absolute;bottom:14px;left:14px;background:var(--success);color:#fff;padding:8px 14px;border-radius:var(--radius);font-family:var(--heading);font-weight:600;font-size:13px;display:flex;align-items:center;gap:6px;z-index:2}
+    .success-outcome svg{width:16px;height:16px}
+    .success-body{padding:20px}
+    @media(min-width:768px){.success-body{padding:24px}}
+    .success-quote{font-size:14px;line-height:1.6;color:var(--g700);margin-bottom:16px;font-style:italic}
+    .success-name{font-family:var(--heading);font-weight:600;font-size:14px}
+    .success-role{font-size:12px;color:var(--g500)}
+    
+    .form-grid{display:grid;grid-template-columns:1fr;gap:16px}
+    @media(min-width:768px){.form-grid{grid-template-columns:repeat(2,1fr);gap:20px}}
+    .form-group{display:flex;flex-direction:column;gap:6px}
+    .form-label{font-size:13px;font-weight:500;color:var(--carbon)}
+    .form-input{font-family:var(--body);font-size:14px;padding:12px 14px;border:1px solid var(--g300);border-radius:var(--radius);transition:all 0.2s;outline:none;width:100%}
+    .form-input:focus{border-color:var(--alice-border);box-shadow:0 0 0 3px var(--alice)}
+    .form-input::placeholder{color:var(--g400)}
+    .form-input-error{border-color:var(--accent)}
+    .form-input-error:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-light)}
+    .form-helper{font-size:11px;color:var(--g500)}
+    .form-error{font-size:11px;color:var(--accent);display:flex;align-items:center;gap:4px}
+    .form-error svg{width:14px;height:14px}
+    .form-success{font-size:11px;color:var(--success);display:flex;align-items:center;gap:4px}
+    .form-success svg{width:14px;height:14px}
+    
+    .icon-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    @media(min-width:768px){.icon-grid{grid-template-columns:repeat(8,1fr);gap:16px}}
+    .icon-item{background:#fff;border-radius:var(--radius);padding:16px 12px;text-align:center;border:1px solid var(--g200);transition:all 0.2s;display:flex;flex-direction:column;align-items:center;gap:8px}
+    .icon-item:hover{border-color:var(--alice-border);background:var(--alice)}
+    .icon-item svg{width:24px;height:24px}
+    .icon-item span{font-size:9px;color:var(--g500)}
+    .tag-row{display:flex;flex-wrap:wrap;gap:8px}
+    .tag{font-size:11px;font-weight:600;padding:5px 10px;border-radius:4px;display:inline-flex;align-items:center;gap:4px}
+    .tag-default{background:var(--g100);color:var(--g700)}
+    .tag-alice{background:var(--alice);color:var(--carbon)}
+    .tag-accent{background:var(--accent-light);color:var(--accent)}
+    .tag-success{background:var(--success-light);color:var(--success)}
+    .tag-dark{background:var(--carbon);color:#fff}
+    .tag svg{width:12px;height:12px}
+    
+    .toast-list{display:flex;flex-direction:column;gap:12px;max-width:420px}
+    .toast{padding:16px 20px;border-radius:var(--radius);display:flex;align-items:flex-start;gap:12px;font-size:14px;box-shadow:var(--shadow-lg);position:relative;overflow:hidden}
+    .toast-icon{width:24px;height:24px;min-width:24px;flex-shrink:0}
+    .toast-icon svg{width:24px;height:24px}
+    .toast-content{flex:1}
+    .toast-title{font-family:var(--heading);font-weight:600;font-size:14px;margin-bottom:2px}
+    .toast-message{font-size:13px;opacity:0.9}
+    .toast-progress{position:absolute;bottom:0;left:0;height:3px;width:100%;animation:toastProgress 5s linear forwards}
+    @keyframes toastProgress{from{width:100%}to{width:0}}
+    .toast-success{background:var(--success-light);color:var(--success);border:1px solid var(--success)}
+    .toast-success .toast-progress{background:var(--success)}
+    .toast-error{background:var(--accent-light);color:var(--accent);border:1px solid var(--accent)}
+    .toast-error .toast-progress{background:var(--accent)}
+    .toast-warning{background:var(--warning-light);color:var(--warning);border:1px solid var(--warning)}
+    .toast-warning .toast-progress{background:var(--warning)}
+    .toast-info{background:var(--alice);color:var(--carbon);border:1px solid var(--alice-border)}
+    .toast-info .toast-progress{background:var(--alice-border)}
+    
+    .tooltip-wrap{position:relative;display:inline-block}
+    .tooltip{position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:var(--carbon);color:#fff;font-size:12px;padding:8px 12px;border-radius:var(--radius-sm);white-space:nowrap;opacity:0;visibility:hidden;transition:all 0.2s;z-index:100}
+    .tooltip::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:var(--carbon)}
+    .tooltip-wrap:hover .tooltip{opacity:1;visibility:visible}
+    
+    .dropdown{position:relative;display:inline-block}
+    .dropdown-trigger{display:flex;align-items:center;gap:6px;cursor:pointer;padding:10px 16px;background:var(--g100);border-radius:var(--radius);font-size:14px}
+    .dropdown-trigger svg{width:16px;height:16px;transition:transform 0.2s}
+    .dropdown.open .dropdown-trigger svg{transform:rotate(180deg)}
+    .dropdown-menu{position:absolute;top:calc(100% + 8px);left:0;min-width:240px;background:#fff;border-radius:var(--radius);box-shadow:var(--shadow-lg);border:1px solid var(--g200);opacity:0;visibility:hidden;transform:translateY(-8px);transition:all 0.2s;z-index:100}
+    .dropdown.open .dropdown-menu{opacity:1;visibility:visible;transform:translateY(0)}
+    .dropdown-header{padding:12px 16px;font-size:11px;font-weight:600;color:var(--g500);text-transform:uppercase;letter-spacing:0.5px;border-bottom:1px solid var(--g100)}
+    .dropdown-item{display:flex;align-items:center;gap:12px;padding:12px 16px;font-size:14px;color:var(--carbon);text-decoration:none;transition:background 0.2s}
+    .dropdown-item:hover{background:var(--g50)}
+    .dropdown-item svg{width:18px;height:18px;color:var(--g500)}
+    .dropdown-item-desc{font-size:12px;color:var(--g500);margin-top:2px}
+    .dropdown-divider{height:1px;background:var(--g100);margin:8px 0}
+    
+    .modal-overlay{background:rgba(0,0,0,0.6);padding:40px 20px;display:flex;align-items:center;justify-content:center;border-radius:var(--radius-lg)}
+    .modal{background:#fff;border-radius:var(--radius-lg);max-width:480px;width:100%;position:relative;box-shadow:var(--shadow-xl)}
+    .modal-close{position:absolute;top:16px;right:16px;width:36px;height:36px;background:var(--g100);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;border:none;transition:background 0.2s;z-index:1}
+    .modal-close:hover{background:var(--g200)}
+    .modal-close svg{width:18px;height:18px}
+    .modal-header{padding:32px 32px 0;text-align:center}
+    .modal-icon{width:56px;height:56px;background:var(--alice);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+    .modal-icon svg{width:28px;height:28px;color:var(--accent)}
+    .modal-title{font-family:var(--heading);font-size:22px;font-weight:700;margin-bottom:8px}
+    .modal-text{font-size:14px;color:var(--g600);line-height:1.6}
+    .modal-body{padding:24px 32px}
+    .modal-footer{padding:0 32px 32px;display:flex;gap:12px}
+    .modal-footer .btn{flex:1;justify-content:center}
+    
+    .stats-section{background:var(--carbon);border-radius:var(--radius-lg);padding:48px 24px;position:relative;overflow:hidden}
+    @media(min-width:768px){.stats-section{padding:64px 48px}}
+    .stats-section::before{content:'X';position:absolute;top:50%;right:-80px;transform:translateY(-50%);font-family:var(--heading);font-size:400px;font-weight:800;color:rgba(220,238,255,0.06);pointer-events:none}
+    .stats-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;position:relative;z-index:1}
+    @media(min-width:768px){.stats-grid{grid-template-columns:repeat(4,1fr);gap:32px}}
+    .stat-item{text-align:center}
+    .stat-icon{width:48px;height:48px;background:var(--accent-15);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+    .stat-icon svg{width:24px;height:24px;color:var(--accent)}
+    .stat-value{font-family:var(--heading);font-size:40px;font-weight:800;color:#fff;margin-bottom:4px}
+    @media(min-width:768px){.stat-value{font-size:52px}}
+    .stat-label{font-size:14px;color:var(--g400)}
+    .stat-sublabel{font-size:12px;color:var(--g500);margin-top:4px}
+    
+    .blog-grid{display:grid;grid-template-columns:1fr;gap:24px}
+    @media(min-width:768px){.blog-grid{grid-template-columns:repeat(3,1fr)}}
+    .blog-card{background:#fff;border-radius:var(--radius);overflow:hidden;border:1px solid var(--g200);transition:all 0.3s}
+    .blog-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-4px)}
+    .blog-card-img{height:180px;background:linear-gradient(135deg,var(--g200) 0%,var(--g300) 100%);position:relative}
+    .blog-card-category{position:absolute;top:12px;left:12px;background:var(--accent);color:#fff;font-size:10px;font-weight:600;padding:4px 10px;border-radius:4px;text-transform:uppercase;letter-spacing:0.5px}
+    .blog-card-body{padding:20px}
+    .blog-card-meta{display:flex;align-items:center;gap:12px;font-size:12px;color:var(--g500);margin-bottom:12px}
+    .blog-card-title{font-family:var(--heading);font-size:18px;font-weight:600;line-height:1.4;margin-bottom:8px;color:var(--carbon)}
+    .blog-card-excerpt{font-size:14px;color:var(--g600);line-height:1.6}
+    .blog-card-footer{padding:16px 20px;border-top:1px solid var(--g100);display:flex;align-items:center;justify-content:space-between}
+    .blog-card-author{display:flex;align-items:center;gap:10px}
+    .blog-card-avatar{width:32px;height:32px;border-radius:50%;background:var(--g200)}
+    .blog-card-author-name{font-size:13px;font-weight:500}
+    .blog-card-read{font-size:13px;font-weight:600;color:var(--accent);display:flex;align-items:center;gap:4px}
+    .blog-card-read svg{width:14px;height:14px}
+    
+    .podcast-card{background:#fff;border-radius:var(--radius);overflow:hidden;border:1px solid var(--g200);display:flex;flex-direction:column;transition:all 0.3s}
+    @media(min-width:768px){.podcast-card{flex-direction:row}}
+    .podcast-card:hover{box-shadow:var(--shadow-lg)}
+    .podcast-card-img{width:100%;height:160px;background:linear-gradient(135deg,var(--carbon) 0%,#2a2a2a 100%);display:flex;align-items:center;justify-content:center}
+    @media(min-width:768px){.podcast-card-img{width:200px;height:auto;min-height:160px}}
+    .podcast-card-play{width:56px;height:56px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:transform 0.2s}
+    .podcast-card-play:hover{transform:scale(1.1)}
+    .podcast-card-play svg{width:24px;height:24px;fill:#fff;margin-left:3px}
+    .podcast-card-body{padding:20px;flex:1}
+    .podcast-card-episode{font-size:11px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px}
+    .podcast-card-title{font-family:var(--heading);font-size:18px;font-weight:600;margin-bottom:8px}
+    .podcast-card-desc{font-size:14px;color:var(--g600);line-height:1.6;margin-bottom:12px}
+    .podcast-card-meta{display:flex;align-items:center;gap:16px;font-size:12px;color:var(--g500)}
+    
+    .tool-grid{display:grid;grid-template-columns:1fr;gap:16px}
+    @media(min-width:768px){.tool-grid{grid-template-columns:repeat(2,1fr)}}
+    .tool-card{background:#fff;border-radius:var(--radius);padding:24px;border:1px solid var(--g200);display:flex;gap:16px;transition:all 0.3s;cursor:pointer}
+    .tool-card:hover{border-color:var(--alice-border);background:var(--alice-light);box-shadow:var(--shadow-md)}
+    .tool-card-icon{width:56px;height:56px;background:var(--alice);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .tool-card-icon svg{width:28px;height:28px;color:var(--accent)}
+    .tool-card-body{flex:1}
+    .tool-card-title{font-family:var(--heading);font-size:16px;font-weight:600;margin-bottom:4px}
+    .tool-card-desc{font-size:13px;color:var(--g600);line-height:1.5}
+    .tool-card-tag{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:600;color:var(--success);margin-top:8px}
+    .tool-card-tag svg{width:12px;height:12px}
+    
+    .team-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+    @media(min-width:768px){.team-grid{grid-template-columns:repeat(4,1fr);gap:24px}}
+    .team-card{background:#fff;border-radius:var(--radius);padding:24px;text-align:center;border:1px solid var(--g200);transition:all 0.3s}
+    .team-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-4px)}
+    .team-card-photo{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,var(--g200) 0%,var(--g300) 100%);margin:0 auto 16px;display:flex;align-items:center;justify-content:center}
+    .team-card-photo svg{width:32px;height:32px;color:var(--g400)}
+    .team-card-name{font-family:var(--heading);font-size:16px;font-weight:600;margin-bottom:4px}
+    .team-card-role{font-size:13px;color:var(--g500);margin-bottom:12px}
+    .team-card-social{display:flex;justify-content:center;gap:8px}
+    .team-card-social a{width:32px;height:32px;border-radius:50%;background:var(--g100);display:flex;align-items:center;justify-content:center;color:var(--g500);transition:all 0.2s}
+    .team-card-social a:hover{background:var(--alice);color:var(--accent)}
+    .team-card-social svg{width:16px;height:16px}
+    
+    .timeline{position:relative;padding-left:32px}
+    @media(min-width:768px){.timeline{padding-left:0;display:flex;justify-content:space-between}}
+    .timeline::before{content:'';position:absolute;left:11px;top:0;bottom:0;width:2px;background:var(--g200)}
+    @media(min-width:768px){.timeline::before{left:0;right:0;top:24px;bottom:auto;width:auto;height:2px}}
+    .timeline-item{position:relative;padding-bottom:40px}
+    @media(min-width:768px){.timeline-item{flex:1;padding-bottom:0;padding-right:24px;text-align:center}}
+    .timeline-item:last-child{padding-bottom:0}
+    @media(min-width:768px){.timeline-item:last-child{padding-right:0}}
+    .timeline-dot{position:absolute;left:-32px;top:0;width:24px;height:24px;background:#fff;border:3px solid var(--g300);border-radius:50%;display:flex;align-items:center;justify-content:center}
+    @media(min-width:768px){.timeline-dot{position:relative;left:auto;margin:0 auto 16px}}
+    .timeline-dot-active{border-color:var(--accent);background:var(--accent)}
+    .timeline-dot-active::after{content:'';width:8px;height:8px;background:#fff;border-radius:50%}
+    .timeline-dot-complete{border-color:var(--success);background:var(--success)}
+    .timeline-dot-complete svg{width:14px;height:14px;color:#fff}
+    .timeline-num{font-family:var(--heading);font-size:11px;font-weight:700;color:var(--g500)}
+    .timeline-dot-active .timeline-num{color:#fff}
+    .timeline-content{padding-left:8px}
+    @media(min-width:768px){.timeline-content{padding-left:0}}
+    .timeline-title{font-family:var(--heading);font-size:16px;font-weight:600;margin-bottom:4px}
+    .timeline-desc{font-size:13px;color:var(--g600);line-height:1.5}
+    
+    .comparison-table{width:100%;border-collapse:collapse;background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm)}
+    .comparison-table th,.comparison-table td{padding:16px 20px;text-align:left;border-bottom:1px solid var(--g100)}
+    .comparison-table th{background:var(--g50);font-family:var(--heading);font-weight:600;font-size:14px}
+    .comparison-table th:first-child{width:40%}
+    .comparison-table td{font-size:14px}
+    .comparison-table tr:last-child td{border-bottom:none}
+    .comparison-highlight{background:var(--alice-light)}
+    .comparison-check{width:24px;height:24px;background:var(--success-light);border-radius:50%;display:flex;align-items:center;justify-content:center}
+    .comparison-check svg{width:14px;height:14px;color:var(--success)}
+    .comparison-x{width:24px;height:24px;background:var(--g100);border-radius:50%;display:flex;align-items:center;justify-content:center}
+    .comparison-x svg{width:14px;height:14px;color:var(--g400)}
+    .comparison-header-featured{color:var(--accent)}
+    
+    .social-proof{background:var(--g50);border-radius:var(--radius);padding:24px;text-align:center}
+    .social-proof-label{font-size:12px;color:var(--g500);margin-bottom:16px;text-transform:uppercase;letter-spacing:1px}
+    .social-proof-logos{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:24px}
+    @media(min-width:768px){.social-proof-logos{gap:40px}}
+    .social-proof-logo{height:24px;width:80px;background:var(--g300);border-radius:4px;opacity:0.5;transition:opacity 0.2s}
+    @media(min-width:768px){.social-proof-logo{height:28px;width:100px}}
+    .social-proof-logo:hover{opacity:0.8}
+    
+    .sticky-cta{background:#fff;padding:12px 16px;box-shadow:0 -4px 20px rgba(0,0,0,0.1);display:flex;align-items:center;justify-content:space-between;gap:12px;border-radius:var(--radius)}
+    .sticky-cta-text{font-size:13px;color:var(--carbon)}
+    .sticky-cta-text strong{font-family:var(--heading);font-weight:600}
+    
+    .cta-banner{background:var(--carbon);border-radius:var(--radius);padding:28px 20px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px;position:relative;overflow:hidden}
+    @media(min-width:768px){.cta-banner{flex-direction:row;justify-content:space-between;text-align:left;padding:32px 40px}}
+    .cta-banner::before{content:'X';position:absolute;top:50%;right:-40px;transform:translateY(-50%);font-family:var(--heading);font-size:200px;font-weight:800;color:rgba(220,238,255,0.05)}
+    .cta-banner-content{position:relative;z-index:1}
+    .cta-banner-title{font-family:var(--heading);font-size:18px;font-weight:700;color:#fff;margin-bottom:4px}
+    @media(min-width:768px){.cta-banner-title{font-size:22px}}
+    .cta-banner-text{font-size:13px;color:var(--g400)}
+    .cta-banner .btn{position:relative;z-index:1}
+    
+    .footer{background:var(--carbon);border-radius:var(--radius-lg);padding:40px 20px;color:#fff;position:relative;overflow:hidden}
+    @media(min-width:768px){.footer{padding:56px 40px}}
+    .footer::before{content:'X';position:absolute;top:50%;right:-80px;transform:translateY(-50%);font-family:var(--heading);font-size:400px;font-weight:800;color:rgba(220,238,255,0.04)}
+    .footer-top{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-bottom:40px;position:relative;z-index:1}
+    @media(min-width:768px){.footer-top{grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:40px}}
+    .footer-brand{grid-column:1/-1}
+    @media(min-width:768px){.footer-brand{grid-column:auto}}
+    .footer-logo{font-family:var(--heading);font-weight:800;font-size:20px;margin-bottom:12px;display:flex;align-items:center;gap:2px}
+    .footer-logo span{color:var(--accent)}
+    .footer-tagline{font-size:13px;color:var(--g400);line-height:1.5;max-width:260px}
+    .footer-col-title{font-family:var(--heading);font-weight:600;font-size:13px;margin-bottom:14px;color:#fff}
+    .footer-links{list-style:none;display:flex;flex-direction:column;gap:8px}
+    .footer-links a{font-size:12px;color:var(--g400);text-decoration:none;transition:color 0.2s}
+    .footer-links a:hover{color:#fff}
+    .footer-bottom{padding-top:28px;border-top:1px solid var(--g700);display:flex;flex-direction:column;gap:14px;align-items:center;text-align:center;position:relative;z-index:1}
+    @media(min-width:768px){.footer-bottom{flex-direction:row;justify-content:space-between;text-align:left}}
+    .footer-copy{font-size:12px;color:var(--g500)}
+    .footer-social{display:flex;gap:14px}
+    .footer-social a{color:var(--g400);transition:color 0.2s}
+    .footer-social a:hover{color:#fff}
+    .footer-social svg{width:20px;height:20px}
+    
+    .skeleton{background:linear-gradient(90deg,var(--g200) 25%,var(--g300) 50%,var(--g200) 75%);background-size:200% 100%;animation:shimmer 1.5s infinite;border-radius:var(--radius-sm)}
+    @keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+    .skeleton-card{background:#fff;border-radius:var(--radius);padding:20px;border:1px solid var(--g200)}
+    .skeleton-avatar{width:48px;height:48px;border-radius:50%}
+    .skeleton-line{height:14px;margin-bottom:10px}
+    .skeleton-line:last-child{margin-bottom:0}
+    .skeleton-short{width:40%}
+    .skeleton-med{width:70%}
+    .skeleton-block{height:120px;margin-top:16px}
+    
+    .error-page{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:48px 24px;background:#fff;border-radius:var(--radius-lg)}
+    .error-illustration{width:200px;height:200px;margin-bottom:32px;position:relative}
+    .error-x{font-family:var(--heading);font-size:180px;font-weight:800;color:var(--g100);line-height:1}
+    .error-code{font-family:var(--heading);font-size:80px;font-weight:800;color:var(--accent);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}
+    .error-title{font-family:var(--heading);font-size:28px;font-weight:700;margin-bottom:8px}
+    .error-text{font-size:15px;color:var(--g600);margin-bottom:24px;max-width:400px}
+    
+    .empty-state{background:#fff;border-radius:var(--radius);padding:48px 24px;text-align:center;border:2px dashed var(--g200)}
+    .empty-state-icon{width:64px;height:64px;background:var(--g100);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px}
+    .empty-state-icon svg{width:32px;height:32px;color:var(--g400)}
+    .empty-state-title{font-family:var(--heading);font-size:18px;font-weight:600;margin-bottom:8px}
+    .empty-state-text{font-size:14px;color:var(--g500);margin-bottom:20px;max-width:320px;margin-left:auto;margin-right:auto}
+    
+    .mb-footer{background:var(--carbon);color:#fff;padding:48px 20px;text-align:center;position:relative;overflow:hidden}
+    .mb-footer::before{content:'X';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--heading);font-size:300px;font-weight:800;color:rgba(220,238,255,0.04)}
+    .mb-footer h2{font-family:var(--heading);font-size:24px;font-weight:700;margin-bottom:12px;position:relative}
+    .mb-footer p{color:var(--g400);max-width:800px;margin:0 auto;font-size:13px;position:relative;line-height:1.6}
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-logo"><span>X</span>perience Wave</div>
+    <h1>COMPLETE Design System</h1>
+    <p>Every component for website development</p>
+    <div class="header-badge"><span class="header-badge-dot"></span> 28 Components</div>
+  </header>
+
+  <!-- 00. QUICK REFERENCE -->
+  <section class="section">
+    <span class="section-num">00</span>
+      <h2 class="section-title">Quick Reference</h2>
+    <p class="section-sub">All design tokens at a glance</p>
+    <table class="spec-table">
+      <tr><th>Property</th><th>Value</th><th>Notes</th></tr>
+      <tr><td>Primary</td><td><span class="spec-val">#FF0023</span></td><td>Racing Red (CTA, accent)</td></tr>
+      <tr><td>Secondary</td><td><span class="spec-val">#DCEEFF</span></td><td>Alice Blue</td></tr>
+      <tr><td>Text</td><td><span class="spec-val">#18181B</span></td><td>Carbon Black</td></tr>
+      <tr><td>Radius</td><td><span class="spec-val">6px</span></td><td>Cards, buttons</td></tr>
+      <tr><td>Heading Font</td><td><span class="spec-val">Plus Jakarta Sans</span></td><td>600-800</td></tr>
+      <tr><td>Body Font</td><td><span class="spec-val">Inter</span></td><td>400-600</td></tr>
+      <tr><td>Icons</td><td><span class="spec-val">Phosphor SVG</span></td><td>Inline</td></tr>
+      <tr><td>X Watermarks</td><td><span class="spec-val">Alice Blue 5-6%</span></td><td>Dark sections</td></tr>
+      <tr><td>Hero (Dark)</td><td><span class="spec-val">#18181B gradient</span></td><td>Alice X 6%</td></tr>
+      <tr><td>Focus State</td><td><span class="spec-val">Alice Blue border + glow</span></td><td>Inputs, FAQ</td></tr>
+      <tr><td>Dots Pattern</td><td><span class="spec-val">G300, 1px, 24px</span></td><td>FAQ, Forms, Timeline, Social Proof</td></tr>
+    </table>
+  </section>
+
+  <!-- 01. COLORS -->
+  <section class="section section-white">
+    <div class="section-inner">
+      <span class="section-num">01</span>
+      <h2 class="section-title">Colors</h2>
+      <p class="section-sub">Primary, secondary, semantic, neutrals</p>
+      <div class="color-grid">
+        <div class="color-card"><div class="color-swatch" style="background:#FF0023;color:#fff">#FF0023</div><div class="color-info"><div class="color-name">Racing Red</div><div class="color-use">CTA, accent</div></div></div>
+        <div class="color-card"><div class="color-swatch" style="background:#18181B;color:#fff">#18181B</div><div class="color-info"><div class="color-name">Carbon</div><div class="color-use">Text, dark bg</div></div></div>
+        <div class="color-card"><div class="color-swatch" style="background:#DCEEFF">#DCEEFF</div><div class="color-info"><div class="color-name">Alice Blue</div><div class="color-use">Secondary, X motif</div></div></div>
+        <div class="color-card"><div class="color-swatch" style="background:#2FB83C;color:#fff">#2FB83C</div><div class="color-info"><div class="color-name">Success</div><div class="color-use">Positive</div></div></div>
+      </div>
+      <span class="label mt-32">Neutrals</span>
+      <div class="color-row">
+        <div class="color-chip" style="background:#FAFAFA;border:1px solid #E4E4E7">G50</div>
+        <div class="color-chip" style="background:#F4F4F5">G100</div>
+        <div class="color-chip" style="background:#D4D4D8">G300</div>
+        <div class="color-chip" style="background:#71717A;color:#fff">G500</div>
+        <div class="color-chip" style="background:#52525B;color:#fff">G600</div>
+        <div class="color-chip" style="background:#3F3F46;color:#fff">G700</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02. TYPOGRAPHY -->
+  <section class="section">
+    <span class="section-num">02</span>
+      <h2 class="section-title">Typography</h2>
+    <p class="section-sub">Plus Jakarta Sans headings, Inter body</p>
+    <div class="type-scale">
+      <div class="type-item"><span class="type-label">H1</span><span class="type-h1">Transform Career</span><span class="type-specs">36-56px / 800</span></div>
+      <div class="type-item"><span class="type-label">H2</span><span class="type-h2">Senior Mentorship</span><span class="type-specs">28-40px / 700</span></div>
+      <div class="type-item"><span class="type-label">H3</span><span class="type-h3">What You'll Learn</span><span class="type-specs">20-28px / 600</span></div>
+      <div class="type-item"><span class="type-label">Body</span><span class="type-body">Our mentorship helps designers transition.</span><span class="type-specs">15-16px / 400</span></div>
+      <div class="type-item"><span class="type-label">Small</span><span class="type-small">140+ designers · 95% success</span><span class="type-specs">13-14px / 400</span></div>
+    </div>
+  </section>
+
+  <!-- 03. BUTTONS -->
+  <section class="section section-dark">
+    <div class="section-inner">
+      <span class="section-num" style="color:var(--accent)">03</span>
+      <h2 class="section-title">Buttons</h2>
+      <p class="section-sub">Primary, secondary, outline, ghost, sizes</p>
+      <div class="btn-row mb-24">
+        <button class="btn btn-primary btn-lg">Primary Large <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></button>
+        <button class="btn btn-primary">Primary</button>
+        <button class="btn btn-primary btn-sm">Small</button>
+      </div>
+      <div class="btn-row">
+        <button class="btn btn-secondary">Secondary</button>
+        <button class="btn btn-outline" style="border-color:var(--g500);color:#fff">Outline</button>
+        <button class="btn btn-ghost" style="color:var(--g400)">Ghost</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04. CARDS -->
+  <section class="section">
+    <span class="section-num">04</span>
+      <h2 class="section-title">Cards</h2>
+    <p class="section-sub">Clickable, static, X-framed variants</p>
+    <div class="card-grid">
+      <div class="card card-click">
+        <div class="card-img"><div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M230.92,212c-15.23-26.33-38.7-45.21-66.09-54.16a72,72,0,1,0-73.66,0C63.78,166.78,40.31,185.66,25.08,212a8,8,0,1,0,13.85,8c18.84-32.56,52.14-52,89.07-52s70.23,19.44,89.07,52a8,8,0,1,0,13.85-8ZM72,96a56,56,0,1,1,56,56A56.06,56.06,0,0,1,72,96Z"/></svg></div></div>
+        <div class="card-body"><span class="card-tag">Mentorship</span><h3 class="card-title">Senior UX Program</h3><p class="card-desc">Go from mid-level to senior in 90 days.</p></div>
+        <div class="card-footer"><span class="card-link">Learn More <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></span></div>
+      </div>
+      <div class="card card-click card-xframe">
+        <div class="card-img" style="background:linear-gradient(135deg,var(--carbon) 0%,#3F3F46 100%)"><div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M216,56H176V48a24,24,0,0,0-24-24H104A24,24,0,0,0,80,48v8H40A16,16,0,0,0,24,72V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V72A16,16,0,0,0,216,56ZM96,48a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96ZM216,200H40V72H216V200Z"/></svg></div></div>
+        <div class="card-body"><span class="card-tag card-tag-accent">Business</span><h3 class="card-title">Hire UX Talent</h3><p class="card-desc">Access 140+ trained designers.</p></div>
+        <div class="card-footer"><span class="card-link">Explore <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></span></div>
+      </div>
+      <div class="card card-static">
+        <div class="card-body" style="padding-top:20px"><span class="card-tag">Resource</span><h3 class="card-title">Salary Calculator</h3><p class="card-desc">Free tool for designers.</p></div>
+        <div class="card-footer"><span style="font-size:11px;color:var(--g500)">Static (border only)</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05. NAVIGATION -->
+  <section class="section section-white">
+    <div class="section-inner">
+      <span class="section-num">05</span>
+      <h2 class="section-title">Navigation</h2>
+      <p class="section-sub">Mobile 56px, Desktop 60px</p>
+      <span class="label">Mobile</span>
+      <nav class="nav-mobile mb-16"><a href="#" class="nav-logo"><span>X</span>W</a><button class="nav-cta-mobile">Book Call</button><div class="nav-hamburger"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"/></svg></div></nav>
+      <span class="label mt-32">Desktop</span>
+      <nav class="nav-desktop"><a href="#" class="nav-logo"><span>X</span>perience Wave</a><ul class="nav-links"><li><a href="#" class="nav-link">Programs</a></li><li><a href="#" class="nav-link">Business</a></li><li><a href="#" class="nav-link">Success</a></li><li><a href="#" class="nav-link">About</a></li></ul><button class="nav-cta">Book Strategy Call</button></nav>
+    </div>
+  </section>
+
+  <!-- 06. HERO DARK -->
+  <section class="section">
+    <span class="section-num">06</span>
+      <h2 class="section-title">Hero Section (Dark Mode)</h2>
+    <p class="section-sub">Dark gradient + Alice Blue X motif 6%</p>
+    <div class="hero-dark">
+      <div class="hero-dark-content">
+        <h1 class="hero-dark-title">Why Aren't You Getting Senior & Leadership UX Roles Yet?</h1>
+        <p class="hero-dark-subtitle">1:1 Mentorship That Fixes YOUR Gaps, Not Generic Courses That Leave You Stuck</p>
+        <p class="hero-dark-target">For UX/UI/Product designers with 2+ years experience who are ready to grow but keep getting stuck at the same level</p>
+        <div class="hero-dark-video">
+          <p class="hero-dark-video-label">Tried Everything?</p>
+          <h3 class="hero-dark-video-title">Watch This First</h3>
+          <div class="hero-dark-play"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M240,128a15.74,15.74,0,0,1-7.6,13.51L88.32,229.65a16,16,0,0,1-16.2.3A15.86,15.86,0,0,1,64,216.13V39.87a15.86,15.86,0,0,1,8.12-13.82,16,16,0,0,1,16.2.3L232.4,114.49A15.74,15.74,0,0,1,240,128Z"/></svg></div>
+          <p class="hero-dark-duration">12 min watch</p>
+        </div>
+        <div class="hero-dark-ctas">
+          <button class="btn btn-primary">Watch how it works <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></button>
+          <span class="hero-dark-link">Book a free strategy call</span>
+        </div>
+      </div>
+      <div class="hero-dark-stats">
+        <div class="hero-dark-stat"><span class="hero-dark-stat-val">3000+</span><span class="hero-dark-stat-label">designers consulted</span></div>
+        <div class="hero-dark-stat"><span class="hero-dark-stat-val">140+</span><span class="hero-dark-stat-label">mentored 1:1</span></div>
+        <div class="hero-dark-stat"><span class="hero-dark-stat-val">80%</span><span class="hero-dark-stat-label">achieved their goals</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07. VIDEO PARALLAX -->
+  <section class="section section-white">
+    <div class="section-inner">
+      <span class="section-num">07</span>
+      <h2 class="section-title">Video Parallax</h2>
+      <p class="section-sub">Full-width with Alice X watermark, red corner frames</p>
+      <div class="video-parallax">
+        <div class="video-parallax-bg"></div>
+        <span class="video-parallax-x">X</span>
+        <div class="video-parallax-content">
+          <div class="video-parallax-play"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M240,128a15.74,15.74,0,0,1-7.6,13.51L88.32,229.65a16,16,0,0,1-16.2.3A15.86,15.86,0,0,1,64,216.13V39.87a15.86,15.86,0,0,1,8.12-13.82,16,16,0,0,1,16.2.3L232.4,114.49A15.74,15.74,0,0,1,240,128Z"/></svg></div>
+          <h3 class="video-parallax-title">Watch How We Transform Careers</h3>
+          <p class="video-parallax-sub">5 minutes that could change your trajectory</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08. X MOTIF DIVIDER -->
+  <section class="section section-dark">
+    <div class="section-inner">
+      <span class="section-num" style="color:var(--accent)">08</span>
+      <h2 class="section-title">X Motif Divider</h2>
+      <p class="section-sub">Gradient red X for blog sections</p>
+      <div class="x-divider"><div class="x-divider-line"></div><span class="x-divider-mark">X</span><div class="x-divider-line"></div></div>
+    </div>
+  </section>
+
+  <!-- 09. INLINE ILLUSTRATIONS -->
+  <section class="section">
+    <span class="section-num">09</span>
+      <h2 class="section-title">Inline Illustrations</h2>
+    <p class="section-sub">Line art SVG style</p>
+    <div class="illus-grid" style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px;">
+      <div style="background:#fff;border:1px solid var(--g200);border-radius:var(--radius);padding:32px 20px;text-align:center;">
+        <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:16px;">
+          <circle cx="40" cy="24" r="12" stroke="#18181B" stroke-width="2" fill="none"/>
+          <path d="M20 60c0-11 9-20 20-20s20 9 20 20" stroke="#18181B" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <circle cx="52" cy="28" r="8" fill="#DCEEFF" stroke="#DCEEFF" stroke-width="1"/>
+          <line x1="52" y1="24" x2="52" y2="32" stroke="#FF0023" stroke-width="2" stroke-linecap="round"/>
+          <line x1="48" y1="28" x2="56" y2="28" stroke="#FF0023" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <div style="font-family:var(--heading);font-size:14px;font-weight:600;">1:1 Mentorship</div>
+      </div>
+      <div style="background:#fff;border:1px solid var(--g200);border-radius:var(--radius);padding:32px 20px;text-align:center;">
+        <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:16px;">
+          <rect x="16" y="20" width="48" height="44" rx="4" stroke="#18181B" stroke-width="2" fill="none"/>
+          <rect x="20" y="16" width="8" height="8" rx="2" fill="#DCEEFF" stroke="#18181B" stroke-width="1.5"/>
+          <rect x="52" y="16" width="8" height="8" rx="2" fill="#DCEEFF" stroke="#18181B" stroke-width="1.5"/>
+          <line x1="16" y1="32" x2="64" y2="32" stroke="#18181B" stroke-width="2"/>
+          <rect x="28" y="40" width="24" height="16" rx="2" fill="#DCEEFF"/>
+          <polyline points="32,48 38,54 48,44" stroke="#18181B" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div style="font-family:var(--heading);font-size:14px;font-weight:600;">Portfolio Review</div>
+      </div>
+      <div style="background:#fff;border:1px solid var(--g200);border-radius:var(--radius);padding:32px 20px;text-align:center;">
+        <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:16px;">
+          <circle cx="40" cy="40" r="28" stroke="#18181B" stroke-width="2" fill="none"/>
+          <circle cx="40" cy="40" r="24" stroke="#DCEEFF" stroke-width="4" fill="none"/>
+          <line x1="40" y1="40" x2="40" y2="24" stroke="#18181B" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="40" y1="40" x2="52" y2="46" stroke="#FF0023" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="40" cy="40" r="3" fill="#18181B"/>
+        </svg>
+        <div style="font-family:var(--heading);font-size:14px;font-weight:600;">90-Day Program</div>
+      </div>
+      <div style="background:#fff;border:1px solid var(--g200);border-radius:var(--radius);padding:32px 20px;text-align:center;">
+        <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:16px;">
+          <polyline points="12,56 28,44 44,52 68,24" stroke="#18181B" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="68" cy="24" r="6" fill="#FF0023"/>
+          <polygon points="44,52 68,24 68,52" fill="#DCEEFF" opacity="0.6"/>
+        </svg>
+        <div style="font-family:var(--heading);font-size:14px;font-weight:600;">Salary Growth</div>
+      </div>
+    </div>
+    <style>
+      @media(min-width:768px){
+        .illus-grid{grid-template-columns:repeat(4,1fr)!important}
+      }
+    </style>
+  </section>
+
+  <!-- 10. FAQ -->
+  <section class="section section-dots">
+    <div class="section-inner">
+      <span class="section-num">10</span>
+      <h2 class="section-title">FAQ</h2>
+      <p class="section-sub">Alice Blue active state. Dots pattern (G300) for content-heavy sections.</p>
+      <div class="faq-list">
+        <div class="faq-item active"><div class="faq-q"><span>Who is this for?</span><span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span></div><div class="faq-a">Mid-level UX designers (3-6 years) earning 6-12 LPA.</div></div>
+        <div class="faq-item"><div class="faq-q"><span>How long is the program?</span><span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span></div><div class="faq-a">90 days with weekly 1:1 sessions.</div></div>
+        <div class="faq-item"><div class="faq-q"><span>What's included?</span><span class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span></div><div class="faq-a">1:1 sessions, portfolio review, interview prep, salary negotiation.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. SUCCESS STORIES -->
+  <section class="section section-dark">
+    <div class="section-inner">
+      <span class="section-num" style="color:var(--accent)">11</span>
+      <h2 class="section-title">Success Stories</h2>
+      <p class="section-sub">Photo with blob accents, outcome badges</p>
+      <div class="success-grid">
+        <div class="success-card"><div class="success-img"><div class="success-photo"><svg width="120" height="140" viewBox="0 0 120 140" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="60" cy="45" r="28" fill="#D4D4D8"/><ellipse cx="60" cy="120" rx="40" ry="25" fill="#D4D4D8"/><circle cx="52" cy="40" r="3" fill="#A1A1AA"/><circle cx="68" cy="40" r="3" fill="#A1A1AA"/><path d="M54 52C54 52 57 56 60 56C63 56 66 52 66 52" stroke="#A1A1AA" stroke-width="2" stroke-linecap="round"/><rect x="45" y="65" width="30" height="35" rx="4" fill="#E4E4E7"/></svg></div><div class="success-blob"></div><div class="success-outcome"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M232,208a8,8,0,0,1-8,8H32a8,8,0,0,1-8-8V48a8,8,0,0,1,16,0V156.69l50.34-50.35a8,8,0,0,1,11.32,0L128,132.69l58.34-58.35a8,8,0,0,1,11.32,11.32l-64,64a8,8,0,0,1-11.32,0L96,123.31,48,171.31V192H224A8,8,0,0,1,232,208Z"/></svg> 9 → 22 LPA</div></div><div class="success-body"><p class="success-quote">"Within 3 months, I landed a Senior UX role."</p><div class="success-name">Priya Krishnan</div><div class="success-role">Senior UX Designer, Razorpay</div></div></div>
+        <div class="success-card"><div class="success-img"><div class="success-photo"><svg width="120" height="140" viewBox="0 0 120 140" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="60" cy="45" r="28" fill="#D4D4D8"/><ellipse cx="60" cy="120" rx="40" ry="25" fill="#D4D4D8"/><circle cx="52" cy="40" r="3" fill="#A1A1AA"/><circle cx="68" cy="40" r="3" fill="#A1A1AA"/><path d="M54 52C54 52 57 56 60 56C63 56 66 52 66 52" stroke="#A1A1AA" stroke-width="2" stroke-linecap="round"/><rect x="45" y="65" width="30" height="35" rx="4" fill="#E4E4E7"/><rect x="52" y="72" width="16" height="3" rx="1" fill="#D4D4D8"/></svg></div><div class="success-blob" style="background:var(--accent-light)"></div><div class="success-outcome"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M232,208a8,8,0,0,1-8,8H32a8,8,0,0,1-8-8V48a8,8,0,0,1,16,0V156.69l50.34-50.35a8,8,0,0,1,11.32,0L128,132.69l58.34-58.35a8,8,0,0,1,11.32,11.32l-64,64a8,8,0,0,1-11.32,0L96,123.31,48,171.31V192H224A8,8,0,0,1,232,208Z"/></svg> Lead in 4mo</div></div><div class="success-body"><p class="success-quote">"Murad's feedback shifted my thinking."</p><div class="success-name">Arjun Reddy</div><div class="success-role">Lead Product Designer, Swiggy</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12. FORMS -->
+  <section class="section section-dots">
+    <div class="section-inner">
+    <span class="section-num">12</span>
+      <h2 class="section-title">Forms</h2>
+    <p class="section-sub">Alice Blue focus glow</p>
+    <div class="form-grid">
+      <div class="form-group"><label class="form-label">Name</label><input type="text" class="form-input" placeholder="Your name"><span class="form-helper">As on ID</span></div>
+      <div class="form-group"><label class="form-label">Email</label><input type="email" class="form-input" placeholder="you@example.com"></div>
+      <div class="form-group"><label class="form-label">Phone (Error)</label><input type="tel" class="form-input form-input-error" value="123"><span class="form-error"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M236.8,188.09,149.35,36.22h0a24.76,24.76,0,0,0-42.7,0L19.2,188.09a23.51,23.51,0,0,0,0,23.72A24.35,24.35,0,0,0,40.55,224h174.9a24.35,24.35,0,0,0,21.33-12.19A23.51,23.51,0,0,0,236.8,188.09ZM120,104a8,8,0,0,1,16,0v40a8,8,0,0,1-16,0Zm8,88a12,12,0,1,1,12-12A12,12,0,0,1,128,192Z"/></svg> Invalid</span></div>
+      <div class="form-group"><label class="form-label">Role (Success)</label><input type="text" class="form-input" value="UX Designer"><span class="form-success"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"/></svg> Good</span></div>
+    </div>
+    </div>
+  </section>
+
+  <!-- 13. ICONS & TAGS -->
+  <section class="section section-white">
+    <div class="section-inner">
+      <span class="section-num">13</span>
+      <h2 class="section-title">Icons & Tags</h2>
+      <p class="section-sub">Phosphor inline SVG, tag variants</p>
+      <span class="label">Icons (Phosphor)</span>
+      <div class="icon-grid mb-24">
+        <div class="icon-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg><span>Arrow</span></div>
+        <div class="icon-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"/></svg><span>Check</span></div>
+        <div class="icon-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M165.66,101.66,139.31,128l26.35,26.34a8,8,0,0,1-11.32,11.32L128,139.31l-26.34,26.35a8,8,0,0,1-11.32-11.32L116.69,128,90.34,101.66a8,8,0,0,1,11.32-11.32L128,116.69l26.34-26.35a8,8,0,0,1,11.32,11.32ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"/></svg><span>Close</span></div>
+        <div class="icon-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M240,128a15.74,15.74,0,0,1-7.6,13.51L88.32,229.65a16,16,0,0,1-16.2.3A15.86,15.86,0,0,1,64,216.13V39.87a15.86,15.86,0,0,1,8.12-13.82,16,16,0,0,1,16.2.3L232.4,114.49A15.74,15.74,0,0,1,240,128Z"/></svg><span>Play</span></div>
+        <div class="icon-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Z"/></svg><span>Calendar</span></div>
+        <div class="icon-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M230.92,212c-15.23-26.33-38.7-45.21-66.09-54.16a72,72,0,1,0-73.66,0C63.78,166.78,40.31,185.66,25.08,212a8,8,0,1,0,13.85,8c18.84-32.56,52.14-52,89.07-52s70.23,19.44,89.07,52a8,8,0,1,0,13.85-8ZM72,96a56,56,0,1,1,56,56A56.06,56.06,0,0,1,72,96Z"/></svg><span>User</span></div>
+        <div class="icon-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M232,208a8,8,0,0,1-8,8H32a8,8,0,0,1-8-8V48a8,8,0,0,1,16,0V156.69l50.34-50.35a8,8,0,0,1,11.32,0L128,132.69l58.34-58.35a8,8,0,0,1,11.32,11.32l-64,64a8,8,0,0,1-11.32,0L96,123.31,48,171.31V192H224A8,8,0,0,1,232,208Z"/></svg><span>Trend</span></div>
+        <div class="icon-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"/></svg><span>Menu</span></div>
+      </div>
+      <span class="label">Tags</span>
+      <div class="tag-row">
+        <span class="tag tag-default">Design</span>
+        <span class="tag tag-alice">Mentorship</span>
+        <span class="tag tag-accent">Featured</span>
+        <span class="tag tag-success"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"/></svg> Verified</span>
+        <span class="tag tag-dark">New</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 14. TOASTS -->
+  <section class="section section-dark">
+    <div class="section-inner">
+      <span class="section-num" style="color:var(--accent)">14</span>
+      <h2 class="section-title">Toasts / Notifications</h2>
+      <p class="section-sub">Success, error, warning, info with progress</p>
+      <div class="toast-list">
+        <div class="toast toast-success"><div class="toast-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"/></svg></div><div class="toast-content"><div class="toast-title">Success!</div><div class="toast-message">Application submitted.</div></div><div class="toast-progress"></div></div>
+        <div class="toast toast-error"><div class="toast-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M165.66,101.66,139.31,128l26.35,26.34a8,8,0,0,1-11.32,11.32L128,139.31l-26.34,26.35a8,8,0,0,1-11.32-11.32L116.69,128,90.34,101.66a8,8,0,0,1,11.32-11.32L128,116.69l26.34-26.35a8,8,0,0,1,11.32,11.32ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"/></svg></div><div class="toast-content"><div class="toast-title">Error</div><div class="toast-message">Fill required fields.</div></div><div class="toast-progress"></div></div>
+        <div class="toast toast-warning"><div class="toast-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M236.8,188.09,149.35,36.22h0a24.76,24.76,0,0,0-42.7,0L19.2,188.09a23.51,23.51,0,0,0,0,23.72A24.35,24.35,0,0,0,40.55,224h174.9a24.35,24.35,0,0,0,21.33-12.19A23.51,23.51,0,0,0,236.8,188.09ZM120,104a8,8,0,0,1,16,0v40a8,8,0,0,1-16,0Zm8,88a12,12,0,1,1,12-12A12,12,0,0,1,128,192Z"/></svg></div><div class="toast-content"><div class="toast-title">Warning</div><div class="toast-message">Only 2 spots left.</div></div><div class="toast-progress"></div></div>
+        <div class="toast toast-info"><div class="toast-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><circle cx="128" cy="128" r="96" fill="none" stroke="currentColor" stroke-width="16"/><line x1="128" y1="120" x2="128" y2="176" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="16"/><circle cx="128" cy="84" r="10" fill="currentColor"/></svg></div><div class="toast-content"><div class="toast-title">Info</div><div class="toast-message">New cohort starts Feb 1.</div></div><div class="toast-progress"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 15. TOOLTIPS & DROPDOWNS -->
+  <section class="section">
+    <span class="section-num">15</span>
+      <h2 class="section-title">Tooltips & Dropdowns</h2>
+    <p class="section-sub">Hover tooltips, nav dropdowns</p>
+    <div style="display:flex;flex-wrap:wrap;gap:48px;align-items:flex-start;">
+      <div><span class="label mb-16">Tooltips</span><div style="display:flex;gap:24px;padding-top:40px;"><span class="tooltip-wrap">Hover me<span class="tooltip">Tooltip text here</span></span><span class="tooltip-wrap">Another<span class="tooltip">More info</span></span></div></div>
+      <div><span class="label mb-16">Dropdown</span><div class="dropdown open"><div class="dropdown-trigger">Programs <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"/></svg></div><div class="dropdown-menu" style="position:relative;opacity:1;visibility:visible;transform:none;margin-top:8px;"><div class="dropdown-header">For Designers</div><a href="#" class="dropdown-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M230.92,212c-15.23-26.33-38.7-45.21-66.09-54.16a72,72,0,1,0-73.66,0C63.78,166.78,40.31,185.66,25.08,212a8,8,0,1,0,13.85,8c18.84-32.56,52.14-52,89.07-52s70.23,19.44,89.07,52a8,8,0,1,0,13.85-8ZM72,96a56,56,0,1,1,56,56A56.06,56.06,0,0,1,72,96Z"/></svg><div><strong>Senior Mentorship</strong><div class="dropdown-item-desc">90-day program</div></div></a><div class="dropdown-divider"></div><a href="#" class="dropdown-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M216,56H176V48a24,24,0,0,0-24-24H104A24,24,0,0,0,80,48v8H40A16,16,0,0,0,24,72V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V72A16,16,0,0,0,216,56ZM96,48a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96ZM216,200H40V72H216V200Z"/></svg><div><strong>For Business</strong><div class="dropdown-item-desc">Hire designers</div></div></a></div></div></div>
+    </div>
+  </section>
+
+  <!-- 16. MODAL -->
+  <section class="section section-white">
+    <div class="section-inner">
+      <span class="section-num">16</span>
+      <h2 class="section-title">Modal / Popup</h2>
+      <p class="section-sub">Form modal with icon header</p>
+      <div class="modal-overlay" style="max-width:560px;"><div class="modal"><button class="modal-close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></svg></button><div class="modal-header"><div class="modal-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="6" width="20" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><line x1="4" y1="10" x2="24" y2="10" stroke="currentColor" stroke-width="2"/><circle cx="8" cy="8" r="1" fill="currentColor"/><circle cx="11" cy="8" r="1" fill="currentColor"/><rect x="7" y="14" width="8" height="2" rx="1" fill="currentColor" opacity="0.5"/><rect x="7" y="18" width="14" height="2" rx="1" fill="currentColor" opacity="0.5"/></svg></div><h3 class="modal-title">Book Your Strategy Call</h3><p class="modal-text">Schedule a free 30-minute call.</p></div><div class="modal-body"><div style="display:flex;flex-direction:column;gap:12px;"><input type="text" class="form-input" placeholder="Your name"><input type="email" class="form-input" placeholder="Email"></div></div><div class="modal-footer"><button class="btn btn-outline">Maybe Later</button><button class="btn btn-primary">Schedule</button></div></div></div>
+    </div>
+  </section>
+
+  <!-- 17. STATS -->
+  <section class="section">
+    <span class="section-num">17</span>
+      <h2 class="section-title">Stats Section</h2>
+    <p class="section-sub">Dark background, Alice Blue X watermark 6%</p>
+    <div class="stats-section">
+      <div class="stats-grid">
+        <div class="stat-item"><div class="stat-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M230.92,212c-15.23-26.33-38.7-45.21-66.09-54.16a72,72,0,1,0-73.66,0C63.78,166.78,40.31,185.66,25.08,212a8,8,0,1,0,13.85,8c18.84-32.56,52.14-52,89.07-52s70.23,19.44,89.07,52a8,8,0,1,0,13.85-8ZM72,96a56,56,0,1,1,56,56A56.06,56.06,0,0,1,72,96Z"/></svg></div><div class="stat-value">140+</div><div class="stat-label">Mentored</div><div class="stat-sublabel">since 2022</div></div>
+        <div class="stat-item"><div class="stat-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M232,208a8,8,0,0,1-8,8H32a8,8,0,0,1-8-8V48a8,8,0,0,1,16,0V156.69l50.34-50.35a8,8,0,0,1,11.32,0L128,132.69l58.34-58.35a8,8,0,0,1,11.32,11.32l-64,64a8,8,0,0,1-11.32,0L96,123.31,48,171.31V192H224A8,8,0,0,1,232,208Z"/></svg></div><div class="stat-value">95%</div><div class="stat-label">Success</div><div class="stat-sublabel">achieving goals</div></div>
+        <div class="stat-item"><div class="stat-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm40-68a40,40,0,0,1-80,0,8,8,0,0,1,16,0,24,24,0,0,0,48,0,8,8,0,0,1,16,0ZM80,108a12,12,0,1,1,12,12A12,12,0,0,1,80,108Zm72,0a12,12,0,1,1,12,12A12,12,0,0,1,152,108Z"/></svg></div><div class="stat-value">2.5x</div><div class="stat-label">Salary Increase</div><div class="stat-sublabel">within 6 months</div></div>
+        <div class="stat-item"><div class="stat-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M216,56H176V48a24,24,0,0,0-24-24H104A24,24,0,0,0,80,48v8H40A16,16,0,0,0,24,72V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V72A16,16,0,0,0,216,56ZM96,48a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96ZM216,200H40V72H216V200Z"/></svg></div><div class="stat-value">20+</div><div class="stat-label">Products Built</div><div class="stat-sublabel">enterprise scale</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 18. BLOG -->
+  <section class="section section-white">
+    <div class="section-inner">
+      <span class="section-num">18</span>
+      <h2 class="section-title">Blog Cards</h2>
+      <p class="section-sub">Category badge, meta, author, read link</p>
+      <div class="blog-grid">
+        <div class="blog-card"><div class="blog-card-img" style="display:flex;align-items:center;justify-content:center;"><svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="40" cy="30" r="15" fill="#D4D4D8"/><path d="M20 65C20 50 30 45 40 45C50 45 60 50 60 65" fill="#D4D4D8"/><path d="M55 25L65 15M65 25L55 15" stroke="#FF0023" stroke-width="2" stroke-linecap="round"/><circle cx="25" cy="55" r="4" fill="#DCEEFF"/></svg><span class="blog-card-category">Career</span></div><div class="blog-card-body"><div class="blog-card-meta"><span>Jan 5, 2026</span><span>5 min</span></div><h3 class="blog-card-title">Why Mid-Level Designers Stay Stuck</h3><p class="blog-card-excerpt">The truth about why your salary hasn't moved.</p></div><div class="blog-card-footer"><div class="blog-card-author"><svg class="blog-card-avatar" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="16" r="16" fill="#E4E4E7"/><circle cx="16" cy="12" r="6" fill="#D4D4D8"/><ellipse cx="16" cy="28" rx="10" ry="6" fill="#D4D4D8"/></svg><span class="blog-card-author-name">Murad</span></div><span class="blog-card-read">Read <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></span></div></div>
+        <div class="blog-card"><div class="blog-card-img" style="background:linear-gradient(135deg,var(--alice) 0%,var(--alice-dark) 100%);display:flex;align-items:center;justify-content:center;"><svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="15" y="15" width="50" height="50" rx="4" fill="rgba(255,255,255,0.6)" stroke="#a8d4f5" stroke-width="2"/><rect x="22" y="25" width="36" height="4" rx="2" fill="#a8d4f5"/><rect x="22" y="33" width="28" height="4" rx="2" fill="#a8d4f5"/><rect x="22" y="41" width="32" height="4" rx="2" fill="#a8d4f5"/><rect x="22" y="49" width="20" height="4" rx="2" fill="#a8d4f5"/><circle cx="60" cy="60" r="12" fill="#FF0023" opacity="0.15"/><path d="M56 60L59 63L64 57" stroke="#FF0023" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="blog-card-category">Portfolio</span></div><div class="blog-card-body"><div class="blog-card-meta"><span>Dec 28, 2025</span><span>8 min</span></div><h3 class="blog-card-title">The Portfolio Mistake Costing ₹10L</h3><p class="blog-card-excerpt">What hiring managers actually look for.</p></div><div class="blog-card-footer"><div class="blog-card-author"><svg class="blog-card-avatar" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="16" r="16" fill="#E4E4E7"/><circle cx="16" cy="12" r="6" fill="#D4D4D8"/><ellipse cx="16" cy="28" rx="10" ry="6" fill="#D4D4D8"/></svg><span class="blog-card-author-name">Almas</span></div><span class="blog-card-read">Read <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></span></div></div>
+        <div class="blog-card"><div class="blog-card-img" style="background:linear-gradient(135deg,var(--carbon) 0%,#2a2a2a 100%);display:flex;align-items:center;justify-content:center;"><svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="30" cy="35" r="12" fill="#3F3F46"/><circle cx="50" cy="35" r="12" fill="#3F3F46"/><path d="M25 55C25 48 27 45 30 45H50C53 45 55 48 55 55" fill="#3F3F46"/><rect x="35" y="28" width="10" height="14" rx="2" fill="#52525B"/><path d="M60 20L70 30" stroke="#FF0023" stroke-width="2" stroke-linecap="round"/><path d="M60 30L70 20" stroke="#FF0023" stroke-width="2" stroke-linecap="round"/><circle cx="15" cy="55" r="5" fill="rgba(220,238,255,0.2)"/></svg><span class="blog-card-category">Interview</span></div><div class="blog-card-body"><div class="blog-card-meta"><span>Dec 15, 2025</span><span>6 min</span></div><h3 class="blog-card-title">Negotiate a 50% Salary Bump</h3><p class="blog-card-excerpt">The exact script our mentees use.</p></div><div class="blog-card-footer"><div class="blog-card-author"><svg class="blog-card-avatar" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="16" r="16" fill="#E4E4E7"/><circle cx="16" cy="12" r="6" fill="#D4D4D8"/><ellipse cx="16" cy="28" rx="10" ry="6" fill="#D4D4D8"/></svg><span class="blog-card-author-name">Murad</span></div><span class="blog-card-read">Read <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 19. PODCAST & TOOLS -->
+  <section class="section">
+    <span class="section-num">19</span>
+      <h2 class="section-title">Podcast & Tool Cards</h2>
+    <p class="section-sub">Horizontal podcast, tool resources</p>
+    <span class="label mb-16">Podcast</span>
+    <div class="podcast-card mb-24"><div class="podcast-card-img"><div class="podcast-card-play"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M240,128a15.74,15.74,0,0,1-7.6,13.51L88.32,229.65a16,16,0,0,1-16.2.3A15.86,15.86,0,0,1,64,216.13V39.87a15.86,15.86,0,0,1,8.12-13.82,16,16,0,0,1,16.2.3L232.4,114.49A15.74,15.74,0,0,1,240,128Z"/></svg></div></div><div class="podcast-card-body"><div class="podcast-card-episode">Episode 24</div><h3 class="podcast-card-title">From 8 LPA to 24 LPA: Priya's Journey</h3><p class="podcast-card-desc">How she transformed her career in 90 days.</p><div class="podcast-card-meta"><span>45 min</span><span>Jan 3, 2026</span></div></div></div>
+    <span class="label mb-16">Tools</span>
+    <div class="tool-grid">
+      <div class="tool-card"><div class="tool-card-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="6" width="24" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><line x1="2" y1="11" x2="26" y2="11" stroke="currentColor" stroke-width="2"/><line x1="8" y1="11" x2="8" y2="22" stroke="currentColor" stroke-width="2"/><rect x="10" y="14" width="6" height="3" rx="1" fill="currentColor" opacity="0.3"/></svg></div><div class="tool-card-body"><h4 class="tool-card-title">Salary Calculator</h4><p class="tool-card-desc">Benchmark your UX salary in India.</p><span class="tool-card-tag"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"/></svg> Free Tool</span></div></div>
+      <div class="tool-card"><div class="tool-card-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 4H18L22 8V24H6V4Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M18 4V8H22" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><line x1="10" y1="12" x2="18" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="10" y1="16" x2="16" y2="16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="10" y1="20" x2="14" y2="20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div><div class="tool-card-body"><h4 class="tool-card-title">Portfolio Template</h4><p class="tool-card-desc">The structure that got mentees into FAANG.</p><span class="tool-card-tag"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"/></svg> Free Download</span></div></div>
+    </div>
+  </section>
+
+  <!-- 20. TEAM -->
+  <section class="section section-white">
+    <div class="section-inner">
+      <span class="section-num">20</span>
+      <h2 class="section-title">Team Cards</h2>
+      <p class="section-sub">Photo, name, role, social links</p>
+      <div class="team-grid">
+        <div class="team-card"><div class="team-card-photo"><svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="30" cy="22" r="14" fill="#D4D4D8"/><ellipse cx="30" cy="52" rx="20" ry="12" fill="#D4D4D8"/><circle cx="26" cy="20" r="2" fill="#A1A1AA"/><circle cx="34" cy="20" r="2" fill="#A1A1AA"/><path d="M26 26C26 26 28 29 30 29C32 29 34 26 34 26" stroke="#A1A1AA" stroke-width="1.5" stroke-linecap="round"/></svg></div><h4 class="team-card-name">Murad Shaik</h4><p class="team-card-role">Co-founder & Head of Product</p><div class="team-card-social"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z"/></svg></a><a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M214.75,211.71l-62.6-98.38,61.77-67.95a8,8,0,0,0-11.84-10.76L143.24,99.34,102.75,35.71A8,8,0,0,0,96,32H48a8,8,0,0,0-6.75,12.3l62.6,98.37-61.77,68a8,8,0,1,0,11.84,10.76l58.84-64.72,40.49,63.63A8,8,0,0,0,160,224h48a8,8,0,0,0,6.75-12.29ZM164.39,208,62.57,48h29L193.43,208Z"/></svg></a></div></div>
+        <div class="team-card"><div class="team-card-photo"><svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="30" cy="22" r="14" fill="#D4D4D8"/><ellipse cx="30" cy="52" rx="20" ry="12" fill="#D4D4D8"/><circle cx="26" cy="20" r="2" fill="#A1A1AA"/><circle cx="34" cy="20" r="2" fill="#A1A1AA"/><path d="M26 26C26 26 28 29 30 29C32 29 34 26 34 26" stroke="#A1A1AA" stroke-width="1.5" stroke-linecap="round"/><path d="M18 12C22 8 38 8 42 12" stroke="#D4D4D8" stroke-width="3" stroke-linecap="round"/></svg></div><h4 class="team-card-name">Almas Tasneem</h4><p class="team-card-role">Co-founder & CEO</p><div class="team-card-social"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z"/></svg></a></div></div>
+        <div class="team-card"><div class="team-card-photo"><svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="30" cy="22" r="14" fill="#D4D4D8"/><ellipse cx="30" cy="52" rx="20" ry="12" fill="#D4D4D8"/><circle cx="26" cy="20" r="2" fill="#A1A1AA"/><circle cx="34" cy="20" r="2" fill="#A1A1AA"/><path d="M26 26C26 26 28 29 30 29C32 29 34 26 34 26" stroke="#A1A1AA" stroke-width="1.5" stroke-linecap="round"/><rect x="22" y="16" width="16" height="6" rx="2" fill="#E4E4E7"/></svg></div><h4 class="team-card-name">Senior Mentor</h4><p class="team-card-role">UX Design Lead</p><div class="team-card-social"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z"/></svg></a></div></div>
+        <div class="team-card"><div class="team-card-photo"><svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="30" cy="22" r="14" fill="#D4D4D8"/><ellipse cx="30" cy="52" rx="20" ry="12" fill="#D4D4D8"/><circle cx="26" cy="20" r="2" fill="#A1A1AA"/><circle cx="34" cy="20" r="2" fill="#A1A1AA"/><path d="M26 26C26 26 28 29 30 29C32 29 34 26 34 26" stroke="#A1A1AA" stroke-width="1.5" stroke-linecap="round"/></svg></div><h4 class="team-card-name">Career Coach</h4><p class="team-card-role">Career Specialist</p><div class="team-card-social"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z"/></svg></a></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 21. TIMELINE -->
+  <section class="section section-dots">
+    <div class="section-inner">
+    <span class="section-num">21</span>
+      <h2 class="section-title">Timeline / Process</h2>
+    <p class="section-sub">Horizontal desktop, vertical mobile</p>
+    <div class="timeline">
+      <div class="timeline-item"><div class="timeline-dot timeline-dot-complete"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg></div><div class="timeline-content"><h4 class="timeline-title">Book Call</h4><p class="timeline-desc">Free 30-min consultation</p></div></div>
+      <div class="timeline-item"><div class="timeline-dot timeline-dot-active"><span class="timeline-num">2</span></div><div class="timeline-content"><h4 class="timeline-title">Enroll</h4><p class="timeline-desc">Get your roadmap</p></div></div>
+      <div class="timeline-item"><div class="timeline-dot"><span class="timeline-num">3</span></div><div class="timeline-content"><h4 class="timeline-title">Transform</h4><p class="timeline-desc">90-day program</p></div></div>
+      <div class="timeline-item"><div class="timeline-dot"><span class="timeline-num">4</span></div><div class="timeline-content"><h4 class="timeline-title">Land Role</h4><p class="timeline-desc">Graduate with new job</p></div></div>
+    </div>
+    </div>
+  </section>
+
+  <!-- 22. COMPARISON -->
+  <section class="section section-white">
+    <div class="section-inner">
+      <span class="section-num">22</span>
+      <h2 class="section-title">Comparison Table</h2>
+      <p class="section-sub">Feature comparison with highlights</p>
+      <div style="overflow-x:auto;"><table class="comparison-table"><thead><tr><th>Feature</th><th>Others</th><th class="comparison-highlight comparison-header-featured">XW</th></tr></thead><tbody><tr><td>1:1 Mentorship</td><td><div class="comparison-x"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></svg></div></td><td class="comparison-highlight"><div class="comparison-check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg></div></td></tr><tr><td>Portfolio Transform</td><td>Generic</td><td class="comparison-highlight">Personalized</td></tr><tr><td>Success Rate</td><td>Unknown</td><td class="comparison-highlight"><strong>95%</strong></td></tr></tbody></table></div>
+    </div>
+  </section>
+
+  <!-- 23. SOCIAL PROOF -->
+  <section class="section section-dots">
+    <div class="section-inner">
+    <span class="section-num">23</span>
+      <h2 class="section-title">Social Proof Strip</h2>
+    <p class="section-sub">Client logos, media mentions</p>
+    <div class="social-proof"><div class="social-proof-label">Our Mentees Work At</div><div class="social-proof-logos">
+      <svg width="80" height="28" viewBox="0 0 80 28" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="80" height="28" rx="4" fill="#E4E4E7"/><circle cx="18" cy="14" r="8" fill="#D4D4D8"/><rect x="30" y="10" width="40" height="8" rx="2" fill="#D4D4D8"/></svg>
+      <svg width="80" height="28" viewBox="0 0 80 28" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="80" height="28" rx="4" fill="#E4E4E7"/><rect x="10" y="8" width="12" height="12" rx="2" fill="#D4D4D8"/><rect x="28" y="10" width="42" height="8" rx="2" fill="#D4D4D8"/></svg>
+      <svg width="80" height="28" viewBox="0 0 80 28" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="80" height="28" rx="4" fill="#E4E4E7"/><path d="M15 8L25 14L15 20V8Z" fill="#D4D4D8"/><rect x="30" y="10" width="40" height="8" rx="2" fill="#D4D4D8"/></svg>
+      <svg width="80" height="28" viewBox="0 0 80 28" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="80" height="28" rx="4" fill="#E4E4E7"/><circle cx="20" cy="14" r="6" fill="#D4D4D8"/><circle cx="20" cy="14" r="3" fill="#E4E4E7"/><rect x="32" y="10" width="38" height="8" rx="2" fill="#D4D4D8"/></svg>
+      <svg width="80" height="28" viewBox="0 0 80 28" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="80" height="28" rx="4" fill="#E4E4E7"/><rect x="10" y="10" width="16" height="8" rx="1" fill="#D4D4D8"/><rect x="30" y="10" width="40" height="8" rx="2" fill="#D4D4D8"/></svg>
+      <svg width="80" height="28" viewBox="0 0 80 28" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="80" height="28" rx="4" fill="#E4E4E7"/><path d="M12 14L18 8V20L12 14Z" fill="#D4D4D8"/><path d="M24 14L18 8V20L24 14Z" fill="#D4D4D8"/><rect x="30" y="10" width="40" height="8" rx="2" fill="#D4D4D8"/></svg>
+    </div></div>
+    </div>
+  </section>
+
+  <!-- 24. STICKY CTA -->
+  <section class="section section-dark">
+    <div class="section-inner">
+      <span class="section-num" style="color:var(--accent)">24</span>
+      <h2 class="section-title">Sticky CTA Bar</h2>
+      <p class="section-sub">Mobile bottom bar</p>
+      <div class="sticky-cta"><div class="sticky-cta-text"><strong>Ready to level up?</strong> Book free call</div><button class="btn btn-primary btn-sm">Book Call</button></div>
+    </div>
+  </section>
+
+  <!-- 25. CTA BANNER -->
+  <section class="section">
+    <span class="section-num">25</span>
+      <h2 class="section-title">CTA Banner</h2>
+    <p class="section-sub">Alice X watermark</p>
+    <div class="cta-banner"><div class="cta-banner-content"><h3 class="cta-banner-title">Ready to transform your career?</h3><p class="cta-banner-text">Book a free strategy call</p></div><button class="btn btn-primary">Book Free Call <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></svg></button></div>
+  </section>
+
+  <!-- 26. FOOTER -->
+  <section class="section section-white">
+    <div class="section-inner">
+      <span class="section-num">26</span>
+      <h2 class="section-title">Footer</h2>
+      <p class="section-sub">Full footer with Alice X watermark</p>
+      <div class="footer"><div class="footer-top"><div class="footer-brand"><div class="footer-logo"><span>X</span>perience Wave</div><p class="footer-tagline">Transforming designers into senior leaders since 2022.</p></div><div><h4 class="footer-col-title">Programs</h4><ul class="footer-links"><li><a href="#">Senior Mentorship</a></li><li><a href="#">Career Transition</a></li></ul></div><div><h4 class="footer-col-title">Company</h4><ul class="footer-links"><li><a href="#">About</a></li><li><a href="#">Team</a></li></ul></div><div><h4 class="footer-col-title">Resources</h4><ul class="footer-links"><li><a href="#">Blog</a></li><li><a href="#">Tools</a></li></ul></div><div><h4 class="footer-col-title">Legal</h4><ul class="footer-links"><li><a href="#">Privacy</a></li><li><a href="#">Terms</a></li></ul></div></div><div class="footer-bottom"><span class="footer-copy">© 2026 Xperience Wave</span><div class="footer-social"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z"/></svg></a><a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"/></svg></a><a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M164.44,121.34l-48-32A8,8,0,0,0,104,96v64a8,8,0,0,0,12.44,6.66l48-32a8,8,0,0,0,0-13.32ZM120,145.05V111l25.58,17ZM234.33,69.52a24,24,0,0,0-14.49-16.4C185.56,39.88,131,40,128,40s-57.56-.12-91.84,13.12a24,24,0,0,0-14.49,16.4C19.08,79.5,16,97.74,16,128s3.08,48.5,5.67,58.48a24,24,0,0,0,14.49,16.41C69,215.56,120.4,216,127.34,216h1.32c6.94,0,58.37-.44,91.18-13.11a24,24,0,0,0,14.49-16.41c2.59-10,5.67-28.22,5.67-58.48S236.92,79.5,234.33,69.52Zm-15.49,113a8,8,0,0,1-4.77,5.49c-31.65,12.22-85.48,12-86,12H128c-.54,0-54.33.2-86-12a8,8,0,0,1-4.77-5.49C34.8,173.39,32,156.57,32,128s2.8-45.39,5.16-54.47A8,8,0,0,1,41.93,68c30.52-11.79,81.66-12,85.85-12h.27c.54,0,54.38-.18,86,12a8,8,0,0,1,4.77,5.49C221.2,82.61,224,99.43,224,128S221.2,173.39,218.84,182.47Z"/></svg></a></div></div></div>
+    </div>
+  </section>
+
+  <!-- 27. LOADING STATES -->
+  <section class="section">
+    <span class="section-num">27</span>
+      <h2 class="section-title">Loading States</h2>
+    <p class="section-sub">Skeleton screens with shimmer animation</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;">
+      <div class="skeleton-card">
+        <div style="display:flex;gap:14px;align-items:center;margin-bottom:16px;">
+          <div class="skeleton skeleton-avatar"></div>
+          <div style="flex:1;">
+            <div class="skeleton skeleton-line skeleton-med"></div>
+            <div class="skeleton skeleton-line skeleton-short"></div>
+          </div>
+        </div>
+        <div class="skeleton skeleton-block"></div>
+        <div class="skeleton skeleton-line" style="margin-top:16px;"></div>
+        <div class="skeleton skeleton-line skeleton-med"></div>
+      </div>
+      <div class="skeleton-card">
+        <div class="skeleton skeleton-block" style="height:160px;margin-bottom:16px;border-radius:var(--radius);"></div>
+        <div class="skeleton skeleton-line"></div>
+        <div class="skeleton skeleton-line skeleton-short"></div>
+        <div style="display:flex;gap:8px;margin-top:16px;">
+          <div class="skeleton" style="width:60px;height:24px;border-radius:4px;"></div>
+          <div class="skeleton" style="width:80px;height:24px;border-radius:4px;"></div>
+        </div>
+      </div>
+      <div class="skeleton-card">
+        <div style="text-align:center;padding:20px 0;">
+          <svg width="100" height="80" viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:12px;opacity:0.5;">
+            <rect x="10" y="10" width="80" height="50" rx="4" fill="#E4E4E7"/>
+            <circle cx="50" cy="35" r="12" fill="#D4D4D8"/>
+            <rect x="25" y="52" width="50" height="4" rx="2" fill="#D4D4D8"/>
+          </svg>
+          <div class="skeleton skeleton-line skeleton-med" style="margin:0 auto;"></div>
+          <div class="skeleton skeleton-line skeleton-short" style="margin:10px auto 0;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 28. ERROR & EMPTY STATES -->
+  <section class="section section-dark">
+    <div class="section-inner">
+      <span class="section-num" style="color:var(--accent)">28</span>
+      <h2 class="section-title">Error & Empty States</h2>
+      <p class="section-sub">404 page and no results</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;">
+        <div class="error-page" style="padding:32px 20px;">
+          <svg width="160" height="120" viewBox="0 0 160 120" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:20px;">
+            <rect x="30" y="30" width="100" height="70" rx="6" fill="#F4F4F5" stroke="#E4E4E7" stroke-width="2"/>
+            <circle cx="80" cy="55" r="20" fill="#E4E4E7"/>
+            <text x="80" y="62" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="800" fill="#A1A1AA">?</text>
+            <line x1="50" y1="85" x2="70" y2="85" stroke="#E4E4E7" stroke-width="3" stroke-linecap="round"/>
+            <line x1="75" y1="85" x2="110" y2="85" stroke="#E4E4E7" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="140" cy="25" r="10" fill="#DCEEFF"/>
+            <circle cx="20" cy="80" r="8" fill="rgba(255,0,35,0.1)"/>
+            <path d="M15 20L25 30M25 20L15 30" stroke="#FF0023" stroke-width="2" stroke-linecap="round"/>
+            <text x="80" y="115" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="28" font-weight="800" fill="#FF0023">404</text>
+          </svg>
+          <h3 class="error-title" style="font-size:22px;">Page Not Found</h3>
+          <p class="error-text" style="font-size:14px;margin-bottom:16px;">The page doesn't exist.</p>
+          <button class="btn btn-primary btn-sm">Go Home</button>
+        </div>
+        <div class="empty-state" style="padding:32px 20px;">
+          <svg width="120" height="100" viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:16px;">
+            <rect x="20" y="20" width="80" height="60" rx="4" fill="#F4F4F5" stroke="#E4E4E7" stroke-width="2"/>
+            <circle cx="60" cy="45" r="15" fill="#E4E4E7"/>
+            <path d="M70 55L80 65" stroke="#D4D4D8" stroke-width="4" stroke-linecap="round"/>
+            <line x1="35" y1="65" x2="55" y2="65" stroke="#E4E4E7" stroke-width="3" stroke-linecap="round"/>
+            <line x1="60" y1="65" x2="85" y2="65" stroke="#E4E4E7" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="95" cy="15" r="8" fill="#DCEEFF"/>
+            <circle cx="15" cy="70" r="5" fill="#DCEEFF"/>
+          </svg>
+          <h3 class="empty-state-title" style="font-size:16px;">No Results Found</h3>
+          <p class="empty-state-text" style="font-size:13px;margin-bottom:16px;">Try different keywords.</p>
+          <button class="btn btn-outline btn-sm">Clear Filters</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="mb-footer">
+    <h2>COMPLETE Design System — FINAL</h2>
+    <p>28 sections: Quick Reference, Colors, Typography, Buttons, Cards, Navigation, Hero Dark (Alice X 6%), Video Parallax, X Divider, Inline Illustrations, FAQ, Success Stories, Forms, Icons/Tags, Toasts, Tooltips/Dropdowns, Modal, Stats (Alice X 6%), Blog, Podcast/Tools, Team, Timeline, Comparison, Social Proof, Sticky CTA, CTA Banner, Footer, Loading States, Error/Empty States. Ready for development.</p>
+  </footer>
+
+  <script>document.querySelectorAll('.faq-q').forEach(q=>{q.addEventListener('click',()=>{const item=q.parentElement;const wasActive=item.classList.contains('active');document.querySelectorAll('.faq-item').forEach(f=>f.classList.remove('active'));if(!wasActive)item.classList.add('active')})})</script>
+</body>
+</html>

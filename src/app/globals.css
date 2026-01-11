@@ -1,26 +1,89 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* ============================================
+   XPERIENCE WAVE - Design Tokens
+   ============================================ */
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Primary */
+  --color-accent: #FF0023;
+  --color-accent-hover: #e6001f;
+  --color-accent-light: rgba(255, 0, 35, 0.08);
+  --color-accent-50: rgba(255, 0, 35, 0.5);
+  --color-accent-15: rgba(255, 0, 35, 0.15);
+  --color-accent-10: rgba(255, 0, 35, 0.1);
+  --color-accent-05: rgba(255, 0, 35, 0.05);
+
+  /* Secondary - Alice Blue */
+  --color-alice: #DCEEFF;
+  --color-alice-dark: #c5e4ff;
+  --color-alice-mid: #E8F4FF;
+  --color-alice-light: #f0f8ff;
+  --color-alice-border: #a8d4f5;
+
+  /* Neutrals */
+  --color-carbon: #18181B;
+  --color-white: #FDFDFD;
+  --color-bg: #F9F9F9;
+  --color-g50: #FAFAFA;
+  --color-g100: #F4F4F5;
+  --color-g200: #E4E4E7;
+  --color-g300: #D4D4D8;
+  --color-g400: #A1A1AA;
+  --color-g500: #71717A;
+  --color-g600: #52525B;
+  --color-g700: #3F3F46;
+
+  /* Semantic */
+  --color-success: #2FB83C;
+  --color-success-light: #EBFFEE;
+  --color-warning: #F59E0B;
+  --color-warning-light: #FEF3C7;
+
+  /* Typography */
+  --font-heading: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.12);
+  --shadow-xl: 0 24px 48px rgba(0, 0, 0, 0.16);
+
+  /* Transitions */
+  --transition-base: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: 0.15s ease;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ============================================
+   BASE STYLES
+   ============================================ */
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+  background: var(--color-bg);
+  color: var(--color-carbon);
+}
+
+/* Screen reader only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }

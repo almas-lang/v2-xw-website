@@ -15,7 +15,8 @@ export default function BeyondMentorship() {
           {/* Vivid Yellow Podcast Card */}
           <Link
             href="/resources/podcast"
-            className="group flex flex-col md:flex-row bg-white rounded-xl border border-g200 overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-amber-400/50"
+            className="group flex flex-col md:flex-row bg-white border border-g200 overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-g300"
+            style={{ borderRadius: '6px' }}
           >
             {/* Media Section */}
             <div className="relative w-full md:w-48 lg:w-56 h-44 md:h-auto flex-shrink-0 bg-gradient-to-br from-carbon via-[#1a1a1a] to-[#2a2a2a] flex items-center justify-center">
@@ -50,7 +51,7 @@ export default function BeyondMentorship() {
               <h3 className="font-heading text-lg md:text-xl font-bold text-carbon mb-2 leading-tight">
                 Vivid Yellow Podcast
               </h3>
-              <p className="font-body text-sm text-g600 mb-3 leading-relaxed">
+              <p className="font-body text-sm md:text-base text-g600 mb-3 leading-relaxed">
                 Raw conversations with extraordinary people about work, life, and the uncomfortable truths that shape both.
               </p>
               <p className="font-heading text-sm font-semibold text-carbon mb-4">
@@ -76,7 +77,8 @@ export default function BeyondMentorship() {
           {/* WaveMakers Connect Card */}
           <Link
             href="/community"
-            className="group flex flex-col md:flex-row bg-white rounded-xl border border-g200 overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-alice-border"
+            className="group flex flex-col md:flex-row bg-white border border-g200 overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-g300"
+            style={{ borderRadius: '6px' }}
           >
             {/* Media Section */}
             <div className="relative w-full md:w-48 lg:w-56 h-44 md:h-auto flex-shrink-0 bg-gradient-to-br from-alice via-alice-mid to-alice-dark flex items-center justify-center">
@@ -111,7 +113,7 @@ export default function BeyondMentorship() {
               <h3 className="font-heading text-lg md:text-xl font-bold text-carbon mb-2 leading-tight">
                 WaveMakers Connect
               </h3>
-              <p className="font-body text-sm text-g600 mb-3 leading-relaxed">
+              <p className="font-body text-sm md:text-base text-g600 mb-3 leading-relaxed">
                 Quarterly offline events for 1000+ designers, engineers, entrepreneurs.
               </p>
               <p className="font-heading text-sm font-semibold text-carbon mb-4">

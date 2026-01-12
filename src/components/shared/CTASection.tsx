@@ -1,13 +1,33 @@
 import Button from '@/components/ui/Button';
 
-const benefits = [
+const defaultBenefits = [
   "Free 45 mins-call",
   "We assess your gaps",
   "No obligations",
   "Walk away with clarity",
 ];
 
-export default function CTASection() {
+interface CTASectionProps {
+  title?: string | React.ReactNode;
+  subtitle?: string;
+  buttonText?: string;
+  buttonHref?: string;
+  benefits?: string[];
+}
+
+export default function CTASection({
+  title = (
+    <>
+      Your Senior/Lead Role Is Waiting.
+      <br />
+      Are You Ready?
+    </>
+  ),
+  subtitle = "Book a free strategy call and get clarity on what's blocking you - whether you join us or not",
+  buttonText = "Book strategy call",
+  buttonHref = "/book-call",
+  benefits = defaultBenefits,
+}: CTASectionProps) {
   return (
     <section className="relative py-20 md:py-28 overflow-hidden">
       {/* Dark gradient background */}
@@ -49,19 +69,17 @@ export default function CTASection() {
       <div className="relative z-10 max-w-[800px] mx-auto px-5 text-center">
         {/* Heading */}
         <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-          Your Senior/Lead Role Is Waiting.
-          <br />
-          Are You Ready?
+          {title}
         </h2>
 
         {/* Subtext */}
         <p className="font-body text-base md:text-lg text-g400 mb-8 max-w-[600px] mx-auto">
-          Book a free strategy call and get clarity on what&apos;s blocking you - whether you join us or not
+          {subtitle}
         </p>
 
         {/* CTA Button */}
-        <Button href="/book-call" showArrow>
-          Book strategy call
+        <Button href={buttonHref} showArrow>
+          {buttonText}
         </Button>
 
         {/* Benefits */}

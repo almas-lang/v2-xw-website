@@ -2,12 +2,22 @@
 
 import { useEffect, useRef, useState } from 'react';
 
-const companies = [
+const defaultCompanies = [
   ['JP Morgan', 'McKinsey', 'Intel', 'Deloitte', 'Accenture', 'Siemens'],
   ['Bosch', 'TCS', 'Sapient', 'Ericsson', 'Cognizant', 'Infosys'],
 ];
 
-export default function MenteesWorkAt() {
+interface MenteesWorkAtProps {
+  title?: string;
+  companies?: string[][];
+  footerText?: string;
+}
+
+export default function MenteesWorkAt({
+  title = 'Our Mentees Now Work At',
+  companies = defaultCompanies,
+  footerText = 'From global consulting firms to Fortune 500 tech companies - our mentees land roles at design-mature organizations.',
+}: MenteesWorkAtProps) {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -64,7 +74,7 @@ export default function MenteesWorkAt() {
         {/* Header */}
         <div className="text-center mb-12 md:mb-16">
           <h2 className="font-heading text-3xl md:text-4xl lg:text-[44px] font-bold text-white tracking-tight">
-            Our Mentees Now Work At
+            {title}
           </h2>
         </div>
 
@@ -124,7 +134,7 @@ export default function MenteesWorkAt() {
             />
 
             <p className="relative font-body text-sm md:text-base lg:text-lg text-white/90 text-center leading-relaxed">
-              From global consulting firms to Fortune 500 tech companies - our mentees land roles at design-mature organizations.
+              {footerText}
             </p>
           </div>
         </div>

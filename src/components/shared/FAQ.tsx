@@ -3,38 +3,26 @@
 import { useState } from 'react';
 import Button from '@/components/ui/Button';
 
-const faqs = [
-  {
-    question: "How is this different from UX courses or bootcamps?",
-    answer: "Courses teach the same curriculum to hundreds of people. We assess YOUR specific gaps and build a curated plan just for you. Plus, you get 1:1 mentorship - not just pre-recorded videos and generic feedback.",
-  },
-  {
-    question: "How long does the mentorship take?",
-    answer: "The core program is 90 days. Some mentees land roles in 5 weeks, others take 3 months. It depends on your starting point, target role, and how much effort you put in.",
-  },
-  {
-    question: "Do you guarantee I'll get a job?",
-    answer: "No one can honestly guarantee jobs - market conditions, individual effort, and timing all play a role. What we guarantee is dedicated mentorship, honest feedback, and a structured path. 80% of our mentees have achieved their career goals.",
-  },
-  {
-    question: "What if I don't achieve my goal in 90 days?",
-    answer: "We don't abandon you at day 90. We continue working together based on your progress and needs.",
-  },
-  {
-    question: "How much does it cost?",
-    answer: "Pricing depends on the program and your goals. Book a strategy call and we'll discuss what makes sense for your situation.",
-  },
-  {
-    question: "Is this online or offline?",
-    answer: "Mentorship is fully online - 1:1 video calls, clinics, reviews, and async support. You can be anywhere.",
-  },
-  {
-    question: "Why should I get this mentorship today, not tomorrow?",
-    answer: "Your next promotion cycle, your next job opening, your next opportunity - they won't wait. The sooner you fix your gaps, the sooner you're ready when the right role appears.",
-  },
-];
+export interface FAQItem {
+  question: string;
+  answer: string;
+}
 
-export default function FAQ() {
+interface FAQProps {
+  title?: string;
+  faqs: FAQItem[];
+  showCTA?: boolean;
+  ctaText?: string;
+  ctaHref?: string;
+}
+
+export default function FAQ({
+  title = 'Frequently Asked Questions (FAQs)',
+  faqs,
+  showCTA = true,
+  ctaText = 'Book strategy call',
+  ctaHref = '/book-call',
+}: FAQProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const toggleFAQ = (index: number) => {
@@ -53,7 +41,7 @@ export default function FAQ() {
       <div className="max-w-[800px] mx-auto px-5">
         {/* Header */}
         <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-carbon mb-10 md:mb-12">
-          Frequently Asked Questions (FAQs)
+          {title}
         </h2>
 
         {/* FAQ Items */}
@@ -61,11 +49,12 @@ export default function FAQ() {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className={`rounded-xl border-2 transition-all duration-300 bg-white ${
+              className={`border-2 transition-all duration-300 bg-white ${
                 openIndex === index
-                  ? 'border-alice'
-                  : 'border-transparent hover:border-alice'
+                  ? 'border-alice shadow-lg'
+                  : 'border-transparent hover:border-alice hover:shadow-lg'
               }`}
+              style={{ borderRadius: '6px' }}
             >
               <button
                 onClick={() => toggleFAQ(index)}
@@ -100,13 +89,15 @@ export default function FAQ() {
         </div>
 
         {/* Bottom CTA */}
-        <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
-          <span className="font-body text-base text-g600">Have more questions?</span>
-          <Button href="/book-call" size="sm">
-            Book strategy call
-          </Button>
-          <span className="font-body text-base text-g600">and ask us directly</span>
-        </div>
+        {showCTA && (
+          <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+            <span className="font-body text-base text-g600">Have more questions?</span>
+            <Button href={ctaHref} size="sm">
+              {ctaText}
+            </Button>
+            <span className="font-body text-base text-g600">and ask us directly</span>
+          </div>
+        )}
       </div>
     </section>
   );

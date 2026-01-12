@@ -18,7 +18,7 @@ export default function MentorshipComparison() {
           <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-carbon mb-3">
             How 1:1 Mentorship Fixes This
           </h2>
-          <p className="font-body text-lg md:text-xl text-g600">
+          <p className="font-body text-base md:text-lg text-g600">
             Everything courses get wrong, we get right.
           </p>
         </div>

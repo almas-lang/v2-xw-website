@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Button from '@/components/ui/Button';
 
 const steps = [
   {
@@ -40,7 +40,7 @@ export default function HowItWorks() {
           <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-carbon mb-3">
             How It Works
           </h2>
-          <p className="font-body text-lg md:text-xl text-g600">
+          <p className="font-body text-base md:text-lg text-g600">
             From stuck to senior &amp; leaders in 3 steps
           </p>
         </div>
@@ -103,12 +103,9 @@ export default function HowItWorks() {
 
         {/* CTA Button */}
         <div className="mt-12 md:mt-16 text-center">
-          <Link
-            href="#book-call"
-            className="inline-flex items-center justify-center px-8 py-4 bg-accent hover:bg-accent-hover text-white font-heading font-semibold text-base md:text-lg rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-accent/25 hover:-translate-y-0.5"
-          >
+          <Button href="#book-call">
             Book strategy call
-          </Link>
+          </Button>
         </div>
       </div>
     </section>

@@ -124,7 +124,21 @@ const Avatar = ({
   );
 };
 
-export default function SuccessStories() {
+interface SuccessStoriesProps {
+  title?: string;
+  subtitle?: string;
+  showCTA?: boolean;
+  ctaText?: string;
+  ctaHref?: string;
+}
+
+export default function SuccessStories({
+  title = 'Real Transformation, Real People',
+  subtitle = 'Hear from designers who made the shift',
+  showCTA = true,
+  ctaText = 'See all success stories',
+  ctaHref = '/success-stories',
+}: SuccessStoriesProps) {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -153,10 +167,10 @@ export default function SuccessStories() {
         {/* Header */}
         <div className="text-center mb-12 md:mb-16">
           <h2 className="font-heading text-3xl md:text-4xl lg:text-[44px] font-bold text-carbon tracking-tight mb-3">
-            Real Transformation, Real People
+            {title}
           </h2>
-          <p className="font-body text-lg md:text-xl text-g600">
-            Hear from designers who made the shift
+          <p className="font-body text-base md:text-lg text-g600">
+            {subtitle}
           </p>
         </div>
 
@@ -229,7 +243,7 @@ export default function SuccessStories() {
               >
                 <div
                   className="bg-white border border-g200 p-5 h-full
-                             hover:border-g300 hover:shadow-md transition-all duration-300"
+                             hover:border-g300 hover:shadow-lg transition-all duration-300"
                   style={{ borderRadius: '6px' }}
                 >
                   <h4 className="font-heading text-base font-bold text-carbon mb-2 leading-snug">
@@ -249,38 +263,40 @@ export default function SuccessStories() {
         </div>
 
         {/* CTA Link */}
-        <div
-          className="text-center transition-all duration-500 ease-out"
-          style={{
-            opacity: isVisible ? 1 : 0,
-            transitionDelay: '700ms',
-          }}
-        >
-          <Link
-            href="/success-stories"
-            className="inline-flex items-center gap-1 font-body text-base text-carbon font-medium
-                       hover:text-accent transition-colors duration-200
-                       underline underline-offset-4 decoration-1"
+        {showCTA && (
+          <div
+            className="text-center transition-all duration-500 ease-out"
+            style={{
+              opacity: isVisible ? 1 : 0,
+              transitionDelay: '700ms',
+            }}
           >
-            See all success stories
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="ml-1"
+            <Link
+              href={ctaHref}
+              className="inline-flex items-center gap-1 font-body text-base text-carbon font-medium
+                         hover:text-accent transition-colors duration-200
+                         underline underline-offset-4 decoration-1"
             >
-              <path
-                d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </Link>
-        </div>
+              {ctaText}
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="ml-1"
+              >
+                <path
+                  d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   );

@@ -46,7 +46,8 @@ export default function BlogSection() {
             <Link
               key={index}
               href={`/resources/blog/${blog.slug}`}
-              className="group bg-white rounded-xl border border-g200 overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+              className="group bg-white border border-g200 overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-g300"
+              style={{ borderRadius: '6px' }}
             >
               {/* Image */}
               <div className="relative h-[180px] md:h-[200px] bg-g100 overflow-hidden">

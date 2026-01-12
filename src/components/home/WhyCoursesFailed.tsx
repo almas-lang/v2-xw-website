@@ -79,7 +79,8 @@ export default function WhyCoursesFailed() {
           {painPoints.map((point, index) => (
             <div
               key={index}
-              className="group bg-gradient-to-br from-[#1a1a1a] via-[#141414] to-[#0f0f0f] border border-white/5 rounded-2xl p-6 md:p-8 transition-all duration-300 hover:border-white/10 hover:shadow-2xl hover:shadow-black/20"
+              className="group bg-gradient-to-br from-[#1a1a1a] via-[#141414] to-[#0f0f0f] border border-white/10 p-6 md:p-8 transition-all duration-300 hover:border-white/20 hover:shadow-xl hover:shadow-black/20"
+              style={{ borderRadius: '6px' }}
             >
               {/* Icon */}
               <div className="text-accent mb-4 transition-all duration-300 group-hover:scale-110 group-hover:drop-shadow-[0_0_12px_rgba(255,0,35,0.4)]">

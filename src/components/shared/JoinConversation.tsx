@@ -4,7 +4,11 @@ import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function JoinConversation() {
+interface JoinConversationProps {
+  heading?: string;
+}
+
+export default function JoinConversation({ heading = 'Join The Conversation' }: JoinConversationProps) {
   const [isVisible, setIsVisible] = useState(false);
   const [canHover, setCanHover] = useState(true);
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -51,7 +55,7 @@ export default function JoinConversation() {
           }}
         >
           <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-carbon">
-            Join The Conversation
+            {heading}
           </h2>
         </div>
 

@@ -7,7 +7,7 @@ import WhyCoursesFailed from "@/components/home/WhyCoursesFailed";
 import MentorshipComparison from "@/components/home/MentorshipComparison";
 import MenteesWorkAt from "@/components/shared/MenteesWorkAt";
 import SuccessStories from "@/components/shared/SuccessStories";
-import BeyondMentorship from "@/components/home/BeyondMentorship";
+import JoinConversation from "@/components/shared/JoinConversation";
 import FAQ from "@/components/shared/FAQ";
 import BlogSection from "@/components/home/BlogSection";
 import CTASection from "@/components/shared/CTASection";
@@ -55,7 +55,7 @@ export default function Home() {
       <MenteesWorkAt />
       <SuccessStories />
       <Programs />
-      <BeyondMentorship />
+      <JoinConversation heading="Beyond Mentorship" />
       <FAQ faqs={homeFaqs} />
       <BlogSection />
       <CTASection />

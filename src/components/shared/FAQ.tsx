@@ -31,14 +31,36 @@ export default function FAQ({
 
   return (
     <section
-      className="py-16 md:py-24"
+      className="py-16 md:py-24 relative overflow-hidden"
       style={{
         backgroundColor: '#F9F9F9',
         backgroundImage: 'radial-gradient(#D4D4D8 1px, transparent 1px)',
         backgroundSize: '24px 24px',
       }}
     >
-      <div className="max-w-[800px] mx-auto px-5">
+      {/* Alice blue decorative accents */}
+      <div
+        className="absolute top-0 right-0 w-[250px] h-[250px] opacity-[0.05]"
+        style={{
+          background: 'radial-gradient(circle at 100% 0%, #4A90A4 0%, transparent 70%)',
+        }}
+      />
+      <div
+        className="absolute bottom-0 left-0 w-[200px] h-[200px] opacity-[0.04]"
+        style={{
+          background: 'radial-gradient(circle at 0% 100%, #4A90A4 0%, transparent 70%)',
+        }}
+      />
+
+      {/* Decorative circles */}
+      <div className="absolute top-20 right-10 md:right-20 opacity-[0.08]">
+        <div className="w-16 h-16 md:w-20 md:h-20 rounded-full border-2" style={{ borderColor: '#4A90A4' }} />
+      </div>
+      <div className="absolute bottom-32 left-8 md:left-16 opacity-[0.06]">
+        <div className="w-10 h-10 md:w-12 md:h-12 rounded-full border" style={{ borderColor: '#4A90A4' }} />
+      </div>
+
+      <div className="relative max-w-[800px] mx-auto px-5">
         {/* Header */}
         <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-carbon mb-10 md:mb-12">
           {title}

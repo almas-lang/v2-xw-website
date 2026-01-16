@@ -1,110 +1,199 @@
+'use client';
+
+import { useEffect, useRef, useState } from 'react';
 import Button from '@/components/ui/Button';
 
 const steps = [
   {
-    number: 1,
-    title: "Book a Strategy call",
-    description:
-      "We assess where you are, where you want to go, what's blocking you, and if we will be able to help you",
+    number: '1',
+    title: "Book a Strategy Call",
+    description: "We assess where you are, where you want to go, what's blocking you, and if we can help",
   },
   {
-    number: 2,
+    number: '2',
     title: "Get Your Curated Plan",
-    description:
-      "Based on your gaps and goals, we create a personalised learning path - not a generic curriculum",
+    description: "Based on your gaps and goals, we create a personalised learning path - not a generic curriculum",
   },
   {
-    number: 3,
+    number: '3',
     title: "Achieve Your Goal",
-    description:
-      "Frequent 1:1 sessions, clinics, reviews, and support until you reach your career goal",
+    description: "Frequent 1:1 sessions, clinics, reviews, and support until you reach your career goal",
   },
 ];
 
 export default function HowItWorks() {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setIsVisible(true);
+      },
+      { threshold: 0.2 }
+    );
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section
-      className="py-16 md:py-24"
-      style={{
-        backgroundColor: '#F9F9F9',
-        backgroundImage: `
-          linear-gradient(180deg, rgba(220,238,255,0.5) 0%, rgba(220,238,255,0.1) 50%, rgba(220,238,255,0.4) 100%),
-          radial-gradient(#D4D4D8 1px, transparent 1px)
-        `,
-        backgroundSize: '100% 100%, 24px 24px',
-      }}
-    >
-      <div className="max-w-[1200px] mx-auto px-5">
+    <section ref={sectionRef} className="relative py-20 md:py-28 overflow-hidden bg-white">
+      {/* Background texture */}
+      <div className="absolute inset-0 opacity-30">
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: 'radial-gradient(circle at 1px 1px, #e5e5e5 1px, transparent 0)',
+            backgroundSize: '32px 32px',
+          }}
+        />
+      </div>
+
+      <div className="max-w-[1100px] mx-auto px-5 relative z-10">
         {/* Header */}
-        <div className="mb-12 md:mb-16">
-          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-carbon mb-3">
+        <div
+          className="text-center mb-16 md:mb-20"
+          style={{
+            opacity: isVisible ? 1 : 0,
+            transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
+            transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
+          }}
+        >
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <div className="w-8 h-[2px] bg-accent" />
+            <span className="font-body text-xs uppercase tracking-[0.2em] text-accent font-medium">The Process</span>
+            <div className="w-8 h-[2px] bg-accent" />
+          </div>
+          <h2 className="font-heading text-4xl md:text-5xl font-bold text-carbon mb-4">
             How It Works
           </h2>
-          <p className="font-body text-base md:text-lg text-g600">
-            From stuck to senior &amp; leaders in 3 steps
+          <p className="font-body text-lg text-g500">
+            From stuck to senior in 3 simple steps
           </p>
         </div>
 
-        {/* Desktop Timeline - Horizontal */}
-        <div className="hidden md:block relative">
-          {/* Horizontal connecting line */}
-          <div className="absolute top-6 left-0 right-0 h-[2px] bg-g200" />
+        {/* Steps - Desktop */}
+        <div className="hidden md:block">
+          {/* Timeline track */}
+          <div className="relative">
+            {/* Background line */}
+            <div className="absolute top-8 left-0 right-0 h-1 bg-g200 rounded-full" />
 
-          <div className="flex justify-between">
-            {steps.map((step) => (
-              <div key={step.number} className="relative flex-1 text-center px-4">
-                {/* Number Circle */}
-                <div className="relative z-10 w-12 h-12 rounded-full bg-white border-[3px] border-g300 flex items-center justify-center mx-auto mb-4">
-                  <span className="font-heading text-sm font-bold text-g500">
-                    {step.number}
-                  </span>
-                </div>
+            {/* Progress line - animated */}
+            <div
+              className="absolute top-8 left-0 h-1 bg-gradient-to-r from-accent via-accent to-alice rounded-full"
+              style={{
+                width: isVisible ? '100%' : '0%',
+                transition: 'width 1.5s cubic-bezier(0.4, 0, 0.2, 1) 0.3s',
+              }}
+            />
 
-                {/* Content */}
-                <h3 className="font-heading text-lg lg:text-xl font-semibold text-carbon mb-2">
-                  {step.title}
-                </h3>
-                <p className="font-body text-sm md:text-base text-g600 leading-relaxed max-w-[280px] mx-auto">
-                  {step.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
+            {/* Steps */}
+            <div className="relative flex justify-between">
+              {steps.map((step, index) => (
+                <div
+                  key={index}
+                  className="flex flex-col items-center text-center"
+                  style={{
+                    width: '30%',
+                    opacity: isVisible ? 1 : 0,
+                    transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+                    transition: `all 0.6s cubic-bezier(0.4, 0, 0.2, 1) ${0.4 + index * 0.2}s`,
+                  }}
+                >
+                  {/* Step circle */}
+                  <div className="relative mb-8">
+                    {/* Outer ring - animated */}
+                    <div
+                      className="absolute -inset-2 rounded-full border-2 border-accent/20"
+                      style={{
+                        transform: isVisible ? 'scale(1)' : 'scale(0)',
+                        opacity: isVisible ? 1 : 0,
+                        transition: `all 0.5s cubic-bezier(0.4, 0, 0.2, 1) ${0.6 + index * 0.2}s`,
+                      }}
+                    />
+                    {/* Main circle */}
+                    <div className="relative w-16 h-16 rounded-full bg-carbon flex items-center justify-center shadow-lg">
+                      <span className="font-heading text-2xl font-bold text-white">
+                        {step.number}
+                      </span>
+                    </div>
+                  </div>
 
-        {/* Mobile Timeline - Vertical */}
-        <div className="md:hidden relative pl-8">
-          {/* Vertical connecting line */}
-          <div className="absolute left-[11px] top-0 bottom-0 w-[2px] bg-g200" />
-
-          <div className="space-y-10">
-            {steps.map((step) => (
-              <div key={step.number} className="relative">
-                {/* Number Circle */}
-                <div className="absolute -left-8 top-0 z-10 w-6 h-6 rounded-full bg-white border-[3px] border-g300 flex items-center justify-center">
-                  <span className="font-heading text-[11px] font-bold text-g500">
-                    {step.number}
-                  </span>
-                </div>
-
-                {/* Content */}
-                <div className="pt-0">
-                  <h3 className="font-heading text-base font-semibold text-carbon mb-1">
+                  {/* Content */}
+                  <h3 className="font-heading text-xl font-bold text-carbon mb-3">
                     {step.title}
                   </h3>
-                  <p className="font-body text-sm md:text-base text-g600 leading-relaxed">
+                  <p className="font-body text-base text-g500 leading-relaxed max-w-[280px]">
                     {step.description}
                   </p>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
 
-        {/* CTA Button */}
-        <div className="mt-12 md:mt-16 text-center">
-          <Button href="#book-call">
-            Book strategy call
+        {/* Steps - Mobile */}
+        <div className="md:hidden">
+          <div className="relative">
+            {/* Vertical line */}
+            <div className="absolute left-7 top-0 bottom-0 w-0.5 bg-g200" />
+
+            {/* Animated progress line */}
+            <div
+              className="absolute left-7 top-0 w-0.5 bg-gradient-to-b from-accent to-alice"
+              style={{
+                height: isVisible ? '100%' : '0%',
+                transition: 'height 1.5s cubic-bezier(0.4, 0, 0.2, 1) 0.3s',
+              }}
+            />
+
+            <div className="space-y-10">
+              {steps.map((step, index) => (
+                <div
+                  key={index}
+                  className="relative flex gap-6"
+                  style={{
+                    opacity: isVisible ? 1 : 0,
+                    transform: isVisible ? 'translateX(0)' : 'translateX(-20px)',
+                    transition: `all 0.6s cubic-bezier(0.4, 0, 0.2, 1) ${0.3 + index * 0.15}s`,
+                  }}
+                >
+                  {/* Step circle */}
+                  <div className="relative flex-shrink-0">
+                    <div className="w-14 h-14 rounded-full bg-carbon flex items-center justify-center shadow-lg z-10 relative">
+                      <span className="font-heading text-xl font-bold text-white">
+                        {step.number}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <div className="flex-1 pt-2">
+                    <h3 className="font-heading text-lg font-bold text-carbon mb-2">
+                      {step.title}
+                    </h3>
+                    <p className="font-body text-sm text-g500 leading-relaxed">
+                      {step.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* CTA */}
+        <div
+          className="mt-16 md:mt-20 flex justify-center"
+          style={{
+            opacity: isVisible ? 1 : 0,
+            transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+            transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 1s',
+          }}
+        >
+          <Button href="/book-call" size="lg" showArrow>
+            Start with Step 1
           </Button>
         </div>
       </div>

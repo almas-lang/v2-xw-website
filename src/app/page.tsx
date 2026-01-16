@@ -1,5 +1,6 @@
 import Hero from "@/components/home/Hero";
 import Stats from "@/components/shared/Stats";
+import VideoSection from "@/components/home/VideoSection";
 import SoundFamiliar from "@/components/home/SoundFamiliar";
 import HowItWorks from "@/components/home/HowItWorks";
 import Programs from "@/components/home/Programs";
@@ -47,7 +48,8 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <Stats maxWidth="1000px" />
+      <Stats />
+      <VideoSection />
       <SoundFamiliar />
       <HowItWorks />
       <WhyCoursesFailed />

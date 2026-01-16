@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const painPoints = [
   "I've applied to 50+ jobs but barely get callbacks",
@@ -10,94 +10,232 @@ const painPoints = [
 ];
 
 const forYouPoints = [
-  "Have 2+ years experience but keep getting stuck at the same level",
-  "Tried courses, bootcamps, or certifications that didn't work",
-  "Want senior roles at product companies, not just any job",
-  "Are ready to put in the work with the right guidance",
+  { number: '01', text: "Have 2+ years experience but keep getting stuck at the same level" },
+  { number: '02', text: "Tried courses, bootcamps, or certifications that didn't work" },
+  { number: '03', text: "Want senior roles at product companies, not just any job" },
+  { number: '04', text: "Are ready to put in the work with the right guidance" },
 ];
 
 export default function SoundFamiliar() {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setIsVisible(true);
+      },
+      { threshold: 0.2 }
+    );
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
+
+  // Auto-rotate pain points
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % painPoints.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-    <section className="bg-g50 py-16 md:py-24 relative overflow-hidden">
-      <div className="max-w-[1200px] mx-auto px-5">
-        {/* Sound Familiar Section */}
-        <div className="text-center mb-12 md:mb-16">
-          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-carbon mb-8 md:mb-12">
-            Sound Familiar?
-          </h2>
+    <section ref={sectionRef} className="relative overflow-hidden">
+      {/* Top Section - Pain Points */}
+      <div className="bg-white relative">
+        {/* Diagonal stripe accent */}
+        <div
+          className="absolute top-0 right-0 w-1/3 h-full opacity-[0.03] pointer-events-none"
+          style={{
+            background: 'repeating-linear-gradient(-45deg, #FF0023, #FF0023 2px, transparent 2px, transparent 20px)',
+          }}
+        />
 
-          {/* Pain Points */}
-          <ul className="space-y-3 md:space-y-4 max-w-2xl mx-auto mb-8 text-left md:text-center">
-            {painPoints.map((point, index) => (
-              <li
-                key={index}
-                className="font-heading text-base md:text-lg lg:text-xl text-g600 transition-all duration-300 cursor-default hover:text-carbon hover:scale-[1.02]"
-                onMouseEnter={() => setHoveredIndex(index)}
-                onMouseLeave={() => setHoveredIndex(null)}
-              >
-                <span className={`inline-block transition-colors duration-300 text-accent ${hoveredIndex !== index ? 'md:text-g400' : ''}`}>
-                  •
-                </span>{' '}
-                &ldquo;{point}&rdquo;
-              </li>
-            ))}
-          </ul>
+        <div className="max-w-[1200px] mx-auto px-5 py-16 md:py-24">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            {/* Left - Title */}
+            <div
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateX(0)' : 'translateX(-30px)',
+                transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
+              }}
+            >
+              <div className="relative">
+                {/* Large background text */}
+                <span
+                  className="absolute -top-8 -left-4 font-heading text-[120px] md:text-[180px] font-black text-g100/50 leading-none select-none pointer-events-none"
+                  aria-hidden="true"
+                >
+                  ?
+                </span>
 
-          <p className="font-heading text-lg md:text-xl font-semibold text-carbon text-left md:text-center">
-            If any of these hit home, you&apos;re in the right place
-          </p>
-        </div>
-
-        {/* For You Card */}
-        <div className="relative max-w-4xl mx-auto">
-          {/* Main Dark Card */}
-          <div className="relative bg-gradient-to-br from-[#1a1a1a] via-[#111] to-[#0a0a0a] rounded-t-2xl p-8 md:p-12 overflow-hidden shadow-xl">
-            {/* Content */}
-            <div className="relative z-10">
-              <h3 className="font-heading text-xl md:text-2xl lg:text-3xl font-bold text-white text-center mb-8 md:mb-10">
-                This <span className="text-accent">mentorship</span> is for UX/UI/Product designers who
-              </h3>
-
-              <ul className="space-y-4 md:space-y-5 max-w-2xl mx-auto">
-                {forYouPoints.map((point, index) => (
-                  <li
-                    key={index}
-                    className="flex items-start gap-3 group"
-                  >
-                    {/* Animated checkmark */}
-                    <span className="flex-shrink-0 mt-0.5">
-                      <svg
-                        className="w-5 h-5 md:w-6 md:h-6 text-green-500 transition-colors duration-300"
-                        viewBox="0 0 24 24"
+                <h2 className="relative font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-carbon leading-[1.1]">
+                  Sound
+                  <br />
+                  <span className="relative">
+                    Familiar
+                    <span className="text-accent">?</span>
+                    {/* Underline */}
+                    <svg
+                      className="absolute -bottom-2 left-0 w-full h-4 text-accent/30"
+                      viewBox="0 0 200 16"
+                      preserveAspectRatio="none"
+                    >
+                      <path
+                        d="M0,12 Q40,4 80,12 T160,12 T240,12"
                         fill="none"
                         stroke="currentColor"
-                        strokeWidth="2"
-                      >
-                        <path
-                          d="M5 12l5 5L20 7"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          className="group-hover:stroke-dashoffset-0"
-                        />
-                      </svg>
-                    </span>
-                    <span className="font-body text-sm md:text-base text-g300 group-hover:text-white transition-colors duration-300">
-                      {point}
-                    </span>
-                  </li>
-                ))}
-              </ul>
+                        strokeWidth="4"
+                        strokeLinecap="round"
+                      />
+                    </svg>
+                  </span>
+                </h2>
+
+                <p className="mt-6 font-body text-lg text-g500 max-w-md">
+                  If any of these hit home, you&apos;re in the right place.
+                </p>
+              </div>
+            </div>
+
+            {/* Right - Rotating Pain Points */}
+            <div
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateX(0)' : 'translateX(30px)',
+                transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s',
+              }}
+            >
+              <div className="relative min-h-[200px] flex items-center">
+                {/* Quote mark */}
+                <span className="absolute -top-4 -left-2 md:-left-6 font-heading text-6xl md:text-8xl text-accent/20 leading-none select-none">
+                  &ldquo;
+                </span>
+
+                {/* Pain point display */}
+                <div className="relative pl-4 md:pl-8">
+                  {painPoints.map((point, index) => (
+                    <p
+                      key={index}
+                      className={`absolute top-0 left-4 md:left-8 font-heading text-xl md:text-2xl lg:text-3xl font-medium text-carbon leading-snug transition-all duration-500 ${
+                        activeIndex === index
+                          ? 'opacity-100 translate-y-0'
+                          : 'opacity-0 translate-y-4 pointer-events-none'
+                      }`}
+                    >
+                      {point}&rdquo;
+                    </p>
+                  ))}
+
+                  {/* Static placeholder for height */}
+                  <p className="font-heading text-xl md:text-2xl lg:text-3xl font-medium text-transparent leading-snug pointer-events-none" aria-hidden="true">
+                    {painPoints[0]}&rdquo;
+                  </p>
+                </div>
+
+                {/* Pagination dots */}
+                <div className="absolute -bottom-8 left-4 md:left-8 flex gap-2">
+                  {painPoints.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setActiveIndex(index)}
+                      className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                        activeIndex === index
+                          ? 'bg-accent w-6'
+                          : 'bg-g300 hover:bg-g400'
+                      }`}
+                      aria-label={`View pain point ${index + 1}`}
+                    />
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
+        </div>
+      </div>
 
-          {/* Bottom disclaimer bar */}
-          <div className="relative">
-            <div className="bg-alice rounded-b-2xl py-4 px-6 text-center">
-              <p className="font-heading text-sm md:text-base font-semibold text-carbon">
+      {/* Bottom Section - For You */}
+      <div className="relative bg-carbon overflow-hidden">
+        {/* Subtle gradient overlay */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: 'radial-gradient(ellipse 80% 60% at 50% 120%, rgba(255,0,35,0.06) 0%, transparent 60%)',
+          }}
+        />
+
+        <div className="max-w-[900px] mx-auto px-5 py-16 md:py-24 relative z-10">
+          {/* Header */}
+          <div
+            className="mb-12 md:mb-16"
+            style={{
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+              transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.3s',
+            }}
+          >
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-8 h-[2px] bg-accent" />
+              <p className="font-body text-xs uppercase tracking-[0.2em] text-accent font-medium">Who this is for</p>
+            </div>
+            <h3 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-snug">
+              This mentorship is for<br className="hidden md:block" /> UX/UI/Product designers who
+            </h3>
+          </div>
+
+          {/* For You Points - Editorial List */}
+          <div className="space-y-0">
+            {forYouPoints.map((point, index) => (
+              <div
+                key={index}
+                className="group relative"
+                style={{
+                  opacity: isVisible ? 1 : 0,
+                  transform: isVisible ? 'translateX(0)' : 'translateX(-20px)',
+                  transition: `all 0.6s cubic-bezier(0.4, 0, 0.2, 1) ${0.4 + index * 0.1}s`,
+                }}
+              >
+                {/* Top border for first item */}
+                {index === 0 && <div className="absolute top-0 left-0 right-0 h-px bg-white/10" />}
+
+                <div className="relative flex items-start gap-6 md:gap-8 py-6 md:py-8 border-b border-white/10 group-hover:border-accent/30 transition-colors">
+                  {/* Accent line on hover */}
+                  <div className="absolute left-0 top-6 bottom-6 w-[3px] bg-accent scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top rounded-full" />
+
+                  {/* Number */}
+                  <span className="font-heading text-3xl md:text-4xl font-bold text-white/10 group-hover:text-accent transition-colors duration-300 w-12 flex-shrink-0 pl-4">
+                    {point.number}
+                  </span>
+
+                  {/* Content */}
+                  <p className="font-body text-lg md:text-xl text-g300 group-hover:text-white transition-colors duration-300 flex-1">
+                    {point.text}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Disclaimer */}
+          <div
+            className="mt-12 md:mt-16"
+            style={{
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+              transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.8s',
+            }}
+          >
+            <div className="flex items-center gap-4 p-4 rounded-lg bg-white/[0.02] border border-white/5">
+              <div className="w-10 h-10 rounded-full bg-alice/10 flex items-center justify-center flex-shrink-0">
+                <svg className="w-5 h-5 text-alice" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
+              <span className="font-body text-sm md:text-base text-g400">
                 Not for designers looking for quick certificates or magic shortcuts.
-              </p>
+              </span>
             </div>
           </div>
         </div>

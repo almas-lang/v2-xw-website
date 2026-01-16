@@ -246,8 +246,8 @@ export default function WhyCoursesFailed() {
             {/* Blog card */}
             <div className="relative group">
               <Link
-                href="/blog/why-courses-dont-work"
-                className="flex flex-col sm:flex-row gap-4 md:gap-6 p-4 md:p-6 rounded-xl bg-white/[0.03] border border-white/[0.06] hover:bg-white/[0.06] hover:border-white/10 transition-all duration-300"
+                href="/resources/blogs/why-courses-dont-work"
+                className="flex flex-col sm:flex-row gap-4 md:gap-6 p-4 md:p-6 rounded-xl bg-alice/10 border border-alice/20 hover:bg-alice/15 hover:border-alice/30 transition-all duration-300"
               >
                 {/* Thumbnail placeholder */}
                 <div className="relative w-full sm:w-40 md:w-48 h-40 sm:h-32 flex-shrink-0 rounded-lg overflow-hidden bg-gradient-to-br from-g800 to-carbon">

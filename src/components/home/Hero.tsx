@@ -124,26 +124,26 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-[1300px] mx-auto px-5 md:px-8 lg:px-12">
-        <div className="min-h-screen flex flex-col justify-center pt-20 pb-10 md:pt-24 md:pb-12">
+      <div className="relative z-10 max-w-[1300px] mx-auto px-4 sm:px-5 md:px-8 lg:px-12">
+        <div className="min-h-screen flex flex-col justify-center pt-16 pb-6 sm:pt-20 sm:pb-10 md:pt-24 md:pb-12">
           <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             {/* Left column - Main content */}
             <div className="lg:col-span-7 xl:col-span-6">
               {/* Eyebrow badge */}
               <div
-                className="mb-6 md:mb-8"
+                className="mb-5 sm:mb-6 md:mb-8"
                 style={{
                   opacity: isVisible ? 1 : 0,
                   transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
                   transition: 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
                 }}
               >
-                <span className="inline-flex items-center gap-2.5 px-4 py-2 bg-white/[0.04] border border-white/10 backdrop-blur-sm rounded-full">
-                  <span className="relative flex h-2.5 w-2.5">
+                <span className="inline-flex items-center gap-2 sm:gap-2.5 px-3 sm:px-4 py-1.5 sm:py-2 bg-white/[0.04] border border-white/10 backdrop-blur-sm rounded-full">
+                  <span className="relative flex h-2 w-2 sm:h-2.5 sm:w-2.5">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75" />
-                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-accent" />
+                    <span className="relative inline-flex rounded-full h-2 w-2 sm:h-2.5 sm:w-2.5 bg-accent" />
                   </span>
-                  <span className="text-sm font-medium text-white/80">1:1 UX Design Mentorship</span>
+                  <span className="text-xs sm:text-sm font-medium text-white/80">1:1 UX Design Mentorship</span>
                 </span>
               </div>
 
@@ -157,15 +157,15 @@ export default function Hero() {
                 }}
               >
                 <h1 className="font-heading font-bold text-white leading-[1.08] tracking-tight">
-                  <span className="block text-[7vw] sm:text-[36px] md:text-[44px] lg:text-[52px] xl:text-[60px]">
+                  <span className="block text-[8vw] sm:text-[36px] md:text-[44px] lg:text-[52px] xl:text-[60px]">
                     Why Aren&apos;t You Getting
                   </span>
-                  <span className="block text-[7vw] sm:text-[36px] md:text-[44px] lg:text-[52px] xl:text-[60px] whitespace-nowrap">
+                  <span className="block text-[8vw] sm:text-[36px] md:text-[44px] lg:text-[52px] xl:text-[60px]">
                     <span className="relative inline-block">
                       <span className="text-accent">Senior &amp; Leadership</span>
                       {/* Underline accent */}
                       <svg
-                        className="absolute -bottom-1 left-0 w-full h-3 text-accent/40"
+                        className="absolute -bottom-1 left-0 w-full h-2 sm:h-3 text-accent/40"
                         viewBox="0 0 200 12"
                         preserveAspectRatio="none"
                       >
@@ -179,7 +179,7 @@ export default function Hero() {
                       </svg>
                     </span>
                   </span>
-                  <span className="block text-[7vw] sm:text-[36px] md:text-[44px] lg:text-[52px] xl:text-[60px]">
+                  <span className="block text-[8vw] sm:text-[36px] md:text-[44px] lg:text-[52px] xl:text-[60px]">
                     UX Roles{' '}
                     <span className="text-g500 font-normal italic">Yet?</span>
                   </span>
@@ -188,35 +188,35 @@ export default function Hero() {
 
               {/* Subheadline */}
               <div
-                className="mb-5 md:mb-6"
+                className="mb-4 sm:mb-5 md:mb-6"
                 style={{
                   opacity: isVisible ? 1 : 0,
                   transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
                   transition: 'all 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.2s',
                 }}
               >
-                <p className="font-body text-lg md:text-xl lg:text-2xl text-white/90 leading-relaxed max-w-[600px]">
+                <p className="font-body text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 leading-relaxed max-w-[600px]">
                   1:1 Mentorship That Fixes <span className="font-semibold">YOUR</span> Gaps, Not Generic Courses That Leave You Stuck
                 </p>
               </div>
 
               {/* Target audience */}
               <div
-                className="mb-8 md:mb-10"
+                className="mb-6 sm:mb-8 md:mb-10"
                 style={{
                   opacity: isVisible ? 1 : 0,
                   transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
                   transition: 'all 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.25s',
                 }}
               >
-                <p className="font-body text-base md:text-lg text-alice leading-relaxed max-w-[580px]">
+                <p className="font-body text-sm sm:text-base md:text-lg text-alice leading-relaxed max-w-[580px]">
                   For UX/UI/Product designers with 2+ years experience who are ready to grow but keep getting stuck at the same level
                 </p>
               </div>
 
               {/* CTA */}
               <div
-                className="mb-10 md:mb-12"
+                className="mb-8 sm:mb-10 md:mb-12"
                 style={{
                   opacity: isVisible ? 1 : 0,
                   transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
@@ -236,35 +236,35 @@ export default function Hero() {
                   transition: 'all 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.4s',
                 }}
               >
-                <div className="flex items-center gap-4 md:gap-6">
+                <div className="flex flex-wrap items-center gap-3 sm:gap-4 md:gap-6">
                   <div className="flex items-center gap-2">
                     {/* Overlapping avatars */}
                     <div className="flex -space-x-2">
                       {[1, 2, 3, 4].map((i) => (
                         <div
                           key={i}
-                          className="w-7 h-7 md:w-8 md:h-8 rounded-full bg-gradient-to-br from-g600 to-g700 border-2 border-carbon flex items-center justify-center text-[10px] md:text-xs font-medium text-white/60"
+                          className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 rounded-full bg-gradient-to-br from-g600 to-g700 border-2 border-carbon flex items-center justify-center text-[9px] sm:text-[10px] md:text-xs font-medium text-white/60"
                         >
                           {['AT', 'SM', 'RK', 'PS'][i - 1]}
                         </div>
                       ))}
                     </div>
-                    <div className="text-xs md:text-sm">
+                    <div className="text-xs sm:text-sm">
                       <span className="text-white font-semibold">140+</span>
                       <span className="text-g500 ml-1">mentored</span>
                     </div>
                   </div>
 
-                  <div className="w-px h-6 bg-white/10" />
+                  <div className="hidden sm:block w-px h-6 bg-white/10" />
 
-                  <div className="flex items-center gap-1.5 text-xs md:text-sm whitespace-nowrap">
+                  <div className="flex items-center gap-1.5 text-xs sm:text-sm">
                     <span className="text-accent font-bold">80%</span>
                     <span className="text-g500">achieved goals</span>
                   </div>
 
-                  <div className="w-px h-6 bg-white/10" />
+                  <div className="hidden md:block w-px h-6 bg-white/10" />
 
-                  <div className="flex items-center gap-1.5 text-xs md:text-sm whitespace-nowrap">
+                  <div className="hidden md:flex items-center gap-1.5 text-xs md:text-sm">
                     <svg className="w-3.5 h-3.5 md:w-4 md:h-4 text-alice flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                     </svg>

@@ -3,41 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-
-// ============================================
-// DATA - SEO OPTIMIZED CONTENT
-// ============================================
-
-const blogs = [
-  {
-    title: 'AI-First Design: What Senior UX Designers Need',
-    excerpt:
-      'Learn how to transform your UX portfolio from a visual showcase into a strategic narrative that lands senior roles.',
-    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80',
-    readTime: '6 mins read',
-    date: '01 Dec 2024',
-    slug: 'ai-first-design-senior-ux',
-    featured: true,
-  },
-  {
-    title: 'Transitioning from Designer to Design Leader',
-    excerpt:
-      'Moving into design leadership requires more than just great design skills. Learn the mindset shifts needed.',
-    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80',
-    readTime: '6 mins read',
-    date: '01 Dec 2024',
-    slug: 'designer-to-design-leader',
-  },
-  {
-    title: "Why UX Courses Don't Get You Senior Roles",
-    excerpt:
-      'Discover why certificates and courses alone won\'t land you that senior position, and what actually works.',
-    image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&q=80',
-    readTime: '6 mins read',
-    date: '01 Dec 2024',
-    slug: 'why-courses-dont-work',
-  },
-];
+import { getHomepageBlogs, formatDate } from '@/data/blogPosts';
 
 // ============================================
 // COMPONENT
@@ -58,6 +24,7 @@ export default function BlogSection() {
     return () => observer.disconnect();
   }, []);
 
+  const blogs = getHomepageBlogs();
   const featuredBlog = blogs.find(b => b.featured);
   const otherBlogs = blogs.filter(b => !b.featured);
 
@@ -99,7 +66,7 @@ export default function BlogSection() {
                 From Our Blog
               </h2>
               <Link
-                href="/resources/blog"
+                href="/resources/blogs"
                 className="hidden sm:inline-flex items-center gap-2 font-heading font-semibold text-sm text-carbon hover:text-accent transition-colors"
               >
                 See All Wave Blogs
@@ -115,7 +82,7 @@ export default function BlogSection() {
             {/* Featured Blog - Large Card */}
             {featuredBlog && (
               <Link
-                href={`/resources/blog/${featuredBlog.slug}`}
+                href={`/resources/blogs/${featuredBlog.slug}`}
                 className="lg:col-span-7 group block"
                 style={{
                   opacity: isVisible ? 1 : 0,
@@ -146,7 +113,7 @@ export default function BlogSection() {
                   {/* Content */}
                   <div className="p-5 sm:p-6 md:p-8">
                     <div className="flex items-center gap-3 mb-3 sm:mb-4">
-                      <span className="text-g400 text-xs sm:text-sm">{featuredBlog.date}</span>
+                      <span className="text-g400 text-xs sm:text-sm">{formatDate(featuredBlog.publishedAt)}</span>
                       <span className="w-1 h-1 bg-g600 rounded-full" />
                       <span className="text-g400 text-xs sm:text-sm">{featuredBlog.readTime}</span>
                     </div>
@@ -175,7 +142,7 @@ export default function BlogSection() {
               {otherBlogs.map((blog, index) => (
                 <Link
                   key={blog.slug}
-                  href={`/resources/blog/${blog.slug}`}
+                  href={`/resources/blogs/${blog.slug}`}
                   className="group block flex-1"
                   style={{
                     opacity: isVisible ? 1 : 0,
@@ -204,7 +171,7 @@ export default function BlogSection() {
                       {/* Content */}
                       <div className="flex-1 p-4 sm:p-5 flex flex-col justify-center">
                         <div className="hidden sm:flex items-center gap-2 mb-2">
-                          <span className="text-g500 text-xs">{blog.date}</span>
+                          <span className="text-g500 text-xs">{formatDate(blog.publishedAt)}</span>
                           <span className="w-1 h-1 bg-g400 rounded-full" />
                           <span className="text-g500 text-xs">{blog.readTime}</span>
                         </div>
@@ -243,7 +210,7 @@ export default function BlogSection() {
             }}
           >
             <Link
-              href="/resources/blog"
+              href="/resources/blogs"
               className="inline-flex items-center gap-2 px-6 py-3 bg-carbon text-white font-heading font-semibold text-sm rounded-lg"
             >
               See All Wave Blogs

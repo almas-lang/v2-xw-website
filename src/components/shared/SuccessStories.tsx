@@ -13,18 +13,21 @@ const featuredStories = [
     role: 'Sr. Designer',
     company: 'McKinsey & Company',
     image: '/images/testimonials/pavitra-suji.jpg',
+    video: '/images/success-stories/pavi.MP4',
   },
   {
     name: 'Ashley Alemao',
     role: 'UX Designer',
     company: 'Millipixels',
     image: '/images/testimonials/ashley-alemao.jpg',
+    video: '/images/success-stories/Ashley.mp4',
   },
   {
     name: 'Vignesh',
     role: 'Sr. UX Designer',
     company: 'Siemens',
     image: '/images/testimonials/vignesh.jpg',
+    video: null,
   },
 ];
 
@@ -33,25 +36,29 @@ const quickWins = [
     achievement: 'Lead Product designer at a German startup',
     duration: 'In 3 months',
     name: 'Kritika Singh',
-    image: '/images/testimonials/kritika-singh.jpg',
+    image: '/images/success-stories/Kritika Singh.jpeg',
+    linkedin: 'https://www.linkedin.com/in/kritikasinghchauhan/',
   },
   {
     achievement: 'Lead Designer to Principal Designer at Informatica',
     duration: 'In 4 months',
     name: 'Radhakrishna A',
-    image: '/images/testimonials/radhakrishna-a.jpg',
+    image: '/images/success-stories/Radhakrishna Aekbote.jpeg',
+    linkedin: 'https://www.linkedin.com/in/radhakrishnaaekbote/',
   },
   {
     achievement: 'Sr. Designer to Design Lead at CX100',
     duration: 'In 2 months',
     name: 'Sheetal P',
-    image: '/images/testimonials/sheetal-p.jpg',
+    image: '/images/success-stories/sheetal.png',
+    linkedin: 'https://www.linkedin.com/in/sheetalpimparwar/',
   },
   {
     achievement: 'Sr. Lead Designer at Wongdoody',
     duration: 'In 2 months',
     name: 'Jonah Immanuel',
-    image: '/images/testimonials/jonah-immanuel.jpg',
+    image: '/images/success-stories/Jonah Immanuel.jpeg',
+    linkedin: 'https://www.linkedin.com/in/jonahimmanuel/',
   },
 ];
 
@@ -74,6 +81,105 @@ const PlayIcon = ({ size = 48 }: { size?: number }) => (
     />
   </svg>
 );
+
+const LinkedInIcon = ({ className = '' }: { className?: string }) => (
+  <svg
+    className={className}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+  </svg>
+);
+
+const CloseIcon = ({ className = '' }: { className?: string }) => (
+  <svg
+    className={className}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M18 6L6 18M6 6l12 12" />
+  </svg>
+);
+
+// Video Modal Component
+const VideoModal = ({
+  isOpen,
+  onClose,
+  videoSrc,
+  name,
+}: {
+  isOpen: boolean;
+  onClose: () => void;
+  videoSrc: string;
+  name: string;
+}) => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (isOpen && videoRef.current) {
+      videoRef.current.play();
+    }
+  }, [isOpen]);
+
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    if (isOpen) {
+      document.addEventListener('keydown', handleEscape);
+      document.body.style.overflow = 'hidden';
+    }
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen, onClose]);
+
+  if (!isOpen) return null;
+
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6"
+      onClick={onClose}
+    >
+      {/* Backdrop */}
+      <div className="absolute inset-0 bg-black/90 backdrop-blur-sm" />
+
+      {/* Modal content */}
+      <div
+        className="relative w-full max-w-4xl max-h-[90vh] rounded-2xl overflow-hidden bg-black shadow-2xl"
+        onClick={(e) => e.stopPropagation()}
+      >
+        {/* Close button */}
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+          aria-label="Close video"
+        >
+          <CloseIcon className="w-5 h-5 text-white" />
+        </button>
+
+        {/* Video */}
+        <video
+          ref={videoRef}
+          src={videoSrc}
+          controls
+          autoPlay
+          className="w-full h-full max-h-[90vh] object-contain"
+          aria-label={`Testimonial video from ${name}`}
+        >
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  );
+};
 
 const Avatar = ({
   name,
@@ -160,6 +266,7 @@ export default function SuccessStories({
 }: SuccessStoriesProps) {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [activeVideo, setActiveVideo] = useState<{ src: string; name: string } | null>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -179,6 +286,12 @@ export default function SuccessStories({
 
     return () => observer.disconnect();
   }, []);
+
+  const handleVideoClick = (video: string | null, name: string) => {
+    if (video) {
+      setActiveVideo({ src: video, name });
+    }
+  };
 
   return (
     <section
@@ -230,30 +343,43 @@ export default function SuccessStories({
             {featuredStories.map((story, index) => (
               <div
                 key={story.name}
-                className="group cursor-pointer"
+                className={`group ${story.video ? 'cursor-pointer' : 'cursor-default'}`}
+                onClick={() => handleVideoClick(story.video, story.name)}
                 style={{
                   opacity: isVisible ? 1 : 0,
                   transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
                   transition: `all 0.7s cubic-bezier(0.4, 0, 0.2, 1) ${0.1 + index * 0.1}s`,
                 }}
               >
-                <div className="relative rounded-xl sm:rounded-2xl overflow-hidden border-2 border-g200 sm:hover:border-accent/40 transition-all duration-500 sm:hover:shadow-xl shadow-md">
-                  {/* Image area */}
+                <div className={`relative rounded-xl sm:rounded-2xl overflow-hidden border-2 border-g200 transition-all duration-500 shadow-md ${story.video ? 'sm:hover:border-accent/40 sm:hover:shadow-xl' : ''}`}>
+                  {/* Image/Video area */}
                   <div className="relative aspect-[3/4] sm:aspect-[4/5] overflow-hidden">
-                    <Avatar name={story.name} image={story.image} size="large" />
+                    {story.video ? (
+                      <video
+                        src={story.video}
+                        className="absolute inset-0 w-full h-full object-cover"
+                        preload="metadata"
+                        muted
+                        playsInline
+                      />
+                    ) : (
+                      <Avatar name={story.name} image={story.image} size="large" />
+                    )}
 
                     {/* Gradient overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
 
-                    {/* Play button */}
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="transform sm:group-hover:scale-110 transition-transform duration-300">
-                        <div className="relative">
-                          <div className="absolute inset-0 rounded-full bg-white/20 animate-ping" style={{ animationDuration: '2s' }} />
-                          <PlayIcon size={48} />
+                    {/* Play button - only show if video exists */}
+                    {story.video && (
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="transform sm:group-hover:scale-110 transition-transform duration-300">
+                          <div className="relative">
+                            <div className="absolute inset-0 rounded-full bg-white/20 animate-ping" style={{ animationDuration: '2s' }} />
+                            <PlayIcon size={48} />
+                          </div>
                         </div>
                       </div>
-                    </div>
+                    )}
 
                     {/* Info overlay at bottom */}
                     <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5 md:p-6">
@@ -291,16 +417,19 @@ export default function SuccessStories({
             {/* Quick win cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
               {quickWins.map((win, index) => (
-                <div
+                <a
                   key={win.name}
-                  className="group"
+                  href={win.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group block"
                   style={{
                     opacity: isVisible ? 1 : 0,
                     transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
                     transition: `all 0.6s cubic-bezier(0.4, 0, 0.2, 1) ${0.5 + index * 0.08}s`,
                   }}
                 >
-                  <div className="relative p-4 sm:p-5 rounded-lg sm:rounded-xl border-2 border-g200 sm:hover:border-accent/40 bg-white shadow-sm sm:hover:shadow-md transition-all duration-300 h-full">
+                  <div className="relative p-4 sm:p-5 rounded-lg sm:rounded-xl border-2 border-g200 sm:hover:border-[#0A66C2]/40 bg-white shadow-sm sm:hover:shadow-md transition-all duration-300 h-full">
                     {/* Duration badge */}
                     <div className="absolute top-3 right-3 sm:top-4 sm:right-4">
                       <span className="inline-block px-2.5 py-1 text-[10px] sm:text-xs font-bold text-accent bg-accent/10 border border-accent/20 rounded-full">
@@ -313,16 +442,21 @@ export default function SuccessStories({
                       {win.achievement}
                     </h4>
 
-                    {/* Person */}
-                    <div className="flex items-center gap-3">
-                      <Avatar name={win.name} image={win.image} size="small" />
-                      <span className="font-body text-xs sm:text-sm text-g600">{win.name}</span>
+                    {/* Person with LinkedIn */}
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <Avatar name={win.name} image={win.image} size="small" />
+                        <span className="font-body text-xs sm:text-sm text-g600">{win.name}</span>
+                      </div>
+                      <div className="flex items-center gap-1.5 text-[#0A66C2] opacity-70 group-hover:opacity-100 transition-opacity">
+                        <LinkedInIcon className="w-4 h-4 sm:w-5 sm:h-5" />
+                      </div>
                     </div>
 
                     {/* Left accent line - always visible */}
                     <div className="absolute left-0 top-4 bottom-4 w-[3px] bg-accent/60 rounded-full" />
                   </div>
-                </div>
+                </a>
               ))}
             </div>
           </div>
@@ -366,6 +500,16 @@ export default function SuccessStories({
         className="absolute bottom-0 left-0 right-0 h-px"
         style={{ background: 'linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.1) 50%, transparent 100%)' }}
       />
+
+      {/* Video Modal */}
+      {activeVideo && (
+        <VideoModal
+          isOpen={!!activeVideo}
+          onClose={() => setActiveVideo(null)}
+          videoSrc={activeVideo.src}
+          name={activeVideo.name}
+        />
+      )}
     </section>
   );
 }

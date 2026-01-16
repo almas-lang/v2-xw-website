@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Large video files
+public/images/success-stories/*.mp4
+public/images/success-stories/*.MP4

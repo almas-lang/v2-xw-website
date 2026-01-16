@@ -113,8 +113,8 @@ export default function HowItWorks() {
                       }}
                     />
                     {/* Main circle */}
-                    <div className="relative w-16 h-16 rounded-full bg-carbon flex items-center justify-center shadow-lg">
-                      <span className="font-heading text-2xl font-bold text-white">
+                    <div className="relative w-16 h-16 rounded-full bg-alice flex items-center justify-center shadow-lg">
+                      <span className="font-heading text-2xl font-bold text-carbon">
                         {step.number}
                       </span>
                     </div>
@@ -161,8 +161,8 @@ export default function HowItWorks() {
                 >
                   {/* Step circle */}
                   <div className="relative flex-shrink-0">
-                    <div className="w-14 h-14 rounded-full bg-carbon flex items-center justify-center shadow-lg z-10 relative">
-                      <span className="font-heading text-xl font-bold text-white">
+                    <div className="w-14 h-14 rounded-full bg-alice flex items-center justify-center shadow-lg z-10 relative">
+                      <span className="font-heading text-xl font-bold text-carbon">
                         {step.number}
                       </span>
                     </div>

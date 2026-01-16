@@ -1,20 +1,20 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 
 const partners = [
-  { name: 'Google', tier: 'featured' },
-  { name: 'Meta', tier: 'featured' },
-  { name: 'LinkedIn', tier: 'featured' },
-  { name: 'Amazon Web Services', tier: 'featured' },
-  { name: 'Figma', tier: 'standard' },
-  { name: 'Nxuniq', tier: 'standard' },
-  { name: 'Cashfree', tier: 'standard' },
-  { name: 'Aisensy', tier: 'standard' },
-  { name: 'Brevo', tier: 'standard' },
-  { name: 'Uizard', tier: 'standard' },
-  { name: 'Wonderworks', tier: 'standard' },
-  { name: "It's Brown & Roasted", tier: 'standard' },
+  { name: 'Google', tier: 'featured', logo: '/images/logos/Google/Google_Logo_0.svg' },
+  { name: 'Meta', tier: 'featured', logo: '/images/logos/Meta/Meta_idlf4cVSsS_0.svg' },
+  { name: 'LinkedIn', tier: 'featured', logo: '/images/logos/LinkedIn/LinkedIn_Logo_0.svg' },
+  { name: 'AWS', tier: 'featured', logo: '/images/logos/Amazon Web Services/Amazon Web Services_idS5TK0MYh_0.svg' },
+  { name: 'Figma', tier: 'standard', logo: '/images/logos/Figma/Figma_Logo_0.svg' },
+  { name: 'Nxuniq', tier: 'standard', logo: '/images/logos/nxuniq.png' },
+  { name: 'Cashfree', tier: 'standard', logo: '/images/logos/Cashfree Payments/Cashfree Payments_idzBxeINHs_0.svg' },
+  { name: 'Aisensy', tier: 'standard', logo: '/images/logos/Aisensy.png' },
+  { name: 'Brevo', tier: 'standard', logo: '/images/logos/Brevo/Brevo_idgQGSgZ6E_0.svg' },
+  { name: 'Uizard', tier: 'standard', logo: '/images/logos/Uizard.png' },
+  { name: "It's Brown & Roasted", tier: 'standard', logo: '/images/logos/itsbrownandroasted.jpg' },
 ];
 
 export default function OurPartners() {
@@ -92,9 +92,20 @@ export default function OurPartners() {
               }}
             >
               <div className="flex items-center justify-center h-20 md:h-24 px-4">
-                <span className="font-heading font-bold text-base md:text-lg text-carbon/80 group-hover:text-carbon transition-colors duration-300 text-center">
-                  {partner.name}
-                </span>
+                {partner.logo ? (
+                  <Image
+                    src={partner.logo}
+                    alt={partner.name}
+                    width={120}
+                    height={40}
+                    className="object-contain"
+                    style={{ maxHeight: '36px', width: 'auto' }}
+                  />
+                ) : (
+                  <span className="font-heading font-bold text-base md:text-lg text-carbon/80 group-hover:text-carbon transition-colors duration-300 text-center">
+                    {partner.name}
+                  </span>
+                )}
               </div>
               {/* Subtle accent line on hover */}
               <div
@@ -122,12 +133,23 @@ export default function OurPartners() {
             {[...standardPartners, ...standardPartners].map((partner, index) => (
               <div
                 key={`${partner.name}-${index}`}
-                className="flex-shrink-0 px-5 py-3 bg-g50 border border-g100 hover:bg-white hover:border-g200 transition-all duration-300"
+                className="flex-shrink-0 px-5 py-3 bg-g50 border border-g100 hover:bg-white hover:border-g200 transition-all duration-300 flex items-center justify-center min-w-[120px] h-[48px]"
                 style={{ borderRadius: '10px' }}
               >
-                <span className="text-g500 hover:text-carbon text-sm font-medium whitespace-nowrap transition-colors duration-300">
-                  {partner.name}
-                </span>
+                {partner.logo ? (
+                  <Image
+                    src={partner.logo}
+                    alt={partner.name}
+                    width={100}
+                    height={28}
+                    className="object-contain"
+                    style={{ maxHeight: '24px', width: 'auto' }}
+                  />
+                ) : (
+                  <span className="text-g500 hover:text-carbon text-sm font-medium whitespace-nowrap transition-colors duration-300">
+                    {partner.name}
+                  </span>
+                )}
               </div>
             ))}
           </div>

@@ -96,7 +96,7 @@ export default function Header() {
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isDarkMode
-        ? 'bg-black/50 backdrop-blur-md border-b border-white/10'
+        ? 'bg-black/50 backdrop-blur-md border-b border-accent/60'
         : 'bg-white border-b border-g200'
     }`}>
       <nav className="max-w-[1200px] mx-auto px-5 h-14 md:h-16 flex items-center justify-between">

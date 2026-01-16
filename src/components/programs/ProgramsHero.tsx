@@ -1,7 +1,21 @@
 'use client';
 
+/**
+ * Programs Hero - Alice Blue Theme
+ * - Dark background with strong alice blue tint
+ * - Alice blue dominant gradients
+ * - Flowing wave pattern
+ * - Cool, professional, tech-forward feel
+ */
+
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Button from '@/components/ui/Button';
+
+// ============================================
+// DATA - SEO OPTIMIZED CONTENT
+// ============================================
 
 const stats = [
   { value: '3000', suffix: '+', label: 'designers consulted' },
@@ -9,120 +23,364 @@ const stats = [
   { value: '80', suffix: '%', label: 'achieved their goals' },
 ];
 
+// ============================================
+// COMPONENT
+// ============================================
+
 export default function ProgramsHero() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
   const scrollToFinder = () => {
     document.getElementById('program-finder')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
-    <section className="relative bg-gradient-to-br from-[#0a0a0a] via-[#0f0f0f] to-[#141418] pt-24 md:pt-28 pb-0 overflow-hidden">
-      {/* Subtle gradient orbs */}
+    <section className="relative overflow-hidden">
+      {/* Hero Section - ALICE BLUE THEME */}
       <div
-        className="absolute top-20 left-0 w-[500px] h-[500px] rounded-full opacity-[0.07] blur-3xl pointer-events-none"
-        style={{ background: 'radial-gradient(circle, #DCEEFF 0%, transparent 70%)' }}
-      />
-      <div
-        className="absolute bottom-0 right-0 w-[600px] h-[600px] rounded-full opacity-[0.05] blur-3xl pointer-events-none"
-        style={{ background: 'radial-gradient(circle, #FF0023 0%, transparent 70%)' }}
-      />
+        className="relative"
+        style={{
+          background: 'linear-gradient(180deg, #0a1420 0%, #0d1a28 50%, #0a1420 100%)',
+        }}
+      >
+        {/* Noise texture */}
+        <div
+          className="absolute inset-0 opacity-[0.04]"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
+          }}
+        />
 
-      <div className="max-w-[1200px] mx-auto px-5 relative z-10">
-        {/* Breadcrumb */}
-        <nav className="flex items-center gap-2 text-sm mb-8" aria-label="Breadcrumb">
-          <Link href="/" className="text-g400 hover:text-white transition-colors">
-            Home
-          </Link>
-          <span className="text-g600">&gt;</span>
-          <span className="text-white font-medium">Programs</span>
-        </nav>
+        {/* Alice blue gradient orbs - dominant */}
+        <div
+          className="absolute top-0 left-0 w-[700px] h-[700px] blur-[180px] pointer-events-none"
+          style={{ background: 'radial-gradient(ellipse, rgba(220,238,255,0.15) 0%, transparent 60%)' }}
+        />
+        <div
+          className="absolute top-1/3 right-0 w-[500px] h-[500px] blur-[150px] pointer-events-none"
+          style={{ background: 'radial-gradient(ellipse, rgba(74,144,164,0.12) 0%, transparent 60%)' }}
+        />
+        <div
+          className="absolute bottom-0 left-1/4 w-[400px] h-[400px] blur-[120px] pointer-events-none"
+          style={{ background: 'radial-gradient(ellipse, rgba(220,238,255,0.08) 0%, transparent 60%)' }}
+        />
 
-        {/* Hero Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center pb-12 md:pb-16">
-          {/* Left - Image */}
-          <div className="order-2 lg:order-1">
-            <div
-              className="relative aspect-[4/3] lg:aspect-[3/4] overflow-hidden"
-              style={{ borderRadius: '6px' }}
-            >
-              {/* Placeholder with gradient */}
-              <div className="absolute inset-0 bg-gradient-to-br from-g200 via-g100 to-g200">
-                {/* Decorative elements */}
-                <div className="absolute inset-4 border border-g300/50 rounded-lg" style={{ borderRadius: '6px' }} />
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                  <div className="w-20 h-20 rounded-full bg-white/20 flex items-center justify-center">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" className="text-g400">
-                      <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" strokeWidth="1.5" />
-                      <circle cx="8.5" cy="8.5" r="1.5" fill="currentColor" />
-                      <path d="M21 15L16 10L4 21" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-                    </svg>
-                  </div>
+        {/* Flowing wave pattern */}
+        <svg
+          className="absolute right-0 top-1/2 -translate-y-1/2 w-[600px] h-[400px] pointer-events-none opacity-[0.06]"
+          viewBox="0 0 600 400"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 200 C150 100, 300 300, 450 200 S600 100, 750 200"
+            stroke="#DCEEFF"
+            strokeWidth="2"
+            fill="none"
+          />
+          <path
+            d="M0 220 C150 120, 300 320, 450 220 S600 120, 750 220"
+            stroke="#DCEEFF"
+            strokeWidth="1.5"
+            fill="none"
+            opacity="0.6"
+          />
+          <path
+            d="M0 240 C150 140, 300 340, 450 240 S600 140, 750 240"
+            stroke="#DCEEFF"
+            strokeWidth="1"
+            fill="none"
+            opacity="0.3"
+          />
+          <path
+            d="M0 180 C150 80, 300 280, 450 180 S600 80, 750 180"
+            stroke="#4A90A4"
+            strokeWidth="1.5"
+            fill="none"
+            opacity="0.5"
+          />
+          <path
+            d="M0 160 C150 60, 300 260, 450 160 S600 60, 750 160"
+            stroke="#4A90A4"
+            strokeWidth="1"
+            fill="none"
+            opacity="0.3"
+          />
+        </svg>
+
+        {/* Subtle grid pattern */}
+        <div className="absolute inset-0 opacity-[0.02]">
+          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="heroGridBlue" width="60" height="60" patternUnits="userSpaceOnUse">
+                <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#DCEEFF" strokeWidth="0.5" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#heroGridBlue)" />
+          </svg>
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 max-w-[1300px] mx-auto px-5 md:px-8 lg:px-12 pt-16 sm:pt-20 md:pt-24 pb-14 sm:pb-18 md:pb-20">
+          {/* Breadcrumb */}
+          <nav
+            className="flex items-center gap-2 text-sm mb-8 sm:mb-10"
+            aria-label="Breadcrumb"
+            style={{
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+              transition: 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
+            }}
+          >
+            <Link href="/" className="text-alice/60 hover:text-alice transition-colors">
+              Home
+            </Link>
+            <svg className="w-4 h-4 text-alice/40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M9 18l6-6-6-6" />
+            </svg>
+            <span className="text-alice font-medium">Programs</span>
+          </nav>
+
+          {/* Two column layout */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            {/* Left column - Text content */}
+            <div className="lg:col-span-7">
+              {/* Eyebrow - Alice blue themed */}
+              <div
+                className="mb-6 sm:mb-8"
+                style={{
+                  opacity: isVisible ? 1 : 0,
+                  transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+                  transition: 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.1s',
+                }}
+              >
+                <span className="inline-flex items-center gap-2 px-4 py-2 bg-alice/10 border border-alice/20 rounded-full">
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-alice opacity-75" />
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-alice" />
+                  </span>
+                  <span className="text-xs sm:text-sm font-medium text-alice">Choose Your Path</span>
+                </span>
+              </div>
+
+              {/* H1 - Alice blue accent */}
+              <h1
+                className="font-heading text-[28px] sm:text-[36px] md:text-[44px] lg:text-[52px] font-bold text-white leading-[1.1] mb-5 sm:mb-6"
+                style={{
+                  opacity: isVisible ? 1 : 0,
+                  transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
+                  transition: 'all 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.15s',
+                }}
+              >
+                1:1{' '}
+                <span className="relative inline-block">
+                  <span className="text-alice">UX Mentorship</span>
+                  <svg
+                    className="absolute -bottom-1 left-0 w-full h-2 sm:h-3 text-alice/40"
+                    viewBox="0 0 200 12"
+                    preserveAspectRatio="none"
+                  >
+                    <path
+                      d="M0,8 Q50,0 100,8 T200,8"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                </span>{' '}
+                Programs That Actually Get You There
+              </h1>
+
+              {/* Description */}
+              <p
+                className="font-body text-base sm:text-lg md:text-xl text-g300 leading-relaxed mb-6 sm:mb-8 max-w-2xl"
+                style={{
+                  opacity: isVisible ? 1 : 0,
+                  transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
+                  transition: 'all 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.2s',
+                }}
+              >
+                Whether you&apos;re starting out, stuck at mid-level, or ready to lead. A success path built for where you are
+              </p>
+
+              {/* Highlight banner - Alice blue */}
+              <div
+                className="mb-8 sm:mb-10"
+                style={{
+                  opacity: isVisible ? 1 : 0,
+                  transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
+                  transition: 'all 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.25s',
+                }}
+              >
+                <div className="inline-flex flex-wrap items-center gap-3 sm:gap-4">
+                  {['1:1 mentorship', 'AI-first design approach', 'Support until you succeed'].map((item, i) => (
+                    <span
+                      key={i}
+                      className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 bg-alice/10 border border-alice/20 rounded-lg text-alice text-xs sm:text-sm font-medium"
+                    >
+                      <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-alice" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                        <path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                      {item}
+                    </span>
+                  ))}
                 </div>
               </div>
 
-              {/* Floating accent elements */}
-              <div className="absolute -bottom-3 -right-3 w-24 h-24 bg-accent/10 rounded-full blur-2xl" />
-              <div className="absolute -top-3 -left-3 w-16 h-16 bg-alice/20 rounded-full blur-xl" />
+              {/* CTA */}
+              <div
+                style={{
+                  opacity: isVisible ? 1 : 0,
+                  transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
+                  transition: 'all 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.3s',
+                }}
+              >
+                <Button onClick={scrollToFinder} size="lg" showArrow>
+                  Find your program
+                </Button>
+              </div>
             </div>
-          </div>
 
-          {/* Right - Content */}
-          <div className="order-1 lg:order-2">
-            <h1 className="font-heading text-[32px] md:text-[42px] lg:text-[52px] font-bold text-white leading-[1.1] mb-6">
-              1:1 <span className="text-accent">UX   Mentorship</span> Programs That Actually Get You There
-            </h1>
-
-            <p className="font-body text-base md:text-lg text-g300 leading-relaxed mb-6">
-              Whether you&apos;re starting out, stuck at mid-level, or ready to lead. A success path built for where you are
-            </p>
-
-            {/* Highlight Banner */}
-            
+            {/* Right column - Image placeholder */}
             <div
-              className="inline-block py-3 px-5 mb-8"
+              className="lg:col-span-5 hidden lg:block"
               style={{
-                borderRadius: '6px',
-                background: 'linear-gradient(90deg, rgba(220,238,255,0.1) 0%, rgba(220,238,255,0.2) 50%, rgba(220,238,255,0.1) 100%)',
-                border: '1px solid rgba(220,238,255,0.15)',
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateX(0) scale(1)' : 'translateX(40px) scale(0.95)',
+                transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.3s',
               }}
             >
-              <p className="font-heading text-sm md:text-base font-semibold text-alice">
-                1:1 mentorship. AI-first design approach.<br className="hidden sm:block" />
-                Support until you succeed
-              </p>
-            </div>
+              <div className="relative">
+                {/* Alice blue glow behind image */}
+                <div
+                  className="absolute -inset-8 blur-3xl opacity-60 pointer-events-none"
+                  style={{
+                    background: 'radial-gradient(ellipse at center, rgba(220,238,255,0.2) 0%, rgba(74,144,164,0.1) 50%, transparent 70%)',
+                  }}
+                />
 
-            <div>
-              <Button onClick={scrollToFinder} showArrow>
-                Find your program
-              </Button>
+                {/* Image container with alice blue border */}
+                <div className="relative aspect-[4/5] rounded-2xl overflow-hidden border border-alice/20 bg-gradient-to-br from-[#0d1a28] to-[#0a1420]">
+                  {/* Placeholder pattern */}
+                  <div
+                    className="absolute inset-0 opacity-30"
+                    style={{
+                      backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(220,238,255,0.15) 1px, transparent 0)',
+                      backgroundSize: '20px 20px',
+                    }}
+                  />
+
+                  {/* Corner accents - alice blue themed */}
+                  <div className="absolute top-5 left-5 w-10 h-10 border-l-2 border-t-2 border-alice/50" />
+                  <div className="absolute bottom-5 right-5 w-10 h-10 border-r-2 border-b-2 border-alice-dark/50" />
+
+                  {/* Image - uncomment and update src when ready */}
+                  {/* <Image
+                    src="/images/programs-hero.jpg"
+                    alt="UX Mentorship Programs"
+                    fill
+                    className="object-cover"
+                    priority
+                  /> */}
+
+                  {/* Gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a1420]/80 via-transparent to-transparent" />
+
+                  {/* Floating badge - alice blue themed */}
+                  <div className="absolute bottom-6 left-6 right-6 p-4 bg-alice/[0.08] backdrop-blur-md border border-alice/20 rounded-xl">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-full bg-alice/20 flex items-center justify-center">
+                        <svg className="w-5 h-5 text-alice" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                          <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      </div>
+                      <div>
+                        <div className="text-white font-semibold text-sm">Trusted by 140+ designers</div>
+                        <div className="text-alice/60 text-xs">From startups to Fortune 500</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
+        {/* Bottom border - alice blue */}
+        <div
+          className="absolute bottom-0 left-0 right-0 h-px"
+          style={{ background: 'linear-gradient(90deg, transparent 0%, rgba(220,238,255,0.3) 50%, transparent 100%)' }}
+        />
       </div>
 
-      {/* Stats Bar - Full width with X watermark */}
-      <div className="bg-carbon py-10 md:py-12 relative overflow-hidden">
-        {/* X watermark */}
-        <span className="absolute top-1/2 right-[-80px] -translate-y-1/2 font-heading font-extrabold text-[250px] md:text-[350px] text-alice/[0.06] pointer-events-none select-none"
-          aria-hidden="true"
-        >
-          X
-        </span>
+      {/* Stats Section - Alice blue accent */}
+      <div
+        className="relative overflow-hidden"
+        style={{
+          background: 'linear-gradient(180deg, #0d1a28 0%, #142432 100%)',
+        }}
+      >
+        {/* Noise texture */}
+        <div
+          className="absolute inset-0 opacity-[0.04]"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
+          }}
+        />
 
-        <div className="max-w-[1200px] mx-auto px-5 relative z-10">
-          <div className="flex flex-wrap justify-center md:justify-between gap-8 md:gap-4">
+        {/* Center glow - alice blue */}
+        <div
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[200px] blur-3xl pointer-events-none"
+          style={{ background: 'rgba(220, 238, 255, 0.1)', opacity: 0.5 }}
+        />
+
+        <div className="relative z-10 max-w-[1300px] mx-auto px-5 md:px-8 lg:px-12 py-10 md:py-14">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-0">
             {stats.map((stat, index) => (
-              <div key={index} className="flex flex-col items-center text-center">
-                <div className="font-heading text-2xl md:text-3xl font-bold text-white mb-1">
-                  {stat.value}
-                  <span className="text-accent">{stat.suffix}</span>
+              <div
+                key={index}
+                className="relative text-center px-8 md:px-12 lg:px-16 transition-all duration-700"
+                style={{
+                  opacity: isVisible ? 1 : 0,
+                  transform: isVisible ? 'translateY(0) scale(1)' : 'translateY(20px) scale(0.95)',
+                  transitionDelay: `${0.4 + index * 0.12}s`,
+                }}
+              >
+                {index < stats.length - 1 && (
+                  <div
+                    className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 w-[1px] h-12"
+                    style={{
+                      background: 'linear-gradient(180deg, transparent 0%, rgba(220,238,255,0.2) 50%, transparent 100%)',
+                    }}
+                  />
+                )}
+
+                <div className="mb-2">
+                  <span className="font-heading text-5xl md:text-6xl lg:text-7xl font-black tracking-tight text-white">
+                    {stat.value}
+                  </span>
+                  <span className="font-heading text-5xl md:text-6xl lg:text-7xl font-black tracking-tight text-alice">
+                    {stat.suffix}
+                  </span>
                 </div>
-                <p className="text-g500 text-xs md:text-sm">{stat.label}</p>
+                <span className="font-body text-sm md:text-base text-alice/60 tracking-wide uppercase">
+                  {stat.label}
+                </span>
               </div>
             ))}
           </div>
         </div>
+
+        {/* Bottom accent line - alice blue */}
+        <div
+          className="absolute bottom-0 left-0 right-0 h-[2px]"
+          style={{ background: 'linear-gradient(90deg, transparent 0%, #4A90A4 50%, transparent 100%)' }}
+        />
       </div>
     </section>
   );

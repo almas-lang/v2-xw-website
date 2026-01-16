@@ -70,11 +70,11 @@ export default function MeetMentors() {
         style={{
           background: `
             linear-gradient(135deg,
-              #0a0a0a 0%,
-              #1a1a1a 25%,
-              #0f0f0f 50%,
-              #1a1a1a 75%,
-              #0a0a0a 100%
+              #0a1420 0%,
+              #1a2836 25%,
+              #0d1a28 50%,
+              #1a2836 75%,
+              #0a1420 100%
             )
           `,
         }}
@@ -142,7 +142,7 @@ export default function MeetMentors() {
                   />
 
                   {/* Name & Role */}
-                  <h3 className="font-heading text-xl md:text-2xl font-bold text-accent mb-1 group-hover:text-alice transition-colors duration-300">
+                  <h3 className="font-heading text-xl md:text-2xl font-bold text-alice mb-1 group-hover:text-white transition-colors duration-300">
                     {mentor.name}
                   </h3>
                   <p className="font-body text-sm text-g400 mb-1">
@@ -221,7 +221,7 @@ export default function MeetMentors() {
 
                   <div className="flex-1 min-w-0">
                     {/* Name & Role */}
-                    <h3 className="font-heading text-lg md:text-xl font-bold text-accent mb-0.5 group-hover:text-alice transition-colors duration-300">
+                    <h3 className="font-heading text-lg md:text-xl font-bold text-alice mb-0.5 group-hover:text-white transition-colors duration-300">
                       {mentor.name}
                     </h3>
                     <p className="font-body text-sm text-g400 mb-0.5">
@@ -271,9 +271,9 @@ export default function MeetMentors() {
             transitionDelay: '500ms',
           }}
         >
-          <GlowContainer color="red">
+          <GlowContainer color="alice">
             <p className="font-body text-base text-g300 text-center">
-              <span className="text-accent font-semibold">+</span> clinic leads and specialists for portfolio critiques, mock interviews, and skill deep-dives
+              <span className="text-alice font-semibold">+</span> clinic leads and specialists for portfolio critiques, mock interviews, and skill deep-dives
             </p>
           </GlowContainer>
         </div>

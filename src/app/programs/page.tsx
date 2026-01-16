@@ -105,7 +105,7 @@ export default function ProgramsPage() {
       <ProgramFinder />
       <ProgramCards />
       <HowMentorshipWorks />
-      <Stats stats={programStats} maxWidth="1000px" />
+      <Stats stats={programStats} maxWidth="1200px" theme="alice" />
       <WhyMentorship />
       <MeetMentors />
       <SuccessStories />

@@ -48,10 +48,10 @@ export default function WhyMentorship() {
             </p>
 
             {/* Highlighted callout */}
-            <div className="relative pl-6 border-l-4 border-accent">
+            <div className="relative pl-6 border-l-4 border-alice-dark">
               <p className="font-heading text-xl md:text-2xl font-bold text-carbon leading-snug">
                 Mentorship is different. It's built for{' '}
-                <span className="text-accent">YOUR</span> situation.
+                <span className="text-alice-dark">YOUR</span> situation.
               </p>
             </div>
           </div>

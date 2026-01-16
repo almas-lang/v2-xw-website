@@ -4,81 +4,76 @@ import { useEffect, useRef, useState } from 'react';
 import Button from '@/components/ui/Button';
 
 // ============================================
-// WATER-THEMED ILLUSTRATIONS
+// PROGRAM ILLUSTRATIONS - Modern Abstract
 // ============================================
 
+// RIPPLE - Starting point, growth potential
+// Single point expanding into possibilities
 export const RippleIllustration = () => (
   <svg viewBox="0 0 120 120" className="w-full h-full">
     <defs>
-      <linearGradient id="rippleGradUI" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stopColor="#DCEEFF" />
-        <stop offset="100%" stopColor="#a8d4f5" />
+      <linearGradient id="rippleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stopColor="#4A90A4" />
+        <stop offset="100%" stopColor="#2D5A6B" />
       </linearGradient>
     </defs>
-    {/* Center drop point */}
-    <circle cx="60" cy="60" r="6" fill="url(#rippleGradUI)" />
-    {/* Ripple circles - expanding outward */}
-    <circle cx="60" cy="60" r="18" fill="none" stroke="#DCEEFF" strokeWidth="2" opacity="0.8" />
-    <circle cx="60" cy="60" r="32" fill="none" stroke="#DCEEFF" strokeWidth="1.5" opacity="0.6" />
-    <circle cx="60" cy="60" r="46" fill="none" stroke="#DCEEFF" strokeWidth="1" opacity="0.4" />
-    <circle cx="60" cy="60" r="58" fill="none" stroke="#DCEEFF" strokeWidth="0.5" opacity="0.2" />
-    {/* Small splash particles */}
-    <circle cx="60" cy="48" r="2" fill="#DCEEFF" opacity="0.7" />
-    <circle cx="72" cy="55" r="1.5" fill="#DCEEFF" opacity="0.5" />
-    <circle cx="48" cy="58" r="1.5" fill="#DCEEFF" opacity="0.5" />
+    {/* Background circle */}
+    <circle cx="60" cy="60" r="50" fill="#F0F7FA" />
+    {/* Concentric arcs - growth rings */}
+    <path d="M60 25 A35 35 0 0 1 95 60" fill="none" stroke="#4A90A4" strokeWidth="3" strokeLinecap="round" opacity="0.3" />
+    <path d="M60 32 A28 28 0 0 1 88 60" fill="none" stroke="#4A90A4" strokeWidth="3" strokeLinecap="round" opacity="0.5" />
+    <path d="M60 40 A20 20 0 0 1 80 60" fill="none" stroke="#4A90A4" strokeWidth="3" strokeLinecap="round" opacity="0.7" />
+    {/* Center point - the beginning */}
+    <circle cx="60" cy="60" r="8" fill="url(#rippleGrad)" />
+    {/* Arrow pointing outward - direction */}
+    <path d="M75 45 L85 35 M85 35 L78 38 M85 35 L82 42" stroke="#4A90A4" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 
+// CURRENT - Forward momentum, leveling up
+// Dynamic forward movement
 export const CurrentWaveIllustration = () => (
-  <svg viewBox="0 0 200 200" className="w-full h-full" preserveAspectRatio="xMidYMid slice">
+  <svg viewBox="0 0 120 120" className="w-full h-full">
     <defs>
-      <linearGradient id="currentGradUI" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stopColor="#DCEEFF" stopOpacity="0.9" />
-        <stop offset="50%" stopColor="#c5e4ff" stopOpacity="0.7" />
-        <stop offset="100%" stopColor="#a8d4f5" stopOpacity="0.5" />
-      </linearGradient>
-      <linearGradient id="currentGrad2UI" x1="0%" y1="100%" x2="100%" y2="0%">
-        <stop offset="0%" stopColor="#DCEEFF" stopOpacity="0.6" />
-        <stop offset="100%" stopColor="#f0f8ff" stopOpacity="0.3" />
+      <linearGradient id="currentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stopColor="#4A90A4" />
+        <stop offset="100%" stopColor="#2D5A6B" />
       </linearGradient>
     </defs>
-    <path d="M-20,100 Q30,60 80,100 T180,100 T280,100" fill="none" stroke="url(#currentGradUI)" strokeWidth="3" />
-    <path d="M-20,120 Q30,80 80,120 T180,120 T280,120" fill="none" stroke="url(#currentGradUI)" strokeWidth="2.5" strokeOpacity="0.8" />
-    <path d="M-20,140 Q30,100 80,140 T180,140 T280,140" fill="none" stroke="url(#currentGradUI)" strokeWidth="2" strokeOpacity="0.6" />
-    <path d="M0,180 Q50,130 100,150 T200,140 L200,200 L0,200 Z" fill="url(#currentGrad2UI)" />
-    <circle cx="40" cy="90" r="3" fill="#DCEEFF" opacity="0.8" />
-    <circle cx="100" cy="110" r="2" fill="#DCEEFF" opacity="0.6" />
-    <circle cx="160" cy="95" r="2.5" fill="#DCEEFF" opacity="0.7" />
-    <circle cx="70" cy="130" r="1.5" fill="#DCEEFF" opacity="0.5" />
+    {/* Background */}
+    <rect x="10" y="10" width="100" height="100" rx="12" fill="#F0F7FA" />
+    {/* Stacked bars showing progression - each higher than the last */}
+    <rect x="22" y="70" width="16" height="28" rx="3" fill="#4A90A4" opacity="0.3" />
+    <rect x="44" y="55" width="16" height="43" rx="3" fill="#4A90A4" opacity="0.5" />
+    <rect x="66" y="38" width="16" height="60" rx="3" fill="#4A90A4" opacity="0.7" />
+    <rect x="88" y="22" width="16" height="76" rx="3" fill="url(#currentGrad)" />
+    {/* Upward arrow on top */}
+    <path d="M96 18 L96 8 M96 8 L91 13 M96 8 L101 13" stroke="#2D5A6B" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 
+// TIDE - Leadership, influence, rising above
+// Elevated position with broader view
 export const TideIllustration = () => (
   <svg viewBox="0 0 120 120" className="w-full h-full">
     <defs>
-      <linearGradient id="tideGradUI" x1="0%" y1="100%" x2="0%" y2="0%">
-        <stop offset="0%" stopColor="#DCEEFF" stopOpacity="0.9" />
-        <stop offset="50%" stopColor="#c5e4ff" stopOpacity="0.6" />
-        <stop offset="100%" stopColor="#f0f8ff" stopOpacity="0.2" />
-      </linearGradient>
-      <linearGradient id="tideWaveGradUI" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" stopColor="#a8d4f5" />
-        <stop offset="50%" stopColor="#DCEEFF" />
-        <stop offset="100%" stopColor="#a8d4f5" />
+      <linearGradient id="tideGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+        <stop offset="0%" stopColor="#4A90A4" />
+        <stop offset="100%" stopColor="#2D5A6B" />
       </linearGradient>
     </defs>
-    {/* Rising tide base */}
-    <path d="M0,120 L0,70 Q30,60 60,70 T120,65 L120,120 Z" fill="url(#tideGradUI)" />
-    {/* Wave crests */}
-    <path d="M0,75 Q15,65 30,72 T60,68 T90,72 T120,68" fill="none" stroke="url(#tideWaveGradUI)" strokeWidth="2.5" strokeLinecap="round" />
-    <path d="M0,85 Q15,78 30,82 T60,78 T90,82 T120,78" fill="none" stroke="#DCEEFF" strokeWidth="1.5" strokeLinecap="round" opacity="0.6" />
-    {/* Rising arrow indicator */}
-    <path d="M60,50 L60,25" stroke="#DCEEFF" strokeWidth="2" strokeLinecap="round" opacity="0.8" />
-    <path d="M52,33 L60,25 L68,33" fill="none" stroke="#DCEEFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" opacity="0.8" />
-    {/* Spray particles */}
-    <circle cx="30" cy="58" r="2" fill="#DCEEFF" opacity="0.6" />
-    <circle cx="90" cy="55" r="1.5" fill="#DCEEFF" opacity="0.5" />
-    <circle cx="60" cy="52" r="2.5" fill="#DCEEFF" opacity="0.7" />
+    {/* Background */}
+    <circle cx="60" cy="60" r="50" fill="#F0F7FA" />
+    {/* Mountain/peak shape - leadership summit */}
+    <path d="M60 25 L90 85 L30 85 Z" fill="url(#tideGrad)" />
+    {/* Flag at the top */}
+    <line x1="60" y1="25" x2="60" y2="15" stroke="#2D5A6B" strokeWidth="2" strokeLinecap="round" />
+    <path d="M60 15 L75 22 L60 29" fill="#FF0023" />
+    {/* Smaller peaks behind - team/followers */}
+    <path d="M30 85 L45 60 L60 85" fill="#4A90A4" opacity="0.3" />
+    <path d="M60 85 L75 55 L90 85" fill="#4A90A4" opacity="0.3" />
+    {/* Base line */}
+    <line x1="20" y1="85" x2="100" y2="85" stroke="#4A90A4" strokeWidth="2" strokeLinecap="round" opacity="0.5" />
   </svg>
 );
 

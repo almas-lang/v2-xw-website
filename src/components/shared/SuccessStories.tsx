@@ -3,6 +3,10 @@
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 
+// ============================================
+// DATA - SEO OPTIMIZED CONTENT
+// ============================================
+
 const featuredStories = [
   {
     name: 'Pavitra Suji',
@@ -51,29 +55,26 @@ const quickWins = [
   },
 ];
 
-// Play button icon component
-const PlayIcon = () => (
+// ============================================
+// COMPONENTS
+// ============================================
+
+const PlayIcon = ({ size = 48 }: { size?: number }) => (
   <svg
-    width="48"
-    height="48"
+    width={size}
+    height={size}
     viewBox="0 0 48 48"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    className="drop-shadow-lg"
   >
-    <circle cx="24" cy="24" r="23" stroke="currentColor" strokeWidth="2" fill="none" />
+    <circle cx="24" cy="24" r="23" fill="rgba(255,255,255,0.15)" stroke="white" strokeWidth="2" />
     <path
-      d="M20 16.5V31.5L32 24L20 16.5Z"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      fill="none"
+      d="M20 16L32 24L20 32V16Z"
+      fill="white"
     />
   </svg>
 );
 
-// Avatar component with image support and fallback
 const Avatar = ({
   name,
   image,
@@ -81,7 +82,7 @@ const Avatar = ({
 }: {
   name: string;
   image?: string;
-  size?: 'large' | 'small'
+  size?: 'large' | 'medium' | 'small'
 }) => {
   const [imgError, setImgError] = useState(false);
   const initials = name
@@ -91,9 +92,21 @@ const Avatar = ({
     .toUpperCase()
     .slice(0, 2);
 
-  if (size === 'small') {
+  const sizeClasses = {
+    large: 'w-full h-full',
+    medium: 'w-12 h-12 sm:w-14 sm:h-14',
+    small: 'w-8 h-8 sm:w-10 sm:h-10',
+  };
+
+  const textSizes = {
+    large: 'text-5xl sm:text-6xl',
+    medium: 'text-lg sm:text-xl',
+    small: 'text-xs sm:text-sm',
+  };
+
+  if (size === 'large') {
     return (
-      <div className="w-8 h-8 rounded-full bg-g200 flex items-center justify-center flex-shrink-0 overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-g700 to-carbon overflow-hidden">
         {image && !imgError ? (
           <img
             src={image}
@@ -102,14 +115,16 @@ const Avatar = ({
             onError={() => setImgError(true)}
           />
         ) : (
-          <span className="font-heading text-xs font-semibold text-g500">{initials}</span>
+          <div className="w-full h-full flex items-center justify-center">
+            <span className={`font-heading ${textSizes[size]} font-bold text-g500`}>{initials}</span>
+          </div>
         )}
       </div>
     );
   }
 
   return (
-    <div className="absolute inset-0 bg-gradient-to-br from-g100 to-g200 flex items-center justify-center overflow-hidden">
+    <div className={`${sizeClasses[size]} rounded-full bg-gradient-to-br from-g200 to-g300 flex items-center justify-center flex-shrink-0 overflow-hidden ring-2 ring-g200`}>
       {image && !imgError ? (
         <img
           src={image}
@@ -118,11 +133,15 @@ const Avatar = ({
           onError={() => setImgError(true)}
         />
       ) : (
-        <span className="font-heading text-6xl font-bold text-g300">{initials}</span>
+        <span className={`font-heading ${textSizes[size]} font-semibold text-g500`}>{initials}</span>
       )}
     </div>
   );
 };
+
+// ============================================
+// MAIN COMPONENT
+// ============================================
 
 interface SuccessStoriesProps {
   title?: string;
@@ -162,142 +181,191 @@ export default function SuccessStories({
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-white py-16 md:py-24">
-      <div className="max-w-[1200px] mx-auto px-5">
-        {/* Header */}
-        <div className="text-center mb-12 md:mb-16">
-          <h2 className="font-heading text-3xl md:text-4xl lg:text-[44px] font-bold text-carbon tracking-tight mb-3">
-            {title}
-          </h2>
-          <p className="font-body text-base md:text-lg text-g600">
-            {subtitle}
-          </p>
-        </div>
+    <section
+      ref={sectionRef}
+      className="relative overflow-hidden bg-white"
+    >
+      {/* Subtle dot pattern */}
+      <div
+        className="absolute inset-0 opacity-40"
+        style={{
+          backgroundImage: 'radial-gradient(circle at 1px 1px, #e5e5e5 1px, transparent 0)',
+          backgroundSize: '32px 32px',
+        }}
+      />
 
-        {/* Featured Video Testimonials */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 mb-6 md:mb-8">
-          {featuredStories.map((story, index) => {
-            const delay = index * 100;
-            return (
+      {/* Accent glow - subtle */}
+      <div
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] blur-[150px] pointer-events-none"
+        style={{ background: 'radial-gradient(ellipse, rgba(220,238,255,0.4) 0%, transparent 70%)' }}
+      />
+
+      {/* Content */}
+      <div className="relative z-10 px-5 py-16 sm:py-20 md:py-24 lg:py-28">
+        <div className="max-w-[1200px] mx-auto">
+          {/* Header */}
+          <div
+            className="text-center mb-10 sm:mb-12 md:mb-16"
+            style={{
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
+              transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
+            }}
+          >
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <div className="w-8 h-[2px] bg-accent" />
+              <span className="font-body text-xs uppercase tracking-[0.2em] text-accent font-medium">Success Stories</span>
+              <div className="w-8 h-[2px] bg-accent" />
+            </div>
+            <h2 className="font-heading text-[26px] sm:text-[32px] md:text-[38px] lg:text-[44px] font-bold text-carbon leading-tight mb-3">
+              {title}
+            </h2>
+            <p className="font-body text-sm sm:text-base md:text-lg text-g500 max-w-xl mx-auto">
+              {subtitle}
+            </p>
+          </div>
+
+          {/* Featured Video Testimonials */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 mb-8 sm:mb-10 md:mb-12">
+            {featuredStories.map((story, index) => (
               <div
                 key={story.name}
-                className="group cursor-pointer transition-all duration-500 ease-out"
+                className="group cursor-pointer"
                 style={{
                   opacity: isVisible ? 1 : 0,
-                  transform: isVisible ? 'translateY(0)' : 'translateY(24px)',
-                  transitionDelay: `${delay}ms`,
+                  transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
+                  transition: `all 0.7s cubic-bezier(0.4, 0, 0.2, 1) ${0.1 + index * 0.1}s`,
                 }}
               >
-                <div
-                  className="relative bg-white border border-g200 overflow-hidden
-                             hover:border-g300 hover:shadow-lg transition-all duration-300"
-                  style={{ borderRadius: '6px' }}
-                >
-                  {/* Image/Video Thumbnail Area */}
-                  <div className="relative aspect-[4/5] bg-g100 overflow-hidden">
-                    {/* Avatar/Placeholder */}
+                <div className="relative rounded-xl sm:rounded-2xl overflow-hidden border-2 border-g200 sm:hover:border-accent/40 transition-all duration-500 sm:hover:shadow-xl shadow-md">
+                  {/* Image area */}
+                  <div className="relative aspect-[3/4] sm:aspect-[4/5] overflow-hidden">
                     <Avatar name={story.name} image={story.image} size="large" />
 
-                    {/* Play Button Overlay */}
+                    {/* Gradient overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+
+                    {/* Play button */}
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="text-carbon/70 group-hover:text-carbon group-hover:scale-110 transition-all duration-300">
-                        <PlayIcon />
+                      <div className="transform sm:group-hover:scale-110 transition-transform duration-300">
+                        <div className="relative">
+                          <div className="absolute inset-0 rounded-full bg-white/20 animate-ping" style={{ animationDuration: '2s' }} />
+                          <PlayIcon size={48} />
+                        </div>
                       </div>
                     </div>
 
-                    {/* Gradient overlay at bottom */}
-                    <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/40 to-transparent" />
-                  </div>
-
-                  {/* Info */}
-                  <div className="p-5">
-                    <h3 className="font-heading text-lg font-bold text-carbon mb-1">
-                      {story.name}
-                    </h3>
-                    <p className="font-body text-sm text-g600">
-                      {story.role}
-                    </p>
-                    <p className="font-body text-sm text-g500">
-                      {story.company}
-                    </p>
+                    {/* Info overlay at bottom */}
+                    <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5 md:p-6">
+                      <h3 className="font-heading text-base sm:text-lg md:text-xl font-bold text-white mb-1">
+                        {story.name}
+                      </h3>
+                      <p className="font-body text-sm text-white/90">
+                        {story.role}
+                      </p>
+                      <p className="font-body text-xs sm:text-sm text-white/70">
+                        {story.company}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
-            );
-          })}
-        </div>
+            ))}
+          </div>
 
-        {/* Quick Win Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 mb-10 md:mb-12">
-          {quickWins.map((win, index) => {
-            const delay = 300 + index * 100;
-            return (
-              <div
-                key={win.name}
-                className="transition-all duration-500 ease-out"
-                style={{
-                  opacity: isVisible ? 1 : 0,
-                  transform: isVisible ? 'translateY(0)' : 'translateY(24px)',
-                  transitionDelay: `${delay}ms`,
-                }}
-              >
-                <div
-                  className="bg-white border border-g200 p-5 h-full
-                             hover:border-g300 hover:shadow-lg transition-all duration-300"
-                  style={{ borderRadius: '6px' }}
-                >
-                  <h4 className="font-heading text-base font-bold text-carbon mb-2 leading-snug">
-                    {win.achievement}
-                  </h4>
-                  <p className="font-heading text-sm font-semibold text-carbon mb-4">
-                    {win.duration}
-                  </p>
-                  <div className="flex items-center gap-3">
-                    <Avatar name={win.name} image={win.image} size="small" />
-                    <span className="font-body text-sm text-g600">{win.name}</span>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-
-        {/* CTA Link */}
-        {showCTA && (
+          {/* Quick Wins Section */}
           <div
-            className="text-center transition-all duration-500 ease-out"
+            className="mb-8 sm:mb-10 md:mb-12"
             style={{
               opacity: isVisible ? 1 : 0,
-              transitionDelay: '700ms',
+              transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+              transition: 'all 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.4s',
             }}
           >
-            <Link
-              href={ctaHref}
-              className="inline-flex items-center gap-1 font-body text-base text-carbon font-medium
-                         hover:text-accent transition-colors duration-200
-                         underline underline-offset-4 decoration-1"
+            {/* Quick wins header */}
+            <div className="flex items-center gap-4 mb-6 sm:mb-8">
+              <span className="font-heading text-sm sm:text-base font-bold text-carbon uppercase tracking-wider">Quick Wins</span>
+              <div className="flex-1 h-px bg-gradient-to-r from-g300 to-transparent" />
+            </div>
+
+            {/* Quick win cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+              {quickWins.map((win, index) => (
+                <div
+                  key={win.name}
+                  className="group"
+                  style={{
+                    opacity: isVisible ? 1 : 0,
+                    transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+                    transition: `all 0.6s cubic-bezier(0.4, 0, 0.2, 1) ${0.5 + index * 0.08}s`,
+                  }}
+                >
+                  <div className="relative p-4 sm:p-5 rounded-lg sm:rounded-xl border-2 border-g200 sm:hover:border-accent/40 bg-white shadow-sm sm:hover:shadow-md transition-all duration-300 h-full">
+                    {/* Duration badge */}
+                    <div className="absolute top-3 right-3 sm:top-4 sm:right-4">
+                      <span className="inline-block px-2.5 py-1 text-[10px] sm:text-xs font-bold text-accent bg-accent/10 border border-accent/20 rounded-full">
+                        {win.duration}
+                      </span>
+                    </div>
+
+                    {/* Achievement */}
+                    <h4 className="font-heading text-sm sm:text-base font-bold text-carbon mb-4 pr-16 sm:pr-20 leading-snug">
+                      {win.achievement}
+                    </h4>
+
+                    {/* Person */}
+                    <div className="flex items-center gap-3">
+                      <Avatar name={win.name} image={win.image} size="small" />
+                      <span className="font-body text-xs sm:text-sm text-g600">{win.name}</span>
+                    </div>
+
+                    {/* Left accent line - always visible */}
+                    <div className="absolute left-0 top-4 bottom-4 w-[3px] bg-accent/60 rounded-full" />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* CTA */}
+          {showCTA && (
+            <div
+              className="text-center"
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+                transition: 'all 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.8s',
+              }}
             >
-              {ctaText}
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="ml-1"
+              <Link
+                href={ctaHref}
+                className="group inline-flex items-center gap-2 px-6 py-3 sm:px-8 sm:py-4 bg-accent sm:hover:bg-accent-hover text-white rounded-lg sm:rounded-xl shadow-md sm:hover:shadow-lg transition-all duration-300"
               >
-                <path
-                  d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12"
+                <span className="font-heading font-semibold text-sm sm:text-base">
+                  {ctaText}
+                </span>
+                <svg
+                  className="w-4 h-4 sm:w-5 sm:h-5 transform sm:group-hover:translate-x-1 transition-transform"
+                  viewBox="0 0 24 24"
+                  fill="none"
                   stroke="currentColor"
-                  strokeWidth="1.5"
+                  strokeWidth="2.5"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                />
-              </svg>
-            </Link>
-          </div>
-        )}
+                >
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </Link>
+            </div>
+          )}
+        </div>
       </div>
+
+      {/* Bottom subtle line */}
+      <div
+        className="absolute bottom-0 left-0 right-0 h-px"
+        style={{ background: 'linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.1) 50%, transparent 100%)' }}
+      />
     </section>
   );
 }

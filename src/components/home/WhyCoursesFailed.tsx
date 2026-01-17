@@ -98,7 +98,7 @@ export default function WhyCoursesFailed() {
             </div>
 
             {/* Main headline - must be smaller than h1 */}
-            <h2 className="font-heading text-[28px] sm:text-[32px] md:text-[38px] lg:text-[44px] xl:text-[52px] font-bold text-white leading-[1.1] tracking-tight">
+            <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-[1.1] tracking-tight">
               Why{' '}
               <span className="relative inline-block">
                 <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-white via-g300 to-g400">
@@ -157,7 +157,7 @@ export default function WhyCoursesFailed() {
                   </div>
 
                   <div className="relative z-10">
-                    <h3 className={`font-heading text-xl md:text-2xl font-bold mb-4 transition-colors duration-300 ${
+                    <h3 className={`font-heading text-lg md:text-xl font-bold mb-4 transition-colors duration-300 ${
                       hoveredIndex === index ? 'text-accent' : 'text-white'
                     }`}>
                       {point.title}
@@ -207,7 +207,7 @@ export default function WhyCoursesFailed() {
                   </div>
 
                   <div className="relative z-10">
-                    <h3 className={`font-heading text-xl md:text-2xl font-bold mb-4 transition-colors duration-300 ${
+                    <h3 className={`font-heading text-lg md:text-xl font-bold mb-4 transition-colors duration-300 ${
                       hoveredIndex === index + 2 ? 'text-accent' : 'text-white'
                     }`}>
                       {point.title}

@@ -55,7 +55,7 @@ export default function ProgramCards() {
       <div className="max-w-[1000px] mx-auto px-5">
         {/* Header */}
         <div className="mb-10 md:mb-14">
-          <h2 className="font-heading text-3xl md:text-4xl lg:text-[44px] font-bold text-carbon tracking-tight">
+          <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-carbon tracking-tight">
             Our Programs
           </h2>
         </div>

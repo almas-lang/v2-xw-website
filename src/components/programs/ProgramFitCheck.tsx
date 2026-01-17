@@ -151,7 +151,7 @@ export default function ProgramFitCheck({
             transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
           }}
         >
-          <h2 className="font-heading text-3xl md:text-4xl lg:text-[42px] font-bold text-carbon leading-tight">
+          <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-carbon leading-tight">
             Is {programName} Right For You?
           </h2>
         </div>

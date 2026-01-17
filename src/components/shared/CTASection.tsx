@@ -68,12 +68,12 @@ export default function CTASection({
       {/* Content */}
       <div className="relative z-10 max-w-[800px] mx-auto px-5 text-center">
         {/* Heading */}
-        <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+        <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-6 leading-tight">
           {title}
         </h2>
 
         {/* Subtext */}
-        <p className="font-body text-base md:text-lg text-g400 mb-8 max-w-[600px] mx-auto">
+        <p className="font-body text-sm md:text-base text-g400 mb-8 max-w-[600px] mx-auto">
           {subtitle}
         </p>
 

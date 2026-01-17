@@ -17,7 +17,7 @@ export default function AboutHero() {
               About Xperience Wave
             </h1>
 
-            <p className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-[1.1] mb-6 md:mb-8">
+            <p className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-6 md:mb-8">
               13+ Years Building Products for{' '}
               <span className="text-accent">Millions.</span>
             </p>

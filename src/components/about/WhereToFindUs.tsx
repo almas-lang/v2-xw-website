@@ -38,7 +38,7 @@ export default function WhereToFindUs() {
             transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
           }}
         >
-          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-carbon">
+          <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-carbon">
             Where to Find Us
           </h2>
         </div>

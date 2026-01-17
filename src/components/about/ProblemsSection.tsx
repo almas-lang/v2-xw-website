@@ -21,7 +21,7 @@ export default function ProblemsSection() {
       <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-accent/5 to-transparent" />
 
       <div className="max-w-[1100px] mx-auto px-5 relative z-10">
-        <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+        <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">
           The Problems No One Fixed
         </h2>
         <p className="text-g500 mb-12 md:mb-16 max-w-[500px]">The numbers tell the story.</p>

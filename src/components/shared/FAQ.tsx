@@ -62,7 +62,7 @@ export default function FAQ({
 
       <div className="relative max-w-[800px] mx-auto px-5">
         {/* Header */}
-        <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-carbon mb-10 md:mb-12">
+        <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-carbon mb-10 md:mb-12">
           {title}
         </h2>
 
@@ -82,7 +82,7 @@ export default function FAQ({
                 onClick={() => toggleFAQ(index)}
                 className="w-full flex items-center justify-between p-5 md:p-6 text-left"
               >
-                <span className="font-heading text-base md:text-lg font-semibold text-carbon pr-4">
+                <span className="font-heading text-lg md:text-xl font-semibold text-carbon pr-4">
                   {faq.question}
                 </span>
                 <span

@@ -105,7 +105,7 @@ export default function WhatYoullLearn({
             </span>
           </div>
 
-          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-[1.1] max-w-3xl">
+          <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4 leading-[1.1] max-w-3xl">
             What You&apos;ll Learn In{' '}
             <span style={{ color: colors.primary }}>{programName}</span>
           </h2>

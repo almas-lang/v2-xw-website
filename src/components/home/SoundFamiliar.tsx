@@ -71,7 +71,7 @@ export default function SoundFamiliar() {
                   ?
                 </span>
 
-                <h2 className="relative font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-carbon leading-[1.1]">
+                <h2 className="relative font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-carbon leading-[1.1]">
                   Sound
                   <br />
                   <span className="relative">
@@ -94,7 +94,7 @@ export default function SoundFamiliar() {
                   </span>
                 </h2>
 
-                <p className="mt-6 font-body text-lg text-g500 max-w-md">
+                <p className="mt-6 font-body text-sm md:text-base text-g500 max-w-md">
                   If any of these hit home, you&apos;re in the right place.
                 </p>
               </div>
@@ -119,7 +119,7 @@ export default function SoundFamiliar() {
                   {painPoints.map((point, index) => (
                     <p
                       key={index}
-                      className={`absolute top-0 left-4 md:left-8 font-heading text-xl md:text-2xl lg:text-3xl font-medium text-carbon leading-snug transition-all duration-500 ${
+                      className={`absolute top-0 left-4 md:left-8 font-heading text-lg md:text-xl font-medium text-carbon leading-snug transition-all duration-500 ${
                         activeIndex === index
                           ? 'opacity-100 translate-y-0'
                           : 'opacity-0 translate-y-4 pointer-events-none'
@@ -130,7 +130,7 @@ export default function SoundFamiliar() {
                   ))}
 
                   {/* Static placeholder for height */}
-                  <p className="font-heading text-xl md:text-2xl lg:text-3xl font-medium text-transparent leading-snug pointer-events-none" aria-hidden="true">
+                  <p className="font-heading text-lg md:text-xl font-medium text-transparent leading-snug pointer-events-none" aria-hidden="true">
                     {painPoints[0]}&rdquo;
                   </p>
                 </div>
@@ -180,7 +180,7 @@ export default function SoundFamiliar() {
               <div className="w-8 h-[2px] bg-accent" />
               <p className="font-body text-xs uppercase tracking-[0.2em] text-accent font-medium">Who this is for</p>
             </div>
-            <h3 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-snug">
+            <h3 className="font-heading text-lg md:text-xl font-bold text-white leading-snug">
               This mentorship is for<br className="hidden md:block" /> UX/UI/Product designers who
             </h3>
           </div>
@@ -210,7 +210,7 @@ export default function SoundFamiliar() {
                   </span>
 
                   {/* Content */}
-                  <p className="font-body text-lg md:text-xl text-g300 group-hover:text-white transition-colors duration-300 flex-1">
+                  <p className="font-body text-sm md:text-base text-g300 group-hover:text-white transition-colors duration-300 flex-1">
                     {point.text}
                   </p>
                 </div>

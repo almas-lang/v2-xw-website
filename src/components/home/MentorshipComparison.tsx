@@ -54,10 +54,10 @@ export default function MentorshipComparison() {
             <span className="font-body text-xs uppercase tracking-[0.2em] text-accent font-medium">The Difference</span>
             <div className="w-8 h-[2px] bg-accent" />
           </div>
-          <h2 className="font-heading text-[26px] sm:text-[30px] md:text-[36px] lg:text-[42px] font-bold text-carbon leading-tight mb-3">
+          <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-carbon leading-tight mb-3">
             How 1:1 Mentorship Fixes This
           </h2>
-          <p className="font-body text-base md:text-lg text-g500">
+          <p className="font-body text-sm md:text-base text-g500">
             Everything courses get wrong, we get right.
           </p>
         </div>

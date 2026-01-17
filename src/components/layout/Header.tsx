@@ -46,6 +46,21 @@ export default function Header() {
   const businessRef = useRef<HTMLLIElement>(null);
   const resourcesRef = useRef<HTMLLIElement>(null);
 
+  // Get page-aware accent color
+  const getPageAccentColor = () => {
+    // Community pages - Indigo
+    if (pathname.startsWith('/community')) return '#6366F1';
+    // Resources pages - Alice blue
+    if (pathname.startsWith('/resources')) return '#4A90A4';
+    // Program detail pages - each has its own color
+    if (pathname.includes('senior-ux-designer-mentorship')) return '#E85A4F'; // Current - coral
+    if (pathname.includes('career-transition-ux-mentorship')) return '#4A90A4'; // Ripple - teal
+    if (pathname.includes('ux-leadership-mentorship')) return '#D4A853'; // Tide - gold
+    // Default - accent red
+    return '#FF0023';
+  };
+  const pageAccent = getPageAccentColor();
+
   // Handle scroll to toggle dark/light mode
   useEffect(() => {
     const handleScroll = () => {
@@ -94,11 +109,16 @@ export default function Header() {
   }, []);
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isDarkMode
-        ? 'bg-black/50 backdrop-blur-md border-b border-accent/60'
-        : 'bg-white border-b border-g200'
-    }`}>
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-xl ${
+        isDarkMode
+          ? 'bg-carbon/80'
+          : 'bg-white/90'
+      }`}
+      style={{
+        borderBottom: `1px solid ${isDarkMode ? 'rgba(255,255,255,0.1)' : pageAccent + '30'}`
+      }}
+    >
       <nav className="max-w-[1200px] mx-auto px-5 h-14 md:h-16 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex-shrink-0" aria-label="Xperience Wave Home">
@@ -320,9 +340,12 @@ export default function Header() {
 
       {/* Mobile Menu */}
       <div
-        className={`lg:hidden bg-white border-t border-g200 transition-all overflow-hidden ${
+        className={`lg:hidden bg-white/95 backdrop-blur-xl transition-all overflow-hidden ${
           mobileMenuOpen ? 'max-h-[800px] py-4' : 'max-h-0'
         }`}
+        style={{
+          borderTop: mobileMenuOpen ? `1px solid ${pageAccent}20` : 'none'
+        }}
       >
         <ul className="px-5 space-y-4">
           {/* Home */}

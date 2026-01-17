@@ -64,7 +64,7 @@ export default function JoinOurMission() {
 
             {/* Section title */}
             <h2
-              className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 transition-all duration-700"
+              className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-6 transition-all duration-700"
               style={{
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateY(0)' : 'translateY(20px)',

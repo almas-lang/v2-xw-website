@@ -62,7 +62,7 @@ export default function BlogHero({ featuredPost }: BlogHeroProps) {
       />
 
       {/* Content */}
-      <div className="relative z-10 max-w-[1200px] mx-auto px-5 md:px-8 lg:px-12 pt-16 sm:pt-20 md:pt-24 pb-12 md:pb-16">
+      <div className="relative z-10 max-w-[1200px] mx-auto px-5 md:px-8 lg:px-12 pt-24 md:pt-28 pb-12 md:pb-16">
         {/* Breadcrumb */}
         <nav
           className="flex items-center gap-2 text-sm mb-8 sm:mb-10"
@@ -95,10 +95,10 @@ export default function BlogHero({ featuredPost }: BlogHeroProps) {
             transition: 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.1s',
           }}
         >
-          <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-4">
+          <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-4">
             The Blog
           </h1>
-          <p className="font-body text-lg md:text-xl text-g400 max-w-[600px]">
+          <p className="font-body text-base md:text-lg text-g400 max-w-[600px]">
             Insights on UX design, career growth, and industry trends from designers who&apos;ve been there
           </p>
         </div>
@@ -165,7 +165,7 @@ export default function BlogHero({ featuredPost }: BlogHeroProps) {
                     </h2>
 
                     {/* Excerpt */}
-                    <p className="font-body text-base md:text-lg text-g400 mb-6 line-clamp-3">
+                    <p className="font-body text-sm md:text-base text-g400 mb-6 line-clamp-3">
                       {featuredPost.excerpt}
                     </p>
 

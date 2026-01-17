@@ -37,7 +37,7 @@ export default function WhyMentorship() {
               transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
             }}
           >
-            <h2 className="font-heading text-3xl md:text-4xl lg:text-[44px] font-bold text-carbon tracking-tight mb-6">
+            <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-carbon tracking-tight mb-6">
               Why Mentorship, Not Courses?
             </h2>
 

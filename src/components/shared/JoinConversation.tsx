@@ -76,7 +76,7 @@ export default function JoinConversation({ heading = 'Join The Conversation' }: 
               <span className="font-body text-xs uppercase tracking-[0.2em] text-accent font-medium">Connect</span>
               <div className="w-8 h-[2px] bg-accent" />
             </div>
-            <h2 className="font-heading text-[26px] sm:text-[32px] md:text-[40px] lg:text-[48px] font-bold text-white leading-tight">
+            <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight">
               {heading}
             </h2>
           </div>

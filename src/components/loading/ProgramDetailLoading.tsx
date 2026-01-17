@@ -29,7 +29,7 @@ export default function ProgramDetailLoading({ accentColor = 'coral' }: ProgramD
     <div className="min-h-screen md:hidden">
       {/* Hero Section Skeleton - Dark */}
       <section
-        className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden"
+        className="relative pt-24 md:pt-28 pb-16 md:pb-24 overflow-hidden"
         style={{ background: 'linear-gradient(180deg, #2A2A2A 0%, #1A1A1A 100%)' }}
       >
         {/* Glow effect */}

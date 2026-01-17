@@ -106,7 +106,7 @@ export default function TheTeam() {
               Meet the team
             </span>
           </div>
-          <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-carbon leading-[1.1]">
+          <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-carbon leading-[1.1]">
             The Team
           </h2>
         </div>

@@ -125,7 +125,7 @@ export default function ProgramsHero() {
         </div>
 
         {/* Content */}
-        <div className="relative z-10 max-w-[1300px] mx-auto px-5 md:px-8 lg:px-12 pt-16 sm:pt-20 md:pt-24 pb-14 sm:pb-18 md:pb-20">
+        <div className="relative z-10 max-w-[1300px] mx-auto px-5 md:px-8 lg:px-12 pt-24 md:pt-28 pb-14 sm:pb-18 md:pb-20">
           {/* Breadcrumb */}
           <nav
             className="flex items-center gap-2 text-sm mb-8 sm:mb-10"
@@ -169,7 +169,7 @@ export default function ProgramsHero() {
 
               {/* H1 - Alice blue accent */}
               <h1
-                className="font-heading text-[28px] sm:text-[36px] md:text-[44px] lg:text-[52px] font-bold text-white leading-[1.1] mb-5 sm:mb-6"
+                className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-5 sm:mb-6"
                 style={{
                   opacity: isVisible ? 1 : 0,
                   transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
@@ -198,7 +198,7 @@ export default function ProgramsHero() {
 
               {/* Description */}
               <p
-                className="font-body text-base sm:text-lg md:text-xl text-g300 leading-relaxed mb-6 sm:mb-8 max-w-2xl"
+                className="font-body text-base md:text-lg text-g300 leading-relaxed mb-6 sm:mb-8 max-w-2xl"
                 style={{
                   opacity: isVisible ? 1 : 0,
                   transform: isVisible ? 'translateY(0)' : 'translateY(30px)',

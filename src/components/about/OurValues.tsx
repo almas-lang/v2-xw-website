@@ -63,7 +63,7 @@ export default function OurValues() {
           <span className="inline-block px-4 py-1.5 bg-white/5 border border-white/10 text-g400 text-sm font-medium mb-4" style={{ borderRadius: '100px' }}>
             What drives us
           </span>
-          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-white">
+          <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-white">
             Our Values
           </h2>
         </div>

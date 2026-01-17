@@ -41,7 +41,7 @@ export default function BuiltDifferent() {
           }}
         >
           <div className="w-12 md:w-20 h-1 bg-accent" />
-          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-carbon">
+          <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-carbon">
             Built Different
           </h2>
         </div>

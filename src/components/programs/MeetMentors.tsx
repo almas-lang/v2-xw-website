@@ -100,7 +100,7 @@ export default function MeetMentors() {
             transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
           }}
         >
-          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-3">
+          <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-white tracking-tight mb-3">
             Meet Your Core Mentors
           </h2>
           <p className="font-body text-base md:text-lg text-g400">

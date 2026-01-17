@@ -19,8 +19,8 @@ const themeConfig: Record<ThemeType, {
   primary: string;
 }> = {
   red: {
-    cardBg: 'rgba(255, 0, 35, 0.04)',
-    headerBg: 'rgba(255, 0, 35, 0.08)',
+    cardBg: '#ffffff',
+    headerBg: '#ffffff',
     buttonBg: '#FF0023',
     buttonHover: '#e6001f',
     border: '#FF0023',
@@ -28,8 +28,8 @@ const themeConfig: Record<ThemeType, {
     primary: '#FF0023',
   },
   alice: {
-    cardBg: 'rgba(220, 238, 255, 0.12)',
-    headerBg: 'rgba(220, 238, 255, 0.2)',
+    cardBg: '#ffffff',
+    headerBg: '#ffffff',
     buttonBg: '#4A90A4',
     buttonHover: '#3d7a8c',
     border: '#4A90A4',
@@ -37,8 +37,8 @@ const themeConfig: Record<ThemeType, {
     primary: '#4A90A4',
   },
   teal: {
-    cardBg: 'rgba(74, 144, 164, 0.06)',
-    headerBg: 'rgba(74, 144, 164, 0.12)',
+    cardBg: '#ffffff',
+    headerBg: '#ffffff',
     buttonBg: '#4A90A4',
     buttonHover: '#3d7a8c',
     border: '#4A90A4',
@@ -46,8 +46,8 @@ const themeConfig: Record<ThemeType, {
     primary: '#4A90A4',
   },
   coral: {
-    cardBg: 'rgba(255, 107, 107, 0.06)',
-    headerBg: 'rgba(255, 107, 107, 0.12)',
+    cardBg: '#ffffff',
+    headerBg: '#ffffff',
     buttonBg: '#FF6B6B',
     buttonHover: '#e85555',
     border: '#FF6B6B',
@@ -55,8 +55,8 @@ const themeConfig: Record<ThemeType, {
     primary: '#FF6B6B',
   },
   gold: {
-    cardBg: 'rgba(245, 158, 11, 0.06)',
-    headerBg: 'rgba(245, 158, 11, 0.12)',
+    cardBg: '#ffffff',
+    headerBg: '#ffffff',
     buttonBg: '#F59E0B',
     buttonHover: '#d97706',
     border: '#F59E0B',

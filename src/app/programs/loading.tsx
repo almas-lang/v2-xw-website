@@ -2,7 +2,7 @@ export default function ProgramsLoading() {
   return (
     <div className="min-h-screen bg-white md:hidden">
       {/* Hero Section Skeleton */}
-      <section className="relative pt-24 pb-16 md:pt-32 md:pb-20 overflow-hidden bg-g50">
+      <section className="relative pt-24 md:pt-28 pb-16 md:pb-20 overflow-hidden bg-g50">
         <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/4 w-[300px] h-[300px] md:w-[500px] md:h-[500px] rounded-full bg-alice/20 blur-3xl" />
 
         <div className="max-w-[1200px] mx-auto px-5 relative z-10">

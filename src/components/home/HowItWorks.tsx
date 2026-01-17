@@ -64,10 +64,10 @@ export default function HowItWorks() {
             <span className="font-body text-xs uppercase tracking-[0.2em] text-accent font-medium">The Process</span>
             <div className="w-8 h-[2px] bg-accent" />
           </div>
-          <h2 className="font-heading text-4xl md:text-5xl font-bold text-carbon mb-4">
+          <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-carbon mb-4">
             How It Works
           </h2>
-          <p className="font-body text-lg text-g500">
+          <p className="font-body text-sm md:text-base text-g500">
             From stuck to senior in 3 simple steps
           </p>
         </div>
@@ -121,10 +121,10 @@ export default function HowItWorks() {
                   </div>
 
                   {/* Content */}
-                  <h3 className="font-heading text-xl font-bold text-carbon mb-3">
+                  <h3 className="font-heading text-lg md:text-xl font-bold text-carbon mb-3">
                     {step.title}
                   </h3>
-                  <p className="font-body text-base text-g500 leading-relaxed max-w-[280px]">
+                  <p className="font-body text-sm md:text-base text-g500 leading-relaxed max-w-[280px]">
                     {step.description}
                   </p>
                 </div>
@@ -170,10 +170,10 @@ export default function HowItWorks() {
 
                   {/* Content */}
                   <div className="flex-1 pt-2">
-                    <h3 className="font-heading text-lg font-bold text-carbon mb-2">
+                    <h3 className="font-heading text-lg md:text-xl font-bold text-carbon mb-2">
                       {step.title}
                     </h3>
-                    <p className="font-body text-sm text-g500 leading-relaxed">
+                    <p className="font-body text-sm md:text-base text-g500 leading-relaxed">
                       {step.description}
                     </p>
                   </div>

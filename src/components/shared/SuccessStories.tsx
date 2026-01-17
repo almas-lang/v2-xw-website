@@ -330,10 +330,10 @@ export default function SuccessStories({
               <span className="font-body text-xs uppercase tracking-[0.2em] text-accent font-medium">Success Stories</span>
               <div className="w-8 h-[2px] bg-accent" />
             </div>
-            <h2 className="font-heading text-[26px] sm:text-[32px] md:text-[38px] lg:text-[44px] font-bold text-carbon leading-tight mb-3">
+            <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-carbon leading-tight mb-3">
               {title}
             </h2>
-            <p className="font-body text-sm sm:text-base md:text-lg text-g500 max-w-xl mx-auto">
+            <p className="font-body text-sm md:text-base text-g500 max-w-xl mx-auto">
               {subtitle}
             </p>
           </div>
@@ -383,7 +383,7 @@ export default function SuccessStories({
 
                     {/* Info overlay at bottom */}
                     <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5 md:p-6">
-                      <h3 className="font-heading text-base sm:text-lg md:text-xl font-bold text-white mb-1">
+                      <h3 className="font-heading text-lg md:text-xl font-bold text-white mb-1">
                         {story.name}
                       </h3>
                       <p className="font-body text-sm text-white/90">
@@ -438,7 +438,7 @@ export default function SuccessStories({
                     </div>
 
                     {/* Achievement */}
-                    <h4 className="font-heading text-sm sm:text-base font-bold text-carbon mb-4 pr-16 sm:pr-20 leading-snug">
+                    <h4 className="font-heading text-lg md:text-xl font-bold text-carbon mb-4 pr-16 sm:pr-20 leading-snug">
                       {win.achievement}
                     </h4>
 

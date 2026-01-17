@@ -104,7 +104,7 @@ export default function Certifications() {
             <div className="h-px w-8 md:w-16 bg-gradient-to-l from-transparent to-white/30" />
           </div>
 
-          <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3">
+          <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3">
             Certified by
           </h2>
           <p className="text-g500 text-sm md:text-base max-w-md mx-auto">

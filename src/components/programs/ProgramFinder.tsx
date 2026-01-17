@@ -250,7 +250,7 @@ export default function ProgramFinder() {
               <span className="font-body text-xs uppercase tracking-[0.2em] text-alice-dark font-medium">Find Your Path</span>
               <div className="w-8 h-[2px] bg-alice-dark" />
             </div>
-            <h2 className="font-heading text-[26px] sm:text-[32px] md:text-[40px] lg:text-[44px] font-bold text-carbon leading-tight mb-3">
+            <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-carbon leading-tight mb-3">
               Discover the Right Program For You
             </h2>
             <p className="font-body text-sm sm:text-base md:text-lg text-g500 max-w-xl mx-auto">

@@ -214,6 +214,43 @@ const tideFaqs: FAQItem[] = [
 ];
 
 // ============================================
+// UX CAREER FAQs - Alice Theme
+// ============================================
+
+const uxCareerFaqs: FAQItem[] = [
+  {
+    question: 'How do I transition into UX design?',
+    answer:
+      'Start by learning UX fundamentals through online courses, build a portfolio with personal or volunteer projects, and network with other designers. Focus on understanding user research, information architecture, and interaction design. Consider mentorship for personalized guidance and faster results.',
+  },
+  {
+    question: 'What salary can I expect as a UX designer in India?',
+    answer:
+      'It depends on experience and company type:\n\n• Entry (0-2 yrs): ₹4-8 LPA\n• Mid (2-5 yrs): ₹8-18 LPA\n• Senior (5-8 yrs): ₹18-28 LPA\n• Lead/Principal (8+ yrs): ₹28-45+ LPA\n\nProduct companies and funded startups pay higher than agencies. Location matters less now with remote roles.',
+  },
+  {
+    question: 'Do I need a degree to become a UX designer?',
+    answer:
+      "No. Most hiring managers care about your portfolio, problem-solving ability, and communication skills — not your degree. A design or psychology degree can help, but it's not required. What matters is showing you understand users, can think strategically, and can ship real work. Self-taught designers with strong portfolios regularly get hired over candidates with degrees but weak case studies.",
+  },
+  {
+    question: 'How do I build a portfolio with no experience?',
+    answer:
+      "Three ways:\n\n1. Redesign existing products — Pick an app you use, identify real problems, and design solutions. Document your thinking.\n\n2. Concept projects — Invent a realistic problem (e.g., \"Help first-time investors track expenses\") and design end-to-end.\n\n3. Volunteer or freelance — NGOs, early-stage startups, and small businesses need design help and won't demand years of experience.\n\nFocus on showing your process, not just pretty screens. Hiring managers want to see how you think.",
+  },
+  {
+    question: "What's the difference between UX and UI design?",
+    answer:
+      "UX (User Experience) is about how a product works — research, flows, information architecture, and making sure users can achieve their goals without friction.\n\nUI (User Interface) is about how it looks — visual design, typography, colors, spacing, and making sure the interface is clear and aesthetically consistent.\n\nIn practice, most product companies expect designers to do both. The titles often overlap. Focus on being good at solving user problems — the labels matter less.",
+  },
+  {
+    question: 'How long does it take to learn UX design?',
+    answer:
+      "If you're focused and consistent:\n\n• Basics (tools + methods): 2-3 months\n• Portfolio-ready: 4-6 months\n• Job-ready (with feedback + iteration): 6-9 months\n\nSpeed depends on how much time you invest weekly and whether you get feedback from experienced designers. Courses alone won't get you hired — real projects and mentorship accelerate the process.",
+  },
+];
+
+// ============================================
 // CONSOLIDATED CATEGORIES
 // ============================================
 
@@ -227,10 +264,18 @@ export const faqCategories: FAQCategory[] = [
     faqs: homeFaqs,
   },
   {
+    id: 'ux-career',
+    title: 'UX Career',
+    description: 'Salary, skills, portfolios, and career growth',
+    theme: 'alice',
+    icon: 'career',
+    faqs: uxCareerFaqs,
+  },
+  {
     id: 'programs',
     title: 'Programs Overview',
     description: 'Questions about program structure, duration, and support',
-    theme: 'alice',
+    theme: 'teal',
     icon: 'programs',
     faqs: programsFaqs,
   },
@@ -238,7 +283,7 @@ export const faqCategories: FAQCategory[] = [
     id: 'ripple',
     title: 'Ripple',
     description: 'Career transition program for beginners',
-    theme: 'teal',
+    theme: 'coral',
     icon: 'ripple',
     faqs: rippleFaqs,
   },
@@ -246,7 +291,7 @@ export const faqCategories: FAQCategory[] = [
     id: 'current',
     title: 'Current',
     description: 'Senior mentorship for mid-level designers',
-    theme: 'coral',
+    theme: 'gold',
     icon: 'current',
     faqs: currentFaqs,
   },
@@ -254,7 +299,7 @@ export const faqCategories: FAQCategory[] = [
     id: 'tide',
     title: 'Tide',
     description: 'Leadership program for aspiring design leaders',
-    theme: 'gold',
+    theme: 'alice',
     icon: 'tide',
     faqs: tideFaqs,
   },

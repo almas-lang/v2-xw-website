@@ -33,7 +33,7 @@ export default function WhatWeDo() {
             transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
           }}
         >
-          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-carbon mb-3">
+          <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-carbon mb-3">
             What We Do
           </h2>
           <p className="text-g500 flex items-center justify-center gap-2">

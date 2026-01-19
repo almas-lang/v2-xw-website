@@ -226,7 +226,7 @@ function HeroSection() {
             transition: 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
           }}
         >
-          <Link href="/" className="text-g400 active:text-white transition-colors">
+          <Link href="/" className="text-g400 active:text-white underline underline-offset-2 transition-colors">
             Home
           </Link>
           <svg className="w-4 h-4 text-g500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

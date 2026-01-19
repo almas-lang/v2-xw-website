@@ -114,13 +114,13 @@ export default function FAQsPage() {
               transition: 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
             }}
           >
-            <Link href="/" className="text-g500 hover:text-carbon transition-colors">
+            <Link href="/" className="text-g500 hover:text-carbon underline underline-offset-2 transition-colors">
               Home
             </Link>
             <svg className="w-4 h-4 text-g400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M9 18l6-6-6-6" />
             </svg>
-            <Link href="/resources" className="text-g500 hover:text-carbon transition-colors">
+            <Link href="/resources" className="text-g500 hover:text-carbon underline underline-offset-2 transition-colors">
               Resources
             </Link>
             <svg className="w-4 h-4 text-g400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

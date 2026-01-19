@@ -123,11 +123,11 @@ export default function ProgramHero({
       <div className={`relative z-10 max-w-[1200px] mx-auto px-5 w-full ${topBanner ? 'pt-6 pb-24 md:pt-8 md:pb-32' : 'py-24 md:py-32'}`}>
         {/* Breadcrumb */}
         <nav className="flex items-center gap-2 text-sm mb-10" aria-label="Breadcrumb">
-          <Link href="/" className="text-g400 hover:text-white transition-colors">
+          <Link href="/" className="text-g400 hover:text-white underline underline-offset-2 transition-colors">
             Home
           </Link>
           <span className="text-g600">/</span>
-          <Link href="/programs" className="text-g400 hover:text-white transition-colors">
+          <Link href="/programs" className="text-g400 hover:text-white underline underline-offset-2 transition-colors">
             Programs
           </Link>
           <span className="text-g600">/</span>

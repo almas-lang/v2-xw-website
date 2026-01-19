@@ -28,7 +28,7 @@ export default function AboutHero() {
         }}
       />
 
-      <div className="relative z-10 w-full max-w-[1200px] mx-auto px-6 md:px-10">
+      <div className="relative z-10 w-full max-w-[1200px] mx-auto px-5 md:px-8 lg:px-12">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
           {/* Left - Content */}
           <div>

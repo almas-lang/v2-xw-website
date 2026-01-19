@@ -124,7 +124,7 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-[1300px] mx-auto px-4 sm:px-5 md:px-8 lg:px-12">
+      <div className="relative z-10 max-w-[1200px] mx-auto px-5 md:px-8 lg:px-12">
         <div className="min-h-screen flex flex-col justify-center pt-16 pb-6 sm:pt-20 sm:pb-10 md:pt-24 md:pb-12">
           <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             {/* Left column - Main content */}
@@ -161,7 +161,7 @@ export default function Hero() {
                     Why Aren&apos;t You Getting
                   </span>
                   <span className="block">
-                    <span className="relative inline-block">
+                    <span className="relative inline-block whitespace-nowrap">
                       <span className="text-accent">Senior &amp; Leadership</span>
                       {/* Underline accent */}
                       <svg
@@ -195,7 +195,7 @@ export default function Hero() {
                   transition: 'all 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.2s',
                 }}
               >
-                <p className="font-body text-base md:text-lg text-white/90 leading-relaxed max-w-[600px]">
+                <p className="font-body text-lg md:text-xl text-white/90 leading-relaxed max-w-[600px]">
                   1:1 Mentorship That Fixes <span className="font-semibold">YOUR</span> Gaps, Not Generic Courses That Leave You Stuck
                 </p>
               </div>
@@ -209,7 +209,7 @@ export default function Hero() {
                   transition: 'all 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.25s',
                 }}
               >
-                <p className="font-body text-base md:text-lg text-alice leading-relaxed max-w-[580px]">
+                <p className="font-body text-lg md:text-xl text-alice leading-relaxed max-w-[580px]">
                   For UX/UI/Product designers with 2+ years experience who are ready to grow but keep getting stuck at the same level
                 </p>
               </div>

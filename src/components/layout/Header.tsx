@@ -7,22 +7,21 @@ import Link from 'next/link';
 import Button from '@/components/ui/Button';
 
 const programsDropdown = [
-  { href: '/programs/senior-ux-designer-mentorship', label: 'Current' },
-  { href: '/programs/career-transition-ux-mentorship', label: 'Ripple' },
-  { href: '/programs/ux-leadership-mentorship', label: 'Tide' },
-  { href: '/programs/free-training', label: 'Free Training' },
+  { href: '/programs/senior-ux-designer-mentorship', label: 'Current', tagline: 'For mid-level designers', color: '#E85A4F' },
+  { href: '/programs/career-transition-ux-mentorship', label: 'Ripple', tagline: 'Career transition', color: '#4A90A4' },
+  { href: '/programs/ux-leadership-mentorship', label: 'Tide', tagline: 'Design leadership', color: '#D4A853' },
 ];
 
 const businessDropdown = [
-  { href: '/talent', label: 'Talent' },
-  { href: '/design-services', label: 'Surge' },
+  { href: '/talent', label: 'Talent', tagline: 'Hire trained designers', color: '#6366F1' },
+  { href: '/design-services', label: 'Surge', tagline: 'Design services', color: '#8B5CF6' },
 ];
 
 const resourcesDropdown = [
-  { href: '/resources/blogs', label: 'Blog' },
-  { href: '/resources/tools', label: 'Tools' },
-  { href: '/resources/faq', label: 'FAQs' },
-  { href: '/resources/shortcourses', label: 'Short Courses' },
+  { href: '/resources/blogs', label: 'Blog', tagline: 'Insights & articles', color: '#4A90A4' },
+  { href: '/resources/tools', label: 'Tools', tagline: 'Free AI tools', color: '#E85A4F' },
+  { href: '/resources/faq', label: 'FAQs', tagline: 'Common questions', color: '#6366F1' },
+  { href: '/resources/shortcourses', label: 'Short Courses', tagline: 'Quick learning', color: '#D4A853' },
 ];
 
 const navLinks = [
@@ -42,6 +41,9 @@ export default function Header() {
   const [mobileBusinessOpen, setMobileBusinessOpen] = useState(false);
   const [mobileResourcesOpen, setMobileResourcesOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(true);
+  const [hoveredProgram, setHoveredProgram] = useState<number | null>(null);
+  const [hoveredBusiness, setHoveredBusiness] = useState<number | null>(null);
+  const [hoveredResource, setHoveredResource] = useState<number | null>(null);
   const programsRef = useRef<HTMLLIElement>(null);
   const businessRef = useRef<HTMLLIElement>(null);
   const resourcesRef = useRef<HTMLLIElement>(null);
@@ -122,12 +124,22 @@ export default function Header() {
       <nav className="max-w-[1200px] mx-auto px-5 h-14 md:h-16 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex-shrink-0" aria-label="Xperience Wave Home">
+          {/* Mobile Logo */}
           <Image
-            src={isDarkMode ? '/images/xw-logo-light.png' : '/images/xw-logo-dark.png'}
+            src="/images/xw-logo-mobile.png"
             alt="Xperience Wave"
-            width={120}
+            width={32}
             height={32}
-            className="h-7 md:h-8 w-auto transition-all duration-300"
+            className={`h-6 w-auto lg:hidden transition-all duration-300 ${!isDarkMode ? 'brightness-0' : ''}`}
+            priority
+          />
+          {/* Desktop Logo */}
+          <Image
+            src="/images/xw-logo-light.png"
+            alt="Xperience Wave"
+            width={100}
+            height={28}
+            className={`h-6 w-auto hidden lg:block transition-all duration-300 ${!isDarkMode ? 'brightness-0' : ''}`}
             priority
           />
         </Link>
@@ -152,47 +164,75 @@ export default function Header() {
           <li
             className="relative"
             ref={programsRef}
-            onMouseEnter={() => setProgramsOpen(true)}
             onMouseLeave={() => setProgramsOpen(false)}
           >
-            <Link
-              href="/programs"
-              className={`font-heading text-sm font-medium transition-colors flex items-center gap-1 relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:bg-accent after:transition-all ${
-                isProgramActive
-                  ? isDarkMode ? 'text-white after:w-full' : 'text-carbon after:w-full'
-                  : isDarkMode ? 'text-g300 hover:text-white after:w-0 hover:after:w-full' : 'text-g600 hover:text-carbon after:w-0 hover:after:w-full'
-              }`}
-            >
-              Programs
-              <svg
-                className={`w-4 h-4 transition-transform ${programsOpen ? 'rotate-180' : ''}`}
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
+            <div className="flex items-center gap-1">
+              <Link
+                href="/programs"
+                className={`font-heading text-sm font-medium transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:bg-accent after:transition-all ${
+                  isProgramActive
+                    ? isDarkMode ? 'text-white after:w-full' : 'text-carbon after:w-full'
+                    : isDarkMode ? 'text-g300 hover:text-white after:w-0 hover:after:w-full' : 'text-g600 hover:text-carbon after:w-0 hover:after:w-full'
+                }`}
               >
-                <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </Link>
+                Programs
+              </Link>
+              <button
+                onMouseEnter={() => setProgramsOpen(true)}
+                className={`p-1 rounded transition-colors ${
+                  isDarkMode ? 'text-g300 hover:text-white hover:bg-white/10' : 'text-g600 hover:text-carbon hover:bg-g100'
+                }`}
+                aria-label="Toggle programs menu"
+              >
+                <svg
+                  className={`w-4 h-4 transition-transform ${programsOpen ? 'rotate-180' : ''}`}
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+            </div>
 
             {/* Dropdown Menu */}
             <div
-              className={`absolute top-full left-0 pt-2 w-52 transition-all ${
+              className={`absolute top-full left-0 pt-2 w-72 transition-all ${
                 programsOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'
               }`}
             >
-              <div className="bg-white border border-g200 rounded-xl shadow-lg py-2">
-                {programsDropdown.map((item) => (
+              <div className="bg-white border border-g200 rounded-2xl shadow-lg p-3 space-y-2">
+                {programsDropdown.map((item, index) => (
                   <Link
                     key={item.href}
                     href={item.href}
-                    className={`block px-4 py-2.5 font-heading text-sm font-medium transition-colors ${
-                      isActive(item.href)
-                        ? 'text-carbon bg-alice'
-                        : 'text-g600 hover:text-carbon hover:bg-alice'
-                    }`}
+                    className="flex items-start gap-3 p-3 rounded-xl transition-all duration-200"
+                    style={{
+                      backgroundColor: hoveredProgram === index ? `${item.color}08` : 'transparent',
+                      borderWidth: '1px',
+                      borderStyle: 'solid',
+                      borderColor: hoveredProgram === index ? `${item.color}30` : 'transparent',
+                    }}
+                    onMouseEnter={() => setHoveredProgram(index)}
+                    onMouseLeave={() => setHoveredProgram(null)}
                   >
-                    {item.label}
+                    <span
+                      className="w-2 h-2 rounded-full flex-shrink-0 mt-1.5 transition-transform duration-200"
+                      style={{
+                        backgroundColor: item.color,
+                        transform: hoveredProgram === index ? 'scale(1.25)' : 'scale(1)',
+                      }}
+                    />
+                    <div>
+                      <span
+                        className="font-heading text-sm font-semibold block transition-colors duration-200"
+                        style={{ color: hoveredProgram === index ? item.color : '#1a1a1a' }}
+                      >
+                        {item.label}
+                      </span>
+                      <span className="text-xs text-g400">{item.tagline}</span>
+                    </div>
                   </Link>
                 ))}
               </div>
@@ -203,47 +243,75 @@ export default function Header() {
           <li
             className="relative"
             ref={businessRef}
-            onMouseEnter={() => setBusinessOpen(true)}
             onMouseLeave={() => setBusinessOpen(false)}
           >
-            <Link
-              href="/for-business"
-              className={`font-heading text-sm font-medium transition-colors flex items-center gap-1 relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:bg-accent after:transition-all ${
-                isBusinessActive
-                  ? isDarkMode ? 'text-white after:w-full' : 'text-carbon after:w-full'
-                  : isDarkMode ? 'text-g300 hover:text-white after:w-0 hover:after:w-full' : 'text-g600 hover:text-carbon after:w-0 hover:after:w-full'
-              }`}
-            >
-              For Business
-              <svg
-                className={`w-4 h-4 transition-transform ${businessOpen ? 'rotate-180' : ''}`}
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
+            <div className="flex items-center gap-1">
+              <Link
+                href="/for-business"
+                className={`font-heading text-sm font-medium transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:bg-accent after:transition-all ${
+                  isBusinessActive
+                    ? isDarkMode ? 'text-white after:w-full' : 'text-carbon after:w-full'
+                    : isDarkMode ? 'text-g300 hover:text-white after:w-0 hover:after:w-full' : 'text-g600 hover:text-carbon after:w-0 hover:after:w-full'
+                }`}
               >
-                <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </Link>
+                For Business
+              </Link>
+              <button
+                onMouseEnter={() => setBusinessOpen(true)}
+                className={`p-1 rounded transition-colors ${
+                  isDarkMode ? 'text-g300 hover:text-white hover:bg-white/10' : 'text-g600 hover:text-carbon hover:bg-g100'
+                }`}
+                aria-label="Toggle business menu"
+              >
+                <svg
+                  className={`w-4 h-4 transition-transform ${businessOpen ? 'rotate-180' : ''}`}
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+            </div>
 
             {/* Dropdown Menu */}
             <div
-              className={`absolute top-full left-0 pt-2 w-44 transition-all ${
+              className={`absolute top-full left-0 pt-2 w-72 transition-all ${
                 businessOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'
               }`}
             >
-              <div className="bg-white border border-g200 rounded-xl shadow-lg py-2">
-                {businessDropdown.map((item) => (
+              <div className="bg-white border border-g200 rounded-2xl shadow-lg p-3 space-y-2">
+                {businessDropdown.map((item, index) => (
                   <Link
                     key={item.href}
                     href={item.href}
-                    className={`block px-4 py-2.5 font-heading text-sm font-medium transition-colors ${
-                      isActive(item.href)
-                        ? 'text-carbon bg-alice'
-                        : 'text-g600 hover:text-carbon hover:bg-alice'
-                    }`}
+                    className="flex items-start gap-3 p-3 rounded-xl transition-all duration-200"
+                    style={{
+                      backgroundColor: hoveredBusiness === index ? `${item.color}08` : 'transparent',
+                      borderWidth: '1px',
+                      borderStyle: 'solid',
+                      borderColor: hoveredBusiness === index ? `${item.color}30` : 'transparent',
+                    }}
+                    onMouseEnter={() => setHoveredBusiness(index)}
+                    onMouseLeave={() => setHoveredBusiness(null)}
                   >
-                    {item.label}
+                    <span
+                      className="w-2 h-2 rounded-full flex-shrink-0 mt-1.5 transition-transform duration-200"
+                      style={{
+                        backgroundColor: item.color,
+                        transform: hoveredBusiness === index ? 'scale(1.25)' : 'scale(1)',
+                      }}
+                    />
+                    <div>
+                      <span
+                        className="font-heading text-sm font-semibold block transition-colors duration-200"
+                        style={{ color: hoveredBusiness === index ? item.color : '#1a1a1a' }}
+                      >
+                        {item.label}
+                      </span>
+                      <span className="text-xs text-g400">{item.tagline}</span>
+                    </div>
                   </Link>
                 ))}
               </div>
@@ -270,47 +338,75 @@ export default function Header() {
           <li
             className="relative"
             ref={resourcesRef}
-            onMouseEnter={() => setResourcesOpen(true)}
             onMouseLeave={() => setResourcesOpen(false)}
           >
-            <Link
-              href="/resources"
-              className={`font-heading text-sm font-medium transition-colors flex items-center gap-1 relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:bg-accent after:transition-all ${
-                isResourcesActive
-                  ? isDarkMode ? 'text-white after:w-full' : 'text-carbon after:w-full'
-                  : isDarkMode ? 'text-g300 hover:text-white after:w-0 hover:after:w-full' : 'text-g600 hover:text-carbon after:w-0 hover:after:w-full'
-              }`}
-            >
-              Resources
-              <svg
-                className={`w-4 h-4 transition-transform ${resourcesOpen ? 'rotate-180' : ''}`}
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
+            <div className="flex items-center gap-1">
+              <Link
+                href="/resources"
+                className={`font-heading text-sm font-medium transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:bg-accent after:transition-all ${
+                  isResourcesActive
+                    ? isDarkMode ? 'text-white after:w-full' : 'text-carbon after:w-full'
+                    : isDarkMode ? 'text-g300 hover:text-white after:w-0 hover:after:w-full' : 'text-g600 hover:text-carbon after:w-0 hover:after:w-full'
+                }`}
               >
-                <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </Link>
+                Resources
+              </Link>
+              <button
+                onMouseEnter={() => setResourcesOpen(true)}
+                className={`p-1 rounded transition-colors ${
+                  isDarkMode ? 'text-g300 hover:text-white hover:bg-white/10' : 'text-g600 hover:text-carbon hover:bg-g100'
+                }`}
+                aria-label="Toggle resources menu"
+              >
+                <svg
+                  className={`w-4 h-4 transition-transform ${resourcesOpen ? 'rotate-180' : ''}`}
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+            </div>
 
             {/* Dropdown Menu */}
             <div
-              className={`absolute top-full left-0 pt-2 w-44 transition-all ${
+              className={`absolute top-full left-0 pt-2 w-72 transition-all ${
                 resourcesOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'
               }`}
             >
-              <div className="bg-white border border-g200 rounded-xl shadow-lg py-2">
-                {resourcesDropdown.map((item) => (
+              <div className="bg-white border border-g200 rounded-2xl shadow-lg p-3 space-y-2">
+                {resourcesDropdown.map((item, index) => (
                   <Link
                     key={item.href}
                     href={item.href}
-                    className={`block px-4 py-2.5 font-heading text-sm font-medium transition-colors ${
-                      isActive(item.href)
-                        ? 'text-carbon bg-alice'
-                        : 'text-g600 hover:text-carbon hover:bg-alice'
-                    }`}
+                    className="flex items-start gap-3 p-3 rounded-xl transition-all duration-200"
+                    style={{
+                      backgroundColor: hoveredResource === index ? `${item.color}08` : 'transparent',
+                      borderWidth: '1px',
+                      borderStyle: 'solid',
+                      borderColor: hoveredResource === index ? `${item.color}30` : 'transparent',
+                    }}
+                    onMouseEnter={() => setHoveredResource(index)}
+                    onMouseLeave={() => setHoveredResource(null)}
                   >
-                    {item.label}
+                    <span
+                      className="w-2 h-2 rounded-full flex-shrink-0 mt-1.5 transition-transform duration-200"
+                      style={{
+                        backgroundColor: item.color,
+                        transform: hoveredResource === index ? 'scale(1.25)' : 'scale(1)',
+                      }}
+                    />
+                    <div>
+                      <span
+                        className="font-heading text-sm font-semibold block transition-colors duration-200"
+                        style={{ color: hoveredResource === index ? item.color : '#1a1a1a' }}
+                      >
+                        {item.label}
+                      </span>
+                      <span className="text-xs text-g400">{item.tagline}</span>
+                    </div>
                   </Link>
                 ))}
               </div>
@@ -365,44 +461,60 @@ export default function Header() {
 
           {/* Programs with accordion */}
           <li>
-            <button
-              onClick={() => setMobileProgramsOpen(!mobileProgramsOpen)}
-              className={`w-full flex items-center justify-between font-heading text-base font-medium ${
-                isProgramActive ? 'text-carbon' : 'text-g600 hover:text-carbon'
-              }`}
-            >
-              <span className={`inline-flex items-center gap-2 ${isProgramActive ? 'border-l-2 border-accent pl-2 -ml-2' : ''}`}>
-                Programs
-              </span>
-              <svg
-                className={`w-5 h-5 transition-transform ${mobileProgramsOpen ? 'rotate-180' : ''}`}
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
+            <div className="flex items-center justify-between">
+              <Link
+                href="/programs"
+                onClick={() => setMobileMenuOpen(false)}
+                className={`font-heading text-base font-medium ${
+                  isProgramActive ? 'text-carbon' : 'text-g600 hover:text-carbon'
+                }`}
               >
-                <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </button>
+                <span className={`inline-flex items-center gap-2 ${isProgramActive ? 'border-l-2 border-accent pl-2 -ml-2' : ''}`}>
+                  Programs
+                </span>
+              </Link>
+              <button
+                onClick={() => setMobileProgramsOpen(!mobileProgramsOpen)}
+                className="p-2 rounded-lg text-g500 hover:text-carbon hover:bg-g100 transition-colors"
+                aria-label="Toggle programs menu"
+              >
+                <svg
+                  className={`w-5 h-5 transition-transform ${mobileProgramsOpen ? 'rotate-180' : ''}`}
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+            </div>
             <div
               className={`overflow-hidden transition-all ${
-                mobileProgramsOpen ? 'max-h-48 mt-2' : 'max-h-0'
+                mobileProgramsOpen ? 'max-h-64 mt-2' : 'max-h-0'
               }`}
             >
-              <ul className="pl-4 space-y-3 border-l-2 border-g200">
+              <ul className="pl-2 space-y-1">
                 {programsDropdown.map((item) => (
                   <li key={item.href}>
                     <Link
                       href={item.href}
-                      className={`block font-heading text-sm ${
-                        isActive(item.href) ? 'text-carbon font-medium' : 'text-g500 hover:text-carbon'
-                      }`}
+                      className="flex items-start gap-3 p-2 rounded-lg hover:bg-g50 transition-colors"
                       onClick={() => {
                         setMobileMenuOpen(false);
                         setMobileProgramsOpen(false);
                       }}
                     >
-                      {item.label}
+                      <span
+                        className="w-2 h-2 rounded-full flex-shrink-0 mt-1.5"
+                        style={{ backgroundColor: item.color }}
+                      />
+                      <div>
+                        <span className="font-heading text-sm font-medium text-carbon block">
+                          {item.label}
+                        </span>
+                        <span className="text-xs text-g400">{item.tagline}</span>
+                      </div>
                     </Link>
                   </li>
                 ))}
@@ -412,44 +524,60 @@ export default function Header() {
 
           {/* For Business with accordion */}
           <li>
-            <button
-              onClick={() => setMobileBusinessOpen(!mobileBusinessOpen)}
-              className={`w-full flex items-center justify-between font-heading text-base font-medium ${
-                isBusinessActive ? 'text-carbon' : 'text-g600 hover:text-carbon'
-              }`}
-            >
-              <span className={`inline-flex items-center gap-2 ${isBusinessActive ? 'border-l-2 border-accent pl-2 -ml-2' : ''}`}>
-                For Business
-              </span>
-              <svg
-                className={`w-5 h-5 transition-transform ${mobileBusinessOpen ? 'rotate-180' : ''}`}
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
+            <div className="flex items-center justify-between">
+              <Link
+                href="/for-business"
+                onClick={() => setMobileMenuOpen(false)}
+                className={`font-heading text-base font-medium ${
+                  isBusinessActive ? 'text-carbon' : 'text-g600 hover:text-carbon'
+                }`}
               >
-                <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </button>
+                <span className={`inline-flex items-center gap-2 ${isBusinessActive ? 'border-l-2 border-accent pl-2 -ml-2' : ''}`}>
+                  For Business
+                </span>
+              </Link>
+              <button
+                onClick={() => setMobileBusinessOpen(!mobileBusinessOpen)}
+                className="p-2 rounded-lg text-g500 hover:text-carbon hover:bg-g100 transition-colors"
+                aria-label="Toggle business menu"
+              >
+                <svg
+                  className={`w-5 h-5 transition-transform ${mobileBusinessOpen ? 'rotate-180' : ''}`}
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+            </div>
             <div
               className={`overflow-hidden transition-all ${
-                mobileBusinessOpen ? 'max-h-32 mt-2' : 'max-h-0'
+                mobileBusinessOpen ? 'max-h-48 mt-2' : 'max-h-0'
               }`}
             >
-              <ul className="pl-4 space-y-3 border-l-2 border-g200">
+              <ul className="pl-2 space-y-1">
                 {businessDropdown.map((item) => (
                   <li key={item.href}>
                     <Link
                       href={item.href}
-                      className={`block font-heading text-sm ${
-                        isActive(item.href) ? 'text-carbon font-medium' : 'text-g500 hover:text-carbon'
-                      }`}
+                      className="flex items-start gap-3 p-2 rounded-lg hover:bg-g50 transition-colors"
                       onClick={() => {
                         setMobileMenuOpen(false);
                         setMobileBusinessOpen(false);
                       }}
                     >
-                      {item.label}
+                      <span
+                        className="w-2 h-2 rounded-full flex-shrink-0 mt-1.5"
+                        style={{ backgroundColor: item.color }}
+                      />
+                      <div>
+                        <span className="font-heading text-sm font-medium text-carbon block">
+                          {item.label}
+                        </span>
+                        <span className="text-xs text-g400">{item.tagline}</span>
+                      </div>
                     </Link>
                   </li>
                 ))}
@@ -476,44 +604,60 @@ export default function Header() {
 
           {/* Resources with accordion */}
           <li>
-            <button
-              onClick={() => setMobileResourcesOpen(!mobileResourcesOpen)}
-              className={`w-full flex items-center justify-between font-heading text-base font-medium ${
-                isResourcesActive ? 'text-carbon' : 'text-g600 hover:text-carbon'
-              }`}
-            >
-              <span className={`inline-flex items-center gap-2 ${isResourcesActive ? 'border-l-2 border-accent pl-2 -ml-2' : ''}`}>
-                Resources
-              </span>
-              <svg
-                className={`w-5 h-5 transition-transform ${mobileResourcesOpen ? 'rotate-180' : ''}`}
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
+            <div className="flex items-center justify-between">
+              <Link
+                href="/resources"
+                onClick={() => setMobileMenuOpen(false)}
+                className={`font-heading text-base font-medium ${
+                  isResourcesActive ? 'text-carbon' : 'text-g600 hover:text-carbon'
+                }`}
               >
-                <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </button>
+                <span className={`inline-flex items-center gap-2 ${isResourcesActive ? 'border-l-2 border-accent pl-2 -ml-2' : ''}`}>
+                  Resources
+                </span>
+              </Link>
+              <button
+                onClick={() => setMobileResourcesOpen(!mobileResourcesOpen)}
+                className="p-2 rounded-lg text-g500 hover:text-carbon hover:bg-g100 transition-colors"
+                aria-label="Toggle resources menu"
+              >
+                <svg
+                  className={`w-5 h-5 transition-transform ${mobileResourcesOpen ? 'rotate-180' : ''}`}
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+            </div>
             <div
               className={`overflow-hidden transition-all ${
-                mobileResourcesOpen ? 'max-h-48 mt-2' : 'max-h-0'
+                mobileResourcesOpen ? 'max-h-72 mt-2' : 'max-h-0'
               }`}
             >
-              <ul className="pl-4 space-y-3 border-l-2 border-g200">
+              <ul className="pl-2 space-y-1">
                 {resourcesDropdown.map((item) => (
                   <li key={item.href}>
                     <Link
                       href={item.href}
-                      className={`block font-heading text-sm ${
-                        isActive(item.href) ? 'text-carbon font-medium' : 'text-g500 hover:text-carbon'
-                      }`}
+                      className="flex items-start gap-3 p-2 rounded-lg hover:bg-g50 transition-colors"
                       onClick={() => {
                         setMobileMenuOpen(false);
                         setMobileResourcesOpen(false);
                       }}
                     >
-                      {item.label}
+                      <span
+                        className="w-2 h-2 rounded-full flex-shrink-0 mt-1.5"
+                        style={{ backgroundColor: item.color }}
+                      />
+                      <div>
+                        <span className="font-heading text-sm font-medium text-carbon block">
+                          {item.label}
+                        </span>
+                        <span className="text-xs text-g400">{item.tagline}</span>
+                      </div>
                     </Link>
                   </li>
                 ))}

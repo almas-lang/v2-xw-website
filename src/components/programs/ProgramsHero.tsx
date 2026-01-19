@@ -125,7 +125,7 @@ export default function ProgramsHero() {
         </div>
 
         {/* Content */}
-        <div className="relative z-10 max-w-[1300px] mx-auto px-5 md:px-8 lg:px-12 pt-24 md:pt-28 pb-14 sm:pb-18 md:pb-20">
+        <div className="relative z-10 max-w-[1200px] mx-auto px-5 md:px-8 lg:px-12 pt-24 md:pt-28 pb-14 sm:pb-18 md:pb-20">
           {/* Breadcrumb */}
           <nav
             className="flex items-center gap-2 text-sm mb-8 sm:mb-10"
@@ -339,7 +339,7 @@ export default function ProgramsHero() {
           style={{ background: 'rgba(220, 238, 255, 0.1)', opacity: 0.5 }}
         />
 
-        <div className="relative z-10 max-w-[1300px] mx-auto px-5 md:px-8 lg:px-12 py-10 md:py-14">
+        <div className="relative z-10 max-w-[1200px] mx-auto px-5 md:px-8 lg:px-12 py-10 md:py-14">
           <div className="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-0">
             {stats.map((stat, index) => (
               <div

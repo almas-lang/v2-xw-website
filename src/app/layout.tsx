@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import ScrollToTop from "@/components/layout/ScrollToTop";
 import SchemaOrg from "@/components/seo/SchemaOrg";
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -150,6 +151,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body className={`${plusJakarta.variable} ${inter.variable} antialiased`}>
+        <ScrollToTop />
         <a href="#main-content" className="sr-only">
           Skip to main content
         </a>

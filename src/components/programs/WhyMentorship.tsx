@@ -4,7 +4,17 @@ import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-export default function WhyMentorship() {
+interface WhyMentorshipProps {
+  blogTitle?: string;
+  blogSlug?: string;
+  blogImage?: string;
+}
+
+export default function WhyMentorship({
+  blogTitle = "Why UX Design Courses Don't Get You Senior Roles (And What Actually Works)",
+  blogSlug = 'why-courses-dont-work',
+  blogImage = 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&q=80',
+}: WhyMentorshipProps) {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -48,10 +58,10 @@ export default function WhyMentorship() {
             </p>
 
             {/* Highlighted callout */}
-            <div className="relative pl-6 border-l-4 border-alice-dark">
+            <div className="relative pl-6 border-l-4 border-accent">
               <p className="font-heading text-xl md:text-2xl font-bold text-carbon leading-snug">
                 Mentorship is different. It's built for{' '}
-                <span className="text-alice-dark">YOUR</span> situation.
+                <span className="text-accent">YOUR</span> situation.
               </p>
             </div>
           </div>
@@ -66,14 +76,14 @@ export default function WhyMentorship() {
             }}
           >
             <Link
-              href="/blog/why-courses-fail"
+              href={`/resources/blogs/${blogSlug}`}
               className="group block relative overflow-hidden border border-g200 hover:border-g300 transition-all duration-300 hover:shadow-xl"
               style={{ borderRadius: '6px' }}
             >
               {/* Background Image */}
               <Image
-                src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&q=80"
-                alt="Person studying courses"
+                src={blogImage}
+                alt={blogTitle}
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
               />
@@ -90,7 +100,7 @@ export default function WhyMentorship() {
 
                 {/* Title */}
                 <h3 className="font-heading text-lg md:text-xl font-bold text-white mb-4 leading-snug">
-                  Why UX Design Courses Don't Get You Senior Roles (And What Actually Works)
+                  {blogTitle}
                 </h3>
 
                 {/* Read link */}

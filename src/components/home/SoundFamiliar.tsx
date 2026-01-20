@@ -52,8 +52,8 @@ export default function SoundFamiliar() {
           }}
         />
 
-        <div className="max-w-[1200px] mx-auto px-5 py-16 md:py-24">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="max-w-[1200px] mx-auto px-5 py-12 sm:py-16 md:py-24 lg:py-32">
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-20 items-center">
             {/* Left - Title */}
             <div
               style={{
@@ -74,9 +74,8 @@ export default function SoundFamiliar() {
                 <h2 className="relative font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-carbon leading-[1.1]">
                   Sound
                   <br />
-                  <span className="relative">
+                  <span className="relative inline-block">
                     Familiar
-                    <span className="text-accent">?</span>
                     {/* Underline */}
                     <svg
                       className="absolute -bottom-2 left-0 w-full h-4 text-accent/30"
@@ -92,6 +91,7 @@ export default function SoundFamiliar() {
                       />
                     </svg>
                   </span>
+                  <span className="text-accent">?</span>
                 </h2>
 
                 <p className="mt-6 font-body text-sm md:text-base text-g500 max-w-md">
@@ -166,10 +166,10 @@ export default function SoundFamiliar() {
           }}
         />
 
-        <div className="max-w-[900px] mx-auto px-5 py-16 md:py-24 relative z-10">
+        <div className="max-w-[900px] mx-auto px-5 py-12 sm:py-16 md:py-24 lg:py-32 relative z-10">
           {/* Header */}
           <div
-            className="mb-12 md:mb-16"
+            className="mb-8 sm:mb-12 md:mb-16"
             style={{
               opacity: isVisible ? 1 : 0,
               transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
@@ -200,7 +200,7 @@ export default function SoundFamiliar() {
                 {/* Top border for first item */}
                 {index === 0 && <div className="absolute top-0 left-0 right-0 h-px bg-white/10" />}
 
-                <div className="relative flex items-start gap-6 md:gap-8 py-6 md:py-8 border-b border-white/10 group-hover:border-accent/30 transition-colors">
+                <div className="relative flex items-center gap-4 sm:gap-6 md:gap-8 py-5 sm:py-6 md:py-8 border-b border-white/10 group-hover:border-accent/30 transition-colors">
                   {/* Accent line on hover */}
                   <div className="absolute left-0 top-6 bottom-6 w-[3px] bg-accent scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top rounded-full" />
 
@@ -220,7 +220,7 @@ export default function SoundFamiliar() {
 
           {/* Disclaimer */}
           <div
-            className="mt-12 md:mt-16"
+            className="mt-12 md:mt-16 lg:mt-20"
             style={{
               opacity: isVisible ? 1 : 0,
               transform: isVisible ? 'translateY(0)' : 'translateY(20px)',

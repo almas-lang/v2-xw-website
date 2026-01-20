@@ -31,6 +31,30 @@ const navLinks = [
   { href: '/community', label: 'Community' },
 ];
 
+
+// Animated Hamburger Icon Component
+function HamburgerIcon({ isOpen, isDarkMode }: { isOpen: boolean; isDarkMode: boolean }) {
+  return (
+    <div className="w-6 h-6 relative flex items-center justify-center">
+      <span
+        className={`absolute block h-0.5 w-5 transform transition-all duration-300 ease-in-out ${
+          isDarkMode ? 'bg-white' : 'bg-carbon'
+        } ${isOpen ? 'rotate-45' : '-translate-y-1.5'}`}
+      />
+      <span
+        className={`absolute block h-0.5 w-5 transition-all duration-300 ease-in-out ${
+          isDarkMode ? 'bg-white' : 'bg-carbon'
+        } ${isOpen ? 'opacity-0 scale-0' : 'opacity-100 scale-100'}`}
+      />
+      <span
+        className={`absolute block h-0.5 w-5 transform transition-all duration-300 ease-in-out ${
+          isDarkMode ? 'bg-white' : 'bg-carbon'
+        } ${isOpen ? '-rotate-45' : 'translate-y-1.5'}`}
+      />
+    </div>
+  );
+}
+
 export default function Header() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -78,6 +102,18 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [mobileMenuOpen]);
+
   // Check if current path matches a link
   const isActive = (href: string) => {
     if (href === '/') return pathname === '/';
@@ -110,7 +146,362 @@ export default function Header() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
+  // Reset mobile accordion states when menu closes
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false);
+    setMobileProgramsOpen(false);
+    setMobileBusinessOpen(false);
+    setMobileResourcesOpen(false);
+  };
+
+  // Accordion toggle - only one open at a time
+  const toggleAccordion = (section: 'programs' | 'business' | 'resources') => {
+    if (section === 'programs') {
+      setMobileProgramsOpen(!mobileProgramsOpen);
+      setMobileBusinessOpen(false);
+      setMobileResourcesOpen(false);
+    } else if (section === 'business') {
+      setMobileBusinessOpen(!mobileBusinessOpen);
+      setMobileProgramsOpen(false);
+      setMobileResourcesOpen(false);
+    } else {
+      setMobileResourcesOpen(!mobileResourcesOpen);
+      setMobileProgramsOpen(false);
+      setMobileBusinessOpen(false);
+    }
+  };
+
+  // Mobile Menu Content
+  const MobileMenuContent = () => {
+    return (
+        <div className="w-full max-w-md mx-auto">
+          <nav className="space-y-1">
+            {/* Home */}
+            <div
+              style={{
+                opacity: mobileMenuOpen ? 1 : 0,
+                transform: mobileMenuOpen ? 'translateY(0)' : 'translateY(20px)',
+                transition: 'all 0.4s ease-out',
+                transitionDelay: mobileMenuOpen ? '50ms' : '0ms',
+              }}
+            >
+              <Link
+                href="/"
+                onClick={closeMobileMenu}
+                className={`block py-4 px-5 rounded-xl font-heading text-xl font-semibold transition-all ${
+                  isActive('/')
+                    ? 'text-white bg-white/10'
+                    : 'text-white/80 hover:text-white hover:bg-white/5'
+                }`}
+              >
+                Home
+              </Link>
+            </div>
+
+            {/* Programs Accordion */}
+            <div
+              style={{
+                opacity: mobileMenuOpen ? 1 : 0,
+                transform: mobileMenuOpen ? 'translateY(0)' : 'translateY(20px)',
+                transition: 'all 0.4s ease-out',
+                transitionDelay: mobileMenuOpen ? '100ms' : '0ms',
+              }}
+            >
+              <button
+                onClick={() => toggleAccordion('programs')}
+                className={`w-full flex items-center justify-between py-4 px-5 rounded-xl font-heading text-xl font-semibold transition-all ${
+                  mobileProgramsOpen || isProgramActive
+                    ? 'text-white bg-white/10'
+                    : 'text-white/80 hover:text-white hover:bg-white/5'
+                }`}
+              >
+                <span>Programs</span>
+                <svg
+                  className={`w-5 h-5 transition-transform duration-300 ${mobileProgramsOpen ? 'rotate-180' : ''}`}
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+              <div
+                className={`overflow-hidden transition-all duration-300 ease-out ${
+                  mobileProgramsOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                }`}
+              >
+                <div className="py-2 px-3 space-y-1">
+                  {programsDropdown.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={closeMobileMenu}
+                      className="flex items-center gap-4 py-3 px-4 rounded-lg hover:bg-white/5 transition-colors group"
+                    >
+                      <span
+                        className="w-3 h-3 rounded-full flex-shrink-0"
+                        style={{ backgroundColor: item.color }}
+                      />
+                      <div>
+                        <span className="font-heading text-base font-medium text-white block group-hover:text-white">
+                          {item.label}
+                        </span>
+                        <span className="text-sm text-white/50">
+                          {item.tagline}
+                        </span>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* For Business Accordion */}
+            <div
+              style={{
+                opacity: mobileMenuOpen ? 1 : 0,
+                transform: mobileMenuOpen ? 'translateY(0)' : 'translateY(20px)',
+                transition: 'all 0.4s ease-out',
+                transitionDelay: mobileMenuOpen ? '150ms' : '0ms',
+              }}
+            >
+              <button
+                onClick={() => toggleAccordion('business')}
+                className={`w-full flex items-center justify-between py-4 px-5 rounded-xl font-heading text-xl font-semibold transition-all ${
+                  mobileBusinessOpen || isBusinessActive
+                    ? 'text-white bg-white/10'
+                    : 'text-white/80 hover:text-white hover:bg-white/5'
+                }`}
+              >
+                <span>For Business</span>
+                <svg
+                  className={`w-5 h-5 transition-transform duration-300 ${mobileBusinessOpen ? 'rotate-180' : ''}`}
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+              <div
+                className={`overflow-hidden transition-all duration-300 ease-out ${
+                  mobileBusinessOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                }`}
+              >
+                <div className="py-2 px-3 space-y-1">
+                  {businessDropdown.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={closeMobileMenu}
+                      className="flex items-center gap-4 py-3 px-4 rounded-lg hover:bg-white/5 transition-colors group"
+                    >
+                      <span
+                        className="w-3 h-3 rounded-full flex-shrink-0"
+                        style={{ backgroundColor: item.color }}
+                      />
+                      <div>
+                        <span className="font-heading text-base font-medium text-white block">
+                          {item.label}
+                        </span>
+                        <span className="text-sm text-white/50">
+                          {item.tagline}
+                        </span>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* About */}
+            <div
+              style={{
+                opacity: mobileMenuOpen ? 1 : 0,
+                transform: mobileMenuOpen ? 'translateY(0)' : 'translateY(20px)',
+                transition: 'all 0.4s ease-out',
+                transitionDelay: mobileMenuOpen ? '200ms' : '0ms',
+              }}
+            >
+              <Link
+                href="/about"
+                onClick={closeMobileMenu}
+                className={`block py-4 px-5 rounded-xl font-heading text-xl font-semibold transition-all ${
+                  isActive('/about')
+                    ? 'text-white bg-white/10'
+                    : 'text-white/80 hover:text-white hover:bg-white/5'
+                }`}
+              >
+                About
+              </Link>
+            </div>
+
+            {/* Podcast */}
+            <div
+              style={{
+                opacity: mobileMenuOpen ? 1 : 0,
+                transform: mobileMenuOpen ? 'translateY(0)' : 'translateY(20px)',
+                transition: 'all 0.4s ease-out',
+                transitionDelay: mobileMenuOpen ? '250ms' : '0ms',
+              }}
+            >
+              <Link
+                href="/podcast"
+                onClick={closeMobileMenu}
+                className={`block py-4 px-5 rounded-xl font-heading text-xl font-semibold transition-all ${
+                  isActive('/podcast')
+                    ? 'text-white bg-white/10'
+                    : 'text-white/80 hover:text-white hover:bg-white/5'
+                }`}
+              >
+                Podcast
+              </Link>
+            </div>
+
+            {/* Community */}
+            <div
+              style={{
+                opacity: mobileMenuOpen ? 1 : 0,
+                transform: mobileMenuOpen ? 'translateY(0)' : 'translateY(20px)',
+                transition: 'all 0.4s ease-out',
+                transitionDelay: mobileMenuOpen ? '300ms' : '0ms',
+              }}
+            >
+              <Link
+                href="/community"
+                onClick={closeMobileMenu}
+                className={`block py-4 px-5 rounded-xl font-heading text-xl font-semibold transition-all ${
+                  isActive('/community')
+                    ? 'text-white bg-white/10'
+                    : 'text-white/80 hover:text-white hover:bg-white/5'
+                }`}
+              >
+                Community
+              </Link>
+            </div>
+
+            {/* Resources Accordion */}
+            <div
+              style={{
+                opacity: mobileMenuOpen ? 1 : 0,
+                transform: mobileMenuOpen ? 'translateY(0)' : 'translateY(20px)',
+                transition: 'all 0.4s ease-out',
+                transitionDelay: mobileMenuOpen ? '350ms' : '0ms',
+              }}
+            >
+              <button
+                onClick={() => toggleAccordion('resources')}
+                className={`w-full flex items-center justify-between py-4 px-5 rounded-xl font-heading text-xl font-semibold transition-all ${
+                  mobileResourcesOpen || isResourcesActive
+                    ? 'text-white bg-white/10'
+                    : 'text-white/80 hover:text-white hover:bg-white/5'
+                }`}
+              >
+                <span>Resources</span>
+                <svg
+                  className={`w-5 h-5 transition-transform duration-300 ${mobileResourcesOpen ? 'rotate-180' : ''}`}
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+              <div
+                className={`overflow-hidden transition-all duration-300 ease-out ${
+                  mobileResourcesOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                }`}
+              >
+                <div className="py-2 px-3 space-y-1">
+                  {resourcesDropdown.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={closeMobileMenu}
+                      className="flex items-center gap-4 py-3 px-4 rounded-lg hover:bg-white/5 transition-colors group"
+                    >
+                      <span
+                        className="w-3 h-3 rounded-full flex-shrink-0"
+                        style={{ backgroundColor: item.color }}
+                      />
+                      <div>
+                        <span className="font-heading text-base font-medium text-white block">
+                          {item.label}
+                        </span>
+                        <span className="text-sm text-white/50">
+                          {item.tagline}
+                        </span>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </nav>
+
+          {/* CTA Button */}
+          <div
+            className="mt-8 px-5"
+            style={{
+              opacity: mobileMenuOpen ? 1 : 0,
+              transform: mobileMenuOpen ? 'translateY(0)' : 'translateY(20px)',
+              transition: 'all 0.4s ease-out',
+              transitionDelay: mobileMenuOpen ? '400ms' : '0ms',
+            }}
+          >
+            <Button
+              href="/book-call"
+              size="lg"
+              className="w-full justify-center"
+              onClick={closeMobileMenu}
+            >
+              Book strategy call
+            </Button>
+          </div>
+        </div>
+      );
+  };
+
+  // Option 1: Full-Screen Overlay
+  const FullScreenOverlay = () => (
+    <div
+      className={`lg:hidden fixed top-14 left-0 right-0 bottom-0 z-[100] transition-all duration-300 ${
+        mobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+      }`}
+    >
+      {/* Dark background */}
+      <div
+        className="absolute inset-0 bg-carbon"
+        onClick={closeMobileMenu}
+      />
+
+      {/* Gradient overlay */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: 'linear-gradient(180deg, #0a0a0a 0%, #151515 50%, #0a0a0a 100%)',
+        }}
+      />
+
+      {/* Decorative X in background */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
+        <span className="font-heading font-black text-[280px] leading-none text-white/[0.03]">
+          X
+        </span>
+      </div>
+
+      {/* Content */}
+      <div className="relative z-10 h-full overflow-y-auto flex flex-col justify-center py-8 px-5">
+        <MobileMenuContent />
+      </div>
+    </div>
+  );
+
   return (
+    <>
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-xl ${
         isDarkMode
@@ -421,256 +812,20 @@ export default function Header() {
           </Button>
         </div>
 
-        {/* Mobile Menu Toggle */}
+        {/* Mobile Menu Toggle with Animated Hamburger */}
         <button
           className={`lg:hidden p-2 transition-colors ${isDarkMode ? 'text-white' : 'text-carbon'}`}
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle menu"
           aria-expanded={mobileMenuOpen}
         >
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 256 256" fill="none">
-            <path fill="currentColor" d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"/>
-          </svg>
+          <HamburgerIcon isOpen={mobileMenuOpen} isDarkMode={isDarkMode} />
         </button>
       </nav>
-
-      {/* Mobile Menu */}
-      <div
-        className={`lg:hidden bg-white/95 backdrop-blur-xl transition-all overflow-hidden ${
-          mobileMenuOpen ? 'max-h-[800px] py-4' : 'max-h-0'
-        }`}
-        style={{
-          borderTop: mobileMenuOpen ? `1px solid ${pageAccent}20` : 'none'
-        }}
-      >
-        <ul className="px-5 space-y-4">
-          {/* Home */}
-          <li>
-            <Link
-              href="/"
-              className={`block font-heading text-base font-medium ${
-                isActive('/') ? 'text-carbon' : 'text-g600 hover:text-carbon'
-              }`}
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              <span className={`inline-flex items-center gap-2 ${isActive('/') ? 'border-l-2 border-accent pl-2 -ml-2' : ''}`}>
-                Home
-              </span>
-            </Link>
-          </li>
-
-          {/* Programs with accordion */}
-          <li>
-            <div className="flex items-center justify-between">
-              <Link
-                href="/programs"
-                onClick={() => setMobileMenuOpen(false)}
-                className={`font-heading text-base font-medium ${
-                  isProgramActive ? 'text-carbon' : 'text-g600 hover:text-carbon'
-                }`}
-              >
-                <span className={`inline-flex items-center gap-2 ${isProgramActive ? 'border-l-2 border-accent pl-2 -ml-2' : ''}`}>
-                  Programs
-                </span>
-              </Link>
-              <button
-                onClick={() => setMobileProgramsOpen(!mobileProgramsOpen)}
-                className="p-2 rounded-lg text-g500 hover:text-carbon hover:bg-g100 transition-colors"
-                aria-label="Toggle programs menu"
-              >
-                <svg
-                  className={`w-5 h-5 transition-transform ${mobileProgramsOpen ? 'rotate-180' : ''}`}
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                >
-                  <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </button>
-            </div>
-            <div
-              className={`overflow-hidden transition-all ${
-                mobileProgramsOpen ? 'max-h-64 mt-2' : 'max-h-0'
-              }`}
-            >
-              <ul className="pl-2 space-y-1">
-                {programsDropdown.map((item) => (
-                  <li key={item.href}>
-                    <Link
-                      href={item.href}
-                      className="flex items-start gap-3 p-2 rounded-lg hover:bg-g50 transition-colors"
-                      onClick={() => {
-                        setMobileMenuOpen(false);
-                        setMobileProgramsOpen(false);
-                      }}
-                    >
-                      <span
-                        className="w-2 h-2 rounded-full flex-shrink-0 mt-1.5"
-                        style={{ backgroundColor: item.color }}
-                      />
-                      <div>
-                        <span className="font-heading text-sm font-medium text-carbon block">
-                          {item.label}
-                        </span>
-                        <span className="text-xs text-g400">{item.tagline}</span>
-                      </div>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </li>
-
-          {/* For Business with accordion */}
-          <li>
-            <div className="flex items-center justify-between">
-              <Link
-                href="/for-business"
-                onClick={() => setMobileMenuOpen(false)}
-                className={`font-heading text-base font-medium ${
-                  isBusinessActive ? 'text-carbon' : 'text-g600 hover:text-carbon'
-                }`}
-              >
-                <span className={`inline-flex items-center gap-2 ${isBusinessActive ? 'border-l-2 border-accent pl-2 -ml-2' : ''}`}>
-                  For Business
-                </span>
-              </Link>
-              <button
-                onClick={() => setMobileBusinessOpen(!mobileBusinessOpen)}
-                className="p-2 rounded-lg text-g500 hover:text-carbon hover:bg-g100 transition-colors"
-                aria-label="Toggle business menu"
-              >
-                <svg
-                  className={`w-5 h-5 transition-transform ${mobileBusinessOpen ? 'rotate-180' : ''}`}
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                >
-                  <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </button>
-            </div>
-            <div
-              className={`overflow-hidden transition-all ${
-                mobileBusinessOpen ? 'max-h-48 mt-2' : 'max-h-0'
-              }`}
-            >
-              <ul className="pl-2 space-y-1">
-                {businessDropdown.map((item) => (
-                  <li key={item.href}>
-                    <Link
-                      href={item.href}
-                      className="flex items-start gap-3 p-2 rounded-lg hover:bg-g50 transition-colors"
-                      onClick={() => {
-                        setMobileMenuOpen(false);
-                        setMobileBusinessOpen(false);
-                      }}
-                    >
-                      <span
-                        className="w-2 h-2 rounded-full flex-shrink-0 mt-1.5"
-                        style={{ backgroundColor: item.color }}
-                      />
-                      <div>
-                        <span className="font-heading text-sm font-medium text-carbon block">
-                          {item.label}
-                        </span>
-                        <span className="text-xs text-g400">{item.tagline}</span>
-                      </div>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </li>
-
-          {/* About, Podcast, Community */}
-          {navLinks.slice(1).map((link) => (
-            <li key={link.href}>
-              <Link
-                href={link.href}
-                className={`block font-heading text-base font-medium ${
-                  isActive(link.href) ? 'text-carbon' : 'text-g600 hover:text-carbon'
-                }`}
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                <span className={`inline-flex items-center gap-2 ${isActive(link.href) ? 'border-l-2 border-accent pl-2 -ml-2' : ''}`}>
-                  {link.label}
-                </span>
-              </Link>
-            </li>
-          ))}
-
-          {/* Resources with accordion */}
-          <li>
-            <div className="flex items-center justify-between">
-              <Link
-                href="/resources"
-                onClick={() => setMobileMenuOpen(false)}
-                className={`font-heading text-base font-medium ${
-                  isResourcesActive ? 'text-carbon' : 'text-g600 hover:text-carbon'
-                }`}
-              >
-                <span className={`inline-flex items-center gap-2 ${isResourcesActive ? 'border-l-2 border-accent pl-2 -ml-2' : ''}`}>
-                  Resources
-                </span>
-              </Link>
-              <button
-                onClick={() => setMobileResourcesOpen(!mobileResourcesOpen)}
-                className="p-2 rounded-lg text-g500 hover:text-carbon hover:bg-g100 transition-colors"
-                aria-label="Toggle resources menu"
-              >
-                <svg
-                  className={`w-5 h-5 transition-transform ${mobileResourcesOpen ? 'rotate-180' : ''}`}
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                >
-                  <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </button>
-            </div>
-            <div
-              className={`overflow-hidden transition-all ${
-                mobileResourcesOpen ? 'max-h-72 mt-2' : 'max-h-0'
-              }`}
-            >
-              <ul className="pl-2 space-y-1">
-                {resourcesDropdown.map((item) => (
-                  <li key={item.href}>
-                    <Link
-                      href={item.href}
-                      className="flex items-start gap-3 p-2 rounded-lg hover:bg-g50 transition-colors"
-                      onClick={() => {
-                        setMobileMenuOpen(false);
-                        setMobileResourcesOpen(false);
-                      }}
-                    >
-                      <span
-                        className="w-2 h-2 rounded-full flex-shrink-0 mt-1.5"
-                        style={{ backgroundColor: item.color }}
-                      />
-                      <div>
-                        <span className="font-heading text-sm font-medium text-carbon block">
-                          {item.label}
-                        </span>
-                        <span className="text-xs text-g400">{item.tagline}</span>
-                      </div>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </li>
-        </ul>
-        <div className="px-5 mt-4">
-          <Button href="#book-call" size="sm" className="w-full justify-center">
-            Book strategy call
-          </Button>
-        </div>
-      </div>
     </header>
+
+    {/* Mobile Menu - Full Screen Overlay */}
+    <FullScreenOverlay />
+    </>
   );
 }

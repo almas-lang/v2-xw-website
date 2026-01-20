@@ -61,7 +61,7 @@ export default function VideoSection() {
         style={{ background: 'rgba(74, 144, 164, 0.12)' }}
       />
 
-      <div className="relative z-10 px-5 py-16 md:py-24 lg:py-32">
+      <div className="relative z-10 px-5 py-12 sm:py-16 md:py-24 lg:py-32">
         <div
           className="max-w-[1000px] mx-auto"
           style={{

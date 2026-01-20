@@ -126,7 +126,7 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 max-w-[1200px] mx-auto px-5 md:px-8 lg:px-12">
         <div className="min-h-screen flex flex-col justify-center pt-16 pb-6 sm:pt-20 sm:pb-10 md:pt-24 md:pb-12">
-          <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          <div className="grid lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-12 items-center">
             {/* Left column - Main content */}
             <div className="lg:col-span-7 xl:col-span-6">
               {/* Eyebrow badge */}
@@ -268,6 +268,52 @@ export default function Hero() {
                       <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                     </svg>
                     <span className="text-g500">AI-first approach</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Mobile Stats Cards */}
+              <div
+                className="lg:hidden mt-10 flex flex-col gap-4"
+                style={{
+                  opacity: isVisible ? 1 : 0,
+                  transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+                  transition: 'all 0.6s ease-out 0.4s',
+                }}
+              >
+                <div className="flex gap-3">
+                  {/* Card 1 - 38% salary hike */}
+                  <div className="flex-1 p-4 bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-xl">
+                    <div className="text-2xl font-heading font-bold text-white mb-1">38%</div>
+                    <div className="text-xs text-g400">avg salary hike</div>
+                    <div className="mt-2 h-1 bg-white/10 rounded-full overflow-hidden">
+                      <div className="h-full w-[80%] bg-gradient-to-r from-accent to-accent/60 rounded-full" />
+                    </div>
+                  </div>
+
+                  {/* Card 2 - 5 weeks */}
+                  <div className="flex-1 p-4 bg-gradient-to-br from-accent/10 to-accent/5 backdrop-blur-md border border-accent/20 rounded-xl">
+                    <div className="text-xl font-heading font-bold text-accent mb-1">5 weeks</div>
+                    <div className="text-xs text-white/70">fastest result achieved</div>
+                  </div>
+                </div>
+
+                {/* Card 3 - Mentees work at */}
+                <div className="p-4 bg-white/[0.04] backdrop-blur-md border border-white/10 rounded-xl">
+                  <div className="flex items-center gap-2 mb-3">
+                    <div className="w-8 h-8 rounded-lg bg-alice/10 flex items-center justify-center">
+                      <svg className="w-4 h-4 text-alice" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                    <span className="text-white text-sm font-medium">Mentees work at</span>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {['JP Morgan', 'McKinsey', 'Intel', 'Deloitte'].map((company) => (
+                      <span key={company} className="px-2 py-1 text-xs font-medium text-g300 bg-white/5 rounded-lg">
+                        {company}
+                      </span>
+                    ))}
                   </div>
                 </div>
               </div>

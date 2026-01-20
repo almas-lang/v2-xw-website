@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import Button from '@/components/ui/Button';
 
 const schedule = [
   { time: '11:00 AM', title: 'Doors Open', type: 'start' },
@@ -319,16 +320,9 @@ export default function UpcomingEdition() {
               transition: 'all 0.5s ease-out 0.55s',
             }}
           >
-            <a
-              href="#register"
-              className="group relative inline-flex items-center gap-2 px-6 py-3 sm:px-8 sm:py-4 bg-indigo-600 hover:bg-indigo-500 text-white font-heading font-semibold text-sm sm:text-base rounded-xl transition-all duration-200 hover:scale-105"
-              style={{
-                boxShadow: '0 0 30px rgba(99, 102, 241, 0.3)',
-              }}
-            >
+            <Button href="/community/register" variant="indigo" size="lg" showArrow className="hover:scale-105 shadow-[0_0_30px_rgba(99,102,241,0.3)]">
               Register Now
-              <span className="group-hover:translate-x-1 transition-transform">→</span>
-            </a>
+            </Button>
           </div>
         </div>
       </div>

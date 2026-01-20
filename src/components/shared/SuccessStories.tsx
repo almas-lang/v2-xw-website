@@ -314,7 +314,7 @@ export default function SuccessStories({
       />
 
       {/* Content */}
-      <div className="relative z-10 px-5 py-16 sm:py-20 md:py-24 lg:py-28">
+      <div className="relative z-10 px-5 py-16 sm:py-20 md:py-24 lg:py-32">
         <div className="max-w-[1200px] mx-auto">
           {/* Header */}
           <div

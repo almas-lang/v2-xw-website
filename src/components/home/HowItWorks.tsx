@@ -37,7 +37,7 @@ export default function HowItWorks() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative py-20 md:py-28 overflow-hidden bg-white">
+    <section ref={sectionRef} className="relative py-14 sm:py-20 md:py-28 lg:py-32 overflow-hidden bg-white">
       {/* Background texture */}
       <div className="absolute inset-0 opacity-30">
         <div
@@ -52,7 +52,7 @@ export default function HowItWorks() {
       <div className="max-w-[1100px] mx-auto px-5 relative z-10">
         {/* Header */}
         <div
-          className="text-center mb-16 md:mb-20"
+          className="text-center mb-10 sm:mb-16 md:mb-20"
           style={{
             opacity: isVisible ? 1 : 0,
             transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
@@ -148,7 +148,7 @@ export default function HowItWorks() {
               }}
             />
 
-            <div className="space-y-10">
+            <div className="space-y-8 sm:space-y-10">
               {steps.map((step, index) => (
                 <div
                   key={index}
@@ -185,7 +185,7 @@ export default function HowItWorks() {
 
         {/* CTA */}
         <div
-          className="mt-16 md:mt-20 flex justify-center"
+          className="mt-10 sm:mt-16 md:mt-20 flex justify-center"
           style={{
             opacity: isVisible ? 1 : 0,
             transform: isVisible ? 'translateY(0)' : 'translateY(20px)',

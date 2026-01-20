@@ -278,7 +278,7 @@ export default function CurrentProgramPage() {
         guarantee={currentInvestment.guarantee}
         accentColor="coral"
       />
-      <FAQ faqs={currentFaqs} />
+      <FAQ faqs={currentFaqs} theme="coral" />
       <CTASection
         title={
           <>

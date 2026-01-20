@@ -273,14 +273,18 @@ export default function TideProgramPage() {
         subtitle="The journey to leading teams"
       />
       <MenteesWorkAt />
-      <WhyMentorship />
+      <WhyMentorship
+        blogTitle="Why UX Design Courses Don't Get You Senior & Leadership Roles (And What Actually Works)"
+        blogSlug="why-courses-dont-get-leadership-roles"
+        blogImage="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80"
+      />
       <InvestmentSection
         pricing={tideInvestment.pricing}
         roi={tideInvestment.roi}
         guarantee={tideInvestment.guarantee}
         accentColor="gold"
       />
-      <FAQ faqs={tideFaqs} />
+      <FAQ faqs={tideFaqs} theme="gold" />
       <CTASection
         title={
           <>

@@ -4,7 +4,7 @@ interface ButtonProps {
   href?: string;
   onClick?: () => void;
   children: React.ReactNode;
-  variant?: 'primary' | 'secondary' | 'ghost';
+  variant?: 'primary' | 'secondary' | 'ghost' | 'indigo' | 'dark';
   size?: 'sm' | 'md' | 'lg';
   className?: string;
   showArrow?: boolean;
@@ -27,6 +27,8 @@ export default function Button({
     primary: 'bg-accent hover:bg-accent/90 text-white hover:shadow-lg hover:shadow-accent/20',
     secondary: 'bg-white hover:bg-g100 text-carbon border border-g200',
     ghost: 'bg-transparent hover:bg-white/10 text-white border border-white/30',
+    indigo: 'bg-indigo-600 hover:bg-indigo-500 text-white hover:shadow-lg hover:shadow-indigo-500/30',
+    dark: 'bg-carbon hover:bg-carbon/90 text-white hover:shadow-lg hover:shadow-carbon/20',
   };
 
   const sizes = {
@@ -53,10 +55,28 @@ export default function Button({
     </svg>
   );
 
-  // If href is provided, render as Link
+  // If href is provided, render as Link or anchor
   if (href) {
+    const isExternal = href.startsWith('http://') || href.startsWith('https://');
+
+    // External links use anchor tag with target="_blank"
+    if (isExternal) {
+      return (
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`${combinedStyles} rounded-xl`}
+        >
+          {children}
+          {arrow}
+        </a>
+      );
+    }
+
+    // Internal links use Next.js Link
     return (
-      <Link href={href} className={combinedStyles} style={{ borderRadius: '6px' }}>
+      <Link href={href} className={`${combinedStyles} rounded-xl`}>
         {children}
         {arrow}
       </Link>
@@ -68,8 +88,7 @@ export default function Button({
     <button
       type={type}
       onClick={onClick}
-      className={combinedStyles}
-      style={{ borderRadius: '6px' }}
+      className={`${combinedStyles} rounded-xl`}
     >
       {children}
       {arrow}

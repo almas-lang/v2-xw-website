@@ -65,7 +65,7 @@ export default function MenteesWorkAt({
   return (
     <section
       ref={sectionRef}
-      className="relative py-16 md:py-24 overflow-hidden"
+      className="relative py-12 sm:py-16 md:py-24 lg:py-28 overflow-hidden"
       style={{
         background: 'linear-gradient(180deg, #FAFAFA 0%, #FFFFFF 50%, #FAFAFA 100%)',
       }}
@@ -84,7 +84,7 @@ export default function MenteesWorkAt({
 
       <div className="max-w-[1200px] mx-auto px-5 relative z-10">
         {/* Header */}
-        <div className="text-center mb-10 md:mb-14">
+        <div className="text-center mb-8 sm:mb-10 md:mb-14">
           <h2
             className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-carbon tracking-tight transition-all duration-700"
             style={{
@@ -97,7 +97,7 @@ export default function MenteesWorkAt({
         </div>
 
         {/* Company Logos Grid */}
-        <div className="flex flex-col gap-4 md:gap-5 mb-10 md:mb-14">
+        <div className="flex flex-col gap-4 md:gap-5 mb-8 sm:mb-10 md:mb-14">
           {companies.map((row, rowIndex) => (
             <div
               key={rowIndex}

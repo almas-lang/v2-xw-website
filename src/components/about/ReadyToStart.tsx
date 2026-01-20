@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import Link from 'next/link';
+import Button from '@/components/ui/Button';
 
 export default function ReadyToStart() {
   const [isVisible, setIsVisible] = useState(false);
@@ -37,8 +37,7 @@ export default function ReadyToStart() {
       {/* Full-width split layout */}
       <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[450px] lg:min-h-[500px]">
         {/* Left - For Designers (Dark) */}
-        <Link
-          href="/programs"
+        <div
           className="group relative flex flex-col justify-center px-8 py-16 md:px-12 lg:px-16 xl:px-20 bg-carbon overflow-hidden"
         >
           {/* Accent glow */}
@@ -97,21 +96,9 @@ export default function ReadyToStart() {
                 transitionDelay: '300ms',
               }}
             >
-              <span
-                className="inline-flex items-center gap-3 px-6 py-3.5 bg-accent hover:bg-accent/90 text-white font-heading font-bold text-sm transition-all duration-300 group-hover:gap-4"
-                style={{ borderRadius: '10px' }}
-              >
+              <Button href="/programs" showArrow>
                 Explore Programs
-                <svg
-                  className="w-5 h-5 transition-transform group-hover:translate-x-1"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </span>
+              </Button>
             </div>
           </div>
 
@@ -122,11 +109,10 @@ export default function ReadyToStart() {
               background: 'linear-gradient(135deg, transparent 50%, rgba(232, 90, 79, 0.1) 100%)',
             }}
           />
-        </Link>
+        </div>
 
         {/* Right - For Companies (Light/Alice) */}
-        <Link
-          href="/contact"
+        <div
           className="group relative flex flex-col justify-center px-8 py-16 md:px-12 lg:px-16 xl:px-20 overflow-hidden"
           style={{
             background: 'linear-gradient(135deg, #E8F4F7 0%, #D4EBF1 50%, #C0E2EA 100%)',
@@ -189,21 +175,9 @@ export default function ReadyToStart() {
                 transitionDelay: '400ms',
               }}
             >
-              <span
-                className="inline-flex items-center gap-3 px-6 py-3.5 bg-carbon hover:bg-carbon/90 text-white font-heading font-bold text-sm transition-all duration-300 group-hover:gap-4"
-                style={{ borderRadius: '10px' }}
-              >
+              <Button href="/contact" variant="dark" showArrow>
                 Work With Us
-                <svg
-                  className="w-5 h-5 transition-transform group-hover:translate-x-1"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </span>
+              </Button>
             </div>
           </div>
 
@@ -214,7 +188,7 @@ export default function ReadyToStart() {
               background: 'linear-gradient(225deg, transparent 50%, rgba(74, 144, 164, 0.1) 100%)',
             }}
           />
-        </Link>
+        </div>
       </div>
     </section>
   );

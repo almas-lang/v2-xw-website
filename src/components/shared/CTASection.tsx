@@ -29,7 +29,7 @@ export default function CTASection({
   benefits = defaultBenefits,
 }: CTASectionProps) {
   return (
-    <section className="relative py-20 md:py-28 overflow-hidden">
+    <section className="relative py-14 sm:py-20 md:py-28 lg:py-32 overflow-hidden">
       {/* Dark gradient background */}
       <div
         className="absolute inset-0"

@@ -252,14 +252,18 @@ export default function RippleProgramPage() {
         subtitle="Career switchers who made it happen"
       />
       <MenteesWorkAt />
-      <WhyMentorship />
+      <WhyMentorship
+        blogTitle="Why UX Design Courses Don't Get You Good Roles (And What Actually Works)"
+        blogSlug="why-courses-dont-get-good-roles"
+        blogImage="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80"
+      />
       <InvestmentSection
         pricing={rippleInvestment.pricing}
         roi={rippleInvestment.roi}
         guarantee={rippleInvestment.guarantee}
         accentColor="teal"
       />
-      <FAQ faqs={rippleFaqs} />
+      <FAQ faqs={rippleFaqs} theme="teal" />
       <CTASection
         title={
           <>

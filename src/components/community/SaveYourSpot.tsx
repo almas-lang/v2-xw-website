@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import Button from '@/components/ui/Button';
 
 // Seeded random for consistent SSR/client values
 const seededRandom = (seed: number) => {
@@ -203,21 +204,9 @@ export default function SaveYourSpot() {
                 transform: `scale(${isHovered ? 1.1 : 1})`,
               }}
             />
-            <a
-              href="#register"
-              className="group relative inline-flex items-center gap-2 px-6 py-3 sm:px-8 sm:py-4 bg-indigo-600 hover:bg-indigo-500 text-white font-heading font-semibold text-sm sm:text-base rounded-xl transition-all duration-300 hover:scale-105"
-            >
+            <Button href="/community/register" variant="indigo" size="lg" showArrow>
               Register Now
-              <svg
-                className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2.5}
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </a>
+            </Button>
           </div>
 
           {/* Trust indicator */}

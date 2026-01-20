@@ -139,7 +139,7 @@ export default function Programs() {
       />
 
       {/* Content container - mobile first padding */}
-      <div className="relative z-10 px-5 py-16 sm:py-20 md:py-24 lg:py-28 max-w-[1100px] mx-auto">
+      <div className="relative z-10 px-5 py-16 sm:py-20 md:py-24 lg:py-32 max-w-[1100px] mx-auto">
         {/* Header */}
         <div
           className="mb-10 sm:mb-12 md:mb-16"
@@ -231,7 +231,7 @@ export default function Programs() {
                           {featuredProgram.aiFeature}
                         </span>
 
-                        <span className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-accent hover:bg-accent-hover text-white font-heading font-semibold text-xs sm:text-sm rounded-lg transition-all duration-300 group-hover:gap-3">
+                        <span className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-accent hover:bg-accent-hover text-white font-heading font-semibold text-xs sm:text-sm rounded-xl transition-all duration-300 group-hover:gap-3">
                           See Program Details
                           <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                             <path d="M5 12h14M12 5l7 7-7 7" />

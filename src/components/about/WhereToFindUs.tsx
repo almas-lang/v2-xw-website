@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
+import Button from '@/components/ui/Button';
 
 export default function WhereToFindUs() {
   const [isVisible, setIsVisible] = useState(false);
@@ -194,24 +195,14 @@ export default function WhereToFindUs() {
               </div>
 
               {/* CTA Button */}
-              <a
+              <Button
                 href="https://maps.google.com/?q=Xperience+Wave+328+AECS+Layout+Singasandra+Bangalore+560068"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3.5 bg-carbon hover:bg-carbon/90 text-white font-heading font-semibold text-sm transition-all duration-300 group"
-                style={{ borderRadius: '10px' }}
+                variant="dark"
+                showArrow
+                className="w-full sm:w-auto justify-center"
               >
                 Get Directions
-                <svg
-                  className="w-4 h-4 transition-transform group-hover:translate-x-1"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </a>
+              </Button>
             </div>
           </div>
         </div>

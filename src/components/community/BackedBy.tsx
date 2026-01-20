@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import SponsorModal from './SponsorModal';
 
 const sponsors = [
   { type: 'Powered by', name: 'Xperience Wave', color: '#6366f1' },
@@ -10,6 +11,7 @@ const sponsors = [
 export default function BackedBy() {
   const [isVisible, setIsVisible] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -95,8 +97,8 @@ export default function BackedBy() {
             <p className="text-neutral-500 text-base mb-6">
               Partners who make this possible
             </p>
-            <a
-              href="#sponsor"
+            <button
+              onClick={() => setIsModalOpen(true)}
               className="group relative inline-flex items-center gap-2 px-6 py-3 sm:px-8 sm:py-4 bg-indigo-600 hover:bg-indigo-500 text-white font-heading font-semibold text-sm sm:text-base rounded-xl transition-all duration-300 hover:shadow-xl hover:shadow-indigo-500/20 hover:-translate-y-0.5"
             >
               {/* Button glow */}
@@ -110,7 +112,7 @@ export default function BackedBy() {
               />
               Sponsor with Us
               <span className="group-hover:translate-x-0.5 transition-transform">→</span>
-            </a>
+            </button>
           </div>
 
           {/* Right: Sponsor cards with enhanced styling */}
@@ -203,6 +205,9 @@ export default function BackedBy() {
 
       {/* Gradient top border */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-neutral-200 to-transparent" />
+
+      {/* Sponsor Modal */}
+      <SponsorModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </section>
   );
 }

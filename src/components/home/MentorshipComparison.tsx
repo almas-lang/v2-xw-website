@@ -39,10 +39,10 @@ export default function MentorshipComparison() {
         }}
       />
 
-      <div className="relative z-10 max-w-[1000px] mx-auto px-5 py-20 md:py-28">
+      <div className="relative z-10 max-w-[1000px] mx-auto px-5 py-14 sm:py-20 md:py-28 lg:py-32">
         {/* Header */}
         <div
-          className="text-center mb-12 md:mb-16"
+          className="text-center mb-8 sm:mb-12 md:mb-16"
           style={{
             opacity: isVisible ? 1 : 0,
             transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
@@ -64,7 +64,7 @@ export default function MentorshipComparison() {
 
         {/* Comparison Table */}
         <div
-          className="mb-12 md:mb-16"
+          className="mb-8 sm:mb-12 md:mb-16"
           style={{
             opacity: isVisible ? 1 : 0,
             transform: isVisible ? 'translateY(0)' : 'translateY(20px)',

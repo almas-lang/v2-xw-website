@@ -80,9 +80,9 @@ export default function WhyCoursesFailed() {
         />
       </div>
 
-      <div className="relative z-10 max-w-[1400px] mx-auto px-5 py-20 md:py-28 lg:py-32">
+      <div className="relative z-10 max-w-[1400px] mx-auto px-5 py-14 sm:py-20 md:py-28 lg:py-32">
         {/* Top section - Hero headline */}
-        <div className="mb-12 md:mb-20 lg:mb-28">
+        <div className="mb-8 sm:mb-12 md:mb-20 lg:mb-28">
           <div
             className="max-w-4xl"
             style={{
@@ -120,7 +120,7 @@ export default function WhyCoursesFailed() {
         </div>
 
         {/* Pain points - Asymmetric grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 md:gap-6 lg:gap-8 mb-12 md:mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 md:gap-6 lg:gap-8 mb-8 sm:mb-12 md:mb-20">
           {/* Left column - 2 cards stacked */}
           <div className="lg:col-span-5 space-y-4 md:space-y-6 lg:space-y-8">
             {painPoints.slice(0, 2).map((point, index) => (
@@ -247,33 +247,44 @@ export default function WhyCoursesFailed() {
             <div className="relative group">
               <Link
                 href="/resources/blogs/why-courses-dont-work"
-                className="flex flex-col sm:flex-row gap-4 md:gap-6 p-4 md:p-6 rounded-xl bg-alice/10 border border-alice/20 hover:bg-alice/15 hover:border-alice/30 transition-all duration-300"
+                className="relative flex flex-col sm:flex-row gap-4 md:gap-5 p-4 md:p-5 rounded-2xl bg-white transition-all duration-300 overflow-hidden hover:shadow-2xl hover:shadow-black/40"
               >
-                {/* Thumbnail placeholder */}
-                <div className="relative w-full sm:w-40 md:w-48 h-40 sm:h-32 flex-shrink-0 rounded-lg overflow-hidden bg-gradient-to-br from-g800 to-carbon">
+                {/* Thumbnail */}
+                <div className="relative w-full sm:w-36 md:w-44 h-36 sm:h-28 flex-shrink-0 rounded-xl overflow-hidden">
                   <Image
                     src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&q=80"
                     alt="Why courses don't work"
                     fill
-                    className="object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-500"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  {/* Play-style overlay */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center">
-                      <svg className="w-4 h-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <path d="M9 18l6-6-6-6" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                    </div>
-                  </div>
                 </div>
 
                 {/* Content */}
                 <div className="flex-1 flex flex-col justify-center">
-                  <span className="font-body text-xs uppercase tracking-wider text-accent mb-2">Deep Dive</span>
-                  <h3 className="font-heading text-lg md:text-xl font-bold text-white mb-3 group-hover:text-accent transition-colors">
+                  {/* Category with article icon */}
+                  <div className="flex items-center gap-2 mb-2">
+                    <svg className="w-3.5 h-3.5 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+                    </svg>
+                    <span className="font-body text-xs uppercase tracking-wider text-accent font-medium">Article</span>
+                  </div>
+
+                  <h3 className="font-heading text-base md:text-lg font-bold text-carbon mb-2 leading-snug group-hover:text-accent transition-colors">
                     Why UX Design Courses Don&apos;t Get You Senior Roles (And What Actually Works)
                   </h3>
-                  <span className="font-body text-sm text-g500">4 min read</span>
+
+                  <div className="flex items-center gap-3 text-g500 text-sm mb-3">
+                    <span>Jan 10, 2025</span>
+                    <span className="w-1 h-1 rounded-full bg-g400" />
+                    <span>4 min read</span>
+                  </div>
+
+                  <span className="font-heading text-sm font-semibold text-accent inline-flex items-center gap-1.5 group-hover:gap-2.5 transition-all">
+                    Read Article
+                    <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                  </span>
                 </div>
               </Link>
             </div>

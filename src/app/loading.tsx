@@ -8,7 +8,7 @@ export default function Loading() {
           background: 'linear-gradient(135deg, #0a0a0a 0%, #0a0a0a 25%, #0a0a0a 50%, #0a0a0a 75%, #0a0a0a 100%)',
         }}
       >
-        <div className="max-w-[1200px] mx-auto px-4">
+        <div className="max-w-[1200px] mx-auto px-5">
           <div className="pt-28 pb-12">
             {/* Title skeleton */}
             <div className="space-y-3 mb-6 max-w-[900px]">
@@ -53,7 +53,7 @@ export default function Loading() {
 
       {/* Stats Section - Carbon bg matching Stats.tsx */}
       <section className="bg-[#0A0A0A] py-12">
-        <div className="max-w-[1000px] mx-auto px-5">
+        <div className="max-w-[1200px] mx-auto px-5">
           <div className="flex flex-wrap justify-center gap-8">
             {[1, 2, 3].map((i) => (
               <div key={i} className="flex flex-col items-center min-w-[100px]">

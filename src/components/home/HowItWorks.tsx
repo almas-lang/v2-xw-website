@@ -38,7 +38,7 @@ export default function HowItWorks() {
 
   return (
     <section ref={sectionRef} className="relative py-14 sm:py-20 md:py-28 lg:py-32 overflow-hidden bg-white">
-      <div className="max-w-[1000px] mx-auto px-5 relative z-10">
+      <div className="max-w-[1200px] mx-auto px-5 relative z-10">
         {/* Header */}
         <div
           className="mb-12 md:mb-16"

@@ -79,7 +79,7 @@ export default function ToolsSection({
       />
 
       {/* Header */}
-      <div className="relative z-20 max-w-[1000px] mx-auto px-5 mb-12 md:mb-16">
+      <div className="relative z-20 max-w-[1200px] mx-auto px-5 mb-12 md:mb-16">
         <h2
           className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-carbon text-center transition-all duration-700"
           style={{
@@ -144,7 +144,7 @@ export default function ToolsSection({
       </div>
 
       {/* Footer text */}
-      <div className="relative z-20 max-w-[1000px] mx-auto px-5 mt-12 md:mt-16">
+      <div className="relative z-20 max-w-[1200px] mx-auto px-5 mt-12 md:mt-16">
         <p
           className="font-body text-sm md:text-base text-g500 text-center transition-all duration-700"
           style={{

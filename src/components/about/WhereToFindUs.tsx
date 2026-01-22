@@ -30,7 +30,7 @@ export default function WhereToFindUs() {
         <div className="absolute top-0 right-1/4 w-96 h-96 bg-alice/[0.03] rounded-full blur-3xl" />
       </div>
 
-      <div className="max-w-[1000px] mx-auto px-5 relative z-10">
+      <div className="max-w-[1200px] mx-auto px-5 relative z-10">
         {/* Header */}
         <div
           className="text-center mb-10 md:mb-14 transition-all duration-700"

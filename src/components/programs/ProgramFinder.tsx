@@ -5,64 +5,34 @@ import Link from 'next/link';
 import Button from '@/components/ui/Button';
 
 // ============================================
-// ILLUSTRATIONS
+// ILLUSTRATIONS - Icon Set 10: Orbit, Hexagon, Trident
 // ============================================
 
 const CurrentWaveIllustration = () => (
-  <svg viewBox="0 0 200 200" className="w-full h-full" preserveAspectRatio="xMidYMid slice">
-    <defs>
-      <linearGradient id="currentGradientFinder" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stopColor="#3B82F6" />
-        <stop offset="50%" stopColor="#6366F1" />
-        <stop offset="100%" stopColor="#8B5CF6" />
-      </linearGradient>
-      <linearGradient id="currentGradient2Finder" x1="0%" y1="100%" x2="100%" y2="0%">
-        <stop offset="0%" stopColor="#3B82F6" stopOpacity="0.3" />
-        <stop offset="100%" stopColor="#8B5CF6" stopOpacity="0.1" />
-      </linearGradient>
-    </defs>
-    <path d="M-20,100 Q30,60 80,100 T180,100 T280,100" fill="none" stroke="url(#currentGradientFinder)" strokeWidth="3" />
-    <path d="M-20,120 Q30,80 80,120 T180,120 T280,120" fill="none" stroke="url(#currentGradientFinder)" strokeWidth="2.5" strokeOpacity="0.7" />
-    <path d="M-20,140 Q30,100 80,140 T180,140 T280,140" fill="none" stroke="url(#currentGradientFinder)" strokeWidth="2" strokeOpacity="0.5" />
-    <path d="M0,180 Q50,130 100,150 T200,140 L200,200 L0,200 Z" fill="url(#currentGradient2Finder)" />
-    <circle cx="40" cy="90" r="3" fill="#3B82F6" opacity="0.8" />
-    <circle cx="100" cy="110" r="2" fill="#6366F1" opacity="0.7" />
-    <circle cx="160" cy="95" r="2.5" fill="#8B5CF6" opacity="0.6" />
+  <svg viewBox="0 0 48 48" className="w-full h-full">
+    <path d="M24 4L40 14V34L24 44L8 34V14L24 4Z" fill="#6366F1" opacity="0.15" stroke="#6366F1" strokeWidth="2" strokeLinejoin="round" />
+    <path d="M24 12L32 18V30L24 36L16 30V18L24 12Z" fill="#6366F1" opacity="0.25" />
+    <circle cx="24" cy="24" r="4" fill="#6366F1" />
   </svg>
 );
 
 const RippleIllustration = () => (
-  <svg viewBox="0 0 120 120" className="w-full h-full">
-    <defs>
-      <linearGradient id="rippleGradientFinder" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stopColor="#3B82F6" />
-        <stop offset="100%" stopColor="#6366F1" />
-      </linearGradient>
-    </defs>
-    <circle cx="60" cy="60" r="6" fill="url(#rippleGradientFinder)" />
-    <circle cx="60" cy="60" r="18" fill="none" stroke="#3B82F6" strokeWidth="2" opacity="0.8" />
-    <circle cx="60" cy="60" r="32" fill="none" stroke="#6366F1" strokeWidth="1.5" opacity="0.5" />
-    <circle cx="60" cy="60" r="46" fill="none" stroke="#8B5CF6" strokeWidth="1" opacity="0.3" />
-    <circle cx="60" cy="48" r="2" fill="#3B82F6" opacity="0.7" />
-    <circle cx="72" cy="55" r="1.5" fill="#6366F1" opacity="0.5" />
+  <svg viewBox="0 0 48 48" className="w-full h-full">
+    <ellipse cx="24" cy="24" rx="18" ry="8" stroke="#4A90A4" strokeWidth="1.5" fill="none" transform="rotate(-30 24 24)" opacity="0.4" />
+    <ellipse cx="24" cy="24" rx="18" ry="8" stroke="#4A90A4" strokeWidth="1.5" fill="none" transform="rotate(30 24 24)" opacity="0.4" />
+    <ellipse cx="24" cy="24" rx="18" ry="8" stroke="#4A90A4" strokeWidth="1.5" fill="none" transform="rotate(90 24 24)" opacity="0.4" />
+    <circle cx="24" cy="24" r="5" fill="#4A90A4" />
   </svg>
 );
 
 const TideIllustration = () => (
-  <svg viewBox="0 0 120 120" className="w-full h-full">
-    <defs>
-      <linearGradient id="tideGradientFinder" x1="0%" y1="100%" x2="0%" y2="0%">
-        <stop offset="0%" stopColor="#3B82F6" stopOpacity="0.4" />
-        <stop offset="50%" stopColor="#6366F1" stopOpacity="0.2" />
-        <stop offset="100%" stopColor="#8B5CF6" stopOpacity="0.05" />
-      </linearGradient>
-    </defs>
-    <path d="M0,120 L0,70 Q30,60 60,70 T120,65 L120,120 Z" fill="url(#tideGradientFinder)" />
-    <path d="M0,75 Q15,65 30,72 T60,68 T90,72 T120,68" fill="none" stroke="#3B82F6" strokeWidth="2.5" strokeLinecap="round" />
-    <path d="M60,50 L60,25" stroke="#6366F1" strokeWidth="2" strokeLinecap="round" opacity="0.8" />
-    <path d="M52,33 L60,25 L68,33" fill="none" stroke="#6366F1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" opacity="0.8" />
-    <circle cx="30" cy="58" r="2" fill="#3B82F6" opacity="0.6" />
-    <circle cx="90" cy="55" r="1.5" fill="#8B5CF6" opacity="0.5" />
+  <svg viewBox="0 0 48 48" className="w-full h-full">
+    <path d="M24 44V16" stroke="#FF0023" strokeWidth="2.5" strokeLinecap="round" />
+    <path d="M24 16L24 8L20 4" stroke="#FF0023" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M24 16L24 8L28 4" stroke="#FF0023" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M24 16L20 12" stroke="#FF0023" strokeWidth="2" strokeLinecap="round" opacity="0.6" />
+    <path d="M24 16L28 12" stroke="#FF0023" strokeWidth="2" strokeLinecap="round" opacity="0.6" />
+    <path d="M16 44H32" stroke="#FF0023" strokeWidth="2" strokeLinecap="round" opacity="0.4" />
   </svg>
 );
 
@@ -430,12 +400,6 @@ export default function ProgramFinder() {
             transition: 'all 0.7s cubic-bezier(0.4, 0, 0.2, 1)',
           }}
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/[0.05] border border-white/10 rounded-full mb-6">
-            <svg className="w-4 h-4 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-              <path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-            <span className="text-sm font-medium text-white/80">Your Perfect Match</span>
-          </div>
           <p className="font-body text-base sm:text-lg text-g400">
             Based on your inputs, we recommend
           </p>
@@ -476,7 +440,7 @@ export default function ProgramFinder() {
               <p className="font-body text-sm sm:text-base text-g500 mb-6">
                 {program.description}
               </p>
-              <Button href={program.href} size="md" showArrow>
+              <Button href={program.href} size="md" variant="alice" showArrow>
                 See program details
               </Button>
             </div>
@@ -485,7 +449,7 @@ export default function ProgramFinder() {
 
         {/* Bottom Actions */}
         <div
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6"
+          className="flex flex-col items-center justify-center gap-4"
           style={{
             opacity: isVisible ? 1 : 0,
             transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
@@ -493,24 +457,11 @@ export default function ProgramFinder() {
           }}
         >
           <p className="font-body text-sm sm:text-base text-g400">
-            Not sure this is right?
+            Not sure this is right? Let&apos;s talk.
           </p>
-          <div className="flex items-center gap-4">
-            <button
-              onClick={handleReset}
-              className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-white/70 sm:hover:text-white transition-colors"
-            >
-              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M3 3v5h5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-              Retake Quiz
-            </button>
-            <span className="text-g600">|</span>
-            <Button href="https://calendly.com/team-xperiencewave/xw-strategy" variant="ghost" size="sm">
-              Book a free call
-            </Button>
-          </div>
+          <Button href="https://calendly.com/team-xperiencewave/xw-strategy" size="md" showArrow>
+            Book a free call
+          </Button>
         </div>
       </div>
 

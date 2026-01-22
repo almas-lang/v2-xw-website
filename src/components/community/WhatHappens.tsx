@@ -110,7 +110,7 @@ export default function WhatHappens() {
         ))}
       </div>
 
-      <div className="relative z-10 max-w-[1200px] mx-auto px-5 md:px-8 lg:px-12 py-20 md:py-28">
+      <div className="relative z-10 max-w-[1200px] mx-auto px-5 py-20 md:py-28">
         {/* Bento-style layout */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-5">
 

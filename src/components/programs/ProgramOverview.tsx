@@ -90,7 +90,7 @@ export default function ProgramOverview({
         style={{ background: colors.primary }}
       />
 
-      <div className="relative max-w-[1100px] mx-auto px-5">
+      <div className="relative max-w-[1200px] mx-auto px-5">
         {/* Section Header */}
         <div
           className="text-center mb-10 md:mb-14 transition-all duration-700"

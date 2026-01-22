@@ -57,7 +57,7 @@ export default function OurPartners() {
         <div className="absolute bottom-1/4 right-0 w-64 h-64 bg-alice/[0.03] rounded-full blur-3xl" />
       </div>
 
-      <div className="max-w-[1100px] mx-auto px-5 relative z-10">
+      <div className="max-w-[1200px] mx-auto px-5 relative z-10">
         {/* Header */}
         <div
           className="text-center mb-12 md:mb-16 transition-all duration-700"

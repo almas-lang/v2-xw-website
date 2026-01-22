@@ -51,8 +51,6 @@ export const metadata: Metadata = {
 
 const programStats = [
   { value: '3000', suffix: '+', label: 'designers consulted' },
-  { value: '140', suffix: '+', label: 'mentored 1:1' },
-  { value: '80', suffix: '%', label: 'achieved their goals' },
   { value: '38', suffix: '%', label: 'avg salary hike' },
   { value: '10-15', suffix: ' yrs', label: 'mentor experience' },
 ];
@@ -105,7 +103,7 @@ export default function ProgramsPage() {
       <ProgramFinder />
       <ProgramCards />
       <HowMentorshipWorks />
-      <Stats stats={programStats} maxWidth="1200px" theme="alice" />
+      <Stats stats={programStats} maxWidth="1200px" theme="alice-light" />
       <WhyMentorship />
       <MeetMentors />
       <SuccessStories />

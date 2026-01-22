@@ -110,7 +110,7 @@ export default function InvestmentSection({
         <div className="w-20 h-20 rotate-45 border" style={{ borderColor: colors.primary }} />
       </div>
 
-      <div className="relative max-w-[1000px] mx-auto px-5">
+      <div className="relative max-w-[1200px] mx-auto px-5">
         {/* Header */}
         <div
           className="text-center mb-12 md:mb-16 transition-all duration-700"

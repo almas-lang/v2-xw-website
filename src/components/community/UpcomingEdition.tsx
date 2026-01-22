@@ -88,7 +88,7 @@ export default function UpcomingEdition() {
         <div className="absolute bottom-1/4 right-[8%] w-3 h-3 rotate-45 border border-indigo-500/15 hidden md:block" />
       </div>
 
-      <div className="relative z-10 max-w-[1200px] mx-auto px-5 md:px-8 lg:px-12 py-16 md:py-20 lg:py-28">
+      <div className="relative z-10 max-w-[1200px] mx-auto px-5 py-16 md:py-20 lg:py-28">
         {/* Header */}
         <div
           className="text-center mb-8 md:mb-10"

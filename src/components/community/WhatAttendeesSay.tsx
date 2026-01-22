@@ -88,7 +88,7 @@ export default function WhatAttendeesSay() {
         <div className="absolute bottom-1/3 left-[12%] w-0 h-0 border-l-[4px] border-l-transparent border-r-[4px] border-r-transparent border-t-[7px] border-t-white/[0.1] hidden lg:block" />
       </div>
 
-      <div className="relative z-10 max-w-[1200px] mx-auto px-5 md:px-8 lg:px-12 py-16 md:py-20 lg:py-24">
+      <div className="relative z-10 max-w-[1200px] mx-auto px-5 py-16 md:py-20 lg:py-24">
         {/* Header with glowing quote */}
         <div
           className="text-center mb-10 md:mb-14"

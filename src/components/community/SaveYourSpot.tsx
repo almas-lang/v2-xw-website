@@ -120,7 +120,7 @@ export default function SaveYourSpot() {
         }}
       />
 
-      <div className="relative z-10 max-w-[1200px] mx-auto px-5 md:px-8 lg:px-12 py-14 md:py-16 lg:py-20">
+      <div className="relative z-10 max-w-[1200px] mx-auto px-5 py-14 md:py-16 lg:py-20">
         <div className="text-center max-w-2xl mx-auto">
           {/* Headline */}
           <div

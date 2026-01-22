@@ -61,11 +61,11 @@ export default function MeetMentors({ accentColor = 'accent' }: MeetMentorsProps
       secondaryLabel="Support Mentors"
       secondaryMembers={supportMentors}
       footer={
-        <p className="font-body text-base text-g500">
+        <p className="font-body text-base text-alice/60">
           + clinic leads and specialists for portfolio critiques, mock interviews, and skill deep-dives
         </p>
       }
-      theme="dark"
+      theme="dark-teal"
       accentColor={accentColor}
     />
   );

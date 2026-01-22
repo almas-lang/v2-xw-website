@@ -61,7 +61,7 @@ export default function JoinConversation({ heading = 'Join The Conversation' }: 
 
       {/* Content */}
       <div className="relative z-10 px-5 py-16 sm:py-20 md:py-24 lg:py-28">
-        <div className="max-w-[1100px] mx-auto">
+        <div className="max-w-[1200px] mx-auto">
           {/* Header */}
           <div
             className="text-center mb-10 sm:mb-12 md:mb-16"

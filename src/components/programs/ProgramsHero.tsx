@@ -19,8 +19,8 @@ import Button from '@/components/ui/Button';
 
 const stats = [
   { value: '3000', suffix: '+', label: 'designers consulted' },
-  { value: '38', suffix: '%', label: 'avg salary hike' },
-  { value: '10-15', suffix: ' yrs', label: 'mentor experience' },
+  { value: '140', suffix: '+', label: 'mentored' },
+  { value: '80', suffix: '%', label: 'achieved their goals' },
 ];
 
 // ============================================
@@ -125,7 +125,7 @@ export default function ProgramsHero() {
         </div>
 
         {/* Content */}
-        <div className="relative z-10 max-w-[1200px] mx-auto px-5 md:px-8 lg:px-12 pt-24 md:pt-28 pb-14 sm:pb-18 md:pb-20">
+        <div className="relative z-10 max-w-[1200px] mx-auto px-5 pt-24 md:pt-28 pb-14 sm:pb-18 md:pb-20">
           {/* Breadcrumb */}
           <nav
             className="flex items-center gap-2 text-sm mb-8 sm:mb-10"
@@ -146,9 +146,9 @@ export default function ProgramsHero() {
           </nav>
 
           {/* Two column layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
             {/* Left column - Text content */}
-            <div className="lg:col-span-7">
+            <div className="lg:col-span-6">
               {/* Eyebrow - Alice blue themed */}
               <div
                 className="mb-6 sm:mb-8"
@@ -178,7 +178,7 @@ export default function ProgramsHero() {
               >
                 1:1{' '}
                 <span className="relative inline-block">
-                  <span className="text-alice">UX Mentorship</span>
+                  <span className="text-accent">UX Mentorship</span>
                   <svg
                     className="absolute -bottom-1 left-0 w-full h-2 sm:h-3 text-alice/40"
                     viewBox="0 0 200 12"
@@ -208,30 +208,6 @@ export default function ProgramsHero() {
                 Whether you&apos;re starting out, stuck at mid-level, or ready to lead. A success path built for where you are
               </p>
 
-              {/* Highlight banner - Alice blue */}
-              <div
-                className="mb-8 sm:mb-10"
-                style={{
-                  opacity: isVisible ? 1 : 0,
-                  transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
-                  transition: 'all 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.25s',
-                }}
-              >
-                <div className="inline-flex flex-wrap items-center gap-3 sm:gap-4">
-                  {['1:1 mentorship', 'AI-first design approach', 'Support until you succeed'].map((item, i) => (
-                    <span
-                      key={i}
-                      className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 bg-alice/10 border border-alice/20 rounded-lg text-alice text-xs sm:text-sm font-medium"
-                    >
-                      <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-alice" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                        <path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                      {item}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
               {/* CTA */}
               <div
                 style={{
@@ -246,9 +222,9 @@ export default function ProgramsHero() {
               </div>
             </div>
 
-            {/* Right column - Image placeholder */}
+            {/* Right column - Image with Stats */}
             <div
-              className="lg:col-span-5 hidden lg:block"
+              className="lg:col-span-6 hidden lg:block"
               style={{
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateX(0) scale(1)' : 'translateX(40px) scale(0.95)',
@@ -264,8 +240,8 @@ export default function ProgramsHero() {
                   }}
                 />
 
-                {/* Image container with alice blue border */}
-                <div className="relative aspect-[4/5] rounded-2xl overflow-hidden border border-alice/20 bg-gradient-to-br from-[#0d1a28] to-[#0a1420]">
+                {/* Image container */}
+                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-alice/20 bg-gradient-to-br from-[#0d1a28] to-[#0a1420]">
                   {/* Placeholder pattern */}
                   <div
                     className="absolute inset-0 opacity-30"
@@ -275,37 +251,38 @@ export default function ProgramsHero() {
                     }}
                   />
 
-                  {/* Corner accents - alice blue themed */}
+                  {/* Corner accents */}
                   <div className="absolute top-5 left-5 w-10 h-10 border-l-2 border-t-2 border-alice/50" />
                   <div className="absolute bottom-5 right-5 w-10 h-10 border-r-2 border-b-2 border-alice-dark/50" />
 
                   {/* Image - uncomment and update src when ready */}
-                  {/* <Image
-                    src="/images/programs-hero.jpg"
+                  <Image
+                    src="/images/programs-hero.png"
                     alt="UX Mentorship Programs"
                     fill
                     className="object-cover"
                     priority
-                  /> */}
+                  />
 
                   {/* Gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a1420]/80 via-transparent to-transparent" />
-
-                  {/* Floating badge - alice blue themed */}
-                  <div className="absolute bottom-6 left-6 right-6 p-4 bg-alice/[0.08] backdrop-blur-md border border-alice/20 rounded-xl">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-full bg-alice/20 flex items-center justify-center">
-                        <svg className="w-5 h-5 text-alice" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                          <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                      </div>
-                      <div>
-                        <div className="text-white font-semibold text-sm">Trusted by 3000+ designers</div>
-                        <div className="text-alice/60 text-xs">From startups to Fortune 500</div>
-                      </div>
-                    </div>
-                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a1420]/90 via-transparent to-transparent" />
                 </div>
+
+                {/* Badges below image */}
+                <div className="flex flex-wrap justify-center gap-3 mt-6">
+                  {['1:1 mentorship', 'AI-first design approach', 'Support until you succeed'].map((item, i) => (
+                    <span
+                      key={i}
+                      className="inline-flex items-center gap-2 px-4 py-2.5 bg-alice/10 border border-alice/20 rounded-lg text-alice text-sm font-medium"
+                    >
+                      <svg className="w-4 h-4 text-alice" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                        <path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                      {item}
+                    </span>
+                  ))}
+                </div>
+
               </div>
             </div>
           </div>
@@ -318,28 +295,41 @@ export default function ProgramsHero() {
         />
       </div>
 
-      {/* Stats Section - Alice blue accent */}
+      {/* Stats Section - Light alice theme */}
       <div
         className="relative overflow-hidden"
         style={{
-          background: 'linear-gradient(180deg, #0d1a28 0%, #142432 100%)',
+          background: 'linear-gradient(180deg, #e8f4ff 0%, #dceeff 50%, #d0e8f8 100%)',
         }}
       >
-        {/* Noise texture */}
+        {/* Subtle grid */}
+        <div className="absolute inset-0 opacity-[0.04]">
+          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="heroStatsGrid" width="60" height="60" patternUnits="userSpaceOnUse">
+                <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#4A90A4" strokeWidth="0.5" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#heroStatsGrid)" />
+          </svg>
+        </div>
+
+        {/* Decorative dots pattern */}
         <div
-          className="absolute inset-0 opacity-[0.04]"
+          className="absolute inset-0 opacity-[0.12]"
           style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
+            backgroundImage: 'radial-gradient(circle at 1px 1px, #4A90A4 1px, transparent 0)',
+            backgroundSize: '32px 32px',
           }}
         />
 
-        {/* Center glow - alice blue */}
+        {/* Center glow */}
         <div
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[200px] blur-3xl pointer-events-none"
-          style={{ background: 'rgba(220, 238, 255, 0.1)', opacity: 0.5 }}
+          style={{ background: 'rgba(74, 144, 164, 0.15)', opacity: 0.8 }}
         />
 
-        <div className="relative z-10 max-w-[1200px] mx-auto px-5 md:px-8 lg:px-12 py-10 md:py-14">
+        <div className="relative z-10 max-w-[1200px] mx-auto px-5 py-10 md:py-14">
           <div className="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-0">
             {stats.map((stat, index) => (
               <div
@@ -355,20 +345,20 @@ export default function ProgramsHero() {
                   <div
                     className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 w-[1px] h-12"
                     style={{
-                      background: 'linear-gradient(180deg, transparent 0%, rgba(220,238,255,0.2) 50%, transparent 100%)',
+                      background: 'linear-gradient(180deg, transparent 0%, rgba(74,144,164,0.3) 50%, transparent 100%)',
                     }}
                   />
                 )}
 
                 <div className="mb-2">
-                  <span className="font-heading text-5xl md:text-6xl lg:text-7xl font-black tracking-tight text-white">
+                  <span className="font-heading text-5xl md:text-6xl lg:text-7xl font-black tracking-tight text-[#0d1a28]">
                     {stat.value}
                   </span>
-                  <span className="font-heading text-5xl md:text-6xl lg:text-7xl font-black tracking-tight text-alice">
+                  <span className="font-heading text-5xl md:text-6xl lg:text-7xl font-black tracking-tight text-[#2a6a7c]">
                     {stat.suffix}
                   </span>
                 </div>
-                <span className="font-body text-sm md:text-base text-alice/60 tracking-wide uppercase">
+                <span className="font-body text-sm md:text-base text-[#4A90A4] tracking-wide uppercase">
                   {stat.label}
                 </span>
               </div>
@@ -376,7 +366,7 @@ export default function ProgramsHero() {
           </div>
         </div>
 
-        {/* Bottom accent line - alice blue */}
+        {/* Bottom accent line */}
         <div
           className="absolute bottom-0 left-0 right-0 h-[2px]"
           style={{ background: 'linear-gradient(90deg, transparent 0%, #4A90A4 50%, transparent 100%)' }}

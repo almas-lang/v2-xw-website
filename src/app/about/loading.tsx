@@ -47,7 +47,7 @@ export default function AboutLoading() {
 
       {/* ProblemsSection - Dark matching ProblemsSection.tsx */}
       <section className="bg-[#0A0A0A] py-20">
-        <div className="max-w-[1100px] mx-auto px-5">
+        <div className="max-w-[1200px] mx-auto px-5">
           {/* Title skeleton */}
           <div className="h-9 w-72 bg-white/10 rounded-lg animate-pulse mb-4" />
           <div className="h-5 w-48 bg-white/5 rounded animate-pulse mb-12" />
@@ -94,7 +94,7 @@ export default function AboutLoading() {
 
       {/* OurValues Section - Dark matching OurValues.tsx */}
       <section className="bg-[#0A0A0A] py-20">
-        <div className="max-w-[1100px] mx-auto px-5">
+        <div className="max-w-[1200px] mx-auto px-5">
           {/* Header skeleton */}
           <div className="text-center mb-16">
             <div className="h-8 w-32 bg-white/5 rounded-full animate-pulse mx-auto mb-4" />
@@ -125,7 +125,7 @@ export default function AboutLoading() {
 
       {/* TheTeam Section - Light matching TheTeam.tsx */}
       <section className="bg-[#FAFBFC] py-20">
-        <div className="max-w-[1100px] mx-auto px-5">
+        <div className="max-w-[1200px] mx-auto px-5">
           {/* Header skeleton */}
           <div className="mb-16">
             <div className="flex items-center gap-3 mb-5">

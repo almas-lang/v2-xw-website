@@ -153,7 +153,7 @@ export default function CommunityHeroC() {
       </svg>
 
       {/* Content */}
-      <div className="relative z-10 max-w-[1200px] mx-auto px-5 md:px-8 lg:px-12">
+      <div className="relative z-10 max-w-[1200px] mx-auto px-5">
         {/* Breadcrumb */}
         <nav
           className="pt-24 md:pt-28 pb-8 md:pb-10"

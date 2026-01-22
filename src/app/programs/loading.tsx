@@ -115,7 +115,7 @@ export default function ProgramsLoading() {
 
       {/* Comparison Table Skeleton */}
       <section className="py-16 md:py-24 bg-g50">
-        <div className="max-w-[1000px] mx-auto px-5">
+        <div className="max-w-[1200px] mx-auto px-5">
           <div className="text-center mb-12">
             <div className="h-8 w-56 bg-g200 rounded-lg animate-pulse mx-auto mb-4" />
             <div className="h-5 w-80 max-w-full bg-g100 rounded animate-pulse mx-auto" />

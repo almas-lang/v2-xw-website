@@ -37,7 +37,7 @@ export default function WhyMentorship({
 
   return (
     <section ref={sectionRef} className="py-16 md:py-24 bg-white">
-      <div className="max-w-[1000px] mx-auto px-5">
+      <div className="max-w-[1200px] mx-auto px-5">
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-start">
           {/* Left Content */}
           <div

@@ -141,7 +141,7 @@ export default function CommunityStats() {
         <div className="absolute top-1/2 right-[6%] w-1.5 h-1.5 bg-indigo-500/20 rounded-full hidden lg:block" />
       </div>
 
-      <div className="relative z-10 max-w-[1200px] mx-auto px-5 md:px-8 lg:px-12 py-12 md:py-14">
+      <div className="relative z-10 max-w-[1200px] mx-auto px-5 py-12 md:py-14">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-6">
           {stats.map((stat, index) => (
             <div

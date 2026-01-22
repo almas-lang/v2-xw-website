@@ -136,7 +136,7 @@ export default function ShortCoursesPage() {
         />
 
         {/* Content */}
-        <div className="relative z-10 max-w-[1200px] mx-auto px-5 md:px-8 lg:px-12 pt-24 md:pt-28 pb-12 md:pb-16">
+        <div className="relative z-10 max-w-[1200px] mx-auto px-5 pt-24 md:pt-28 pb-12 md:pb-16">
           {/* Breadcrumb */}
           <nav
             className="flex items-center gap-2 text-sm mb-8 md:mb-12"

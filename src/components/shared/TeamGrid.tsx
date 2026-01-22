@@ -24,7 +24,7 @@ export interface TeamGridProps {
   secondaryLabel: string;
   secondaryMembers: TeamMember[];
   footer?: React.ReactNode;
-  theme?: 'light' | 'dark';
+  theme?: 'light' | 'dark' | 'dark-teal';
   accentColor?: 'accent' | 'coral' | 'teal' | 'gold';
 }
 
@@ -82,15 +82,27 @@ export default function TeamGrid({
     return () => observer.disconnect();
   }, []);
 
-  const isDark = theme === 'dark';
+  const isDark = theme === 'dark' || theme === 'dark-teal';
+  const isDarkTeal = theme === 'dark-teal';
   const colors = accentColors[accentColor];
+
+  // Theme-specific background
+  const getBgStyle = () => {
+    if (isDarkTeal) {
+      return {
+        background: 'linear-gradient(180deg, #0a1420 0%, #0d1a28 50%, #0a1420 100%)',
+      };
+    }
+    return {};
+  };
 
   return (
     <section
       ref={sectionRef}
-      className={`py-16 md:py-24 ${isDark ? 'bg-[#0A0A0A]' : 'bg-g50'}`}
+      className={`py-16 md:py-24 ${isDarkTeal ? '' : isDark ? 'bg-[#0A0A0A]' : 'bg-g50'}`}
+      style={getBgStyle()}
     >
-      <div className="max-w-[1100px] mx-auto px-5">
+      <div className="max-w-[1200px] mx-auto px-5">
         {/* Header */}
         <div
           className="mb-12 md:mb-16"
@@ -199,7 +211,7 @@ export default function TeamGrid({
                 {member.focus && (
                   <span
                     className={`text-sm px-4 py-2 rounded-full text-center ${
-                      isDark ? 'bg-white/10 text-white' : 'bg-alice text-carbon'
+                      isDarkTeal ? 'bg-alice/10 text-alice' : isDark ? 'bg-white/10 text-white' : 'bg-alice text-carbon'
                     }`}
                   >
                     {member.focus}
@@ -277,7 +289,9 @@ export default function TeamGrid({
             <div
               key={member.name}
               className={`group p-5 rounded-xl border transition-all hover:shadow-md ${
-                isDark
+                isDarkTeal
+                  ? 'bg-alice/5 border-alice/10 hover:border-alice/20'
+                  : isDark
                   ? 'bg-white/[0.03] border-white/10 hover:border-white/20'
                   : 'bg-white border-g200 hover:border-g300'
               }`}

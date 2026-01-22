@@ -66,7 +66,7 @@ export default function PastEditions() {
         </svg>
       </div>
 
-      <div className="relative z-10 max-w-[1200px] mx-auto px-5 md:px-8 lg:px-12 py-16 md:py-20 lg:py-24">
+      <div className="relative z-10 max-w-[1200px] mx-auto px-5 py-16 md:py-20 lg:py-24">
         {/* Header - centered with decorative line */}
         <div
           className="text-center mb-10 md:mb-14"

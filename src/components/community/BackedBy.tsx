@@ -72,7 +72,7 @@ export default function BackedBy() {
         </svg>
       </div>
 
-      <div className="relative z-10 max-w-[1200px] mx-auto px-5 md:px-8 lg:px-12 py-14 md:py-16 lg:py-20">
+      <div className="relative z-10 max-w-[1200px] mx-auto px-5 py-14 md:py-16 lg:py-20">
         {/* Two column layout */}
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-10 lg:gap-16">
 

@@ -78,7 +78,7 @@ export default function ProgramStats({ stats, accentColor }: ProgramStatsProps) 
         style={{ background: colors.glow, opacity: 0.3 }}
       />
 
-      <div className="relative max-w-[1100px] mx-auto px-5 py-8 md:py-10">
+      <div className="relative max-w-[1200px] mx-auto px-5 py-8 md:py-10">
         <div className="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-0">
           {stats.map((stat, index) => (
             <div

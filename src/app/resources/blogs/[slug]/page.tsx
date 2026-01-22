@@ -206,7 +206,7 @@ export default function BlogPostPage() {
         </div>
 
         {/* Featured Image */}
-        <div className="max-w-[1000px] mx-auto px-5 md:px-8">
+        <div className="max-w-[1200px] mx-auto px-5 md:px-8">
           <div className="relative aspect-[16/9] rounded-xl overflow-hidden">
             <Image
               src={post.image}
@@ -235,7 +235,7 @@ export default function BlogPostPage() {
       {/* Related Posts */}
       {relatedPosts.length > 0 && (
         <section className="py-12 md:py-16 bg-snow">
-          <div className="max-w-[1000px] mx-auto px-5 md:px-8">
+          <div className="max-w-[1200px] mx-auto px-5 md:px-8">
             <h2 className="font-heading text-2xl md:text-3xl font-bold text-carbon mb-8">
               Related Articles
             </h2>

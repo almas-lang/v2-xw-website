@@ -331,7 +331,7 @@ export default function RegisterPage() {
       </div>
 
       {/* Breadcrumb - full width container, hidden on mobile */}
-      <div className="relative z-10 max-w-[1200px] mx-auto px-5 md:px-8 lg:px-12 pt-24 md:pt-28">
+      <div className="relative z-10 max-w-[1200px] mx-auto px-5 pt-24 md:pt-28">
         <nav
           className="flex items-center gap-2 text-sm mb-8 sm:mb-10"
           aria-label="Breadcrumb"

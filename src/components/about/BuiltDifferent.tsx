@@ -31,7 +31,7 @@ export default function BuiltDifferent() {
       <div className="absolute top-20 left-10 w-32 h-px bg-gradient-to-r from-[#D4A853]/30 to-transparent" />
       <div className="absolute bottom-20 right-10 w-32 h-px bg-gradient-to-l from-[#D4A853]/30 to-transparent" />
 
-      <div className="max-w-[1100px] mx-auto px-5 relative z-10">
+      <div className="max-w-[1200px] mx-auto px-5 relative z-10">
         {/* Header - left aligned with accent line */}
         <div
           className="flex items-center gap-4 mb-12 md:mb-16 transition-all duration-700"

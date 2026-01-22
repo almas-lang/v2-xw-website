@@ -157,7 +157,7 @@ export default function WhosInTheRoom() {
         <div className="absolute bottom-1/3 right-[6%] w-3 h-3 rotate-45 bg-indigo-500/10 hidden lg:block" />
       </div>
 
-      <div className="relative z-10 max-w-[1200px] mx-auto px-5 md:px-8 lg:px-12 py-16 md:py-20 lg:py-24">
+      <div className="relative z-10 max-w-[1200px] mx-auto px-5 py-16 md:py-20 lg:py-24">
         {/* Header */}
         <div
           className="text-center max-w-2xl mx-auto mb-10 md:mb-14"

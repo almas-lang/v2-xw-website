@@ -73,7 +73,7 @@ export default function ProgramHero({
               backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
             }}
           />
-          <div className="relative max-w-[1200px] mx-auto px-5 md:px-8 lg:px-12 py-3 text-center">
+          <div className="relative max-w-[1200px] mx-auto px-5 py-3 text-center">
             <p className="font-body text-sm md:text-base text-white/90 tracking-wide">
               {topBanner}
             </p>
@@ -120,7 +120,7 @@ export default function ProgramHero({
         </svg>
       </div>
 
-      <div className={`relative z-10 max-w-[1200px] mx-auto px-5 md:px-8 lg:px-12 w-full ${topBanner ? 'pt-6 pb-24 md:pt-8 md:pb-32' : 'py-24 md:py-32'}`}>
+      <div className={`relative z-10 max-w-[1200px] mx-auto px-5 w-full ${topBanner ? 'pt-6 pb-24 md:pt-8 md:pb-32' : 'py-24 md:py-32'}`}>
         {/* Breadcrumb */}
         <nav className="flex items-center gap-2 text-sm mb-10" aria-label="Breadcrumb">
           <Link href="/" className="text-g400 hover:text-white underline underline-offset-2 transition-colors">

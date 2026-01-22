@@ -110,7 +110,7 @@ export default function PastSpeakers() {
         <div className="absolute bottom-1/4 left-[6%] w-4 h-4 rounded-full border-2 border-indigo-400/15 hidden lg:block" />
       </div>
 
-      <div className="relative z-10 max-w-[1200px] mx-auto px-5 md:px-8 lg:px-12 py-16 md:py-20 lg:py-24">
+      <div className="relative z-10 max-w-[1200px] mx-auto px-5 py-16 md:py-20 lg:py-24">
         {/* Header with decorative underline */}
         <div
           className="mb-10 md:mb-14"

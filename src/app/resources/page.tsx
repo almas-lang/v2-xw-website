@@ -215,7 +215,7 @@ function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 px-5 md:px-8 lg:px-12 pt-24 md:pt-28 pb-10 md:pb-16 max-w-[1200px] mx-auto">
+      <div className="relative z-10 px-5 pt-24 md:pt-28 pb-10 md:pb-16 max-w-[1200px] mx-auto">
         {/* Breadcrumb */}
         <nav
           className="flex items-center gap-2 text-xs md:text-sm mb-6 md:mb-8"

@@ -24,7 +24,7 @@ export default function WhatWeDo() {
         backgroundSize: '32px 32px',
       }} />
 
-      <div className="max-w-[1100px] mx-auto px-5 relative z-10">
+      <div className="max-w-[1200px] mx-auto px-5 relative z-10">
         {/* Header */}
         <div
           className="text-center mb-16 md:mb-20 transition-all duration-700"

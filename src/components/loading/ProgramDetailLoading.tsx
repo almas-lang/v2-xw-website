@@ -122,7 +122,7 @@ export default function ProgramDetailLoading({ accentColor = 'coral' }: ProgramD
 
       {/* Fit Check Section Skeleton - Light */}
       <section className="py-16 md:py-24 bg-white">
-        <div className="max-w-[1000px] mx-auto px-5">
+        <div className="max-w-[1200px] mx-auto px-5">
           <div className="text-center mb-12">
             <div className="h-8 w-80 max-w-full bg-g200 rounded-lg animate-pulse mx-auto mb-4" />
           </div>
@@ -316,7 +316,7 @@ export default function ProgramDetailLoading({ accentColor = 'coral' }: ProgramD
         className="py-16 md:py-24"
         style={{ background: 'linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 50%, #0A0A0A 100%)' }}
       >
-        <div className="max-w-[1000px] mx-auto px-5">
+        <div className="max-w-[1200px] mx-auto px-5">
           <div className="text-center mb-12">
             <div className="h-8 w-64 bg-white/15 rounded-lg animate-pulse mx-auto mb-4" />
             <div className="h-5 w-72 bg-white/10 rounded animate-pulse mx-auto" />

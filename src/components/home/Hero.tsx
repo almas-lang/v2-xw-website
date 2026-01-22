@@ -124,7 +124,7 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-[1200px] mx-auto px-5 md:px-8 lg:px-12">
+      <div className="relative z-10 max-w-[1200px] mx-auto px-5">
         <div className="min-h-screen flex flex-col justify-center pt-16 pb-6 sm:pt-20 sm:pb-10 md:pt-24 md:pb-12">
           <div className="grid lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-12 items-center">
             {/* Left column - Main content */}

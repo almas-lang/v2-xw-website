@@ -29,7 +29,7 @@ export default function ProblemsSection() {
         </svg>
       </div>
 
-      <div className="max-w-[1100px] mx-auto px-5 relative z-10">
+      <div className="max-w-[1200px] mx-auto px-5 relative z-10">
         <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-carbon mb-4">
           The Problems No One Fixed
         </h2>

@@ -18,7 +18,7 @@ export default function AboutHero() {
 
   return (
     <section className="min-h-screen bg-[#0A0A0A] relative overflow-hidden">
-      <div className="max-w-[1400px] mx-auto px-6 pt-32 pb-8">
+      <div className="max-w-[1200px] mx-auto px-5 pt-32 pb-8">
         {/* Header content */}
         <div className="max-w-4xl mx-auto text-center mb-12">
           <span

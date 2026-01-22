@@ -142,7 +142,7 @@ export default function ProgramFitCheck({
         ))}
       </div>
 
-      <div className="relative max-w-[1000px] mx-auto px-5">
+      <div className="relative max-w-[1200px] mx-auto px-5">
         {/* Section Header */}
         <div
           className="text-center mb-8 md:mb-12 transition-all duration-700"

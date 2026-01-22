@@ -7,31 +7,26 @@ const values = [
     number: '01',
     title: 'Growth-first',
     description: 'Careers moved. Products shipped. Revenue grown. That\'s how we measure success.',
-    accent: 'accent',
   },
   {
     number: '02',
     title: 'Global Standards',
     description: 'India shouldn\'t feel like a career sentence. We\'re changing that.',
-    accent: 'alice',
   },
   {
     number: '03',
     title: 'No BS',
     description: 'No politics. No fluff. No sugarcoating. We say what needs to be said.',
-    accent: 'accent',
   },
   {
     number: '04',
     title: 'Until You Win',
     description: 'We don\'t stop when the contract ends. We stop when you win.',
-    accent: 'alice',
   },
 ];
 
 export default function OurValues() {
   const [isVisible, setIsVisible] = useState(false);
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -44,15 +39,14 @@ export default function OurValues() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-carbon py-20 md:py-32 relative overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute top-0 left-0 w-full h-full">
-        <div className="absolute top-20 left-10 w-64 h-64 bg-accent/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-80 h-80 bg-alice/5 rounded-full blur-3xl" />
-      </div>
+    <section ref={sectionRef} className="bg-white py-20 md:py-32 relative overflow-hidden">
+      {/* Subtle texture */}
+      <div className="absolute inset-0 opacity-[0.02]" style={{
+        backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+      }} />
 
-      <div className="max-w-[1100px] mx-auto px-5 relative z-10">
-        {/* Header */}
+      <div className="max-w-[1000px] mx-auto px-5 relative z-10">
+        {/* Header - Elegant */}
         <div
           className="text-center mb-16 md:mb-20 transition-all duration-700"
           style={{
@@ -60,99 +54,48 @@ export default function OurValues() {
             transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
           }}
         >
-          <span className="inline-block px-4 py-1.5 bg-white/5 border border-white/10 text-g400 text-sm font-medium mb-4" style={{ borderRadius: '100px' }}>
-            What drives us
-          </span>
-          <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-white">
-            Our Values
+          <div className="flex items-center justify-center gap-6 mb-6">
+            <div className="w-16 h-px bg-gradient-to-r from-transparent to-[#D4A853]" />
+            <span className="text-[#D4A853] text-xs uppercase tracking-[0.4em] font-medium">What Drives Us</span>
+            <div className="w-16 h-px bg-gradient-to-l from-transparent to-[#D4A853]" />
+          </div>
+          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl text-carbon tracking-wide">
+            Our <span className="font-bold">Values</span>
           </h2>
         </div>
 
-        {/* Values grid - Bento style */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
+        {/* Values - Elegant list */}
+        <div className="space-y-0">
           {values.map((value, index) => (
             <div
               key={index}
-              className="group relative transition-all duration-500"
+              className="group grid md:grid-cols-12 gap-6 md:gap-8 items-center py-8 md:py-10 border-t border-g200 hover:bg-g50 transition-all duration-500 px-6 -mx-6"
               style={{
                 opacity: isVisible ? 1 : 0,
-                transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
-                transitionDelay: `${150 + index * 100}ms`,
+                transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+                transition: `all 0.8s ease ${0.1 + index * 0.1}s`,
               }}
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
             >
-              <div
-                className={`
-                  relative p-6 md:p-8 h-full overflow-hidden transition-all duration-500
-                  ${hoveredIndex === index ? 'bg-white/10' : 'bg-white/[0.03]'}
-                  border border-white/10 hover:border-white/20
-                `}
-                style={{ borderRadius: '20px' }}
-              >
-                {/* Accent line on left */}
-                <div
-                  className={`
-                    absolute left-0 top-0 bottom-0 w-1 transition-all duration-500
-                    ${value.accent === 'accent' ? 'bg-accent' : 'bg-alice'}
-                    ${hoveredIndex === index ? 'opacity-100' : 'opacity-40'}
-                  `}
-                  style={{ borderRadius: '20px 0 0 20px' }}
-                />
+              {/* Number */}
+              <div className="md:col-span-2">
+                <span className="text-[#D4A853] text-3xl md:text-4xl font-heading font-light">{value.number}</span>
+              </div>
 
-                {/* Large number watermark */}
-                <span
-                  className={`
-                    absolute -top-4 -right-2 font-heading text-[120px] md:text-[150px] font-bold leading-none
-                    transition-all duration-500 select-none pointer-events-none
-                    ${hoveredIndex === index
-                      ? value.accent === 'accent' ? 'text-accent/10' : 'text-alice/10'
-                      : 'text-white/[0.03]'
-                    }
-                  `}
-                >
-                  {value.number}
-                </span>
+              {/* Title */}
+              <div className="md:col-span-4">
+                <h3 className="font-heading text-xl md:text-2xl text-carbon font-semibold group-hover:text-[#D4A853] transition-colors duration-500">{value.title}</h3>
+              </div>
 
-                {/* Content */}
-                <div className="relative z-10">
-                  <span
-                    className={`
-                      inline-block text-xs font-semibold tracking-wider uppercase mb-3
-                      ${value.accent === 'accent' ? 'text-accent' : 'text-alice'}
-                    `}
-                  >
-                    {value.number}
-                  </span>
-
-                  <h3
-                    className={`
-                      font-heading text-xl md:text-2xl font-bold mb-3 transition-colors duration-300
-                      ${hoveredIndex === index ? 'text-white' : 'text-white/90'}
-                    `}
-                  >
-                    {value.title}
-                  </h3>
-
-                  <p className="text-g400 leading-relaxed">
-                    {value.description}
-                  </p>
-                </div>
-
-                {/* Bottom decorative dot */}
-                <div
-                  className={`
-                    absolute bottom-4 right-4 w-2 h-2 rounded-full transition-all duration-500
-                    ${value.accent === 'accent' ? 'bg-accent' : 'bg-alice'}
-                    ${hoveredIndex === index ? 'opacity-100 scale-100' : 'opacity-0 scale-0'}
-                  `}
-                />
+              {/* Description */}
+              <div className="md:col-span-6">
+                <p className="text-g500 leading-relaxed">{value.description}</p>
               </div>
             </div>
           ))}
+          <div className="border-t border-g200" />
         </div>
 
-        {/* Bottom tagline */}
+        {/* Footer */}
         <div
           className="mt-12 md:mt-16 text-center transition-all duration-700"
           style={{
@@ -160,9 +103,9 @@ export default function OurValues() {
             transitionDelay: '600ms',
           }}
         >
-          <p className="text-g500 text-sm md:text-base">
+          <p className="text-g400 text-sm italic">
             These aren't just words on a wall.{' '}
-            <span className="text-white font-medium">They're how we operate every day.</span>
+            <span className="text-carbon not-italic font-medium">They're how we operate every day.</span>
           </p>
         </div>
       </div>

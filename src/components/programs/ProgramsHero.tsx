@@ -19,8 +19,8 @@ import Button from '@/components/ui/Button';
 
 const stats = [
   { value: '3000', suffix: '+', label: 'designers consulted' },
-  { value: '140', suffix: '+', label: 'mentored 1:1' },
-  { value: '80', suffix: '%', label: 'achieved their goals' },
+  { value: '38', suffix: '%', label: 'avg salary hike' },
+  { value: '10-15', suffix: ' yrs', label: 'mentor experience' },
 ];
 
 // ============================================
@@ -300,7 +300,7 @@ export default function ProgramsHero() {
                         </svg>
                       </div>
                       <div>
-                        <div className="text-white font-semibold text-sm">Trusted by 140+ designers</div>
+                        <div className="text-white font-semibold text-sm">Trusted by 3000+ designers</div>
                         <div className="text-alice/60 text-xs">From startups to Fortune 500</div>
                       </div>
                     </div>

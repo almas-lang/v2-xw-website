@@ -6,8 +6,8 @@ import Button from '@/components/ui/Button';
 const steps = [
   {
     number: '1',
-    title: "Book a Strategy Call",
-    description: "We assess where you are, where you want to go, what's blocking you, and if we can help",
+    title: "Book a Strategy call",
+    description: "We assess where you are, where you want to go, what's blocking you, and if we will be able to help you",
   },
   {
     number: '2',
@@ -38,142 +38,137 @@ export default function HowItWorks() {
 
   return (
     <section ref={sectionRef} className="relative py-14 sm:py-20 md:py-28 lg:py-32 overflow-hidden bg-white">
-      {/* Background texture */}
-      <div className="absolute inset-0 opacity-30">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: 'radial-gradient(circle at 1px 1px, #e5e5e5 1px, transparent 0)',
-            backgroundSize: '32px 32px',
-          }}
-        />
-      </div>
-
-      <div className="max-w-[1100px] mx-auto px-5 relative z-10">
+      <div className="max-w-[1000px] mx-auto px-5 relative z-10">
         {/* Header */}
         <div
-          className="text-center mb-10 sm:mb-16 md:mb-20"
+          className="mb-12 md:mb-16"
           style={{
             opacity: isVisible ? 1 : 0,
-            transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
+            transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
             transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
           }}
         >
-          <div className="flex items-center justify-center gap-3 mb-4">
+          <div className="flex items-center gap-3 mb-4">
             <div className="w-8 h-[2px] bg-accent" />
-            <span className="font-body text-xs uppercase tracking-[0.2em] text-accent font-medium">The Process</span>
-            <div className="w-8 h-[2px] bg-accent" />
+            <span className="font-body text-[11px] uppercase tracking-[0.25em] text-accent font-medium">The Process</span>
           </div>
-          <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-carbon mb-4">
+          <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-carbon mb-3">
             How It Works
           </h2>
           <p className="font-body text-sm md:text-base text-g500">
-            From stuck to senior in 3 simple steps
+            From stuck to senior & leaders in 3 steps
           </p>
         </div>
 
-        {/* Steps - Desktop */}
+        {/* Progress Steps - Desktop */}
         <div className="hidden md:block">
-          {/* Timeline track */}
-          <div className="relative">
-            {/* Background line */}
-            <div className="absolute top-8 left-0 right-0 h-1 bg-g200 rounded-full" />
+          {/* Progress Track */}
+          <div
+            className="relative mb-10"
+            style={{
+              opacity: isVisible ? 1 : 0,
+              transition: 'opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s',
+            }}
+          >
+            {/* Background track */}
+            <div className="absolute top-5 left-[10%] right-[10%] h-px bg-g200" />
 
-            {/* Progress line - animated */}
+            {/* Active track */}
             <div
-              className="absolute top-8 left-0 h-1 bg-gradient-to-r from-accent via-accent to-alice rounded-full"
+              className="absolute top-5 left-[10%] h-px bg-[#A8D4F0]"
               style={{
-                width: isVisible ? '100%' : '0%',
-                transition: 'width 1.5s cubic-bezier(0.4, 0, 0.2, 1) 0.3s',
+                width: isVisible ? '80%' : '0%',
+                transition: 'width 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.4s',
               }}
             />
 
-            {/* Steps */}
-            <div className="relative flex justify-between">
+            {/* Step indicators */}
+            <div className="relative flex justify-between px-[5%]">
               {steps.map((step, index) => (
                 <div
                   key={index}
-                  className="flex flex-col items-center text-center"
+                  className="flex flex-col items-center"
                   style={{
                     width: '30%',
                     opacity: isVisible ? 1 : 0,
-                    transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-                    transition: `all 0.6s cubic-bezier(0.4, 0, 0.2, 1) ${0.4 + index * 0.2}s`,
+                    transform: isVisible ? 'scale(1)' : 'scale(0.8)',
+                    transition: `all 0.5s cubic-bezier(0.4, 0, 0.2, 1) ${0.3 + index * 0.15}s`,
                   }}
                 >
-                  {/* Step circle */}
-                  <div className="relative mb-8">
-                    {/* Outer ring - animated */}
-                    <div
-                      className="absolute -inset-2 rounded-full border-2 border-accent/20"
-                      style={{
-                        transform: isVisible ? 'scale(1)' : 'scale(0)',
-                        opacity: isVisible ? 1 : 0,
-                        transition: `all 0.5s cubic-bezier(0.4, 0, 0.2, 1) ${0.6 + index * 0.2}s`,
-                      }}
-                    />
-                    {/* Main circle */}
-                    <div className="relative w-16 h-16 rounded-full bg-alice flex items-center justify-center shadow-lg">
-                      <span className="font-heading text-2xl font-bold text-carbon">
-                        {step.number}
-                      </span>
-                    </div>
+                  <div
+                    className="w-10 h-10 rounded-full flex items-center justify-center font-heading font-semibold text-base shadow-sm"
+                    style={{
+                      backgroundColor: '#DCEEFF',
+                      border: '2px solid #A8D4F0',
+                      color: '#1A1A1A'
+                    }}
+                  >
+                    {step.number}
                   </div>
-
-                  {/* Content */}
-                  <h3 className="font-heading text-lg md:text-xl font-bold text-carbon mb-3">
-                    {step.title}
-                  </h3>
-                  <p className="font-body text-sm md:text-base text-g500 leading-relaxed max-w-[280px]">
-                    {step.description}
-                  </p>
                 </div>
               ))}
             </div>
           </div>
+
+          {/* Content */}
+          <div className="grid grid-cols-3 gap-8">
+            {steps.map((step, index) => (
+              <div
+                key={index}
+                style={{
+                  opacity: isVisible ? 1 : 0,
+                  transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+                  transition: `all 0.6s cubic-bezier(0.4, 0, 0.2, 1) ${0.5 + index * 0.1}s`,
+                }}
+              >
+                <h3 className="font-heading text-lg md:text-xl font-semibold text-carbon mb-3">
+                  {step.title}
+                </h3>
+                <p className="font-body text-sm text-g500 leading-relaxed">
+                  {step.description}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
 
-        {/* Steps - Mobile */}
+        {/* Mobile */}
         <div className="md:hidden">
-          <div className="relative">
+          <div className="relative pl-10">
             {/* Vertical line */}
-            <div className="absolute left-7 top-0 bottom-0 w-0.5 bg-g200" />
+            <div className="absolute left-4 top-0 bottom-0 w-px bg-g200" />
 
-            {/* Animated progress line */}
+            {/* Active line */}
             <div
-              className="absolute left-7 top-0 w-0.5 bg-gradient-to-b from-accent to-alice"
+              className="absolute left-4 top-0 w-px bg-[#A8D4F0]"
               style={{
                 height: isVisible ? '100%' : '0%',
-                transition: 'height 1.5s cubic-bezier(0.4, 0, 0.2, 1) 0.3s',
+                transition: 'height 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.3s',
               }}
             />
 
-            <div className="space-y-8 sm:space-y-10">
+            <div className="space-y-8">
               {steps.map((step, index) => (
                 <div
                   key={index}
-                  className="relative flex gap-6"
+                  className="relative"
                   style={{
                     opacity: isVisible ? 1 : 0,
                     transform: isVisible ? 'translateX(0)' : 'translateX(-20px)',
                     transition: `all 0.6s cubic-bezier(0.4, 0, 0.2, 1) ${0.3 + index * 0.15}s`,
                   }}
                 >
-                  {/* Step circle */}
-                  <div className="relative flex-shrink-0">
-                    <div className="w-14 h-14 rounded-full bg-alice flex items-center justify-center shadow-lg z-10 relative">
-                      <span className="font-heading text-xl font-bold text-carbon">
-                        {step.number}
-                      </span>
-                    </div>
+                  <div
+                    className="absolute -left-10 w-8 h-8 rounded-full flex items-center justify-center font-heading font-semibold text-sm"
+                    style={{ backgroundColor: '#DCEEFF', border: '2px solid #A8D4F0' }}
+                  >
+                    {step.number}
                   </div>
-
-                  {/* Content */}
-                  <div className="flex-1 pt-2">
-                    <h3 className="font-heading text-lg md:text-xl font-bold text-carbon mb-2">
+                  <div>
+                    <h3 className="font-heading text-lg font-semibold text-carbon mb-2">
                       {step.title}
                     </h3>
-                    <p className="font-body text-sm md:text-base text-g500 leading-relaxed">
+                    <p className="font-body text-sm text-g500 leading-relaxed">
                       {step.description}
                     </p>
                   </div>
@@ -185,14 +180,14 @@ export default function HowItWorks() {
 
         {/* CTA */}
         <div
-          className="mt-10 sm:mt-16 md:mt-20 flex justify-center"
+          className="mt-12 md:mt-16 flex justify-center"
           style={{
             opacity: isVisible ? 1 : 0,
             transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-            transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 1s',
+            transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.8s',
           }}
         >
-          <Button href="/book-call" size="lg" showArrow>
+          <Button href="https://calendly.com/team-xperiencewave/xw-strategy" showArrow>
             Start with Step 1
           </Button>
         </div>

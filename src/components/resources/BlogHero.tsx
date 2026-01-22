@@ -30,8 +30,8 @@ export default function BlogHero({ featuredPost }: BlogHeroProps) {
           background: `
             linear-gradient(160deg,
               #0a0a0a 0%,
-              #111111 30%,
-              #0d0d0d 60%,
+              #0a0a0a 30%,
+              #0a0a0a 60%,
               #0a0a0a 100%
             )
           `,

@@ -37,7 +37,7 @@ export default function SaveYourSpot() {
   return (
     <section
       ref={sectionRef}
-      className="relative bg-[#0f0f0f] overflow-hidden"
+      className="relative bg-[#0A0A0A] overflow-hidden"
     >
       {/* Dramatic center glow - responsive sizing */}
       <div

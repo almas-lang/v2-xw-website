@@ -49,7 +49,7 @@ export default function ProgramStats({ stats, accentColor }: ProgramStatsProps) 
       ref={sectionRef}
       className="relative overflow-hidden"
       style={{
-        background: 'linear-gradient(180deg, #1A1A1A 0%, #242424 100%)',
+        background: 'linear-gradient(180deg, #0A0A0A 0%, #1A1A1A 100%)',
       }}
     >
       {/* Noise texture */}

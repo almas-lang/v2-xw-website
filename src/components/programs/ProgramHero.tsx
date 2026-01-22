@@ -86,7 +86,7 @@ export default function ProgramHero({
         </div>
       )}
 
-      <section className="relative min-h-[85vh] flex items-center bg-carbon overflow-hidden">
+      <section className="relative min-h-[85vh] flex items-center bg-[#0A0A0A] overflow-hidden">
 
       {/* Large program name watermark */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden">
@@ -194,7 +194,7 @@ export default function ProgramHero({
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-              <Button href="/book-call" showArrow>
+              <Button href="https://calendly.com/team-xperiencewave/xw-strategy" showArrow>
                 Book strategy call
               </Button>
               <Link

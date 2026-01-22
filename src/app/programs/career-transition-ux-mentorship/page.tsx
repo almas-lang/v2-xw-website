@@ -7,7 +7,7 @@ import HowItWorks from '@/components/programs/HowItWorks';
 import WhatYoullLearn from '@/components/programs/WhatYoullLearn';
 import ToolsSection from '@/components/programs/ToolsSection';
 import MeetMentors from '@/components/programs/MeetMentors';
-import SuccessStories from '@/components/shared/SuccessStories';
+import SuccessStories, { QuickWin } from '@/components/shared/SuccessStories';
 import MenteesWorkAt from '@/components/shared/MenteesWorkAt';
 import WhyMentorship from '@/components/programs/WhyMentorship';
 import InvestmentSection from '@/components/programs/InvestmentSection';
@@ -15,6 +15,38 @@ import FAQ from '@/components/shared/FAQ';
 import CTASection from '@/components/shared/CTASection';
 import PageSchema from '@/components/seo/PageSchema';
 import { sharedProgramSteps, sharedIncludedItems, sharedTools } from '@/data/programData';
+
+// Ripple-specific Quick Wins - Career Transition stories
+const rippleQuickWins: QuickWin[] = [
+  {
+    achievement: 'Developer to Designer at Montran India',
+    duration: 'In 4 months',
+    name: 'Maitreyee Kane',
+    image: '/images/success-stories/maitreyee-kane.jpeg',
+    linkedin: 'https://www.linkedin.com/in/maitreyee-kane/',
+  },
+  {
+    achievement: 'Interior Designer to UX Designer at SenecaGlobal',
+    duration: 'In 5 months',
+    name: 'Divya Srinivas',
+    image: '/images/success-stories/divya-srinivas.jpeg',
+    linkedin: 'https://www.linkedin.com/in/divya-srinivas/',
+  },
+  {
+    achievement: 'UI/UX Design Associate at JLL',
+    duration: 'In 5 weeks',
+    name: 'Akash Kale',
+    image: '/images/success-stories/akash-kale.jpeg',
+    linkedin: 'https://www.linkedin.com/in/akash-kale/',
+  },
+  {
+    achievement: 'UX Designer at Deloitte',
+    duration: 'In 5 months',
+    name: 'Ramesh Vatti',
+    image: '/images/success-stories/ramesh-vatti.jpeg',
+    linkedin: 'https://www.linkedin.com/in/ramesh-vatti/',
+  },
+];
 
 export const metadata: Metadata = {
   title: 'Ripple - UX Design Career Transition Program | 1:1 Mentorship for Beginners | Xperience Wave',
@@ -246,10 +278,12 @@ export default function RippleProgramPage() {
         accentColor="teal"
       />
       <ToolsSection tools={sharedTools} />
-      <MeetMentors />
+      <MeetMentors accentColor="teal" />
       <SuccessStories
-        title="From Zero to UX Designer"
-        subtitle="Career switchers who made it happen"
+        title="Real Transformation, Real People"
+        subtitle="Hear from designers who made the shift"
+        quickWins={rippleQuickWins}
+        accentColor="teal"
       />
       <MenteesWorkAt />
       <WhyMentorship

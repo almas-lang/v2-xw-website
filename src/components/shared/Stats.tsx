@@ -55,7 +55,7 @@ export default function Stats({ stats = defaultStats, maxWidth = '1100px', theme
       style={{
         background: isAlice
           ? 'linear-gradient(180deg, #0d1a28 0%, #142432 100%)'
-          : 'linear-gradient(180deg, #1A1A1A 0%, #242424 100%)',
+          : 'linear-gradient(180deg, #0A0A0A 0%, #1A1A1A 100%)',
       }}
       aria-label="Our impact in numbers"
     >

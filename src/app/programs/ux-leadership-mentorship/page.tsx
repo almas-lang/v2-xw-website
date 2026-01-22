@@ -7,7 +7,7 @@ import HowItWorks from '@/components/programs/HowItWorks';
 import WhatYoullLearn from '@/components/programs/WhatYoullLearn';
 import ToolsSection from '@/components/programs/ToolsSection';
 import MeetMentors from '@/components/programs/MeetMentors';
-import SuccessStories from '@/components/shared/SuccessStories';
+import SuccessStories, { QuickWin } from '@/components/shared/SuccessStories';
 import MenteesWorkAt from '@/components/shared/MenteesWorkAt';
 import WhyMentorship from '@/components/programs/WhyMentorship';
 import InvestmentSection from '@/components/programs/InvestmentSection';
@@ -15,6 +15,38 @@ import FAQ from '@/components/shared/FAQ';
 import CTASection from '@/components/shared/CTASection';
 import PageSchema from '@/components/seo/PageSchema';
 import { sharedProgramSteps, sharedTools } from '@/data/programData';
+
+// Tide-specific Quick Wins - Leadership transition stories
+const tideQuickWins: QuickWin[] = [
+  {
+    achievement: 'Assistant Manager at Isha Foundation',
+    duration: 'In 3 months',
+    name: 'Suril Pandya',
+    image: '/images/success-stories/suril-pandya.jpeg',
+    linkedin: 'https://www.linkedin.com/in/suril-pandya/',
+  },
+  {
+    achievement: 'Head of UX at Dot and Beyond',
+    duration: 'In 4 months',
+    name: 'Shahrukh Jamal',
+    image: '/images/success-stories/shahrukh-jamal.jpeg',
+    linkedin: 'https://www.linkedin.com/in/shahrukh-jamal/',
+  },
+  {
+    achievement: 'Head of Design at Bob',
+    duration: 'In 2 months',
+    name: 'Pavan Muthyala',
+    image: '/images/success-stories/pavan-muthyala.jpeg',
+    linkedin: 'https://www.linkedin.com/in/pavan-muthyala/',
+  },
+  {
+    achievement: 'Director at The Thinking Team',
+    duration: 'In 3 months',
+    name: 'Siva Karthik',
+    image: '/images/success-stories/siva-karthik.jpeg',
+    linkedin: 'https://www.linkedin.com/in/siva-karthik/',
+  },
+];
 
 export const metadata: Metadata = {
   title: 'Tide - Design Leadership Program | 1:1 Mentorship for Senior Designers | Xperience Wave',
@@ -267,10 +299,12 @@ export default function TideProgramPage() {
         accentColor="gold"
       />
       <ToolsSection tools={sharedTools} />
-      <MeetMentors />
+      <MeetMentors accentColor="gold" />
       <SuccessStories
-        title="From Designer to Design Leader"
-        subtitle="The journey to leading teams"
+        title="Real Transformation, Real People"
+        subtitle="Hear from designers who made the shift"
+        quickWins={tideQuickWins}
+        accentColor="gold"
       />
       <MenteesWorkAt />
       <WhyMentorship

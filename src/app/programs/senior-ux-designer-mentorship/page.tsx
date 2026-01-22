@@ -265,10 +265,11 @@ export default function CurrentProgramPage() {
         accentColor="coral"
       />
       <ToolsSection tools={sharedTools} />
-      <MeetMentors />
+      <MeetMentors accentColor="coral" />
       <SuccessStories
         title="From Mid-Level to Senior"
         subtitle="Designers who broke through the ceiling"
+        accentColor="coral"
       />
       <MenteesWorkAt />
       <WhyMentorship />

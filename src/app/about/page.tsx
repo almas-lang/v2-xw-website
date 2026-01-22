@@ -59,6 +59,8 @@ export default function AboutPage() {
         pageDescription="Xperience Wave is a UX design mentorship company founded in 2022. 140+ designers mentored. 95% success rate. Real mentorship, not courses. Based in India with global reach."
         breadcrumbs={[{ name: 'About', url: '/about' }]}
       />
+      {/* SEO h1 - visually hidden but accessible to search engines */}
+      <h1 className="sr-only">About Xperience Wave</h1>
       <AboutHero />
       <ProblemsSection />
       <WhatWeDo />

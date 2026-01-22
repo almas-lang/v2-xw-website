@@ -144,7 +144,7 @@ export default function ProgramsLoading() {
       </section>
 
       {/* CTA Section Skeleton */}
-      <section className="py-16 md:py-24 bg-carbon">
+      <section className="py-16 md:py-24 bg-[#0A0A0A]">
         <div className="max-w-[800px] mx-auto px-5 text-center">
           <div className="h-8 md:h-10 w-72 bg-white/10 rounded-lg animate-pulse mx-auto mb-4" />
           <div className="h-5 w-96 max-w-full bg-white/5 rounded animate-pulse mx-auto mb-8" />

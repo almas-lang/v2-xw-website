@@ -11,7 +11,7 @@ export interface FAQItem {
 type ThemeType = 'default' | 'coral' | 'teal' | 'gold';
 
 const themeColors: Record<ThemeType, { border: string; dots: string; accent: string; iconBg: string; iconBgHover: string }> = {
-  default: { border: '#4A90A4', dots: '#D4D4D8', accent: '#4A90A4', iconBg: '#DCEEFF', iconBgHover: '#c5ddf5' },
+  default: { border: '#A8D4F0', dots: '#A8D4F0', accent: '#A8D4F0', iconBg: '#DCEEFF', iconBgHover: '#c5ddf5' },
   coral: { border: '#E85A4F', dots: '#E85A4F', accent: '#E85A4F', iconBg: '#FDEDEC', iconBgHover: '#f9d5d3' },
   teal: { border: '#4A90A4', dots: '#4A90A4', accent: '#4A90A4', iconBg: '#DCEEFF', iconBgHover: '#c5ddf5' },
   gold: { border: '#D4A853', dots: '#D4A853', accent: '#D4A853', iconBg: '#FEF3C7', iconBgHover: '#fde68a' },
@@ -31,7 +31,7 @@ export default function FAQ({
   faqs,
   showCTA = true,
   ctaText = 'Book strategy call',
-  ctaHref = '/book-call',
+  ctaHref = 'https://calendly.com/team-xperiencewave/xw-strategy',
   theme = 'default',
 }: FAQProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -46,7 +46,7 @@ export default function FAQ({
       className="py-12 sm:py-16 md:py-24 lg:py-28 relative overflow-hidden"
       style={{
         backgroundColor: '#F9F9F9',
-        backgroundImage: `radial-gradient(${colors.dots}20 1px, transparent 1px)`,
+        backgroundImage: `radial-gradient(${colors.dots}50 1px, transparent 1px)`,
         backgroundSize: '24px 24px',
       }}
     >

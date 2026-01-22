@@ -146,7 +146,7 @@ export default function HowItWorks({
           <div
             className="relative rounded-2xl overflow-hidden"
             style={{
-              background: 'linear-gradient(135deg, #1A1A1A 0%, #252525 50%, #1A1A1A 100%)',
+              background: 'linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 50%, #0A0A0A 100%)',
               boxShadow: '0 8px 32px rgba(0,0,0,0.2)',
             }}
           >

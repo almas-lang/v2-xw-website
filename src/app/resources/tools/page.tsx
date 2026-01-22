@@ -121,7 +121,7 @@ export default function ToolsPage() {
       <section
         className="relative overflow-hidden"
         style={{
-          background: 'linear-gradient(135deg, #0a0a0a 0%, #0f0f0f 30%, #1a1a1a 60%, #0a0a0a 100%)',
+          background: 'linear-gradient(135deg, #0a0a0a 0%, #0a0a0a 30%, #0a0a0a 60%, #0a0a0a 100%)',
         }}
       >
         {/* Gradient orbs */}
@@ -390,7 +390,7 @@ export default function ToolsPage() {
           </p>
 
           <Link
-            href="/book-call"
+            href="https://calendly.com/team-xperiencewave/xw-strategy"
             className="inline-flex items-center gap-2 px-5 py-3 md:px-7 md:py-3.5 bg-accent hover:bg-accent-hover text-white font-heading font-semibold rounded-xl transition-all duration-300 hover:gap-3"
           >
             Book Strategy Call

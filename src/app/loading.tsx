@@ -5,7 +5,7 @@ export default function Loading() {
       <section
         className="relative overflow-hidden"
         style={{
-          background: 'linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 25%, #0f0f0f 50%, #1a1a1a 75%, #0a0a0a 100%)',
+          background: 'linear-gradient(135deg, #0a0a0a 0%, #0a0a0a 25%, #0a0a0a 50%, #0a0a0a 75%, #0a0a0a 100%)',
         }}
       >
         <div className="max-w-[1200px] mx-auto px-4">
@@ -52,7 +52,7 @@ export default function Loading() {
       </section>
 
       {/* Stats Section - Carbon bg matching Stats.tsx */}
-      <section className="bg-carbon py-12">
+      <section className="bg-[#0A0A0A] py-12">
         <div className="max-w-[1000px] mx-auto px-5">
           <div className="flex flex-wrap justify-center gap-8">
             {[1, 2, 3].map((i) => (
@@ -86,7 +86,7 @@ export default function Loading() {
           <div className="max-w-4xl mx-auto">
             <div
               className="rounded-t-2xl p-8"
-              style={{ background: 'linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%)' }}
+              style={{ background: 'linear-gradient(135deg, #0a0a0a 0%, #0a0a0a 100%)' }}
             >
               <div className="h-7 w-3/4 bg-white/10 rounded animate-pulse mx-auto mb-8" />
               <div className="space-y-4 max-w-2xl mx-auto">
@@ -155,7 +155,7 @@ export default function Loading() {
               <div
                 key={i}
                 className="p-6 rounded-md"
-                style={{ background: 'linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%)' }}
+                style={{ background: 'linear-gradient(135deg, #0a0a0a 0%, #0a0a0a 100%)' }}
               >
                 <div className="w-12 h-12 bg-accent/20 rounded animate-pulse mb-4" />
                 <div className="h-5 w-48 bg-white/15 rounded animate-pulse mb-2" />
@@ -192,7 +192,7 @@ export default function Loading() {
       <section
         className="py-16"
         style={{
-          background: 'linear-gradient(135deg, #0F0F0F 0%, #1A1A1A 40%, #0F1419 70%, #0F0F0F 100%)',
+          background: 'linear-gradient(135deg, #0A0A0A 0%, #0A0A0A 40%, #0A0A0A 70%, #0A0A0A 100%)',
         }}
       >
         <div className="max-w-[1200px] mx-auto px-5">
@@ -302,7 +302,7 @@ export default function Loading() {
       <section
         className="relative py-20"
         style={{
-          background: 'linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 25%, #0f0f0f 50%, #1a1a1a 75%, #0a0a0a 100%)',
+          background: 'linear-gradient(135deg, #0a0a0a 0%, #0a0a0a 25%, #0a0a0a 50%, #0a0a0a 75%, #0a0a0a 100%)',
         }}
       >
         <div className="max-w-[800px] mx-auto px-5 text-center">

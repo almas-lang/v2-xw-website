@@ -507,7 +507,7 @@ export default function ProgramFinder() {
               Retake Quiz
             </button>
             <span className="text-g600">|</span>
-            <Button href="/book-call" variant="ghost" size="sm">
+            <Button href="https://calendly.com/team-xperiencewave/xw-strategy" variant="ghost" size="sm">
               Book a free call
             </Button>
           </div>

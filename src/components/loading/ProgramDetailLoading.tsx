@@ -30,7 +30,7 @@ export default function ProgramDetailLoading({ accentColor = 'coral' }: ProgramD
       {/* Hero Section Skeleton - Dark */}
       <section
         className="relative pt-24 md:pt-28 pb-16 md:pb-24 overflow-hidden"
-        style={{ background: 'linear-gradient(180deg, #2A2A2A 0%, #1A1A1A 100%)' }}
+        style={{ background: 'linear-gradient(180deg, #1A1A1A 0%, #0A0A0A 100%)' }}
       >
         {/* Glow effect */}
         <div
@@ -103,7 +103,7 @@ export default function ProgramDetailLoading({ accentColor = 'coral' }: ProgramD
       {/* Stats Section Skeleton - Dark */}
       <section
         className="py-12 md:py-16"
-        style={{ background: '#1A1A1A' }}
+        style={{ background: '#0A0A0A' }}
       >
         <div className="max-w-[1200px] mx-auto px-5">
           <div className="flex flex-wrap justify-center gap-8 md:gap-16">
@@ -160,7 +160,7 @@ export default function ProgramDetailLoading({ accentColor = 'coral' }: ProgramD
       {/* Overview Section Skeleton - Dark */}
       <section
         className="py-16 md:py-24"
-        style={{ background: '#1A1A1A' }}
+        style={{ background: '#0A0A0A' }}
       >
         <div className="max-w-[1200px] mx-auto px-5">
           <div className="text-center mb-12">
@@ -239,7 +239,7 @@ export default function ProgramDetailLoading({ accentColor = 'coral' }: ProgramD
       {/* What You'll Learn Section Skeleton - Dark */}
       <section
         className="py-16 md:py-24"
-        style={{ background: 'linear-gradient(180deg, #0F0F0F 0%, #1A1A1A 100%)' }}
+        style={{ background: 'linear-gradient(180deg, #0A0A0A 0%, #1A1A1A 100%)' }}
       >
         <div className="max-w-[1200px] mx-auto px-5">
           <div className="text-center mb-12">
@@ -314,7 +314,7 @@ export default function ProgramDetailLoading({ accentColor = 'coral' }: ProgramD
       {/* Investment Section Skeleton - Dark */}
       <section
         className="py-16 md:py-24"
-        style={{ background: 'linear-gradient(135deg, #0F0F0F 0%, #1A1A1A 50%, #0F0F0F 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 50%, #0A0A0A 100%)' }}
       >
         <div className="max-w-[1000px] mx-auto px-5">
           <div className="text-center mb-12">
@@ -400,7 +400,7 @@ export default function ProgramDetailLoading({ accentColor = 'coral' }: ProgramD
       {/* CTA Section Skeleton - Dark */}
       <section
         className="py-16 md:py-24"
-        style={{ background: 'linear-gradient(135deg, #1A1A1A 0%, #2A2A2A 50%, #1A1A1A 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 50%, #0A0A0A 100%)' }}
       >
         <div className="max-w-[800px] mx-auto px-5 text-center">
           <div className="h-10 w-80 max-w-full bg-white/15 rounded-lg animate-pulse mx-auto mb-2" />

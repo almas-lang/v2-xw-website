@@ -16,12 +16,21 @@ export default function ProblemsSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-carbon py-20 md:py-32 relative overflow-hidden">
-      {/* Background accent */}
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-accent/5 to-transparent" />
+    <section ref={sectionRef} className="py-20 md:py-32 relative overflow-hidden bg-[#F0F0F0]">
+      {/* Subtle grid pattern */}
+      <div className="absolute inset-0 pointer-events-none">
+        <svg className="absolute inset-0 w-full h-full opacity-[0.08]" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="problemsGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1A1A1A" strokeWidth="0.5" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#problemsGrid)" />
+        </svg>
+      </div>
 
       <div className="max-w-[1100px] mx-auto px-5 relative z-10">
-        <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">
+        <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-carbon mb-4">
           The Problems No One Fixed
         </h2>
         <p className="text-g500 mb-12 md:mb-16 max-w-[500px]">The numbers tell the story.</p>
@@ -54,10 +63,10 @@ export default function ProblemsSection() {
                 transitionDelay: `${index * 150}ms`,
               }}
             >
-              <p className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold text-accent mb-2">
+              <p className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold text-[#D4A853] mb-2">
                 {item.stat}
               </p>
-              <p className="text-white font-medium mb-3">{item.label}</p>
+              <p className="text-carbon font-medium mb-3">{item.label}</p>
               <p className="text-g500 text-sm italic leading-relaxed max-w-[280px] mx-auto">
                 {item.context}
               </p>
@@ -67,23 +76,23 @@ export default function ProblemsSection() {
 
         {/* Connection line */}
         <div className="flex items-center justify-center gap-4 mb-12">
-          <div className="h-px flex-1 bg-gradient-to-r from-transparent to-g600" />
-          <span className="w-3 h-3 rounded-full bg-accent" />
-          <div className="h-px flex-1 bg-gradient-to-l from-transparent to-g600" />
+          <div className="h-px flex-1 bg-gradient-to-r from-transparent to-g300" />
+          <span className="w-3 h-3 rounded-full bg-[#D4A853]" />
+          <div className="h-px flex-1 bg-gradient-to-l from-transparent to-g300" />
         </div>
 
-        {/* Solution */}
+        {/* Solution - Black card */}
         <div
-          className="bg-white/5 border border-white/10 p-6 md:p-10 lg:p-12 backdrop-blur-sm"
+          className="bg-carbon p-6 md:p-10 lg:p-12"
           style={{ borderRadius: '24px' }}
         >
           <div className="flex flex-col lg:flex-row gap-8 items-center">
             {/* Image placeholder */}
             <div
-              className="w-full lg:w-2/5 aspect-[4/3] bg-g600 flex-shrink-0 flex items-center justify-center"
+              className="w-full lg:w-2/5 aspect-[4/3] bg-white/10 flex-shrink-0 flex items-center justify-center"
               style={{ borderRadius: '16px' }}
             >
-              <svg className="w-12 h-12 text-g500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-12 h-12 text-white/30" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
             </div>
@@ -107,7 +116,7 @@ export default function ProblemsSection() {
                   "We don't stop until the numbers change.",
                 ].map((text, i) => (
                   <li key={i} className="flex items-center gap-3 text-g300">
-                    <span className="w-2 h-2 rounded-full bg-accent flex-shrink-0" />
+                    <span className="w-2 h-2 rounded-full bg-[#D4A853] flex-shrink-0" />
                     {text}
                   </li>
                 ))}

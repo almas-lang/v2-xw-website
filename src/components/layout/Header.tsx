@@ -453,7 +453,7 @@ export default function Header() {
             }}
           >
             <Button
-              href="/book-call"
+              href="https://calendly.com/team-xperiencewave/xw-strategy"
               size="lg"
               className="w-full justify-center"
               onClick={closeMobileMenu}
@@ -807,7 +807,7 @@ export default function Header() {
 
         {/* Desktop CTA */}
         <div className="hidden lg:block">
-          <Button href="#book-call" size="sm">
+          <Button href="https://calendly.com/team-xperiencewave/xw-strategy" size="sm">
             Book strategy call
           </Button>
         </div>

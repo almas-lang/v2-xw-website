@@ -72,7 +72,7 @@ export default function InvestmentSection({
       ref={sectionRef}
       className="relative py-16 md:py-24 overflow-hidden"
       style={{
-        background: 'linear-gradient(135deg, #0F0F0F 0%, #1A1A1A 50%, #0F0F0F 100%)',
+        background: 'linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 50%, #0A0A0A 100%)',
       }}
     >
       {/* Gradient orbs */}
@@ -250,7 +250,7 @@ export default function InvestmentSection({
             transitionDelay: '400ms',
           }}
         >
-          <Button href="/book-call" size="lg">
+          <Button href="https://calendly.com/team-xperiencewave/xw-strategy" size="lg">
             Book a free strategy call
           </Button>
         </div>

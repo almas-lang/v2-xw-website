@@ -53,9 +53,11 @@ export default function SoundFamiliar() {
         />
 
         <div className="max-w-[1200px] mx-auto px-5 py-12 sm:py-16 md:py-24 lg:py-32">
-          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-20 items-center">
-            {/* Left - Title */}
+          {/* Mobile: Title → Carousel → Subtitle | Desktop: (Title + Subtitle) left, Carousel right */}
+          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 lg:gap-20 lg:items-center">
+            {/* Title */}
             <div
+              className="order-1"
               style={{
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateX(0)' : 'translateX(-30px)',
@@ -65,7 +67,7 @@ export default function SoundFamiliar() {
               <div className="relative">
                 {/* Large background text */}
                 <span
-                  className="absolute -top-8 -left-4 font-heading text-[120px] md:text-[180px] font-black text-g100/50 leading-none select-none pointer-events-none"
+                  className="absolute -top-6 -left-3 md:-top-8 md:-left-4 font-heading text-[80px] md:text-[180px] font-black text-g100/50 leading-none select-none pointer-events-none"
                   aria-hidden="true"
                 >
                   ?
@@ -94,32 +96,34 @@ export default function SoundFamiliar() {
                   <span className="text-accent">?</span>
                 </h2>
 
-                <p className="mt-6 font-body text-sm md:text-base text-g500 max-w-md">
+                {/* Subtitle - visible only on desktop */}
+                <p className="hidden lg:block mt-6 font-body text-base text-g500 max-w-md">
                   If any of these hit home, you&apos;re in the right place.
                 </p>
               </div>
             </div>
 
-            {/* Right - Rotating Pain Points */}
+            {/* Rotating Pain Points */}
             <div
+              className="order-2"
               style={{
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateX(0)' : 'translateX(30px)',
                 transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s',
               }}
             >
-              <div className="relative min-h-[200px] flex items-center">
+              <div className="relative min-h-[120px] md:min-h-[160px] flex items-center pb-8">
                 {/* Quote mark */}
-                <span className="absolute -top-4 -left-2 md:-left-6 font-heading text-6xl md:text-8xl text-accent/20 leading-none select-none">
+                <span className="absolute -top-2 -left-1 md:-top-4 md:-left-6 font-heading text-5xl md:text-8xl text-accent/20 leading-none select-none">
                   &ldquo;
                 </span>
 
                 {/* Pain point display */}
-                <div className="relative pl-4 md:pl-8">
+                <div className="relative pl-6 md:pl-8">
                   {painPoints.map((point, index) => (
                     <p
                       key={index}
-                      className={`absolute top-0 left-4 md:left-8 font-heading text-lg md:text-xl font-medium text-carbon leading-snug transition-all duration-500 ${
+                      className={`absolute top-0 left-6 md:left-8 right-0 font-heading text-base md:text-xl font-medium text-carbon leading-snug transition-all duration-500 ${
                         activeIndex === index
                           ? 'opacity-100 translate-y-0'
                           : 'opacity-0 translate-y-4 pointer-events-none'
@@ -130,13 +134,13 @@ export default function SoundFamiliar() {
                   ))}
 
                   {/* Static placeholder for height */}
-                  <p className="font-heading text-lg md:text-xl font-medium text-transparent leading-snug pointer-events-none" aria-hidden="true">
+                  <p className="font-heading text-base md:text-xl font-medium text-transparent leading-snug pointer-events-none pr-4" aria-hidden="true">
                     {painPoints[0]}&rdquo;
                   </p>
                 </div>
 
                 {/* Pagination dots */}
-                <div className="absolute -bottom-8 left-4 md:left-8 flex gap-2">
+                <div className="absolute bottom-0 left-6 md:left-8 flex gap-2">
                   {painPoints.map((_, index) => (
                     <button
                       key={index}
@@ -152,12 +156,26 @@ export default function SoundFamiliar() {
                 </div>
               </div>
             </div>
+
+            {/* Subtitle - visible only on mobile, comes after carousel */}
+            <div
+              className="order-3 lg:hidden -mt-2"
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+                transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s',
+              }}
+            >
+              <p className="font-body text-sm text-g500">
+                If any of these hit home, you&apos;re in the right place.
+              </p>
+            </div>
           </div>
         </div>
       </div>
 
       {/* Bottom Section - For You */}
-      <div className="relative bg-carbon overflow-hidden">
+      <div className="relative bg-[#0A0A0A] overflow-hidden">
         {/* Subtle gradient overlay */}
         <div
           className="absolute inset-0 pointer-events-none"
@@ -205,7 +223,7 @@ export default function SoundFamiliar() {
                   <div className="absolute left-0 top-6 bottom-6 w-[3px] bg-accent scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top rounded-full" />
 
                   {/* Number */}
-                  <span className="font-heading text-3xl md:text-4xl font-bold text-white/10 group-hover:text-accent transition-colors duration-300 w-12 flex-shrink-0 pl-4">
+                  <span className="font-heading text-3xl md:text-4xl font-bold text-accent md:text-white/10 group-hover:text-accent transition-colors duration-300 w-12 flex-shrink-0 pl-4">
                     {point.number}
                   </span>
 

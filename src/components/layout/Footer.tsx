@@ -233,7 +233,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom Section - Dark */}
-      <div className="bg-carbon py-10 md:py-12">
+      <div className="bg-[#0A0A0A] py-10 md:py-12">
         <div className="max-w-[1200px] mx-auto px-5">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 mb-8">
             {/* Social Links */}

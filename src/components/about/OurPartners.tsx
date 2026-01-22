@@ -53,7 +53,7 @@ export default function OurPartners() {
         </svg>
 
         {/* Soft gradient overlays */}
-        <div className="absolute top-1/4 left-0 w-64 h-64 bg-accent/[0.03] rounded-full blur-3xl" />
+        <div className="absolute top-1/4 left-0 w-64 h-64 bg-[#D4A853]/[0.03] rounded-full blur-3xl" />
         <div className="absolute bottom-1/4 right-0 w-64 h-64 bg-alice/[0.03] rounded-full blur-3xl" />
       </div>
 
@@ -109,7 +109,7 @@ export default function OurPartners() {
               </div>
               {/* Subtle accent line on hover */}
               <div
-                className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-accent group-hover:w-1/2 transition-all duration-500"
+                className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-[#D4A853] group-hover:w-1/2 transition-all duration-500"
                 style={{ borderRadius: '2px' }}
               />
             </div>
@@ -167,7 +167,7 @@ export default function OurPartners() {
             {[0, 1, 2].map((i) => (
               <div
                 key={i}
-                className="w-2 h-2 rounded-full bg-accent"
+                className="w-2 h-2 rounded-full bg-[#D4A853]"
                 style={{ opacity: 1 - i * 0.25 }}
               />
             ))}

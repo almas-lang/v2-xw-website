@@ -37,7 +37,7 @@ export default function WhatWeDo() {
             What We Do
           </h2>
           <p className="text-g500 flex items-center justify-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-accent" />
+            <span className="w-2 h-2 rounded-full bg-[#D4A853]" />
             A UX design and product company based in Bangalore, India
           </p>
         </div>
@@ -59,10 +59,10 @@ export default function WhatWeDo() {
               style={{ borderRadius: '24px' }}
             >
               {/* Decorative element */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-accent/20 to-transparent rounded-bl-full" />
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#D4A853]/20 to-transparent rounded-bl-full" />
 
               {/* Badge */}
-              <span className="inline-block px-3 py-1 bg-accent/20 text-accent text-xs font-semibold uppercase tracking-wider mb-6" style={{ borderRadius: '4px' }}>
+              <span className="inline-block px-3 py-1 bg-[#D4A853]/20 text-[#D4A853] text-xs font-semibold uppercase tracking-wider mb-6" style={{ borderRadius: '4px' }}>
                 For Designers
               </span>
 
@@ -78,7 +78,7 @@ export default function WhatWeDo() {
                   '1:1 mentorship until you succeed',
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3 text-g400">
-                    <svg className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg className="w-5 h-5 text-[#D4A853] mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                     {item}
@@ -96,7 +96,7 @@ export default function WhatWeDo() {
 
               <Link
                 href="/programs"
-                className="inline-flex items-center gap-2 bg-accent hover:bg-accent/90 text-white font-heading font-semibold px-6 py-3 transition-all group-hover:gap-3"
+                className="inline-flex items-center gap-2 bg-[#D4A853] hover:bg-[#D4A853]/90 text-white font-heading font-semibold px-6 py-3 transition-all group-hover:gap-3"
                 style={{ borderRadius: '8px' }}
               >
                 Explore programs

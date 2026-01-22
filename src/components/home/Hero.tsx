@@ -37,8 +37,8 @@ export default function Hero() {
             background: `
               linear-gradient(160deg,
                 #0a0a0a 0%,
-                #111111 30%,
-                #0d0d0d 60%,
+                #0a0a0a 30%,
+                #0a0a0a 60%,
                 #0a0a0a 100%
               )
             `,
@@ -195,7 +195,7 @@ export default function Hero() {
                   transition: 'all 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.2s',
                 }}
               >
-                <p className="font-body text-lg md:text-xl text-white/90 leading-relaxed max-w-[600px]">
+                <p className="text-lg md:text-xl text-white/70 leading-relaxed">
                   1:1 Mentorship That Fixes <span className="font-semibold">YOUR</span> Gaps, Not Generic Courses That Leave You Stuck
                 </p>
               </div>
@@ -209,7 +209,7 @@ export default function Hero() {
                   transition: 'all 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.25s',
                 }}
               >
-                <p className="font-body text-lg md:text-xl text-alice leading-relaxed max-w-[580px]">
+                <p className="text-lg md:text-xl text-white font-medium">
                   For UX/UI/Product designers with 2+ years experience who are ready to grow but keep getting stuck at the same level
                 </p>
               </div>
@@ -223,7 +223,7 @@ export default function Hero() {
                   transition: 'all 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.35s',
                 }}
               >
-                <Button href="/book-call" size="lg" showArrow>
+                <Button href="https://calendly.com/team-xperiencewave/xw-strategy" size="lg" showArrow>
                   Book strategy call
                 </Button>
               </div>

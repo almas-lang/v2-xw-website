@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 export default function AboutHero() {
   const [isVisible, setIsVisible] = useState(false);
@@ -9,104 +10,95 @@ export default function AboutHero() {
     setIsVisible(true);
   }, []);
 
+  const stats = [
+    '1Cr+ users impacted',
+    '20+ products shipped (Million+ downloads, 4+ ratings)',
+    '3000+ designers consulted',
+  ];
+
   return (
-    <section className="min-h-screen bg-white relative overflow-hidden flex items-center">
-      {/* Subtle dot pattern */}
-      <div
-        className="absolute inset-0 opacity-[0.4] pointer-events-none"
-        style={{
-          backgroundImage: 'radial-gradient(#e5e5e5 1px, transparent 1px)',
-          backgroundSize: '24px 24px',
-        }}
-      />
-
-      {/* Accent glow - top right */}
-      <div
-        className="absolute -top-32 -right-32 w-[600px] h-[600px] opacity-[0.06] pointer-events-none"
-        style={{
-          background: 'radial-gradient(circle, #FF0023 0%, transparent 60%)',
-        }}
-      />
-
-      <div className="relative z-10 w-full max-w-[1200px] mx-auto px-5 md:px-8 lg:px-12">
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
-          {/* Left - Content */}
-          <div>
-            {/* Eyebrow */}
-            <div
-              className="mb-5"
-              style={{
-                opacity: isVisible ? 1 : 0,
-                transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-                transition: 'all 0.7s cubic-bezier(0.4, 0, 0.2, 1)',
-              }}
-            >
-              <h1 className="inline-flex items-center gap-3 text-g500 text-sm font-medium tracking-[0.15em] uppercase">
-                <span className="w-8 h-px bg-accent" />
-                About Xperience Wave
-              </h1>
-            </div>
-
-            {/* Main headline */}
-            <h2
-              className="font-heading text-4xl sm:text-5xl md:text-[56px] font-bold text-carbon leading-[1.1] tracking-[-0.02em] mb-5"
-              style={{
-                opacity: isVisible ? 1 : 0,
-                transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-                transition: 'all 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.1s',
-              }}
-            >
-              <span className="text-accent">13+ Years</span> Building
-              <br />
-              Products for <span className="text-accent">Millions.</span>
-            </h2>
-
-            {/* Description */}
-            <p
-              className="font-body text-base md:text-lg text-g600 leading-relaxed max-w-[480px] mb-6"
-              style={{
-                opacity: isVisible ? 1 : 0,
-                transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-                transition: 'all 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.2s',
-              }}
-            >
-              We&apos;ve delivered banking systems, enterprise software, SaaS products,
-              consumer apps, and wealth management ecosystems.
-            </p>
-
-            {/* Stats row */}
-            <div
-              className="flex flex-wrap gap-2"
-              style={{
-                opacity: isVisible ? 1 : 0,
-                transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-                transition: 'all 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.3s',
-              }}
-            >
-              <div className="px-3 py-2 bg-g100 border border-g200 rounded-full">
-                <span className="text-carbon text-sm font-medium">1Cr+ users impacted</span>
-              </div>
-              <div className="px-3 py-2 bg-g100 border border-g200 rounded-full">
-                <span className="text-carbon text-sm font-medium">20+ products shipped</span>
-              </div>
-              <div className="px-3 py-2 bg-accent/10 border border-accent/20 rounded-full">
-                <span className="text-accent text-sm font-medium">3000+ designers consulted</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Right - Image placeholder */}
-          <div
+    <section className="min-h-screen bg-[#0A0A0A] relative overflow-hidden">
+      <div className="max-w-[1400px] mx-auto px-6 pt-32 pb-8">
+        {/* Header content */}
+        <div className="max-w-4xl mx-auto text-center mb-12">
+          <span
+            className="inline-block text-[#D4A853] text-xs uppercase tracking-[0.4em] font-medium mb-6"
             style={{
               opacity: isVisible ? 1 : 0,
-              transform: isVisible ? 'translateY(0) scale(1)' : 'translateY(20px) scale(0.98)',
+              transition: 'opacity 0.8s ease 0.1s',
+            }}
+          >
+            ◆ About Xperience Wave ◆
+          </span>
+
+          <h2
+            className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-8"
+            style={{
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
               transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s',
             }}
           >
-            <div className="aspect-square max-w-[480px] ml-auto rounded-2xl bg-g100 border border-g200 flex items-center justify-center">
-              <span className="text-g400 text-sm">Hero Image</span>
+            13+ Years Building Products for Millions.
+            <br />
+            <span className="text-[#D4A853]">Now building Careers Too.</span>
+          </h2>
+
+          <div
+            className="max-w-2xl mx-auto"
+            style={{
+              opacity: isVisible ? 1 : 0,
+              transition: 'opacity 0.8s ease 0.4s',
+            }}
+          >
+            <p className="font-body text-lg text-white/50 leading-relaxed mb-6 italic">
+              We&apos;ve delivered banking systems, enterprise software, SaaS products, consumer
+              apps, security platforms, crowdfunding models, and wealth management ecosystems.
+            </p>
+            <p className="text-white/70 mb-4">Now we use that experience to help</p>
+            <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-8 mb-8">
+              <span className="text-white/60">
+                <strong className="text-white">Designers</strong> - build careers that matter
+              </span>
+              <span className="text-white/60">
+                <strong className="text-white">Businesses</strong> - build products that scale
+              </span>
             </div>
           </div>
+        </div>
+
+        {/* Bottom image - wide banner */}
+        <div
+          className="relative mx-auto max-w-5xl"
+          style={{
+            opacity: isVisible ? 1 : 0,
+            transform: isVisible ? 'translateY(0)' : 'translateY(40px)',
+            transition: 'all 1s cubic-bezier(0.4, 0, 0.2, 1) 0.5s',
+          }}
+        >
+          <div className="aspect-[21/9] bg-gradient-to-b from-[#0A0A0A] to-[#0A0A0A] rounded-t-2xl flex items-center justify-center relative overflow-hidden">
+            {/* Placeholder - replace with actual image */}
+            <Image
+              src="/images/abouthero.png"
+              alt="Xperience Wave Team"
+              fill
+              className="object-cover rounded-t-2xl"
+              priority
+            />
+            {/* Gold top border */}
+            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#D4A853] to-transparent" />
+          </div>
+        </div>
+
+        {/* Stats bar */}
+        <div
+          className="text-center mt-8 pt-6 border-t border-[#D4A853]/20"
+          style={{
+            opacity: isVisible ? 1 : 0,
+            transition: 'opacity 0.8s ease 0.7s',
+          }}
+        >
+          <p className="text-[#D4A853]/80 text-sm">{stats.join(' | ')}</p>
         </div>
       </div>
     </section>

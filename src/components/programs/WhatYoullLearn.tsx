@@ -61,7 +61,7 @@ export default function WhatYoullLearn({
     <section
       ref={sectionRef}
       className="relative overflow-hidden"
-      style={{ background: '#0F0F0F' }}
+      style={{ background: '#0A0A0A' }}
     >
       {/* Large accent shape - bold geometric element */}
       <div
@@ -128,7 +128,7 @@ export default function WhatYoullLearn({
             <div
               className="h-full p-8 md:p-10 rounded-2xl relative group"
               style={{
-                background: 'linear-gradient(135deg, #1A1A1A 0%, #141414 100%)',
+                background: 'linear-gradient(135deg, #0A0A0A 0%, #141414 100%)',
                 border: '1px solid #2a2a2a',
               }}
             >
@@ -186,7 +186,7 @@ export default function WhatYoullLearn({
             <div
               className="h-full p-8 rounded-2xl relative group"
               style={{
-                background: 'linear-gradient(135deg, #1A1A1A 0%, #141414 100%)',
+                background: 'linear-gradient(135deg, #0A0A0A 0%, #141414 100%)',
                 border: '1px solid #2a2a2a',
               }}
             >
@@ -242,7 +242,7 @@ export default function WhatYoullLearn({
             <div
               className="h-full p-8 rounded-2xl relative group"
               style={{
-                background: 'linear-gradient(135deg, #1A1A1A 0%, #141414 100%)',
+                background: 'linear-gradient(135deg, #0A0A0A 0%, #141414 100%)',
                 border: '1px solid #2a2a2a',
               }}
             >
@@ -345,7 +345,7 @@ export default function WhatYoullLearn({
               <p className="font-body text-sm text-neutral-400 mb-5">
                 Not sure if this fits?
               </p>
-              <Button href="/book-call">
+              <Button href="https://calendly.com/team-xperiencewave/xw-strategy">
                 Book a call
               </Button>
               <p className="font-body text-xs text-neutral-500 mt-4 italic">

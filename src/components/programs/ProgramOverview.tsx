@@ -68,7 +68,7 @@ export default function ProgramOverview({
       ref={sectionRef}
       id="overview"
       className="py-12 md:py-16 lg:py-20 scroll-mt-20 relative overflow-hidden"
-      style={{ background: '#1A1A1A' }}
+      style={{ background: '#0A0A0A' }}
     >
       {/* Grid lines for texture */}
       <div className="absolute inset-0 opacity-[0.03]">

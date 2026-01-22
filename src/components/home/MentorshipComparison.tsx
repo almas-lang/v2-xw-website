@@ -145,7 +145,7 @@ export default function MentorshipComparison() {
           </p>
 
           {/* CTA */}
-          <Button href="/book-call" size="lg" showArrow>
+          <Button href="https://calendly.com/team-xperiencewave/xw-strategy" size="lg" showArrow>
             Book strategy call
           </Button>
         </div>

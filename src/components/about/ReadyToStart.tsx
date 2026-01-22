@@ -38,13 +38,13 @@ export default function ReadyToStart() {
       <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[450px] lg:min-h-[500px]">
         {/* Left - For Designers (Dark) */}
         <div
-          className="group relative flex flex-col justify-center px-8 py-16 md:px-12 lg:px-16 xl:px-20 bg-carbon overflow-hidden"
+          className="group relative flex flex-col justify-center px-8 py-16 md:px-12 lg:px-16 xl:px-20 bg-[#0A0A0A] overflow-hidden"
         >
           {/* Accent glow */}
           <div
             className="absolute top-0 left-0 w-[400px] h-[400px] pointer-events-none transition-opacity duration-700"
             style={{
-              background: 'radial-gradient(circle at top left, rgba(232, 90, 79, 0.15) 0%, transparent 60%)',
+              background: 'radial-gradient(circle at top left, rgba(212, 168, 83, 0.15) 0%, transparent 60%)',
               opacity: isVisible ? 1 : 0,
             }}
           />
@@ -68,7 +68,7 @@ export default function ReadyToStart() {
           >
             {/* Label */}
             <p
-              className="text-accent text-sm font-bold uppercase tracking-widest mb-4 transition-all duration-700"
+              className="text-[#D4A853] text-sm font-bold uppercase tracking-widest mb-4 transition-all duration-700"
               style={{
                 opacity: isVisible ? 1 : 0,
                 transitionDelay: '150ms',
@@ -106,7 +106,7 @@ export default function ReadyToStart() {
           <div
             className="absolute bottom-0 right-0 w-32 h-32 pointer-events-none"
             style={{
-              background: 'linear-gradient(135deg, transparent 50%, rgba(232, 90, 79, 0.1) 100%)',
+              background: 'linear-gradient(135deg, transparent 50%, rgba(212, 168, 83, 0.1) 100%)',
             }}
           />
         </div>

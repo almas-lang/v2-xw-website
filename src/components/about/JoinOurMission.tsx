@@ -20,13 +20,13 @@ export default function JoinOurMission() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-20 md:py-28 lg:py-32 overflow-hidden bg-carbon"
+      className="relative py-20 md:py-28 lg:py-32 overflow-hidden bg-[#0A0A0A]"
     >
       {/* Accent gradient corner */}
       <div
         className="absolute top-0 right-0 w-[500px] h-[500px] pointer-events-none"
         style={{
-          background: 'radial-gradient(circle at top right, rgba(232, 90, 79, 0.08) 0%, transparent 60%)',
+          background: 'radial-gradient(circle at top right, rgba(212, 168, 83, 0.08) 0%, transparent 60%)',
         }}
       />
 
@@ -52,7 +52,7 @@ export default function JoinOurMission() {
             {/* Badge */}
             <div className="mb-8">
               <span
-                className="inline-flex items-center gap-2 px-3 py-1.5 bg-accent/20 text-accent text-xs font-bold uppercase tracking-wider"
+                className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#D4A853]/20 text-[#D4A853] text-xs font-bold uppercase tracking-wider"
                 style={{ borderRadius: '6px' }}
               >
                 <svg className="w-3 h-3" viewBox="0 0 24 24" fill="currentColor">
@@ -85,14 +85,14 @@ export default function JoinOurMission() {
                 }}
               >
                 Growth-first.{' '}
-                <span className="text-accent">No BS.</span>{' '}
+                <span className="text-[#D4A853]">No BS.</span>{' '}
                 Until you win.
               </p>
             </div>
 
             {/* Divider */}
             <div
-              className="w-16 h-1 bg-accent mb-6 transition-all duration-700"
+              className="w-16 h-1 bg-[#D4A853] mb-6 transition-all duration-700"
               style={{
                 opacity: isVisible ? 1 : 0,
                 width: isVisible ? '64px' : '0px',
@@ -121,7 +121,7 @@ export default function JoinOurMission() {
             >
               <Link
                 href="/careers"
-                className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-accent hover:bg-accent/90 text-white font-heading font-bold text-base transition-all duration-300 hover:gap-4 group"
+                className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#D4A853] hover:bg-[#D4A853]/90 text-white font-heading font-bold text-base transition-all duration-300 hover:gap-4 group"
                 style={{ borderRadius: '12px' }}
               >
                 See Open Positions
@@ -151,7 +151,7 @@ export default function JoinOurMission() {
             <div className="relative">
               {/* Offset border frame */}
               <div
-                className="absolute -inset-3 border-2 border-accent/20 pointer-events-none"
+                className="absolute -inset-3 border-2 border-[#D4A853]/20 pointer-events-none"
                 style={{
                   borderRadius: '24px',
                   transform: 'rotate(2deg)',
@@ -171,7 +171,7 @@ export default function JoinOurMission() {
                 />
 
                 {/* Fallback placeholder if image doesn't exist */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-accent/20 to-alice/20">
+                <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-[#D4A853]/20 to-alice/20">
                   <svg className="w-16 h-16 text-white/30 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                   </svg>

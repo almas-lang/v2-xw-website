@@ -5,7 +5,7 @@ export default function AboutLoading() {
       <section className="min-h-screen relative">
         <div className="flex flex-col">
           {/* Dark side */}
-          <div className="w-full bg-carbon relative flex items-center justify-center p-8 min-h-[70vh]">
+          <div className="w-full bg-[#0A0A0A] relative flex items-center justify-center p-8 min-h-[70vh]">
             <div className="relative z-10 max-w-[500px] w-full">
               {/* Subtitle skeleton */}
               <div className="h-4 w-40 bg-alice/20 rounded animate-pulse mb-6" />
@@ -46,7 +46,7 @@ export default function AboutLoading() {
       </section>
 
       {/* ProblemsSection - Dark matching ProblemsSection.tsx */}
-      <section className="bg-carbon py-20">
+      <section className="bg-[#0A0A0A] py-20">
         <div className="max-w-[1100px] mx-auto px-5">
           {/* Title skeleton */}
           <div className="h-9 w-72 bg-white/10 rounded-lg animate-pulse mb-4" />
@@ -93,7 +93,7 @@ export default function AboutLoading() {
       </section>
 
       {/* OurValues Section - Dark matching OurValues.tsx */}
-      <section className="bg-carbon py-20">
+      <section className="bg-[#0A0A0A] py-20">
         <div className="max-w-[1100px] mx-auto px-5">
           {/* Header skeleton */}
           <div className="text-center mb-16">
@@ -223,7 +223,7 @@ export default function AboutLoading() {
       <section
         className="py-20"
         style={{
-          background: 'linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 25%, #0f0f0f 50%, #1a1a1a 75%, #0a0a0a 100%)',
+          background: 'linear-gradient(135deg, #0a0a0a 0%, #0a0a0a 25%, #0a0a0a 50%, #0a0a0a 75%, #0a0a0a 100%)',
         }}
       >
         <div className="max-w-[800px] mx-auto px-5 text-center">

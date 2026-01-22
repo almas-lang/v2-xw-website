@@ -28,7 +28,7 @@ export default function GlobalPresenceMini() {
     <section
       ref={sectionRef}
       className="relative py-10 md:py-14 overflow-hidden"
-      style={{ background: 'linear-gradient(180deg, #FAFAFA 0%, #F5F5F5 100%)' }}
+      style={{ background: '#F0F0F0' }}
     >
       <div className="max-w-[800px] mx-auto px-5">
         {/* Heading */}
@@ -40,7 +40,7 @@ export default function GlobalPresenceMini() {
           }}
         >
           <h2 className="font-heading text-2xl md:text-3xl font-bold text-carbon">
-            4 Countries. <span className="text-accent">1 Team</span>
+            4 Countries. <span className="text-[#D4A853]">1 Team</span>
           </h2>
         </div>
 
@@ -79,12 +79,12 @@ export default function GlobalPresenceMini() {
                 >
                   {/* Dot */}
                   <div
-                    className="w-3 h-3 rounded-full bg-accent transition-all duration-500"
+                    className="w-3 h-3 rounded-full bg-[#D4A853] transition-all duration-500"
                     style={{
                       opacity: isVisible ? 1 : 0,
                       transform: isVisible ? 'scale(1)' : 'scale(0)',
                       transitionDelay: `${300 + index * 100}ms`,
-                      boxShadow: '0 0 0 3px rgba(232, 90, 79, 0.2)',
+                      boxShadow: '0 0 0 3px rgba(212, 168, 83, 0.2)',
                     }}
                   />
                 </div>

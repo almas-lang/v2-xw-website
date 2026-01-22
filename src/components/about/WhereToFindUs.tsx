@@ -76,7 +76,7 @@ export default function WhereToFindUs() {
                 style={{ top: '58%', left: '73%' }}
               >
                 <div
-                  className="w-16 h-16 border-2 border-accent/30 rounded-full"
+                  className="w-16 h-16 border-2 border-[#D4A853]/30 rounded-full"
                   style={{
                     marginTop: '-32px',
                     marginLeft: '-12px',
@@ -95,7 +95,7 @@ export default function WhereToFindUs() {
                 style={{ top: '58%', left: '73%' }}
               >
                 <div
-                  className="relative flex items-center justify-center w-10 h-10 md:w-12 md:h-12 bg-accent text-white transition-all duration-300 group-hover:scale-110"
+                  className="relative flex items-center justify-center w-10 h-10 md:w-12 md:h-12 bg-[#D4A853] text-white transition-all duration-300 group-hover:scale-110"
                   style={{ borderRadius: '50% 50% 50% 0', transform: 'rotate(-45deg)' }}
                 >
                   <svg
@@ -129,7 +129,7 @@ export default function WhereToFindUs() {
               <div className="mb-8">
                 <div className="flex items-center gap-3 mb-4">
                   <div
-                    className="w-10 h-10 flex items-center justify-center bg-accent/10 text-accent"
+                    className="w-10 h-10 flex items-center justify-center bg-[#D4A853]/10 text-[#D4A853]"
                     style={{ borderRadius: '10px' }}
                   >
                     <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -164,10 +164,10 @@ export default function WhereToFindUs() {
                 {/* Email */}
                 <a
                   href="mailto:hello@xperiencewave.com"
-                  className="flex items-center gap-3 text-g600 hover:text-accent transition-colors duration-300 group"
+                  className="flex items-center gap-3 text-g600 hover:text-[#D4A853] transition-colors duration-300 group"
                 >
                   <div
-                    className="w-9 h-9 flex items-center justify-center bg-g100 group-hover:bg-accent/10 text-g400 group-hover:text-accent transition-all duration-300"
+                    className="w-9 h-9 flex items-center justify-center bg-g100 group-hover:bg-[#D4A853]/10 text-g400 group-hover:text-[#D4A853] transition-all duration-300"
                     style={{ borderRadius: '8px' }}
                   >
                     <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -180,10 +180,10 @@ export default function WhereToFindUs() {
                 {/* Phone */}
                 <a
                   href="tel:+918041325804"
-                  className="flex items-center gap-3 text-g600 hover:text-accent transition-colors duration-300 group"
+                  className="flex items-center gap-3 text-g600 hover:text-[#D4A853] transition-colors duration-300 group"
                 >
                   <div
-                    className="w-9 h-9 flex items-center justify-center bg-g100 group-hover:bg-accent/10 text-g400 group-hover:text-accent transition-all duration-300"
+                    className="w-9 h-9 flex items-center justify-center bg-g100 group-hover:bg-[#D4A853]/10 text-g400 group-hover:text-[#D4A853] transition-all duration-300"
                     style={{ borderRadius: '8px' }}
                   >
                     <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">

@@ -171,7 +171,7 @@ function HeroSection() {
       <div
         className="absolute inset-0"
         style={{
-          background: `linear-gradient(160deg, #0a0a0a 0%, #111111 30%, #0d0d0d 60%, #0a0a0a 100%)`,
+          background: `linear-gradient(160deg, #0a0a0a 0%, #0a0a0a 30%, #0a0a0a 60%, #0a0a0a 100%)`,
         }}
       />
 
@@ -518,7 +518,7 @@ function AIToolsSection() {
       ref={sectionRef}
       className="py-12 md:py-20 relative overflow-hidden"
       style={{
-        background: 'linear-gradient(160deg, #0a0a0a 0%, #111111 50%, #0d0d0d 100%)',
+        background: 'linear-gradient(160deg, #0a0a0a 0%, #0a0a0a 50%, #0a0a0a 100%)',
       }}
     >
       {/* Gradient accents */}
@@ -773,7 +773,7 @@ function NewsletterSection() {
       ref={sectionRef}
       className="py-12 md:py-20 relative overflow-hidden"
       style={{
-        background: 'linear-gradient(160deg, #0a0a0a 0%, #111111 50%, #0d0d0d 100%)',
+        background: 'linear-gradient(160deg, #0a0a0a 0%, #0a0a0a 50%, #0a0a0a 100%)',
       }}
     >
       {/* Gradient accents */}
@@ -854,7 +854,7 @@ function CTASection() {
       ref={sectionRef}
       className="py-16 md:py-24 lg:py-32 relative overflow-hidden"
       style={{
-        background: 'linear-gradient(135deg, #0a0a0a 0%, #111111 50%, #0d0d0d 100%)',
+        background: 'linear-gradient(135deg, #0a0a0a 0%, #0a0a0a 50%, #0a0a0a 100%)',
       }}
     >
       {/* X watermark - dark red */}
@@ -890,7 +890,7 @@ function CTASection() {
           </p>
 
           <Link
-            href="/book-call"
+            href="https://calendly.com/team-xperiencewave/xw-strategy"
             className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-accent text-white font-heading font-semibold rounded-xl active:bg-accent/80 transition-colors min-h-[56px]"
           >
             Book strategy call

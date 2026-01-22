@@ -31,7 +31,8 @@ const featuredStories = [
   },
 ];
 
-const quickWins = [
+// Default Quick Wins data (used on main pages)
+const defaultQuickWins = [
   {
     achievement: 'Lead Product designer at a German startup',
     duration: 'In 3 months',
@@ -61,6 +62,15 @@ const quickWins = [
     linkedin: 'https://www.linkedin.com/in/jonahimmanuel/',
   },
 ];
+
+// Quick Wins type export for use in other components
+export interface QuickWin {
+  achievement: string;
+  duration: string;
+  name: string;
+  image: string;
+  linkedin: string;
+}
 
 // ============================================
 // COMPONENTS
@@ -255,7 +265,37 @@ interface SuccessStoriesProps {
   showCTA?: boolean;
   ctaText?: string;
   ctaHref?: string;
+  quickWins?: QuickWin[];
+  accentColor?: 'teal' | 'gold' | 'coral' | 'default';
 }
+
+// Theme color mapping
+const themeColors = {
+  default: {
+    accent: '#FF0023',
+    accentBg: 'rgba(255, 0, 35, 0.1)',
+    accentBorder: 'rgba(255, 0, 35, 0.2)',
+    ctaText: '#1e3a5f', // Dark blue like in screenshot
+  },
+  teal: {
+    accent: '#4A90A4',
+    accentBg: 'rgba(74, 144, 164, 0.1)',
+    accentBorder: 'rgba(74, 144, 164, 0.2)',
+    ctaText: '#4A90A4',
+  },
+  gold: {
+    accent: '#D4A853',
+    accentBg: 'rgba(212, 168, 83, 0.1)',
+    accentBorder: 'rgba(212, 168, 83, 0.2)',
+    ctaText: '#B8943F',
+  },
+  coral: {
+    accent: '#E85A4F',
+    accentBg: 'rgba(232, 90, 79, 0.1)',
+    accentBorder: 'rgba(232, 90, 79, 0.2)',
+    ctaText: '#E85A4F',
+  },
+};
 
 export default function SuccessStories({
   title = 'Real Transformation, Real People',
@@ -263,7 +303,10 @@ export default function SuccessStories({
   showCTA = true,
   ctaText = 'See all success stories',
   ctaHref = '/success-stories',
+  quickWins = defaultQuickWins,
+  accentColor = 'default',
 }: SuccessStoriesProps) {
+  const theme = themeColors[accentColor];
   const sectionRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
   const [activeVideo, setActiveVideo] = useState<{ src: string; name: string } | null>(null);
@@ -326,9 +369,9 @@ export default function SuccessStories({
             }}
           >
             <div className="flex items-center justify-center gap-3 mb-4">
-              <div className="w-8 h-[2px] bg-accent" />
-              <span className="font-body text-xs uppercase tracking-[0.2em] text-accent font-medium">Success Stories</span>
-              <div className="w-8 h-[2px] bg-accent" />
+              <div className="w-8 h-[2px]" style={{ backgroundColor: theme.accent }} />
+              <span className="font-body text-xs uppercase tracking-[0.2em] font-medium" style={{ color: theme.accent }}>Success Stories</span>
+              <div className="w-8 h-[2px]" style={{ backgroundColor: theme.accent }} />
             </div>
             <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-carbon leading-tight mb-3">
               {title}
@@ -338,7 +381,67 @@ export default function SuccessStories({
             </p>
           </div>
 
-          {/* Featured Video Testimonials */}
+          {/* Quick Wins Section - Now on top */}
+          <div
+            className="mb-8 sm:mb-10 md:mb-12"
+            style={{
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+              transition: 'all 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.2s',
+            }}
+          >
+            {/* Quick win cards - 4 columns on desktop */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6">
+              {quickWins.map((win, index) => (
+                <a
+                  key={win.name}
+                  href={win.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group block"
+                  style={{
+                    opacity: isVisible ? 1 : 0,
+                    transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+                    transition: `all 0.6s cubic-bezier(0.4, 0, 0.2, 1) ${0.3 + index * 0.08}s`,
+                  }}
+                >
+                  <div className="relative p-5 sm:p-6 rounded-xl sm:rounded-2xl border border-g200 sm:hover:border-[#0A66C2]/40 bg-white shadow-sm sm:hover:shadow-lg transition-all duration-300 h-full">
+                    {/* Duration badge */}
+                    <div className="mb-4">
+                      <span
+                        className="inline-block px-3 py-1.5 text-xs font-bold rounded-full"
+                        style={{
+                          color: theme.accent,
+                          backgroundColor: theme.accentBg,
+                          border: `1px solid ${theme.accentBorder}`
+                        }}
+                      >
+                        {win.duration}
+                      </span>
+                    </div>
+
+                    {/* Achievement */}
+                    <h4 className="font-heading text-base sm:text-lg font-bold text-carbon mb-5 leading-snug line-clamp-3">
+                      {win.achievement}
+                    </h4>
+
+                    {/* Person with LinkedIn */}
+                    <div className="flex items-center justify-between mt-auto">
+                      <div className="flex items-center gap-3">
+                        <Avatar name={win.name} image={win.image} size="small" />
+                        <span className="font-body text-sm text-g600">{win.name}</span>
+                      </div>
+                      <div className="flex items-center gap-1.5 text-[#0A66C2] opacity-70 group-hover:opacity-100 transition-opacity">
+                        <LinkedInIcon className="w-5 h-5" />
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Featured Video Testimonials - Now on bottom */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 mb-8 sm:mb-10 md:mb-12">
             {featuredStories.map((story, index) => (
               <div
@@ -348,7 +451,7 @@ export default function SuccessStories({
                 style={{
                   opacity: isVisible ? 1 : 0,
                   transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
-                  transition: `all 0.7s cubic-bezier(0.4, 0, 0.2, 1) ${0.1 + index * 0.1}s`,
+                  transition: `all 0.7s cubic-bezier(0.4, 0, 0.2, 1) ${0.5 + index * 0.1}s`,
                 }}
               >
                 <div className={`relative rounded-xl sm:rounded-2xl overflow-hidden border-2 border-g200 transition-all duration-500 shadow-md ${story.video ? 'sm:hover:border-accent/40 sm:hover:shadow-xl' : ''}`}>
@@ -399,69 +502,7 @@ export default function SuccessStories({
             ))}
           </div>
 
-          {/* Quick Wins Section */}
-          <div
-            className="mb-8 sm:mb-10 md:mb-12"
-            style={{
-              opacity: isVisible ? 1 : 0,
-              transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-              transition: 'all 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.4s',
-            }}
-          >
-            {/* Quick wins header */}
-            <div className="flex items-center gap-4 mb-6 sm:mb-8">
-              <span className="font-heading text-sm sm:text-base font-bold text-carbon uppercase tracking-wider">Quick Wins</span>
-              <div className="flex-1 h-px bg-gradient-to-r from-g300 to-transparent" />
-            </div>
-
-            {/* Quick win cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-              {quickWins.map((win, index) => (
-                <a
-                  key={win.name}
-                  href={win.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group block"
-                  style={{
-                    opacity: isVisible ? 1 : 0,
-                    transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-                    transition: `all 0.6s cubic-bezier(0.4, 0, 0.2, 1) ${0.5 + index * 0.08}s`,
-                  }}
-                >
-                  <div className="relative p-4 sm:p-5 rounded-lg sm:rounded-xl border-2 border-g200 sm:hover:border-[#0A66C2]/40 bg-white shadow-sm sm:hover:shadow-md transition-all duration-300 h-full">
-                    {/* Duration badge */}
-                    <div className="absolute top-3 right-3 sm:top-4 sm:right-4">
-                      <span className="inline-block px-2.5 py-1 text-[10px] sm:text-xs font-bold text-accent bg-accent/10 border border-accent/20 rounded-full">
-                        {win.duration}
-                      </span>
-                    </div>
-
-                    {/* Achievement */}
-                    <h4 className="font-heading text-lg md:text-xl font-bold text-carbon mb-4 pr-16 sm:pr-20 leading-snug">
-                      {win.achievement}
-                    </h4>
-
-                    {/* Person with LinkedIn */}
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-3">
-                        <Avatar name={win.name} image={win.image} size="small" />
-                        <span className="font-body text-xs sm:text-sm text-g600">{win.name}</span>
-                      </div>
-                      <div className="flex items-center gap-1.5 text-[#0A66C2] opacity-70 group-hover:opacity-100 transition-opacity">
-                        <LinkedInIcon className="w-4 h-4 sm:w-5 sm:h-5" />
-                      </div>
-                    </div>
-
-                    {/* Left accent line - always visible */}
-                    <div className="absolute left-0 top-4 bottom-4 w-[3px] bg-accent/60 rounded-full" />
-                  </div>
-                </a>
-              ))}
-            </div>
-          </div>
-
-          {/* CTA */}
+          {/* CTA - Simple text link */}
           {showCTA && (
             <div
               className="text-center"
@@ -473,22 +514,13 @@ export default function SuccessStories({
             >
               <Link
                 href={ctaHref}
-                className="group inline-flex items-center gap-2 px-6 py-3 sm:px-8 sm:py-4 bg-accent sm:hover:bg-accent-hover text-white rounded-lg sm:rounded-xl shadow-md sm:hover:shadow-lg transition-all duration-300"
+                className="group inline-flex items-center gap-1.5 font-body text-sm sm:text-base font-medium transition-all duration-300 hover:gap-2.5"
+                style={{ color: theme.ctaText }}
               >
-                <span className="font-heading font-semibold text-sm sm:text-base">
+                <span className="underline underline-offset-4 decoration-1">
                   {ctaText}
                 </span>
-                <svg
-                  className="w-4 h-4 sm:w-5 sm:h-5 transform sm:group-hover:translate-x-1 transition-transform"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
+                <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
               </Link>
             </div>
           )}

@@ -25,7 +25,7 @@ export default function CTASection({
   ),
   subtitle = "Book a free strategy call and get clarity on what's blocking you - whether you join us or not",
   buttonText = "Book strategy call",
-  buttonHref = "/book-call",
+  buttonHref = "https://calendly.com/team-xperiencewave/xw-strategy",
   benefits = defaultBenefits,
 }: CTASectionProps) {
   return (
@@ -37,9 +37,9 @@ export default function CTASection({
           background: `
             linear-gradient(135deg,
               #0a0a0a 0%,
-              #1a1a1a 25%,
-              #0f0f0f 50%,
-              #1a1a1a 75%,
+              #0a0a0a 25%,
+              #0a0a0a 50%,
+              #0a0a0a 75%,
               #0a0a0a 100%
             )
           `,

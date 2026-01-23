@@ -195,7 +195,7 @@ export default function HowItWorks({
 
             <div className="relative p-6 md:p-8 lg:p-10">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 items-center">
-                {/* Image placeholder */}
+                {/* Image */}
                 <div
                   className="relative aspect-[4/3] rounded-xl overflow-hidden"
                   style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}
@@ -205,7 +205,10 @@ export default function HowItWorks({
                       src={steps[currentStep].image}
                       alt={steps[currentStep].title}
                       fill
-                      className="object-cover"
+                      className="object-contain"
+                      style={{
+                        transform: currentStep === 1 ? 'scale(1)' : 'scale(1.25)',
+                      }}
                     />
                   ) : (
                     <div className="absolute inset-0 flex items-center justify-center">
@@ -218,7 +221,7 @@ export default function HowItWorks({
                   )}
                   {/* Step number badge */}
                   <div
-                    className="absolute top-4 left-4 px-3 py-1 rounded-full"
+                    className="absolute top-4 left-4 px-3 py-1 rounded-full z-10"
                     style={{ background: colors.primary }}
                   >
                     <span className="font-heading text-xs font-bold text-white uppercase tracking-wider">

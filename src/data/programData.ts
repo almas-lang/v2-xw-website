@@ -5,18 +5,22 @@ export const sharedProgramSteps = [
   {
     title: 'We Assess Where You Are',
     description: 'Your background, strengths, gaps, and goals. We build a personalised roadmap - no two plans are the same.',
+    image: '/images/step1.png',
   },
   {
     title: 'Regular 1:1s With Your Success Manager',
     description: 'A design manager (10+ years experience) guides you through activities, reviews your work, and helps you navigate real challenges.',
+    image: '/images/step2.png',
   },
   {
     title: 'Expert Clinics To Get Unstuck',
     description: 'Sessions for portfolio critiques, mock interviews, and skill deep-dives. Learn from peers too.',
+    image: '/images/step3.png',
   },
   {
     title: 'Ongoing Support Until You Succeed',
     description: "Program manager available 6 days a week. We don't disappear after the sessions end.",
+    image: '/images/step4.png',
   },
 ];
 

@@ -17,6 +17,7 @@ interface ProgramHeroProps {
   breadcrumbLabel?: string;
   topBanner?: string; // Full-width banner at top of hero
   heroImage?: string; // Optional hero image - replaces description box
+  imageScale?: number; // Scale for hero image (default 150 = 50% larger)
 }
 
 const colorMap = {
@@ -53,6 +54,7 @@ export default function ProgramHero({
   breadcrumbLabel,
   topBanner,
   heroImage,
+  imageScale = 150,
 }: ProgramHeroProps) {
   const colors = colorMap[accentColor];
 
@@ -210,50 +212,37 @@ export default function ProgramHero({
           </div>
 
           {/* Right Content - Hero Image OR Description Box */}
-          <div className="lg:col-span-5">
+          <div className="lg:col-span-5 px-8 sm:px-12 lg:px-0">
             {heroImage ? (
               /* Hero Image + Pills below */
               <div className="space-y-6">
                 <div className="relative">
                   {/* Decorative glow behind image */}
                   <div
-                    className="absolute -inset-4 rounded-3xl blur-2xl opacity-40"
-                    style={{ background: colors.bgGlow }}
+                    className="absolute -inset-12 blur-3xl opacity-50 pointer-events-none"
+                    style={{ background: `radial-gradient(ellipse at center, ${colors.bgGlow} 0%, transparent 70%)` }}
                   />
-                  {/* Image container */}
+                  {/* Free-floating image */}
                   <div
-                    className="relative overflow-hidden"
-                    style={{
-                      borderRadius: '20px',
-                      border: '1px solid rgba(255,255,255,0.1)',
-                    }}
+                    className="relative aspect-[4/3] origin-center"
+                    style={{ transform: `scale(${imageScale / 100}) translateY(1.5rem)` }}
                   >
                     <Image
                       src={heroImage}
                       alt={`${programName} program`}
-                      width={600}
-                      height={500}
-                      className="w-full h-auto object-cover"
+                      fill
+                      className="object-contain drop-shadow-2xl"
+                      style={{
+                        filter: 'drop-shadow(0 25px 50px rgba(0, 0, 0, 0.4)) drop-shadow(0 10px 20px rgba(255, 255, 255, 0.05))',
+                      }}
                       priority
                     />
-                    {/* Subtle gradient overlay at bottom */}
-                    <div
-                      className="absolute bottom-0 left-0 right-0 h-24 pointer-events-none"
-                      style={{
-                        background: 'linear-gradient(to top, rgba(26,26,26,0.6) 0%, transparent 100%)',
-                      }}
-                    />
                   </div>
-                  {/* Accent line at bottom */}
-                  <div
-                    className="absolute -bottom-1 left-6 right-6 h-[3px] rounded-full"
-                    style={{ background: colors.gradient }}
-                  />
                 </div>
 
                 {/* Features as pills - below image */}
                 {features && features.length > 0 && (
-                  <div className="flex flex-wrap gap-2 pt-2">
+                  <div className="relative z-10 flex flex-wrap justify-center gap-3 pt-14">
                     {features.map((feature, index) => (
                       <span
                         key={index}

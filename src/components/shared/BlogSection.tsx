@@ -221,7 +221,7 @@ export default function BlogSection({
           >
             <Link
               href="/resources/blogs"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-carbon text-white font-heading font-semibold text-sm rounded-xl"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-alice text-carbon font-heading font-semibold text-sm rounded-xl"
             >
               See All Wave Blogs
               <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">

@@ -235,7 +235,8 @@ export default function CurrentProgramPage() {
         badge="Most Popular"
         breadcrumbLabel="Current - Senior Mentorship"
         topBanner="1:1 UX Mentorship for mid-level designers ready to break through to senior & lead roles"
-        heroImage="/images/current-hero.jpg"
+        heroImage="/images/current-hero.png"
+        imageScale={130}
       />
       <ProgramStats stats={currentStats} accentColor="coral" />
       <ProgramFitCheck

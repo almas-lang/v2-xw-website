@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 
 export default function BuiltDifferent() {
   const [isVisible, setIsVisible] = useState(false);
@@ -65,22 +66,15 @@ export default function BuiltDifferent() {
               />
               {/* Main image container */}
               <div
-                className="w-full aspect-[4/5] bg-gradient-to-br from-[#1A1A1A] to-[#0A0A0A] flex items-center justify-center overflow-hidden border border-[#D4A853]/10"
+                className="w-full aspect-[4/3] relative overflow-hidden border border-[#D4A853]/10"
                 style={{ borderRadius: '16px' }}
               >
-                <svg
-                  className="w-16 h-16 text-[#D4A853]/20"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1}
-                    d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-                  />
-                </svg>
+                <Image
+                  src="/images/about-bd.jpg"
+                  alt="Built Different"
+                  fill
+                  className="object-cover"
+                />
               </div>
             </div>
           </div>

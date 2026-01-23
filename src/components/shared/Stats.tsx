@@ -11,7 +11,7 @@ interface Stat {
 interface StatsProps {
   stats?: Stat[];
   maxWidth?: string;
-  theme?: 'default' | 'alice' | 'white' | 'alice-light';
+  theme?: 'default' | 'alice' | 'white' | 'alice-light' | 'horizontal-light';
 }
 
 const defaultStats: Stat[] = [
@@ -36,6 +36,8 @@ export default function Stats({ stats = defaultStats, maxWidth = '1100px', theme
   const isAlice = theme === 'alice';
   const isWhite = theme === 'white';
   const isAliceLight = theme === 'alice-light';
+  const isHorizontalLight = theme === 'horizontal-light';
+  const isLightTheme = isWhite || isAliceLight || isHorizontalLight;
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -52,6 +54,7 @@ export default function Stats({ stats = defaultStats, maxWidth = '1100px', theme
 
   // Theme-based styles
   const getBackground = () => {
+    if (isHorizontalLight) return 'linear-gradient(90deg, #F5F5F5 0%, #FFFFFF 30%, #FFFFFF 70%, #F5F5F5 100%)';
     if (isAliceLight) return 'linear-gradient(180deg, #e8f4ff 0%, #dceeff 50%, #d0e8f8 100%)';
     if (isWhite) return 'linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%)';
     if (isAlice) return 'linear-gradient(180deg, #0d1a28 0%, #142432 100%)';
@@ -59,6 +62,7 @@ export default function Stats({ stats = defaultStats, maxWidth = '1100px', theme
   };
 
   const getGlowColor = () => {
+    if (isHorizontalLight) return 'rgba(255, 0, 35, 0.06)';
     if (isAliceLight) return 'rgba(74, 144, 164, 0.15)';
     if (isWhite) return 'rgba(255, 0, 35, 0.08)';
     if (isAlice) return 'rgba(220, 238, 255, 0.15)';
@@ -66,6 +70,7 @@ export default function Stats({ stats = defaultStats, maxWidth = '1100px', theme
   };
 
   const getAccentColor = () => {
+    if (isHorizontalLight) return 'text-accent';
     if (isAliceLight) return 'text-[#2a6a7c]';
     if (isWhite) return 'text-accent';
     if (isAlice) return 'text-alice';
@@ -73,24 +78,28 @@ export default function Stats({ stats = defaultStats, maxWidth = '1100px', theme
   };
 
   const getValueColor = () => {
+    if (isHorizontalLight) return 'text-carbon';
     if (isAliceLight) return 'text-[#0d1a28]';
     if (isWhite) return 'text-carbon';
     return 'text-white';
   };
 
   const getLabelColor = () => {
+    if (isHorizontalLight) return 'text-g600';
     if (isAliceLight) return 'text-[#4A90A4]';
     if (isWhite) return 'text-g500';
     return 'text-g400';
   };
 
   const getDividerGradient = () => {
+    if (isHorizontalLight) return 'linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.08) 50%, transparent 100%)';
     if (isAliceLight) return 'linear-gradient(180deg, transparent 0%, rgba(74,144,164,0.3) 50%, transparent 100%)';
     if (isWhite) return 'linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.1) 50%, transparent 100%)';
     return 'linear-gradient(180deg, transparent 0%, rgba(255,255,255,0.15) 50%, transparent 100%)';
   };
 
   const getBottomLineGradient = () => {
+    if (isHorizontalLight) return 'linear-gradient(90deg, transparent 0%, #FF0023 50%, transparent 100%)';
     if (isAliceLight) return 'linear-gradient(90deg, transparent 0%, #4A90A4 50%, transparent 100%)';
     if (isWhite) return 'linear-gradient(90deg, transparent 0%, #FF0023 50%, transparent 100%)';
     if (isAlice) return 'linear-gradient(90deg, transparent 0%, #4A90A4 50%, transparent 100%)';
@@ -108,17 +117,17 @@ export default function Stats({ stats = defaultStats, maxWidth = '1100px', theme
       <div
         className="absolute inset-0"
         style={{
-          opacity: isWhite ? 0.03 : 0.04,
+          opacity: isLightTheme ? 0.03 : 0.04,
           backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
         }}
       />
 
       {/* Subtle grid */}
-      <div className="absolute inset-0" style={{ opacity: (isWhite || isAliceLight) ? 0.04 : 0.02 }}>
+      <div className="absolute inset-0" style={{ opacity: isLightTheme ? 0.04 : 0.02 }}>
         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="statsGrid" width="60" height="60" patternUnits="userSpaceOnUse">
-              <path d="M 60 0 L 0 0 0 60" fill="none" stroke={isAliceLight ? '#4A90A4' : (isWhite ? '#000000' : '#ffffff')} strokeWidth="0.5" />
+              <path d="M 60 0 L 0 0 0 60" fill="none" stroke={isAliceLight ? '#4A90A4' : (isLightTheme ? '#000000' : '#ffffff')} strokeWidth="0.5" />
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#statsGrid)" />
@@ -126,7 +135,7 @@ export default function Stats({ stats = defaultStats, maxWidth = '1100px', theme
       </div>
 
       {/* Decorative dots pattern for light themes */}
-      {(isWhite || isAliceLight) && (
+      {isLightTheme && (
         <div
           className="absolute inset-0 opacity-[0.15]"
           style={{
@@ -143,12 +152,12 @@ export default function Stats({ stats = defaultStats, maxWidth = '1100px', theme
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[200px] blur-3xl pointer-events-none"
         style={{
           background: getGlowColor(),
-          opacity: (isWhite || isAliceLight) ? 0.8 : (isAlice ? 0.5 : 0.4)
+          opacity: isLightTheme ? 0.8 : (isAlice ? 0.5 : 0.4)
         }}
       />
 
       {/* Side accent glows for light themes */}
-      {isWhite && (
+      {(isWhite || isHorizontalLight) && (
         <>
           <div
             className="absolute top-0 left-0 w-[400px] h-[300px] blur-[100px] pointer-events-none"
@@ -175,7 +184,7 @@ export default function Stats({ stats = defaultStats, maxWidth = '1100px', theme
         </>
       )}
 
-      <div className="relative mx-auto px-5 py-12 md:py-16" style={{ maxWidth }}>
+      <div className="relative mx-auto px-5 py-8 md:py-10" style={{ maxWidth }}>
         <div className="flex flex-col md:flex-row flex-wrap items-center justify-center gap-8 md:gap-0">
           {stats.map((stat, index) => (
             <div
@@ -210,6 +219,12 @@ export default function Stats({ stats = defaultStats, maxWidth = '1100px', theme
           ))}
         </div>
       </div>
+
+      {/* Top accent line */}
+      <div
+        className="absolute top-0 left-0 right-0 h-[2px]"
+        style={{ background: getBottomLineGradient() }}
+      />
 
       {/* Bottom accent line */}
       <div

@@ -65,7 +65,7 @@ export default function MeetMentors({ accentColor = 'accent' }: MeetMentorsProps
           + clinic leads and specialists for portfolio critiques, mock interviews, and skill deep-dives
         </p>
       }
-      theme="dark-teal"
+      theme="dark"
       accentColor={accentColor}
     />
   );

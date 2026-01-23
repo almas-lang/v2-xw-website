@@ -165,60 +165,51 @@ function HeroSection() {
     setIsVisible(true);
   }, []);
 
+  const keywords = [
+    { text: 'Templates', color: '#4A90A4' },
+    { text: 'Tools', color: '#FF0023' },
+    { text: 'Guides', color: '#D4A853' },
+    { text: 'Courses', color: '#6366F1' },
+  ];
+
   return (
     <section className="relative overflow-hidden">
       {/* Dark Background */}
       <div
         className="absolute inset-0"
         style={{
-          background: `linear-gradient(160deg, #0a0a0a 0%, #0a0a0a 30%, #0a0a0a 60%, #0a0a0a 100%)`,
+          background: 'linear-gradient(180deg, #0a0a0a 0%, #111111 100%)',
         }}
       />
 
-      {/* Gradient accents */}
+      {/* Animated gradient orbs */}
       <div
-        className="absolute inset-0 opacity-60"
+        className="absolute top-0 left-1/4 w-[500px] h-[500px] rounded-full blur-[120px] pointer-events-none"
         style={{
-          background: `
-            radial-gradient(ellipse 80% 50% at 20% 40%, rgba(255,0,35,0.08) 0%, transparent 50%),
-            radial-gradient(ellipse 60% 40% at 80% 60%, rgba(220,238,255,0.06) 0%, transparent 50%)
-          `,
+          background: 'radial-gradient(circle, rgba(74,144,164,0.15) 0%, transparent 70%)',
         }}
       />
-
-      {/* Grid pattern */}
       <div
-        className="absolute inset-0 opacity-[0.03]"
+        className="absolute bottom-0 right-1/4 w-[400px] h-[400px] rounded-full blur-[100px] pointer-events-none"
         style={{
-          backgroundImage: `
-            linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)
-          `,
-          backgroundSize: '40px 40px',
+          background: 'radial-gradient(circle, rgba(255,0,35,0.1) 0%, transparent 70%)',
         }}
       />
 
-      {/* X watermark - hidden on mobile */}
-      <div className="hidden md:block absolute -right-20 top-1/2 -translate-y-1/2 select-none pointer-events-none">
-        <span
-          className="font-heading font-black text-[400px] lg:text-[500px] leading-none"
-          style={{
-            background: 'linear-gradient(180deg, rgba(255,0,35,0.04) 0%, rgba(220,238,255,0.02) 100%)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text',
-          }}
-          aria-hidden="true"
-        >
-          X
-        </span>
-      </div>
+      {/* Dot pattern */}
+      <div
+        className="absolute inset-0 opacity-20"
+        style={{
+          backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.15) 1px, transparent 0)',
+          backgroundSize: '32px 32px',
+        }}
+      />
 
       {/* Content */}
-      <div className="relative z-10 px-5 pt-24 md:pt-28 pb-10 md:pb-16 max-w-[1200px] mx-auto">
+      <div className="relative z-10 max-w-[1200px] mx-auto px-5 pt-24 md:pt-28 pb-12 md:pb-20">
         {/* Breadcrumb */}
         <nav
-          className="flex items-center gap-2 text-xs md:text-sm mb-6 md:mb-8"
+          className="flex items-center gap-2 text-sm mb-8 sm:mb-10"
           aria-label="Breadcrumb"
           style={{
             opacity: isVisible ? 1 : 0,
@@ -226,7 +217,7 @@ function HeroSection() {
             transition: 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
           }}
         >
-          <Link href="/" className="text-g400 active:text-white underline underline-offset-2 transition-colors">
+          <Link href="/" className="text-g400 hover:text-white underline underline-offset-2 transition-colors">
             Home
           </Link>
           <svg className="w-4 h-4 text-g500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -236,9 +227,9 @@ function HeroSection() {
         </nav>
 
         {/* Main content */}
-        <div className="text-center max-w-3xl mx-auto">
+        <div className="max-w-4xl mx-auto text-center">
           <h1
-            className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-3 md:mb-4"
+            className="font-heading text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white tracking-tight mb-6"
             style={{
               opacity: isVisible ? 1 : 0,
               transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
@@ -246,24 +237,50 @@ function HeroSection() {
             }}
           >
             UX Design Resources
-            <br />
-            <span className="text-g400 text-4xl sm:text-5xl lg:text-6xl">Templates. Tools. Guides. Courses.</span>
           </h1>
 
+          {/* Colorful keywords */}
+          <div
+            className="flex flex-wrap justify-center gap-3 md:gap-4 mb-6 md:mb-8"
+            style={{
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
+              transition: 'all 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.15s',
+            }}
+          >
+            {keywords.map((keyword, index) => (
+              <span
+                key={keyword.text}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full border text-sm md:text-base font-heading font-semibold"
+                style={{
+                  borderColor: `${keyword.color}50`,
+                  color: keyword.color,
+                  backgroundColor: `${keyword.color}10`,
+                }}
+              >
+                <span
+                  className="w-2 h-2 rounded-full"
+                  style={{ backgroundColor: keyword.color }}
+                />
+                {keyword.text}
+              </span>
+            ))}
+          </div>
+
           <p
-            className="font-body text-base md:text-lg text-g300 mb-5 md:mb-6"
+            className="font-body text-base md:text-lg lg:text-xl text-g300 mb-8 md:mb-10 max-w-2xl mx-auto"
             style={{
               opacity: isVisible ? 1 : 0,
               transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
               transition: 'all 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.2s',
             }}
           >
-            Everything you need to build your UX portfolio, crack design interviews, and grow your career.
+            Everything you need to build your UX portfolio, crack design interviews, and grow your career - built from real mentorship experience.
           </p>
 
-          {/* CTAs - matching Button component sizing */}
+          {/* CTAs */}
           <div
-            className="flex flex-col sm:flex-row justify-center gap-3 mb-6 md:mb-8"
+            className="flex flex-col sm:flex-row justify-center gap-3 md:gap-4 mb-10 md:mb-12"
             style={{
               opacity: isVisible ? 1 : 0,
               transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
@@ -272,15 +289,13 @@ function HeroSection() {
           >
             <Link
               href="#resources"
-              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 md:px-6 md:py-3 border border-alice/80 text-alice font-heading font-semibold text-sm md:text-base active:bg-alice/20 transition-colors"
-              style={{ borderRadius: '6px' }}
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 md:px-8 md:py-4 bg-accent hover:bg-accent/90 text-white font-heading font-semibold text-sm md:text-base rounded-xl transition-all"
             >
               Browse Resources
             </Link>
             <Link
               href="#templates"
-              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 md:px-6 md:py-3 border border-alice/80 text-alice font-heading font-semibold text-sm md:text-base active:bg-alice/20 transition-colors"
-              style={{ borderRadius: '6px' }}
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 md:px-8 md:py-4 bg-white/5 hover:bg-white/10 border border-white/20 text-white font-heading font-semibold text-sm md:text-base rounded-xl transition-all"
             >
               Get Interview Prep Checklist
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -289,7 +304,7 @@ function HeroSection() {
             </Link>
           </div>
 
-          {/* Stats card */}
+          {/* Stats */}
           <div
             style={{
               opacity: isVisible ? 1 : 0,
@@ -297,13 +312,13 @@ function HeroSection() {
               transition: 'all 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.4s',
             }}
           >
-            <div className="inline-block px-4 py-2.5 md:px-5 md:py-3 bg-white/5 backdrop-blur-sm border border-white/10" style={{ borderRadius: '6px' }}>
-              <p className="font-heading font-medium text-white text-xs md:text-sm">
-                <span className="block sm:inline">50+ resources</span>
-                <span className="hidden sm:inline text-g400 mx-2">·</span>
-                <span className="block sm:inline">Used by 3000+ designers</span>
-                <span className="hidden sm:inline text-g400 mx-2">·</span>
-                <span className="block sm:inline">Updated regularly</span>
+            <div className="inline-block px-6 py-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl">
+              <p className="font-heading font-medium text-white text-sm md:text-base">
+                50+ resources
+                <span className="text-g500 mx-3">·</span>
+                Used by 3000+ designers
+                <span className="text-g500 mx-3">·</span>
+                Updated regularly
               </p>
             </div>
           </div>

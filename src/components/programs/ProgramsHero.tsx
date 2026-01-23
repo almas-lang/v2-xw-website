@@ -234,38 +234,24 @@ export default function ProgramsHero() {
               <div className="relative">
                 {/* Alice blue glow behind image */}
                 <div
-                  className="absolute -inset-8 blur-3xl opacity-60 pointer-events-none"
+                  className="absolute -inset-12 blur-3xl opacity-50 pointer-events-none"
                   style={{
-                    background: 'radial-gradient(ellipse at center, rgba(220,238,255,0.2) 0%, rgba(74,144,164,0.1) 50%, transparent 70%)',
+                    background: 'radial-gradient(ellipse at center, rgba(220,238,255,0.25) 0%, rgba(74,144,164,0.15) 50%, transparent 70%)',
                   }}
                 />
 
-                {/* Image container */}
-                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-alice/20 bg-gradient-to-br from-[#0d1a28] to-[#0a1420]">
-                  {/* Placeholder pattern */}
-                  <div
-                    className="absolute inset-0 opacity-30"
-                    style={{
-                      backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(220,238,255,0.15) 1px, transparent 0)',
-                      backgroundSize: '20px 20px',
-                    }}
-                  />
-
-                  {/* Corner accents */}
-                  <div className="absolute top-5 left-5 w-10 h-10 border-l-2 border-t-2 border-alice/50" />
-                  <div className="absolute bottom-5 right-5 w-10 h-10 border-r-2 border-b-2 border-alice-dark/50" />
-
-                  {/* Image - uncomment and update src when ready */}
+                {/* Free-floating image */}
+                <div className="relative aspect-[4/3] scale-150 origin-center translate-y-10">
                   <Image
                     src="/images/programs-hero.png"
                     alt="UX Mentorship Programs"
                     fill
-                    className="object-cover"
+                    className="object-contain drop-shadow-2xl"
+                    style={{
+                      filter: 'drop-shadow(0 25px 50px rgba(0, 0, 0, 0.4)) drop-shadow(0 10px 20px rgba(220, 238, 255, 0.1))',
+                    }}
                     priority
                   />
-
-                  {/* Gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a1420]/90 via-transparent to-transparent" />
                 </div>
 
                 {/* Badges below image */}
@@ -302,6 +288,12 @@ export default function ProgramsHero() {
           background: 'linear-gradient(180deg, #e8f4ff 0%, #dceeff 50%, #d0e8f8 100%)',
         }}
       >
+        {/* Top accent line */}
+        <div
+          className="absolute top-0 left-0 right-0 h-[2px]"
+          style={{ background: 'linear-gradient(90deg, transparent 0%, #4A90A4 50%, transparent 100%)' }}
+        />
+
         {/* Subtle grid */}
         <div className="absolute inset-0 opacity-[0.04]">
           <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
@@ -329,7 +321,7 @@ export default function ProgramsHero() {
           style={{ background: 'rgba(74, 144, 164, 0.15)', opacity: 0.8 }}
         />
 
-        <div className="relative z-10 max-w-[1200px] mx-auto px-5 py-10 md:py-14">
+        <div className="relative z-10 max-w-[1200px] mx-auto px-5 py-8 md:py-10">
           <div className="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-0">
             {stats.map((stat, index) => (
               <div

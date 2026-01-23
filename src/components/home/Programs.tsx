@@ -128,32 +128,32 @@ export default function Programs() {
             }}
           >
             <Link href={featuredProgram.href} className="group block">
-              <div className="bg-carbon rounded-2xl p-8 md:p-10 relative overflow-hidden">
-                {/* Badge */}
-                <span className="absolute top-6 right-6 md:top-8 md:right-8 inline-flex items-center gap-1.5 px-3 py-1.5 bg-accent text-white text-xs font-bold rounded-full">
+              <div className="bg-carbon rounded-2xl p-5 sm:p-6 md:p-10 relative overflow-hidden">
+                {/* Badge - inline on mobile, absolute on desktop */}
+                <span className="md:absolute md:top-8 md:right-8 inline-flex items-center gap-1.5 px-3 py-1.5 bg-accent text-white text-xs font-bold rounded-full mb-4 md:mb-0">
                   <span className="w-1.5 h-1.5 bg-white rounded-full animate-pulse" />
                   {featuredProgram.badge}
                 </span>
 
-                <div className="flex flex-col md:flex-row gap-8">
+                <div className="flex flex-col md:flex-row gap-5 md:gap-8">
                   {/* Left - Icon & Name */}
-                  <div className="flex-shrink-0 text-center md:text-left">
-                    <div className="w-20 h-20 rounded-xl bg-g700 text-white flex items-center justify-center mx-auto md:mx-0 mb-4">
-                      <div className="w-10 h-10">
+                  <div className="flex-shrink-0 flex items-center gap-4 md:block md:text-left">
+                    <div className="w-14 h-14 md:w-20 md:h-20 rounded-xl bg-g700 text-white flex items-center justify-center md:mb-4">
+                      <div className="w-7 h-7 md:w-10 md:h-10">
                         <featuredProgram.icon />
                       </div>
                     </div>
-                    <span className="text-white font-bold tracking-wider text-lg">{featuredProgram.name}</span>
+                    <span className="text-white font-bold tracking-wider text-base md:text-lg">{featuredProgram.name}</span>
                   </div>
 
                   {/* Right - Content */}
                   <div className="flex-1 pr-0 md:pr-32">
-                    <p className="text-white/80 text-lg mb-6">{featuredProgram.description}</p>
+                    <p className="text-white/80 text-base md:text-lg mb-4 md:mb-6">{featuredProgram.description}</p>
 
                     {featuredProgram.features && (
-                      <ul className="space-y-3 mb-8">
+                      <ul className="space-y-2 md:space-y-3 mb-5 md:mb-8">
                         {featuredProgram.features.map((feature, idx) => (
-                          <li key={idx} className="flex items-start gap-3 text-white/70">
+                          <li key={idx} className="flex items-start gap-2 md:gap-3 text-white/70 text-sm md:text-base">
                             <span className="text-g500 mt-0.5">→</span>
                             <span>{feature}</span>
                           </li>
@@ -161,16 +161,16 @@ export default function Programs() {
                       </ul>
                     )}
 
-                    <div className="flex flex-wrap items-center gap-4">
+                    <div className="flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-3 md:gap-4">
                       {featuredProgram.tag && (
-                        <span className="inline-flex items-center gap-2 px-4 py-2 bg-g700 text-white/70 text-sm rounded-lg">
+                        <span className="inline-flex items-center gap-2 px-3 md:px-4 py-2 bg-g700 text-white/70 text-xs md:text-sm rounded-lg">
                           <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                             <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" strokeLinecap="round" strokeLinejoin="round" />
                           </svg>
                           {featuredProgram.tag}
                         </span>
                       )}
-                      <span className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-white font-semibold rounded-xl group-hover:gap-3 transition-all">
+                      <span className="inline-flex items-center gap-2 px-5 md:px-6 py-2.5 md:py-3 bg-accent text-white text-sm md:text-base font-semibold rounded-xl group-hover:gap-3 transition-all">
                         See Program Details
                         <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                           <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />

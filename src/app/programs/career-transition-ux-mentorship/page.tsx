@@ -245,7 +245,8 @@ export default function RippleProgramPage() {
         features={['1:1 mentorship with senior design mentor (10+ years experience)', 'AI-first design approach', 'Support until you land your role']}
         breadcrumbLabel="Ripple - Career Transition"
         topBanner="1:1 UX Mentorship for Fresh Graduates & Career Switchers"
-        heroImage="/images/ripple-hero.jpg"
+        heroImage="/images/ripple-hero.png"
+        imageScale={130}
       />
       <ProgramStats stats={rippleStats} accentColor="teal" />
       <ProgramFitCheck

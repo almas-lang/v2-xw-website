@@ -44,18 +44,10 @@ export default function SoundFamiliar() {
     <section ref={sectionRef} className="relative overflow-hidden">
       {/* Top Section - Pain Points */}
       <div className="bg-white relative">
-        {/* Diagonal stripe accent */}
-        <div
-          className="absolute top-0 right-0 w-1/3 h-full opacity-[0.03] pointer-events-none"
-          style={{
-            background: 'repeating-linear-gradient(-45deg, #FF0023, #FF0023 2px, transparent 2px, transparent 20px)',
-          }}
-        />
-
-        <div className="max-w-[1200px] mx-auto px-5 py-12 sm:py-16 md:py-24 lg:py-32">
-          {/* Mobile: Title → Carousel → Subtitle | Desktop: (Title + Subtitle) left, Carousel right */}
-          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 lg:gap-20 lg:items-center">
-            {/* Title */}
+        <div className="max-w-[1200px] mx-auto px-5 py-10 sm:py-12 md:py-16 lg:py-20">
+          {/* Mobile: Title → Carousel → Subtitle | Desktop: Title left, Carousel right */}
+          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 lg:gap-12 lg:items-center">
+            {/* Title - Clean, no patterns */}
             <div
               className="order-1"
               style={{
@@ -64,43 +56,26 @@ export default function SoundFamiliar() {
                 transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
               }}
             >
-              <div className="relative">
-                {/* Large background text */}
-                <span
-                  className="absolute -top-6 -left-3 md:-top-8 md:-left-4 font-heading text-[80px] md:text-[180px] font-black text-g100/50 leading-none select-none pointer-events-none"
-                  aria-hidden="true"
+              <h2 className="relative inline-block font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-carbon leading-[1.1]">
+                Sound
+                <br />
+                Familiar<span className="text-accent">?</span>
+                {/* Curved underline */}
+                <svg
+                  className="absolute -bottom-3 left-0 w-full h-3"
+                  viewBox="0 0 200 12"
+                  preserveAspectRatio="none"
+                  fill="none"
                 >
-                  ?
-                </span>
-
-                <h2 className="relative font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-carbon leading-[1.1]">
-                  Sound
-                  <br />
-                  <span className="relative inline-block">
-                    Familiar
-                    {/* Underline */}
-                    <svg
-                      className="absolute -bottom-2 left-0 w-full h-4 text-accent/30"
-                      viewBox="0 0 200 16"
-                      preserveAspectRatio="none"
-                    >
-                      <path
-                        d="M0,12 Q40,4 80,12 T160,12 T240,12"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="4"
-                        strokeLinecap="round"
-                      />
-                    </svg>
-                  </span>
-                  <span className="text-accent">?</span>
-                </h2>
-
-                {/* Subtitle - visible only on desktop */}
-                <p className="hidden lg:block mt-6 font-body text-base text-g500 max-w-md">
-                  If any of these hit home, you&apos;re in the right place.
-                </p>
-              </div>
+                  <path
+                    d="M0,10 Q100,0 200,10"
+                    stroke="#FF0023"
+                    strokeWidth="3"
+                    strokeLinecap="round"
+                    strokeOpacity="0.3"
+                  />
+                </svg>
+              </h2>
             </div>
 
             {/* Rotating Pain Points */}
@@ -112,7 +87,7 @@ export default function SoundFamiliar() {
                 transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s',
               }}
             >
-              <div className="relative min-h-[120px] md:min-h-[160px] flex items-center pb-8">
+              <div className="relative min-h-[100px] md:min-h-[120px] flex items-center pb-6">
                 {/* Quote mark */}
                 <span className="absolute -top-2 -left-1 md:-top-4 md:-left-6 font-heading text-5xl md:text-8xl text-accent/20 leading-none select-none">
                   &ldquo;
@@ -157,20 +132,19 @@ export default function SoundFamiliar() {
               </div>
             </div>
 
-            {/* Subtitle - visible only on mobile, comes after carousel */}
-            <div
-              className="order-3 lg:hidden -mt-2"
-              style={{
-                opacity: isVisible ? 1 : 0,
-                transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-                transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s',
-              }}
-            >
-              <p className="font-body text-sm text-g500">
-                If any of these hit home, you&apos;re in the right place.
-              </p>
-            </div>
           </div>
+
+          {/* Centered subtitle below */}
+          <p
+            className="text-center font-heading text-lg md:text-xl text-g700 mt-6 md:mt-10"
+            style={{
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+              transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s',
+            }}
+          >
+            If any of these hit home, you&apos;re in the right place.
+          </p>
         </div>
       </div>
 

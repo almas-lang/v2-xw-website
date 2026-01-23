@@ -207,25 +207,36 @@ export default function Header() {
                 transitionDelay: mobileMenuOpen ? '100ms' : '0ms',
               }}
             >
-              <button
-                onClick={() => toggleAccordion('programs')}
-                className={`w-full flex items-center justify-between py-4 px-5 rounded-xl font-heading text-xl font-semibold transition-all ${
+              <div
+                className={`flex items-center justify-between py-4 px-5 rounded-xl transition-all ${
                   mobileProgramsOpen || isProgramActive
                     ? 'text-white bg-white/10'
-                    : 'text-white/80 hover:text-white hover:bg-white/5'
+                    : 'text-white/80 hover:bg-white/5'
                 }`}
               >
-                <span>Programs</span>
-                <svg
-                  className={`w-5 h-5 transition-transform duration-300 ${mobileProgramsOpen ? 'rotate-180' : ''}`}
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
+                <Link
+                  href="/programs"
+                  onClick={closeMobileMenu}
+                  className="font-heading text-xl font-semibold hover:text-white"
                 >
-                  <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </button>
+                  Programs
+                </Link>
+                <button
+                  onClick={() => toggleAccordion('programs')}
+                  className="p-1 hover:bg-white/10 rounded transition-colors"
+                  aria-label="Toggle programs submenu"
+                >
+                  <svg
+                    className={`w-5 h-5 transition-transform duration-300 ${mobileProgramsOpen ? 'rotate-180' : ''}`}
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
+                    <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
+              </div>
               <div
                 className={`overflow-hidden transition-all duration-300 ease-out ${
                   mobileProgramsOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
@@ -266,25 +277,36 @@ export default function Header() {
                 transitionDelay: mobileMenuOpen ? '150ms' : '0ms',
               }}
             >
-              <button
-                onClick={() => toggleAccordion('business')}
-                className={`w-full flex items-center justify-between py-4 px-5 rounded-xl font-heading text-xl font-semibold transition-all ${
+              <div
+                className={`flex items-center justify-between py-4 px-5 rounded-xl transition-all ${
                   mobileBusinessOpen || isBusinessActive
                     ? 'text-white bg-white/10'
-                    : 'text-white/80 hover:text-white hover:bg-white/5'
+                    : 'text-white/80 hover:bg-white/5'
                 }`}
               >
-                <span>For Business</span>
-                <svg
-                  className={`w-5 h-5 transition-transform duration-300 ${mobileBusinessOpen ? 'rotate-180' : ''}`}
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
+                <Link
+                  href="/for-business"
+                  onClick={closeMobileMenu}
+                  className="font-heading text-xl font-semibold hover:text-white"
                 >
-                  <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </button>
+                  For Business
+                </Link>
+                <button
+                  onClick={() => toggleAccordion('business')}
+                  className="p-1 hover:bg-white/10 rounded transition-colors"
+                  aria-label="Toggle business submenu"
+                >
+                  <svg
+                    className={`w-5 h-5 transition-transform duration-300 ${mobileBusinessOpen ? 'rotate-180' : ''}`}
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
+                    <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
+              </div>
               <div
                 className={`overflow-hidden transition-all duration-300 ease-out ${
                   mobileBusinessOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
@@ -391,25 +413,36 @@ export default function Header() {
                 transitionDelay: mobileMenuOpen ? '350ms' : '0ms',
               }}
             >
-              <button
-                onClick={() => toggleAccordion('resources')}
-                className={`w-full flex items-center justify-between py-4 px-5 rounded-xl font-heading text-xl font-semibold transition-all ${
+              <div
+                className={`flex items-center justify-between py-4 px-5 rounded-xl transition-all ${
                   mobileResourcesOpen || isResourcesActive
                     ? 'text-white bg-white/10'
-                    : 'text-white/80 hover:text-white hover:bg-white/5'
+                    : 'text-white/80 hover:bg-white/5'
                 }`}
               >
-                <span>Resources</span>
-                <svg
-                  className={`w-5 h-5 transition-transform duration-300 ${mobileResourcesOpen ? 'rotate-180' : ''}`}
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
+                <Link
+                  href="/resources"
+                  onClick={closeMobileMenu}
+                  className="font-heading text-xl font-semibold hover:text-white"
                 >
-                  <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </button>
+                  Resources
+                </Link>
+                <button
+                  onClick={() => toggleAccordion('resources')}
+                  className="p-1 hover:bg-white/10 rounded transition-colors"
+                  aria-label="Toggle resources submenu"
+                >
+                  <svg
+                    className={`w-5 h-5 transition-transform duration-300 ${mobileResourcesOpen ? 'rotate-180' : ''}`}
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
+                    <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
+              </div>
               <div
                 className={`overflow-hidden transition-all duration-300 ease-out ${
                   mobileResourcesOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
@@ -494,7 +527,7 @@ export default function Header() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 h-full overflow-y-auto flex flex-col justify-center py-8 px-5">
+      <div className="relative z-10 h-full overflow-y-auto flex flex-col pt-8 pb-8 px-5">
         <MobileMenuContent />
       </div>
     </div>
@@ -570,6 +603,7 @@ export default function Header() {
               </Link>
               <button
                 onMouseEnter={() => setProgramsOpen(true)}
+                onClick={() => setProgramsOpen(!programsOpen)}
                 className={`p-1 rounded transition-colors ${
                   isDarkMode ? 'text-g300 hover:text-white hover:bg-white/10' : 'text-g600 hover:text-carbon hover:bg-g100'
                 }`}
@@ -649,6 +683,7 @@ export default function Header() {
               </Link>
               <button
                 onMouseEnter={() => setBusinessOpen(true)}
+                onClick={() => setBusinessOpen(!businessOpen)}
                 className={`p-1 rounded transition-colors ${
                   isDarkMode ? 'text-g300 hover:text-white hover:bg-white/10' : 'text-g600 hover:text-carbon hover:bg-g100'
                 }`}
@@ -744,6 +779,7 @@ export default function Header() {
               </Link>
               <button
                 onMouseEnter={() => setResourcesOpen(true)}
+                onClick={() => setResourcesOpen(!resourcesOpen)}
                 className={`p-1 rounded transition-colors ${
                   isDarkMode ? 'text-g300 hover:text-white hover:bg-white/10' : 'text-g600 hover:text-carbon hover:bg-g100'
                 }`}

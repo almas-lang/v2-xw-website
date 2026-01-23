@@ -266,7 +266,8 @@ export default function TideProgramPage() {
         features={['1:1 mentorship with senior design mentor (10+ years experience)', 'Executive personal branding included', 'Support for 6 months until you reach your goal']}
         breadcrumbLabel="Tide - Design Leadership"
         topBanner="1:1 UX Mentorship for Senior Designers Ready to Lead"
-        heroImage="/images/tide-hero.jpg"
+        heroImage="/images/tide-hero.png"
+        imageScale={165}
       />
       <ProgramStats stats={tideStats} accentColor="gold" />
       <ProgramFitCheck

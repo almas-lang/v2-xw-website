@@ -112,6 +112,14 @@ const programs: Record<Exclude<ProgramType, null>, Program> = {
   },
 };
 
+// Loading messages to cycle through
+const loadingMessages = [
+  'Analyzing your experience...',
+  'Matching your goals...',
+  'Finding the perfect fit...',
+  'Preparing your recommendation...',
+];
+
 // ============================================
 // COMPONENT
 // ============================================
@@ -122,6 +130,8 @@ export default function ProgramFinder() {
   const [goal, setGoal] = useState('');
   const [recommendedProgram, setRecommendedProgram] = useState<ProgramType>(null);
   const [showResult, setShowResult] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [loadingMessageIndex, setLoadingMessageIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
 
   // Load from sessionStorage on mount
@@ -142,6 +152,16 @@ export default function ProgramFinder() {
     }
   }, []);
 
+  // Cycle through loading messages
+  useEffect(() => {
+    if (isLoading) {
+      const interval = setInterval(() => {
+        setLoadingMessageIndex((prev) => (prev + 1) % loadingMessages.length);
+      }, 800);
+      return () => clearInterval(interval);
+    }
+  }, [isLoading]);
+
   const getRecommendation = (): ProgramType => {
     if (experience === '0-1' || goal === 'first-job') {
       return 'starter';
@@ -154,17 +174,26 @@ export default function ProgramFinder() {
 
   const handleSubmit = () => {
     if (!role || !experience || !goal) return;
-    const program = getRecommendation();
-    setRecommendedProgram(program);
-    setShowResult(true);
 
-    // Save to sessionStorage
-    sessionStorage.setItem('programFinderResult', JSON.stringify({
-      program,
-      role,
-      experience,
-      goal
-    }));
+    // Start loading
+    setIsLoading(true);
+    setLoadingMessageIndex(0);
+
+    // Simulate processing time (3 seconds)
+    setTimeout(() => {
+      const program = getRecommendation();
+      setRecommendedProgram(program);
+      setIsLoading(false);
+      setShowResult(true);
+
+      // Save to sessionStorage
+      sessionStorage.setItem('programFinderResult', JSON.stringify({
+        program,
+        role,
+        experience,
+        goal
+      }));
+    }, 3000);
   };
 
   const handleReset = () => {
@@ -179,7 +208,113 @@ export default function ProgramFinder() {
   const isFormValid = role && experience && goal;
 
   // ============================================
-  // FINDER FORM VIEW
+  // LOADING VIEW
+  // ============================================
+  if (isLoading) {
+    return (
+      <section
+        id="program-finder"
+        className="relative py-16 sm:py-20 md:py-24 overflow-hidden"
+        style={{
+          background: 'linear-gradient(180deg, #0a1420 0%, #0d1a28 50%, #0a1420 100%)',
+        }}
+      >
+        {/* Noise texture */}
+        <div
+          className="absolute inset-0 opacity-[0.04]"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
+          }}
+        />
+
+        {/* Alice blue gradient orbs */}
+        <div
+          className="absolute top-0 left-1/4 w-[500px] h-[500px] blur-[150px] pointer-events-none"
+          style={{ background: 'radial-gradient(ellipse, rgba(220,238,255,0.12) 0%, transparent 60%)' }}
+        />
+        <div
+          className="absolute bottom-0 right-1/4 w-[400px] h-[400px] blur-[120px] pointer-events-none"
+          style={{ background: 'radial-gradient(ellipse, rgba(74,144,164,0.1) 0%, transparent 60%)' }}
+        />
+
+        <div className="relative z-10 max-w-[600px] mx-auto px-5 text-center">
+          {/* Animated loader */}
+          <div className="mb-8">
+            <div className="relative w-24 h-24 mx-auto">
+              {/* Outer ring */}
+              <div
+                className="absolute inset-0 rounded-full border-4 border-alice/20"
+                style={{ borderTopColor: '#4A90A4', animation: 'spin 1s linear infinite' }}
+              />
+              {/* Middle ring */}
+              <div
+                className="absolute inset-3 rounded-full border-4 border-accent/20"
+                style={{ borderTopColor: '#DCEEFF', animation: 'spin 1.5s linear infinite reverse' }}
+              />
+              {/* Inner dot */}
+              <div
+                className="absolute inset-0 flex items-center justify-center"
+              >
+                <div
+                  className="w-4 h-4 rounded-full bg-alice"
+                  style={{ animation: 'pulse 1s ease-in-out infinite' }}
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Loading message */}
+          <div className="h-8 overflow-hidden">
+            <p
+              key={loadingMessageIndex}
+              className="font-heading text-xl sm:text-2xl font-semibold text-white animate-fade-in"
+              style={{
+                animation: 'fadeInUp 0.5s ease-out',
+              }}
+            >
+              {loadingMessages[loadingMessageIndex]}
+            </p>
+          </div>
+
+          {/* Progress dots */}
+          <div className="flex items-center justify-center gap-2 mt-6">
+            {loadingMessages.map((_, index) => (
+              <div
+                key={index}
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                  index <= loadingMessageIndex ? 'bg-alice scale-100' : 'bg-white/20 scale-75'
+                }`}
+              />
+            ))}
+          </div>
+
+          {/* Subtitle */}
+          <p className="font-body text-sm text-g400 mt-8">
+            Crafting your personalized recommendation...
+          </p>
+        </div>
+
+        {/* CSS Animations */}
+        <style jsx>{`
+          @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+          }
+          @keyframes pulse {
+            0%, 100% { opacity: 0.6; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.1); }
+          }
+          @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+          }
+        `}</style>
+      </section>
+    );
+  }
+
+  // ============================================
+  // FINDER FORM VIEW - ALICE BLUE DARK THEME
   // ============================================
   if (!showResult) {
     return (
@@ -187,23 +322,38 @@ export default function ProgramFinder() {
         id="program-finder"
         className="relative py-16 sm:py-20 md:py-24 overflow-hidden"
         style={{
-          background: 'linear-gradient(180deg, #f8f8f8 0%, #f0f0f0 100%)',
+          background: 'linear-gradient(180deg, #0a1420 0%, #0d1a28 50%, #0a1420 100%)',
         }}
       >
-        {/* Subtle dot pattern */}
+        {/* Noise texture */}
         <div
-          className="absolute inset-0 opacity-50"
+          className="absolute inset-0 opacity-[0.04]"
           style={{
-            backgroundImage: 'radial-gradient(circle at 1px 1px, #e0e0e0 1px, transparent 0)',
-            backgroundSize: '32px 32px',
+            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
           }}
         />
 
-        {/* Accent glow - alice blue */}
+        {/* Alice blue gradient orbs */}
         <div
-          className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] blur-[120px] pointer-events-none"
-          style={{ background: 'radial-gradient(ellipse, rgba(220,238,255,0.12) 0%, transparent 70%)' }}
+          className="absolute top-0 left-0 w-[600px] h-[600px] blur-[150px] pointer-events-none"
+          style={{ background: 'radial-gradient(ellipse, rgba(220,238,255,0.1) 0%, transparent 60%)' }}
         />
+        <div
+          className="absolute bottom-0 right-0 w-[500px] h-[500px] blur-[120px] pointer-events-none"
+          style={{ background: 'radial-gradient(ellipse, rgba(74,144,164,0.08) 0%, transparent 60%)' }}
+        />
+
+        {/* Grid pattern */}
+        <div className="absolute inset-0 opacity-[0.02]">
+          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="finderGrid" width="60" height="60" patternUnits="userSpaceOnUse">
+                <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#ffffff" strokeWidth="0.5" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#finderGrid)" />
+          </svg>
+        </div>
 
         <div className="relative z-10 max-w-[900px] mx-auto px-5">
           {/* Header */}
@@ -216,21 +366,21 @@ export default function ProgramFinder() {
             }}
           >
             <div className="flex items-center justify-center gap-3 mb-4">
-              <div className="w-8 h-[2px] bg-alice-dark" />
-              <span className="font-body text-xs uppercase tracking-[0.2em] text-alice-dark font-medium">Find Your Path</span>
-              <div className="w-8 h-[2px] bg-alice-dark" />
+              <div className="w-8 h-[2px] bg-alice" />
+              <span className="font-body text-xs uppercase tracking-[0.2em] text-alice font-semibold">Find Your Path</span>
+              <div className="w-8 h-[2px] bg-alice" />
             </div>
-            <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-carbon leading-tight mb-3">
+            <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight mb-3">
               Discover the Right Program For You
             </h2>
-            <p className="font-body text-sm sm:text-base md:text-lg text-g500 max-w-xl mx-auto">
+            <p className="font-body text-sm sm:text-base md:text-lg text-g400 max-w-xl mx-auto">
               Answer a few quick questions to find your perfect fit
             </p>
           </div>
 
           {/* Form Card */}
           <div
-            className="bg-white rounded-2xl p-6 sm:p-8 md:p-10 shadow-xl border border-g200"
+            className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-6 sm:p-8 md:p-10 border border-white/10"
             style={{
               opacity: isVisible ? 1 : 0,
               transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
@@ -240,25 +390,25 @@ export default function ProgramFinder() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 md:gap-8 mb-8">
               {/* Role Select */}
               <div>
-                <label className="block font-heading text-sm font-semibold text-carbon mb-2.5">
+                <label className="block font-heading text-sm font-semibold text-white mb-2.5">
                   I&apos;m a
                 </label>
                 <div className="relative">
                   <select
                     value={role}
                     onChange={(e) => setRole(e.target.value)}
-                    className="w-full appearance-none bg-g50 border-2 border-g200 rounded-xl px-4 py-3.5 pr-10 font-body text-base text-carbon
-                               focus:outline-none focus:border-accent focus:bg-white
+                    className="w-full appearance-none bg-white/5 border-2 border-white/10 rounded-xl px-4 py-3.5 pr-10 font-body text-base text-white
+                               focus:outline-none focus:border-alice focus:bg-white/10
                                transition-all cursor-pointer"
                   >
                     {roles.map((r) => (
-                      <option key={r.value} value={r.value}>
+                      <option key={r.value} value={r.value} className="bg-[#0d1a28] text-white">
                         {r.label}
                       </option>
                     ))}
                   </select>
                   <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="text-g500">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="text-g400">
                       <path d="M4 6L8 10L12 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </div>
@@ -267,25 +417,25 @@ export default function ProgramFinder() {
 
               {/* Experience Select */}
               <div>
-                <label className="block font-heading text-sm font-semibold text-carbon mb-2.5">
+                <label className="block font-heading text-sm font-semibold text-white mb-2.5">
                   With
                 </label>
                 <div className="relative">
                   <select
                     value={experience}
                     onChange={(e) => setExperience(e.target.value)}
-                    className="w-full appearance-none bg-g50 border-2 border-g200 rounded-xl px-4 py-3.5 pr-10 font-body text-base text-carbon
-                               focus:outline-none focus:border-accent focus:bg-white
+                    className="w-full appearance-none bg-white/5 border-2 border-white/10 rounded-xl px-4 py-3.5 pr-10 font-body text-base text-white
+                               focus:outline-none focus:border-alice focus:bg-white/10
                                transition-all cursor-pointer"
                   >
                     {experienceLevels.map((e) => (
-                      <option key={e.value} value={e.value}>
+                      <option key={e.value} value={e.value} className="bg-[#0d1a28] text-white">
                         {e.label}
                       </option>
                     ))}
                   </select>
                   <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="text-g500">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="text-g400">
                       <path d="M4 6L8 10L12 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </div>
@@ -294,25 +444,25 @@ export default function ProgramFinder() {
 
               {/* Goal Select */}
               <div>
-                <label className="block font-heading text-sm font-semibold text-carbon mb-2.5">
+                <label className="block font-heading text-sm font-semibold text-white mb-2.5">
                   I want to
                 </label>
                 <div className="relative">
                   <select
                     value={goal}
                     onChange={(e) => setGoal(e.target.value)}
-                    className="w-full appearance-none bg-g50 border-2 border-g200 rounded-xl px-4 py-3.5 pr-10 font-body text-base text-carbon
-                               focus:outline-none focus:border-accent focus:bg-white
+                    className="w-full appearance-none bg-white/5 border-2 border-white/10 rounded-xl px-4 py-3.5 pr-10 font-body text-base text-white
+                               focus:outline-none focus:border-alice focus:bg-white/10
                                transition-all cursor-pointer"
                   >
                     {goals.map((g) => (
-                      <option key={g.value} value={g.value}>
+                      <option key={g.value} value={g.value} className="bg-[#0d1a28] text-white">
                         {g.label}
                       </option>
                     ))}
                   </select>
                   <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="text-g500">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="text-g400">
                       <path d="M4 6L8 10L12 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </div>
@@ -328,8 +478,8 @@ export default function ProgramFinder() {
                 className={`inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-heading font-semibold text-base
                            transition-all duration-300 ${
                              isFormValid
-                               ? 'bg-accent text-white sm:hover:bg-accent-hover shadow-lg shadow-accent/25 sm:hover:shadow-xl sm:hover:shadow-accent/30 sm:hover:-translate-y-0.5'
-                               : 'bg-g200 text-g400 cursor-not-allowed'
+                               ? 'bg-alice text-carbon sm:hover:bg-white shadow-lg shadow-alice/25 sm:hover:shadow-xl sm:hover:shadow-alice/30 sm:hover:-translate-y-0.5'
+                               : 'bg-white/10 text-g500 cursor-not-allowed'
                            }`}
               >
                 Show my program
@@ -340,6 +490,12 @@ export default function ProgramFinder() {
             </div>
           </div>
         </div>
+
+        {/* Top accent line */}
+        <div
+          className="absolute top-0 left-0 right-0 h-px"
+          style={{ background: 'linear-gradient(90deg, transparent 0%, rgba(74,144,164,0.3) 50%, transparent 100%)' }}
+        />
       </section>
     );
   }
@@ -355,12 +511,12 @@ export default function ProgramFinder() {
       id="program-finder"
       className="relative py-16 sm:py-20 md:py-24 overflow-hidden"
       style={{
-        background: 'linear-gradient(180deg, #0a1420 0%, #142432 50%, #0a1420 100%)',
+        background: 'linear-gradient(180deg, #0a1420 0%, #0d1a28 50%, #0a1420 100%)',
       }}
     >
       {/* Noise texture */}
       <div
-        className="absolute inset-0 opacity-[0.03]"
+        className="absolute inset-0 opacity-[0.04]"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
         }}
@@ -384,10 +540,10 @@ export default function ProgramFinder() {
         style={{ background: `radial-gradient(ellipse, ${program.color}15 0%, transparent 70%)` }}
       />
 
-      {/* Accent glow top - alice blue */}
+      {/* Alice blue gradient orbs */}
       <div
-        className="absolute top-0 left-1/4 w-[400px] h-[200px] blur-[100px] pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse, rgba(220,238,255,0.12) 0%, transparent 70%)' }}
+        className="absolute top-0 left-1/4 w-[400px] h-[300px] blur-[100px] pointer-events-none"
+        style={{ background: 'radial-gradient(ellipse, rgba(220,238,255,0.1) 0%, transparent 70%)' }}
       />
 
       <div className="relative z-10 max-w-[900px] mx-auto px-5">
@@ -465,7 +621,13 @@ export default function ProgramFinder() {
         </div>
       </div>
 
-      {/* Bottom accent line - alice blue */}
+      {/* Top accent line */}
+      <div
+        className="absolute top-0 left-0 right-0 h-px"
+        style={{ background: 'linear-gradient(90deg, transparent 0%, rgba(74,144,164,0.3) 50%, transparent 100%)' }}
+      />
+
+      {/* Bottom accent line */}
       <div
         className="absolute bottom-0 left-0 right-0 h-px"
         style={{ background: 'linear-gradient(90deg, transparent 0%, rgba(74,144,164,0.3) 50%, transparent 100%)' }}

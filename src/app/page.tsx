@@ -48,7 +48,7 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <Stats />
+      <Stats theme="horizontal-light" />
       <VideoSection />
       <SoundFamiliar />
       <HowItWorks />

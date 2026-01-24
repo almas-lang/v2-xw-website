@@ -21,6 +21,7 @@ const tools = [
     ),
     color: 'accent',
     link: '#',
+    available: false,
   },
   {
     id: 'microcopy-writer',
@@ -34,6 +35,7 @@ const tools = [
     ),
     color: 'alice',
     link: '#',
+    available: false,
   },
   {
     id: 'portfolio-feedback',
@@ -47,6 +49,7 @@ const tools = [
     ),
     color: 'accent',
     link: '#',
+    available: false,
   },
   {
     id: 'resume-reviewer',
@@ -60,6 +63,7 @@ const tools = [
     ),
     color: 'alice',
     link: '#',
+    available: false,
   },
   {
     id: 'salary-negotiation',
@@ -73,6 +77,7 @@ const tools = [
     ),
     color: 'accent',
     link: '#',
+    available: false,
   },
   {
     id: 'design-strategy',
@@ -85,7 +90,8 @@ const tools = [
       </svg>
     ),
     color: 'alice',
-    link: '#',
+    link: 'https://chatgpt.com/g/g-6932501b7b708191bd16ee0ea24f1e24-design-strategy-ai-xperience-wave',
+    available: true,
   },
   {
     id: 'ux-audit',
@@ -99,6 +105,7 @@ const tools = [
     ),
     color: 'accent',
     link: '#',
+    available: false,
   },
 ];
 
@@ -287,9 +294,71 @@ export default function ToolsPage() {
             </h2>
           </div>
 
-          {/* Tools Grid */}
+          {/* Featured Tool - Design Strategy GPT */}
+          {tools.filter(t => t.available).map((tool) => (
+            <div
+              key={tool.id}
+              className="mb-8 md:mb-10"
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
+                transition: 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.35s',
+              }}
+            >
+              <Link href={tool.link} target="_blank" rel="noopener noreferrer" className="block group">
+                <div className="relative p-6 md:p-10 rounded-2xl border-2 border-[#2D6A7A]/30 bg-gradient-to-br from-[#2D6A7A]/10 to-transparent hover:border-[#2D6A7A]/50 hover:shadow-xl transition-all duration-300">
+                  {/* Featured badge */}
+                  <div className="absolute -top-3 left-6 md:left-10">
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-bold text-white bg-[#2D6A7A] rounded-full">
+                      <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                      Available Now
+                    </span>
+                  </div>
+
+                  <div className="flex flex-col md:flex-row md:items-center gap-6">
+                    {/* Icon */}
+                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-[#2D6A7A]/15 flex items-center justify-center shrink-0">
+                      <div className="w-8 h-8 md:w-10 md:h-10 text-[#2D6A7A]">
+                        {tool.icon}
+                      </div>
+                    </div>
+
+                    <div className="flex-1">
+                      <span className="inline-block text-xs font-medium uppercase tracking-wider mb-2 text-[#2D6A7A]">
+                        {tool.tagline}
+                      </span>
+                      <h3 className="font-heading text-2xl md:text-3xl font-bold text-carbon group-hover:text-[#2D6A7A] mb-3 transition-colors">
+                        {tool.name}
+                      </h3>
+                      <p className="font-body text-base md:text-lg text-g500 leading-relaxed max-w-2xl">
+                        {tool.description}
+                      </p>
+                    </div>
+
+                    <div className="shrink-0">
+                      <span className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#2D6A7A] text-white font-heading font-bold text-lg rounded-xl group-hover:bg-[#245a68] transition-all duration-300 min-h-[56px]">
+                        Try Now — Free
+                        <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                        </svg>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            </div>
+          ))}
+
+          {/* Other Tools Label */}
+          <div className="mb-6">
+            <span className="font-body text-xs uppercase tracking-[0.2em] text-g400 font-medium">More Tools Coming Soon</span>
+          </div>
+
+          {/* Other Tools Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-            {tools.map((tool, index) => {
+            {tools.filter(t => !t.available).map((tool, index) => {
               const isAccent = tool.color === 'accent';
 
               return (
@@ -298,49 +367,38 @@ export default function ToolsPage() {
                   style={{
                     opacity: isVisible ? 1 : 0,
                     transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
-                    transition: `all 0.6s cubic-bezier(0.4, 0, 0.2, 1) ${0.35 + index * 0.06}s`,
+                    transition: `all 0.6s cubic-bezier(0.4, 0, 0.2, 1) ${0.45 + index * 0.06}s`,
                   }}
                 >
-                  <Link href={tool.link} className="block h-full group">
-                    <div className={`relative h-full p-5 md:p-6 rounded-2xl border hover:shadow-lg transition-all duration-300 overflow-hidden ${isAccent ? 'bg-accent/[0.03] border-accent/20' : 'bg-[#2D6A7A]/[0.05] border-[#2D6A7A]/20'}`}>
-                      {/* Top accent bar */}
-                      <div className={`absolute top-0 left-0 right-0 h-1 ${isAccent ? 'bg-accent' : 'bg-[#2D6A7A]'}`} />
+                  <div className={`relative h-full p-5 md:p-6 rounded-2xl border transition-all duration-300 overflow-hidden ${isAccent ? 'bg-accent/[0.03] border-accent/10' : 'bg-[#2D6A7A]/[0.03] border-[#2D6A7A]/10'} opacity-70`}>
+                    {/* Top accent bar */}
+                    <div className={`absolute top-0 left-0 right-0 h-1 ${isAccent ? 'bg-accent/50' : 'bg-[#2D6A7A]/50'}`} />
 
-                      {/* Icon */}
-                      <div className={`w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center mb-4 ${isAccent ? 'bg-accent/10' : 'bg-[#2D6A7A]/10'}`}>
-                        <div className={`w-6 h-6 md:w-7 md:h-7 ${isAccent ? 'text-accent' : 'text-[#2D6A7A]'}`}>
-                          {tool.icon}
-                        </div>
+                    {/* Icon */}
+                    <div className={`w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center mb-4 ${isAccent ? 'bg-accent/10' : 'bg-[#2D6A7A]/10'}`}>
+                      <div className={`w-6 h-6 md:w-7 md:h-7 ${isAccent ? 'text-accent/60' : 'text-[#2D6A7A]/60'}`}>
+                        {tool.icon}
                       </div>
-
-                      {/* Content */}
-                      <span className={`inline-block text-xs font-medium uppercase tracking-wider mb-2 ${isAccent ? 'text-accent' : 'text-[#2D6A7A]'}`}>
-                        {tool.tagline}
-                      </span>
-
-                      <h3 className="font-heading text-lg md:text-xl font-bold text-carbon mb-2">
-                        {tool.name}
-                      </h3>
-
-                      <p className="font-body text-sm text-g500 leading-relaxed mb-4">
-                        {tool.description}
-                      </p>
-
-                      {/* CTA */}
-                      <span className={`inline-flex items-center gap-2 font-heading font-semibold text-sm ${isAccent ? 'text-accent' : 'text-[#2D6A7A]'} group-hover:gap-3 transition-all duration-300`}>
-                        Try Now — Free
-                        <svg
-                          className="w-4 h-4"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2.5"
-                        >
-                          <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                      </span>
                     </div>
-                  </Link>
+
+                    {/* Content */}
+                    <span className={`inline-block text-xs font-medium uppercase tracking-wider mb-2 ${isAccent ? 'text-accent/60' : 'text-[#2D6A7A]/60'}`}>
+                      {tool.tagline}
+                    </span>
+
+                    <h3 className="font-heading text-lg md:text-xl font-bold text-carbon/70 mb-2">
+                      {tool.name}
+                    </h3>
+
+                    <p className="font-body text-sm text-g400 leading-relaxed mb-4">
+                      {tool.description}
+                    </p>
+
+                    {/* CTA */}
+                    <span className="inline-flex items-center gap-2 font-heading font-semibold text-sm text-g400">
+                      Upcoming
+                    </span>
+                  </div>
                 </div>
               );
             })}

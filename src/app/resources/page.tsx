@@ -79,13 +79,13 @@ const aiTools = [
     title: 'Design Strategy GPT',
     description: 'Position design at the centre of business growth. Get a strategic framework for any project in minutes.',
     tag: 'Free',
-    href: '#',
+    href: 'https://chatgpt.com/g/g-6932501b7b708191bd16ee0ea24f1e24-design-strategy-ai-xperience-wave',
   },
   {
     id: 'ux-audit',
     title: 'UX Audit GPT',
     description: 'Evaluate any screen against usability heuristics. Get actionable fixes, not generic feedback.',
-    tag: 'Free',
+    tag: 'Upcoming',
     href: '#',
   },
 ];
@@ -573,34 +573,59 @@ function AIToolsSection() {
         {/* Tool Cards */}
         <div className="space-y-4 md:space-y-0 md:grid md:grid-cols-2 md:gap-6 mb-6 md:mb-8">
           {aiTools.map((tool, index) => (
-            <div
-              key={tool.id}
-              className="group p-5 md:p-8 rounded-xl border-2 border-white/10 bg-white/[0.03] hover:border-alice/50 hover:bg-white/[0.06] hover:-translate-y-1 transition-all duration-300"
-              style={{
-                opacity: isVisible ? 1 : 0,
-                transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-                transition: `all 0.6s cubic-bezier(0.4, 0, 0.2, 1) ${0.2 + index * 0.1}s`,
-              }}
-            >
-              <span className="inline-block px-3 py-1 text-xs font-bold text-carbon bg-alice group-hover:scale-105 rounded-full mb-3 md:mb-4 transition-transform duration-300">
-                {tool.tag}
-              </span>
-              <h3 className="font-heading text-lg md:text-xl font-bold text-white group-hover:text-alice mb-2 md:mb-3 transition-colors">
-                {tool.title}
-              </h3>
-              <p className="font-body text-sm md:text-base text-g400 mb-5 md:mb-6 leading-relaxed">
-                {tool.description}
-              </p>
+            tool.tag === 'Free' ? (
               <Link
+                key={tool.id}
                 href={tool.href}
-                className="inline-flex items-center justify-center gap-2 w-full md:w-auto px-6 py-3 bg-alice text-carbon font-heading font-semibold rounded-lg hover:bg-white active:bg-alice/70 transition-all duration-300 min-h-[48px]"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block p-5 md:p-8 rounded-xl border-2 border-white/10 bg-white/[0.03] hover:border-alice/50 hover:bg-white/[0.06] hover:-translate-y-1 active:translate-y-0 active:scale-[0.99] cursor-pointer transition-all duration-300"
+                style={{
+                  opacity: isVisible ? 1 : 0,
+                  transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+                  transition: `all 0.6s cubic-bezier(0.4, 0, 0.2, 1) ${0.2 + index * 0.1}s`,
+                }}
               >
-                Access Free
-                <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
+                <span className="inline-block px-3 py-1 text-xs font-bold rounded-full mb-3 md:mb-4 text-carbon bg-alice group-hover:scale-105 transition-transform">
+                  {tool.tag}
+                </span>
+                <h3 className="font-heading text-lg md:text-xl font-bold text-white group-hover:text-alice mb-2 md:mb-3 transition-colors">
+                  {tool.title}
+                </h3>
+                <p className="font-body text-sm md:text-base text-g400 mb-5 md:mb-6 leading-relaxed">
+                  {tool.description}
+                </p>
+                <span className="inline-flex items-center gap-2 text-alice font-heading font-semibold group-hover:gap-3 transition-all duration-300">
+                  Try Now — Free
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </span>
               </Link>
-            </div>
+            ) : (
+              <div
+                key={tool.id}
+                className="p-5 md:p-8 rounded-xl border-2 border-white/10 bg-white/[0.03] opacity-60"
+                style={{
+                  opacity: isVisible ? 0.6 : 0,
+                  transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+                  transition: `all 0.6s cubic-bezier(0.4, 0, 0.2, 1) ${0.2 + index * 0.1}s`,
+                }}
+              >
+                <span className="inline-block px-3 py-1 text-xs font-bold rounded-full mb-3 md:mb-4 text-white/70 bg-white/10">
+                  {tool.tag}
+                </span>
+                <h3 className="font-heading text-lg md:text-xl font-bold text-white/70 mb-2 md:mb-3">
+                  {tool.title}
+                </h3>
+                <p className="font-body text-sm md:text-base text-g500 mb-5 md:mb-6 leading-relaxed">
+                  {tool.description}
+                </p>
+                <span className="inline-flex items-center text-g500 font-heading font-semibold">
+                  Coming Soon
+                </span>
+              </div>
+            )
           ))}
         </div>
 

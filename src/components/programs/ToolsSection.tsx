@@ -1,9 +1,11 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
+import type { Tool } from '@/data/programData';
 
 interface ToolsSectionProps {
-  tools: string[];
+  tools: Tool[];
   footerText?: string;
 }
 
@@ -25,10 +27,47 @@ export default function ToolsSection({
     return () => observer.disconnect();
   }, []);
 
-  // Split tools into 3 rows for marquee effect
-  const row1 = tools.slice(0, 8);
-  const row2 = tools.slice(8, 16);
-  const row3 = tools.slice(16);
+  // Filter tools with logos and split into 3 rows for marquee effect
+  const toolsWithLogos = tools.filter(tool => tool.logo);
+  const row1 = toolsWithLogos.slice(0, 8);
+  const row2 = toolsWithLogos.slice(8, 16);
+  const row3 = toolsWithLogos.slice(16);
+
+  const renderTool = (tool: Tool, index: number, variant: 'white' | 'teal' = 'white') => {
+    if (!tool.logo) return null;
+
+    const baseClasses = variant === 'white'
+      ? 'flex-shrink-0 px-6 py-4 bg-white border border-g200 rounded-2xl hover:border-g300 hover:shadow-sm'
+      : 'flex-shrink-0 px-6 py-4 rounded-2xl hover:scale-105';
+
+    const tealStyle = variant === 'teal'
+      ? { background: 'rgba(74, 144, 164, 0.1)', border: '1px solid rgba(74, 144, 164, 0.2)' }
+      : {};
+
+    const sizeClass = tool.size === 'xlarge'
+      ? 'w-[180px] h-[56px]'
+      : tool.size === 'large'
+        ? 'w-[140px] h-[44px]'
+        : 'w-[100px] h-[32px]';
+
+    return (
+      <div
+        key={`${tool.name}-${index}`}
+        className={`${baseClasses} flex items-center justify-center transition-all duration-300 cursor-default`}
+        style={tealStyle}
+        title={tool.name}
+      >
+        <div className={`${sizeClass} relative`}>
+          <Image
+            src={tool.logo}
+            alt={tool.name}
+            fill
+            className="object-contain"
+          />
+        </div>
+      </div>
+    );
+  };
 
   return (
     <section
@@ -102,43 +141,21 @@ export default function ToolsSection({
         {/* Row 1 - moves right */}
         <div className="relative overflow-hidden">
           <div className="flex gap-4 animate-marquee-right">
-            {[...row1, ...row1, ...row1, ...row1].map((tool, index) => (
-              <div
-                key={index}
-                className="flex-shrink-0 px-6 py-3 bg-white border border-g200 rounded-full font-body text-sm md:text-base text-carbon hover:border-g300 hover:shadow-sm transition-all duration-300 cursor-default"
-              >
-                {tool}
-              </div>
-            ))}
+            {[...row1, ...row1, ...row1, ...row1].map((tool, index) => renderTool(tool, index, 'white'))}
           </div>
         </div>
 
         {/* Row 2 - moves left (reverse) - alice blue themed */}
         <div className="relative overflow-hidden">
           <div className="flex gap-4 animate-marquee-left">
-            {[...row2, ...row2, ...row2, ...row2].map((tool, index) => (
-              <div
-                key={index}
-                className="flex-shrink-0 px-6 py-3 rounded-full font-body text-sm md:text-base text-carbon hover:scale-105 transition-all duration-300 cursor-default"
-                style={{ background: 'rgba(74, 144, 164, 0.1)', border: '1px solid rgba(74, 144, 164, 0.2)' }}
-              >
-                {tool}
-              </div>
-            ))}
+            {[...row2, ...row2, ...row2, ...row2].map((tool, index) => renderTool(tool, index, 'teal'))}
           </div>
         </div>
 
         {/* Row 3 - moves right slower */}
         <div className="relative overflow-hidden">
           <div className="flex gap-4 animate-marquee-right-slow">
-            {[...row3, ...row1.slice(0, 4), ...row3, ...row1.slice(0, 4), ...row3, ...row1.slice(0, 4)].map((tool, index) => (
-              <div
-                key={index}
-                className="flex-shrink-0 px-6 py-3 bg-white border border-g200 rounded-full font-body text-sm md:text-base text-carbon hover:border-g300 hover:shadow-sm transition-all duration-300 cursor-default"
-              >
-                {tool}
-              </div>
-            ))}
+            {[...row3, ...row1.slice(0, 4), ...row3, ...row1.slice(0, 4), ...row3, ...row1.slice(0, 4)].map((tool, index) => renderTool(tool, index, 'white'))}
           </div>
         </div>
       </div>

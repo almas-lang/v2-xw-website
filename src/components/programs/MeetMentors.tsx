@@ -37,9 +37,10 @@ const supportMentors = [
 
 interface MeetMentorsProps {
   accentColor?: 'accent' | 'coral' | 'teal' | 'gold';
+  theme?: 'dark' | 'dark-teal';
 }
 
-export default function MeetMentors({ accentColor = 'accent' }: MeetMentorsProps) {
+export default function MeetMentors({ accentColor = 'accent', theme = 'dark' }: MeetMentorsProps) {
   // Get the accent color hex for the title
   const accentHex = {
     accent: '#FF0023',
@@ -65,7 +66,7 @@ export default function MeetMentors({ accentColor = 'accent' }: MeetMentorsProps
           + clinic leads and specialists for portfolio critiques, mock interviews, and skill deep-dives
         </p>
       }
-      theme="dark"
+      theme={theme}
       accentColor={accentColor}
     />
   );

@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 // Logo paths mapping
 const companyLogos: Record<string, { path: string; width: number; height: number }> = {
-  'JP Morgan': { path: '/images/logos/jpmorgan', width: 120, height: 40 },
+  'JP Morgan': { path: '/images/logos/jpmorgan.png', width: 120, height: 40 },
   'McKinsey': { path: '/images/logos/McKinsey & Company/McKinsey.png', width: 120, height: 40 },
   'Intel': { path: '/images/logos/Intel/Intel_idF_neNFIz_0.svg', width: 80, height: 32 },
   'Deloitte': { path: '/images/logos/Deloitte/Deloitte_idXbysKEDR_0.svg', width: 100, height: 32 },

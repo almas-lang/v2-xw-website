@@ -35,28 +35,34 @@ export const sharedIncludedItems = [
 ];
 
 // Common tools used across all programs
-export const sharedTools = [
-  'Figma',
-  'Survey Monkey',
-  'Microsoft Clarity',
-  'Google Analytics',
-  'Similarweb',
-  'ChatGPT',
-  'Miro',
-  'Optimal Workshop',
-  'Figma Make',
-  'Google Workspace',
-  'Axure',
-  'Flaticons',
-  'Lyssna',
-  'Asana',
-  'Claude',
-  'Google Trends',
-  'Wix',
-  'Loom',
-  'Brevo',
-  'Pitch',
-  'Buffer',
-  'Notion',
-  'Pabbly',
+export interface Tool {
+  name: string;
+  logo?: string;
+  size?: 'small' | 'normal' | 'large' | 'xlarge';
+}
+
+export const sharedTools: Tool[] = [
+  { name: 'Figma', logo: '/images/logos/Figma-Logo.png' },
+  { name: 'Survey Monkey', logo: '/images/logos/SurveyMonkey/SurveyMonkey_id_VusMEEN_0.svg' },
+  { name: 'Microsoft Clarity', logo: '/images/logos/microsoft clarity.png' },
+  { name: 'Google Analytics', logo: '/images/logos/GA.png' },
+  { name: 'ChatGPT', logo: '/images/logos/ChatGPT/ChatGPT_Logo_0.svg' },
+  { name: 'Miro', logo: '/images/logos/Miro/Miro_Miro_Logo_0.svg' },
+  { name: 'Optimal Workshop', logo: '/images/logos/Optimal Workshop/Optimal Workshop_idymY4Wohb_0.png' },
+  { name: 'Google Workspace', logo: '/images/logos/google workspace.png' },
+  { name: 'Axure', logo: '/images/logos/Axure/Axure_idfodY-hiR_0.svg' },
+  { name: 'Flaticons', logo: '/images/logos/Flaticon.png' },
+  { name: 'Asana', logo: '/images/logos/asana.png', size: 'large' },
+  { name: 'Claude', logo: '/images/logos/Claude/Claude_Logo_0.svg' },
+  { name: 'Google Trends', logo: '/images/logos/google trends.png', size: 'large' },
+  { name: 'Wix', logo: '/images/logos/Wix/Wix_idgFeSp_TO_0.svg' },
+  { name: 'Loom', logo: '/images/logos/Loom/Loom_idPBQ1EdVH_0.svg' },
+  { name: 'Brevo', logo: '/images/logos/Brevo/Brevo_idgQGSgZ6E_0.svg' },
+  { name: 'Pitch', logo: '/images/logos/Pitch/Pitch_idJXbApN3u_0.svg' },
+  { name: 'Buffer', logo: '/images/logos/Buffer/Buffer_Logo_0.svg' },
+  { name: 'Notion', logo: '/images/logos/Notion/Notion_Logo_0.svg' },
+  { name: 'Similarweb', logo: '/images/logos/SimilarWeb/SimilarWeb_idYIZV_-P8_0.svg' },
+  { name: 'Uizard', logo: '/images/logos/Uizard.png' },
+  { name: 'Canva', logo: '/images/logos/Canva/Canva_Logo_0.svg' },
+  { name: 'Lyssna', logo: '/images/logos/Lyssna/Lyssna_idfVm9sb4y_0.png' },
 ];

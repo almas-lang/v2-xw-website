@@ -105,7 +105,7 @@ export default function ProgramsPage() {
       <HowMentorshipWorks />
       <Stats stats={programStats} maxWidth="1200px" theme="alice-light" />
       <WhyMentorship />
-      <MeetMentors />
+      <MeetMentors theme="dark-teal" />
       <SuccessStories />
       <MenteesWorkAt />
       <FAQ faqs={programFaqs} />

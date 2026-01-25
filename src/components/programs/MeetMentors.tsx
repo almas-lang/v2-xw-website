@@ -9,6 +9,7 @@ const leadMentors = [
     focus: 'Design leadership & growth-based design',
     linkedin: 'https://linkedin.com/in/shaikmuradahamed',
     website: 'https://shaikmurad.com',
+    image: '/images/Murad.png',
   },
   {
     name: 'Almas Tasneem',
@@ -17,6 +18,8 @@ const leadMentors = [
     companies: 'Capgemini | CloudNuro',
     focus: 'Product design & brand strategy',
     linkedin: 'https://linkedin.com/in/almastasneem',
+    image: '/images/almas.png',
+    imagePosition: 'center 20%',
   },
 ];
 

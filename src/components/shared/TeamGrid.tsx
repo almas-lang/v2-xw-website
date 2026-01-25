@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export interface TeamMember {
   name: string;
@@ -12,6 +13,8 @@ export interface TeamMember {
   linkedin: string;
   website?: string;
   initials?: string;
+  image?: string;
+  imagePosition?: string; // e.g., 'top', 'center', 'bottom', or custom like '50% 20%'
   color?: string; // For colored initials in light theme
 }
 
@@ -168,7 +171,18 @@ export default function TeamGrid({
             >
               {/* Photo/Initials */}
               <div className="md:col-span-3">
-                {member.initials ? (
+                {member.image ? (
+                  <div className="w-32 h-32 md:w-40 md:h-40 rounded-2xl overflow-hidden shadow-lg group-hover:scale-105 transition-transform duration-300">
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      width={160}
+                      height={160}
+                      className="w-full h-full object-cover"
+                      style={{ objectPosition: member.imagePosition || 'top' }}
+                    />
+                  </div>
+                ) : member.initials ? (
                   <div
                     className="w-32 h-32 md:w-40 md:h-40 rounded-2xl flex items-center justify-center text-white font-heading text-4xl md:text-5xl font-bold shadow-lg group-hover:scale-105 transition-transform duration-300"
                     style={{

@@ -1,11 +1,12 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 import SponsorModal from './SponsorModal';
 
 const sponsors = [
-  { type: 'Powered by', name: 'Xperience Wave', color: '#6366f1' },
-  { type: 'F&B Partner', name: "It's Brown and Roasted", color: '#92400e' },
+  { type: 'Powered by', name: 'WaveMakers Connect', logo: '/images/wmc-logo.png', color: '#6366f1' },
+  { type: 'F&B Partner', name: "It's Brown and Roasted", logo: '/images/logos/itsbrownandroasted.jpg', color: '#92400e' },
 ];
 
 export default function BackedBy() {
@@ -174,21 +175,22 @@ export default function BackedBy() {
                     </span>
                   </div>
 
-                  {/* Logo placeholder with gradient background */}
+                  {/* Logo with gradient background */}
                   <div
-                    className="aspect-[2/1] rounded-xl flex items-center justify-center overflow-hidden transition-all duration-500"
+                    className="aspect-[2/1] rounded-xl flex items-center justify-center overflow-hidden transition-all duration-500 p-4"
                     style={{
                       background: hoveredIndex === index
                         ? `linear-gradient(135deg, ${sponsor.color}08, ${sponsor.color}15)`
                         : 'linear-gradient(135deg, #f5f5f5, #fafafa)',
                     }}
                   >
-                    <span
-                      className="text-sm font-semibold text-center px-3 transition-colors duration-300"
-                      style={{ color: hoveredIndex === index ? sponsor.color : '#9ca3af' }}
-                    >
-                      {sponsor.name}
-                    </span>
+                    <Image
+                      src={sponsor.logo}
+                      alt={sponsor.name}
+                      width={200}
+                      height={80}
+                      className="w-auto h-full max-h-16 object-contain transition-transform duration-300 group-hover:scale-105"
+                    />
                   </div>
 
                   {/* Corner decoration */}

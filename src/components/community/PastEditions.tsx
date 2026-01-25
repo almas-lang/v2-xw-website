@@ -1,6 +1,18 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
+
+// Past edition images
+const editionImages = [
+  { src: '/images/community-pe1.jpg', label: 'Edition #1' },
+  { src: '/images/community-pe2.jpg', label: 'Edition #2' },
+  { src: '/images/community-pe3.jpg', label: 'Edition #3' },
+  { src: '/images/community-pe4.jpg', label: 'Edition #4' },
+  { src: '/images/community-pe5.JPG', label: 'Edition #5' },
+  { src: '/images/community-pe6.JPG', label: 'Edition #6' },
+  { src: '/images/community-pe7.jpg', label: 'Edition #7' },
+];
 
 // Tape/pin colors for polaroid styling
 const tapeColors = ['#fcd34d', '#fbbf24', '#f59e0b', '#fde68a', '#fef3c7'];
@@ -94,7 +106,7 @@ export default function PastEditions() {
         <div className="relative">
           {/* Mobile: Horizontal scroll */}
           <div className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide md:hidden -mx-5 px-5">
-            {[0, 1, 2, 3, 4].map((index) => (
+            {editionImages.slice(0, 5).map((edition, index) => (
               <div
                 key={index}
                 className="flex-shrink-0 w-[260px] snap-start"
@@ -114,13 +126,15 @@ export default function PastEditions() {
                     }}
                   />
                   <div className="aspect-[4/5] bg-neutral-100 overflow-hidden">
-                    <div className="w-full h-full flex items-center justify-center">
-                      <svg className="w-10 h-10 text-neutral-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
-                      </svg>
-                    </div>
+                    <Image
+                      src={edition.src}
+                      alt={edition.label}
+                      width={260}
+                      height={325}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
-                  <p className="text-center text-neutral-500 text-xs mt-2 font-medium">Edition #{index + 1}</p>
+                  <p className="text-center text-neutral-500 text-xs mt-2 font-medium">{edition.label}</p>
                 </div>
               </div>
             ))}
@@ -152,12 +166,15 @@ export default function PastEditions() {
                   className="absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-6 rounded-sm z-10 opacity-90"
                   style={{ background: tapeColors[0], transform: 'rotate(-5deg)' }}
                 />
-                <div className="w-full h-full bg-gradient-to-br from-neutral-50 to-neutral-200 flex items-center justify-center overflow-hidden">
-                  <svg className="w-12 h-12 text-neutral-300 transition-transform duration-500 group-hover:scale-110" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
-                  </svg>
+                <div className="w-full h-full overflow-hidden">
+                  <Image
+                    src={editionImages[0].src}
+                    alt={editionImages[0].label}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
                 </div>
-                <p className="absolute bottom-3 left-0 right-0 text-center text-neutral-500 text-xs font-medium">Edition #1</p>
+                <p className="absolute bottom-3 left-0 right-0 text-center text-neutral-500 text-xs font-medium">{editionImages[0].label}</p>
               </div>
             </div>
 
@@ -189,19 +206,22 @@ export default function PastEditions() {
                   className="absolute -top-2 right-8 w-4 h-4 rounded-full z-10 shadow-md"
                   style={{ background: pinColors[1] }}
                 />
-                <div className="w-full h-full bg-gradient-to-br from-neutral-50 to-neutral-200 flex items-center justify-center overflow-hidden">
-                  <svg className="w-12 h-12 text-neutral-300 transition-transform duration-500 group-hover:scale-110" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
-                  </svg>
+                <div className="w-full h-full overflow-hidden">
+                  <Image
+                    src={editionImages[3].src}
+                    alt={editionImages[3].label}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
                 </div>
-                <p className="absolute bottom-2 left-0 right-0 text-center text-neutral-500 text-xs font-medium">Edition #4 - Community Meetup</p>
+                <p className="absolute bottom-2 left-0 right-0 text-center text-neutral-500 text-xs font-medium">{editionImages[3].label} - Community Meetup</p>
               </div>
             </div>
 
             {/* Bottom 3 images */}
-            {[2, 3, 4].map((index, i) => (
+            {[1, 2, 4].map((imgIndex, i) => (
               <div
-                key={index}
+                key={imgIndex}
                 className="relative group cursor-pointer"
                 style={{
                   opacity: isVisible ? 1 : 0,
@@ -210,15 +230,15 @@ export default function PastEditions() {
                     : 'translateY(30px)',
                   transition: `all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) ${0.3 + i * 0.1}s`,
                 }}
-                onMouseEnter={() => setHoveredIndex(index)}
+                onMouseEnter={() => setHoveredIndex(imgIndex)}
                 onMouseLeave={() => setHoveredIndex(null)}
               >
                 {/* Polaroid frame */}
                 <div
                   className="relative w-full h-full bg-white p-1.5 pb-8 rounded-sm transition-all duration-500"
                   style={{
-                    transform: hoveredIndex === index ? 'scale(1.05) rotate(0deg)' : 'rotate(0deg)',
-                    boxShadow: hoveredIndex === index ? '0 20px 40px -10px rgba(0,0,0,0.2)' : '0 8px 20px -8px rgba(0,0,0,0.1)',
+                    transform: hoveredIndex === imgIndex ? 'scale(1.05) rotate(0deg)' : 'rotate(0deg)',
+                    boxShadow: hoveredIndex === imgIndex ? '0 20px 40px -10px rgba(0,0,0,0.2)' : '0 8px 20px -8px rgba(0,0,0,0.1)',
                   }}
                 >
                   {/* Tape decoration */}
@@ -229,12 +249,15 @@ export default function PastEditions() {
                       transform: `rotate(${i === 1 ? 0 : i === 0 ? 5 : -5}deg)`,
                     }}
                   />
-                  <div className="w-full h-full bg-gradient-to-br from-neutral-50 to-neutral-200 flex items-center justify-center overflow-hidden">
-                    <svg className="w-10 h-10 text-neutral-300 transition-transform duration-500 group-hover:scale-110" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
-                    </svg>
+                  <div className="relative w-full h-full overflow-hidden">
+                    <Image
+                      src={editionImages[imgIndex].src}
+                      alt={editionImages[imgIndex].label}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
                   </div>
-                  <p className="absolute bottom-1.5 left-0 right-0 text-center text-neutral-400 text-[10px] font-medium">Edition #{i + 2}</p>
+                  <p className="absolute bottom-1.5 left-0 right-0 text-center text-neutral-400 text-[10px] font-medium">{editionImages[imgIndex].label}</p>
                 </div>
               </div>
             ))}

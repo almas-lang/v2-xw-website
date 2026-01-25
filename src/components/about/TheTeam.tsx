@@ -6,7 +6,8 @@ const founders = [
     role: 'CEO & Co-founder',
     linkedin: 'https://linkedin.com/in/almastasneem',
     website: 'https://almastasneem.com',
-    initials: 'AT',
+    image: '/images/almas.png',
+    imagePosition: 'center 20%',
     color: '#E85A4F', // Coral
   },
   {
@@ -14,7 +15,7 @@ const founders = [
     role: 'Head of Product & Co-founder',
     linkedin: 'https://linkedin.com/in/shaikmurad',
     website: 'https://shaikmurad.com',
-    initials: 'SM',
+    image: '/images/Murad.png',
     color: '#4A90A4', // Teal
   },
 ];

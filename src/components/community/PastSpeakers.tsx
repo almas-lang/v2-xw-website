@@ -1,17 +1,18 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 
 const speakers = [
   { name: 'Mohammed Fahad', title: 'Art Director @ Bangalore School of Design & Tech', featured: true, color: '#6366f1' },
-  { name: 'Ankit Sharma', title: 'Senior Engineer @ Guidewire', featured: false, color: '#8b5cf6' },
-  { name: 'Almas Tasneem', title: 'CEO & Founder @ Xperience Wave', featured: true, color: '#ec4899' },
+  { name: 'Ankit Sharma', title: 'Senior Engineer @ Guidewire', featured: false, color: '#8b5cf6', image: '/images/community-ankit.jpg' },
+  { name: 'Almas Tasneem', title: 'CEO & Founder @ Xperience Wave', featured: true, color: '#ec4899', image: '/images/community-almas.jpg' },
   { name: 'Pavan Muthyala', title: 'Head of Design @ Bob', featured: false, color: '#f59e0b' },
-  { name: 'Shaik Murad', title: 'Head of Product & Design @ Xperience Wave', featured: false, color: '#10b981' },
-  { name: 'Fatima Sultana', title: 'Agile Transformation Leader @ GSK', featured: true, color: '#6366f1' },
-  { name: 'Rishik Jha', title: 'Lead Designer @ Happiest Minds', featured: false, color: '#f97316' },
+  { name: 'Shaik Murad', title: 'Head of Product & Design @ Xperience Wave', featured: false, color: '#10b981', image: '/images/community-murad.jpg' },
+  { name: 'Pradeep', title: 'Speaker @ WaveMakers Connect', featured: true, color: '#6366f1', image: '/images/community-pradeep.JPG' },
+  { name: 'Rishik Jha', title: 'Lead Designer @ Happiest Minds', featured: false, color: '#f97316', image: '/images/community-rishik.jpg' },
   { name: 'Shaik Anas', title: 'Designer from Bangalore School of Design & Tech', featured: false, color: '#8b5cf6' },
-  { name: 'Vidhya Sagar', title: 'Award Winning UX Designer from NIFT', featured: false, color: '#14b8a6' },
+  { name: 'Vidhya Sagar', title: 'Award Winning UX Designer from NIFT', featured: false, color: '#14b8a6', image: '/images/community-vidyasagar.JPG' },
 ];
 
 // Seeded random for consistent SSR/client values
@@ -71,8 +72,7 @@ export default function PastSpeakers() {
               backgroundColor: dot.color,
               opacity: isVisible ? 0.15 : 0,
               transition: `opacity 0.5s ease-out ${dot.delay}s`,
-              animation: isVisible ? `confettiPulse ${3 + dot.delay}s ease-in-out infinite` : 'none',
-              animationDelay: `${dot.delay}s`,
+              animation: isVisible ? `confettiPulse ${3 + dot.delay}s ease-in-out ${dot.delay}s infinite` : 'none',
             }}
           />
         ))}
@@ -247,7 +247,7 @@ function SpeakerCard({
   isHovered = false,
   color,
 }: {
-  speaker: { name: string; title: string };
+  speaker: { name: string; title: string; image?: string };
   index: number;
   featured?: boolean;
   isHovered?: boolean;
@@ -293,13 +293,22 @@ function SpeakerCard({
           {String(index + 1).padStart(2, '0')}
         </div>
 
-        {/* Photo placeholder with colored overlay on hover */}
+        {/* Photo with colored overlay on hover */}
         <div className={`relative ${featured ? 'aspect-[16/10] lg:aspect-[2/1]' : 'aspect-[4/3]'} mb-4 rounded-xl bg-neutral-100 overflow-hidden`}>
-          <div className="w-full h-full flex items-center justify-center">
-            <svg className="w-10 h-10 text-neutral-300 transition-colors duration-300 group-hover:text-neutral-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-            </svg>
-          </div>
+          {speaker.image ? (
+            <Image
+              src={speaker.image}
+              alt={speaker.name}
+              fill
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+          ) : (
+            <div className="w-full h-full flex items-center justify-center">
+              <svg className="w-10 h-10 text-neutral-300 transition-colors duration-300 group-hover:text-neutral-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+              </svg>
+            </div>
+          )}
           {/* Colored overlay on hover */}
           <div
             className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"

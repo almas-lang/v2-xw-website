@@ -11,14 +11,14 @@ const seededRandom = (seed: number) => {
   return x - Math.floor(x);
 };
 
-// Generate deterministic particles
+// Generate deterministic particles with rounded values to avoid hydration mismatch
 const particles = Array.from({ length: 30 }, (_, i) => ({
   id: i,
-  left: `${seededRandom(i * 1.1) * 100}%`,
-  size: seededRandom(i * 2.2) * 4 + 2,
-  duration: seededRandom(i * 3.3) * 10 + 15,
-  delay: seededRandom(i * 4.4) * 10,
-  opacity: seededRandom(i * 5.5) * 0.4 + 0.1,
+  left: `${Math.round(seededRandom(i * 1.1) * 100)}%`,
+  size: Math.round(seededRandom(i * 2.2) * 4 + 2),
+  duration: Math.round(seededRandom(i * 3.3) * 10 + 15),
+  delay: Math.round(seededRandom(i * 4.4) * 10),
+  opacity: Math.round(seededRandom(i * 5.5) * 40 + 10) / 100,
 }));
 
 // Confetti shapes
@@ -303,7 +303,7 @@ export default function CommunityHeroC() {
                   >
                     <div className="aspect-[3/2] bg-neutral-200 rounded-sm overflow-hidden">
                       <Image
-                        src="/images/community-hero2.jpg"
+                        src="/images/community-hero2.jpeg"
                         alt="WaveMakers Community"
                         width={140}
                         height={93}
@@ -363,7 +363,7 @@ export default function CommunityHeroC() {
               >
                 <div className="aspect-[3/2] bg-neutral-200 rounded-sm overflow-hidden">
                   <Image
-                    src="/images/community-hero2.jpg"
+                    src="/images/community-hero2.jpeg"
                     alt="WaveMakers Community"
                     width={220}
                     height={147}

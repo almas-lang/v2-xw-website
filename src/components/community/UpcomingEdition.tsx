@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 import Button from '@/components/ui/Button';
 
 const schedule = [
@@ -15,8 +16,8 @@ const schedule = [
 ];
 
 const speakers = [
-  { name: 'Speaker 1', talk: 'Talk Title', link: '#', linkText: 'See LinkedIn' },
-  { name: 'Speaker 2', talk: 'Talk Title', link: '#', linkText: 'Visit Website' },
+  { name: 'Pratika Chavan', talk: '', link: 'https://www.linkedin.com/in/pratika-chavan/', linkText: 'See LinkedIn', image: '/images/community-speaker1.jpg' },
+  { name: 'Sunita Bisoyi', talk: '', link: 'https://www.linkedin.com/in/bisoyi-sunitha/', linkText: 'See LinkedIn', image: '/images/community-speaker2.jpeg' },
 ];
 
 export default function UpcomingEdition() {
@@ -167,17 +168,26 @@ export default function UpcomingEdition() {
                   }}
                 />
                 <div className="relative w-[280px] sm:w-[300px] bg-[#0a0118] border border-white/10 rounded-3xl p-4 transition-all duration-300 group-hover:border-transparent">
-                  {/* Photo placeholder with glow */}
+                  {/* Photo with glow */}
                   <div className="aspect-[4/3] bg-white/[0.05] rounded-2xl mb-4 flex items-center justify-center overflow-hidden relative">
                     <div
-                      className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                      className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20"
                       style={{
                         background: 'radial-gradient(circle at center, rgba(99, 102, 241, 0.2) 0%, transparent 70%)',
                       }}
                     />
-                    <svg className="w-12 h-12 text-white/10 relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-                    </svg>
+                    {speaker.image ? (
+                      <Image
+                        src={speaker.image}
+                        alt={speaker.name}
+                        fill
+                        className="object-cover"
+                      />
+                    ) : (
+                      <svg className="w-12 h-12 text-white/10 relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                      </svg>
+                    )}
                   </div>
 
                   {/* Speaker info */}
@@ -185,11 +195,15 @@ export default function UpcomingEdition() {
                     <h4 className="font-heading font-bold text-white text-base mb-1">
                       {speaker.name}
                     </h4>
-                    <p className="text-white/50 text-sm mb-3">
-                      {speaker.talk}
-                    </p>
+                    {speaker.talk && (
+                      <p className="text-white/50 text-sm mb-3">
+                        {speaker.talk}
+                      </p>
+                    )}
                     <a
                       href={speaker.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="inline-flex items-center gap-1 text-indigo-400 hover:text-indigo-300 text-sm font-medium underline underline-offset-2 transition-colors"
                     >
                       {speaker.linkText}

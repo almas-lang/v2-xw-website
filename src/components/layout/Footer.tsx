@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import NewsletterForm from '@/components/ui/NewsletterForm';
 
 const footerLinks = {
   programs: [
@@ -9,22 +10,23 @@ const footerLinks = {
   ],
   company: [
     { href: '/about', label: 'About Us' },
-    { href: '/careers', label: 'Careers' },
+    // { href: '/careers', label: 'Careers' }, // Hidden until page is created
     { href: '/privacy-policy', label: 'Privacy Policy' },
     { href: '/terms-of-service', label: 'Terms of Service' },
     { href: '/refund-policy', label: 'Refund Policy' },
   ],
   resources: [
     { href: '/resources/blogs', label: 'Blog' },
-    { href: '/podcast', label: 'Podcast' },
+    // { href: '/podcast', label: 'Podcast' }, // Hidden for now
     { href: '/community', label: 'Community' },
     { href: '/resources/faq', label: 'FAQs' },
     { href: '/resources/tools', label: 'Tools' },
   ],
-  business: [
-    { href: '/talent', label: 'Talent' },
-    { href: '/design-services', label: 'Design Service' },
-  ],
+  // Hidden for now
+  // business: [
+  //   { href: '/talent', label: 'Talent' },
+  //   { href: '/design-services', label: 'Design Service' },
+  // ],
 };
 
 const socialLinks = [
@@ -57,7 +59,7 @@ const socialLinks = [
   },
   {
     name: 'Instagram',
-    href: 'https://instagram.com/xperiencewave',
+    href: 'https://www.instagram.com/xperience_wave/',
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
         <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
@@ -114,7 +116,7 @@ export default function Footer() {
               <div className="flex items-start gap-4 mb-4">
                 <div className="w-16 h-16 bg-white border border-g200 rounded-lg flex items-center justify-center flex-shrink-0">
                   <Image
-                    src="/images/xw-logo-dark.png"
+                    src="/images/xw-logo-mobile.png"
                     alt="Xperience Wave"
                     width={48}
                     height={48}
@@ -160,7 +162,7 @@ export default function Footer() {
       {/* Links Section - Light */}
       <div className="bg-g100 border-t border-g200 py-12 md:py-16">
         <div className="max-w-[1200px] mx-auto px-5">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
             {/* Programs */}
             <div>
               <h4 className="font-heading text-base font-semibold text-carbon mb-4">Programs</h4>
@@ -212,8 +214,8 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* For Business */}
-            <div>
+            {/* For Business - Hidden for now */}
+            {/* <div>
               <h4 className="font-heading text-base font-semibold text-carbon mb-4">For Business</h4>
               <ul className="space-y-3">
                 {footerLinks.business.map((link) => (
@@ -227,7 +229,7 @@ export default function Footer() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
@@ -258,22 +260,7 @@ export default function Footer() {
             {/* Newsletter */}
             <div>
               <h4 className="font-heading text-base font-semibold text-white mb-4">Subscribe to our newsletter</h4>
-              <form className="flex gap-2 mb-3">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="flex-1 px-4 py-2.5 bg-white rounded-lg font-body text-sm text-carbon placeholder:text-g400 focus:outline-none focus:ring-2 focus:ring-accent"
-                />
-                <button
-                  type="submit"
-                  className="px-6 py-2.5 bg-accent hover:bg-accent-hover text-white font-heading font-semibold text-sm rounded-lg transition-colors"
-                >
-                  Subscribe
-                </button>
-              </form>
-              <p className="font-body text-sm text-g400">
-                Get sharp insights, practical tips, and no-BS updates straight to your inbox. No spam.
-              </p>
+              <NewsletterForm />
             </div>
           </div>
 

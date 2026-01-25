@@ -15,14 +15,14 @@ const seededRandom = (seed: number) => {
   return x - Math.floor(x);
 };
 
-// Floating particles with deterministic values
+// Floating particles with deterministic values (rounded to avoid hydration mismatch)
 const particles = Array.from({ length: 15 }, (_, i) => ({
   id: i,
-  left: `${seededRandom(i * 1.1) * 100}%`,
-  size: seededRandom(i * 2.2) * 3 + 1,
-  duration: seededRandom(i * 3.3) * 8 + 10,
-  delay: seededRandom(i * 4.4) * 5,
-  opacity: seededRandom(i * 5.5) * 0.3 + 0.1,
+  left: `${Math.round(seededRandom(i * 1.1) * 100)}%`,
+  size: Math.round(seededRandom(i * 2.2) * 3 + 1),
+  duration: Math.round(seededRandom(i * 3.3) * 8 + 10),
+  delay: Math.round(seededRandom(i * 4.4) * 5),
+  opacity: Math.round(seededRandom(i * 5.5) * 30 + 10) / 100,
 }));
 
 export default function CommunityStats() {

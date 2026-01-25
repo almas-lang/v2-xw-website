@@ -19,8 +19,8 @@ export default function HowMentorshipWorks() {
   }, []);
 
   const handlePlay = () => {
-    // TODO: Implement video modal or embed
-    console.log('Play video clicked');
+    // Video functionality to be implemented
+    // Options: YouTube embed modal, Vimeo, or custom video player
   };
 
   return (

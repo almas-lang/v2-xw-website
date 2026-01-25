@@ -178,7 +178,7 @@ export default function JoinConversation({ heading = 'Join The Conversation' }: 
 
             {/* WaveMakers Connect Card */}
             <Link
-              href="/wavemakers-connect"
+              href="/register"
               className="group block"
               style={{
                 opacity: isVisible ? 1 : 0,
@@ -194,6 +194,17 @@ export default function JoinConversation({ heading = 'Join The Conversation' }: 
                     background: 'linear-gradient(135deg, #1a1a1a 0%, #1a2025 50%, #1a1a1a 100%)',
                   }}
                 />
+
+                {/* Background image */}
+                <div className="absolute inset-0 z-0">
+                  <Image
+                    src="/images/community-hero.JPG"
+                    alt=""
+                    fill
+                    className="object-cover opacity-30 sm:group-hover:opacity-40 sm:group-hover:scale-105 transition-all duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-[#1a1a1a]/70 to-[#1a1a1a]/40" />
+                </div>
 
                 {/* Decorative circles */}
                 <div className="absolute top-6 right-6 sm:top-8 sm:right-8 opacity-10">
@@ -233,13 +244,13 @@ export default function JoinConversation({ heading = 'Join The Conversation' }: 
 
                   {/* Logo */}
                   <div className="mb-5 sm:mb-6">
-                    <div className="w-14 h-14 sm:w-16 sm:h-16 bg-white/10 rounded-xl flex items-center justify-center sm:group-hover:scale-105 transition-transform duration-300 border border-white/10">
+                    <div className="w-14 h-14 sm:w-16 sm:h-16 bg-carbon rounded-xl flex items-center justify-center sm:group-hover:scale-105 transition-transform duration-300 border border-white/10 overflow-hidden">
                       <Image
-                        src="/images/wmc-logo.svg"
+                        src="/images/wmc-logo.png"
                         alt="WaveMakers Connect"
-                        width={40}
-                        height={40}
-                        className="w-8 h-8 sm:w-10 sm:h-10"
+                        width={64}
+                        height={64}
+                        className="w-full h-full object-contain"
                       />
                     </div>
                   </div>

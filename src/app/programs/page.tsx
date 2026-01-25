@@ -25,6 +25,7 @@ export const metadata: Metadata = {
     'UX career coaching',
     'product design mentorship',
   ],
+  // TODO: Create /public/images/og-programs.jpg (1200x630px)
   openGraph: {
     title: '1:1 UX Mentorship Programs That Actually Get You There | Xperience Wave',
     description:

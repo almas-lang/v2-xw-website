@@ -27,7 +27,7 @@ const featuredStories = [
     role: 'Sr. UX Designer',
     company: 'Siemens',
     image: '/images/testimonials/vignesh.jpg',
-    video: null,
+    video: '/images/success-stories/vignesh.mp4',
   },
 ];
 
@@ -58,7 +58,7 @@ const defaultQuickWins = [
     achievement: 'Sr. Lead Designer at Wongdoody',
     duration: 'In 2 months',
     name: 'Jonah Immanuel',
-    image: '/images/success-stories/Jonah Immanuel.jpeg',
+    image: '/images/success-stories/Jonah_Immanuel.png',
     linkedin: 'https://www.linkedin.com/in/jonahimmanuel/',
   },
 ];

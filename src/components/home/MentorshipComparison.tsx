@@ -64,7 +64,7 @@ export default function MentorshipComparison() {
 
         {/* Comparison Table */}
         <div
-          className="mb-8 sm:mb-12 md:mb-16"
+          className="mb-8 sm:mb-12 md:mb-16 max-w-[900px] mx-auto"
           style={{
             opacity: isVisible ? 1 : 0,
             transform: isVisible ? 'translateY(0)' : 'translateY(20px)',

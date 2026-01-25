@@ -196,7 +196,7 @@ export default function SaveYourSpot() {
           >
             {/* Button glow effect */}
             <div
-              className="absolute inset-0 rounded-xl transition-all duration-500"
+              className="absolute inset-0 rounded-xl transition-all duration-500 pointer-events-none"
               style={{
                 background: 'linear-gradient(135deg, #6366f1, #8b5cf6)',
                 filter: 'blur(20px)',

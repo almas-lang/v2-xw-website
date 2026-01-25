@@ -102,7 +102,7 @@ export default function WhyCoursesFailed() {
         />
         <div className="max-w-[1200px] mx-auto px-5 relative z-10">
           <div
-            className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-center"
+            className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-center justify-center"
             style={{
               opacity: isVisible ? 1 : 0,
               transform: isVisible ? 'translateY(0)' : 'translateY(20px)',

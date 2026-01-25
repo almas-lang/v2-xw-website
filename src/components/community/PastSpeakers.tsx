@@ -4,15 +4,15 @@ import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 
 const speakers = [
-  { name: 'Mohammed Fahad', title: 'Art Director @ Bangalore School of Design & Tech', featured: true, color: '#6366f1' },
+  { name: 'Mohammed Fahad', title: 'Art Director @ Bangalore School of Design & Tech', featured: true, color: '#6366f1', image: '/images/community-fahad.JPG', imagePosition: 'right 20%' },
   { name: 'Ankit Sharma', title: 'Senior Engineer @ Guidewire', featured: false, color: '#8b5cf6', image: '/images/community-ankit.jpg' },
   { name: 'Almas Tasneem', title: 'CEO & Founder @ Xperience Wave', featured: true, color: '#ec4899', image: '/images/community-almas.jpg' },
-  { name: 'Pavan Muthyala', title: 'Head of Design @ Bob', featured: false, color: '#f59e0b' },
+  { name: 'Pavan Muthyala', title: 'Head of Design @ Bob', featured: false, color: '#f59e0b', image: '/images/community-pavan.JPG' },
   { name: 'Shaik Murad', title: 'Head of Product & Design @ Xperience Wave', featured: false, color: '#10b981', image: '/images/community-murad.jpg' },
   { name: 'Pradeep', title: 'Speaker @ WaveMakers Connect', featured: true, color: '#6366f1', image: '/images/community-pradeep.JPG' },
   { name: 'Rishik Jha', title: 'Lead Designer @ Happiest Minds', featured: false, color: '#f97316', image: '/images/community-rishik.jpg' },
-  { name: 'Shaik Anas', title: 'Designer from Bangalore School of Design & Tech', featured: false, color: '#8b5cf6' },
-  { name: 'Vidhya Sagar', title: 'Award Winning UX Designer from NIFT', featured: false, color: '#14b8a6', image: '/images/community-vidyasagar.JPG' },
+  // { name: 'Shaik Anas', title: 'Designer from Bangalore School of Design & Tech', featured: false, color: '#8b5cf6' },
+  { name: 'Vidhya Sagar', title: 'Award Winning UX Designer from NIFT', featured: false, color: '#14b8a6', image: '/images/community-vidyasagar.JPG', imagePosition: 'center 15%' },
 ];
 
 // Seeded random for consistent SSR/client values
@@ -247,7 +247,7 @@ function SpeakerCard({
   isHovered = false,
   color,
 }: {
-  speaker: { name: string; title: string; image?: string };
+  speaker: { name: string; title: string; image?: string; imagePosition?: string };
   index: number;
   featured?: boolean;
   isHovered?: boolean;
@@ -301,6 +301,7 @@ function SpeakerCard({
               alt={speaker.name}
               fill
               className="object-cover transition-transform duration-500 group-hover:scale-105"
+              style={{ objectPosition: speaker.imagePosition || 'center' }}
             />
           ) : (
             <div className="w-full h-full flex items-center justify-center">

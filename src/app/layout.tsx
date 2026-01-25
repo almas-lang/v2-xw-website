@@ -77,6 +77,7 @@ export const metadata: Metadata = {
   },
 
   // Open Graph
+  // OpenGraph - REQUIRED: Create /public/images/og-image.jpg (1200x630px)
   openGraph: {
     type: "website",
     url: "https://xperiencewave.com/",
@@ -87,7 +88,7 @@ export const metadata: Metadata = {
     locale: "en_IN",
     images: [
       {
-        url: "/images/og-image.jpg",
+        url: "/images/og-image.jpg", // TODO: Create this image (1200x630px)
         width: 1200,
         height: 630,
         alt: "Xperience Wave - UX Design Mentorship",
@@ -107,6 +108,12 @@ export const metadata: Metadata = {
   },
 
   // Icons & Manifest
+  // TODO: Create these favicon files:
+  // - /public/favicon.ico (main favicon)
+  // - /public/images/favicon-16x16.png (16x16px)
+  // - /public/images/favicon-32x32.png (32x32px)
+  // - /public/images/apple-touch-icon.png (180x180px)
+  // Use https://favicon.io or similar tool to generate from logo
   icons: {
     icon: [
       { url: "/images/favicon-16x16.png", sizes: "16x16", type: "image/png" },
@@ -117,11 +124,12 @@ export const metadata: Metadata = {
   },
   manifest: "/manifest.json",
 
-  // Verification (add your codes when ready)
+  // Verification
+  // TODO: Add Google Search Console verification code after setting up GSC
   verification: {
-    google: "your-google-verification-code",
-    // yandex: "your-yandex-code",
-    // yahoo: "your-yahoo-code",
+    google: "", // Add verification code from Google Search Console
+    // yandex: "",
+    // bing: "",
   },
 
   // App-specific

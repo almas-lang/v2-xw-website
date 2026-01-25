@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 // ============================================
 // COURSE DATA
@@ -13,7 +14,7 @@ const courses = [
     title: 'Design Strategy for Product Designers',
     rating: '4.9',
     ratingCount: '1245',
-    status: 'New',
+    status: 'Coming soon',
     duration: '4 hours',
     originalPrice: '2,999',
     price: '1,999',
@@ -23,14 +24,14 @@ const courses = [
       'Build strategic frameworks stakeholders buy into',
       'Tie design decisions to revenue and retention',
     ],
-    image: '/images/courses/design-strategy.jpg',
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80',
   },
   {
     id: 'ux-research-course',
     title: 'Mixed Methods UX Research: From Plan to Insights',
     rating: '4.8',
     ratingCount: '3832',
-    status: 'New',
+    status: 'Coming soon',
     duration: '6 hours',
     originalPrice: '2,499',
     price: '1,499',
@@ -40,7 +41,7 @@ const courses = [
       'Plan, conduct, and synthesize research in real projects',
       'Present findings that drive product decisions',
     ],
-    image: '/images/courses/ux-research.jpg',
+    image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&q=80',
   },
   {
     id: 'portfolio-course',
@@ -57,7 +58,7 @@ const courses = [
       'Show impact with metrics (even under NDA)',
       'Avoid the 7 mistakes that kill interview chances',
     ],
-    image: '/images/courses/portfolio.jpg',
+    image: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=800&q=80',
   },
   {
     id: 'design-system-course',
@@ -74,19 +75,9 @@ const courses = [
       'Ship consistent UI without slowing down your team',
       'Avoid over-engineering — build only what you need',
     ],
-    image: '/images/courses/design-system.jpg',
+    image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&q=80',
   },
 ];
-
-// ============================================
-// ICONS
-// ============================================
-
-const StarIcon = () => (
-  <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-yellow-500">
-    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-  </svg>
-);
 
 // ============================================
 // COMPONENT
@@ -168,12 +159,12 @@ export default function ShortCoursesPage() {
                 transition: 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.1s',
               }}
             >
-              <div className="flex items-center gap-2 px-3 py-1.5 bg-alice/10 border border-alice/20 rounded-full">
+              <div className="flex items-center gap-2 px-3 py-1.5 bg-accent/20 border border-accent/30 rounded-full">
                 <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-alice opacity-75" />
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-alice" />
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-accent" />
                 </span>
-                <span className="text-xs font-medium text-alice uppercase tracking-wider">Self-Paced Learning</span>
+                <span className="text-xs font-medium text-accent uppercase tracking-wider">Coming Soon</span>
               </div>
             </div>
 
@@ -213,7 +204,7 @@ export default function ShortCoursesPage() {
             >
               {[
                 { value: '4', label: 'Courses' },
-                { value: '25+', label: 'Hours' },
+                { value: '21+', label: 'Hours' },
                 { value: 'Lifetime', label: 'Access' },
               ].map((stat, i) => (
                 <div key={i} className="flex items-baseline gap-1.5 md:gap-2">
@@ -227,118 +218,96 @@ export default function ShortCoursesPage() {
       </section>
 
       {/* ============================================ */}
-      {/* COURSES SECTION */}
+      {/* COURSES SECTION - EDITORIAL STYLE */}
       {/* ============================================ */}
-      <section className="relative py-12 md:py-20 overflow-hidden bg-snow">
-        <div className="relative z-10 max-w-[900px] mx-auto px-5">
+      <section className="bg-[#FAFAF8] py-20 md:py-28">
+        <div className="max-w-[1000px] mx-auto px-5">
           {/* Section Header */}
           <div
-            className="text-center mb-8 md:mb-12"
+            className="text-center mb-14 md:mb-20"
             style={{
               opacity: isVisible ? 1 : 0,
               transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
               transition: 'all 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.3s',
             }}
           >
-            <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-carbon mb-3">
+            <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-carbon">
               Learn UX Skills. Self-Paced Courses
             </h2>
-            <p className="font-body text-base text-g500">
+            <p className="font-body text-base md:text-lg text-g500 mt-4">
               Affordable, practical courses to build skills that get you hired
             </p>
           </div>
 
-          {/* Courses List */}
-          <div className="space-y-6">
+          {/* Courses List - Editorial Layout */}
+          <div className="space-y-20 md:space-y-28">
             {courses.map((course, index) => {
               const isAvailable = course.status !== 'Coming soon';
+              const isEven = index % 2 === 0;
 
               return (
-                <div
+                <article
                   key={course.id}
-                  className="bg-white rounded-2xl border border-g200 overflow-hidden hover:shadow-lg hover:border-alice transition-all duration-300"
+                  className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} gap-8 md:gap-12 items-center`}
                   style={{
                     opacity: isVisible ? 1 : 0,
                     transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
-                    transition: `all 0.6s cubic-bezier(0.4, 0, 0.2, 1) ${0.35 + index * 0.1}s`,
+                    transition: `all 0.7s cubic-bezier(0.4, 0, 0.2, 1) ${0.35 + index * 0.1}s`,
                   }}
                 >
-                  <div className="flex flex-col md:flex-row">
-                    {/* Image Area */}
-                    <div className="md:w-[280px] lg:w-[320px] flex-shrink-0 bg-snow border-b md:border-b-0 md:border-r border-g200">
-                      <div className="aspect-[4/3] md:aspect-auto md:h-full flex items-center justify-center p-6 md:p-8">
-                        {/* Placeholder for course image */}
-                        <div className="w-full h-full min-h-[160px] md:min-h-full rounded-xl bg-white border border-g200 flex items-center justify-center">
-                          <svg className="w-12 h-12 text-g300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                          </svg>
+                  {/* Image */}
+                  <div className="w-full md:w-1/2">
+                    <div className="aspect-[4/3] relative rounded-sm overflow-hidden">
+                      <Image
+                        src={course.image}
+                        alt={course.title}
+                        fill
+                        className="object-cover"
+                      />
+                      {!isAvailable && (
+                        <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+                          <span className="text-white text-sm uppercase tracking-widest font-medium">Coming Soon</span>
                         </div>
-                      </div>
+                      )}
                     </div>
+                  </div>
 
-                    {/* Content Area */}
-                    <div className="flex-1 p-5 md:p-6 lg:p-8 relative">
-                      {/* Status Badge */}
-                      <span
-                        className="absolute top-4 right-4 md:top-6 md:right-6 px-3 py-1 text-white text-xs font-bold rounded-full"
-                        style={{ backgroundColor: isAvailable ? '#4A90A4' : '#FF0023' }}
-                      >
-                        {course.status === 'Coming soon' ? 'Coming Soon' : 'New'}
-                      </span>
-
-                      {/* Title */}
-                      <h3 className="font-heading text-lg md:text-xl font-bold text-carbon mb-2 pr-24 underline decoration-1 underline-offset-4 decoration-g300">
-                        {course.title}
-                      </h3>
-
-                      {/* Rating */}
-                      <div className="flex items-center gap-1.5 mb-4 text-sm">
-                        <StarIcon />
-                        <span className="font-semibold text-carbon">{course.rating}</span>
-                        <span className="text-g500">/ 5 Ratings</span>
-                        <span className="text-g400">(Out of {course.ratingCount} ratings)</span>
+                  {/* Content */}
+                  <div className="w-full md:w-1/2">
+                    <span className="text-xs uppercase tracking-widest text-accent font-medium">
+                      {course.duration} • {course.rating} ★
+                    </span>
+                    <h3 className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-2 mb-4">
+                      {course.title}
+                    </h3>
+                    <ul className="space-y-2.5 text-g600 text-sm md:text-base mb-6">
+                      {course.learnings.map((item, i) => (
+                        <li key={i} className="flex gap-3">
+                          <span className="text-accent">—</span>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="flex flex-wrap items-center gap-6">
+                      <div>
+                        <span className="text-g400 line-through text-sm">₹{course.originalPrice}</span>
+                        <span className="text-2xl font-bold text-carbon ml-2">₹{course.price}</span>
                       </div>
-
-                      {/* What you'll learn */}
-                      <div className="mb-5">
-                        <p className="font-heading font-semibold text-sm text-carbon mb-2">What you&apos;ll learn:</p>
-                        <ul className="space-y-1.5">
-                          {course.learnings.map((item, i) => (
-                            <li key={i} className="flex items-start gap-2.5 text-sm text-g600">
-                              <span className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0" />
-                              <span>{item}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      {/* Duration & Pricing */}
-                      <div className="flex flex-wrap items-center gap-x-6 gap-y-2 mb-5 text-sm">
-                        <span className="font-semibold text-carbon">{course.duration}</span>
-                        <div className="flex items-center gap-2">
-                          <span className="text-g400 line-through">₹ {course.originalPrice}</span>
-                          <span className="font-bold text-carbon">₹ {course.price}</span>
-                          <span className="text-accent font-medium">({course.discount}% off)</span>
-                        </div>
-                      </div>
-
-                      {/* CTA Button */}
                       <button
-                        className={`inline-flex items-center justify-center px-6 py-3 rounded-xl font-heading font-semibold text-sm transition-all duration-300 ${
+                        className={`text-sm uppercase tracking-wider font-semibold transition-colors ${
                           isAvailable
-                            ? 'bg-accent hover:bg-accent/90 text-white'
-                            : 'bg-alice hover:bg-alice/90 text-carbon'
+                            ? 'text-carbon underline underline-offset-4 hover:text-accent'
+                            : 'text-accent hover:text-accent/80'
                         }`}
                       >
-                        {isAvailable ? 'Enroll Now' : 'Notify Me'}
+                        {isAvailable ? 'Enroll Now →' : 'Notify Me →'}
                       </button>
                     </div>
                   </div>
-                </div>
+                </article>
               );
             })}
           </div>
-
         </div>
       </section>
 

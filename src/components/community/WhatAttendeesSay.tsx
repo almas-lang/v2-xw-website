@@ -3,21 +3,9 @@
 import { useEffect, useRef, useState } from 'react';
 
 const testimonials = [
-  {
-    name: 'Pratika',
-    role: 'Sr. Designer',
-    company: 'Publicis',
-  },
-  {
-    name: 'Ashley Alemao',
-    role: 'UX Designer',
-    company: 'Millipixels',
-  },
-  {
-    name: 'Vignesh',
-    role: 'Sr. UX Designer',
-    company: 'Siemens',
-  },
+  { id: 1, instagramUrl: 'https://www.instagram.com/reel/DGu7JDUPg15/embed/' },
+  { id: 2, instagramUrl: 'https://www.instagram.com/reel/DOs9K9tjWIx/embed/' },
+  { id: 3, instagramUrl: 'https://www.instagram.com/p/DLSJFreTQAW/embed/' },
 ];
 
 const cardColors = ['#6366f1', '#8b5cf6', '#a78bfa'];
@@ -124,7 +112,7 @@ export default function WhatAttendeesSay() {
           <div className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide md:hidden -mx-5 px-5">
             {testimonials.map((testimonial, index) => (
               <div
-                key={testimonial.name}
+                key={testimonial.id}
                 className="flex-shrink-0 w-[280px] snap-start"
                 style={{
                   opacity: isVisible ? 1 : 0,
@@ -141,7 +129,7 @@ export default function WhatAttendeesSay() {
           <div className="hidden md:grid grid-cols-3 gap-5 lg:gap-6">
             {testimonials.map((testimonial, index) => (
               <div
-                key={testimonial.name}
+                key={testimonial.id}
                 className="relative"
                 style={{
                   opacity: isVisible ? 1 : 0,
@@ -174,10 +162,12 @@ export default function WhatAttendeesSay() {
           }}
         >
           <a
-            href="#testimonials"
+            href="https://www.instagram.com/xperience_wave/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="group inline-flex items-center gap-2 text-white/60 hover:text-white text-sm font-medium transition-colors"
           >
-            See more
+            See more of what people say
             <span className="group-hover:translate-x-1 transition-transform">→</span>
           </a>
         </div>
@@ -215,7 +205,7 @@ function TestimonialCard({
   isHovered = false,
   color,
 }: {
-  testimonial: { name: string; role: string; company: string };
+  testimonial: { id: number; instagramUrl?: string };
   index: number;
   isHovered?: boolean;
   color: string;
@@ -235,54 +225,50 @@ function TestimonialCard({
       <div
         className={`relative h-full bg-[#0a0118] border border-white/10 rounded-2xl overflow-hidden transition-all duration-300 ${isHovered ? 'border-transparent' : ''}`}
       >
-        {/* Testimonial placeholder area with glow */}
-        <div className="aspect-[3/4] bg-white/[0.02] flex items-center justify-center p-6 relative">
-          {/* Glow effect on hover */}
-          <div
-            className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-            style={{
-              background: `radial-gradient(circle at center, ${color}20 0%, transparent 70%)`,
-            }}
-          />
+        {/* Video/Instagram embed area */}
+        <div className="aspect-[9/16] bg-white/[0.02] flex items-center justify-center relative overflow-hidden">
+          {testimonial.instagramUrl ? (
+            <iframe
+              src={testimonial.instagramUrl}
+              className="w-full h-full border-0"
+              allowFullScreen
+              scrolling="no"
+              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+            />
+          ) : (
+            <>
+              {/* Glow effect on hover */}
+              <div
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                style={{
+                  background: `radial-gradient(circle at center, ${color}20 0%, transparent 70%)`,
+                }}
+              />
 
-          {/* Quote placeholder with pulsing quote mark */}
-          <div className="text-center relative z-10">
-            <svg
-              className="w-8 h-8 mx-auto mb-4 transition-all duration-300"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-              style={{
-                color: isHovered ? color : 'rgba(255,255,255,0.1)',
-                filter: isHovered ? `drop-shadow(0 0 10px ${color}60)` : 'none',
-              }}
-            >
-              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-            </svg>
-            <p className="text-white/30 text-sm italic">
-              Testimonial placeholder
-            </p>
-          </div>
-        </div>
-
-        {/* Person info */}
-        <div className="p-5">
-          <h3 className="font-heading font-bold text-white text-base mb-1">
-            {testimonial.name}
-          </h3>
-          <p className="text-white/50 text-sm">
-            {testimonial.role}
-          </p>
-          <p
-            className="text-sm transition-colors duration-300"
-            style={{ color: isHovered ? color : 'rgba(99, 102, 241, 0.8)' }}
-          >
-            {testimonial.company}
-          </p>
+              {/* Video placeholder icon */}
+              <div className="text-center relative z-10">
+                <svg
+                  className="w-12 h-12 mx-auto transition-all duration-300"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={1}
+                  style={{
+                    color: isHovered ? color : 'rgba(255,255,255,0.2)',
+                    filter: isHovered ? `drop-shadow(0 0 10px ${color}60)` : 'none',
+                  }}
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z" />
+                </svg>
+              </div>
+            </>
+          )}
         </div>
 
         {/* Number badge with glow */}
         <div
-          className="absolute top-3 right-3 w-6 h-6 rounded-full text-xs font-medium flex items-center justify-center transition-all duration-300"
+          className="absolute top-3 right-3 w-6 h-6 rounded-full text-xs font-medium flex items-center justify-center transition-all duration-300 z-10"
           style={{
             backgroundColor: isHovered ? color : 'rgba(255,255,255,0.05)',
             color: isHovered ? 'white' : 'rgba(255,255,255,0.3)',

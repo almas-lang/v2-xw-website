@@ -3,15 +3,15 @@
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 
-// Past edition images
+// Past edition images (from 3 editions so far)
 const editionImages = [
   { src: '/images/community-pe1.jpg', label: 'Edition #1' },
-  { src: '/images/community-pe2.jpg', label: 'Edition #2' },
-  { src: '/images/community-pe3.jpg', label: 'Edition #3' },
-  { src: '/images/community-pe4.jpg', label: 'Edition #4' },
-  { src: '/images/community-pe5.JPG', label: 'Edition #5' },
-  { src: '/images/community-pe6.JPG', label: 'Edition #6' },
-  { src: '/images/community-pe7.jpg', label: 'Edition #7' },
+  { src: '/images/community-pe2.jpg', label: 'Edition #1' },
+  { src: '/images/community-pe3.jpg', label: 'Edition #2' },
+  { src: '/images/community-pe4.jpg', label: 'Edition #2' },
+  { src: '/images/community-pe5.JPG', label: 'Edition #3' },
+  { src: '/images/community-pe6.JPG', label: 'Edition #3' },
+  { src: '/images/community-pe7.jpg', label: 'Edition #3' },
 ];
 
 // Tape/pin colors for polaroid styling

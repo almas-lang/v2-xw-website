@@ -27,7 +27,7 @@ const resourcesDropdown = [
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
-  { href: '/podcast', label: 'Podcast' },
+  // { href: '/podcast', label: 'Podcast' }, // Hidden for now
   { href: '/community', label: 'Community' },
 ];
 
@@ -268,8 +268,8 @@ export default function Header() {
               </div>
             </div>
 
-            {/* For Business Accordion */}
-            <div
+            {/* For Business Accordion - Hidden for now */}
+            {/* <div
               style={{
                 opacity: mobileMenuOpen ? 1 : 0,
                 transform: mobileMenuOpen ? 'translateY(0)' : 'translateY(20px)',
@@ -336,7 +336,7 @@ export default function Header() {
                   ))}
                 </div>
               </div>
-            </div>
+            </div> */}
 
             {/* About */}
             <div
@@ -360,8 +360,8 @@ export default function Header() {
               </Link>
             </div>
 
-            {/* Podcast */}
-            <div
+            {/* Podcast - Hidden for now */}
+            {/* <div
               style={{
                 opacity: mobileMenuOpen ? 1 : 0,
                 transform: mobileMenuOpen ? 'translateY(0)' : 'translateY(20px)',
@@ -380,7 +380,7 @@ export default function Header() {
               >
                 Podcast
               </Link>
-            </div>
+            </div> */}
 
             {/* Community */}
             <div
@@ -664,8 +664,8 @@ export default function Header() {
             </div>
           </li>
 
-          {/* For Business Dropdown */}
-          <li
+          {/* For Business Dropdown - Hidden for now */}
+          {/* <li
             className="relative"
             ref={businessRef}
             onMouseLeave={() => setBusinessOpen(false)}
@@ -701,7 +701,6 @@ export default function Header() {
               </button>
             </div>
 
-            {/* Dropdown Menu */}
             <div
               className={`absolute top-full left-0 pt-2 w-72 transition-all ${
                 businessOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'
@@ -742,9 +741,9 @@ export default function Header() {
                 ))}
               </div>
             </div>
-          </li>
+          </li> */}
 
-          {/* About, Podcast, Community */}
+          {/* About, Community */}
           {navLinks.slice(1).map((link) => (
             <li key={link.href}>
               <Link

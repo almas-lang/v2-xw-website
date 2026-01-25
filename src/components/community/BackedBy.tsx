@@ -179,9 +179,11 @@ export default function BackedBy() {
                   <div
                     className="aspect-[2/1] rounded-xl flex items-center justify-center overflow-hidden transition-all duration-500 p-4"
                     style={{
-                      background: hoveredIndex === index
-                        ? `linear-gradient(135deg, ${sponsor.color}08, ${sponsor.color}15)`
-                        : 'linear-gradient(135deg, #f5f5f5, #fafafa)',
+                      background: index === 0
+                        ? '#1a1a2e'
+                        : hoveredIndex === index
+                          ? `linear-gradient(135deg, ${sponsor.color}08, ${sponsor.color}15)`
+                          : 'linear-gradient(135deg, #f5f5f5, #fafafa)',
                     }}
                   >
                     <Image

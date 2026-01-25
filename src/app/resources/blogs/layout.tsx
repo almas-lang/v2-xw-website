@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     'design career growth',
     'UX mentorship blog',
   ],
+  // TODO: Create /public/images/og-blog.jpg (1200x630px)
   openGraph: {
     title: 'Blog - UX Design Insights & Career Tips | Xperience Wave',
     description:

@@ -67,11 +67,25 @@ export default function SponsorModal({ isOpen, onClose }: SponsorModalProps) {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate API call - replace with actual form submission
-    await new Promise(resolve => setTimeout(resolve, 1500));
+    try {
+      const response = await fetch('/api/sponsor-inquiry', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setIsSuccess(true);
+      } else {
+        alert(data.error || 'Submission failed. Please try again.');
+      }
+    } catch {
+      alert('Something went wrong. Please try again.');
+    }
 
     setIsSubmitting(false);
-    setIsSuccess(true);
   };
 
   if (!isOpen) return null;

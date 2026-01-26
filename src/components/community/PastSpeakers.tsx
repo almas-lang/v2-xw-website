@@ -2,12 +2,13 @@
 
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const speakers = [
   { name: 'Mohammed Fahad', title: 'Art Director @ Bangalore School of Design & Tech', featured: true, color: '#6366f1', image: '/images/community-fahad.JPG', imagePosition: 'right 20%', linkedin: 'https://www.linkedin.com/in/mohammed-fahad-420380122/' },
   { name: 'Ankit Sharma', title: 'Senior Engineer @ Guidewire', featured: false, color: '#8b5cf6', image: '/images/community-ankit.jpg', linkedin: 'https://www.linkedin.com/in/asharma1006/' },
   { name: 'Almas Tasneem', title: 'CEO & Founder @ Xperience Wave', featured: true, color: '#ec4899', image: '/images/community-almas.jpg', linkedin: 'https://www.linkedin.com/in/almas-t/' },
-  { name: 'Pavan Muthyala', title: 'Head of Design @ Bob', featured: false, color: '#f59e0b', image: '/images/Pavan Mutyala.jpeg', linkedin: 'https://www.linkedin.com/in/pavan-muthyala/' },
+  { name: 'Pavan Muthyala', title: 'Head of Design @ Bob', featured: false, color: '#f59e0b', image: '/images/community-pavan.jpg', linkedin: 'https://www.linkedin.com/in/pavan-muthyala/' },
   { name: 'Shaik Murad', title: 'Head of Product & Design @ Xperience Wave', featured: false, color: '#10b981', image: '/images/community-murad.jpg', linkedin: 'https://www.linkedin.com/in/shaikmurad/' },
   { name: 'Pradeep Naik', title: 'Founder and CEO at Nxuniq', featured: true, color: '#6366f1', image: '/images/community-pradeep.JPG', linkedin: 'https://www.linkedin.com/in/pradeep-naik147/' },
   { name: 'Rishik Jha', title: 'Lead Designer @ Happiest Minds', featured: false, color: '#f97316', image: '/images/community-rishik.jpg', linkedin: 'https://www.linkedin.com/in/rishik-jha/' },
@@ -21,14 +22,14 @@ const seededRandom = (seed: number) => {
   return x - Math.floor(x);
 };
 
-// Confetti dots with deterministic values
+// Confetti dots with deterministic values (rounded to avoid hydration mismatch)
 const confettiDots = Array.from({ length: 25 }, (_, i) => ({
   id: i,
-  left: `${seededRandom(i * 1.1) * 100}%`,
-  top: `${seededRandom(i * 2.2) * 100}%`,
-  size: seededRandom(i * 3.3) * 6 + 3,
+  left: `${Math.round(seededRandom(i * 1.1) * 100)}%`,
+  top: `${Math.round(seededRandom(i * 2.2) * 100)}%`,
+  size: Math.round(seededRandom(i * 3.3) * 6 + 3),
   color: ['#6366f1', '#8b5cf6', '#ec4899', '#f59e0b', '#10b981'][Math.floor(seededRandom(i * 4.4) * 5)],
-  delay: seededRandom(i * 5.5) * 2,
+  delay: Math.round(seededRandom(i * 5.5) * 20) / 10,
 }));
 
 export default function PastSpeakers() {
@@ -198,8 +199,8 @@ export default function PastSpeakers() {
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-px bg-gradient-to-r from-transparent via-neutral-200 to-transparent" />
 
           <span className="text-neutral-600 font-medium">Want to speak?</span>
-          <a
-            href="#apply"
+          <Link
+            href="/community/apply"
             className="group relative inline-flex items-center gap-2 px-6 py-3 sm:px-8 sm:py-4 bg-indigo-600 hover:bg-indigo-500 text-white font-heading font-semibold text-sm sm:text-base rounded-xl transition-all duration-300 hover:shadow-xl hover:shadow-indigo-500/25 hover:-translate-y-0.5"
           >
             {/* Button glow */}
@@ -214,7 +215,7 @@ export default function PastSpeakers() {
             />
             Apply now
             <span className="transition-transform duration-200 group-hover:translate-x-0.5">→</span>
-          </a>
+          </Link>
         </div>
       </div>
 

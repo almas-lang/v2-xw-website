@@ -5,7 +5,7 @@ import Image from 'next/image';
 import SponsorModal from './SponsorModal';
 
 const sponsors = [
-  { type: 'Powered by', name: 'WaveMakers Connect', logo: '/images/wmc-logo.png', color: '#6366f1' },
+  { type: 'Powered by', name: 'Xperience Wave', logo: '/images/xw-logo-light.png', color: '#6366f1' },
   { type: 'F&B Partner', name: "It's Brown and Roasted", logo: '/images/logos/itsbrownandroasted.jpg', color: '#92400e' },
 ];
 

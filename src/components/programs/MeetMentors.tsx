@@ -30,7 +30,7 @@ const supportMentors = [
     initials: 'RJ',
     linkedin: 'https://www.linkedin.com/in/rishik-jha/',
     image: '/images/rishik.jpg',
-    imagePosition: 'center 5%',
+    imagePosition: 'center 35%',
   },
   {
     name: 'Fatima Sultana',

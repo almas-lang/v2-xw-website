@@ -85,8 +85,10 @@ export default function JoinConversation({ heading = 'Join The Conversation' }: 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-6">
 
             {/* Vivid Yellow Podcast Card */}
-            <Link
-              href="/podcast"
+            <a
+              href="https://open.spotify.com/show/5ULMerqiVi3L2HLHMeynoL"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group block"
               style={{
                 opacity: isVisible ? 1 : 0,
@@ -174,11 +176,11 @@ export default function JoinConversation({ heading = 'Join The Conversation' }: 
                   </div>
                 </div>
               </div>
-            </Link>
+            </a>
 
             {/* WaveMakers Connect Card */}
             <Link
-              href="/register"
+              href="/community"
               className="group block"
               style={{
                 opacity: isVisible ? 1 : 0,

@@ -44,7 +44,7 @@ export interface Tool {
 export const sharedTools: Tool[] = [
   { name: 'Figma', logo: '/images/Figma-Logo.png' },
   { name: 'Survey Monkey', logo: '/images/SurveyMonkey.png' },
-  { name: 'Microsoft Clarity', logo: '/images/microsoft clarity.png' },
+  { name: 'Microsoft Clarity', logo: '/images/microsoftclarity.png' },
   { name: 'Google Analytics', logo: '/images/Googleanalytics.png' },
   { name: 'ChatGPT', logo: '/images/ChatGPT.png' },
   { name: 'Miro', logo: '/images/Miro.png' },

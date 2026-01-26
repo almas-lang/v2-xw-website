@@ -1,0 +1,4 @@
+# Exclude large video files (over 100MB Vercel limit)
+# These should be hosted on YouTube or a CDN instead
+public/videos/Ashley.mp4
+public/videos/vignesh.mp4

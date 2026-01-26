@@ -20,7 +20,7 @@ const featuredStories = [
     role: 'UX Designer',
     company: 'Millipixels',
     image: '/images/testimonials/ashley-alemao.jpg',
-    video: '/videos/Ashley.mp4',
+    youtubeId: '9LurTodWb3Q',
   },
   {
     name: 'Vignesh',

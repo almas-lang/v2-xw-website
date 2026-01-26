@@ -27,7 +27,7 @@ const featuredStories = [
     role: 'Sr. UX Designer',
     company: 'Siemens',
     image: '/images/testimonials/vignesh.jpg',
-    video: '/videos/vignesh.mp4',
+    youtubeId: 'H4R-ZVvCxvQ',
   },
 ];
 
@@ -122,20 +122,22 @@ const VideoModal = ({
   isOpen,
   onClose,
   videoSrc,
+  youtubeId,
   name,
 }: {
   isOpen: boolean;
   onClose: () => void;
-  videoSrc: string;
+  videoSrc?: string;
+  youtubeId?: string;
   name: string;
 }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    if (isOpen && videoRef.current) {
+    if (isOpen && videoRef.current && videoSrc) {
       videoRef.current.play();
     }
-  }, [isOpen]);
+  }, [isOpen, videoSrc]);
 
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -153,6 +155,8 @@ const VideoModal = ({
 
   if (!isOpen) return null;
 
+  const isYouTubeShort = youtubeId !== undefined;
+
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6"
@@ -163,7 +167,9 @@ const VideoModal = ({
 
       {/* Modal content */}
       <div
-        className="relative w-full max-w-4xl max-h-[90vh] rounded-2xl overflow-hidden bg-black shadow-2xl"
+        className={`relative rounded-2xl overflow-hidden bg-black shadow-2xl ${
+          isYouTubeShort ? 'w-full max-w-[400px] aspect-[9/16]' : 'w-full max-w-4xl max-h-[90vh]'
+        }`}
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close button */}
@@ -175,17 +181,28 @@ const VideoModal = ({
           <CloseIcon className="w-5 h-5 text-white" />
         </button>
 
-        {/* Video */}
-        <video
-          ref={videoRef}
-          src={videoSrc}
-          controls
-          autoPlay
-          className="w-full h-full max-h-[90vh] object-contain"
-          aria-label={`Testimonial video from ${name}`}
-        >
-          Your browser does not support the video tag.
-        </video>
+        {/* YouTube Embed */}
+        {youtubeId ? (
+          <iframe
+            src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0`}
+            className="w-full h-full"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            title={`Testimonial video from ${name}`}
+          />
+        ) : videoSrc ? (
+          /* Local Video */
+          <video
+            ref={videoRef}
+            src={videoSrc}
+            controls
+            autoPlay
+            className="w-full h-full max-h-[90vh] object-contain"
+            aria-label={`Testimonial video from ${name}`}
+          >
+            Your browser does not support the video tag.
+          </video>
+        ) : null}
       </div>
     </div>
   );
@@ -309,7 +326,7 @@ export default function SuccessStories({
   const theme = themeColors[accentColor];
   const sectionRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
-  const [activeVideo, setActiveVideo] = useState<{ src: string; name: string } | null>(null);
+  const [activeVideo, setActiveVideo] = useState<{ src?: string; youtubeId?: string; name: string } | null>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -330,9 +347,13 @@ export default function SuccessStories({
     return () => observer.disconnect();
   }, []);
 
-  const handleVideoClick = (video: string | null, name: string) => {
-    if (video) {
-      setActiveVideo({ src: video, name });
+  const handleVideoClick = (story: typeof featuredStories[0]) => {
+    if (story.video || story.youtubeId) {
+      setActiveVideo({
+        src: story.video,
+        youtubeId: story.youtubeId,
+        name: story.name
+      });
     }
   };
 
@@ -443,18 +464,20 @@ export default function SuccessStories({
 
           {/* Featured Video Testimonials - Now on bottom */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 mb-8 sm:mb-10 md:mb-12">
-            {featuredStories.map((story, index) => (
+            {featuredStories.map((story, index) => {
+              const hasVideo = story.video || story.youtubeId;
+              return (
               <div
                 key={story.name}
-                className={`group ${story.video ? 'cursor-pointer' : 'cursor-default'}`}
-                onClick={() => handleVideoClick(story.video, story.name)}
+                className={`group ${hasVideo ? 'cursor-pointer' : 'cursor-default'}`}
+                onClick={() => handleVideoClick(story)}
                 style={{
                   opacity: isVisible ? 1 : 0,
                   transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
                   transition: `all 0.7s cubic-bezier(0.4, 0, 0.2, 1) ${0.5 + index * 0.1}s`,
                 }}
               >
-                <div className={`relative rounded-xl sm:rounded-2xl overflow-hidden border-2 border-g200 transition-all duration-500 shadow-md ${story.video ? 'sm:hover:border-accent/40 sm:hover:shadow-xl' : ''}`}>
+                <div className={`relative rounded-xl sm:rounded-2xl overflow-hidden border-2 border-g200 transition-all duration-500 shadow-md ${hasVideo ? 'sm:hover:border-accent/40 sm:hover:shadow-xl' : ''}`}>
                   {/* Image/Video area */}
                   <div className="relative aspect-[3/4] sm:aspect-[4/5] overflow-hidden">
                     {story.video ? (
@@ -465,6 +488,12 @@ export default function SuccessStories({
                         muted
                         playsInline
                       />
+                    ) : story.youtubeId ? (
+                      <img
+                        src={`https://img.youtube.com/vi/${story.youtubeId}/maxresdefault.jpg`}
+                        alt={story.name}
+                        className="absolute inset-0 w-full h-full object-cover"
+                      />
                     ) : (
                       <Avatar name={story.name} image={story.image} size="large" />
                     )}
@@ -473,7 +502,7 @@ export default function SuccessStories({
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
 
                     {/* Play button - only show if video exists */}
-                    {story.video && (
+                    {hasVideo && (
                       <div className="absolute inset-0 flex items-center justify-center">
                         <div className="transform sm:group-hover:scale-110 transition-transform duration-300">
                           <div className="relative">
@@ -499,7 +528,8 @@ export default function SuccessStories({
                   </div>
                 </div>
               </div>
-            ))}
+            );
+            })}
           </div>
 
           {/* CTA - Simple text link */}
@@ -539,6 +569,7 @@ export default function SuccessStories({
           isOpen={!!activeVideo}
           onClose={() => setActiveVideo(null)}
           videoSrc={activeVideo.src}
+          youtubeId={activeVideo.youtubeId}
           name={activeVideo.name}
         />
       )}

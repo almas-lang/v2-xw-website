@@ -78,15 +78,13 @@ export default function VideoSection() {
       },
       events: {
         onReady: (event) => {
-          // Auto-play muted after 1 second
+          // Auto-play muted immediately
           if (!hasAutoPlayed.current) {
-            setTimeout(() => {
-              event.target.mute();
-              event.target.playVideo();
-              setIsPlaying(true);
-              setIsMuted(true);
-              hasAutoPlayed.current = true;
-            }, 1000);
+            event.target.mute();
+            event.target.playVideo();
+            setIsPlaying(true);
+            setIsMuted(true);
+            hasAutoPlayed.current = true;
           }
         },
         onStateChange: (event) => {

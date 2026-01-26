@@ -13,7 +13,7 @@ const featuredStories = [
     role: 'Sr. Designer',
     company: 'McKinsey & Company',
     image: '/images/testimonials/pavitra-suji.jpg',
-    video: '/videos/pavi.MP4',
+    youtubeId: 'ozw4zab_gH0',
   },
   {
     name: 'Ashley Alemao',

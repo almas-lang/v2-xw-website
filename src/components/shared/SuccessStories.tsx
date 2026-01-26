@@ -327,6 +327,7 @@ export default function SuccessStories({
   const sectionRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
   const [activeVideo, setActiveVideo] = useState<{ src?: string; youtubeId?: string; name: string } | null>(null);
+  const [playingInline, setPlayingInline] = useState<string | null>(null); // Track which card is playing inline
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -347,14 +348,23 @@ export default function SuccessStories({
     return () => observer.disconnect();
   }, []);
 
-  const handleVideoClick = (story: typeof featuredStories[0]) => {
-    if (story.video || story.youtubeId) {
+  const handleVideoClick = (story: typeof featuredStories[0], e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (story.youtubeId) {
+      // Play YouTube videos inline
+      setPlayingInline(playingInline === story.name ? null : story.name);
+    } else if (story.video) {
+      // Play local videos in modal
       setActiveVideo({
         src: story.video,
-        youtubeId: story.youtubeId,
         name: story.name
       });
     }
+  };
+
+  const handleStopInline = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setPlayingInline(null);
   };
 
   return (
@@ -466,21 +476,41 @@ export default function SuccessStories({
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 mb-8 sm:mb-10 md:mb-12">
             {featuredStories.map((story, index) => {
               const hasVideo = story.video || story.youtubeId;
+              const isPlayingInline = playingInline === story.name;
               return (
               <div
                 key={story.name}
-                className={`group ${hasVideo ? 'cursor-pointer' : 'cursor-default'}`}
-                onClick={() => handleVideoClick(story)}
+                className={`group ${hasVideo && !isPlayingInline ? 'cursor-pointer' : 'cursor-default'}`}
+                onClick={(e) => !isPlayingInline && handleVideoClick(story, e)}
                 style={{
                   opacity: isVisible ? 1 : 0,
                   transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
                   transition: `all 0.7s cubic-bezier(0.4, 0, 0.2, 1) ${0.5 + index * 0.1}s`,
                 }}
               >
-                <div className={`relative rounded-xl sm:rounded-2xl overflow-hidden border-2 border-g200 transition-all duration-500 shadow-md ${hasVideo ? 'sm:hover:border-accent/40 sm:hover:shadow-xl' : ''}`}>
+                <div className={`relative rounded-xl sm:rounded-2xl overflow-hidden border-2 border-g200 transition-all duration-500 shadow-md ${hasVideo && !isPlayingInline ? 'sm:hover:border-accent/40 sm:hover:shadow-xl' : ''}`}>
                   {/* Image/Video area */}
                   <div className="relative aspect-[3/4] sm:aspect-[4/5] overflow-hidden">
-                    {story.video ? (
+                    {/* Inline YouTube Player */}
+                    {isPlayingInline && story.youtubeId ? (
+                      <>
+                        <iframe
+                          src={`https://www.youtube.com/embed/${story.youtubeId}?autoplay=1&rel=0&playsinline=1`}
+                          className="absolute inset-0 w-full h-full"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                          title={`Testimonial video from ${story.name}`}
+                        />
+                        {/* Close button */}
+                        <button
+                          onClick={handleStopInline}
+                          className="absolute top-3 right-3 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-black/60 hover:bg-black/80 transition-colors"
+                          aria-label="Close video"
+                        >
+                          <CloseIcon className="w-4 h-4 text-white" />
+                        </button>
+                      </>
+                    ) : story.video ? (
                       <video
                         src={story.video}
                         className="absolute inset-0 w-full h-full object-cover"
@@ -498,11 +528,13 @@ export default function SuccessStories({
                       <Avatar name={story.name} image={story.image} size="large" />
                     )}
 
-                    {/* Gradient overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                    {/* Gradient overlay - hide when playing inline */}
+                    {!isPlayingInline && (
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                    )}
 
-                    {/* Play button - only show if video exists */}
-                    {hasVideo && (
+                    {/* Play button - only show if video exists and not playing */}
+                    {hasVideo && !isPlayingInline && (
                       <div className="absolute inset-0 flex items-center justify-center">
                         <div className="transform sm:group-hover:scale-110 transition-transform duration-300">
                           <div className="relative">
@@ -513,18 +545,20 @@ export default function SuccessStories({
                       </div>
                     )}
 
-                    {/* Info overlay at bottom */}
-                    <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5 md:p-6">
-                      <h3 className="font-heading text-lg md:text-xl font-bold text-white mb-1">
-                        {story.name}
-                      </h3>
-                      <p className="font-body text-sm text-white/90">
-                        {story.role}
-                      </p>
-                      <p className="font-body text-xs sm:text-sm text-white/70">
-                        {story.company}
-                      </p>
-                    </div>
+                    {/* Info overlay at bottom - hide when playing inline */}
+                    {!isPlayingInline && (
+                      <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5 md:p-6">
+                        <h3 className="font-heading text-lg md:text-xl font-bold text-white mb-1">
+                          {story.name}
+                        </h3>
+                        <p className="font-body text-sm text-white/90">
+                          {story.role}
+                        </p>
+                        <p className="font-body text-xs sm:text-sm text-white/70">
+                          {story.company}
+                        </p>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>

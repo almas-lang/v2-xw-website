@@ -37,18 +37,18 @@ export default function ToolsSection({
     if (!tool.logo) return null;
 
     const baseClasses = variant === 'white'
-      ? 'flex-shrink-0 px-6 py-4 bg-white border border-g200 rounded-2xl hover:border-g300 hover:shadow-sm'
-      : 'flex-shrink-0 px-6 py-4 rounded-2xl hover:scale-105';
+      ? 'flex-shrink-0 px-3 py-2.5 sm:px-5 sm:py-3.5 md:px-6 md:py-4 bg-white border border-g200 rounded-xl sm:rounded-2xl hover:border-g300 hover:shadow-sm'
+      : 'flex-shrink-0 px-3 py-2.5 sm:px-5 sm:py-3.5 md:px-6 md:py-4 rounded-xl sm:rounded-2xl hover:scale-105';
 
     const tealStyle = variant === 'teal'
       ? { background: 'rgba(74, 144, 164, 0.1)', border: '1px solid rgba(74, 144, 164, 0.2)' }
       : {};
 
     const sizeClass = tool.size === 'xlarge'
-      ? 'w-[180px] h-[56px]'
+      ? 'w-[100px] h-[32px] sm:w-[140px] sm:h-[44px] md:w-[180px] md:h-[56px]'
       : tool.size === 'large'
-        ? 'w-[140px] h-[44px]'
-        : 'w-[100px] h-[32px]';
+        ? 'w-[80px] h-[28px] sm:w-[110px] sm:h-[36px] md:w-[140px] md:h-[44px]'
+        : 'w-[60px] h-[22px] sm:w-[80px] sm:h-[28px] md:w-[100px] md:h-[32px]';
 
     return (
       <div
@@ -109,11 +109,11 @@ export default function ToolsSection({
 
       {/* Gradient edges for fade effect */}
       <div
-        className="absolute left-0 top-0 bottom-0 w-32 md:w-48 z-10 pointer-events-none"
+        className="absolute left-0 top-0 bottom-0 w-8 sm:w-16 md:w-32 lg:w-48 z-10 pointer-events-none"
         style={{ background: 'linear-gradient(90deg, #FAFAFA 0%, transparent 100%)' }}
       />
       <div
-        className="absolute right-0 top-0 bottom-0 w-32 md:w-48 z-10 pointer-events-none"
+        className="absolute right-0 top-0 bottom-0 w-8 sm:w-16 md:w-32 lg:w-48 z-10 pointer-events-none"
         style={{ background: 'linear-gradient(270deg, #FAFAFA 0%, transparent 100%)' }}
       />
 
@@ -140,21 +140,21 @@ export default function ToolsSection({
       >
         {/* Row 1 - moves right */}
         <div className="relative overflow-hidden">
-          <div className="flex gap-4 animate-marquee-right">
+          <div className="flex gap-2 sm:gap-3 md:gap-4 animate-marquee-right">
             {[...row1, ...row1, ...row1, ...row1].map((tool, index) => renderTool(tool, index, 'white'))}
           </div>
         </div>
 
         {/* Row 2 - moves left (reverse) - alice blue themed */}
         <div className="relative overflow-hidden">
-          <div className="flex gap-4 animate-marquee-left">
+          <div className="flex gap-2 sm:gap-3 md:gap-4 animate-marquee-left">
             {[...row2, ...row2, ...row2, ...row2].map((tool, index) => renderTool(tool, index, 'teal'))}
           </div>
         </div>
 
         {/* Row 3 - moves right slower */}
         <div className="relative overflow-hidden">
-          <div className="flex gap-4 animate-marquee-right-slow">
+          <div className="flex gap-2 sm:gap-3 md:gap-4 animate-marquee-right-slow">
             {[...row3, ...row1.slice(0, 4), ...row3, ...row1.slice(0, 4), ...row3, ...row1.slice(0, 4)].map((tool, index) => renderTool(tool, index, 'white'))}
           </div>
         </div>

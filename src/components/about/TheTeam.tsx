@@ -4,7 +4,7 @@ const founders = [
   {
     name: 'Almas Tasneem',
     role: 'CEO & Co-founder',
-    linkedin: 'https://linkedin.com/in/almastasneem',
+    linkedin: 'https://www.linkedin.com/in/almas-t/',
     website: 'https://almastasneem.com',
     image: '/images/almas.png',
     imagePosition: 'center 20%',
@@ -13,7 +13,7 @@ const founders = [
   {
     name: 'Shaik Murad',
     role: 'Head of Product & Co-founder',
-    linkedin: 'https://linkedin.com/in/shaikmurad',
+    linkedin: 'https://www.linkedin.com/in/shaikmurad/',
     website: 'https://shaikmurad.com',
     image: '/images/Murad.png',
     color: '#4A90A4', // Teal
@@ -24,19 +24,22 @@ const advisors = [
   {
     name: 'Fatima Sultana',
     role: 'Product & Leadership Advisor',
-    linkedin: 'https://linkedin.com/in/fatimasultana',
+    linkedin: 'https://www.linkedin.com/in/fatima-sultana/',
     initials: 'FS',
+    image: '/images/fatima.jpeg',
   },
   {
     name: 'Rishik Jha',
     role: 'Design Consultant',
-    linkedin: 'https://linkedin.com/in/rishikjha',
+    linkedin: 'https://www.linkedin.com/in/rishik-jha/',
     initials: 'RJ',
+    image: '/images/rishik.jpg',
+    imagePosition: 'center 5%',
   },
   {
     name: 'Ankit Sharma',
     role: 'Tech Consultant',
-    linkedin: 'https://linkedin.com/in/ankitsharma',
+    linkedin: 'https://www.linkedin.com/in/asharma1006/',
     initials: 'AS',
   },
 ];

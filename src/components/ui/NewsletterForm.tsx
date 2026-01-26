@@ -31,12 +31,22 @@ export default function NewsletterForm() {
 
     setStatus('loading');
 
-    // Simulate API call - replace with actual newsletter subscription logic
     try {
-      // TODO: Replace with actual newsletter API endpoint
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      setStatus('success');
-      setEmail('');
+      const response = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setStatus('success');
+        setEmail('');
+      } else {
+        setErrorMessage(data.error || 'Something went wrong. Please try again.');
+        setStatus('error');
+      }
     } catch {
       setErrorMessage('Something went wrong. Please try again.');
       setStatus('error');

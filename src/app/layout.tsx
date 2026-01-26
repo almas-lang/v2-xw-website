@@ -5,6 +5,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import ScrollToTop from "@/components/layout/ScrollToTop";
 import SchemaOrg from "@/components/seo/SchemaOrg";
+import Analytics from "@/components/Analytics";
 
 const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-heading",
@@ -159,6 +160,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body className={`${plusJakarta.variable} ${inter.variable} antialiased`}>
+        <Analytics />
         <ScrollToTop />
         <a href="#main-content" className="sr-only">
           Skip to main content

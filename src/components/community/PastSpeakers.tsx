@@ -4,15 +4,15 @@ import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 
 const speakers = [
-  { name: 'Mohammed Fahad', title: 'Art Director @ Bangalore School of Design & Tech', featured: true, color: '#6366f1', image: '/images/community-fahad.JPG', imagePosition: 'right 20%' },
-  { name: 'Ankit Sharma', title: 'Senior Engineer @ Guidewire', featured: false, color: '#8b5cf6', image: '/images/community-ankit.jpg' },
-  { name: 'Almas Tasneem', title: 'CEO & Founder @ Xperience Wave', featured: true, color: '#ec4899', image: '/images/community-almas.jpg' },
-  { name: 'Pavan Muthyala', title: 'Head of Design @ Bob', featured: false, color: '#f59e0b', image: '/images/community-pavan.JPG' },
-  { name: 'Shaik Murad', title: 'Head of Product & Design @ Xperience Wave', featured: false, color: '#10b981', image: '/images/community-murad.jpg' },
-  { name: 'Pradeep', title: 'Speaker @ WaveMakers Connect', featured: true, color: '#6366f1', image: '/images/community-pradeep.JPG' },
-  { name: 'Rishik Jha', title: 'Lead Designer @ Happiest Minds', featured: false, color: '#f97316', image: '/images/community-rishik.jpg' },
+  { name: 'Mohammed Fahad', title: 'Art Director @ Bangalore School of Design & Tech', featured: true, color: '#6366f1', image: '/images/community-fahad.JPG', imagePosition: 'right 20%', linkedin: 'https://www.linkedin.com/in/mohammed-fahad-420380122/' },
+  { name: 'Ankit Sharma', title: 'Senior Engineer @ Guidewire', featured: false, color: '#8b5cf6', image: '/images/community-ankit.jpg', linkedin: 'https://www.linkedin.com/in/asharma1006/' },
+  { name: 'Almas Tasneem', title: 'CEO & Founder @ Xperience Wave', featured: true, color: '#ec4899', image: '/images/community-almas.jpg', linkedin: 'https://www.linkedin.com/in/almas-t/' },
+  { name: 'Pavan Muthyala', title: 'Head of Design @ Bob', featured: false, color: '#f59e0b', image: '/images/Pavan Mutyala.jpeg', linkedin: 'https://www.linkedin.com/in/pavan-muthyala/' },
+  { name: 'Shaik Murad', title: 'Head of Product & Design @ Xperience Wave', featured: false, color: '#10b981', image: '/images/community-murad.jpg', linkedin: 'https://www.linkedin.com/in/shaikmurad/' },
+  { name: 'Pradeep Naik', title: 'Founder and CEO at Nxuniq', featured: true, color: '#6366f1', image: '/images/community-pradeep.JPG', linkedin: 'https://www.linkedin.com/in/pradeep-naik147/' },
+  { name: 'Rishik Jha', title: 'Lead Designer @ Happiest Minds', featured: false, color: '#f97316', image: '/images/community-rishik.jpg', linkedin: 'https://www.linkedin.com/in/rishik-jha/' },
   // { name: 'Shaik Anas', title: 'Designer from Bangalore School of Design & Tech', featured: false, color: '#8b5cf6' },
-  { name: 'Vidhya Sagar', title: 'Award Winning UX Designer from NIFT', featured: false, color: '#14b8a6', image: '/images/community-vidyasagar.JPG', imagePosition: 'center 15%' },
+  { name: 'Vidhya Sagar', title: 'Award Winning UX Designer from NIFT', featured: false, color: '#14b8a6', image: '/images/community-vidyasagar.JPG', imagePosition: 'center 15%', linkedin: 'https://www.linkedin.com/in/vidhyasagarhv/' },
 ];
 
 // Seeded random for consistent SSR/client values
@@ -247,7 +247,7 @@ function SpeakerCard({
   isHovered = false,
   color,
 }: {
-  speaker: { name: string; title: string; image?: string; imagePosition?: string };
+  speaker: { name: string; title: string; image?: string; imagePosition?: string; linkedin?: string };
   index: number;
   featured?: boolean;
   isHovered?: boolean;
@@ -330,16 +330,20 @@ function SpeakerCard({
           <p className={`text-neutral-500 mb-3 line-clamp-2 ${featured ? 'text-sm' : 'text-xs'}`}>
             {speaker.title}
           </p>
-          <a
-            href="#"
-            className="inline-flex items-center gap-1 text-xs font-medium transition-colors duration-300"
-            style={{ color: isHovered ? color : '#9ca3af' }}
-          >
-            LinkedIn
-            <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
-            </svg>
-          </a>
+          {speaker.linkedin && (
+            <a
+              href={speaker.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 text-xs font-medium transition-colors duration-300"
+              style={{ color: isHovered ? color : '#9ca3af' }}
+            >
+              LinkedIn
+              <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+              </svg>
+            </a>
+          )}
         </div>
 
         {/* Corner decoration */}

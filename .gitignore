@@ -43,3 +43,5 @@ next-env.d.ts
 # Large video files
 public/images/success-stories/*.mp4
 public/images/success-stories/*.MP4
+public/videos/*.mp4
+public/videos/*.MP4

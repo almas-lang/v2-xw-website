@@ -5,28 +5,28 @@ import Image from 'next/image';
 
 // Logo paths mapping
 const companyLogos: Record<string, { path: string; width: number; height: number }> = {
-  'JP Morgan': { path: '/images/logos/jpmorgan.png', width: 120, height: 40 },
-  'McKinsey': { path: '/images/logos/McKinsey & Company/McKinsey.png', width: 120, height: 40 },
-  'Intel': { path: '/images/logos/Intel/Intel_idF_neNFIz_0.svg', width: 80, height: 32 },
-  'Deloitte': { path: '/images/logos/Deloitte/Deloitte_idXbysKEDR_0.svg', width: 100, height: 32 },
-  'Accenture': { path: '/images/logos/Accenture/Accenture_id4vRrAYpl_0.svg', width: 110, height: 32 },
-  'Siemens': { path: '/images/logos/Siemens/Siemens_id0if2F9r8_0.svg', width: 100, height: 32 },
-  'Bosch': { path: '/images/logos/Bosch/Bosch_idi5e7gC2E_0.svg', width: 100, height: 32 },
-  'TCS': { path: '/images/logos/Tata Consultancy Services/Tata_Consultancy_Services_old_logo.png', width: 120, height: 40 },
-  'Sapient': { path: '/images/logos/Sapient.png', width: 100, height: 32 },
-  'Ericsson': { path: '/images/logos/Ericsson/Ericsson_id130lHJL9_0.svg', width: 100, height: 32 },
-  'Cognizant': { path: '/images/logos/Cognizant/Cognizant_idqBwjBQXB_0.svg', width: 110, height: 32 },
-  'Infosys': { path: '/images/logos/Infosys/Infosys_idxq8SaZnR_0.svg', width: 90, height: 32 },
-  'Google': { path: '/images/logos/Google/Google_Logo_0.svg', width: 90, height: 32 },
-  'Meta': { path: '/images/logos/Meta/Meta_idlf4cVSsS_0.svg', width: 90, height: 32 },
-  'LinkedIn': { path: '/images/logos/LinkedIn/LinkedIn_Logo_0.svg', width: 100, height: 32 },
-  'AWS': { path: '/images/logos/Amazon Web Services/Amazon Web Services_idS5TK0MYh_0.svg', width: 50, height: 32 },
-  'Figma': { path: '/images/logos/Figma/Figma_Logo_0.svg', width: 80, height: 32 },
+  'JP Morgan': { path: '/images/jpmorgan.png', width: 120, height: 40 },
+  'McKinsey': { path: '/images/McKinsey.png', width: 120, height: 40 },
+  'Intel': { path: '/images/Intel.png', width: 80, height: 32 },
+  'Deloitte': { path: '/images/Deloitte.png', width: 100, height: 32 },
+  'Accenture': { path: '/images/Accenture.png', width: 110, height: 32 },
+  'Siemens': { path: '/images/Siemens.png', width: 100, height: 32 },
+  'Bosch': { path: '/images/Bosch.png', width: 100, height: 32 },
+  'TCS': { path: '/images/Tata_Consultancy_Services.png', width: 120, height: 40 },
+  'Sapient': { path: '/images/Sapient.png', width: 100, height: 32 },
+  'Ericsson': { path: '/images/Ericsson.png', width: 100, height: 32 },
+  'Cognizant': { path: '/images/Cognizant.png', width: 110, height: 32 },
+  'Infosys': { path: '/images/Infosys.png', width: 90, height: 32 },
+  'Google': { path: '/images/Google.png', width: 90, height: 32 },
+  'Meta': { path: '/images/Meta.png', width: 90, height: 32 },
+  'LinkedIn': { path: '/images/LinkedIn.png', width: 100, height: 32 },
+  'AWS': { path: '/images/AWS.png', width: 50, height: 32 },
+  'Figma': { path: '/images/Figma-Logo.png', width: 80, height: 32 },
 };
 
 const defaultCompanies = [
-  ['JP Morgan', 'McKinsey', 'Intel', 'Deloitte', 'Accenture', 'Siemens'],
-  ['Bosch', 'TCS', 'Sapient', 'Ericsson', 'Cognizant', 'Infosys'],
+  ['JP Morgan', 'McKinsey', 'Intel', 'Deloitte', 'Accenture'],
+  ['Siemens', 'Bosch', 'TCS', 'Sapient', 'Ericsson', 'Cognizant', 'Infosys'],
 ];
 
 interface MenteesWorkAtProps {
@@ -115,7 +115,7 @@ export default function MenteesWorkAt({
                       transitionDelay: `${delay}ms`,
                     }}
                   >
-                    <div className="px-6 py-4 md:px-8 md:py-5 bg-white border border-g200 rounded-xl flex items-center justify-center min-w-[140px] md:min-w-[160px] h-[60px] md:h-[70px] hover:border-g300 hover:shadow-sm transition-all duration-300">
+                    <div className="px-5 py-4 md:px-6 md:py-5 bg-white border border-g200 rounded-xl flex items-center justify-center min-w-[120px] md:min-w-[140px] h-[60px] md:h-[70px] hover:border-g300 hover:shadow-sm transition-all duration-300">
                       {companyLogos[company] ? (
                         <Image
                           src={companyLogos[company].path}

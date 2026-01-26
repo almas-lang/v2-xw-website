@@ -310,8 +310,19 @@ export default function TeamGrid({
                   : 'bg-white border-g200 hover:border-g300'
               }`}
             >
-              {/* Initials */}
-              {member.initials ? (
+              {/* Photo or Initials */}
+              {member.image ? (
+                <div className="w-12 h-12 rounded-xl overflow-hidden mb-4 group-hover:scale-110 transition-transform">
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    width={48}
+                    height={48}
+                    className="w-full h-full object-cover"
+                    style={{ objectPosition: member.imagePosition || 'top' }}
+                  />
+                </div>
+              ) : member.initials ? (
                 <div
                   className="w-12 h-12 rounded-xl flex items-center justify-center font-heading text-lg font-bold mb-4 group-hover:scale-110 transition-transform"
                   style={{

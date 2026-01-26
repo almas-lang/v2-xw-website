@@ -116,9 +116,9 @@ export default function WhatYoullLearn({
 
         {/* Modules Grid - Magazine layout */}
         <div className="grid grid-cols-12 gap-4 md:gap-6">
-          {/* First module - Featured large */}
+          {/* First module - Compact */}
           <div
-            className="col-span-12 md:col-span-7 transition-all duration-1000"
+            className="col-span-12 md:col-span-5 transition-all duration-1000"
             style={{
               opacity: isVisible ? 1 : 0,
               transform: isVisible ? 'translateY(0)' : 'translateY(50px)',
@@ -126,7 +126,7 @@ export default function WhatYoullLearn({
             }}
           >
             <div
-              className="h-full p-8 md:p-10 rounded-2xl relative group"
+              className="h-full p-8 rounded-2xl relative group"
               style={{
                 background: 'linear-gradient(135deg, #0A0A0A 0%, #141414 100%)',
                 border: '1px solid #2a2a2a',
@@ -134,7 +134,7 @@ export default function WhatYoullLearn({
             >
               {/* Number accent */}
               <span
-                className="absolute -top-4 -left-2 font-heading text-[120px] md:text-[160px] font-black leading-none opacity-[0.03] select-none"
+                className="absolute -top-4 -left-2 font-heading text-[120px] font-black leading-none opacity-[0.03] select-none"
                 style={{ color: colors.primary }}
               >
                 01
@@ -150,16 +150,16 @@ export default function WhatYoullLearn({
 
               <div className="relative">
                 <h3
-                  className="font-heading text-lg md:text-xl font-bold uppercase tracking-wide mb-2"
+                  className="font-heading text-lg font-bold uppercase tracking-wide mb-2"
                   style={{ color: colors.primary }}
                 >
                   {modules[0]?.title}
                 </h3>
-                <p className="font-body text-sm md:text-base text-neutral-400 mb-8 max-w-md">
+                <p className="font-body text-sm text-neutral-400 mb-6">
                   {modules[0]?.subtitle}
                 </p>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3">
+                <div className="space-y-3">
                   {modules[0]?.items.map((item, i) => (
                     <div key={i} className="flex items-start gap-3">
                       <span
@@ -174,9 +174,9 @@ export default function WhatYoullLearn({
             </div>
           </div>
 
-          {/* Second module - Stacked right */}
+          {/* Second module - Featured large */}
           <div
-            className="col-span-12 md:col-span-5 transition-all duration-1000"
+            className="col-span-12 md:col-span-7 transition-all duration-1000"
             style={{
               opacity: isVisible ? 1 : 0,
               transform: isVisible ? 'translateY(0)' : 'translateY(50px)',
@@ -184,14 +184,14 @@ export default function WhatYoullLearn({
             }}
           >
             <div
-              className="h-full p-8 rounded-2xl relative group"
+              className="h-full p-8 md:p-10 rounded-2xl relative group"
               style={{
                 background: 'linear-gradient(135deg, #0A0A0A 0%, #141414 100%)',
                 border: '1px solid #2a2a2a',
               }}
             >
               <span
-                className="absolute -top-4 -left-2 font-heading text-[120px] font-black leading-none opacity-[0.03] select-none"
+                className="absolute -top-4 -left-2 font-heading text-[120px] md:text-[160px] font-black leading-none opacity-[0.03] select-none"
                 style={{ color: colors.primary }}
               >
                 02
@@ -206,16 +206,16 @@ export default function WhatYoullLearn({
 
               <div className="relative">
                 <h3
-                  className="font-heading text-lg font-bold uppercase tracking-wide mb-2"
+                  className="font-heading text-lg md:text-xl font-bold uppercase tracking-wide mb-2"
                   style={{ color: colors.primary }}
                 >
                   {modules[1]?.title}
                 </h3>
-                <p className="font-body text-sm text-neutral-400 mb-6">
+                <p className="font-body text-sm md:text-base text-neutral-400 mb-8 max-w-md">
                   {modules[1]?.subtitle}
                 </p>
 
-                <div className="space-y-3">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-3">
                   {modules[1]?.items.map((item, i) => (
                     <div key={i} className="flex items-start gap-3">
                       <span

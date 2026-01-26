@@ -7,7 +7,16 @@ import Link from 'next/link';
 // DATA - SEO OPTIMIZED CONTENT
 // ============================================
 
-const featuredStories = [
+interface FeaturedStory {
+  name: string;
+  role: string;
+  company: string;
+  image: string;
+  video?: string;
+  youtubeId?: string;
+}
+
+const featuredStories: FeaturedStory[] = [
   {
     name: 'Pavitra Suji',
     role: 'Sr. Designer',
@@ -348,7 +357,7 @@ export default function SuccessStories({
     return () => observer.disconnect();
   }, []);
 
-  const handleVideoClick = (story: typeof featuredStories[0], e: React.MouseEvent) => {
+  const handleVideoClick = (story: FeaturedStory, e: React.MouseEvent) => {
     e.stopPropagation();
     if (story.youtubeId) {
       // Play YouTube videos inline

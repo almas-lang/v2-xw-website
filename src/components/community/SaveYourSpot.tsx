@@ -9,13 +9,13 @@ const seededRandom = (seed: number) => {
   return x - Math.floor(x);
 };
 
-// Confetti particles with deterministic values
+// Confetti particles with deterministic values (rounded to avoid hydration mismatch)
 const confettiParticles = Array.from({ length: 20 }, (_, i) => ({
   id: i,
-  left: `${seededRandom(i * 1.1) * 100}%`,
-  size: seededRandom(i * 2.2) * 6 + 3,
-  duration: seededRandom(i * 3.3) * 8 + 12,
-  delay: seededRandom(i * 4.4) * 5,
+  left: `${Math.round(seededRandom(i * 1.1) * 100)}%`,
+  size: Math.round(seededRandom(i * 2.2) * 6 + 3),
+  duration: Math.round(seededRandom(i * 3.3) * 8 + 12),
+  delay: Math.round(seededRandom(i * 4.4) * 5 * 10) / 10,
   color: ['#6366f1', '#8b5cf6', '#a78bfa', '#818cf8'][Math.floor(seededRandom(i * 5.5) * 4)],
   type: seededRandom(i * 6.6) > 0.5 ? 'circle' : 'square',
 }));

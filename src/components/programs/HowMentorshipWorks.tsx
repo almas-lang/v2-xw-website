@@ -67,7 +67,7 @@ export default function HowMentorshipWorks() {
       videoId: YOUTUBE_VIDEO_ID,
       playerVars: {
         autoplay: 0,
-        controls: 0,
+        controls: 1,
         modestbranding: 1,
         rel: 0,
         showinfo: 0,

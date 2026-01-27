@@ -14,7 +14,6 @@ const programsDropdown = [
 
 const businessDropdown = [
   { href: '/talent', label: 'Talent', tagline: 'Hire trained designers', color: '#6366F1' },
-  { href: '/design-services', label: 'Surge', tagline: 'Design services', color: '#8B5CF6' },
 ];
 
 const resourcesDropdown = [
@@ -268,8 +267,8 @@ export default function Header() {
               </div>
             </div>
 
-            {/* For Business Accordion - Hidden for now */}
-            {/* <div
+            {/* For Business Accordion */}
+            <div
               style={{
                 opacity: mobileMenuOpen ? 1 : 0,
                 transform: mobileMenuOpen ? 'translateY(0)' : 'translateY(20px)',
@@ -285,7 +284,7 @@ export default function Header() {
                 }`}
               >
                 <Link
-                  href="/for-business"
+                  href="/talent"
                   onClick={closeMobileMenu}
                   className="font-heading text-xl font-semibold hover:text-white"
                 >
@@ -336,7 +335,7 @@ export default function Header() {
                   ))}
                 </div>
               </div>
-            </div> */}
+            </div>
 
             {/* About */}
             <div
@@ -664,15 +663,15 @@ export default function Header() {
             </div>
           </li>
 
-          {/* For Business Dropdown - Hidden for now */}
-          {/* <li
+          {/* For Business Dropdown */}
+          <li
             className="relative"
             ref={businessRef}
             onMouseLeave={() => setBusinessOpen(false)}
           >
             <div className="flex items-center gap-1">
               <Link
-                href="/for-business"
+                href="/talent"
                 className={`font-heading text-sm font-medium transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:bg-accent after:transition-all ${
                   isBusinessActive
                     ? isDarkMode ? 'text-white after:w-full' : 'text-carbon after:w-full'
@@ -741,7 +740,7 @@ export default function Header() {
                 ))}
               </div>
             </div>
-          </li> */}
+          </li>
 
           {/* About, Community */}
           {navLinks.slice(1).map((link) => (

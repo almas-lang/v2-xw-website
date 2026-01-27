@@ -288,10 +288,18 @@ const blogTableOfContents: Record<string, { id: string; title: string }[]> = {
   ],
 };
 
-// Author bios
-const authorBios: Record<string, string> = {
-  'Shaik Murad': 'Senior UX Designer & Mentor helping designers break into senior roles through 1:1 mentorship.',
-  'Almas Tasneem': 'Design Lead & Career Coach specializing in portfolio strategy and interview preparation.',
+// Author data
+const authorData: Record<string, { role: string; bio: string; image: string }> = {
+  'Shaik Murad': {
+    role: 'Co-founder, Head of Design',
+    bio: '13+ years experience at Credit Saison, Milaap & Yokogawa. Specializes in design leadership & growth-based design.',
+    image: '/images/Murad.png',
+  },
+  'Almas Tasneem': {
+    role: 'CEO & Co-founder',
+    bio: '12+ years experience at Capgemini, CloudNuro & GE. Specializes in product design & brand strategy.',
+    image: '/images/almas.png',
+  },
 };
 
 // Blog-specific metadata for SEO
@@ -377,7 +385,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const categoryColor = getCategoryColor(post.category);
   const categoryLabel = getCategoryLabel(post.category);
   const tableOfContents = blogTableOfContents[slug] || [];
-  const authorBio = authorBios[post.author.name] || 'UX Design Mentor at Xperience Wave';
+  const author = authorData[post.author.name] || {
+    role: 'UX Mentor',
+    bio: 'Design mentor at Xperience Wave.',
+    image: '',
+  };
 
   // Get related posts (same category, excluding current)
   const relatedPosts = blogPosts
@@ -488,19 +500,19 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               {/* Author */}
               <div className="p-6 bg-snow rounded-xl">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 rounded-full overflow-hidden relative bg-g200 flex items-center justify-center">
-                    {post.author.avatar ? (
-                      <Image src={post.author.avatar} alt={post.author.name} fill className="object-cover" />
+                  <div className="w-12 h-12 rounded-full overflow-hidden relative bg-g200">
+                    {author.image ? (
+                      <Image src={author.image} alt={post.author.name} fill className="object-cover" />
                     ) : (
-                      <span className="text-lg font-bold text-g500">{post.author.name.charAt(0)}</span>
+                      <span className="w-full h-full flex items-center justify-center text-lg font-bold text-g500">{post.author.name.charAt(0)}</span>
                     )}
                   </div>
                   <div>
                     <p className="font-semibold text-carbon">{post.author.name}</p>
-                    <p className="text-sm text-g500">UX Mentor</p>
+                    <p className="text-sm text-g500">{author.role}</p>
                   </div>
                 </div>
-                <p className="text-sm text-g600 mb-4">{authorBio}</p>
+                <p className="text-sm text-g600 mb-4">{author.bio}</p>
                 <Link
                   href="/programs"
                   className="block w-full py-2 bg-carbon text-white text-sm font-medium rounded-lg hover:bg-carbon/90 text-center transition-colors"

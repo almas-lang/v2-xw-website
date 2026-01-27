@@ -420,7 +420,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       />
 
       {/* Hero Section */}
-      <header className="bg-snow pt-24 md:pt-32 pb-6 md:pb-8">
+      <header className="bg-snow pt-24 md:pt-28 pb-6 md:pb-8">
         <div className="max-w-[1200px] mx-auto px-5 md:px-8">
           {/* Breadcrumb */}
           <nav className="flex items-center gap-2 text-sm text-g500 mb-6" aria-label="Breadcrumb">

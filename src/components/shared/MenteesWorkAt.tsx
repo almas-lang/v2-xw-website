@@ -97,11 +97,11 @@ export default function MenteesWorkAt({
         </div>
 
         {/* Company Logos Grid */}
-        <div className="flex flex-col gap-4 md:gap-5 mb-8 sm:mb-10 md:mb-14">
+        <div className="flex flex-col gap-3 sm:gap-4 md:gap-5 mb-8 sm:mb-10 md:mb-14">
           {companies.map((row, rowIndex) => (
             <div
               key={rowIndex}
-              className="flex flex-wrap justify-center items-center gap-3 md:gap-4"
+              className="flex flex-wrap justify-center items-center gap-2 sm:gap-3 md:gap-4"
             >
               {row.map((company, companyIndex) => {
                 const delay = (rowIndex * 6 + companyIndex) * 50;
@@ -115,18 +115,17 @@ export default function MenteesWorkAt({
                       transitionDelay: `${delay}ms`,
                     }}
                   >
-                    <div className="px-5 py-4 md:px-6 md:py-5 bg-white border border-g200 rounded-xl flex items-center justify-center min-w-[120px] md:min-w-[140px] h-[60px] md:h-[70px] hover:border-g300 hover:shadow-sm transition-all duration-300">
+                    <div className="px-3 py-3 sm:px-4 sm:py-3.5 md:px-6 md:py-5 bg-white border border-g200 rounded-lg sm:rounded-xl flex items-center justify-center min-w-[90px] sm:min-w-[110px] md:min-w-[140px] h-[50px] sm:h-[56px] md:h-[70px] hover:border-g300 hover:shadow-sm transition-all duration-300">
                       {companyLogos[company] ? (
                         <Image
                           src={companyLogos[company].path}
                           alt={company}
                           width={companyLogos[company].width}
                           height={companyLogos[company].height}
-                          className="object-contain"
-                          style={{ maxHeight: '32px', width: 'auto' }}
+                          className="object-contain max-h-[24px] sm:max-h-[28px] md:max-h-[32px] w-auto"
                         />
                       ) : (
-                        <span className="font-heading text-base md:text-lg font-semibold text-carbon">
+                        <span className="font-heading text-sm sm:text-base md:text-lg font-semibold text-carbon">
                           {company}
                         </span>
                       )}

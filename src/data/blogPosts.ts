@@ -18,6 +18,7 @@ export interface BlogPost {
   publishedAt: string;
   readTime: string;
   featured?: boolean;
+  upcoming?: boolean;
 }
 
 export interface CategoryInfo {
@@ -72,6 +73,7 @@ export const blogPosts: BlogPost[] = [
     author: { name: 'Almas Tasneem' },
     publishedAt: '2026-01-12',
     readTime: '6 min',
+    upcoming: true,
   },
   {
     id: '3',
@@ -116,6 +118,7 @@ export const blogPosts: BlogPost[] = [
     author: { name: 'Shaik Murad' },
     publishedAt: '2026-01-08',
     readTime: '8 min',
+    upcoming: true,
   },
   {
     id: '5',
@@ -127,6 +130,7 @@ export const blogPosts: BlogPost[] = [
     author: { name: 'Almas Tasneem' },
     publishedAt: '2026-01-05',
     readTime: '6 min',
+    upcoming: true,
   },
   {
     id: '6',
@@ -138,6 +142,7 @@ export const blogPosts: BlogPost[] = [
     author: { name: 'Almas Tasneem' },
     publishedAt: '2026-01-03',
     readTime: '10 min',
+    upcoming: true,
   },
   {
     id: '7',
@@ -149,6 +154,7 @@ export const blogPosts: BlogPost[] = [
     author: { name: 'Shaik Murad' },
     publishedAt: '2025-12-28',
     readTime: '12 min',
+    upcoming: true,
   },
   {
     id: '8',
@@ -160,6 +166,7 @@ export const blogPosts: BlogPost[] = [
     author: { name: 'Shaik Murad' },
     publishedAt: '2025-12-22',
     readTime: '7 min',
+    upcoming: true,
   },
   {
     id: '9',
@@ -171,6 +178,7 @@ export const blogPosts: BlogPost[] = [
     author: { name: 'Almas Tasneem' },
     publishedAt: '2025-12-18',
     readTime: '5 min',
+    upcoming: true,
   },
   {
     id: '10',
@@ -182,6 +190,7 @@ export const blogPosts: BlogPost[] = [
     author: { name: 'Shaik Murad' },
     publishedAt: '2025-12-15',
     readTime: '9 min',
+    upcoming: true,
   },
   {
     id: '11',
@@ -193,6 +202,7 @@ export const blogPosts: BlogPost[] = [
     author: { name: 'Almas Tasneem' },
     publishedAt: '2025-12-10',
     readTime: '8 min',
+    upcoming: true,
   },
 ];
 

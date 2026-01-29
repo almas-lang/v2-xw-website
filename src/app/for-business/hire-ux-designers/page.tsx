@@ -165,7 +165,7 @@ export default function HireUXDesignersPage() {
         <div className="absolute bottom-[30%] left-[5%] w-2 h-2 bg-indigo-400/30 rounded-full hidden lg:block animate-pulse" style={{ animationDelay: '2s' }} />
 
         {/* Content */}
-        <div className="relative z-10 pt-24 md:pt-28 pb-28 md:pb-40">
+        <div className="relative z-10 pt-24 md:pt-28 pb-20 md:pb-28">
           <div className="max-w-[1200px] mx-auto px-5 md:px-8">
             {/* Breadcrumb */}
             <nav className="flex items-center gap-2 text-sm mb-16 sm:mb-20" aria-label="Breadcrumb">

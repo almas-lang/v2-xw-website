@@ -131,6 +131,9 @@ export default function Header() {
   // Check if on hire designers page (for different CTA)
   const isHireDesignersPage = pathname.startsWith('/for-business/hire-ux-designers');
 
+  // Check if on community page (for different CTA)
+  const isCommunityPage = pathname.startsWith('/community');
+
   // Close dropdown when clicking outside
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -488,13 +491,13 @@ export default function Header() {
             }}
           >
             <Button
-              href={isHireDesignersPage ? "/for-business/hire-ux-designers/requirements" : "https://calendly.com/team-xperiencewave/xw-strategy"}
+              href={isHireDesignersPage ? "/for-business/hire-ux-designers/requirements" : isCommunityPage ? "/community#register" : "https://calendly.com/team-xperiencewave/xw-strategy"}
               size="lg"
               className="w-full justify-center"
-              variant={isHireDesignersPage ? "indigo" : "primary"}
+              variant={isHireDesignersPage || isCommunityPage ? "indigo" : "primary"}
               onClick={closeMobileMenu}
             >
-              {isHireDesignersPage ? "Contact Us" : "Book strategy call"}
+              {isHireDesignersPage ? "Contact Us" : isCommunityPage ? "Register" : "Book strategy call"}
             </Button>
           </div>
         </div>
@@ -751,7 +754,9 @@ export default function Header() {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className={`font-heading text-sm font-medium transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:bg-accent after:transition-all ${
+                className={`font-heading text-sm font-medium transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:transition-all ${
+                  link.href === '/community' ? 'after:bg-indigo-500' : 'after:bg-accent'
+                } ${
                   isActive(link.href)
                     ? isDarkMode ? 'text-white after:w-full' : 'text-carbon after:w-full'
                     : isDarkMode ? 'text-g300 hover:text-white after:w-0 hover:after:w-full' : 'text-g600 hover:text-carbon after:w-0 hover:after:w-full'
@@ -846,11 +851,11 @@ export default function Header() {
         {/* Desktop CTA */}
         <div className="hidden lg:block">
           <Button
-            href={isHireDesignersPage ? "/for-business/hire-ux-designers/requirements" : "https://calendly.com/team-xperiencewave/xw-strategy"}
+            href={isHireDesignersPage ? "/for-business/hire-ux-designers/requirements" : isCommunityPage ? "/community#register" : "https://calendly.com/team-xperiencewave/xw-strategy"}
             size="sm"
-            variant={isHireDesignersPage ? "indigo" : "primary"}
+            variant={isHireDesignersPage || isCommunityPage ? "indigo" : "primary"}
           >
-            {isHireDesignersPage ? "Contact Us" : "Book strategy call"}
+            {isHireDesignersPage ? "Contact Us" : isCommunityPage ? "Register" : "Book strategy call"}
           </Button>
         </div>
 

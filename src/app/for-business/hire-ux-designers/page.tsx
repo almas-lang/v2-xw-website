@@ -168,7 +168,7 @@ export default function HireUXDesignersPage() {
         <div className="relative z-10 pt-24 md:pt-28 pb-28 md:pb-40">
           <div className="max-w-[1200px] mx-auto px-5 md:px-8">
             {/* Breadcrumb */}
-            <nav className="flex items-center gap-2 text-sm mb-8 sm:mb-10" aria-label="Breadcrumb">
+            <nav className="flex items-center gap-2 text-sm mb-16 sm:mb-20" aria-label="Breadcrumb">
               <Link href="/" className="text-white/60 hover:text-white underline underline-offset-2 transition-colors">
                 Home
               </Link>

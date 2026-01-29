@@ -79,7 +79,7 @@ export default function AboutHero() {
           <div className="aspect-[21/9] bg-gradient-to-b from-[#0A0A0A] to-[#0A0A0A] rounded-t-2xl flex items-center justify-center relative overflow-hidden">
             {/* Placeholder - replace with actual image */}
             <Image
-              src="/images/about-hero.jpeg"
+              src="/images/about-hero.svg"
               alt="Xperience Wave Team"
               fill
               className="object-cover rounded-t-2xl"

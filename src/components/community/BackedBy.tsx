@@ -6,7 +6,7 @@ import SponsorModal from './SponsorModal';
 
 const sponsors = [
   { type: 'Powered by', name: 'Xperience Wave', logo: '/images/xw-logo-light.png', color: '#6366f1' },
-  { type: 'F&B Partner', name: "It's Brown and Roasted", logo: '/images/logos/itsbrownandroasted.jpg', color: '#92400e' },
+  { type: 'F&B Partner', name: "It's Brown and Roasted", logo: '/images/itsbrownandroasted.jpg', color: '#92400e' },
 ];
 
 export default function BackedBy() {

@@ -126,9 +126,8 @@ export const metadata: Metadata = {
   manifest: "/manifest.json",
 
   // Verification
-  // TODO: Add Google Search Console verification code after setting up GSC
   verification: {
-    google: "", // Add verification code from Google Search Console
+    google: "ycs0l8Z41NZYikYMFF4A9cjexZjWCljZ4GuuDaFgfd8", // Add verification code from Google Search Console
     // yandex: "",
     // bing: "",
   },

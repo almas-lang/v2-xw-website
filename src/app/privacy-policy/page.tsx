@@ -195,7 +195,25 @@ export default function PrivacyPolicyPage() {
             {/* Section 8 */}
             <section className="mb-8">
               <h2 className="font-heading text-xl sm:text-2xl font-bold text-carbon mb-4">
-                <span className="text-accent">8.</span> Contact Us
+                <span className="text-accent">8.</span> Hiring & Recruitment Services
+              </h2>
+              <p className="font-body text-base text-g600 leading-relaxed mb-4">
+                When you use our hiring services to recruit UX designers, we collect additional information including:
+              </p>
+              <ul className="font-body text-base text-g600 leading-relaxed list-disc list-inside space-y-2 mb-4">
+                <li>Company information and hiring requirements</li>
+                <li>Role descriptions, budget ranges, and timelines</li>
+                <li>Contact details for recruitment purposes</li>
+              </ul>
+              <p className="font-body text-base text-g600 leading-relaxed">
+                This information is used solely to match you with suitable UX designers from our talent pool and to facilitate the hiring process. We do not share your hiring requirements with third parties except the designer candidates you choose to interview.
+              </p>
+            </section>
+
+            {/* Section 9 */}
+            <section className="mb-8">
+              <h2 className="font-heading text-xl sm:text-2xl font-bold text-carbon mb-4">
+                <span className="text-accent">9.</span> Contact Us
               </h2>
               <p className="font-body text-base text-g600 leading-relaxed mb-4">
                 If you have any questions or concerns about this Privacy Policy or our data practices, please contact us at{' '}

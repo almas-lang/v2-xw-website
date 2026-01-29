@@ -13,7 +13,7 @@ const programsDropdown = [
 ];
 
 const businessDropdown = [
-  { href: '/talent', label: 'Talent', tagline: 'Hire trained designers', color: '#6366F1' },
+  { href: '/for-business/hire-ux-designers', label: 'Hire UX Designers', tagline: 'Hire trained designers', color: '#6366F1' },
 ];
 
 const resourcesDropdown = [
@@ -284,7 +284,7 @@ export default function Header() {
                 }`}
               >
                 <Link
-                  href="/talent"
+                  href="/for-business/hire-ux-designers"
                   onClick={closeMobileMenu}
                   className="font-heading text-xl font-semibold hover:text-white"
                 >
@@ -671,7 +671,7 @@ export default function Header() {
           >
             <div className="flex items-center gap-1">
               <Link
-                href="/talent"
+                href="/for-business/hire-ux-designers"
                 className={`font-heading text-sm font-medium transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:bg-accent after:transition-all ${
                   isBusinessActive
                     ? isDarkMode ? 'text-white after:w-full' : 'text-carbon after:w-full'

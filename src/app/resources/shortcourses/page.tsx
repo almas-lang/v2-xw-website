@@ -3,12 +3,28 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import LeadCaptureModal, { LeadType } from '@/components/shared/LeadCaptureModal';
 
 // ============================================
 // COURSE DATA
 // ============================================
 
-const courses = [
+interface Course {
+  id: string;
+  title: string;
+  rating: string;
+  ratingCount: string;
+  status: string;
+  duration: string;
+  originalPrice: string;
+  price: string;
+  discount: string;
+  learnings: string[];
+  image: string;
+  leadType: LeadType;
+}
+
+const courses: Course[] = [
   {
     id: 'design-strategy-course',
     title: 'Design Strategy for Product Designers',
@@ -25,6 +41,7 @@ const courses = [
       'Tie design decisions to revenue and retention',
     ],
     image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80',
+    leadType: 'course-design-strategy',
   },
   {
     id: 'ux-research-course',
@@ -42,6 +59,7 @@ const courses = [
       'Present findings that drive product decisions',
     ],
     image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&q=80',
+    leadType: 'course-ux-research',
   },
   {
     id: 'portfolio-course',
@@ -59,6 +77,7 @@ const courses = [
       'Avoid the 7 mistakes that kill interview chances',
     ],
     image: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=800&q=80',
+    leadType: 'course-portfolio',
   },
   {
     id: 'design-system-course',
@@ -76,6 +95,7 @@ const courses = [
       'Avoid over-engineering — build only what you need',
     ],
     image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&q=80',
+    leadType: 'course-design-system',
   },
 ];
 
@@ -85,10 +105,17 @@ const courses = [
 
 export default function ShortCoursesPage() {
   const [isVisible, setIsVisible] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedLeadType, setSelectedLeadType] = useState<LeadType>('course-design-strategy');
 
   useEffect(() => {
     setIsVisible(true);
   }, []);
+
+  const openModal = (leadType: LeadType) => {
+    setSelectedLeadType(leadType);
+    setIsModalOpen(true);
+  };
 
   return (
     <>
@@ -294,6 +321,7 @@ export default function ShortCoursesPage() {
                         <span className="text-2xl font-bold text-carbon ml-2">₹{course.price}</span>
                       </div>
                       <button
+                        onClick={() => !isAvailable && openModal(course.leadType)}
                         className={`text-sm uppercase tracking-wider font-semibold transition-colors ${
                           isAvailable
                             ? 'text-carbon underline underline-offset-4 hover:text-accent'
@@ -391,6 +419,13 @@ export default function ShortCoursesPage() {
           </div>
         </div>
       </section>
+
+      {/* Lead Capture Modal */}
+      <LeadCaptureModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        leadType={selectedLeadType}
+      />
     </>
   );
 }

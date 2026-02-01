@@ -12,7 +12,7 @@ export interface FAQCategory {
   id: string;
   title: string;
   description: string;
-  theme: 'red' | 'alice' | 'teal' | 'coral' | 'gold';
+  theme: 'red' | 'alice' | 'teal' | 'coral' | 'gold' | 'indigo' | 'yellow';
   icon: string; // Icon name for the category
   faqs: FAQItem[];
 }
@@ -251,6 +251,85 @@ const uxCareerFaqs: FAQItem[] = [
 ];
 
 // ============================================
+// HIRING UX DESIGNERS FAQs - Indigo Theme
+// ============================================
+
+const hiringFaqs: FAQItem[] = [
+  {
+    question: 'What design roles can you help us hire?',
+    answer:
+      'UX Designers, Product Designers, UI Designers, Visual Designers, UX Researchers, UX Writers, Interaction Designers, Design Leads, Design Managers, and Principal Designers.',
+  },
+  {
+    question: 'Which industries do you work with?',
+    answer:
+      'SaaS, Fintech, EdTech, HealthTech, E-commerce, and Enterprise Software. We work best with funded tech companies scaling their product teams.',
+  },
+  {
+    question: 'How do you handle timezone differences when hiring remote designers?',
+    answer:
+      "We filter for timezone overlap before sharing profiles. Our designers are available across India, UAE, Singapore, US, UK, and Australia. You'll only see candidates who can work your hours.",
+  },
+  {
+    question: 'How do you ensure communication quality with remote UX designers?',
+    answer:
+      "Every designer in our pool completed a 90-day mentorship that includes async communication, stakeholder management, and documentation. They've already worked in distributed teams.",
+  },
+  {
+    question: 'How do you prevent moonlighting when hiring designers from India?',
+    answer:
+      "We only recommend designers actively seeking full-time roles. No passive candidates. No side-hustlers. We've trained them - we know their availability and commitment.",
+  },
+  {
+    question: 'How quickly can you share UX designer profiles?',
+    answer:
+      'Within 48-72 hours of understanding your requirements.',
+  },
+  {
+    question: "What if the designer doesn't work out after hiring?",
+    answer:
+      'If they leave within 30 days, we provide a free replacement.',
+  },
+  {
+    question: 'Who employs the designer after placement?',
+    answer:
+      'You do. They join your payroll directly - full-time, contract, or project-based. We facilitate the match, not the employment.',
+  },
+];
+
+// ============================================
+// VIVID YELLOW PODCAST FAQs - Yellow Theme
+// ============================================
+
+const podcastFaqs: FAQItem[] = [
+  {
+    question: 'What is Vivid Yellow?',
+    answer:
+      'A design and product podcast by Xperience Wave. We have conversations with designers, product leaders, founders, and makers about the craft, careers, and what it takes to build real products.',
+  },
+  {
+    question: 'Who should listen?',
+    answer:
+      "Anyone in design, product, or tech who wants real talk over polished advice. Whether you're a designer, PM, founder, or just curious about how products get built.",
+  },
+  {
+    question: 'How often do new episodes come out?',
+    answer:
+      'Bi-weekly. Subscribe on Spotify, YouTube, or Apple Podcasts to get notified.',
+  },
+  {
+    question: 'How can I be a guest?',
+    answer:
+      "We're always looking for people with stories worth hearing. Apply through our guest application form.",
+  },
+  {
+    question: 'Where can I listen?',
+    answer:
+      'Spotify, Apple Podcasts, YouTube, Google Podcasts—or subscribe to our newsletter for episodes in your inbox.',
+  },
+];
+
+// ============================================
 // CONSOLIDATED CATEGORIES
 // ============================================
 
@@ -283,7 +362,7 @@ export const faqCategories: FAQCategory[] = [
     id: 'ripple',
     title: 'Ripple',
     description: 'Career transition program for beginners',
-    theme: 'coral',
+    theme: 'teal',
     icon: 'ripple',
     faqs: rippleFaqs,
   },
@@ -291,7 +370,7 @@ export const faqCategories: FAQCategory[] = [
     id: 'current',
     title: 'Current',
     description: 'Senior mentorship for mid-level designers',
-    theme: 'gold',
+    theme: 'coral',
     icon: 'current',
     faqs: currentFaqs,
   },
@@ -299,9 +378,25 @@ export const faqCategories: FAQCategory[] = [
     id: 'tide',
     title: 'Tide',
     description: 'Leadership program for aspiring design leaders',
-    theme: 'alice',
+    theme: 'gold',
     icon: 'tide',
     faqs: tideFaqs,
+  },
+  {
+    id: 'hiring',
+    title: 'Hiring UX Designers',
+    description: 'Questions about hiring trained designers for your team',
+    theme: 'indigo',
+    icon: 'hiring',
+    faqs: hiringFaqs,
+  },
+  {
+    id: 'podcast',
+    title: 'Vivid Yellow Podcast',
+    description: 'Questions about our design and product podcast',
+    theme: 'yellow',
+    icon: 'podcast',
+    faqs: podcastFaqs,
   },
 ];
 

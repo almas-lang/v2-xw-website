@@ -10,6 +10,7 @@ const footerLinks = {
   ],
   company: [
     { href: '/about', label: 'About Us' },
+    { href: '/contact', label: 'Contact Us' },
     // { href: '/careers', label: 'Careers' }, // Hidden until page is created
     { href: '/privacy-policy', label: 'Privacy Policy' },
     { href: '/terms-of-service', label: 'Terms of Service' },
@@ -17,7 +18,7 @@ const footerLinks = {
   ],
   resources: [
     { href: '/resources/blogs', label: 'Blog' },
-    // { href: '/podcast', label: 'Podcast' }, // Hidden for now
+    { href: '/podcast', label: 'Podcast' },
     { href: '/community', label: 'Community' },
     { href: '/resources/faq', label: 'FAQs' },
     { href: '/resources/tools', label: 'Tools' },

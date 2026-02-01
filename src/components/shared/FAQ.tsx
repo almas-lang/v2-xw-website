@@ -1,6 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 import Button from '@/components/ui/Button';
 
 export interface FAQItem {
@@ -8,143 +10,272 @@ export interface FAQItem {
   answer: string;
 }
 
-type ThemeType = 'default' | 'coral' | 'teal' | 'gold';
+type ThemeType = 'default' | 'coral' | 'teal' | 'gold' | 'indigo';
 
-const themeColors: Record<ThemeType, { border: string; dots: string; accent: string; iconBg: string; iconBgHover: string }> = {
-  default: { border: '#A8D4F0', dots: '#A8D4F0', accent: '#A8D4F0', iconBg: '#DCEEFF', iconBgHover: '#c5ddf5' },
-  coral: { border: '#E85A4F', dots: '#E85A4F', accent: '#E85A4F', iconBg: '#FDEDEC', iconBgHover: '#f9d5d3' },
-  teal: { border: '#4A90A4', dots: '#4A90A4', accent: '#4A90A4', iconBg: '#DCEEFF', iconBgHover: '#c5ddf5' },
-  gold: { border: '#D4A853', dots: '#D4A853', accent: '#D4A853', iconBg: '#FEF3C7', iconBgHover: '#fde68a' },
+const themeColors: Record<ThemeType, {
+  accent: string;
+  accentHover: string;
+  accentBg: string;
+  accentText: string;
+  illustrationFilter: string;
+}> = {
+  default: {
+    accent: '#FF0023',
+    accentHover: '#e6001f',
+    accentBg: 'bg-accent',
+    accentText: 'text-accent',
+    illustrationFilter: 'hue-rotate(180deg) saturate(1.8)',
+  },
+  coral: {
+    accent: '#E85A4F',
+    accentHover: '#d44a3f',
+    accentBg: 'bg-[#E85A4F]',
+    accentText: 'text-[#E85A4F]',
+    illustrationFilter: 'hue-rotate(185deg) saturate(1.5)',
+  },
+  teal: {
+    accent: '#4A90A4',
+    accentHover: '#3a8094',
+    accentBg: 'bg-[#4A90A4]',
+    accentText: 'text-[#4A90A4]',
+    illustrationFilter: 'hue-rotate(0deg) saturate(1.2)',
+  },
+  gold: {
+    accent: '#D4A853',
+    accentHover: '#c49843',
+    accentBg: 'bg-[#D4A853]',
+    accentText: 'text-[#D4A853]',
+    illustrationFilter: 'hue-rotate(225deg) saturate(1.6)',
+  },
+  indigo: {
+    accent: '#6366F1',
+    accentHover: '#5558e3',
+    accentBg: 'bg-[#6366F1]',
+    accentText: 'text-[#6366F1]',
+    illustrationFilter: 'hue-rotate(200deg) saturate(1.5)',
+  },
 };
+
+interface FAQItemProps {
+  faq: FAQItem;
+  isOpen: boolean;
+  onToggle: () => void;
+  accentColor: string;
+  accentHover: string;
+  isDark?: boolean;
+}
+
+function FAQItemComponent({ faq, isOpen, onToggle, accentColor, accentHover, isDark = false }: FAQItemProps) {
+  return (
+    <div className={`border-b ${isDark ? 'border-white/10' : 'border-g200'}`}>
+      <button
+        onClick={onToggle}
+        className="w-full flex items-center justify-between py-5 text-left group"
+      >
+        <h3
+          className={`font-heading text-lg md:text-xl font-semibold pr-4 transition-colors ${isDark ? 'text-white' : 'text-carbon'}`}
+          style={{
+            color: isOpen ? accentColor : undefined,
+          }}
+          onMouseEnter={(e) => {
+            if (!isOpen) e.currentTarget.style.color = accentHover;
+          }}
+          onMouseLeave={(e) => {
+            if (!isOpen) e.currentTarget.style.color = isDark ? '#ffffff' : '';
+          }}
+        >
+          {faq.question}
+        </h3>
+        <div
+          className={`flex-shrink-0 w-6 h-6 flex items-center justify-center rounded-full transition-all duration-300 ${isOpen ? 'rotate-180' : ''}`}
+          style={{
+            backgroundColor: isOpen ? accentColor : isDark ? 'rgba(255,255,255,0.1)' : '#f3f4f6',
+          }}
+        >
+          <svg
+            className={`w-4 h-4 transition-colors ${isOpen ? 'text-white' : isDark ? 'text-g400' : 'text-g500'}`}
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2}
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </div>
+      </button>
+      <div
+        className={`overflow-hidden transition-all duration-300 ease-out ${
+          isOpen ? 'max-h-96 pb-5' : 'max-h-0'
+        }`}
+      >
+        <p className={`text-base md:text-lg leading-relaxed pr-12 ${isDark ? 'text-g400' : 'text-g600'}`}>
+          {faq.answer}
+        </p>
+      </div>
+    </div>
+  );
+}
 
 interface FAQProps {
   title?: string;
+  subtitle?: string;
   faqs: FAQItem[];
   showCTA?: boolean;
   ctaText?: string;
   ctaHref?: string;
+  showSeeAllLink?: boolean;
+  seeAllHref?: string;
   theme?: ThemeType;
+  mode?: 'light' | 'dark';
+  illustration?: string;
 }
 
 export default function FAQ({
-  title = 'Frequently Asked Questions (FAQs)',
+  title = 'Frequently Asked Questions',
+  subtitle,
   faqs,
   showCTA = true,
   ctaText = 'Book strategy call',
   ctaHref = 'https://calendly.com/team-xperiencewave/xw-strategy',
+  showSeeAllLink = false,
+  seeAllHref = '/resources/faq',
   theme = 'default',
+  mode = 'light',
+  illustration,
 }: FAQProps) {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const sectionRef = useRef<HTMLElement>(null);
+  const [openIndex, setOpenIndex] = useState<number>(0);
   const colors = themeColors[theme];
+  const isDark = mode === 'dark';
 
-  const toggleFAQ = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-in');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const section = sectionRef.current;
+    if (section) {
+      observer.observe(section);
+    }
+
+    return () => {
+      if (section) observer.unobserve(section);
+    };
+  }, []);
 
   return (
     <section
-      className="py-12 sm:py-16 md:py-24 lg:py-28 relative overflow-hidden"
-      style={{
-        backgroundColor: '#F9F9F9',
-        backgroundImage: `radial-gradient(${colors.dots}50 1px, transparent 1px)`,
-        backgroundSize: '24px 24px',
-      }}
+      ref={sectionRef}
+      className={`relative py-16 md:py-24 lg:py-28 overflow-hidden opacity-0 translate-y-8 transition-all duration-700 ease-out [&.animate-in]:opacity-100 [&.animate-in]:translate-y-0 ${
+        isDark ? 'bg-[#0a0a0a]' : 'bg-[#f5f5f5]'
+      }`}
     >
-      {/* Decorative accents */}
-      <div
-        className="absolute top-0 right-0 w-[250px] h-[250px] opacity-[0.05]"
-        style={{
-          background: `radial-gradient(circle at 100% 0%, ${colors.accent} 0%, transparent 70%)`,
-        }}
-      />
-      <div
-        className="absolute bottom-0 left-0 w-[200px] h-[200px] opacity-[0.04]"
-        style={{
-          background: `radial-gradient(circle at 0% 100%, ${colors.accent} 0%, transparent 70%)`,
-        }}
-      />
-
-      {/* Decorative circles */}
-      <div className="absolute top-20 right-10 md:right-20 opacity-[0.08]">
-        <div className="w-16 h-16 md:w-20 md:h-20 rounded-full border-2" style={{ borderColor: colors.accent }} />
-      </div>
-      <div className="absolute bottom-32 left-8 md:left-16 opacity-[0.06]">
-        <div className="w-10 h-10 md:w-12 md:h-12 rounded-full border" style={{ borderColor: colors.accent }} />
+      {/* Subtle background pattern */}
+      <div className={`absolute inset-0 ${isDark ? 'opacity-100' : 'opacity-[0.02]'}`}>
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: isDark
+              ? `radial-gradient(circle at 1px 1px, rgba(255,255,255,0.03) 1px, transparent 0)`
+              : `radial-gradient(circle at 1px 1px, #000 1px, transparent 0)`,
+            backgroundSize: '24px 24px'
+          }}
+        />
       </div>
 
-      <div className="relative max-w-[800px] mx-auto px-5">
+      {/* Accent glow for dark mode */}
+      {isDark && (
+        <div
+          className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[200px] blur-[120px] pointer-events-none"
+          style={{ background: `radial-gradient(ellipse, ${colors.accent}20 0%, transparent 70%)` }}
+        />
+      )}
+
+      {/* Background Illustration */}
+      {illustration && (
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[400px] h-[400px] md:w-[500px] md:h-[500px] opacity-[0.08] pointer-events-none">
+          <Image
+            src={illustration}
+            alt=""
+            fill
+            className="object-contain"
+            style={{ filter: colors.illustrationFilter }}
+          />
+        </div>
+      )}
+
+      <div className="relative z-10 max-w-[900px] mx-auto px-5">
         {/* Header */}
-        <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-carbon mb-8 sm:mb-10 md:mb-12 lg:mb-14">
-          {title}
-        </h2>
+        <div className="mb-12 md:mb-16">
+          <h2 className={`font-heading text-2xl md:text-3xl lg:text-4xl font-bold leading-tight ${isDark ? 'text-white' : 'text-carbon'}`}>
+            {title}
+          </h2>
+          {subtitle && (
+            <p className={`text-lg mt-4 ${isDark ? 'text-g400' : 'text-g500'}`}>{subtitle}</p>
+          )}
+        </div>
 
-        {/* FAQ Items */}
-        <div className="space-y-3">
+        {/* FAQ List */}
+        <div className="mb-10">
           {faqs.map((faq, index) => (
-            <div
+            <FAQItemComponent
               key={index}
-              className="border-2 transition-all duration-300 bg-white"
-              style={{
-                borderRadius: '6px',
-                borderColor: openIndex === index ? colors.border : 'transparent',
-                boxShadow: openIndex === index ? '0 10px 15px -3px rgb(0 0 0 / 0.1)' : 'none',
-              }}
-              onMouseEnter={(e) => {
-                if (openIndex !== index) {
-                  e.currentTarget.style.borderColor = colors.border;
-                  e.currentTarget.style.boxShadow = '0 10px 15px -3px rgb(0 0 0 / 0.1)';
-                }
-              }}
-              onMouseLeave={(e) => {
-                if (openIndex !== index) {
-                  e.currentTarget.style.borderColor = 'transparent';
-                  e.currentTarget.style.boxShadow = 'none';
-                }
-              }}
-            >
-              <button
-                onClick={() => toggleFAQ(index)}
-                className="w-full flex items-center justify-between p-5 md:p-6 text-left"
-              >
-                <span className="font-heading text-lg md:text-xl font-semibold text-carbon pr-4">
-                  {faq.question}
-                </span>
-                <span
-                  className={`flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center text-g600 transition-all duration-300 ${
-                    openIndex === index ? 'rotate-45' : 'rotate-0'
-                  }`}
-                  style={{ backgroundColor: colors.iconBg }}
-                >
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 6V18M18 12H6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                  </svg>
-                </span>
-              </button>
-
-              {/* Answer */}
-              <div
-                className={`overflow-hidden transition-all duration-300 ${
-                  openIndex === index ? 'max-h-96' : 'max-h-0'
-                }`}
-              >
-                <p className="px-5 md:px-6 pb-5 md:pb-6 font-body text-sm md:text-base text-g600 leading-relaxed">
-                  {faq.answer}
-                </p>
-              </div>
-            </div>
+              faq={faq}
+              isOpen={openIndex === index}
+              onToggle={() => setOpenIndex(openIndex === index ? -1 : index)}
+              accentColor={colors.accent}
+              accentHover={colors.accentHover}
+              isDark={isDark}
+            />
           ))}
         </div>
 
-        {/* Bottom CTA */}
-        {showCTA && (
-          <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
-            <span className="font-body text-base text-g600">Have more questions?</span>
-            <Button href={ctaHref} size="sm">
-              {ctaText}
-            </Button>
-            <span className="font-body text-base text-g600">and ask us directly</span>
-          </div>
-        )}
+        {/* Bottom Actions */}
+        <div className="space-y-4">
+          {showSeeAllLink && (
+            <Link
+              href={seeAllHref}
+              className="inline-flex items-center gap-1 font-medium underline underline-offset-4 transition-colors"
+              style={{ color: colors.accent }}
+              onMouseEnter={(e) => e.currentTarget.style.color = colors.accentHover}
+              onMouseLeave={(e) => e.currentTarget.style.color = colors.accent}
+            >
+              See All FAQs
+            </Link>
+          )}
+
+          {showCTA && (
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 pt-4">
+              <span className={`text-lg ${isDark ? 'text-g400' : 'text-g600'}`}>Still have questions?</span>
+              {isDark ? (
+                <Link
+                  href={ctaHref}
+                  {...(ctaHref.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                  className="inline-flex px-6 py-3 font-semibold rounded-lg transition-colors text-white"
+                  style={{ backgroundColor: colors.accent }}
+                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = colors.accentHover}
+                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = colors.accent}
+                >
+                  {ctaText}
+                </Link>
+              ) : (
+                <Button
+                  href={ctaHref}
+                  size="md"
+                >
+                  {ctaText}
+                </Button>
+              )}
+            </div>
+          )}
+        </div>
       </div>
     </section>
   );

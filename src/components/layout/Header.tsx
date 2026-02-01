@@ -14,6 +14,7 @@ const programsDropdown = [
 
 const businessDropdown = [
   { href: '/for-business/hire-ux-designers', label: 'Hire UX Designers', tagline: 'Hire trained designers', color: '#6366F1' },
+  { href: '/for-business/training-for-teams', label: 'Training for Teams', tagline: 'Upskill your design team', color: '#6366F1' },
 ];
 
 const resourcesDropdown = [
@@ -26,7 +27,7 @@ const resourcesDropdown = [
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
-  // { href: '/podcast', label: 'Podcast' }, // Hidden for now
+  { href: '/podcast', label: 'Podcast' },
   { href: '/community', label: 'Community' },
 ];
 
@@ -73,6 +74,8 @@ export default function Header() {
 
   // Get page-aware accent color
   const getPageAccentColor = () => {
+    // Podcast page - Vivid Yellow
+    if (pathname.startsWith('/podcast')) return '#FACC15';
     // Community pages - Indigo
     if (pathname.startsWith('/community')) return '#6366F1';
     // Resources pages - Alice blue
@@ -130,6 +133,12 @@ export default function Header() {
 
   // Check if on hire designers page (for different CTA)
   const isHireDesignersPage = pathname.startsWith('/for-business/hire-ux-designers');
+
+  // Check if on training page (for different CTA)
+  const isTrainingPage = pathname.startsWith('/for-business/training-for-teams');
+
+  // Check if on podcast page (for different CTA)
+  const isPodcastPage = pathname.startsWith('/podcast');
 
   // Check if on community page (for different CTA)
   const isCommunityPage = pathname.startsWith('/community');
@@ -365,8 +374,8 @@ export default function Header() {
               </Link>
             </div>
 
-            {/* Podcast - Hidden for now */}
-            {/* <div
+            {/* Podcast */}
+            <div
               style={{
                 opacity: mobileMenuOpen ? 1 : 0,
                 transform: mobileMenuOpen ? 'translateY(0)' : 'translateY(20px)',
@@ -385,7 +394,7 @@ export default function Header() {
               >
                 Podcast
               </Link>
-            </div> */}
+            </div>
 
             {/* Community */}
             <div
@@ -491,13 +500,18 @@ export default function Header() {
             }}
           >
             <Button
-              href={isHireDesignersPage ? "/for-business/hire-ux-designers/requirements" : isCommunityPage ? "/community#register" : "https://calendly.com/team-xperiencewave/xw-strategy"}
+              href={
+                isPodcastPage ? "https://open.spotify.com/show/5ULMerqiVi3L2HLHMeynoL" :
+                isHireDesignersPage || isTrainingPage ? "/contact" :
+                isCommunityPage ? "/community/register" :
+                "https://calendly.com/team-xperiencewave/xw-strategy"
+              }
               size="lg"
               className="w-full justify-center"
-              variant={isHireDesignersPage || isCommunityPage ? "indigo" : "primary"}
+              variant={isPodcastPage ? "yellow" : isHireDesignersPage || isTrainingPage || isCommunityPage ? "indigo" : "primary"}
               onClick={closeMobileMenu}
             >
-              {isHireDesignersPage ? "Contact Us" : isCommunityPage ? "Register" : "Book strategy call"}
+              {isPodcastPage ? "Listen on Spotify" : isHireDesignersPage || isTrainingPage ? "Contact Us" : isCommunityPage ? "Register" : "Book strategy call"}
             </Button>
           </div>
         </div>
@@ -851,11 +865,16 @@ export default function Header() {
         {/* Desktop CTA */}
         <div className="hidden lg:block">
           <Button
-            href={isHireDesignersPage ? "/for-business/hire-ux-designers/requirements" : isCommunityPage ? "/community#register" : "https://calendly.com/team-xperiencewave/xw-strategy"}
+            href={
+              isPodcastPage ? "https://open.spotify.com/show/5ULMerqiVi3L2HLHMeynoL" :
+              isHireDesignersPage || isTrainingPage ? "/contact" :
+              isCommunityPage ? "/community/register" :
+              "https://calendly.com/team-xperiencewave/xw-strategy"
+            }
             size="sm"
-            variant={isHireDesignersPage || isCommunityPage ? "indigo" : "primary"}
+            variant={isPodcastPage ? "yellow" : isHireDesignersPage || isTrainingPage || isCommunityPage ? "indigo" : "primary"}
           >
-            {isHireDesignersPage ? "Contact Us" : isCommunityPage ? "Register" : "Book strategy call"}
+            {isPodcastPage ? "Listen on Spotify" : isHireDesignersPage || isTrainingPage ? "Contact Us" : isCommunityPage ? "Register" : "Book strategy call"}
           </Button>
         </div>
 

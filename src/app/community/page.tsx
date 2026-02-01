@@ -58,8 +58,8 @@ export default function CommunityPage() {
             "@type": "Event",
             "name": "WaveMakers Connect Edition #4",
             "description": "An in-person event for designers, engineers, and entrepreneurs in Bangalore",
-            "startDate": "2025-02-15T11:00:00+05:30",
-            "endDate": "2025-02-15T14:00:00+05:30",
+            "startDate": "2025-03-15T11:00:00+05:30",
+            "endDate": "2025-03-15T14:00:00+05:30",
             "eventStatus": "https://schema.org/EventScheduled",
             "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
             "location": {

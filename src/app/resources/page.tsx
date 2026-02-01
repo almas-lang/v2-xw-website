@@ -4,6 +4,8 @@ import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import FAQ from '@/components/shared/FAQ';
 import BlogSection from '@/components/shared/BlogSection';
+import CTASection from '@/components/shared/CTASection';
+import LeadCaptureModal, { LeadType } from '@/components/shared/LeadCaptureModal';
 
 // ============================================
 // DATA
@@ -73,20 +75,28 @@ const templates = [
   },
 ];
 
-const aiTools = [
+interface AITool {
+  id: string;
+  title: string;
+  description: string;
+  tag: 'Free' | 'Upcoming';
+  leadType: LeadType;
+}
+
+const aiTools: AITool[] = [
   {
     id: 'design-strategy',
     title: 'Design Strategy GPT',
     description: 'Position design at the centre of business growth. Get a strategic framework for any project in minutes.',
     tag: 'Free',
-    href: 'https://chatgpt.com/g/g-6932501b7b708191bd16ee0ea24f1e24-design-strategy-ai-xperience-wave',
+    leadType: 'design-strategy-gpt',
   },
   {
     id: 'ux-audit',
     title: 'UX Audit GPT',
     description: 'Evaluate any screen against usability heuristics. Get actionable fixes, not generic feedback.',
     tag: 'Upcoming',
-    href: '#',
+    leadType: 'ux-audit-gpt',
   },
 ];
 
@@ -451,7 +461,7 @@ function TemplatesSection() {
             Free UX Templates & Downloads
           </h2>
           <p className="font-body text-sm md:text-lg text-g500">
-            Practical resources to accelerate your UX design career
+            Practical resources to accelerate your UX design career — coming soon
           </p>
         </div>
 
@@ -460,36 +470,33 @@ function TemplatesSection() {
           {templates.map((template, index) => (
             <div
               key={template.id}
-              className="group p-5 md:p-8 bg-white rounded-xl border-2 border-g200 hover:border-accent hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+              className="p-5 md:p-8 bg-white/70 rounded-xl border-2 border-g200 transition-all duration-300"
               style={{
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
                 transition: `all 0.6s cubic-bezier(0.4, 0, 0.2, 1) ${0.2 + index * 0.1}s`,
               }}
             >
-              <span className="inline-block px-3 py-1 text-xs font-bold text-white bg-accent group-hover:scale-105 rounded-full mb-3 md:mb-4 transition-transform duration-300">
-                {template.tag}
+              <span className="inline-block px-3 py-1 text-xs font-bold text-white bg-g400 rounded-full mb-3 md:mb-4">
+                Coming Soon
               </span>
-              <h3 className="font-heading text-lg md:text-xl font-bold text-carbon group-hover:text-accent mb-2 md:mb-3 transition-colors">
+              <h3 className="font-heading text-lg md:text-xl font-bold text-carbon mb-2 md:mb-3">
                 {template.title}
               </h3>
               <p className="font-body text-sm md:text-base text-g500 mb-5 md:mb-6 leading-relaxed">
                 {template.description}
               </p>
-              <Link
-                href={template.href}
-                className="inline-flex items-center justify-center gap-2 w-full md:w-auto px-6 py-3 bg-alice text-carbon font-heading font-semibold rounded-lg hover:bg-accent hover:text-white active:bg-alice/70 transition-all duration-300 min-h-[48px]"
-              >
-                Download Free
-                <svg className="w-4 h-4 group-hover:translate-y-0.5 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+              <span className="inline-flex items-center justify-center gap-2 w-full md:w-auto px-6 py-3 bg-g200 text-g500 font-heading font-semibold rounded-lg cursor-not-allowed min-h-[48px]">
+                Coming Soon
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-              </Link>
+              </span>
             </div>
           ))}
         </div>
 
-        {/* View All Link */}
+        {/* Notify Me Link */}
         <div
           className="text-center"
           style={{
@@ -497,15 +504,9 @@ function TemplatesSection() {
             transition: 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.4s',
           }}
         >
-          <Link
-            href="/resources/templates"
-            className="inline-flex items-center gap-2 px-4 py-2 font-heading font-semibold text-accent active:text-accent/70 transition-colors min-h-[44px]"
-          >
-            View All Templates
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </Link>
+          <p className="font-body text-sm text-g500">
+            Want to be notified when these are ready? Subscribe to our newsletter below.
+          </p>
         </div>
       </div>
     </section>
@@ -515,6 +516,8 @@ function TemplatesSection() {
 
 function AIToolsSection() {
   const [isVisible, setIsVisible] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedLeadType, setSelectedLeadType] = useState<LeadType>('design-strategy-gpt');
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -527,6 +530,11 @@ function AIToolsSection() {
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
   }, []);
+
+  const openModal = (leadType: LeadType) => {
+    setSelectedLeadType(leadType);
+    setIsModalOpen(true);
+  };
 
   return (
     <section
@@ -574,12 +582,10 @@ function AIToolsSection() {
         <div className="space-y-4 md:space-y-0 md:grid md:grid-cols-2 md:gap-6 mb-6 md:mb-8">
           {aiTools.map((tool, index) => (
             tool.tag === 'Free' ? (
-              <Link
+              <button
                 key={tool.id}
-                href={tool.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group block p-5 md:p-8 rounded-xl border-2 border-white/10 bg-white/[0.03] hover:border-alice/50 hover:bg-white/[0.06] hover:-translate-y-1 active:translate-y-0 active:scale-[0.99] cursor-pointer transition-all duration-300"
+                onClick={() => openModal(tool.leadType)}
+                className="group block w-full text-left p-5 md:p-8 rounded-xl border-2 border-white/10 bg-white/[0.03] hover:border-alice/50 hover:bg-white/[0.06] hover:-translate-y-1 active:translate-y-0 active:scale-[0.99] cursor-pointer transition-all duration-300"
                 style={{
                   opacity: isVisible ? 1 : 0,
                   transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
@@ -601,13 +607,14 @@ function AIToolsSection() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
                 </span>
-              </Link>
+              </button>
             ) : (
-              <div
+              <button
                 key={tool.id}
-                className="p-5 md:p-8 rounded-xl border-2 border-white/10 bg-white/[0.03] opacity-60"
+                onClick={() => openModal(tool.leadType)}
+                className="group block w-full text-left p-5 md:p-8 rounded-xl border-2 border-white/10 bg-white/[0.03] hover:border-alice/50 hover:bg-white/[0.06] cursor-pointer transition-all duration-300"
                 style={{
-                  opacity: isVisible ? 0.6 : 0,
+                  opacity: isVisible ? 1 : 0,
                   transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
                   transition: `all 0.6s cubic-bezier(0.4, 0, 0.2, 1) ${0.2 + index * 0.1}s`,
                 }}
@@ -615,16 +622,19 @@ function AIToolsSection() {
                 <span className="inline-block px-3 py-1 text-xs font-bold rounded-full mb-3 md:mb-4 text-white/70 bg-white/10">
                   {tool.tag}
                 </span>
-                <h3 className="font-heading text-lg md:text-xl font-bold text-white/70 mb-2 md:mb-3">
+                <h3 className="font-heading text-lg md:text-xl font-bold text-white/70 group-hover:text-white mb-2 md:mb-3 transition-colors">
                   {tool.title}
                 </h3>
                 <p className="font-body text-sm md:text-base text-g500 mb-5 md:mb-6 leading-relaxed">
                   {tool.description}
                 </p>
-                <span className="inline-flex items-center text-g500 font-heading font-semibold">
-                  Coming Soon
+                <span className="inline-flex items-center gap-2 text-g500 group-hover:text-alice font-heading font-semibold transition-colors">
+                  Join Waitlist
+                  <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
                 </span>
-              </div>
+              </button>
             )
           ))}
         </div>
@@ -648,6 +658,13 @@ function AIToolsSection() {
           </Link>
         </div>
       </div>
+
+      {/* Lead Capture Modal */}
+      <LeadCaptureModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        leadType={selectedLeadType}
+      />
     </section>
   );
 }
@@ -795,6 +812,8 @@ function CoursesSection() {
 function NewsletterSection() {
   const [isVisible, setIsVisible] = useState(false);
   const [email, setEmail] = useState('');
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -807,6 +826,47 @@ function NewsletterSection() {
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
   }, []);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setErrorMessage('');
+
+    if (!email.trim()) {
+      setErrorMessage('Please enter your email address');
+      setStatus('error');
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setErrorMessage('Please enter a valid email address');
+      setStatus('error');
+      return;
+    }
+
+    setStatus('loading');
+
+    try {
+      const response = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setStatus('success');
+        setEmail('');
+      } else {
+        setErrorMessage(data.error || 'Something went wrong. Please try again.');
+        setStatus('error');
+      }
+    } catch {
+      setErrorMessage('Something went wrong. Please try again.');
+      setStatus('error');
+    }
+  };
 
   return (
     <section
@@ -847,22 +907,59 @@ function NewsletterSection() {
             Career tips, design strategy, industry trends delivered once a month. No spam, only growth.
           </p>
 
-          {/* Email Form - Stack on mobile */}
-          <form className="flex flex-col gap-3 mb-4">
-            <input
-              type="email"
-              placeholder="Your email address"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-4 py-4 rounded-xl border-2 border-white/10 bg-white/5 font-body text-white placeholder:text-g500 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all min-h-[52px]"
-            />
-            <button
-              type="submit"
-              className="w-full px-6 py-4 bg-accent text-white font-heading font-semibold rounded-xl hover:bg-accent/90 active:bg-accent/80 transition-colors min-h-[52px]"
-            >
-              Subscribe
-            </button>
-          </form>
+          {status === 'success' ? (
+            <div className="p-6 bg-green-500/10 border border-green-500/20 rounded-xl mb-4">
+              <div className="flex items-center justify-center gap-2 text-green-400 mb-2">
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span className="font-heading text-lg font-semibold">Thanks for subscribing!</span>
+              </div>
+              <p className="font-body text-sm text-g400">
+                Check your inbox for a confirmation email.
+              </p>
+            </div>
+          ) : (
+            <form onSubmit={handleSubmit} className="flex flex-col gap-3 mb-4">
+              <input
+                type="email"
+                placeholder="Your email address"
+                value={email}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                  if (status === 'error') setStatus('idle');
+                }}
+                disabled={status === 'loading'}
+                className={`w-full px-4 py-4 rounded-xl border-2 bg-white/5 font-body text-white placeholder:text-g500 focus:outline-none focus:ring-2 transition-all min-h-[52px] ${
+                  status === 'error'
+                    ? 'border-red-500 focus:border-red-500 focus:ring-red-500/20'
+                    : 'border-white/10 focus:border-accent focus:ring-accent/20'
+                }`}
+              />
+              {status === 'error' && errorMessage && (
+                <p className="font-body text-sm text-red-400 text-left" role="alert">
+                  {errorMessage}
+                </p>
+              )}
+              <button
+                type="submit"
+                disabled={status === 'loading'}
+                className="w-full px-6 py-4 bg-accent text-white font-heading font-semibold rounded-xl hover:bg-accent/90 active:bg-accent/80 disabled:bg-accent/50 transition-colors min-h-[52px] flex items-center justify-center gap-2"
+              >
+                {status === 'loading' ? (
+                  <>
+                    <svg className="w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                    </svg>
+                    Subscribing...
+                  </>
+                ) : (
+                  'Subscribe'
+                )}
+              </button>
+            </form>
+          )}
 
           <p className="text-xs md:text-sm text-g500">
             Join 2,000+ designers already subscribed
@@ -874,86 +971,6 @@ function NewsletterSection() {
 }
 
 
-function CTASection() {
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setIsVisible(true);
-      },
-      { threshold: 0.1 }
-    );
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => observer.disconnect();
-  }, []);
-
-  return (
-    <section
-      ref={sectionRef}
-      className="py-16 md:py-24 lg:py-32 relative overflow-hidden"
-      style={{
-        background: 'linear-gradient(135deg, #0a0a0a 0%, #0a0a0a 50%, #0a0a0a 100%)',
-      }}
-    >
-      {/* X watermark - dark red */}
-      <div className="hidden md:block absolute -right-10 top-1/2 -translate-y-1/2 select-none pointer-events-none">
-        <span
-          className="font-heading font-black text-[300px] lg:text-[400px] leading-none"
-          style={{
-            background: 'linear-gradient(180deg, rgba(255,0,35,0.15) 0%, rgba(255,0,35,0.05) 100%)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text',
-          }}
-        >
-          X
-        </span>
-      </div>
-
-      <div className="px-5 md:px-8 max-w-[900px] mx-auto text-center relative z-10">
-        <div
-          style={{
-            opacity: isVisible ? 1 : 0,
-            transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
-            transition: 'all 0.7s cubic-bezier(0.4, 0, 0.2, 1)',
-          }}
-        >
-          <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4 md:mb-6 leading-tight">
-            Your Design Role is Waiting.
-            <br />
-            Are You Ready?
-          </h2>
-          <p className="font-body text-sm md:text-base text-g400 mb-8 md:mb-10 max-w-2xl mx-auto">
-            Book a free strategy call. We&apos;ll review where you are, understand your goals, and help you identify if mentorship is right for you.
-          </p>
-
-          <Link
-            href="https://calendly.com/team-xperiencewave/xw-strategy"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-accent text-white font-heading font-semibold rounded-xl active:bg-accent/80 transition-colors min-h-[56px]"
-          >
-            Book strategy call
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-            </svg>
-          </Link>
-
-          {/* Trust points with dividers */}
-          <div className="flex flex-wrap justify-center items-center gap-3 md:gap-0 mt-8 md:mt-10 text-sm text-g400">
-            <span>Free 45 mins-call</span>
-            <span className="hidden md:inline text-g600 mx-4">|</span>
-            <span>We assess your gaps</span>
-            <span className="hidden md:inline text-g600 mx-4">|</span>
-            <span>No obligations</span>
-            <span className="hidden md:inline text-g600 mx-4">|</span>
-            <span>Walk away with clarity</span>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
 
 // ============================================
 // MAIN PAGE
@@ -969,8 +986,11 @@ export default function ResourcesPage() {
       <AIToolsSection />
       <CoursesSection />
       <NewsletterSection />
-      <FAQ faqs={faqs} title="Frequently Asked Questions" />
-      <CTASection />
+      <FAQ faqs={faqs} title="Frequently Asked Questions" theme="default" />
+      <CTASection
+        title={<>Your Design Role is Waiting.<br />Are You Ready?</>}
+        subtitle="Book a free strategy call. We'll review where you are, understand your goals, and help you identify if mentorship is right for you."
+      />
     </>
   );
 }

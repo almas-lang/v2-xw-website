@@ -115,7 +115,7 @@ export default function UpcomingEdition() {
         >
           <div className="inline-flex flex-col sm:flex-row items-center gap-2 sm:gap-0 px-5 py-4 sm:py-3 bg-white/[0.05] border border-white/10 rounded-2xl sm:rounded-full text-center sm:text-left backdrop-blur-sm">
             <span className="text-white/90 text-sm font-medium">
-              Sunday, Feb 15, 2025 · 11 AM onwards
+              Saturday, Mar 15, 2025 · 11 AM onwards
             </span>
             <span className="hidden sm:block w-px h-4 bg-white/20 mx-4" />
             <span className="text-white/60 text-sm">

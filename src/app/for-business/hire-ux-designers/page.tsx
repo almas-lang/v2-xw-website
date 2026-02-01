@@ -7,7 +7,7 @@ import TestimonialCarousel from '@/components/shared/TestimonialCarousel';
 import FAQ from '@/components/shared/FAQ';
 import MenteesWorkAt from '@/components/shared/MenteesWorkAt';
 import Button from '@/components/ui/Button';
-import HiringGuideModal from '@/components/shared/HiringGuideModal';
+import GuideDownloadModal from '@/components/shared/GuideDownloadModal';
 
 // Note: Metadata moved to layout.tsx for this client component
 
@@ -409,6 +409,10 @@ export default function HireUXDesignersPage() {
 
             {/* Right - Content */}
             <div className="order-1 lg:order-2" style={getItemStyle('why-broken-section', 0)}>
+              <span className="flex items-center gap-3 text-indigo-400 text-xs uppercase tracking-[0.2em] font-medium mb-4">
+                <span className="w-8 h-[2px] bg-indigo-500" />
+                The Problem
+              </span>
               <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-[1.15] mb-6">
                 Why Hiring UX Designers is Broken
               </h2>
@@ -827,6 +831,10 @@ export default function HireUXDesignersPage() {
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Left - Sticky Content */}
             <div className="lg:sticky lg:top-24 lg:self-start">
+              <span className="flex items-center gap-3 text-indigo-500 text-xs uppercase tracking-[0.2em] font-medium mb-4">
+                <span className="w-8 h-[2px] bg-indigo-500" />
+                Our Talent Pool
+              </span>
               <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-carbon leading-[1.1] mb-4">
                 Meet Our Job-Ready UX Designers
               </h2>
@@ -1309,14 +1317,21 @@ export default function HireUXDesignersPage() {
       {/* Trained by Us. Hired by Them. Section - Photo Wall */}
       <section className="bg-carbon py-16 md:py-24 lg:py-32">
         <div className="max-w-[1200px] mx-auto px-5 md:px-8">
-          <h2
+          <div
             id="photo-wall-header"
             ref={(el) => { sectionRefs.current['photo-wall-header'] = el; }}
-            className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-white text-center leading-[1.15] mb-12 md:mb-16"
+            className="text-center mb-12 md:mb-16"
             style={getSectionStyle('photo-wall-header')}
           >
-            Trained by Us. Hired by Them.
-          </h2>
+            <span className="flex items-center justify-center gap-3 text-indigo-400 text-xs uppercase tracking-[0.2em] font-medium mb-4">
+              <span className="w-8 h-[2px] bg-indigo-500" />
+              Success Stories
+              <span className="w-8 h-[2px] bg-indigo-500" />
+            </span>
+            <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-[1.15]">
+              Trained by Us. Hired by Them.
+            </h2>
+          </div>
 
           {/* Photo wall hidden for now */}
 
@@ -1355,6 +1370,11 @@ export default function HireUXDesignersPage() {
             className="text-center mb-8 md:mb-10"
             style={getSectionStyle('pricing-header')}
           >
+            <span className="flex items-center justify-center gap-3 text-indigo-500 text-xs uppercase tracking-[0.2em] font-medium mb-4">
+              <span className="w-8 h-[2px] bg-indigo-500" />
+              Pricing
+              <span className="w-8 h-[2px] bg-indigo-500" />
+            </span>
             <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-carbon leading-[1.15] mb-3">
               Pricing Transparency
             </h2>
@@ -1484,6 +1504,7 @@ export default function HireUXDesignersPage() {
         showCTA={true}
         ctaText="Share Requirements"
         ctaHref="/for-business/hire-ux-designers/requirements"
+        theme="indigo"
       />
 
       {/* TODO: Uncomment when Design Services and Team Training pages are ready
@@ -1614,36 +1635,23 @@ export default function HireUXDesignersPage() {
 
       {/* Ready To Hire CTA Section */}
       <section className="relative py-14 sm:py-20 md:py-28 lg:py-32 overflow-hidden">
-        {/* Dark gradient background */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background: `
-              linear-gradient(135deg,
-                #0a0a0a 0%,
-                #0a0a0a 25%,
-                #0a0a0a 50%,
-                #0a0a0a 75%,
-                #0a0a0a 100%
-              )
-            `,
-          }}
-        />
+        {/* Dark background */}
+        <div className="absolute inset-0 bg-[#0a0a0a]" />
 
-        {/* Subtle gradient overlay for depth */}
+        {/* Subtle gradient overlay with indigo tint for depth */}
         <div
           className="absolute inset-0"
           style={{
             background: `
-              radial-gradient(ellipse at 30% 0%, rgba(220,238,255,0.03) 0%, transparent 50%),
-              radial-gradient(ellipse at 70% 100%, rgba(220,238,255,0.02) 0%, transparent 50%)
+              radial-gradient(ellipse at 30% 0%, rgba(99,102,241,0.05) 0%, transparent 50%),
+              radial-gradient(ellipse at 70% 100%, rgba(99,102,241,0.03) 0%, transparent 50%)
             `,
           }}
         />
 
         {/* X Motif - positioned on the right */}
         <span
-          className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/3 font-heading font-extrabold text-[300px] md:text-[500px] lg:text-[600px] text-accent/[0.06] pointer-events-none select-none"
+          className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/3 font-heading font-extrabold text-[300px] md:text-[500px] lg:text-[600px] text-indigo-500/[0.06] pointer-events-none select-none"
           aria-hidden="true"
         >
           X
@@ -1661,10 +1669,16 @@ export default function HireUXDesignersPage() {
             Tell us what you&apos;re looking for. We&apos;ll share matched profiles within 48-72 hours.
           </p>
 
-          {/* CTA Button */}
-          <Button href="/for-business/hire-ux-designers/requirements" showArrow>
+          {/* CTA Button - Indigo theme */}
+          <Link
+            href="/for-business/hire-ux-designers/requirements"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 transition-colors"
+          >
             Share Requirements
-          </Button>
+            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </Link>
 
           {/* Contact info */}
           <div className="mt-10 flex flex-wrap justify-center items-center gap-x-2 gap-y-2">
@@ -1682,7 +1696,7 @@ export default function HireUXDesignersPage() {
       </section>
 
       {/* Hiring Guide Modal */}
-      <HiringGuideModal isOpen={isGuideModalOpen} onClose={() => setIsGuideModalOpen(false)} />
+      <GuideDownloadModal isOpen={isGuideModalOpen} onClose={() => setIsGuideModalOpen(false)} guideType="hiring-guide" />
     </main>
   );
 }

@@ -109,7 +109,7 @@ export default function ProgramsPage() {
       <MeetMentors theme="dark-teal" />
       <SuccessStories />
       <MenteesWorkAt />
-      <FAQ faqs={programFaqs} />
+      <FAQ faqs={programFaqs} theme="teal" />
       <CTASection
         title="Not Sure Which Program Is Right?"
         subtitle="Book a free strategy call. We'll assess where you are, understand your goals, and recommend the right path."

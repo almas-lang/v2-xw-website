@@ -58,7 +58,7 @@ export default function Home() {
       <SuccessStories />
       <Programs />
       <JoinConversation heading="Beyond Mentorship" />
-      <FAQ faqs={homeFaqs} />
+      <FAQ faqs={homeFaqs} theme="default" />
       <BlogSection />
       <CTASection />
     </>

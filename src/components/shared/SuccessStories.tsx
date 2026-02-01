@@ -220,11 +220,13 @@ const VideoModal = ({
 const Avatar = ({
   name,
   image,
-  size = 'large'
+  size = 'large',
+  isDark = false
 }: {
   name: string;
   image?: string;
-  size?: 'large' | 'medium' | 'small'
+  size?: 'large' | 'medium' | 'small';
+  isDark?: boolean;
 }) => {
   const [imgError, setImgError] = useState(false);
   const initials = name
@@ -266,7 +268,11 @@ const Avatar = ({
   }
 
   return (
-    <div className={`${sizeClasses[size]} rounded-full bg-gradient-to-br from-g200 to-g300 flex items-center justify-center flex-shrink-0 overflow-hidden ring-2 ring-g200`}>
+    <div className={`${sizeClasses[size]} rounded-full flex items-center justify-center flex-shrink-0 overflow-hidden ring-2 ${
+      isDark
+        ? 'bg-gradient-to-br from-g700 to-g800 ring-white/10'
+        : 'bg-gradient-to-br from-g200 to-g300 ring-g200'
+    }`}>
       {image && !imgError ? (
         <img
           src={image}
@@ -275,7 +281,7 @@ const Avatar = ({
           onError={() => setImgError(true)}
         />
       ) : (
-        <span className={`font-heading ${textSizes[size]} font-semibold text-g500`}>{initials}</span>
+        <span className={`font-heading ${textSizes[size]} font-semibold ${isDark ? 'text-g400' : 'text-g500'}`}>{initials}</span>
       )}
     </div>
   );
@@ -292,7 +298,8 @@ interface SuccessStoriesProps {
   ctaText?: string;
   ctaHref?: string;
   quickWins?: QuickWin[];
-  accentColor?: 'teal' | 'gold' | 'coral' | 'default';
+  accentColor?: 'teal' | 'gold' | 'coral' | 'default' | 'indigo';
+  theme?: 'light' | 'dark';
 }
 
 // Theme color mapping
@@ -321,6 +328,12 @@ const themeColors = {
     accentBorder: 'rgba(232, 90, 79, 0.2)',
     ctaText: '#E85A4F',
   },
+  indigo: {
+    accent: '#6366F1',
+    accentBg: 'rgba(99, 102, 241, 0.15)',
+    accentBorder: 'rgba(99, 102, 241, 0.3)',
+    ctaText: '#818CF8',
+  },
 };
 
 export default function SuccessStories({
@@ -331,8 +344,10 @@ export default function SuccessStories({
   ctaHref = '/success-stories',
   quickWins = defaultQuickWins,
   accentColor = 'default',
+  theme = 'light',
 }: SuccessStoriesProps) {
-  const theme = themeColors[accentColor];
+  const colors = themeColors[accentColor];
+  const isDark = theme === 'dark';
   const sectionRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
   const [activeVideo, setActiveVideo] = useState<{ src?: string; youtubeId?: string; name: string } | null>(null);
@@ -379,13 +394,15 @@ export default function SuccessStories({
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-hidden bg-white"
+      className={`relative overflow-hidden ${isDark ? 'bg-[#030303]' : 'bg-white'}`}
     >
       {/* Subtle dot pattern */}
       <div
-        className="absolute inset-0 opacity-40"
+        className={`absolute inset-0 ${isDark ? 'opacity-100' : 'opacity-40'}`}
         style={{
-          backgroundImage: 'radial-gradient(circle at 1px 1px, #e5e5e5 1px, transparent 0)',
+          backgroundImage: isDark
+            ? 'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.03) 1px, transparent 0)'
+            : 'radial-gradient(circle at 1px 1px, #e5e5e5 1px, transparent 0)',
           backgroundSize: '32px 32px',
         }}
       />
@@ -393,7 +410,11 @@ export default function SuccessStories({
       {/* Accent glow - subtle */}
       <div
         className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] blur-[150px] pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse, rgba(220,238,255,0.4) 0%, transparent 70%)' }}
+        style={{
+          background: isDark
+            ? 'radial-gradient(ellipse, rgba(99, 102, 241, 0.15) 0%, transparent 70%)'
+            : 'radial-gradient(ellipse, rgba(220,238,255,0.4) 0%, transparent 70%)',
+        }}
       />
 
       {/* Content */}
@@ -409,14 +430,14 @@ export default function SuccessStories({
             }}
           >
             <div className="flex items-center justify-center gap-3 mb-4">
-              <div className="w-8 h-[2px]" style={{ backgroundColor: theme.accent }} />
-              <span className="font-body text-xs uppercase tracking-[0.2em] font-medium" style={{ color: theme.accent }}>Success Stories</span>
-              <div className="w-8 h-[2px]" style={{ backgroundColor: theme.accent }} />
+              <div className="w-8 h-[2px]" style={{ backgroundColor: colors.accent }} />
+              <span className="font-body text-xs uppercase tracking-[0.2em] font-medium" style={{ color: colors.accent }}>Success Stories</span>
+              <div className="w-8 h-[2px]" style={{ backgroundColor: colors.accent }} />
             </div>
-            <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-carbon leading-tight mb-3">
+            <h2 className={`font-heading text-2xl md:text-3xl lg:text-4xl font-bold leading-tight mb-3 ${isDark ? 'text-white' : 'text-carbon'}`}>
               {title}
             </h2>
-            <p className="font-body text-sm md:text-base text-g500 max-w-xl mx-auto">
+            <p className={`font-body text-sm md:text-base max-w-xl mx-auto ${isDark ? 'text-g400' : 'text-g500'}`}>
               {subtitle}
             </p>
           </div>
@@ -445,15 +466,19 @@ export default function SuccessStories({
                     transition: `all 0.6s cubic-bezier(0.4, 0, 0.2, 1) ${0.3 + index * 0.08}s`,
                   }}
                 >
-                  <div className="relative p-5 sm:p-6 rounded-xl sm:rounded-2xl border border-g200 sm:hover:border-[#0A66C2]/40 bg-white shadow-sm sm:hover:shadow-lg transition-all duration-300 h-full">
+                  <div className={`relative p-5 sm:p-6 rounded-xl sm:rounded-2xl border transition-all duration-300 h-full ${
+                    isDark
+                      ? 'bg-[#0a0a0a] border-white/10 sm:hover:border-indigo-500/40'
+                      : 'bg-white border-g200 sm:hover:border-[#0A66C2]/40 shadow-sm sm:hover:shadow-lg'
+                  }`}>
                     {/* Duration badge */}
                     <div className="mb-4">
                       <span
                         className="inline-block px-3 py-1.5 text-xs font-bold rounded-full"
                         style={{
-                          color: theme.accent,
-                          backgroundColor: theme.accentBg,
-                          border: `1px solid ${theme.accentBorder}`
+                          color: colors.accent,
+                          backgroundColor: colors.accentBg,
+                          border: `1px solid ${colors.accentBorder}`
                         }}
                       >
                         {win.duration}
@@ -461,15 +486,15 @@ export default function SuccessStories({
                     </div>
 
                     {/* Achievement */}
-                    <h4 className="font-heading text-base sm:text-lg font-bold text-carbon mb-5 leading-snug line-clamp-3">
+                    <h4 className={`font-heading text-base sm:text-lg font-bold mb-5 leading-snug line-clamp-3 ${isDark ? 'text-white' : 'text-carbon'}`}>
                       {win.achievement}
                     </h4>
 
                     {/* Person with LinkedIn */}
                     <div className="flex items-center justify-between mt-auto">
                       <div className="flex items-center gap-3">
-                        <Avatar name={win.name} image={win.image} size="small" />
-                        <span className="font-body text-sm text-g600">{win.name}</span>
+                        <Avatar name={win.name} image={win.image} size="small" isDark={isDark} />
+                        <span className={`font-body text-sm ${isDark ? 'text-g400' : 'text-g600'}`}>{win.name}</span>
                       </div>
                       <div className="flex items-center gap-1.5 text-[#0A66C2] opacity-70 group-hover:opacity-100 transition-opacity">
                         <LinkedInIcon className="w-5 h-5" />
@@ -497,7 +522,11 @@ export default function SuccessStories({
                   transition: `all 0.7s cubic-bezier(0.4, 0, 0.2, 1) ${0.5 + index * 0.1}s`,
                 }}
               >
-                <div className={`relative rounded-xl sm:rounded-2xl overflow-hidden border-2 border-g200 transition-all duration-500 shadow-md ${hasVideo && !isPlayingInline ? 'sm:hover:border-accent/40 sm:hover:shadow-xl' : ''}`}>
+                <div className={`relative rounded-xl sm:rounded-2xl overflow-hidden border-2 transition-all duration-500 ${
+                  isDark
+                    ? `border-white/10 ${hasVideo && !isPlayingInline ? 'sm:hover:border-indigo-500/40' : ''}`
+                    : `border-g200 shadow-md ${hasVideo && !isPlayingInline ? 'sm:hover:border-accent/40 sm:hover:shadow-xl' : ''}`
+                }`}>
                   {/* Image/Video area */}
                   <div className="relative aspect-[3/4] sm:aspect-[4/5] overflow-hidden">
                     {/* Inline YouTube Player */}
@@ -588,7 +617,7 @@ export default function SuccessStories({
               <Link
                 href={ctaHref}
                 className="group inline-flex items-center gap-1.5 font-body text-sm sm:text-base font-medium transition-all duration-300 hover:gap-2.5"
-                style={{ color: theme.ctaText }}
+                style={{ color: colors.ctaText }}
               >
                 <span className="underline underline-offset-4 decoration-1">
                   {ctaText}
@@ -603,7 +632,11 @@ export default function SuccessStories({
       {/* Bottom subtle line */}
       <div
         className="absolute bottom-0 left-0 right-0 h-px"
-        style={{ background: 'linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.1) 50%, transparent 100%)' }}
+        style={{
+          background: isDark
+            ? 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.05) 50%, transparent 100%)'
+            : 'linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.1) 50%, transparent 100%)',
+        }}
       />
 
       {/* Video Modal */}

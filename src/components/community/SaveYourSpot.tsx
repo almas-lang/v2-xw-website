@@ -144,7 +144,7 @@ export default function SaveYourSpot() {
               transition: 'all 0.6s ease-out 0.1s',
             }}
           >
-            {['Sunday, Feb 15, 2025', '11 AM onwards', 'Bangalore', 'Free'].map((item, index) => (
+            {['Saturday, Mar 15, 2025', '11 AM onwards', 'Bangalore', 'Free'].map((item, index) => (
               <span
                 key={item}
                 className={`px-4 py-2 text-sm rounded-full transition-all duration-300 ${

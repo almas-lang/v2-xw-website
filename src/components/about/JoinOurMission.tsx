@@ -164,8 +164,8 @@ export default function JoinOurMission() {
                 style={{ borderRadius: '20px' }}
               >
                 <Image
-                  src="/images/about-hiring.JPG"
-                  alt="Xperience Wave team - We're hiring"
+                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80"
+                  alt="Collaborative team working together"
                   fill
                   className="object-cover"
                 />

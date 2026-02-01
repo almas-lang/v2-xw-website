@@ -239,7 +239,7 @@ export default function CommunityHeroC() {
                   transition: 'all 0.6s ease-out 0.3s',
                 }}
               >
-                <span>Sunday, Feb 15, 2025</span>
+                <span>Saturday, Mar 15, 2025</span>
                 <span className="w-1 h-1 rounded-full bg-white/30" />
                 <span>11 AM onwards</span>
                 <span className="w-1 h-1 rounded-full bg-white/30" />

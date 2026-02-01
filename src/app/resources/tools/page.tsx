@@ -2,12 +2,24 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import LeadCaptureModal, { LeadType } from '@/components/shared/LeadCaptureModal';
 
 // ============================================
 // TOOL DATA
 // ============================================
 
-const tools = [
+interface Tool {
+  id: string;
+  name: string;
+  tagline: string;
+  description: string;
+  icon: React.ReactNode;
+  color: 'accent' | 'alice';
+  leadType: LeadType;
+  available: boolean;
+}
+
+const tools: Tool[] = [
   {
     id: 'research-synthesis',
     name: 'Research Synthesis GPT',
@@ -20,7 +32,7 @@ const tools = [
       </svg>
     ),
     color: 'accent',
-    link: '#',
+    leadType: 'research-synthesis-gpt',
     available: false,
   },
   {
@@ -34,7 +46,7 @@ const tools = [
       </svg>
     ),
     color: 'alice',
-    link: '#',
+    leadType: 'microcopy-writer-gpt',
     available: false,
   },
   {
@@ -48,7 +60,7 @@ const tools = [
       </svg>
     ),
     color: 'accent',
-    link: '#',
+    leadType: 'portfolio-feedback-gpt',
     available: false,
   },
   {
@@ -62,7 +74,7 @@ const tools = [
       </svg>
     ),
     color: 'alice',
-    link: '#',
+    leadType: 'resume-reviewer-gpt',
     available: false,
   },
   {
@@ -76,7 +88,7 @@ const tools = [
       </svg>
     ),
     color: 'accent',
-    link: '#',
+    leadType: 'salary-negotiation-gpt',
     available: false,
   },
   {
@@ -90,7 +102,7 @@ const tools = [
       </svg>
     ),
     color: 'alice',
-    link: 'https://chatgpt.com/g/g-6932501b7b708191bd16ee0ea24f1e24-design-strategy-ai-xperience-wave',
+    leadType: 'design-strategy-gpt',
     available: true,
   },
   {
@@ -104,7 +116,7 @@ const tools = [
       </svg>
     ),
     color: 'accent',
-    link: '#',
+    leadType: 'ux-audit-gpt',
     available: false,
   },
 ];
@@ -115,10 +127,17 @@ const tools = [
 
 export default function ToolsPage() {
   const [isVisible, setIsVisible] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedLeadType, setSelectedLeadType] = useState<LeadType>('design-strategy-gpt');
 
   useEffect(() => {
     setIsVisible(true);
   }, []);
+
+  const openModal = (leadType: LeadType) => {
+    setSelectedLeadType(leadType);
+    setIsModalOpen(true);
+  };
 
   return (
     <>
@@ -305,7 +324,7 @@ export default function ToolsPage() {
                 transition: 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.35s',
               }}
             >
-              <Link href={tool.link} target="_blank" rel="noopener noreferrer" className="block group">
+              <button onClick={() => openModal(tool.leadType)} className="block w-full text-left group">
                 <div className="relative p-6 md:p-10 rounded-2xl border-2 border-[#2D6A7A]/30 bg-gradient-to-br from-[#2D6A7A]/10 to-transparent hover:border-[#2D6A7A]/50 hover:shadow-xl transition-all duration-300">
                   {/* Featured badge */}
                   <div className="absolute -top-3 left-6 md:left-10">
@@ -347,7 +366,7 @@ export default function ToolsPage() {
                     </div>
                   </div>
                 </div>
-              </Link>
+              </button>
             </div>
           ))}
 
@@ -370,13 +389,16 @@ export default function ToolsPage() {
                     transition: `all 0.6s cubic-bezier(0.4, 0, 0.2, 1) ${0.45 + index * 0.06}s`,
                   }}
                 >
-                  <div className={`relative h-full p-5 md:p-6 rounded-2xl border transition-all duration-300 overflow-hidden ${isAccent ? 'bg-accent/[0.03] border-accent/10' : 'bg-[#2D6A7A]/[0.03] border-[#2D6A7A]/10'} opacity-70`}>
+                  <button
+                    onClick={() => openModal(tool.leadType)}
+                    className={`relative h-full w-full text-left p-5 md:p-6 rounded-2xl border transition-all duration-300 overflow-hidden group cursor-pointer ${isAccent ? 'bg-accent/[0.03] border-accent/10 hover:border-accent/30 hover:bg-accent/[0.06]' : 'bg-[#2D6A7A]/[0.03] border-[#2D6A7A]/10 hover:border-[#2D6A7A]/30 hover:bg-[#2D6A7A]/[0.06]'}`}
+                  >
                     {/* Top accent bar */}
                     <div className={`absolute top-0 left-0 right-0 h-1 ${isAccent ? 'bg-accent/50' : 'bg-[#2D6A7A]/50'}`} />
 
                     {/* Icon */}
                     <div className={`w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center mb-4 ${isAccent ? 'bg-accent/10' : 'bg-[#2D6A7A]/10'}`}>
-                      <div className={`w-6 h-6 md:w-7 md:h-7 ${isAccent ? 'text-accent/60' : 'text-[#2D6A7A]/60'}`}>
+                      <div className={`w-6 h-6 md:w-7 md:h-7 ${isAccent ? 'text-accent/60 group-hover:text-accent' : 'text-[#2D6A7A]/60 group-hover:text-[#2D6A7A]'} transition-colors`}>
                         {tool.icon}
                       </div>
                     </div>
@@ -386,7 +408,7 @@ export default function ToolsPage() {
                       {tool.tagline}
                     </span>
 
-                    <h3 className="font-heading text-lg md:text-xl font-bold text-carbon/70 mb-2">
+                    <h3 className="font-heading text-lg md:text-xl font-bold text-carbon/70 group-hover:text-carbon mb-2 transition-colors">
                       {tool.name}
                     </h3>
 
@@ -395,10 +417,13 @@ export default function ToolsPage() {
                     </p>
 
                     {/* CTA */}
-                    <span className="inline-flex items-center gap-2 font-heading font-semibold text-sm text-g400">
-                      Upcoming
+                    <span className={`inline-flex items-center gap-2 font-heading font-semibold text-sm ${isAccent ? 'text-accent/60 group-hover:text-accent' : 'text-[#2D6A7A]/60 group-hover:text-[#2D6A7A]'} transition-colors`}>
+                      Join Waitlist
+                      <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
                     </span>
-                  </div>
+                  </button>
                 </div>
               );
             })}
@@ -467,6 +492,13 @@ export default function ToolsPage() {
           </div>
         </div>
       </section>
+
+      {/* Lead Capture Modal */}
+      <LeadCaptureModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        leadType={selectedLeadType}
+      />
     </>
   );
 }

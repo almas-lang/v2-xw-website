@@ -158,7 +158,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
-      <body className={`${plusJakarta.variable} ${inter.variable} antialiased`}>
+      <body className={`${plusJakarta.variable} ${inter.variable} antialiased overflow-x-hidden`}>
         <Analytics />
         <ScrollToTop />
         <a href="#main-content" className="sr-only">

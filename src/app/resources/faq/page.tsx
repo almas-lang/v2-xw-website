@@ -13,6 +13,8 @@ const themeColors: Record<string, { bg: string; bgLight: string; text: string; b
   teal: { bg: 'rgba(74, 144, 164, 0.2)', bgLight: 'rgba(74, 144, 164, 0.1)', text: '#4A90A4', border: '#4A90A4' },
   coral: { bg: 'rgba(255, 107, 107, 0.2)', bgLight: 'rgba(255, 107, 107, 0.1)', text: '#FF6B6B', border: '#FF6B6B' },
   gold: { bg: 'rgba(245, 158, 11, 0.2)', bgLight: 'rgba(245, 158, 11, 0.1)', text: '#F59E0B', border: '#F59E0B' },
+  indigo: { bg: 'rgba(99, 102, 241, 0.15)', bgLight: 'rgba(99, 102, 241, 0.08)', text: '#6366F1', border: '#6366F1' },
+  yellow: { bg: 'rgba(234, 179, 8, 0.2)', bgLight: 'rgba(234, 179, 8, 0.1)', text: '#EAB308', border: '#EAB308' },
 };
 
 // Flatten all FAQs for schema
@@ -253,40 +255,45 @@ export default function FAQsPage() {
             {displayedFaqs.map((faq, index) => (
               <div
                 key={index}
-                className="border-2 transition-all duration-300 bg-white"
-                style={{
-                  borderRadius: '6px',
-                  borderColor: openIndex === index ? colors.border : 'transparent',
-                  boxShadow: openIndex === index ? '0 10px 25px -5px rgba(0, 0, 0, 0.1)' : 'none',
-                }}
+                className="border-b border-g200"
               >
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className="w-full flex items-center justify-between p-5 md:p-6 text-left group"
+                  className="w-full flex items-center justify-between py-5 text-left group"
                 >
-                  <span className="font-heading text-lg md:text-xl font-semibold text-carbon pr-4">
-                    {faq.question}
-                  </span>
-                  <span
-                    className="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center text-g600 transition-all duration-300"
+                  <h3
+                    className="font-heading text-lg md:text-xl font-semibold pr-4 transition-colors"
                     style={{
-                      backgroundColor: colors.bg,
-                      transform: openIndex === index ? 'rotate(45deg)' : 'rotate(0deg)',
+                      color: openIndex === index ? colors.text : '#1A1A1A',
                     }}
                   >
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M12 6V18M18 12H6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                    {faq.question}
+                  </h3>
+                  <div
+                    className={`flex-shrink-0 w-6 h-6 flex items-center justify-center rounded-full transition-all duration-300 ${openIndex === index ? 'rotate-180' : ''}`}
+                    style={{
+                      backgroundColor: openIndex === index ? colors.border : '#f3f4f6',
+                    }}
+                  >
+                    <svg
+                      className={`w-4 h-4 transition-colors ${openIndex === index ? 'text-white' : 'text-g500'}`}
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                     </svg>
-                  </span>
+                  </div>
                 </button>
 
                 {/* Answer */}
                 <div
-                  className={`overflow-hidden transition-all duration-300 ${
-                    openIndex === index ? 'max-h-96' : 'max-h-0'
+                  className={`overflow-hidden transition-all duration-300 ease-out ${
+                    openIndex === index ? 'max-h-96 pb-5' : 'max-h-0'
                   }`}
                 >
-                  <p className="px-5 md:px-6 pb-5 md:pb-6 font-body text-sm md:text-base text-g600 leading-relaxed">
+                  <p className="font-body text-base md:text-lg text-g600 leading-relaxed pr-12 whitespace-pre-line">
                     {faq.answer}
                   </p>
                 </div>

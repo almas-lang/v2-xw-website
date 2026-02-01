@@ -4,7 +4,7 @@ interface ButtonProps {
   href?: string;
   onClick?: () => void;
   children: React.ReactNode;
-  variant?: 'primary' | 'secondary' | 'ghost' | 'indigo' | 'dark' | 'alice';
+  variant?: 'primary' | 'secondary' | 'ghost' | 'indigo' | 'dark' | 'alice' | 'yellow';
   size?: 'sm' | 'md' | 'lg';
   className?: string;
   showArrow?: boolean;
@@ -30,6 +30,7 @@ export default function Button({
     indigo: 'bg-indigo-600 hover:bg-indigo-500 text-white hover:shadow-lg hover:shadow-indigo-500/30',
     dark: 'bg-carbon hover:bg-carbon/90 text-white hover:shadow-lg hover:shadow-carbon/20',
     alice: 'bg-alice hover:bg-alice-dark/20 text-[#0d1a28] hover:shadow-lg hover:shadow-alice/30',
+    yellow: 'bg-[#FACC15] hover:bg-[#EAB308] text-[#1a1a1a] hover:shadow-lg hover:shadow-[#FACC15]/30',
   };
 
   const sizes = {

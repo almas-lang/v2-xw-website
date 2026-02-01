@@ -8,13 +8,13 @@ const partners = [
   { name: 'Meta', tier: 'featured', logo: '/images/logos/Meta/Meta_idlf4cVSsS_0.svg' },
   { name: 'LinkedIn', tier: 'featured', logo: '/images/logos/LinkedIn/LinkedIn_Logo_0.svg' },
   { name: 'AWS', tier: 'featured', logo: '/images/logos/Amazon Web Services/Amazon Web Services_idS5TK0MYh_0.svg' },
-  { name: 'Figma', tier: 'standard', logo: '/images/logos/Figma/Figma_Logo_0.svg' },
-  { name: 'Nxuniq', tier: 'standard', logo: '/images/logos/nxuniq.png' },
+  { name: 'Figma', tier: 'standard', logo: '/images/Figma-Logo.png' },
+  { name: 'Nxuniq', tier: 'standard', logo: '/images/nxuniq.png' },
   { name: 'Cashfree', tier: 'standard', logo: '/images/logos/Cashfree Payments/Cashfree Payments_idzBxeINHs_0.svg' },
-  { name: 'Aisensy', tier: 'standard', logo: '/images/logos/Aisensy.png' },
-  { name: 'Brevo', tier: 'standard', logo: '/images/logos/Brevo/Brevo_idgQGSgZ6E_0.svg' },
-  { name: 'Uizard', tier: 'standard', logo: '/images/logos/Uizard.png' },
-  { name: "It's Brown & Roasted", tier: 'standard', logo: '/images/logos/itsbrownandroasted.jpg' },
+  { name: 'Aisensy', tier: 'standard', logo: '/images/Aisensy.png' },
+  { name: 'Brevo', tier: 'standard', logo: '/images/Brevo.png' },
+  { name: 'Uizard', tier: 'standard', logo: '/images/Uizard.png' },
+  { name: "It's Brown & Roasted", tier: 'standard', logo: '/images/itsbrownandroasted.jpg' },
 ];
 
 export default function OurPartners() {

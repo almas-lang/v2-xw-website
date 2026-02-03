@@ -15,6 +15,7 @@ const programsDropdown = [
 const businessDropdown = [
   { href: '/for-business/hire-ux-designers', label: 'Hire UX Designers', tagline: 'Hire trained designers', color: '#6366F1' },
   { href: '/for-business/training-for-teams', label: 'Training for Teams', tagline: 'Upskill your design team', color: '#6366F1' },
+  { href: '/for-business/ux-design-services', label: 'UX Design Services', tagline: 'Outcome-driven design', color: '#6366F1' },
 ];
 
 const resourcesDropdown = [
@@ -136,6 +137,9 @@ export default function Header() {
 
   // Check if on training page (for different CTA)
   const isTrainingPage = pathname.startsWith('/for-business/training-for-teams');
+
+  // Check if on UX design services page (for different CTA)
+  const isUXServicesPage = pathname.startsWith('/for-business/ux-design-services');
 
   // Check if on podcast page (for different CTA)
   const isPodcastPage = pathname.startsWith('/podcast');
@@ -502,16 +506,16 @@ export default function Header() {
             <Button
               href={
                 isPodcastPage ? "https://open.spotify.com/show/5ULMerqiVi3L2HLHMeynoL" :
-                isHireDesignersPage || isTrainingPage ? "/contact" :
+                isHireDesignersPage || isTrainingPage || isUXServicesPage ? "/contact" :
                 isCommunityPage ? "/community/register" :
                 "https://calendly.com/team-xperiencewave/xw-strategy"
               }
               size="lg"
               className="w-full justify-center"
-              variant={isPodcastPage ? "yellow" : isHireDesignersPage || isTrainingPage || isCommunityPage ? "indigo" : "primary"}
+              variant={isPodcastPage ? "yellow" : isHireDesignersPage || isTrainingPage || isUXServicesPage || isCommunityPage ? "indigo" : "primary"}
               onClick={closeMobileMenu}
             >
-              {isPodcastPage ? "Listen on Spotify" : isHireDesignersPage || isTrainingPage ? "Contact Us" : isCommunityPage ? "Register" : "Book strategy call"}
+              {isPodcastPage ? "Listen on Spotify" : isHireDesignersPage || isTrainingPage || isUXServicesPage ? "Contact Us" : isCommunityPage ? "Register" : "Book strategy call"}
             </Button>
           </div>
         </div>
@@ -769,7 +773,7 @@ export default function Header() {
               <Link
                 href={link.href}
                 className={`font-heading text-sm font-medium transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:transition-all ${
-                  link.href === '/community' ? 'after:bg-indigo-500' : 'after:bg-accent'
+                  link.href === '/community' ? 'after:bg-indigo-500' : link.href === '/podcast' ? 'after:bg-[#FACC15]' : 'after:bg-accent'
                 } ${
                   isActive(link.href)
                     ? isDarkMode ? 'text-white after:w-full' : 'text-carbon after:w-full'
@@ -867,14 +871,15 @@ export default function Header() {
           <Button
             href={
               isPodcastPage ? "https://open.spotify.com/show/5ULMerqiVi3L2HLHMeynoL" :
-              isHireDesignersPage || isTrainingPage ? "/contact" :
+              isHireDesignersPage || isTrainingPage || isUXServicesPage ? "/contact" :
               isCommunityPage ? "/community/register" :
               "https://calendly.com/team-xperiencewave/xw-strategy"
             }
             size="sm"
-            variant={isPodcastPage ? "yellow" : isHireDesignersPage || isTrainingPage || isCommunityPage ? "indigo" : "primary"}
+            variant={isPodcastPage ? "yellow" : isHireDesignersPage || isTrainingPage || isUXServicesPage || isCommunityPage ? "indigo" : "primary"}
+            className="py-2.5"
           >
-            {isPodcastPage ? "Listen on Spotify" : isHireDesignersPage || isTrainingPage ? "Contact Us" : isCommunityPage ? "Register" : "Book strategy call"}
+            {isPodcastPage ? "Listen on Spotify" : isHireDesignersPage || isTrainingPage || isUXServicesPage ? "Contact Us" : isCommunityPage ? "Register" : "Book strategy call"}
           </Button>
         </div>
 

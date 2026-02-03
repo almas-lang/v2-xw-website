@@ -254,7 +254,7 @@ export default function FAQ({
           {showCTA && (
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 pt-4">
               <span className={`text-lg ${isDark ? 'text-g400' : 'text-g600'}`}>Still have questions?</span>
-              {isDark ? (
+              {isDark || theme !== 'default' ? (
                 <Link
                   href={ctaHref}
                   {...(ctaHref.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}

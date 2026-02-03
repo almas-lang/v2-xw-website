@@ -47,6 +47,10 @@ export default function WhyMentorship({
               transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
             }}
           >
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-8 h-[2px] bg-accent" />
+              <span className="font-body text-xs uppercase tracking-[0.2em] text-accent font-medium">The Difference</span>
+            </div>
             <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-carbon tracking-tight mb-6">
               Why Mentorship, Not Courses?
             </h2>

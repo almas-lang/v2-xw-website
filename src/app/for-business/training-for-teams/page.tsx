@@ -172,7 +172,13 @@ export default function TrainingForTeamsPage() {
 
   const isNotFor = [
     { text: 'Individuals looking to switch careers', link: '/programs', linkText: 'Check out Programs' },
-    { text: 'Designers seeking 1:1 mentorship', link: '/programs/current', linkText: 'Check out Current or Tide' },
+    {
+      text: 'Designers seeking 1:1 mentorship',
+      links: [
+        { href: '/programs/senior-ux-designer-mentorship', label: 'Current' },
+        { href: '/programs/ux-leadership-mentorship', label: 'Tide' },
+      ]
+    },
     { text: 'Teams looking to hire designers, not train them', link: '/for-business/hire-ux-designers', linkText: 'We can help with that too' },
   ];
 
@@ -374,10 +380,8 @@ export default function TrainingForTeamsPage() {
                   style={getSectionStyle('hero', 300)}
                 >
                   <Link
-                    href="https://calendly.com/team-xperiencewave/xw-strategy"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-indigo-500 text-white font-semibold rounded-lg hover:bg-indigo-600 transition-colors"
+                    href="/contact"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-indigo-500 text-white font-semibold rounded-lg hover:bg-indigo-500 transition-colors"
                   >
                     Book Free Discovery Call
                   </Link>
@@ -503,7 +507,12 @@ export default function TrainingForTeamsPage() {
         className="relative py-12 md:py-16 lg:py-20"
       >
         {/* Background */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a] to-[#030303]" />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, #0a0a0a 0%, #0a0a1a 50%, #0a0a0a 100%)' }} />
+        {/* Gradient orbs */}
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-indigo-500/20 rounded-full blur-[150px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-purple-500/15 rounded-full blur-[120px] pointer-events-none" />
+        {/* Grid pattern */}
+        <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'linear-gradient(rgba(99,102,241,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(99,102,241,0.5) 1px, transparent 1px)', backgroundSize: '50px 50px' }} />
 
         <div className="relative z-10 max-w-[1200px] mx-auto px-5 md:px-8">
           {/* Section Header */}
@@ -616,7 +625,14 @@ export default function TrainingForTeamsPage() {
         ref={(el) => { sectionRefs.current['workshops'] = el; }}
         className="relative py-20 md:py-28 lg:py-32 overflow-hidden"
       >
-        <div className="absolute inset-0 bg-[#0a0a0a]" />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, #0a0a1a 0%, #0a0a0a 50%, #1a0a1a 100%)' }} />
+        {/* Dot pattern */}
+        <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(99,102,241,0.15) 1px, transparent 0)', backgroundSize: '24px 24px' }} />
+        {/* Gradient orbs */}
+        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-indigo-500/20 rounded-full blur-[150px] pointer-events-none" />
+        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-purple-500/15 rounded-full blur-[120px] pointer-events-none" />
+        {/* Top accent line */}
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-indigo-500/50 to-transparent" />
 
         <div className="relative z-10">
           <div
@@ -660,7 +676,7 @@ export default function TrainingForTeamsPage() {
 
                 {/* Content */}
                 <div className="relative h-full p-8 flex flex-col justify-end">
-                  <span className="inline-block w-fit px-3 py-1 rounded-full bg-indigo-600 text-white text-xs font-semibold mb-4">
+                  <span className="inline-block w-fit px-3 py-1 rounded-full bg-indigo-500 text-white text-xs font-semibold mb-4">
                     {featuredWorkshop.badge}
                   </span>
                   <h3 className="font-heading text-2xl font-bold text-white mb-2">{featuredWorkshop.title}</h3>
@@ -672,9 +688,7 @@ export default function TrainingForTeamsPage() {
                     <span className="text-white">Duration:</span> {featuredWorkshop.duration}
                   </p>
                   <Link
-                    href="https://calendly.com/team-xperiencewave/xw-strategy"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="/contact"
                     className="inline-flex w-fit px-5 py-2.5 bg-white text-indigo-900 text-sm font-semibold rounded-lg hover:bg-white/90 transition-colors"
                   >
                     Book Discovery Call
@@ -759,10 +773,8 @@ export default function TrainingForTeamsPage() {
                 <p className="text-white font-medium mb-2">Need something specific?</p>
                 <p className="text-g400 text-sm mb-6">We build custom workshops for your team's unique challenges.</p>
                 <Link
-                  href="https://calendly.com/team-xperiencewave/xw-strategy"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-5 py-2.5 bg-indigo-600 text-white text-sm font-semibold rounded-lg hover:bg-indigo-700 transition-colors"
+                  href="/contact"
+                  className="px-5 py-2.5 bg-indigo-500 text-white text-sm font-semibold rounded-lg hover:bg-indigo-600 transition-colors"
                 >
                   Book Free Discovery Call
                 </Link>
@@ -781,12 +793,17 @@ export default function TrainingForTeamsPage() {
         ref={(el) => { sectionRefs.current['how-it-works'] = el; }}
         className="relative py-20 md:py-28 lg:py-32"
       >
-        <div className="absolute inset-0 bg-[#030303]" />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, #030303 0%, #0a0a1a 50%, #030303 100%)' }} />
         {/* Mesh gradient */}
         <div
-          className="absolute inset-0 opacity-20"
-          style={{ background: 'radial-gradient(ellipse 60% 40% at 50% 0%, rgba(99,102,241,0.3) 0%, transparent 50%)' }}
+          className="absolute inset-0"
+          style={{ background: 'radial-gradient(ellipse 80% 50% at 50% 0%, rgba(99,102,241,0.25) 0%, transparent 60%)' }}
         />
+        {/* Gradient orbs */}
+        <div className="absolute top-1/3 left-0 w-[400px] h-[400px] bg-indigo-500/15 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-0 right-0 w-[350px] h-[350px] bg-purple-500/10 rounded-full blur-[100px] pointer-events-none" />
+        {/* Dot pattern */}
+        <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(99,102,241,0.1) 1px, transparent 0)', backgroundSize: '32px 32px' }} />
 
         <div className="relative z-10 max-w-[1200px] mx-auto px-5 md:px-8">
           <div className="text-center" style={getSectionStyle('how-it-works', 0)}>
@@ -810,7 +827,7 @@ export default function TrainingForTeamsPage() {
                 <div className="relative flex-1 p-6 md:p-8 rounded-xl border border-white/10 bg-white/[0.02] h-full overflow-hidden">
                   {/* Top Accent Line */}
                   <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-indigo-400 to-indigo-600" />
-                  <div className="w-10 h-10 rounded-lg bg-indigo-600 flex items-center justify-center text-white font-bold mb-4">
+                  <div className="w-10 h-10 rounded-lg bg-indigo-500 flex items-center justify-center text-white font-bold mb-4">
                     {step.number}
                   </div>
                   <h3 className="font-heading text-xl font-bold text-white mb-3">{step.title}</h3>
@@ -833,10 +850,8 @@ export default function TrainingForTeamsPage() {
           >
             <p className="text-g400 mb-4">Ready to start?</p>
             <Link
-              href="https://calendly.com/team-xperiencewave/xw-strategy"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 transition-colors"
+              href="/contact"
+              className="inline-flex px-6 py-3 bg-indigo-500 text-white font-semibold rounded-lg hover:bg-indigo-600 transition-colors"
             >
               Book Free Discovery Call
             </Link>
@@ -850,7 +865,12 @@ export default function TrainingForTeamsPage() {
         ref={(el) => { sectionRefs.current['is-this-right'] = el; }}
         className="relative py-20 md:py-28 lg:py-32"
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a] to-[#030303]" />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, #030303 0%, #0a0a1a 50%, #030303 100%)' }} />
+        {/* Accent glows */}
+        <div className="absolute top-0 left-1/4 w-[400px] h-[400px] bg-indigo-500/15 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-0 right-1/4 w-[350px] h-[350px] bg-purple-500/10 rounded-full blur-[100px] pointer-events-none" />
+        {/* Grid pattern */}
+        <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'linear-gradient(rgba(99,102,241,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(99,102,241,0.4) 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
 
         <div className="relative z-10 max-w-[1000px] mx-auto px-5 md:px-8">
           <div className="text-center" style={getSectionStyle('is-this-right', 0)}>
@@ -917,9 +937,23 @@ export default function TrainingForTeamsPage() {
                 {isNotFor.map((item, i) => (
                   <li key={i} className="text-g400 text-sm">
                     <span className="text-g500">•</span> {item.text} →{' '}
-                    <Link href={item.link} className="text-indigo-400 hover:underline">
-                      {item.linkText}
-                    </Link>
+{'links' in item && item.links ? (
+                      <>
+                        Check out{' '}
+                        {item.links.map((linkItem, j) => (
+                          <span key={j}>
+                            <Link href={linkItem.href} className="text-indigo-400 hover:underline">
+                              {linkItem.label}
+                            </Link>
+                            {j < (item.links?.length ?? 0) - 1 && ' or '}
+                          </span>
+                        ))}
+                      </>
+                    ) : 'link' in item && item.link ? (
+                      <Link href={item.link} className="text-indigo-400 hover:underline">
+                        {item.linkText}
+                      </Link>
+                    ) : null}
                   </li>
                 ))}
               </ul>
@@ -1196,10 +1230,8 @@ export default function TrainingForTeamsPage() {
             style={getSectionStyle('gap-analysis', 200)}
           >
             <Link
-              href="https://calendly.com/team-xperiencewave/xw-strategy"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-6 py-3.5 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 transition-colors"
+              href="/contact"
+              className="inline-flex items-center justify-center px-6 py-3.5 bg-indigo-500 text-white font-semibold rounded-lg hover:bg-indigo-600 transition-colors"
             >
               Book Free Discovery Call
             </Link>
@@ -1232,14 +1264,20 @@ export default function TrainingForTeamsPage() {
         ref={(el) => { sectionRefs.current['other-ways'] = el; }}
         className="relative py-20 md:py-28 lg:py-32"
       >
-        <div className="absolute inset-0 bg-[#030303]" />
-        <div className="absolute inset-0 opacity-20" style={{ background: 'radial-gradient(ellipse 60% 40% at 50% 0%, rgba(99,102,241,0.3) 0%, transparent 50%)' }} />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, #030303 0%, #0a0a1a 50%, #030303 100%)' }} />
+        {/* Gradient orbs */}
+        <div className="absolute top-0 left-0 w-[400px] h-[400px] md:w-[500px] md:h-[500px] bg-indigo-500/20 rounded-full blur-[150px] pointer-events-none" />
+        <div className="absolute bottom-0 right-0 w-[350px] h-[350px] md:w-[450px] md:h-[450px] bg-purple-500/15 rounded-full blur-[120px] pointer-events-none" />
+        {/* Grid pattern */}
+        <div className="absolute inset-0 opacity-[0.05]" style={{ backgroundImage: 'linear-gradient(rgba(99,102,241,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(99,102,241,0.4) 1px, transparent 1px)', backgroundSize: '50px 50px' }} />
+        {/* Top accent line */}
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-indigo-500/50 to-transparent" />
 
         <div className="relative z-10 max-w-[1200px] mx-auto px-5 md:px-8">
           <div className="text-center" style={getSectionStyle('other-ways', 0)}>
             <span className="flex items-center justify-center gap-3 text-indigo-400 text-xs uppercase tracking-[0.2em] font-medium mb-4">
               <span className="w-8 h-[2px] bg-indigo-500" />
-              More Services
+              Beyond Training
               <span className="w-8 h-[2px] bg-indigo-500" />
             </span>
             <h2 className="font-heading text-3xl lg:text-4xl font-bold text-white mb-12">
@@ -1322,10 +1360,8 @@ export default function TrainingForTeamsPage() {
 
           {/* CTA Button */}
           <Link
-            href="https://calendly.com/team-xperiencewave/xw-strategy"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 transition-colors"
+            href="/contact"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-indigo-500 text-white font-semibold rounded-lg hover:bg-indigo-600 transition-colors"
           >
             Book Free Discovery Call
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">

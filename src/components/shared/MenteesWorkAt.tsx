@@ -85,11 +85,23 @@ export default function MenteesWorkAt({
       <div className="max-w-[1200px] mx-auto px-5 relative z-10">
         {/* Header */}
         <div className="text-center mb-8 sm:mb-10 md:mb-14">
+          <div
+            className="flex items-center justify-center gap-3 mb-4 transition-all duration-700"
+            style={{
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+            }}
+          >
+            <div className="w-8 h-[2px] bg-accent" />
+            <span className="font-body text-xs uppercase tracking-[0.2em] text-accent font-medium">Where They Work</span>
+            <div className="w-8 h-[2px] bg-accent" />
+          </div>
           <h2
             className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-carbon tracking-tight transition-all duration-700"
             style={{
               opacity: isVisible ? 1 : 0,
               transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+              transitionDelay: '100ms',
             }}
           >
             {title}

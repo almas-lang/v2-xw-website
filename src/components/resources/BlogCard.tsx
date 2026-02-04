@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import type { BlogPost } from '@/data/blogPosts';
-import { getCategoryColor, getCategoryLabel, formatDate } from '@/data/blogPosts';
+import { getCategoryColor, getCategoryLabel } from '@/data/blogPosts';
 
 interface BlogCardProps {
   post: BlogPost;
@@ -18,15 +18,15 @@ export default function BlogCard({ post, index = 0, isVisible = true }: BlogCard
 
   const cardContent = (
     <article
-      className={`bg-white border border-g200 overflow-hidden h-full transition-all duration-300 ${
+      className={`relative overflow-hidden h-full transition-all duration-300 ${
         isUpcoming
           ? 'opacity-75 cursor-default'
-          : 'hover:border-accent hover:-translate-y-1 hover:shadow-lg'
+          : 'hover:-translate-y-1 hover:shadow-xl'
       }`}
-      style={{ borderRadius: '16px' }}
+      style={{ borderRadius: '12px' }}
     >
-      {/* Image */}
-      <div className="relative aspect-[16/10] overflow-hidden bg-g100">
+      {/* Background Image */}
+      <div className="relative aspect-[4/5] md:aspect-[3/4]">
         {post.image ? (
           <Image
             src={post.image}
@@ -38,49 +38,57 @@ export default function BlogCard({ post, index = 0, isVisible = true }: BlogCard
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         ) : (
-          <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-g100 to-g200">
-            <svg className="w-12 h-12 text-g300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-            </svg>
-          </div>
+          <div className="absolute inset-0 bg-gradient-to-br from-g200 to-g300" />
         )}
+
+        {/* Dark Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/20" />
 
         {/* Coming Soon Badge */}
         {isUpcoming && (
-          <div className="absolute top-3 right-3 px-3 py-1.5 bg-carbon/90 backdrop-blur-sm rounded-full">
+          <div className="absolute top-4 right-4 px-3 py-1.5 bg-carbon/90 backdrop-blur-sm rounded-full">
             <span className="text-xs font-medium text-white uppercase tracking-wide">
               Coming Soon
             </span>
           </div>
         )}
-      </div>
 
-      {/* Content */}
-      <div className="p-5 md:p-6">
-        {/* Category Tag */}
-        <span
-          className="inline-block px-3 py-1 text-xs font-medium uppercase tracking-wide text-white mb-3"
-          style={{ backgroundColor: isUpcoming ? '#6B7280' : categoryColor, borderRadius: '100px' }}
-        >
-          {categoryLabel}
-        </span>
+        {/* Content - Positioned at bottom */}
+        <div className="absolute inset-0 p-5 md:p-6 flex flex-col justify-end">
+          {/* Category Tag */}
+          <span
+            className="inline-block px-3 py-1 text-xs font-semibold text-white mb-3 w-fit backdrop-blur-sm"
+            style={{
+              backgroundColor: isUpcoming ? 'rgba(107, 114, 128, 0.8)' : `${categoryColor}cc`,
+              borderRadius: '4px'
+            }}
+          >
+            {categoryLabel}
+          </span>
 
-        {/* Title */}
-        <h3 className={`font-heading text-lg md:text-xl font-bold mb-2 line-clamp-2 transition-colors duration-300 ${
-          isUpcoming ? 'text-g500' : 'text-carbon group-hover:text-accent'
-        }`}>
-          {post.title}
-        </h3>
+          {/* Title */}
+          <h3 className={`font-heading text-lg md:text-xl font-bold mb-3 line-clamp-3 transition-colors duration-300 ${
+            isUpcoming ? 'text-white/70' : 'text-white'
+          }`}>
+            {post.title}
+          </h3>
 
-        {/* Excerpt */}
-        <p className="font-body text-sm text-g500 mb-4 line-clamp-2">
-          {post.excerpt}
-        </p>
-
-        {/* Meta */}
-        <div className="flex items-center justify-between text-sm text-g400">
-          <span>{isUpcoming ? 'Coming soon' : formatDate(post.publishedAt)}</span>
-          <span>{post.readTime} read</span>
+          {/* Meta */}
+          <div className="flex items-center justify-between text-sm">
+            <span className="inline-flex items-center gap-2 font-semibold text-white group-hover:gap-3 transition-all">
+              Read
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path
+                  d="M3 8H13M13 8L9 4M13 8L9 12"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </span>
+            <span className="text-white/70">{post.readTime} read</span>
+          </div>
         </div>
       </div>
     </article>

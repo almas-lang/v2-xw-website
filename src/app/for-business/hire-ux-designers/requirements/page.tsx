@@ -172,18 +172,18 @@ export default function RequirementsPage() {
           />
         </div>
 
-        {/* Confetti effect */}
+        {/* Confetti effect - using deterministic values based on index to avoid hydration mismatch */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           {Array.from({ length: 50 }).map((_, i) => (
             <div
               key={i}
               className="absolute w-2 h-2 rounded-full animate-confetti"
               style={{
-                left: `${Math.random() * 100}%`,
+                left: `${(i * 37) % 100}%`,
                 top: '-10px',
-                backgroundColor: ['#6366f1', '#8b5cf6', '#a78bfa', '#c4b5fd', '#818cf8'][Math.floor(Math.random() * 5)],
-                animationDelay: `${Math.random() * 3}s`,
-                animationDuration: `${3 + Math.random() * 2}s`,
+                backgroundColor: ['#6366f1', '#8b5cf6', '#a78bfa', '#c4b5fd', '#818cf8'][i % 5],
+                animationDelay: `${(i * 0.06) % 3}s`,
+                animationDuration: `${3 + (i % 3) * 0.7}s`,
               }}
             />
           ))}

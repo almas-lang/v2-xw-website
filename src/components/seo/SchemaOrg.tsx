@@ -147,54 +147,6 @@ export default function SchemaOrg() {
     ],
   };
 
-  // FAQ Schema - helps with rich snippets in Google
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: [
-      {
-        "@type": "Question",
-        name: "How is this different from UX design courses?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Unlike courses that offer generic pre-recorded content, our 1:1 mentorship is personalized to your specific gaps, experience level, and career goals. You get live sessions, direct feedback on your portfolio, and accountability - not certificates that hiring managers ignore.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "Who is this mentorship for?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "This is for UX/UI/Product designers with 2+ years of experience who feel stuck at the same level, keep getting rejected for senior roles, or want to transition into design leadership. If you've tried courses and they haven't worked, this is your next step.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "How long does it take to see results?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Most of our mentees land their target roles within 90 days. Our 90-Day Accelerator program is specifically designed to get you interview-ready and confident within that timeframe, with 80%+ of participants achieving their goals.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "What if I don't get results?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "We offer continued support until you achieve your goals. Unlike courses where you're on your own after completion, we stay with you through the job search process, interview preparation, and even salary negotiation.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "How do the 1:1 sessions work?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Sessions are conducted via video call and scheduled based on your availability. Each session is tailored to your current challenges - whether that's portfolio reviews, mock interviews, or strategic career guidance.",
-        },
-      },
-    ],
-  };
-
   // Review/Testimonial Schema - social proof for search results
   const reviewSchema = {
     "@context": "https://schema.org",
@@ -273,10 +225,6 @@ export default function SchemaOrg() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <script
         type="application/ld+json"

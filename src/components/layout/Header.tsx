@@ -631,7 +631,7 @@ export default function Header() {
           />
           {/* Desktop Logo */}
           <Image
-            src="/images/logos/xw-logo-light.svg"
+            src={isDarkMode ? "/images/logos/xw-logo-light.svg" : "/images/logos/xw-logo-dark.svg"}
             alt="Xperience Wave"
             width={130}
             height={36}

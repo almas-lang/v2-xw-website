@@ -574,20 +574,20 @@ export default function Header() {
         <Link href="/" className="flex-shrink-0" aria-label="Xperience Wave Home">
           {/* Mobile Logo */}
           <Image
-            src="/images/xw-logo-mobile.png"
+            src="/images/logos/xw-logo-mobile.svg"
             alt="Xperience Wave"
             width={32}
             height={32}
-            className={`h-6 w-auto lg:hidden transition-all duration-300 ${!isDarkMode ? 'brightness-0' : ''}`}
+            className={`h-9 w-auto lg:hidden transition-all duration-300 ${!isDarkMode ? 'brightness-0' : ''}`}
             priority
           />
           {/* Desktop Logo */}
           <Image
-            src="/images/xw-logo-light.png"
+            src="/images/logos/xw-logo-light.svg"
             alt="Xperience Wave"
-            width={100}
-            height={28}
-            className={`h-6 w-auto hidden lg:block transition-all duration-300 ${!isDarkMode ? 'brightness-0' : ''}`}
+            width={130}
+            height={36}
+            className={`h-8 w-auto hidden lg:block transition-all duration-300 ${!isDarkMode ? 'brightness-0' : ''}`}
             priority
           />
         </Link>

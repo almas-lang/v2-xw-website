@@ -414,7 +414,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       name: 'Xperience Wave',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://xperiencewave.com/images/xw-logo.png',
+        url: 'https://xperiencewave.com/images/logos/xw-logo-light.svg',
       },
     },
     mainEntityOfPage: {

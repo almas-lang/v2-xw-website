@@ -8,7 +8,7 @@ export default function SchemaOrg() {
     url: "https://xperiencewave.com",
     logo: {
       "@type": "ImageObject",
-      url: "https://xperiencewave.com/images/xw-logo.png",
+      url: "https://xperiencewave.com/images/logos/xw-logo-light.svg",
       width: 200,
       height: 60,
     },

@@ -117,7 +117,7 @@ export default function Footer() {
               <div className="flex items-start gap-4 mb-4">
                 <div className="w-16 h-16 bg-white border border-g200 rounded-lg flex items-center justify-center flex-shrink-0">
                   <Image
-                    src="/images/xw-logo-mobile.png"
+                    src="/images/logos/xw-logo-mobile.svg"
                     alt="Xperience Wave"
                     width={48}
                     height={48}

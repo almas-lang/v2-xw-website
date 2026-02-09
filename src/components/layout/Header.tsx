@@ -25,11 +25,14 @@ const resourcesDropdown = [
   { href: '/resources/shortcourses', label: 'Short Courses', tagline: 'Quick learning', color: '#D4A853' },
 ];
 
+const communityDropdown = [
+  { href: '/community', label: 'Community', tagline: 'Join our community', color: '#6366F1' },
+  { href: '/podcast', label: 'Podcast', tagline: 'Listen to episodes', color: '#FACC15' },
+];
+
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
-  { href: '/podcast', label: 'Podcast' },
-  { href: '/community', label: 'Community' },
 ];
 
 
@@ -62,16 +65,20 @@ export default function Header() {
   const [programsOpen, setProgramsOpen] = useState(false);
   const [businessOpen, setBusinessOpen] = useState(false);
   const [resourcesOpen, setResourcesOpen] = useState(false);
+  const [communityOpen, setCommunityOpen] = useState(false);
   const [mobileProgramsOpen, setMobileProgramsOpen] = useState(false);
   const [mobileBusinessOpen, setMobileBusinessOpen] = useState(false);
   const [mobileResourcesOpen, setMobileResourcesOpen] = useState(false);
+  const [mobileCommunityOpen, setMobileCommunityOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [hoveredProgram, setHoveredProgram] = useState<number | null>(null);
   const [hoveredBusiness, setHoveredBusiness] = useState<number | null>(null);
   const [hoveredResource, setHoveredResource] = useState<number | null>(null);
+  const [hoveredCommunity, setHoveredCommunity] = useState<number | null>(null);
   const programsRef = useRef<HTMLLIElement>(null);
   const businessRef = useRef<HTMLLIElement>(null);
   const resourcesRef = useRef<HTMLLIElement>(null);
+  const communityRef = useRef<HTMLLIElement>(null);
 
   // Get page-aware accent color
   const getPageAccentColor = () => {
@@ -132,6 +139,9 @@ export default function Header() {
   // Check if any resources item is active
   const isResourcesActive = resourcesDropdown.some((item) => pathname.startsWith(item.href)) || pathname === '/resources';
 
+  // Check if any community item is active
+  const isCommunityActive = communityDropdown.some((item) => pathname.startsWith(item.href));
+
   // Check if on hire designers page (for different CTA)
   const isHireDesignersPage = pathname.startsWith('/for-business/hire-ux-designers');
 
@@ -159,6 +169,9 @@ export default function Header() {
       if (resourcesRef.current && !resourcesRef.current.contains(event.target as Node)) {
         setResourcesOpen(false);
       }
+      if (communityRef.current && !communityRef.current.contains(event.target as Node)) {
+        setCommunityOpen(false);
+      }
     }
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
@@ -170,22 +183,31 @@ export default function Header() {
     setMobileProgramsOpen(false);
     setMobileBusinessOpen(false);
     setMobileResourcesOpen(false);
+    setMobileCommunityOpen(false);
   };
 
   // Accordion toggle - only one open at a time
-  const toggleAccordion = (section: 'programs' | 'business' | 'resources') => {
+  const toggleAccordion = (section: 'programs' | 'business' | 'resources' | 'community') => {
     if (section === 'programs') {
       setMobileProgramsOpen(!mobileProgramsOpen);
       setMobileBusinessOpen(false);
       setMobileResourcesOpen(false);
+      setMobileCommunityOpen(false);
     } else if (section === 'business') {
       setMobileBusinessOpen(!mobileBusinessOpen);
       setMobileProgramsOpen(false);
+      setMobileResourcesOpen(false);
+      setMobileCommunityOpen(false);
+    } else if (section === 'community') {
+      setMobileCommunityOpen(!mobileCommunityOpen);
+      setMobileProgramsOpen(false);
+      setMobileBusinessOpen(false);
       setMobileResourcesOpen(false);
     } else {
       setMobileResourcesOpen(!mobileResourcesOpen);
       setMobileProgramsOpen(false);
       setMobileBusinessOpen(false);
+      setMobileCommunityOpen(false);
     }
   };
 
@@ -378,7 +400,7 @@ export default function Header() {
               </Link>
             </div>
 
-            {/* Podcast */}
+            {/* Community Accordion */}
             <div
               style={{
                 opacity: mobileMenuOpen ? 1 : 0,
@@ -387,39 +409,65 @@ export default function Header() {
                 transitionDelay: mobileMenuOpen ? '250ms' : '0ms',
               }}
             >
-              <Link
-                href="/podcast"
-                onClick={closeMobileMenu}
-                className={`block py-4 px-5 rounded-xl font-heading text-xl font-semibold transition-all ${
-                  isActive('/podcast')
+              <div
+                className={`flex items-center justify-between py-4 px-5 rounded-xl transition-all ${
+                  mobileCommunityOpen || isCommunityActive
                     ? 'text-white bg-white/10'
-                    : 'text-white/80 hover:text-white hover:bg-white/5'
+                    : 'text-white/80 hover:bg-white/5'
                 }`}
               >
-                Podcast
-              </Link>
-            </div>
-
-            {/* Community */}
-            <div
-              style={{
-                opacity: mobileMenuOpen ? 1 : 0,
-                transform: mobileMenuOpen ? 'translateY(0)' : 'translateY(20px)',
-                transition: 'all 0.4s ease-out',
-                transitionDelay: mobileMenuOpen ? '300ms' : '0ms',
-              }}
-            >
-              <Link
-                href="/community"
-                onClick={closeMobileMenu}
-                className={`block py-4 px-5 rounded-xl font-heading text-xl font-semibold transition-all ${
-                  isActive('/community')
-                    ? 'text-white bg-white/10'
-                    : 'text-white/80 hover:text-white hover:bg-white/5'
+                <Link
+                  href="/community"
+                  onClick={closeMobileMenu}
+                  className="font-heading text-xl font-semibold hover:text-white"
+                >
+                  Community
+                </Link>
+                <button
+                  onClick={() => toggleAccordion('community')}
+                  className="p-1 hover:bg-white/10 rounded transition-colors"
+                  aria-label="Toggle community submenu"
+                >
+                  <svg
+                    className={`w-5 h-5 transition-transform duration-300 ${mobileCommunityOpen ? 'rotate-180' : ''}`}
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
+                    <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
+              </div>
+              <div
+                className={`overflow-hidden transition-all duration-300 ease-out ${
+                  mobileCommunityOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                 }`}
               >
-                Community
-              </Link>
+                <div className="py-2 px-3 space-y-1">
+                  {communityDropdown.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={closeMobileMenu}
+                      className="flex items-center gap-4 py-3 px-4 rounded-lg hover:bg-white/5 transition-colors group"
+                    >
+                      <span
+                        className="w-3 h-3 rounded-full flex-shrink-0"
+                        style={{ backgroundColor: item.color }}
+                      />
+                      <div>
+                        <span className="font-heading text-base font-medium text-white block">
+                          {item.label}
+                        </span>
+                        <span className="text-sm text-white/50">
+                          {item.tagline}
+                        </span>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
             </div>
 
             {/* Resources Accordion */}
@@ -428,7 +476,7 @@ export default function Header() {
                 opacity: mobileMenuOpen ? 1 : 0,
                 transform: mobileMenuOpen ? 'translateY(0)' : 'translateY(20px)',
                 transition: 'all 0.4s ease-out',
-                transitionDelay: mobileMenuOpen ? '350ms' : '0ms',
+                transitionDelay: mobileMenuOpen ? '300ms' : '0ms',
               }}
             >
               <div
@@ -500,7 +548,7 @@ export default function Header() {
               opacity: mobileMenuOpen ? 1 : 0,
               transform: mobileMenuOpen ? 'translateY(0)' : 'translateY(20px)',
               transition: 'all 0.4s ease-out',
-              transitionDelay: mobileMenuOpen ? '400ms' : '0ms',
+              transitionDelay: mobileMenuOpen ? '350ms' : '0ms',
             }}
           >
             <Button
@@ -578,7 +626,7 @@ export default function Header() {
             alt="Xperience Wave"
             width={32}
             height={32}
-            className={`h-9 w-auto lg:hidden transition-all duration-300 ${!isDarkMode ? 'brightness-0' : ''}`}
+            className="h-9 w-auto lg:hidden transition-all duration-300"
             priority
           />
           {/* Desktop Logo */}
@@ -587,7 +635,7 @@ export default function Header() {
             alt="Xperience Wave"
             width={130}
             height={36}
-            className={`h-8 w-auto hidden lg:block transition-all duration-300 ${!isDarkMode ? 'brightness-0' : ''}`}
+            className="h-8 w-auto hidden lg:block transition-all duration-300"
             priority
           />
         </Link>
@@ -767,14 +815,12 @@ export default function Header() {
             </div>
           </li>
 
-          {/* About, Community */}
+          {/* About */}
           {navLinks.slice(1).map((link) => (
             <li key={link.href}>
               <Link
                 href={link.href}
-                className={`font-heading text-sm font-medium transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:transition-all ${
-                  link.href === '/community' ? 'after:bg-indigo-500' : link.href === '/podcast' ? 'after:bg-[#FACC15]' : 'after:bg-accent'
-                } ${
+                className={`font-heading text-sm font-medium transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:bg-accent after:transition-all ${
                   isActive(link.href)
                     ? isDarkMode ? 'text-white after:w-full' : 'text-carbon after:w-full'
                     : isDarkMode ? 'text-g300 hover:text-white after:w-0 hover:after:w-full' : 'text-g600 hover:text-carbon after:w-0 hover:after:w-full'
@@ -784,6 +830,81 @@ export default function Header() {
               </Link>
             </li>
           ))}
+
+          {/* Community Dropdown */}
+          <li
+            className="relative"
+            ref={communityRef}
+            onMouseLeave={() => setCommunityOpen(false)}
+          >
+            <div
+              className="flex items-center gap-1 cursor-pointer"
+              onMouseEnter={() => setCommunityOpen(true)}
+            >
+              <span
+                className={`font-heading text-sm font-medium transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:bg-indigo-500 after:transition-all ${
+                  isCommunityActive
+                    ? isDarkMode ? 'text-white after:w-full' : 'text-carbon after:w-full'
+                    : isDarkMode ? 'text-g300 hover:text-white after:w-0 hover:after:w-full' : 'text-g600 hover:text-carbon after:w-0 hover:after:w-full'
+                }`}
+              >
+                Community
+              </span>
+              <svg
+                className={`w-4 h-4 transition-transform ${communityOpen ? 'rotate-180' : ''} ${
+                  isDarkMode ? 'text-g300' : 'text-g600'
+                }`}
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </div>
+
+            {/* Dropdown Menu */}
+            <div
+              className={`absolute top-full left-0 pt-2 w-72 transition-all ${
+                communityOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'
+              }`}
+            >
+              <div className="bg-white border border-g200 rounded-2xl shadow-lg p-3 space-y-2">
+                {communityDropdown.map((item, index) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="flex items-start gap-3 p-3 rounded-xl transition-all duration-200"
+                    style={{
+                      backgroundColor: hoveredCommunity === index ? `${item.color}08` : 'transparent',
+                      borderWidth: '1px',
+                      borderStyle: 'solid',
+                      borderColor: hoveredCommunity === index ? `${item.color}30` : 'transparent',
+                    }}
+                    onMouseEnter={() => setHoveredCommunity(index)}
+                    onMouseLeave={() => setHoveredCommunity(null)}
+                  >
+                    <span
+                      className="w-2 h-2 rounded-full flex-shrink-0 mt-1.5 transition-transform duration-200"
+                      style={{
+                        backgroundColor: item.color,
+                        transform: hoveredCommunity === index ? 'scale(1.25)' : 'scale(1)',
+                      }}
+                    />
+                    <div>
+                      <span
+                        className="font-heading text-sm font-semibold block transition-colors duration-200"
+                        style={{ color: hoveredCommunity === index ? item.color : '#1a1a1a' }}
+                      >
+                        {item.label}
+                      </span>
+                      <span className="text-xs text-g400">{item.tagline}</span>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </li>
 
           {/* Resources Dropdown */}
           <li
@@ -877,7 +998,7 @@ export default function Header() {
             }
             size="sm"
             variant={isPodcastPage ? "yellow" : isHireDesignersPage || isTrainingPage || isUXServicesPage || isCommunityPage ? "indigo" : "primary"}
-            className="py-2.5"
+            className="py-2.5 min-w-[11rem] justify-center"
           >
             {isPodcastPage ? "Listen on Spotify" : isHireDesignersPage || isTrainingPage || isUXServicesPage ? "Contact Us" : isCommunityPage ? "Register" : "Book strategy call"}
           </Button>

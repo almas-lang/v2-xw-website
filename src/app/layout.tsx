@@ -108,20 +108,8 @@ export const metadata: Metadata = {
     images: ["/images/og-image.jpg"],
   },
 
-  // Icons & Manifest
-  // TODO: Create these favicon files:
-  // - /public/favicon.ico (main favicon)
-  // - /public/images/favicon-16x16.png (16x16px)
-  // - /public/images/favicon-32x32.png (32x32px)
-  // - /public/images/apple-touch-icon.png (180x180px)
-  // Use https://favicon.io or similar tool to generate from logo
   icons: {
-    icon: [
-      { url: "/images/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-      { url: "/images/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-    ],
-    apple: [{ url: "/images/apple-touch-icon.png", sizes: "180x180" }],
-    shortcut: "/favicon.ico",
+    icon: { url: "/favicon.svg", type: "image/svg+xml" },
   },
   manifest: "/manifest.json",
 

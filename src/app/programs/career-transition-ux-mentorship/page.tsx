@@ -227,7 +227,6 @@ export default function RippleProgramPage() {
           { name: 'Programs', url: '/programs' },
           { name: 'Career Transition', url: '/programs/career-transition-ux-mentorship' },
         ]}
-        faqs={rippleFaqs}
       />
       <ProgramHero
         programName="Ripple"

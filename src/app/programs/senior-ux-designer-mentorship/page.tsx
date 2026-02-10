@@ -216,7 +216,6 @@ export default function CurrentProgramPage() {
           { name: 'Programs', url: '/programs' },
           { name: 'Senior UX Mentorship', url: '/programs/senior-ux-designer-mentorship' },
         ]}
-        faqs={currentFaqs}
       />
       <ProgramHero
         programName="Current"

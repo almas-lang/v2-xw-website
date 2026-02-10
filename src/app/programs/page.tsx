@@ -98,7 +98,6 @@ export default function ProgramsPage() {
         pageName="1:1 UX Mentorship Programs"
         pageDescription="Find the right UX mentorship program for your career stage. Whether you're starting out, stuck at mid-level, or ready to lead."
         breadcrumbs={[{ name: 'Programs', url: '/programs' }]}
-        faqs={programFaqs}
       />
       <ProgramsHero />
       <ProgramFinder />

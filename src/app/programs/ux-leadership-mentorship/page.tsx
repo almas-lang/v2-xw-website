@@ -248,7 +248,6 @@ export default function TideProgramPage() {
           { name: 'Programs', url: '/programs' },
           { name: 'Design Leadership', url: '/programs/ux-leadership-mentorship' },
         ]}
-        faqs={tideFaqs}
       />
       <ProgramHero
         programName="Tide"

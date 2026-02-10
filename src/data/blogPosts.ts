@@ -109,6 +109,17 @@ export const blogPosts: BlogPost[] = [
     readTime: '4 min',
   },
   {
+    id: '14',
+    slug: 'grow-as-solo-designer',
+    title: 'How To Grow When You\'re The Only Designer On The Team',
+    excerpt: 'A real story about surviving, building trust, and eventually leading design in environments that didn\'t care about it.',
+    category: 'career-growth',
+    image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80',
+    author: { name: 'Shaik Murad' },
+    publishedAt: '2026-02-09',
+    readTime: '8 min',
+  },
+  {
     id: '4',
     slug: 'break-into-senior-ux-roles-2026',
     title: 'How to Break Into Senior UX Roles in 2026',
@@ -206,26 +217,33 @@ export const blogPosts: BlogPost[] = [
   },
 ];
 
+// Get published (non-upcoming) posts
+export const getPublishedPosts = (): BlogPost[] => {
+  return blogPosts.filter(post => !post.upcoming);
+};
+
 // Get featured post
 export const getFeaturedPost = (): BlogPost | undefined => {
-  return blogPosts.find(post => post.featured);
+  return getPublishedPosts().find(post => post.featured);
 };
 
 // Get posts by category
 export const getPostsByCategory = (category: string): BlogPost[] => {
-  if (category === 'all') return blogPosts;
-  return blogPosts.filter(post => post.category === category);
+  const published = getPublishedPosts();
+  if (category === 'all') return published;
+  return published.filter(post => post.category === category);
 };
 
 // Get non-featured posts
 export const getNonFeaturedPosts = (): BlogPost[] => {
-  return blogPosts.filter(post => !post.featured);
+  return getPublishedPosts().filter(post => !post.featured);
 };
 
 // Get homepage blogs (featured + 2 more)
 export const getHomepageBlogs = (): BlogPost[] => {
-  const featured = blogPosts.find(post => post.featured);
-  const others = blogPosts.filter(post => !post.featured).slice(0, 2);
+  const published = getPublishedPosts();
+  const featured = published.find(post => post.featured);
+  const others = published.filter(post => !post.featured).slice(0, 2);
   return featured ? [featured, ...others] : others;
 };
 

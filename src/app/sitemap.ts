@@ -1,11 +1,11 @@
 import { MetadataRoute } from 'next';
-import { blogPosts } from '@/data/blogPosts';
+import { getPublishedPosts } from '@/data/blogPosts';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://xperiencewave.com';
 
-  // Generate blog post URLs
-  const blogUrls: MetadataRoute.Sitemap = blogPosts.map((post) => ({
+  // Generate blog post URLs (published only)
+  const blogUrls: MetadataRoute.Sitemap = getPublishedPosts().map((post) => ({
     url: `${baseUrl}/resources/blogs/${post.slug}`,
     lastModified: new Date(post.publishedAt),
     changeFrequency: 'monthly' as const,

@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
-import { blogPosts, getCategoryLabel, getCategoryColor, formatDate } from '@/data/blogPosts';
+import { blogPosts, getPublishedPosts, getCategoryLabel, getCategoryColor, formatDate } from '@/data/blogPosts';
 import CTASection from '@/components/shared/CTASection';
 import MobileTOC from '@/components/blog/MobileTOC';
 
@@ -255,6 +255,199 @@ const blogContent: Record<string, React.ReactNode> = {
       </p>
     </>
   ),
+  'grow-as-solo-designer': (
+    <>
+      <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
+        If you&apos;re the only designer on your team right now, I want you to know: I&apos;ve been there. Twice.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        And the two experiences couldn&apos;t have been more different.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The first time was at a crowdfunding platform. Design was genuinely valued. Founders were involved in design conversations. Experiments moved fast, but everyone — product, engineering, design — worked under one roof with mutual respect. That environment grew naturally. I eventually built a small design team, working alongside product owners who understood what design could bring to the table.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The second time was at an enterprise security company. And that nearly broke me.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The team was stretched between the US and India. It was B2B, enterprise, deeply complex. Product managers maintained massive backlogs and stayed on late-night calls syncing with stakeholders overseas. During the day, they&apos;d push decisions on the Indian team — decisions that often didn&apos;t make sense.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Everyone spoke technology. Everyone thought they owned design. The CPO I reported to didn&apos;t really understand what UX meant. Conversations with him felt like conversations you&apos;d have with a visual designer — &quot;can you make this look better&quot; energy.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        I was a showpiece. The designer on the team so investors could feel good about the company caring about experience.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        That version — not the first one — is what most solo designers actually face.
+      </p>
+
+      <h2 id="things-that-didnt-work" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Things That Didn&apos;t Work
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        When I realized nobody took design seriously, my first instinct was to be nice. Stay in good books. Be helpful. Be agreeable.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        That backfired fast.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The two product owners I worked with were people who had fought their way through careers that felt like wars. They knew one mode: be louder, push harder, or get ignored. The culture was built around who could yell the most and win.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        My niceness just got used to support their wins.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        So I tried the opposite. I raised my voice. Pushed back. Fought for design&apos;s place in conversations.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        But I was just a designer going up against VPs and directors. All they saw was someone making noise without the position to back it up. I was a screamer who didn&apos;t make a difference.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Neither approach worked.
+      </p>
+
+      <h2 id="what-actually-clicked" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What Actually Clicked
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        I stopped trying to go through the walls and started going around them.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        I spoke to individuals across teams. Not to convince them about design — just to understand their problems. I shadowed sales calls with customers. I sat with the technology team and listened to what they thought was broken. I talked to salespeople who&apos;d been in the field for decades.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        And here&apos;s the important part — I kept the product managers in the loop throughout. Not hiding progress. Not trying to surprise anyone. Not building something in the shadows to reveal later like a &quot;told you so&quot; moment.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Because the one thing I learned quickly is this: don&apos;t act like you know users better than the salesperson who&apos;s been talking to them for 15 years.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Don&apos;t try to outsmart people. You&apos;ll just hurt small egos and create enemies.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Instead, I started speaking their language.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        I stopped talking about &quot;<Link href="/resources/tools" className="text-accent hover:underline font-medium">user research</Link>&quot; and started talking about &quot;onboarding time.&quot; I stopped saying &quot;we need to understand user needs&quot; and started saying &quot;we can reduce the time it takes for a new customer to go live by x%.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Everyone listens when you talk about numbers they care about. Not design jargon they don&apos;t.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Did they believe me immediately? No. But as the studies continued and results started showing, trust built. Slowly.
+      </p>
+
+      <h2 id="the-advocate" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Advocate Who Changed Everything
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Somewhere during this time, I found an unlikely ally — a business vertical head.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        He wasn&apos;t a design person. In the beginning, our conversations were mostly me venting about how nobody cares. And honestly, even with good intentions, he didn&apos;t really know what it takes to drive experience at a leadership level.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        But we started working on a project together. Over time, through the work itself, he started seeing how design actually operates. Not the deliverables, but the thinking. The way you approach problems. The way you connect research to decisions.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        He started turning up. Showing interest. Asking questions.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        That&apos;s when I had a real one-on-one conversation with him. Spoke to my manager. And slowly, we started doing more together — running <Link href="/community" className="text-accent hover:underline font-medium">workshops</Link>, presenting at internal forums, talking about the future of design in the company.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Did he always have time for me? No. Did it happen fast? Definitely not.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        But it worked.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        We ended up growing the design team from just me to 4 designers. And I was leading them.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Not in a day. Not even close.
+      </p>
+
+      <h2 id="what-i-wish" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What I Wish Someone Had Told Me
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If you&apos;re the solo designer right now, here&apos;s what I want you to hear:
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>1. Stop proving design&apos;s value in design language</strong>
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Nobody outside of design cares about your process diagrams, your double diamonds, or your research frameworks. They care about their problems. Talk about their problems. In their language. With numbers they recognize.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>2. Don&apos;t hide your work or try to surprise people</strong>
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        It&apos;s tempting to work in isolation and then reveal something amazing. But that&apos;s a trap. Keep stakeholders in the loop — even the difficult ones. Especially the difficult ones. Surprises create enemies, not allies.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>3. Find your advocate</strong>
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        It doesn&apos;t have to be a design leader. It can be a business head, a product person, a founder who gets it — someone higher up who can open doors you can&apos;t reach yet. If your organization doesn&apos;t have anyone like that, you either build that relationship from scratch (like I did), or you accept that growth will be painfully slow.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>4. Push for design representation at the <Link href="/programs/ux-leadership-mentorship" className="text-accent hover:underline font-medium">leadership</Link> level</strong>
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Because until experience has a voice at the top, you&apos;ll always be fighting uphill. My organization wasn&apos;t ready to promote me or hire a design leader. So I found an alternative path through an unlikely ally. But the real fix? Companies recognizing that experience needs to be at the table — not just under it.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>5. It takes consistent effort beyond project delivery</strong>
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is the hardest truth. If you just deliver projects and hope someone notices, you&apos;ll be waiting forever. Growth as a solo designer requires investing time in relationship building, speaking their language, finding allies, and being patient without being passive.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Because if you don&apos;t do that, you end up walking over the same problems again and again. Until the pain just starts feeling normal. Like it&apos;s part of the job. It&apos;s not. And it shouldn&apos;t be.
+      </p>
+
+      <h2 id="final-thoughts" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Final Thoughts
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Being the solo designer is one of the hardest positions in a company. You&apos;re often misunderstood, undervalued, and fighting battles that nobody else sees.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        But it&apos;s also an incredible opportunity to grow — not just as a designer, but as a strategist, a communicator, and a <Link href="/programs/ux-leadership-mentorship" className="text-accent hover:underline font-medium">leader</Link>.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The skills you build navigating stakeholder politics, speaking business language, and building trust across teams? Those are the skills that eventually get you to the <Link href="/programs/ux-leadership-mentorship" className="text-accent hover:underline font-medium">leadership table</Link>.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        You just have to survive long enough to get there.
+      </p>
+
+      <h2 id="need-help" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Need Help Navigating This?
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If you&apos;re the solo designer right now and feeling stuck, I&apos;ve been exactly where you are.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        I <Link href="/programs" className="text-accent hover:underline font-medium">mentor designers</Link> who are trying to grow their careers, build strategic thinking skills, and navigate challenging work environments.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Join our <Link href="/community" className="text-accent hover:underline font-medium">community</Link> of designers navigating similar challenges, or tune into our <Link href="/podcast" className="text-accent hover:underline font-medium">podcast</Link> for more real stories from the field.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <Link href="/programs" className="text-accent hover:underline font-medium">Explore mentoring at Xperience Wave →</Link>
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed">
+        Or just reach out — I&apos;m always happy to chat.
+      </p>
+      <p className="text-base md:text-lg text-g500 italic mt-6">
+        — Murad, Head of Product and Design
+      </p>
+    </>
+  ),
 };
 
 // Table of contents for each blog post
@@ -285,6 +478,14 @@ const blogTableOfContents: Record<string, { id: string; title: string }[]> = {
     { id: 'senior-requirements', title: 'What Senior Roles Actually Require' },
     { id: 'alternative-mentorship', title: 'The Alternative: Mentorship' },
     { id: 'ready-to-break', title: 'Ready to Break Through?' },
+  ],
+  'grow-as-solo-designer': [
+    { id: 'things-that-didnt-work', title: 'The Things That Didn\'t Work' },
+    { id: 'what-actually-clicked', title: 'What Actually Clicked' },
+    { id: 'the-advocate', title: 'The Advocate Who Changed Everything' },
+    { id: 'what-i-wish', title: 'What I Wish Someone Had Told Me' },
+    { id: 'final-thoughts', title: 'Final Thoughts' },
+    { id: 'need-help', title: 'Need Help Navigating This?' },
   ],
 };
 
@@ -323,6 +524,11 @@ const blogMetadata: Record<string, { title: string; description: string; keyword
     title: "Why UX Courses Don't Get You Senior Roles",
     description: "Certificates aren't getting you promoted. Discover why courses fail mid-level designers and what actually works to land senior UX positions.",
     keywords: ['senior UX designer', 'UX career plateau', 'mid-level designer', 'UX promotion', 'design career growth'],
+  },
+  'grow-as-solo-designer': {
+    title: 'How To Grow When You\'re The Only Designer On The Team',
+    description: 'A real story about surviving as the solo designer, building trust in hostile environments, finding advocates, and growing into a design leader when nobody cares about design.',
+    keywords: ['solo designer', 'only designer on team', 'design leadership', 'growing as a designer', 'UX career growth', 'design advocate', 'stakeholder management'],
   },
 };
 
@@ -366,9 +572,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
-// Generate static params for all blog posts
+// Generate static params for published blog posts
 export async function generateStaticParams() {
-  return blogPosts.map((post) => ({
+  return getPublishedPosts().map((post) => ({
     slug: post.slug,
   }));
 }
@@ -391,9 +597,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     image: '',
   };
 
-  // Get related posts (same category, excluding current)
+  // Get related posts (same category, excluding current and upcoming)
   const relatedPosts = blogPosts
-    .filter(p => p.category === post.category && p.id !== post.id)
+    .filter(p => p.category === post.category && p.id !== post.id && !p.upcoming)
     .slice(0, 3);
 
   // Article structured data for SEO

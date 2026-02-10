@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useMemo } from 'react';
-import { blogPosts, blogCategories, getFeaturedPost, getPostsByCategory } from '@/data/blogPosts';
+import { blogCategories, getFeaturedPost, getPostsByCategory, getPublishedPosts } from '@/data/blogPosts';
 import BlogHero from '@/components/resources/BlogHero';
 import BlogCard from '@/components/resources/BlogCard';
 import BlogFilters from '@/components/resources/BlogFilters';
@@ -27,14 +27,15 @@ export default function BlogsPage() {
     return posts.filter(post => post.id !== featuredPost?.id);
   }, [activeCategory, featuredPost]);
 
-  // Calculate post counts per category
+  // Calculate post counts per category (published only)
   const postCounts = useMemo(() => {
+    const published = getPublishedPosts();
     const counts: Record<string, number> = {};
     blogCategories.forEach(cat => {
       if (cat.id === 'all') {
-        counts[cat.id] = blogPosts.length;
+        counts[cat.id] = published.length;
       } else {
-        counts[cat.id] = blogPosts.filter(p => p.category === cat.id).length;
+        counts[cat.id] = published.filter(p => p.category === cat.id).length;
       }
     });
     return counts;

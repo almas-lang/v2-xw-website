@@ -17,7 +17,6 @@ export interface BlogPost {
   };
   publishedAt: string;
   readTime: string;
-  featured?: boolean;
   upcoming?: boolean;
 }
 
@@ -61,7 +60,6 @@ export const blogPosts: BlogPost[] = [
     author: { name: 'Shaik Murad' },
     publishedAt: '2026-01-15',
     readTime: '6 min',
-    featured: true,
   },
   {
     id: '2',
@@ -222,9 +220,10 @@ export const getPublishedPosts = (): BlogPost[] => {
   return blogPosts.filter(post => !post.upcoming);
 };
 
-// Get featured post
+// Get featured post (most recently published)
 export const getFeaturedPost = (): BlogPost | undefined => {
-  return getPublishedPosts().find(post => post.featured);
+  const published = getPublishedPosts();
+  return [...published].sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())[0];
 };
 
 // Get posts by category
@@ -236,14 +235,14 @@ export const getPostsByCategory = (category: string): BlogPost[] => {
 
 // Get non-featured posts
 export const getNonFeaturedPosts = (): BlogPost[] => {
-  return getPublishedPosts().filter(post => !post.featured);
+  const featured = getFeaturedPost();
+  return getPublishedPosts().filter(post => post.id !== featured?.id);
 };
 
 // Get homepage blogs (featured + 2 more)
 export const getHomepageBlogs = (): BlogPost[] => {
-  const published = getPublishedPosts();
-  const featured = published.find(post => post.featured);
-  const others = published.filter(post => !post.featured).slice(0, 2);
+  const featured = getFeaturedPost();
+  const others = getPublishedPosts().filter(post => post.id !== featured?.id).slice(0, 2);
   return featured ? [featured, ...others] : others;
 };
 

@@ -31,8 +31,8 @@ export default function BlogSection({
   }, []);
 
   const blogs = getHomepageBlogs();
-  const featuredBlog = blogs.find(b => b.featured);
-  const otherBlogs = blogs.filter(b => !b.featured);
+  const featuredBlog = blogs[0];
+  const otherBlogs = blogs.slice(1);
 
   const bgStyles = background === 'light'
     ? { background: 'linear-gradient(180deg, #f8f8f8 0%, #f0f0f0 100%)' }

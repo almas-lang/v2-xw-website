@@ -231,101 +231,95 @@ const blogContent: Record<string, React.ReactNode> = {
         &quot;I have 5 years of development experience before I moved into UX, and employers still want me to start from a free internship or take an associate role with a massive pay cut.&quot;
       </blockquote>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
-        And the one that keeps coming back, over and over:
+        And the one that keeps coming back:
       </p>
       <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-6">
-        &quot;All courses teach the same thing. I almost feel like I know everything I&apos;m supposed to know. But I still don&apos;t know where I&apos;m going wrong, and I never found the forum to even check.&quot;
+        &quot;All courses teach the same thing. I almost feel like I know everything I&apos;m supposed to know as a UX designer. But I never found the forum to even check where I was going wrong. I don&apos;t know what happened. Eventually I have a certificate I uploaded to LinkedIn and that&apos;s that.&quot;
       </blockquote>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
-        That last one? That&apos;s the real indictment. Not of the designer. Of the entire course industry.
+        That last one isn&apos;t a failure of the designer. It&apos;s an indictment of the entire course industry.
       </p>
 
-      <h2 id="dirty-secret" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
-        The Dirty Secret About UX Design Courses
+      <h2 id="curriculum-doesnt-care" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Their Curriculum Doesn&apos;t Care About You
       </h2>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        Here&apos;s what course providers won&apos;t tell you, because their business model depends on you not realising it:
-      </p>
-      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6 font-semibold">
-        Their curriculum doesn&apos;t care about you.
+        Imagine you came from a graphic design background with 6+ years of experience. You join a cohort. Sitting next to you is a fresh engineering graduate who&apos;s never opened Figma. Next to them is someone from a medical background exploring a career switch.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        Think about it. Say you came from a graphic design background with 6+ years of experience. You join a cohort. Sitting next to you is a fresh engineering graduate who&apos;s never opened Figma. Next to them is someone from a medical background exploring a career switch.
-      </p>
-      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        The course treats all three of you the same.
+        The course treats all three of you exactly the same.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
         Same modules. Same assignments. Same pace. Same evaluation. Same certificate at the end.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        Nobody checked what you already knew. Nobody asked about your learning style. Nobody cared that your 6 years of visual design experience meant you needed strategic depth, not another wireframing tutorial. They just shoved the same curriculum at you, a curriculum that was probably written by someone who hasn&apos;t updated it to match where the industry is actually heading.
+        Nobody checked what you already knew. Nobody asked about your learning style. Nobody cared that your 6 years of visual design experience meant you needed strategic depth, not another wireframing tutorial. They just shoved the same outdated curriculum at you, a curriculum that was probably created by someone who stopped tracking where the industry was heading years ago.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
         They&apos;ll tell you proudly: &quot;We&apos;ve trained 1,000+ designers.&quot;
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        What they won&apos;t tell you is how many of those designers actually landed senior roles. Because if you check the success ratio honestly, you&apos;d be looking at maybe less than 10%.
+        What they won&apos;t tell you is how many of those designers actually landed senior roles, got meaningful salary hikes, or moved into positions where they drive decisions. Because if you check the success ratio honestly, you&apos;d be looking at less than 10%.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
-        The rest? They paid, they attended, they got a certificate they could upload to LinkedIn. And that&apos;s where it ended. Their salaries didn&apos;t change. Their positions didn&apos;t change. Their ability to drive decisions in their organisations didn&apos;t change. The only thing that changed? Their imposter syndrome got worse. Because now they had a certificate that was supposed to fix things, and it didn&apos;t.
+        There could be another 10,000 who just wasted their money trying to learn from them. But nobody talks about that number.
       </p>
 
       <h2 id="certificates-reality" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
         What Those Certificates Actually Gave You
       </h2>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        Let me be direct: a pile of certificates that collects dust.
+        Let me be direct. A pile of certificates that collects dust.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        I&apos;ve seen designers leave jobs after completing a course because they genuinely believed the certificate would automatically attract better offers. It didn&apos;t. Nothing happened. Because the market doesn&apos;t care about what you completed. It cares about what you can do.
+        Salaries didn&apos;t change. Positions didn&apos;t change. The ability to drive decisions didn&apos;t change. The only thing that changed? Imposter syndrome got worse. Because now you had a certificate that was supposed to fix things, and it didn&apos;t.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        And here&apos;s the tragedy. Courses set wrong expectations. They make you think the problem is knowledge. That if you just learn one more framework, one more methodology, you&apos;ll finally break through.
+        I&apos;ve seen designers leave jobs after completing a course because they genuinely believed the certificate would automatically attract better offers. Nothing happened. Because the market doesn&apos;t care about what you completed. It cares about what you can do.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        But knowledge was never the problem. Not for someone with 2, 3, 5+ years of experience.
+        And here&apos;s where courses do the most damage. They set wrong expectations. They teach processes as if every organisation has the budget, time, and resources to run them.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        The problem is application. Context. And the gap between what courses teach you should happen and what actually happens inside real organisations.
+        A concrete example. Courses teach ethnographic studies as a standard research method. Students learn it, get excited, go back to their organisations, and discover that their company can&apos;t afford or justify an ethnographic study. The designer feels defeated. &quot;I&apos;m not doing what I&apos;m supposed to be doing.&quot;
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        I&apos;ll give you a concrete example. Courses teach ethnographic studies as though every company has the budget, time, and resources to run them. Students learn it, get excited, go back to their organisations, and discover that their company can&apos;t afford or justify an ethnographic study. The designer feels defeated. &quot;I&apos;m not doing what I&apos;m supposed to be doing.&quot;
+        Wrong. That organisation simply can&apos;t benefit from that specific method. Your job as a senior designer isn&apos;t to follow a textbook process. It&apos;s to read the room and adapt. But how do you teach 50-60 people in a batch to read their specific room?
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
-        No. That organisation simply can&apos;t benefit from that specific method. Your job as a senior designer isn&apos;t to follow a textbook process. It&apos;s to read the room and adapt. But no course teaches you that. Because how do you teach 50–60 people in a batch to read their specific room? You don&apos;t. You just teach everyone the same thing and hope for the best.
+        You don&apos;t. You just tell everyone the same things, set wrong expectations, make them think less constructively, and create wrong drivers of design. Courses have always harmed mid-level designers the most. They&apos;re just seen as an alternative cheap option. Nothing more.
       </p>
 
       <h2 id="senior-demands" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
         What Senior Roles Actually Demand (That You&apos;re Not Preparing For)
       </h2>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        I talk to hiring managers regularly. I&apos;ve been in those rooms. And I can tell you, mid-level designers preparing for senior roles are almost always preparing for the wrong things.
+        Mid-level designers preparing for senior roles are almost always focused on the wrong things.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        They&apos;re focused on building a louder voice in meetings. Getting more domain knowledge. Talking about accessibility. Building Figma-based design systems.
+        They think it&apos;s about having a stronger voice in meetings. Getting more domain knowledge. Talking about accessibility. Building Figma-based design systems.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        These are basics. Necessary, sure. But they&apos;re table stakes, not differentiators.
+        These are basics. Table stakes. Not differentiators.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
-        What actually separates a senior UX designer from a mid-level one is far less glamorous and far harder to fake:
+        What actually separates a senior UX designer from a mid-level one:
       </p>
       <ul className="list-disc pl-6 space-y-4 text-base md:text-lg text-g600 mb-6">
-        <li><strong>Systemic thinking.</strong> Can you zoom out from the screen you&apos;re designing and see how it fits into a larger product ecosystem, a business strategy, a user&apos;s broader journey? Can you connect dots across teams and timelines?</li>
-        <li><strong>Vision beyond design.</strong> Senior designers don&apos;t just execute a design direction. They set it. They articulate a vision that&apos;s bigger than the interface. They drive alignment across product, engineering, and business stakeholders on why a direction matters.</li>
-        <li><strong>Stakeholder management.</strong> Not just presenting to stakeholders. Managing them. Knowing when to push back, when to compromise, when to reframe the conversation entirely. Being someone whose name alone builds confidence that the work will be delivered well, before you&apos;ve even started.</li>
-        <li><strong>Process ownership.</strong> Team maturity, knowledge management, UX writing, pi-deep knowledge across disciplines. These aren&apos;t nice-to-haves at the senior level. They&apos;re expected. And no pre-recorded module will develop them in you.</li>
+        <li><strong>Systemic thinking.</strong> Can you zoom out from the screen you&apos;re designing and see how it connects to a larger product ecosystem, a business strategy, a user&apos;s broader journey? Can you connect dots across teams and timelines that nobody else is connecting?</li>
+        <li><strong>Vision beyond design.</strong> Senior designers don&apos;t just execute a design direction. They set it. They articulate a vision bigger than the interface. They drive alignment across product, engineering, and business on why a direction matters.</li>
+        <li><strong>Stakeholder mastery.</strong> Not just presenting to stakeholders, managing them. Being someone whose personal brand builds confidence in delivery before you&apos;ve even started working on it. Knowing when to push back, when to reframe, when to bring people along.</li>
+        <li><strong>Process ownership.</strong> Team maturity, knowledge management, UX writing, pi-deep knowledge to handle and collaborate with multiple stakeholders across disciplines. These aren&apos;t nice-to-haves. They&apos;re expected.</li>
       </ul>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
-        If you&apos;re interested in where the industry is heading on this, especially around <Link href="/resources/blogs/ai-first-design-senior-ux" className="text-accent hover:underline font-medium">AI-first design</Link> and what senior UX designers need, that&apos;s a separate conversation, but an important one. The designers landing the best roles right now aren&apos;t just good at traditional UX. They understand how AI is reshaping what design means.
+        No pre-recorded module will develop any of this. And the designers who understand where the industry is heading, especially around <Link href="/resources/blogs/ai-first-design-senior-ux" className="text-accent hover:underline font-medium">AI-first design and what senior UX designers need</Link>, are the ones pulling ahead right now.
       </p>
 
       <h2 id="savinays-story" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
-        What Actually Moves the Needle: Savinay&apos;s Story
+        What Actually Works: Savinay&apos;s Story
       </h2>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        Let me tell you about Savinay. 8 years of experience. Knew his craft. But when he walked in, he was confident about core design, strategy, secondary research, ideation, revisions on top of revisions, and dismissed everything else as unrealistic.
+        Let me tell you about Savinay. 8 years of experience. Knew his craft. But when he walked in, he was confident about core design, strategy, some secondary research, ideation, revisions on top of revisions, and dismissed everything else as unrealistic.
       </p>
       <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-4">
         &quot;Primary research doesn&apos;t actually happen, Almas.&quot;
@@ -337,59 +331,50 @@ const blogContent: Record<string, React.ReactNode> = {
         He wasn&apos;t wrong about what he&apos;d experienced. He&apos;d spent 8 years in environments where that was the reality. And he blamed the culture. Most designers do.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        But here&apos;s what changed. Once we sat down, understood his specific situation, and started working through a personalised plan, his perception shifted completely. Right after the planning stage, he started taking charge. Of processes. Of the people around him. Of stakeholder management.
+        But here&apos;s what shifted. Once we sat down, understood his specific situation, and carved a plan around his gaps, his perception changed completely. Right after the planning stage, he started taking charge. Of processes. Of the people around him. Of stakeholder management. Absolutely stunning transformation.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        The shift wasn&apos;t about teaching him something new. It was about repositioning what he already knew, and unlocking what he&apos;d dismissed as &quot;not for people like us.&quot;
-      </p>
-      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        Can a course structured for mass delivery do this? A course that runs the same slides for 50 people in a batch, answers questions for 60 minutes, and moves on to the next cohort?
-      </p>
-      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        No way.
+        The shift wasn&apos;t about teaching him something new. It was about repositioning what he already knew and unlocking what he&apos;d dismissed as &quot;not for people like us.&quot;
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
-        This kind of shift happens when someone spends time learning your situation and carves an outlet specifically for you. That&apos;s what <Link href="/programs/senior-ux-designer-mentorship" className="text-accent hover:underline font-medium">1:1 UX design mentorship</Link> is built to do. Not more content. Not another curriculum. A curated intervention.
+        That kind of shift only happens when someone spends time understanding your specific situation, not delivering a curriculum designed for the masses.
       </p>
 
       <h2 id="question-to-ask" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
         The Question You Should Be Asking Yourself
       </h2>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        Forget courses for a second. Forget certificates. Ask yourself one honest question:
+        Forget courses. Forget certificates. Ask yourself one honest question:
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6 font-semibold">
         Why did you want to learn UX in the first place?
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        Was it to be part of some cohort? To collect another certificate? Or was it to achieve something real, a bigger position, better pay, the ability to lead, to be recognised, to drive decisions that matter?
+        Was it to be part of some cohort? To get another certificate? Or was it to achieve something real, make more money, achieve bigger positions, get renowned, drive decisions that matter?
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
         Because if it&apos;s the latter, then another course isn&apos;t the answer. It never was.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        What you need is clarity on what&apos;s specifically blocking you. Not what&apos;s blocking a generic persona in a curriculum. You.
+        All those certificates you so nicely pile up are going to build dust. And you won&apos;t have taken a single step closer to your goals.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        We&apos;ve worked with 140+ designers 1:1, helping them land roles at JP Morgan, McKinsey, Intel, Deloitte, Siemens. Check out their <Link href="/success-stories" className="text-accent hover:underline font-medium">success stories</Link>. The ones who got there fastest weren&apos;t the most talented. They were the ones who stopped buying courses and started getting honest about their gaps.
+        We&apos;ve worked with designers across experience levels who were stuck in exactly this loop, doing more courses, collecting more certificates, and getting no closer to where they wanted to be. The ones who broke through did it by getting specific about their gaps, not by adding another line to their LinkedIn certifications section.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        If you&apos;re at that point, <Link href="https://calendly.com/team-xperiencewave/xw-strategy" className="text-accent hover:underline font-medium" target="_blank" rel="noopener noreferrer">book a free strategy call</Link>. We&apos;ll assess where you are, what&apos;s blocking you, and whether we can help. If we can&apos;t, you&apos;ll still walk away with clarity. No pitch, no obligations.
+        If you&apos;re earlier in your journey, genuinely transitioning into UX, or if you&apos;re already senior and looking to step into design leadership, those are different playbooks entirely. We&apos;ve written about <Link href="/resources/blogs/designer-to-design-leader" className="text-accent hover:underline font-medium">transitioning from designer to design leader</Link>, worth a read if that&apos;s where you&apos;re headed.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        And if you&apos;re earlier in your journey, genuinely transitioning into UX for the first time, a structured program makes sense. Our <Link href="/programs/career-transition-ux-mentorship" className="text-accent hover:underline font-medium">career transition program (Ripple)</Link> exists for exactly that.
+        But if you&apos;ve done the courses, got the certificates, and nothing&apos;s changed, you already know what isn&apos;t working.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        But if you&apos;ve done the courses, got the certificates, and nothing&apos;s changed? You already know what isn&apos;t working. Time to try what does.
-      </p>
-      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        If you&apos;re interested in <Link href="/resources/blogs/designer-to-design-leader" className="text-accent hover:underline font-medium">transitioning into design leadership</Link>, that&apos;s an entirely different conversation, one where our <Link href="/programs/ux-leadership-mentorship" className="text-accent hover:underline font-medium">design leadership mentorship (Tide)</Link> comes in.
+        Maybe it&apos;s time to ask different questions.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
-        For more unfiltered conversations about design careers, listen to the <Link href="/podcast" className="text-accent hover:underline font-medium">Vivid Yellow Podcast</Link>. And if you want to connect with 1000+ designers who are past the course phase, join <Link href="/community" className="text-accent hover:underline font-medium">WaveMakers Connect</Link>.
+        If any of this hit home, visit <Link href="https://xperiencewave.com" className="text-accent hover:underline font-medium" target="_blank" rel="noopener noreferrer">xperiencewave.com</Link> and see if anything there resonates with where you are right now.
       </p>
       <p className="text-base md:text-lg text-g500 italic mt-6">
-        - Almas, CEO &amp; Staff Trainer, Xperience Wave
+        Almas is the CEO &amp; Staff Trainer at Xperience Wave, a 1:1 UX design mentorship studio based in Bangalore. More at <Link href="https://xperiencewave.com" className="text-accent hover:underline font-medium" target="_blank" rel="noopener noreferrer">xperiencewave.com</Link>. For unfiltered design career conversations, listen to the <Link href="/podcast" className="text-accent hover:underline font-medium">Vivid Yellow Podcast</Link>.
       </p>
     </>
   ),
@@ -612,10 +597,10 @@ const blogTableOfContents: Record<string, { id: string; title: string }[]> = {
     { id: 'mentorship-difference', title: 'The Mentorship Difference' },
   ],
   'why-courses-dont-work': [
-    { id: 'dirty-secret', title: 'The Dirty Secret About UX Design Courses' },
+    { id: 'curriculum-doesnt-care', title: 'Their Curriculum Doesn\'t Care About You' },
     { id: 'certificates-reality', title: 'What Those Certificates Actually Gave You' },
     { id: 'senior-demands', title: 'What Senior Roles Actually Demand' },
-    { id: 'savinays-story', title: 'What Actually Moves the Needle: Savinay\'s Story' },
+    { id: 'savinays-story', title: 'What Actually Works: Savinay\'s Story' },
     { id: 'question-to-ask', title: 'The Question You Should Be Asking Yourself' },
   ],
   'grow-as-solo-designer': [

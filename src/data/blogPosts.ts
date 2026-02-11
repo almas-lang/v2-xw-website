@@ -76,13 +76,13 @@ export const blogPosts: BlogPost[] = [
   {
     id: '3',
     slug: 'why-courses-dont-work',
-    title: "Why UX Courses Don't Get You Senior Roles",
-    excerpt: "Discover why certificates and courses alone won't land you that senior position, and what actually works.",
+    title: "Why UX Design Courses Don't Get You Senior Roles (And What Actually Works)",
+    excerpt: "Done with HFI, Designerrs, NextLeap, IIT/NID programs and still stuck? Here's why UX certificates don't land senior roles, and what 140+ designers did differently.",
     category: 'career-growth',
     image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&q=80',
-    author: { name: 'Shaik Murad' },
+    author: { name: 'Almas Tasneem' },
     publishedAt: '2026-01-10',
-    readTime: '6 min',
+    readTime: '7 min',
   },
   {
     id: '12',

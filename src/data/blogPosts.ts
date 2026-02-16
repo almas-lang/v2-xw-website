@@ -107,6 +107,17 @@ export const blogPosts: BlogPost[] = [
     readTime: '4 min',
   },
   {
+    id: '15',
+    slug: 'business-driven-ux-portfolio',
+    title: 'From Pixel-Pusher to Impact-Maker: Your Guide to a Business-Driven UX Portfolio',
+    excerpt: 'Your UX portfolio is full of screens and nobody\'s calling back. Here\'s how to rebuild it around business impact, strategic decisions, and the narrative that actually gets you hired.',
+    category: 'career-growth',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80',
+    author: { name: 'Shaik Murad' },
+    publishedAt: '2026-02-16',
+    readTime: '8 min',
+  },
+  {
     id: '14',
     slug: 'grow-as-solo-designer',
     title: 'How To Grow When You\'re The Only Designer On The Team',

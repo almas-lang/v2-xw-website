@@ -76,7 +76,7 @@ async function sendConfirmationEmail(name: string, email: string) {
               Our team will review your message and get back to you within 2-3 business days with partnership options.
             </p>
             <p style="color: #333; font-size: 16px; line-height: 1.6; margin-bottom: 24px;">
-              In the meantime, check out our latest episodes on <a href="https://www.youtube.com/@thevividyellow" style="color: #FACC15;">YouTube</a> or <a href="https://open.spotify.com/show/5ULMerqiVi3L2HLHMeynoL" style="color: #FACC15;">Spotify</a>.
+              In the meantime, check out our latest episodes on <a href="https://www.youtube.com/@vivid-yellow" style="color: #FACC15;">YouTube</a> or <a href="https://open.spotify.com/show/5ULMerqiVi3L2HLHMeynoL" style="color: #FACC15;">Spotify</a>.
             </p>
             <p style="color: #666; font-size: 14px;">
               — The Vivid Yellow Team

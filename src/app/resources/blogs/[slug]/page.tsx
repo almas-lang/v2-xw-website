@@ -378,6 +378,259 @@ const blogContent: Record<string, React.ReactNode> = {
       </p>
     </>
   ),
+  'business-driven-ux-portfolio': (
+    <>
+      <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
+        You spend all that effort understanding your users, building empathy, creating workflows that genuinely tackle their problems. So why is it that when it comes to showcasing your own work, the one thing that&apos;s supposed to open doors, most designers completely botch it?
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        I&apos;ve reviewed hundreds of portfolios. At Xperience Wave, portfolio restructuring is one of the first things we do with designers who come in stuck. And I can tell you, the work is almost never the problem. The narrative is.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Your portfolio isn&apos;t a gallery. It&apos;s not a Dribbble showcase. It&apos;s not a timeline of your process from discovery to high-fidelity screens. It&apos;s the single most important document in your senior UX job search. And most designers treat it like a scrapbook.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Let me break down exactly what&apos;s going wrong and what to do about it.
+      </p>
+
+      <h2 id="five-portfolio-sins" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Five Portfolio Sins I See Every Week
+      </h2>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        1. Password-Protected Portfolios With No Context
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This one kills me. Designers put their entire portfolio behind a password and say &quot;I&apos;m under NDA.&quot; Great. So when a recruiter lands on your site, they see... nothing. A locked door with no reason to knock.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Here&apos;s the thing. Being under NDA doesn&apos;t mean you can&apos;t show your work at all. It means you need to be smarter about how you tell the story. Sanitise the data. Use percentages instead of absolute numbers. Change the brand name if you have to. Show the thinking, the decisions, the impact, without leaking proprietary information.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        If you absolutely must password-protect a case study, at least give the recruiter enough context on the outside to make them want to request that password. A headline, a summary of the business problem, a hint at the outcome. Give them a reason to reach out.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        2. Beautiful Screens, Zero Narrative
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is the most common one. Portfolios that look stunning, gorgeous UI, polished mockups, pixel-perfect everything, but tell you absolutely nothing about why any of it matters.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Hiring managers at senior levels aren&apos;t evaluating your visual craft. They&apos;re evaluating your thinking. How did you identify the problem? What was your strategy? What trade-offs did you make? Why this solution and not the fifteen others you considered?
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        A portfolio full of pretty screens tells a recruiter you can execute. It doesn&apos;t tell them you can think. And at the senior level, thinking is the job.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        3. The &quot;I Did Everything&quot; Syndrome
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        I drove the vision. I led the research. I built the design system. I presented to the CEO. I increased revenue by 200%.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Right. You did all of that. Alone. On every project. Sure.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is what I call the solo-hero portfolio. Every case study reads like a one-person show where the designer personally saved the business. Nobody believes it. Because senior roles are inherently collaborative, and if your portfolio doesn&apos;t show how you worked with product managers, engineers, stakeholders, and researchers, it actually signals the opposite of what you intend. It signals you either can&apos;t collaborate or can&apos;t distinguish your contribution from the team&apos;s.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The flip side is equally bad: &quot;We did this. We achieved that.&quot; Okay, but what did you do? Where was your control? What decisions were yours?
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        The sweet spot is showing your specific role within a collaborative effort. Not &quot;I did everything&quot; and not &quot;we did everything.&quot; It&apos;s &quot;Here&apos;s the problem the team was solving, here&apos;s where I specifically drove decisions, and here&apos;s how that contributed to the outcome.&quot;
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        4. Ten Case Studies, All Mediocre
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Some designers throw everything into their portfolio. Twelve projects. Fifteen. As if more is better.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Here&apos;s what recruiters actually experience: they click on a case study, it turns out to be shallow. They click another one, same thing. By the third click, they&apos;ve closed the tab.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        You showcase what&apos;s best. Not everything you&apos;ve ever touched. And if everything you&apos;ve ever done is &quot;best,&quot; then you lack the prioritisation ability to identify what&apos;s actually strongest. That itself is a red flag for a senior role.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Two to three case studies. Deep. Intentional. That&apos;s it.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        5. Complaining Disguised as Context
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        &quot;The company culture was toxic.&quot; &quot;We didn&apos;t get enough budget.&quot; &quot;The product manager didn&apos;t understand UX.&quot; &quot;My previous boss was difficult.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Stop. Just stop.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        I get it. These are real situations. Most of the designers we work with have lived through exactly this. But your portfolio isn&apos;t a therapy session. It&apos;s a preview of how you&apos;ll operate at your next company.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        And guess what? Your next employer probably has some of the same problems. Tight budgets. Stakeholders who don&apos;t get design. Messy cross-functional dynamics. When you complain about these in your portfolio, the hiring manager doesn&apos;t think &quot;wow, they had it tough.&quot; They think &quot;this person will complain about us too.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Instead, show them how you navigated constraints. How you influenced without authority. How you adapted when the textbook process wasn&apos;t possible. That&apos;s what senior designers do.
+      </p>
+
+      <h2 id="business-driven-portfolio" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What a Business-Driven Portfolio Actually Looks Like
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Enough about what&apos;s wrong. Let me tell you what works.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        A portfolio that lands senior roles does one thing well: it reads like a controlled narrative, showing the recruiter that you had enough command over the situation to steer it towards an outcome.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Not that you followed a textbook. Not that you did all the &quot;right&quot; steps. But that you understood the problem, built a strategy, made deliberate decisions, brought people along, and delivered something that moved the needle.
+      </p>
+
+      <h2 id="crisp-framework" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The CRISP Framework
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        At Xperience Wave, we use a framework called CRISP when restructuring portfolios with our mentees. It&apos;s built from how senior and leadership-level designers actually operate, and it maps directly to what hiring managers evaluate in a case study.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        C - Context
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Before you show a single screen, the recruiter needs to understand: what was the business problem? What was at stake? Who was involved? What were the constraints?
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        This is where most designers rush. They jump straight to &quot;here&apos;s my research&quot; without ever establishing why the research was needed. Context isn&apos;t filler. It&apos;s what makes every decision that follows make sense. A well-set context tells the recruiter: this person understands the landscape they were operating in.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        R - Research &amp; Insights
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        How did you investigate the problem? What did you discover? What surprised you? What confirmed your assumptions and what challenged them?
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        This isn&apos;t about listing your methods. &quot;We did 8 user interviews and an affinity map.&quot; It&apos;s about showing that your research actually drove decisions. What specific insight changed the direction of the project? What did you learn that nobody else on the team had surfaced? That&apos;s what separates a senior portfolio from a mid-level one.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        I - Ideation &amp; Structure
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Here&apos;s where your actual design thinking lives. How did you move from insights to solutions? What was your information architecture? How did you explore multiple directions before committing?
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        But keep this concise. Most portfolios spend 80% of their space here, wireframe after wireframe, iteration after iteration. Senior hiring managers don&apos;t need to see every version. They need to see that you had a clear logic for why you structured the solution the way you did.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        S - Stakeholder Navigation
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is the section most portfolios completely miss, and it&apos;s the one senior hiring managers care about most.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        How did you communicate with stakeholders throughout? How did you handle pushback? Did you align a product manager on scope? Did you reframe a business requirement to make it work for the user? Did you restructure the approach mid-project because the data told you something unexpected?
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        At the senior level, how you worked matters as much as what you delivered. Your ability to navigate people, decisions, and trade-offs is what gets you hired. Not your wireframes.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        P - Proof of Impact
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        End with what changed because of your work. And be specific.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If you have hard metrics, conversion rates, task completion time, revenue impact, support ticket reduction, use them. But frame them as a story, not a data dump. &quot;By redesigning the checkout flow, we reduced cart abandonment by 15%&quot; is infinitely more powerful than a table of numbers.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If you&apos;re under NDA, use relative numbers. &quot;Increased by 15%&quot; instead of &quot;increased by &#x20B9;1.2 crore.&quot; Or lean on qualitative impact: &quot;user testing showed a significant reduction in task completion time and confusion around the core workflow.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        If you have no metrics at all, explain what you would have measured and why. That still shows business thinking. It shows you understand that design exists to move numbers, even when you didn&apos;t have access to those numbers.
+      </p>
+
+      <h2 id="success-stories" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What Happens When You Get This Right: Hari, Kritika, and Jonah
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Let me tell you what this looks like in practice.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Hari, Kritika, and Jonah all came to us with portfolios that looked like what you&apos;d find on Dribbble. Beautifully designed. Visually polished. And completely failing to land callbacks.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The work wasn&apos;t bad. The story was.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Once we restructured their case studies around problem identification, strategic narrative, decision-making under constraints, and clear impact, everything shifted. They didn&apos;t just start getting callbacks. They started building rapport in interviews because the portfolio had already communicated how they think. They negotiated better offers because the portfolio demonstrated business value. When they joined their teams, their new colleagues already understood how they operate.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        A good portfolio doesn&apos;t just get you a foot in the door. It sets the tone for your entire professional relationship with that company.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Hari, Kritika, and Jonah went from case studies that looked like Dribbble shots to narratives that landed them senior and lead design roles. The work was the same. The story changed everything.
+      </p>
+
+      <h2 id="what-portfolio-tells" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Your Portfolio Tells Recruiters One Thing
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        How you solve problems.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        That&apos;s it. Not how many tools you know. Not how pretty your UI is. Not how many projects you&apos;ve worked on.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        It tells them: when this person encounters a messy, ambiguous, real-world problem, how do they operate?
+      </p>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li>Do they identify the right problem to begin with?</li>
+        <li>Do they build a strategy or just jump to screens?</li>
+        <li>Do they collaborate or work in isolation?</li>
+        <li>Do they make decisions based on evidence or assumptions?</li>
+        <li>Do they communicate with stakeholders or hide in Figma?</li>
+        <li>Do they care about business outcomes or just design aesthetics?</li>
+      </ul>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Every case study in your portfolio should answer these questions. If it doesn&apos;t, it doesn&apos;t matter how good the work is.
+      </p>
+
+      <h2 id="start-with-one" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Start With One
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Don&apos;t overhaul your entire portfolio in one weekend. Pick your strongest project, the one where you had the most control, made the most meaningful decisions, and can articulate the impact.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Rewrite that one case study. Lead with the problem. Show your strategic thinking and the decisions you made. End with what changed.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Then get feedback. Not from other designers who&apos;ll comment on your UI. From someone who hires designers, or from a mentor who&apos;s been on that side of the table. Ask them: &quot;Is the business value clear? Do you understand how I think?&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If you&apos;ve been stuck, applying, interviewing, getting rejected, and you haven&apos;t seriously restructured your portfolio, this is probably where the problem lives. We&apos;ve seen it too many times. The work is there. The story isn&apos;t.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If you&apos;re curious about the other reasons mid-level designers stay stuck, we wrote about <Link href="/resources/blogs/why-courses-dont-work" className="text-accent hover:underline font-medium">why UX design courses don&apos;t get you senior roles</Link>, and what the designers who actually break through do differently. Worth reading alongside this one.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        And if you want to understand where the industry is heading for senior designers specifically, our piece on <Link href="/resources/blogs/ai-first-design-senior-ux" className="text-accent hover:underline font-medium">AI-first design and what senior UX designers need</Link> covers the skills that are separating candidates right now.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Whatever you do, stop treating your portfolio like a gallery. Start treating it like the most important business case you&apos;ll ever write. Because it is.
+      </p>
+      <p className="text-base md:text-lg text-g500 italic mt-6">
+        Shaik Murad is the Head of Product &amp; Design at Xperience Wave, a <Link href="/programs/senior-ux-designer-mentorship" className="text-accent hover:underline font-medium">1:1 UX design mentorship</Link> studio based in Bangalore. More at <Link href="https://xperiencewave.com" className="text-accent hover:underline font-medium" target="_blank" rel="noopener noreferrer">xperiencewave.com</Link>. For unfiltered design career conversations, listen to the <Link href="/podcast" className="text-accent hover:underline font-medium">Vivid Yellow Podcast</Link>.
+      </p>
+    </>
+  ),
   'grow-as-solo-designer': (
     <>
       <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
@@ -603,6 +856,14 @@ const blogTableOfContents: Record<string, { id: string; title: string }[]> = {
     { id: 'savinays-story', title: 'What Actually Works: Savinay\'s Story' },
     { id: 'question-to-ask', title: 'The Question You Should Be Asking Yourself' },
   ],
+  'business-driven-ux-portfolio': [
+    { id: 'five-portfolio-sins', title: 'The Five Portfolio Sins I See Every Week' },
+    { id: 'business-driven-portfolio', title: 'What a Business-Driven Portfolio Looks Like' },
+    { id: 'crisp-framework', title: 'The CRISP Framework' },
+    { id: 'success-stories', title: 'Hari, Kritika, and Jonah' },
+    { id: 'what-portfolio-tells', title: 'Your Portfolio Tells Recruiters One Thing' },
+    { id: 'start-with-one', title: 'Start With One' },
+  ],
   'grow-as-solo-designer': [
     { id: 'things-that-didnt-work', title: 'The Things That Didn\'t Work' },
     { id: 'what-actually-clicked', title: 'What Actually Clicked' },
@@ -648,6 +909,11 @@ const blogMetadata: Record<string, { title: string; description: string; keyword
     title: "Why UX Design Courses Don't Get You Senior Roles | Xperience Wave",
     description: "Done with HFI, Designerrs, NextLeap, IIT/NID programs and still stuck? Here's why UX certificates don't land senior roles - and what 140+ designers did differently.",
     keywords: ['UX design courses', 'senior UX designer', 'UX mentorship', 'UX career growth', 'UX portfolio', 'mid-level to senior designer', 'UX design certification', '1:1 UX mentorship', 'design leadership'],
+  },
+  'business-driven-ux-portfolio': {
+    title: 'How to Build a Business-Driven UX Portfolio That Lands Senior Roles | Xperience Wave',
+    description: 'Your UX portfolio is full of screens and nobody\'s calling back. Here\'s how to rebuild it around business impact, strategic decisions, and the narrative that actually gets you hired.',
+    keywords: ['UX portfolio', 'UX case study', 'senior UX designer portfolio', 'UX portfolio tips', 'design impact', 'business-driven design', 'portfolio for senior roles', 'UX career growth', 'UX interview'],
   },
   'grow-as-solo-designer': {
     title: 'How To Grow When You\'re The Only Designer On The Team',

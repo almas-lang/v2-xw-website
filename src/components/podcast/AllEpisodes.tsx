@@ -210,7 +210,7 @@ export default function AllEpisodes() {
         {/* See All Link */}
         <div className="text-center">
           <Link
-            href="https://www.youtube.com/@thevividyellow"
+            href="https://www.youtube.com/@vivid-yellow"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 font-heading text-base font-semibold text-yellow-600 hover:text-yellow-700 underline underline-offset-4 transition-colors"

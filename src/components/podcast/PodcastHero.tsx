@@ -125,7 +125,7 @@ export default function PodcastHero() {
               </a>
 
               <a
-                href="https://www.youtube.com/@thevividyellow"
+                href="https://www.youtube.com/@vivid-yellow"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3.5 bg-transparent border-2 border-yellow-400/50 hover:border-yellow-400 text-yellow-400 font-heading font-semibold rounded-xl transition-all duration-200 hover:bg-yellow-400/10"

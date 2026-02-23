@@ -63,6 +63,11 @@ const nextConfig: NextConfig = {
       // Trailing slash normalization for policy pages
       { source: '/refund-policy/', destination: '/refund-policy', permanent: true },
       { source: '/privacy-policy/', destination: '/privacy-policy', permanent: true },
+
+      // Free Training LP legal pages → main site legal pages
+      { source: '/freetraining/privacy', destination: '/privacy-policy', permanent: true },
+      { source: '/freetraining/terms', destination: '/terms-of-service', permanent: true },
+      { source: '/freetraining/refund', destination: '/refund-policy', permanent: true },
     ];
   },
 };

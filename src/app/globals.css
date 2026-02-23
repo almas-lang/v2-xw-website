@@ -58,6 +58,10 @@
   /* Transitions */
   --transition-base: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-fast: 0.15s ease;
+
+  /* Free Training LP Brand Colors */
+  --color-ft-red: #F24646;
+  --color-ft-purple: #7677EA;
 }
 
 /* ============================================
@@ -85,4 +89,20 @@ body {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
+}
+
+/* Toast slide-up animation */
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.3s ease-out;
 }

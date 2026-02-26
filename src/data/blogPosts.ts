@@ -107,6 +107,17 @@ export const blogPosts: BlogPost[] = [
     readTime: '4 min',
   },
   {
+    id: '17',
+    slug: 'mixed-methods-ux-research-guide',
+    title: 'Mixed-Methods UX Research: When to Use It, How to Do It, and Why It Doubled Our Revenue',
+    excerpt: 'Most designers treat qual and quant as separate tools. Senior designers know how to combine them. Learn the SPEAR framework for mixed-methods research that actually drives business outcomes.',
+    category: 'design-skills',
+    image: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&q=80',
+    author: { name: 'Shaik Murad' },
+    publishedAt: '2026-02-26',
+    readTime: '10 min',
+  },
+  {
     id: '16',
     slug: 'ai-predicts-so-do-you-difference',
     title: 'AI Predicts. So Do You. Here\'s The Difference That Actually Matters.',

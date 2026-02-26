@@ -671,7 +671,7 @@ const blogContent: Record<string, React.ReactNode> = {
         Research from the Max Planck Institute describes the brain as a prediction machine, constantly comparing what you sense with what you expect. Your mind works like autocomplete, always guessing what comes next based on patterns from the past.
       </p>
       <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-6">
-        &quot;The brain is a prediction machine, which continuously compares sensory information that we pick up with internal predictions.&quot; — <a href="https://www.pnas.org/doi/10.1073/pnas.2201968119" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Max Planck Institute for Psycholinguistics, 2022</a>
+        &quot;The brain is a prediction machine, which continuously compares sensory information that we pick up with internal predictions.&quot; - <a href="https://www.pnas.org/doi/10.1073/pnas.2201968119" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Max Planck Institute for Psycholinguistics, 2022</a>
       </blockquote>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
         Some researchers go further, arguing that the mind itself can be conceived as an <a href="https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2010.00025/full" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">&quot;anticipatory device.&quot;</a>
@@ -681,7 +681,7 @@ const blogContent: Record<string, React.ReactNode> = {
       </p>
 
       <h2 id="ai-does-same" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
-        AI Does The Same Thing — Sort Of
+        AI Does The Same Thing - Sort Of
       </h2>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
         Here&apos;s where it gets interesting.
@@ -749,7 +749,7 @@ const blogContent: Record<string, React.ReactNode> = {
         Research from Oxford University shows this clearly:
       </p>
       <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-6">
-        &quot;In artificial neural networks, an external algorithm tries to modify synaptic connections in order to reduce error, whereas the human brain first settles the activity of neurons into an optimal balanced configuration before adjusting synaptic connections.&quot; — <a href="https://www.nature.com/articles/s41593-023-01514-1" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Oxford University, Nature Neuroscience, 2024</a>
+        &quot;In artificial neural networks, an external algorithm tries to modify synaptic connections in order to reduce error, whereas the human brain first settles the activity of neurons into an optimal balanced configuration before adjusting synaptic connections.&quot; - <a href="https://www.nature.com/articles/s41593-023-01514-1" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Oxford University, Nature Neuroscience, 2024</a>
       </blockquote>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
         This is why humans can learn from seeing something once, while AI needs to be trained hundreds or thousands of times on the same information.
@@ -825,7 +825,7 @@ const blogContent: Record<string, React.ReactNode> = {
         <Link href="/programs" className="text-accent hover:underline font-medium">Explore mentoring →</Link>
       </p>
       <p className="text-base md:text-lg text-g500 italic mt-6">
-        — Murad, Head of Product and Design
+        - Murad, Head of Product and Design
       </p>
     </>
   ),
@@ -1022,6 +1022,284 @@ const blogContent: Record<string, React.ReactNode> = {
       </p>
     </>
   ),
+
+  'mixed-methods-ux-research-guide': (
+    <>
+      <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
+        You&apos;ve done the interviews. You&apos;ve pulled the analytics. But when you present to leadership, they pick apart your findings because your qual says one thing and your quant suggests another.
+      </p>
+      <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
+        Or worse - you ran five interviews, built a beautiful insight deck, and a stakeholder says: &quot;That&apos;s just five people. How do we know this is real?&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If you&apos;ve been in UX for more than a couple of years, you&apos;ve hit this wall. The interviews feel rich but unconvincing at scale. The analytics feel definitive but empty of meaning. And somewhere between the two, the actual design decision sits in limbo.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is the problem mixed-methods research solves. Not by being fancy, not by doubling your workload, but by being deliberate about when and how you combine qualitative and quantitative data to make decisions that actually stick.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        I want to be clear about something upfront: mixed-methods research is not always needed. I&apos;ll say that again because the textbooks won&apos;t. You don&apos;t need it for every project. You don&apos;t need it for every sprint. But when the question is complex enough, when the stakes are high enough, and when you use it well - it almost always lands business growth like nothing else.
+      </p>
+
+      <h2 id="crowdfunding-case-study" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        How Mixed Methods Doubled Revenue for a Crowdfunding Platform During COVID
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        A few years ago, I was heading research and design at a social crowdfunding platform. We had a team of twelve. The company wanted to expand into tier-2 and rural India, and the leadership question was simple: <em>Can we make this work outside metros, and if so, how?</em>
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Simple question. Not a simple answer.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        We started with a hypothesis. The null hypothesis was that geographic and infrastructure differences wouldn&apos;t significantly affect user behaviour. In other words - what works in Bangalore should work in Raichur.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        Phase 1: Qualitative (Interviews)
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        We went to users first. In-depth interviews with people across smaller cities and rural areas. And within the first few conversations, something unexpected started happening.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        When we introduced ourselves and mentioned the company name, people would say: <em>&quot;Oh yes, the NGO.&quot;</em>
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        We&apos;d correct them - it&apos;s not an NGO, it&apos;s a crowdfunding platform. But this kept happening. Interview after interview. Eventually, we stopped correcting them because it was disrupting the flow of the study. But we logged it. This was a pattern, and patterns in qualitative data are signals.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Then came the second signal. When we explained that the platform charges a percentage (3–10%) of funds raised, the response was visceral: <em>&quot;You charge money for helping the poor and needy?&quot;</em>
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Two qualitative signals. One pointing to a brand perception problem. The other pointing to a fundamental business model friction.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Our null hypothesis was dead. Geography wasn&apos;t just a logistical challenge - it was a completely different mental model about what the product was and how it should work.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        Phase 2: Quantitative (Survey)
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Now, here&apos;s where most teams stop. They&apos;d take those interview quotes, build a deck, and pitch a redesign. But five or fifteen interviews don&apos;t move stakeholders who control budgets.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        So we built a survey. Four hundred participants across the geographies we&apos;d studied. We quantified exactly how widespread the &quot;NGO perception&quot; was. We measured willingness to pay versus willingness to tip. We got hard numbers on what these users actually expected from a platform like ours.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The data converged on something radical: <strong>make it free. Let people tip if they want.</strong>
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        Phase 3: The Stakeholder Problem
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is where it gets real. We were proposing to eliminate the company&apos;s primary revenue model - during COVID. The qual-plus-quant evidence was strong, but &quot;make it free&quot; is a terrifying sentence in a boardroom.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        We first tested with a small sample. Showed changes in approval, acceptance, and revenue generation. The numbers were encouraging but not enough.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        What finally broke through? One of the key stakeholders sat in on a couple of user interviews and usability sessions. Watched real people react to the platform. Heard the confusion, the resistance to fees, the genuine desire to give more when there was no pressure to pay.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        That direct observation, combined with the quantitative validation, was what it took. The decision was made to roll it out as a blanket option.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>The result: revenue doubled within a quarter.</strong> The free tipping model generated more money than the percentage-based model ever did. And it worked so well that nearly every competitor in the space eventually adopted the same approach.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        That&apos;s what mixed methods does when it&apos;s done right. Neither the interviews alone nor the survey alone would have gotten us there. The interviews surfaced the insight. The survey proved it at scale. And the combination convinced stakeholders to make a decision that transformed the business.
+      </p>
+
+      <h2 id="when-you-need-mixed-methods" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        When You Actually Need Mixed Methods (And When You Don&apos;t)
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Here&apos;s the part most articles won&apos;t tell you: you don&apos;t always need this. Research is expensive - in time, in energy, in political capital. Before you plan a mixed-methods study, ask yourself three questions:
+      </p>
+      <ul className="list-disc pl-6 space-y-4 text-base md:text-lg text-g600 mb-6">
+        <li>
+          <strong>Can the question be answered without spending on research?</strong> Sometimes the answer is already sitting in your analytics, your support tickets, or your last round of usability testing. Don&apos;t re-research what&apos;s already known. Research is only needed when the questions remain unanswered without it.
+        </li>
+        <li>
+          <strong>Do you need both depth AND scale?</strong> If you just need to understand <em>why</em> users are struggling with a flow, five usability tests might be enough. If you just need to know <em>how many</em> users are affected, your analytics dashboard has the answer. Mixed methods is for when you need both - and when the answer from one source would be incomplete or unconvincing on its own.
+        </li>
+        <li>
+          <strong>What&apos;s the cost of being wrong?</strong> If you&apos;re tweaking a button colour, you don&apos;t need a mixed-methods study. If you&apos;re proposing to change the revenue model, you absolutely do. Match the rigour of your research to the stakes of the decision.
+        </li>
+      </ul>
+
+      <h2 id="spear-framework" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The SPEAR Framework: How We Teach Research at Xperience Wave
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        When I mentor designers on research, I see the same mistakes over and over. They jump straight to writing interview guides without aligning with stakeholders. They collect beautiful data and then have no idea how to analyse it. They present findings that nobody acts on.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        So we built a framework. We call it <strong>SPEAR</strong>, and we teach it to every mentee who goes through our programs at Xperience Wave. It works for any research - qual, quant, or mixed - but it&apos;s especially powerful for mixed-methods studies because it forces you to think about integration from the start.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        S - Set the Objective
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is where most designers go wrong. They sit alone at their desk, write brilliant research objectives, and then struggle to sell them to stakeholders.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Flip it. Go to your stakeholders first. Product managers, engineering leads, business heads - find the gaps they have. The questions they can&apos;t answer. Then position research as the solution to those shared unknowns.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        When multiple important stakeholders are asking the same question and nobody has the answer, that&apos;s your research objective. And because they helped define it, they&apos;re already invested in the outcome.
+      </p>
+      <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-6">
+        <strong>Bad approach:</strong> &quot;I think we should study the onboarding flow because I noticed some issues.&quot;<br /><br />
+        <strong>SPEAR approach:</strong> &quot;Three teams have flagged onboarding as a problem this quarter, but nobody has data on where exactly users drop off or why. I&apos;d like to run a study that answers both.&quot;
+      </blockquote>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        P - Prepare
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        Preparation is unsexy but critical. This is where you build:
+      </p>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li><strong>Interview/test guides</strong> - scripted enough to be consistent, flexible enough to follow interesting threads</li>
+        <li><strong>Protocols</strong> - how will you record, who takes notes, what&apos;s the observer&apos;s role</li>
+        <li><strong>Approvals</strong> - IRB, legal, privacy (especially for B2B or healthcare)</li>
+        <li><strong>Participant recruitment</strong> - screeners, incentives, scheduling</li>
+        <li><strong>Tools</strong> - recording software, survey platforms, analysis tools</li>
+      </ul>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        For mixed methods specifically, this is where you decide your design: Are you starting with qual and then validating with quant (exploratory)? Starting with quant data and then investigating with qual (explanatory)? Or running both in parallel (convergent)?
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        E - Execute
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        Execution is about discipline. A few things I drill into every mentee:
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>No leading questions.</strong> This is the most common mistake, and experienced designers still make it. Compare these:
+      </p>
+      <ul className="list-none pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li>&#10060; <em>&quot;Did you like using our application?&quot;</em> - This is leading. You&apos;ve already suggested an expected answer.</li>
+        <li>&#9989; <em>&quot;How did you feel using this application?&quot;</em> - Open. Neutral. Same intent, completely different data.</li>
+        <li>&#10060; <em>&quot;Do you think Instagram is a waste of time?&quot;</em> - Loaded with bias.</li>
+        <li>&#9989; <em>&quot;How do you think using Instagram impacts your day and time?&quot;</em> - Exploratory.</li>
+      </ul>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>The stream of questions matters.</strong> Start with easier questions, then move to harder ones. Ask the most important questions early when attention is highest, less critical ones later. Follow your guide&apos;s structure, but don&apos;t be rigid about chronology when it&apos;s unnecessary - if a participant naturally goes somewhere interesting, follow them.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        For mixed-methods studies, the execution phase often has two distinct tracks. If you&apos;re doing exploratory design, your qual phase needs to be completed and analysed before you can design the quant instrument. Build that into your timeline.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        A - Analyse
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is where the magic happens - and where most designers panic.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>For qualitative data:</strong> Thematic analysis. Code your transcripts, cluster codes into themes, look for patterns across participants. Tools like affinity diagrams, journey maps, or simple spreadsheets work. The key is being systematic, not just cherry-picking quotes that support your hypothesis.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>For quantitative data:</strong> Statistical analysis. Descriptive stats at minimum (means, distributions, percentages). Inferential stats if your sample size supports it (significance testing, correlation, regression).
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>For mixed methods:</strong> This is the critical extra step. You need to actively integrate. Do the numbers support the stories? Do the stories explain the numbers? If there&apos;s a contradiction - and sometimes there is - that&apos;s not a failure. That&apos;s a finding. Go back and dig deeper. This is the kind of nuanced interpretation that separates human insight from surface-level analysis - something we explore further in our piece on <Link href="/resources/blogs/ai-predicts-so-do-you-difference" className="text-accent hover:underline font-medium">the difference between AI prediction and human prediction</Link>.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        R - Report
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        Your research is only as good as its communication. A solid research report follows this structure:
+      </p>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li><strong>Objective</strong> - What question were we answering?</li>
+        <li><strong>Procedure</strong> - What methods did we use and why?</li>
+        <li><strong>Summary</strong> - Top-line findings (start here - stakeholders are busy)</li>
+        <li><strong>Detailed findings</strong> - The evidence, organised by theme or metric</li>
+        <li><strong>Recommendations</strong> - What should we do based on this?</li>
+        <li><strong>Participant details</strong> - Sample size, demographics, recruitment method</li>
+      </ul>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The report is where mixed methods really shines. You can say: <em>&quot;68% of users in our survey reported confusion at the payment step [quant]. Here&apos;s what that confusion actually looks like and sounds like in practice [qual clips/quotes]. And here&apos;s our recommendation for fixing it.&quot;</em>
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        <strong>Numbers make stakeholders listen. Stories make them care. Both together make them act.</strong>
+      </p>
+
+      <h2 id="practical-tips" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Practical Tips for Teams With Limited Time and Budget
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        You&apos;re probably thinking: &quot;This sounds great, but I don&apos;t have time for two separate studies.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        Fair. Here are ways to do mixed methods without doubling your workload:
+      </p>
+      <ul className="list-disc pl-6 space-y-4 text-base md:text-lg text-g600 mb-6">
+        <li>
+          <strong>Pair 5 usability tests with 1 short survey.</strong> Run the qual study first, extract themes, then send a quick survey (Google Forms, Typeform) to validate those themes with a larger group. Total extra effort: maybe 3–4 hours.
+        </li>
+        <li>
+          <strong>Use existing data as your quant base.</strong> You probably already have analytics, NPS scores, support tickets, or app store reviews sitting untouched. That&apos;s your quantitative layer. Now go talk to 5–8 users to understand the <em>why</em> behind those numbers.
+        </li>
+        <li>
+          <strong>Embed qual into quant instruments.</strong> Add 2–3 open-ended questions at the end of your next survey. &quot;Why did you give that rating?&quot; or &quot;Describe your biggest frustration with this feature.&quot; You&apos;re now doing mixed methods within a single study.
+        </li>
+      </ul>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        If you&apos;re the only designer on your team, you have to be especially strategic about this. You can&apos;t do everything, so focus your mixed methods on the highest-stakes decisions - the ones where being wrong costs the most. For everything else, pick the single method that gets you closest to the answer. We talk more about this kind of resourcefulness in our piece on <Link href="/resources/blogs/grow-as-solo-designer" className="text-accent hover:underline font-medium">how to grow when you&apos;re the only designer on the team</Link>.
+      </p>
+
+      <h2 id="career-impact" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Why This Matters for Your Career
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Here&apos;s the thing about mixed-methods research that nobody talks about in UX articles: it&apos;s a senior skill. It&apos;s what separates designers who contribute to business decisions from designers who just ship screens.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        When you can walk into a room and say, &quot;Here&apos;s what the data shows, here&apos;s why it&apos;s happening, and here&apos;s what we should do about it&quot; - backed by both quantitative evidence and qualitative depth - you are operating at a leadership level. That&apos;s the kind of work that lands in <Link href="/resources/blogs/business-driven-ux-portfolio" className="text-accent hover:underline font-medium">portfolios that get you hired for senior and leadership roles</Link>.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        The crowdfunding story I told earlier? That wasn&apos;t just a research project. It was a career-defining moment for everyone on that team. We didn&apos;t just &quot;do research.&quot; We changed how the business made money. That&apos;s what research looks like when it&apos;s done with intention, rigour, and the right framework.
+      </p>
+
+      <h2 id="key-takeaways" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Key Takeaways
+      </h2>
+      <ul className="list-disc pl-6 space-y-4 text-base md:text-lg text-g600 mb-6">
+        <li>
+          <strong>Mixed methods isn&apos;t always needed</strong> - but when the stakes are high and you need both depth and scale, it&apos;s the most powerful tool in your research toolkit.
+        </li>
+        <li>
+          <strong>Start with stakeholder alignment, not with your interview guide.</strong> Research that nobody asked for is research that nobody acts on.
+        </li>
+        <li>
+          <strong>Use the SPEAR framework to stay disciplined:</strong> Set the objective (with stakeholders), Prepare (guides, protocols, participants), Execute (no leading questions, follow the stream), Analyse (thematic + statistical, then integrate), Report (objective, procedure, summary, findings, recommendations).
+        </li>
+        <li>
+          <strong>The real power is in the integration.</strong> Numbers make stakeholders listen. Stories make them care. Both together make them act.
+        </li>
+        <li>
+          <strong>You don&apos;t need a massive budget.</strong> Even pairing 5 usability tests with one survey, or combining existing analytics with a handful of interviews, counts as mixed methods - and it&apos;s dramatically better than either alone.
+        </li>
+      </ul>
+
+      <hr className="my-10 border-g200" />
+
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        At Xperience Wave, we teach research end-to-end as part of our <Link href="/programs/senior-ux-designer-mentorship" className="text-accent hover:underline font-medium">1:1 mentorship programs</Link> - not as textbook theory, but as the practical skill that gets you promoted. If you&apos;re a designer who wants to move from shipping screens to driving business decisions, <Link href="/programs/senior-ux-designer-mentorship" className="text-accent hover:underline font-medium">book a free strategy call</Link> and let&apos;s talk about what&apos;s holding you back.
+      </p>
+      <p className="text-base md:text-lg text-g500 italic mt-6">
+        - Murad, Head of Product and Design
+      </p>
+    </>
+  ),
 };
 
 // Table of contents for each blog post
@@ -1064,7 +1342,7 @@ const blogTableOfContents: Record<string, { id: string; title: string }[]> = {
   ],
   'ai-predicts-so-do-you-difference': [
     { id: 'prediction-machine', title: 'You\'re Already A Prediction Machine' },
-    { id: 'ai-does-same', title: 'AI Does The Same Thing — Sort Of' },
+    { id: 'ai-does-same', title: 'AI Does The Same Thing - Sort Of' },
     { id: 'skin-in-the-game', title: 'The Difference Is Skin In The Game' },
     { id: 'predictions-go-wrong', title: 'What Happens When Predictions Go Wrong' },
     { id: 'what-this-means', title: 'So What Does This Mean For You?' },
@@ -1078,6 +1356,14 @@ const blogTableOfContents: Record<string, { id: string; title: string }[]> = {
     { id: 'what-i-wish', title: 'What I Wish Someone Had Told Me' },
     { id: 'final-thoughts', title: 'Final Thoughts' },
     { id: 'need-help', title: 'Need Help Navigating This?' },
+  ],
+  'mixed-methods-ux-research-guide': [
+    { id: 'crowdfunding-case-study', title: 'How Mixed Methods Doubled Revenue' },
+    { id: 'when-you-need-mixed-methods', title: 'When You Actually Need Mixed Methods' },
+    { id: 'spear-framework', title: 'The SPEAR Framework' },
+    { id: 'practical-tips', title: 'Practical Tips for Limited Time & Budget' },
+    { id: 'career-impact', title: 'Why This Matters for Your Career' },
+    { id: 'key-takeaways', title: 'Key Takeaways' },
   ],
 };
 
@@ -1131,6 +1417,11 @@ const blogMetadata: Record<string, { title: string; description: string; keyword
     title: 'How To Grow When You\'re The Only Designer On The Team',
     description: 'A real story about surviving as the solo designer, building trust in hostile environments, finding advocates, and growing into a design leader when nobody cares about design.',
     keywords: ['solo designer', 'only designer on team', 'design leadership', 'growing as a designer', 'UX career growth', 'design advocate', 'stakeholder management'],
+  },
+  'mixed-methods-ux-research-guide': {
+    title: 'Mixed-Methods UX Research: A Practical Guide to Combining Qual & Quant | Xperience Wave',
+    description: 'Most designers treat qual and quant as separate tools. Senior designers know how to combine them. Learn the SPEAR framework for mixed-methods research that actually drives business outcomes.',
+    keywords: ['mixed methods UX research', 'qualitative quantitative UX research', 'UX research methods', 'combining qual quant UX', 'SPEAR research framework', 'how to combine qualitative and quantitative UX research', 'mixed methods research in UX design', 'UX research for senior designers'],
   },
 };
 

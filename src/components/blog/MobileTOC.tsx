@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 interface TOCItem {
   id: string;
@@ -13,12 +13,60 @@ interface MobileTOCProps {
 
 export default function MobileTOC({ items }: MobileTOCProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const [showGoToTop, setShowGoToTop] = useState(false);
 
-  if (items.length === 0) return null;
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowGoToTop(window.scrollY > 400);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const goToTopButton = (
+    <button
+      onClick={scrollToTop}
+      className={`fixed bottom-6 right-6 w-12 h-12 bg-carbon text-white rounded-full shadow-lg flex items-center justify-center hover:bg-carbon/90 transition-all z-40 ${
+        showGoToTop ? 'opacity-100' : 'opacity-0 pointer-events-none'
+      }`}
+      aria-label="Go to top"
+    >
+      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
+      </svg>
+    </button>
+  );
+
+  if (items.length === 0) {
+    return goToTopButton;
+  }
 
   return (
+    <>
+    {/* Go to top - desktop (shown alone at bottom-right) */}
+    <div className="hidden lg:block">
+      {goToTopButton}
+    </div>
+
     <div className="lg:hidden">
-      {/* Floating Button */}
+      {/* Go to top - mobile (left of TOC button) */}
+      <button
+        onClick={scrollToTop}
+        className={`fixed bottom-6 right-20 w-12 h-12 bg-carbon text-white rounded-full shadow-lg flex items-center justify-center hover:bg-carbon/90 transition-all z-40 ${
+          showGoToTop ? 'opacity-100' : 'opacity-0 pointer-events-none'
+        }`}
+        aria-label="Go to top"
+      >
+        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
+        </svg>
+      </button>
+
+      {/* Floating TOC Button */}
       <button
         onClick={() => setIsOpen(true)}
         className="fixed bottom-6 right-6 w-12 h-12 bg-carbon text-white rounded-full shadow-lg flex items-center justify-center hover:bg-carbon/90 transition-colors z-40"
@@ -82,5 +130,6 @@ export default function MobileTOC({ items }: MobileTOCProps) {
         }
       `}</style>
     </div>
+    </>
   );
 }

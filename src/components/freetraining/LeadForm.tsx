@@ -79,6 +79,22 @@ export function LeadForm({ onSuccess, onError, onCancel }: LeadFormProps) {
       const qualificationResult = checkQualification(data);
       const utmParams = getStorageJSON<Record<string, string>>("utm_params") || {};
 
+      // SalesHub webhook (fire-and-forget, don't block user)
+      fetch("/freetraining/api/saleshub/webhook", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: data.name,
+          email: data.email,
+          phone: data.phone,
+          utm_source: utmParams.utm_source || "",
+          utm_medium: utmParams.utm_medium || "",
+          utm_campaign: utmParams.utm_campaign || "",
+          utm_content: utmParams.utm_content || "",
+          utm_term: utmParams.utm_term || "",
+        }),
+      }).catch((err) => console.error("SalesHub webhook failed:", err));
+
       const response = await fetch("/freetraining/api/brevo/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },

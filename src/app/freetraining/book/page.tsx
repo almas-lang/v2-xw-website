@@ -119,10 +119,10 @@ export default function BookPage() {
     }
   };
 
-  const notifySalesHub = async (email: string, name: string, phone: string) => {
+  const notifySalesHub = (email: string, name: string, phone: string) => {
     if (!email) return;
     try {
-      await fetch("/freetraining/api/saleshub/webhook", {
+      fetch("/freetraining/api/saleshub/webhook", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -132,6 +132,7 @@ export default function BookPage() {
           call_booked: "yes",
           booked_at: new Date().toISOString(),
         }),
+        keepalive: true, // survive page navigation redirect
       });
     } catch (error) {
       console.error("Error notifying SalesHub:", error);

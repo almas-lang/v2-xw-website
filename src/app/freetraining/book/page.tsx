@@ -93,6 +93,7 @@ export default function BookPage() {
             trackConversionAPI("Schedule", leadData.email, undefined, { content_name: "Strategy Call Booked", booking_data: e.detail });
           }
           updateSheetStage(leadData?.email || '');
+          notifySalesHub(leadData?.email || '', formData.name || '', formData.phone || '');
           // Redirect immediately — must beat Cal.com's own redirect
           window.location.href = ftPath('/congratulations');
         },
@@ -115,6 +116,25 @@ export default function BookPage() {
       });
     } catch (error) {
       console.error("Error updating sheet:", error);
+    }
+  };
+
+  const notifySalesHub = async (email: string, name: string, phone: string) => {
+    if (!email) return;
+    try {
+      await fetch("/freetraining/api/saleshub/webhook", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: name || email.split("@")[0],
+          email,
+          phone,
+          call_booked: "yes",
+          booked_at: new Date().toISOString(),
+        }),
+      });
+    } catch (error) {
+      console.error("Error notifying SalesHub:", error);
     }
   };
 

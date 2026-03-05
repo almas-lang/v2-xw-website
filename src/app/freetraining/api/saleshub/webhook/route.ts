@@ -11,16 +11,17 @@ export async function POST(request: NextRequest) {
 
   try {
     const body = await request.json();
-    const { name, email, phone, utm_source, utm_medium, utm_campaign, utm_content, utm_term } = body;
+    const { name, email, phone, utm_source, utm_medium, utm_campaign, utm_content, utm_term,
+      call_booked, booked_at } = body;
 
-    if (!name || !email || !phone) {
-      return NextResponse.json({ success: false, error: 'Missing required fields: name, email, phone' }, { status: 400 });
+    if (!name || !email) {
+      return NextResponse.json({ success: false, error: 'Missing required fields: name, email' }, { status: 400 });
     }
 
-    const payload = {
+    const payload: Record<string, string> = {
       name,
       email,
-      phone,
+      phone: phone || '',
       source: 'ft-landing-page',
       utm_source: utm_source || '',
       utm_medium: utm_medium || '',
@@ -28,6 +29,10 @@ export async function POST(request: NextRequest) {
       utm_content: utm_content || '',
       utm_term: utm_term || '',
     };
+
+    // Forward booking fields if present
+    if (call_booked) payload.call_booked = call_booked;
+    if (booked_at) payload.booked_at = booked_at;
 
     const url = `${SALESHUB_WEBHOOK_URL}?secret=${SALESHUB_WEBHOOK_SECRET}`;
 

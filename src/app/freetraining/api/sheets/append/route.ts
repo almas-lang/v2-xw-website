@@ -144,6 +144,29 @@ function buildRow(leadData: LeadData, existingRow?: string[]): string[] {
   ];
 }
 
+const SALESHUB_WEBHOOK_URL = process.env.SALESHUB_WEBHOOK_URL;
+const SALESHUB_WEBHOOK_SECRET = process.env.SALESHUB_WEBHOOK_SECRET;
+
+async function notifySalesHubBooking(email: string, name: string, phone: string, bookedAt?: string) {
+  if (!SALESHUB_WEBHOOK_URL || !SALESHUB_WEBHOOK_SECRET) return;
+  try {
+    const url = `${SALESHUB_WEBHOOK_URL}?secret=${SALESHUB_WEBHOOK_SECRET}`;
+    await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: name || email.split('@')[0],
+        email,
+        phone: phone || '',
+        call_booked: 'yes',
+        booked_at: bookedAt || new Date().toISOString(),
+      }),
+    });
+  } catch (error) {
+    console.error('SalesHub booking notification error:', error);
+  }
+}
+
 export async function POST(request: NextRequest) {
   if (!SPREADSHEET_ID || !GOOGLE_SHEETS_CLIENT_EMAIL || !GOOGLE_SHEETS_PRIVATE_KEY) {
     return NextResponse.json({ success: false, skipped: true, reason: 'Google Sheets not configured' });
@@ -175,6 +198,12 @@ export async function POST(request: NextRequest) {
         const existingData = await sheetsGet(accessToken, `Sheet1!A${existingRowIndex}:AD${existingRowIndex}`);
         const existingRow = existingData.values?.[0] || [];
         await sheetsUpdate(accessToken, `Sheet1!A${existingRowIndex}:AD${existingRowIndex}`, [buildRow(data, existingRow)]);
+
+        // Notify SalesHub when a booking is recorded
+        if (data.stage === 'booked') {
+          await notifySalesHubBooking(data.email, existingRow[1] || '', existingRow[2] || '', data.bookedAt);
+        }
+
         return NextResponse.json({ success: true, message: 'Lead updated successfully', action: 'updated' });
       } else {
         return NextResponse.json({ success: false, error: 'Lead not found' }, { status: 404 });

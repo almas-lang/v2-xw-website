@@ -1338,7 +1338,7 @@ const blogContent: Record<string, React.ReactNode> = {
       </blockquote>
 
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        Most designers know this intellectually. Very few act on it. Because building real visibility takes time, and clicking Apply is immediate. So they keep clicking Apply, and keep wondering why nothing changes.
+        Most designers know this intellectually. Very few act on it. Because building real visibility takes time, and clicking Apply is immediate. So they keep clicking Apply, and keep wondering why nothing changes. If this sounds familiar, you may also be experiencing the <Link href="/resources/blogs/senior-ux-designer-delivery-person" className="text-accent hover:underline font-medium">senior title without senior influence</Link> problem - they&apos;re deeply connected.
       </p>
 
       <h2 id="one-year-of-silence" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
@@ -1363,7 +1363,7 @@ const blogContent: Record<string, React.ReactNode> = {
         <li>He had no presence on the platforms where design hiring actually happens. Not because he lacked opinions - but because he&apos;d never thought of sharing them as part of getting hired.</li>
       </ul>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        We worked with him on one fundamental shift: stop treating the job search as a series of applications, and start treating it as a sustained effort to build credibility in the places where hiring decisions actually form.
+        We worked with him on one fundamental shift: stop treating the job search as a series of applications, and start treating it as a sustained effort to build credibility in the places where hiring decisions actually form. This is what our <Link href="/programs" className="text-accent hover:underline font-medium">1:1 mentorship program</Link> is built around.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
         He started maintaining a proper pipeline - tracking where each opportunity was across every stage: applied, first call, assignment, whiteboarding, negotiation. When you see the data, you stop guessing. You know exactly where you&apos;re losing people, and you fix that stage specifically.
@@ -1457,13 +1457,13 @@ const blogContent: Record<string, React.ReactNode> = {
         The case studies are well-formatted. The presentation is clean. But underneath:
       </p>
       <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
-        <li><strong>No business tongue</strong> - design decisions aren&apos;t connected to commercial outcomes, user retention, conversion, cost reduction, or any metric the business actually tracked</li>
+        <li><strong>No business tongue</strong> - design decisions aren&apos;t connected to commercial outcomes, user retention, conversion, cost reduction, or any metric the business actually tracked. This is exactly what a <Link href="/resources/blogs/business-driven-ux-portfolio" className="text-accent hover:underline font-medium">business-driven portfolio</Link> solves.</li>
         <li><strong>Shallow domain knowledge</strong> - they know the tools and the process, but not the industry context their work sat inside</li>
         <li><strong>Blame patterns</strong> - &apos;the culture didn&apos;t value UX,&apos; &apos;the PM never listened,&apos; &apos;they just wanted to ship fast.&apos; These might be true. But they tell a hiring manager something about how you handle constraints.</li>
         <li><strong>A comparison problem</strong> - they&apos;re comparing their portfolio to other designers&apos; portfolios, not to what a hiring manager actually needs to see</li>
       </ul>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        The hardest thing to say - and we say it plainly - is that the ability to build a portfolio that gets you a job is a completely different skill from the ability to do excellent UX work in the job. Both matter. Most designers only develop one.
+        The hardest thing to say - and we say it plainly - is that the ability to <Link href="/resources/blogs/business-driven-ux-portfolio" className="text-accent hover:underline font-medium">build a portfolio that gets you a job</Link> is a completely different skill from the ability to do excellent UX work in the job. Both matter. Most designers only develop one.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
         Beyond the portfolio: we look at the full pipeline. How many applied, how many called back, how many first conversations, how many assignments, how many offers. When you map that funnel, you stop applying the same fix everywhere. Different stages break for different reasons. Apply the wrong fix to the wrong stage and nothing improves.
@@ -1486,7 +1486,7 @@ const blogContent: Record<string, React.ReactNode> = {
         <li><strong>Offer / negotiation</strong> - how many converted</li>
       </ul>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        Zero callbacks? The problem is at the top - visibility, positioning, how your profile reads before anyone sees your portfolio. Callbacks dying after round one? The problem is how you&apos;re showing up in conversation, not your case studies. Dying at assignment stage? That&apos;s a different problem again - one we cover separately.
+        Zero callbacks? The problem is at the top - visibility, positioning, how your profile reads before anyone sees your portfolio. Callbacks dying after round one? The problem is how you&apos;re showing up in conversation, not your case studies. Dying at assignment stage? That&apos;s a different problem again - one we cover in our <Link href="/programs/senior-ux-designer-mentorship" className="text-accent hover:underline font-medium">senior UX mentorship</Link>.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
         Most designers apply the same fix to all five stages simultaneously. Which means nothing actually improves - they just get busier and more exhausted.
@@ -1532,7 +1532,9 @@ const blogContent: Record<string, React.ReactNode> = {
         <strong>Read Next</strong>
       </p>
       <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li><Link href="/resources/blogs/senior-ux-designer-delivery-person" className="text-accent hover:underline font-medium">You&apos;re a Senior Designer in Title. You&apos;re Still Being Treated Like a Delivery Person.</Link></li>
         <li><Link href="/resources/blogs/business-driven-ux-portfolio" className="text-accent hover:underline font-medium">From Pixel-Pusher to Impact-Maker: Building a Business-Driven UX Portfolio</Link></li>
+        <li><Link href="/resources/blogs/grow-as-solo-designer" className="text-accent hover:underline font-medium">How To Grow When You&apos;re The Only Designer On The Team</Link></li>
         <li><Link href="/programs" className="text-accent hover:underline font-medium">Explore the Current Mentorship Program</Link></li>
       </ul>
 

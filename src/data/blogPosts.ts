@@ -284,20 +284,25 @@ export const getFeaturedPost = (): BlogPost | undefined => {
 // Get posts by category
 export const getPostsByCategory = (category: string): BlogPost[] => {
   const published = getPublishedPosts();
-  if (category === 'all') return published;
-  return published.filter(post => post.category === category);
+  const filtered = category === 'all' ? published : published.filter(post => post.category === category);
+  return [...filtered].sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime());
 };
 
 // Get non-featured posts
 export const getNonFeaturedPosts = (): BlogPost[] => {
   const featured = getFeaturedPost();
-  return getPublishedPosts().filter(post => post.id !== featured?.id);
+  return getPublishedPosts()
+    .filter(post => post.id !== featured?.id)
+    .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime());
 };
 
 // Get homepage blogs (featured + 2 more)
 export const getHomepageBlogs = (): BlogPost[] => {
   const featured = getFeaturedPost();
-  const others = getPublishedPosts().filter(post => post.id !== featured?.id).slice(0, 2);
+  const others = getPublishedPosts()
+    .filter(post => post.id !== featured?.id)
+    .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
+    .slice(0, 2);
   return featured ? [featured, ...others] : others;
 };
 

@@ -2035,6 +2035,331 @@ const blogContent: Record<string, React.ReactNode> = {
       </p>
     </>
   ),
+  'nda-work-ux-portfolio': (
+    <>
+      <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
+        The first time I spoke with Krishna, I spent most of the call nodding slowly and understanding about 60% of what he was saying.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        He was describing his work on a SaaS product built around military-grade encryption technology - the kind of data security infrastructure used by organisations where a breach isn&apos;t embarrassing, it&apos;s catastrophic. He walked me through the problem space, the user constraints, the architectural decisions that shaped the design direction. It was some of the most technically complex and strategically layered design work I had heard from a designer at his level.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Then he stopped himself mid-sentence. &quot;I probably shouldn&apos;t be telling you any of this.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        He was right. He had signed a tight NDA. By the time he registered what he had done, he had already described things his employer would not have wanted shared with anyone.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Then came the part I hear more often than I should: &quot;I&apos;ve basically decided to leave this project out of my portfolio entirely.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        That decision - the one that feels responsible, even principled - was actually the bigger problem.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        We review portfolios every week. Across our team, that&apos;s easily 20 or more a week at any given time. And the NDA issue comes up in almost every cohort - not as an edge case, but as a pattern. Designers sitting on their strongest work because they don&apos;t know what they&apos;re actually allowed to show. This piece is about the third path between those two mistakes - sharing too much without realising it, or sharing nothing and letting genuinely strong work disappear.
+      </p>
+
+      <h2 id="not-niche-problem" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        This Is Not a Niche Problem
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Researchers estimate that somewhere between one-third and over half of all workers in professional roles are constrained by an NDA or an equivalent confidentiality mechanism. There is no UX-specific number - no survey has nailed it - but you don&apos;t need one. Think about where mid-level designers with three to six years of experience actually work: fintech, enterprise SaaS, healthcare, government, defence, large-scale e-commerce with competitive pricing models. These are exactly the industries where NDA density is highest.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If you have been in this field for more than two years and you have not worked under some form of confidentiality constraint, you are the exception. Most designers have. Many are holding back significant work because of it.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The problem is not that the agreements exist. The problem is that they are almost never explained to the people who sign them. You get a document, you sign it, and then years later you are sitting in front of your portfolio trying to figure out what you are actually allowed to say.
+      </p>
+
+      <h2 id="what-nda-covers" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What an NDA Actually Covers - and What It Doesn&apos;t
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Most designers treat an NDA as a blanket instruction to say nothing. It isn&apos;t. It is a specific legal contract that defines categories of protected information. The problem is those categories are written in legal language, and nobody at the company ever translates them.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>What is almost always protected:</strong>
+      </p>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li>Proprietary technology, architecture, or methodology - the specific how behind what the product does</li>
+        <li>Exact performance metrics - the specific conversion rate, the exact user numbers, the actual revenue figures</li>
+        <li>Unreleased features, roadmap, or product strategy</li>
+        <li>Client or user data, including research findings tied to identifiable groups</li>
+        <li>Competitive intelligence - anything that would materially help a competitor understand the company&apos;s position</li>
+      </ul>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>What is usually not protected:</strong>
+      </p>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li>The general domain or industry the product operates in</li>
+        <li>Your role, your process, and the design decisions you made</li>
+        <li>The methods you used - research approach, ideation process, testing, iteration</li>
+        <li>The constraints you navigated - regulatory, technical, organisational, business</li>
+        <li>Your reasoning, your tradeoffs, the thinking that led to the final direction</li>
+      </ul>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>What designers mistakenly hide:</strong>
+      </p>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li>Process artefacts - journey maps, frameworks, research protocols, decision trees</li>
+        <li>The problem framing - often treated as confidential when it&apos;s generic to the domain</li>
+        <li>Outcomes stated in relative terms - &apos;significantly reduced drop-off&apos; reveals nothing proprietary</li>
+        <li>The constraints themselves - &apos;designing for zero-tolerance error states in a regulated context&apos; is not a secret</li>
+      </ul>
+      <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-6">
+        The NDA protects the company&apos;s secrets. It does not own your thinking. What you noticed, how you framed the problem, what you chose to explore and what you decided against - that belongs to you.
+      </blockquote>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        When Krishna went back and read his agreement with this framing, he found that it covered the technology architecture, the client names, and specific performance data. It did not cover the fact that he was designing for a security-critical enterprise context, the process he ran, or the thinking behind the direction. That was more than enough.
+      </p>
+
+      <h2 id="breach-you-dont-see" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Breach Most Designers Don&apos;t See Coming
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Most NDA breaches in portfolios don&apos;t happen because someone decided to leak confidential information. They happen because the designer didn&apos;t know what qualified as confidential.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        A designer includes a case study about improving a fintech app&apos;s onboarding flow. In the before/after comparison, they include: &apos;Increased completion rate by 47% by redesigning the risk assessment flow.&apos; They also show the step-by-step logic of how risk profiles are calculated in the UI. Their intent was to demonstrate impact. What they revealed was a proprietary conversion metric and the company&apos;s risk assessment methodology. Neither required them to show a single screen.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The sensitive information was not in the visuals. It was in the number and the methodology. Designers fixate on whether they can show the screens because screens are visible. But what actually matters to a company is usually in the specifics underneath - the what and the how that a competitor would find valuable.
+      </p>
+      <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-6">
+        There is a level of abstraction at which everything is safe to share. &apos;I led a redesign of a complex onboarding flow for a regulated industry, reducing drop-off at the highest friction point by a meaningful margin.&apos; That sentence contains nothing proprietary. It tells a hiring manager what they need to know.
+      </blockquote>
+
+      <h2 id="fear-nobody-names" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Fear Nobody Names: What If Asking Signals I&apos;m Leaving?
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is the question that stops most designers from doing anything at all. Before they even get to &apos;what can I show,&apos; they get stuck on: if I go to my manager and ask about my NDA and mention my portfolio, won&apos;t they immediately know I&apos;m looking?
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Maybe. But the framing of the conversation determines almost everything. &apos;Can I put this project in my portfolio?&apos; sounds like a resignation conversation dressed in polite language. &apos;I&apos;m building out my professional portfolio for career development&apos; is a different conversation entirely.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        The script that tends to work:
+      </p>
+      <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-6">
+        &quot;I&apos;ve been working on building out a professional portfolio - something I want to keep current regardless of where my career goes. I&apos;d love your guidance on what I can include from [project]. I&apos;m not planning to show anything sensitive - happy to share a draft with you first and get your sign-off before anything goes anywhere.&quot;
+      </blockquote>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Three things this framing does: it anchors the conversation in professional development rather than job hunting, it offers the manager visibility and control before they have to ask for it, and it makes &apos;no&apos; harder to say reflexively because you&apos;ve already removed the thing they were going to object to.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>When the manager just says no - and won&apos;t explain why</strong>
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        When this happens, you have three realistic options:
+      </p>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li><strong>Go narrower.</strong> Don&apos;t ask to include the project. Ask a more specific question: &apos;Would it be okay to describe the type of problem I was solving without naming the product or client?&apos; A narrower request is harder to refuse with a blanket no.</li>
+        <li><strong>Go to legal or HR directly.</strong> Your manager is not the legal authority on the NDA - the legal or HR team is. A polite email to HR often gets a more considered response. They are used to this question.</li>
+        <li><strong>Work around the restriction entirely.</strong> Your process artefacts - frameworks you built, research protocols you designed, decision matrices you developed - are your intellectual work product. A process-only case study that never shows product-specific visuals or data does not require sign-off.</li>
+      </ul>
+
+      <h2 id="five-approaches" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Five Approaches - Ordered by What You Actually Need Access To
+      </h2>
+
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>1. Process-only case study - the one that works when nothing else does</strong>
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is what we built with Krishna. No product visuals. No metrics. No client name. What it had instead was a clear articulation of a genuinely hard problem, a documented process of navigating constraints that most designers never encounter, and evidence of a designer who could hold security requirements, compliance constraints, user experience, and business outcomes in the same conversation at the same time.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Where specific detail was protected, the case study said so directly and visibly. Not vaguely omitted - explicitly labelled: <em>[Redacted - specific performance metrics protected by confidentiality agreement]</em>. This matters more than most designers realise. Unexplained gaps read as sloppy work. Labelled redactions read as professional discretion. One says you ran out of material. The other says you know exactly what you are doing with sensitive information - which, at a senior level, is a hiring signal in its own right.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        That case study landed Krishna three roles. In each conversation, the hiring manager commented on how clearly they could see his thinking. Not despite the absence of screens. Partly because of it.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <em>Best for: Highly restricted industries - defence, fintech, healthcare, government. Strongest signal for senior and leadership roles. No sign-off required.</em>
+      </p>
+
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>2. Sanitised case study - modified visuals with a visible disclaimer</strong>
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If your NDA covers identifying information but not the existence of the work, you can often modify the visuals to remove what is protected while keeping what is relevant. Replace the company logo and branding with a fictional brand. Change UI text that reveals identity. Replace specific data with relative placeholders.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The disclaimer is non-negotiable and it goes at the top: &quot;Branding, naming, and specific data in this project have been modified to protect client confidentiality. The design process, decisions, and structural outcome shown accurately represent the work.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Do not modify the work quietly and hope no one notices. Transparent modification is professional. Silent modification is dishonesty.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <em>Best for: Work where visual output matters for the role you&apos;re applying to, and where the confidential element is primarily identity-based.</em>
+      </p>
+
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>3. Password protection - selective access without public exposure</strong>
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Some companies are not comfortable with work being publicly accessible but have no issue with it being shared selectively. In your portfolio entry: &apos;This project is under NDA. I&apos;m happy to share the full case study with potential employers - please request access.&apos;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        One thing to be clear on: sharing a password does not transfer legal responsibility. The work you protect with it should still be appropriately sanitised.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <em>Best for: Agency designers and freelancers whose clients want controlled access. Also works for enterprise designers whose companies are comfortable with selective sharing.</em>
+      </p>
+
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>4. Written permission - the option most designers never attempt</strong>
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The most reliable approach, and the one most designers never try, is to ask for written confirmation of what you can show. Most companies, when approached properly with a clear explanation of exactly what you want to include and exactly what you will exclude, will say yes. The key is specificity.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        &apos;Can I put this project in my portfolio&apos; is easy to reject. &apos;I&apos;d like to include the process documentation - journey maps, the research protocol, and the decision framework - with no product visuals, no metrics, and no client identification. Can you confirm in writing that this is acceptable?&apos; is much harder to say no to.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Written confirmation eliminates legal risk entirely. Krishna got his manager to confirm in writing. Every interview conversation about that project was then clean.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <em>Best for: Any situation where you want to include significant detail or visuals. If you can get it, this is always the right move.</em>
+      </p>
+
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>5. Rebuild with a fictional brand</strong>
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If the NDA is ironclad and you cannot get permission, but the problem-solving capability you demonstrated is something you need to show, you can rebuild the project using a fictional brand and scenario that mirrors the actual constraints you navigated.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is not fabrication. You are applying genuine thinking - a process you actually ran, constraints you actually navigated - to a fictional context in order to demonstrate real capability. But the disclaimer must be prominent and unambiguous: &quot;This is a redesign exercise using a fictional brand to demonstrate capability developed on a confidential project.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Done honestly, this produces legitimate portfolio work. Done quietly, it is a career-ending misrepresentation. The fictional brand must be clearly fictional. The disclaimer must be at the top, not at the bottom in small text.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <em>Best for: Situations where you need to demonstrate a specific capability and cannot show the original in any form.</em>
+      </p>
+
+      <h2 id="process-proves-something" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        If I Only Show Process, How Does Anyone Know I Solved Anything?
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is the sharpest objection to the process-only approach, and it deserves a real answer.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Here is what we see in portfolio reviews week after week: portfolios that show beautiful final screens, impressive metrics, and case studies built around outcomes - and say almost nothing about what the designer actually contributed to any of it. A 40% improvement in task completion is a compelling number. But if I cannot tell from your case study whether you drove that outcome or whether it happened despite your involvement, the number is noise.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The process-only case study does not prove you shipped the solution. It proves something more durable: that you can frame a problem correctly, navigate constraints intelligently, make and defend design decisions, and understand why what you shipped was the right response to the actual problem. Those capabilities transfer. A specific metric does not.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        That said, a process-only case study still needs to show directional outcome:
+      </p>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li><strong>Weak:</strong> &apos;The project was completed and launched successfully.&apos;</li>
+        <li><strong>Strong:</strong> &apos;The final direction reduced the number of steps in the critical path by consolidating three decision points into one, addressing the core drop-off pattern we identified in research. The constraint was making this work within existing compliance guardrails.&apos;</li>
+      </ul>
+      <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-6">
+        A case study that shows your thinking clearly is more valuable to a senior hiring manager than a case study that shows a beautiful final screen and a metric with no explanation of how you got there. We see beautiful screens all day. Thinking is harder to fake.
+      </blockquote>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If your portfolio isn&apos;t generating calls despite having strong work, the issue may go beyond NDA constraints. We break down the full picture in <Link href="/resources/blogs/why-no-ux-interview-calls" className="text-accent hover:underline font-medium">why you&apos;re not getting UX interview calls</Link>. And if you want to rebuild your portfolio around business impact rather than just screens, the <Link href="/resources/blogs/business-driven-ux-portfolio" className="text-accent hover:underline font-medium">business-driven portfolio guide</Link> covers that end to end.
+      </p>
+
+      <h2 id="case-study-length" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        How Long Should a Case Study Actually Be?
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Designers who can&apos;t show visuals often compensate by writing more. A lot more. That is almost always the wrong move.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Here is what actually happens when a hiring manager opens a portfolio. The first three to five seconds are visual. If nothing stops them, they are already moving to the next candidate. If something does stop them, they read one paragraph. If that paragraph does not give them a clear problem, a clear role, and a signal that something interesting happened, they skim.
+      </p>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li>The problem and context should be one to two paragraphs</li>
+        <li>The process section should be documented in artefacts and decisions - not prose summaries of each research method</li>
+        <li>The outcome section should be two to three sentences</li>
+        <li>Total reading time for a case study should be under six minutes</li>
+      </ul>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        For NDA work specifically: the absence of screens is not an invitation to fill the space with prose. A process-only case study should be tighter than a case study with full visual access, not longer. The artefacts do the work. The writing frames them.
+      </p>
+
+      <h2 id="interview-nda" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What to Say in the Interview About NDA Projects
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The portfolio gets you to the conversation. The conversation is where the NDA comes up again, and where most designers either give away too much or shut down in a way that makes them look like they have nothing to say.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The wrong move is treating the NDA as an impenetrable wall. &apos;I can&apos;t talk about that&apos; with no follow-up tells a hiring manager one of two things: you have nothing interesting to say, or you don&apos;t know how to navigate professional constraints.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        The right move is precision:
+      </p>
+      <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-4">
+        &quot;I can walk you through the full process on this - problem framing, research approach, the key decision points. What I&apos;ll stay high-level on is the specific metrics and the technology architecture, which are covered by the agreement.&quot;
+      </blockquote>
+      <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-4">
+        &quot;The company would prefer I don&apos;t identify them, so I&apos;ll refer to the context rather than the name - but the design challenge and what I did with it are fully discussable.&quot;
+      </blockquote>
+      <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-6">
+        &quot;My manager confirmed in writing what I can share, so I&apos;m comfortable walking through the full case study as it appears in my portfolio.&quot;
+      </blockquote>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        What you are demonstrating in these responses is not just design knowledge. You are demonstrating professional integrity, clarity under constraint, and the ability to handle sensitive information - which is precisely what a senior hire at any serious company needs to be trusted with.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If you&apos;re getting to interviews but stalling after that, the issue may be in how you&apos;re showing up in conversation more broadly. We cover that in detail in the piece on <Link href="/resources/blogs/senior-ux-designer-delivery-person" className="text-accent hover:underline font-medium">moving from delivery person to strategic contributor</Link>.
+      </p>
+
+      <h2 id="one-question" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        One Question Before Your Next Application Goes Out
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Is there work sitting somewhere - work you are proud of, work that reflects your actual level - that has never made it into your portfolio because of an NDA?
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If yes, it is not gone. It is waiting for a clearer frame. The question is not &apos;can I show this?&apos; The question is &apos;what layer of this can I show?&apos; And almost always, the answer is: more than you think.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>Three things to do this week:</strong>
+      </p>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li>Pull out the actual NDA for your most protected project and read the specific definition of &apos;confidential information.&apos; It is more precise than you remember.</li>
+        <li>Write two lists: what is genuinely protected, and what you have been avoiding out of general caution. The second list is usually longer.</li>
+        <li>Draft the opening paragraph of a process-only case study for that project - just the problem and the constraints. No visuals, no metrics. See what is actually there.</li>
+      </ul>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Most designers who do this find they have significantly more to work with than they thought.
+      </p>
+
+      <hr className="my-10 border-g200" />
+
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>Read Next</strong>
+      </p>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li><Link href="/resources/blogs/why-no-ux-interview-calls" className="text-accent hover:underline font-medium">Why You&apos;re Not Getting UX Interview Calls (It&apos;s Not Your Portfolio)</Link></li>
+        <li><Link href="/resources/blogs/senior-ux-designer-delivery-person" className="text-accent hover:underline font-medium">You&apos;re a Senior Designer in Title. You&apos;re Still Being Treated Like a Delivery Person.</Link></li>
+        <li><Link href="/resources/blogs/ai-job-designer-type" className="text-accent hover:underline font-medium">AI Isn&apos;t Taking Your Job. But This Type of Designer Will.</Link></li>
+      </ul>
+
+      <hr className="my-10 border-g200" />
+
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If you have NDA work sitting unused - or a portfolio that is not converting into interview calls - both are fixable problems with a specific approach. The <Link href="/programs" className="text-accent hover:underline font-medium">Current programme</Link> works through portfolio strategy as part of building designers from execution-layer contribution to strategic influence.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <Link href="/contact" className="text-accent hover:underline font-medium">Book a free 45-minute strategy call</Link> - walk away with clarity on where to focus first.
+      </p>
+
+      <p className="text-base md:text-lg text-g500 italic mt-6">
+        - Murad, Co-founder &amp; Head of Design, Xperience Wave
+      </p>
+    </>
+  ),
 };
 
 // Table of contents for each blog post
@@ -2127,6 +2452,17 @@ const blogTableOfContents: Record<string, { id: string; title: string }[]> = {
     { id: 'honest-question', title: 'One Honest Question for This Week' },
     { id: 'what-to-do-next', title: 'Where You Sit in This' },
   ],
+  'nda-work-ux-portfolio': [
+    { id: 'not-niche-problem', title: 'This Is Not a Niche Problem' },
+    { id: 'what-nda-covers', title: 'What an NDA Actually Covers' },
+    { id: 'breach-you-dont-see', title: 'The Breach Most Designers Don\'t See Coming' },
+    { id: 'fear-nobody-names', title: 'The Fear Nobody Names' },
+    { id: 'five-approaches', title: 'Five Approaches That Work' },
+    { id: 'process-proves-something', title: 'Does Process-Only Prove Anything?' },
+    { id: 'case-study-length', title: 'How Long Should a Case Study Be?' },
+    { id: 'interview-nda', title: 'What to Say in the Interview' },
+    { id: 'one-question', title: 'One Question Before Your Next Application' },
+  ],
 };
 
 // Author data
@@ -2199,6 +2535,11 @@ const blogMetadata: Record<string, { title: string; description: string; keyword
     title: 'AI Isn\'t Taking Your Job. This Type of Designer Will | Xperience Wave',
     description: 'AI isn\'t the threat. A specific type of designer is. Murad breaks down the three archetypes emerging in the AI era - and which one hiring managers are choosing.',
     keywords: ['AI taking UX designer jobs', 'AI replacing UX designers', 'future of UX design India', 'deep generalism designer', 'AI-first UX thinking', 'UX designer career 2025'],
+  },
+  'nda-work-ux-portfolio': {
+    title: 'NDA Work in Your UX Portfolio: 5 Strategies That Work | Xperience Wave',
+    description: 'Almost every designer with meaningful experience has NDA constraints. Murad walks through five specific approaches to showing the work - with Krishna\'s story as proof of concept.',
+    keywords: ['how to show NDA work in UX portfolio', 'UX portfolio NDA India', 'confidential work portfolio design', 'UX case study without showing screens', 'NDA portfolio strategy designer'],
   },
 };
 

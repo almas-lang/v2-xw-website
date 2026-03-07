@@ -107,6 +107,17 @@ export const blogPosts: BlogPost[] = [
     readTime: '4 min',
   },
   {
+    id: '21',
+    slug: 'nda-work-ux-portfolio',
+    title: 'Your NDA Isn\'t the Problem. Your Portfolio Strategy Is.',
+    excerpt: 'Almost every designer with meaningful experience has NDA constraints. Here are five specific approaches to showing the work - with Krishna\'s story as proof of concept.',
+    category: 'career-growth',
+    image: 'https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=800&q=80',
+    author: { name: 'Shaik Murad' },
+    publishedAt: '2026-03-07',
+    readTime: '8 min',
+  },
+  {
     id: '20',
     slug: 'ai-job-designer-type',
     title: 'AI Isn\'t Taking Your Job. But This Type of Designer Will.',

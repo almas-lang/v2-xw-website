@@ -2066,7 +2066,7 @@ const blogContent: Record<string, React.ReactNode> = {
         Researchers estimate that somewhere between one-third and over half of all workers in professional roles are constrained by an NDA or an equivalent confidentiality mechanism. There is no UX-specific number - no survey has nailed it - but you don&apos;t need one. Think about where mid-level designers with three to six years of experience actually work: fintech, enterprise SaaS, healthcare, government, defence, large-scale e-commerce with competitive pricing models. These are exactly the industries where NDA density is highest.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        If you have been in this field for more than two years and you have not worked under some form of confidentiality constraint, you are the exception. Most designers have. Many are holding back significant work because of it.
+        If you have been in this field for more than two years and you have not worked under some form of confidentiality constraint, you are the exception. Most designers have. Many are holding back significant work because of it. And if your portfolio is not generating calls despite having strong experience, this is often a major contributing factor - we cover the full picture in <Link href="/resources/blogs/why-no-ux-interview-calls" className="text-accent hover:underline font-medium">why you&apos;re not getting UX interview calls</Link>.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
         The problem is not that the agreements exist. The problem is that they are almost never explained to the people who sign them. You get a document, you sign it, and then years later you are sitting in front of your portfolio trying to figure out what you are actually allowed to say.
@@ -2174,7 +2174,7 @@ const blogContent: Record<string, React.ReactNode> = {
         Where specific detail was protected, the case study said so directly and visibly. Not vaguely omitted - explicitly labelled: <em>[Redacted - specific performance metrics protected by confidentiality agreement]</em>. This matters more than most designers realise. Unexplained gaps read as sloppy work. Labelled redactions read as professional discretion. One says you ran out of material. The other says you know exactly what you are doing with sensitive information - which, at a senior level, is a hiring signal in its own right.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        That case study landed Krishna three roles. In each conversation, the hiring manager commented on how clearly they could see his thinking. Not despite the absence of screens. Partly because of it.
+        That case study landed Krishna three roles. In each conversation, the hiring manager commented on how clearly they could see his thinking. Not despite the absence of screens. Partly because of it. This is the same principle behind <Link href="/resources/blogs/business-driven-ux-portfolio" className="text-accent hover:underline font-medium">building a business-driven portfolio</Link> - when you lead with thinking and impact rather than screens, the signal is stronger.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
         <em>Best for: Highly restricted industries - defence, fintech, healthcare, government. Strongest signal for senior and leadership roles. No sign-off required.</em>
@@ -2219,7 +2219,7 @@ const blogContent: Record<string, React.ReactNode> = {
         &apos;Can I put this project in my portfolio&apos; is easy to reject. &apos;I&apos;d like to include the process documentation - journey maps, the research protocol, and the decision framework - with no product visuals, no metrics, and no client identification. Can you confirm in writing that this is acceptable?&apos; is much harder to say no to.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        Written confirmation eliminates legal risk entirely. Krishna got his manager to confirm in writing. Every interview conversation about that project was then clean.
+        Written confirmation eliminates legal risk entirely. Krishna got his manager to confirm in writing. Every interview conversation about that project was then clean. And when you get to that interview, knowing how to talk about NDA work with precision is a skill in itself - we cover that in detail in the <Link href="/resources/blogs/ghosted-after-round-2-ux-interview" className="text-accent hover:underline font-medium">Round 2 interview piece</Link>.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
         <em>Best for: Any situation where you want to include significant detail or visuals. If you can get it, this is always the right move.</em>
@@ -2283,7 +2283,7 @@ const blogContent: Record<string, React.ReactNode> = {
         <li>Total reading time for a case study should be under six minutes</li>
       </ul>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        For NDA work specifically: the absence of screens is not an invitation to fill the space with prose. A process-only case study should be tighter than a case study with full visual access, not longer. The artefacts do the work. The writing frames them.
+        For NDA work specifically: the absence of screens is not an invitation to fill the space with prose. A process-only case study should be tighter than a case study with full visual access, not longer. The artefacts do the work. The writing frames them. And in the current landscape, where <Link href="/resources/blogs/ai-job-designer-type" className="text-accent hover:underline font-medium">AI is reshaping what design hiring looks for</Link>, demonstrating thinking depth matters more than ever.
       </p>
 
       <h2 id="interview-nda" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
@@ -2341,6 +2341,7 @@ const blogContent: Record<string, React.ReactNode> = {
         <strong>Read Next</strong>
       </p>
       <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li><Link href="/resources/blogs/ghosted-after-round-2-ux-interview" className="text-accent hover:underline font-medium">Why UX Designers Get Ghosted After Round 2 Interviews</Link></li>
         <li><Link href="/resources/blogs/why-no-ux-interview-calls" className="text-accent hover:underline font-medium">Why You&apos;re Not Getting UX Interview Calls (It&apos;s Not Your Portfolio)</Link></li>
         <li><Link href="/resources/blogs/senior-ux-designer-delivery-person" className="text-accent hover:underline font-medium">You&apos;re a Senior Designer in Title. You&apos;re Still Being Treated Like a Delivery Person.</Link></li>
         <li><Link href="/resources/blogs/ai-job-designer-type" className="text-accent hover:underline font-medium">AI Isn&apos;t Taking Your Job. But This Type of Designer Will.</Link></li>
@@ -2501,7 +2502,7 @@ const blogContent: Record<string, React.ReactNode> = {
         <strong>You find out if the designer can collaborate or if they can only perform.</strong> Some designers turn it into a solo presentation. They take over the conversation. They generate ideas rapidly and fill the space. They do not ask questions of the other people in the room. Design at a senior level is almost entirely collaborative. The designer who cannot share a problem - who cannot hold space for another perspective - is not a senior designer. They are a solo operator.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        <strong>You find out how the designer handles not knowing something.</strong> In a whiteboard session, gaps in knowledge surface immediately. Do they acknowledge the gap and propose a way forward? Or do they paper over it with confident-sounding language that turns out to be empty? A whiteboard session is the only point in the interview process where you cannot prepare a portfolio entry for it. What comes out is what is actually there.
+        <strong>You find out how the designer handles not knowing something.</strong> In a whiteboard session, gaps in knowledge surface immediately. Do they acknowledge the gap and propose a way forward? Or do they paper over it with confident-sounding language that turns out to be empty? A whiteboard session is the only point in the interview process where you cannot prepare a portfolio entry for it. What comes out is what is actually there. This is also where the gap between <Link href="/resources/blogs/ai-job-designer-type" className="text-accent hover:underline font-medium">surface-level AI tool usage and genuine depth</Link> becomes impossible to hide.
       </p>
 
       <h2 id="round-2-measuring" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
@@ -2542,7 +2543,7 @@ const blogContent: Record<string, React.ReactNode> = {
         <strong>On your portfolio: know the decisions, not just the deliverables.</strong>
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        For every case study, you should be able to answer three questions with specificity and without hesitation: What was the core design problem? Why did I choose this approach over the realistic alternatives? What happened when it was challenged - by data, by stakeholders, by the reality of implementation?
+        For every case study, you should be able to answer three questions with specificity and without hesitation: What was the core design problem? Why did I choose this approach over the realistic alternatives? What happened when it was challenged - by data, by stakeholders, by the reality of implementation? If your strongest work is under NDA, that does not excuse you from this - the <Link href="/resources/blogs/nda-work-ux-portfolio" className="text-accent hover:underline font-medium">NDA portfolio strategies</Link> we cover show exactly how to present this depth without violating anything.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
         <strong>On constraints: make them the context, not the excuse.</strong>
@@ -2590,7 +2591,7 @@ const blogContent: Record<string, React.ReactNode> = {
         <li>In a collaborative session, have I ever been the person who dominated the conversation without noticing it?</li>
       </ul>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        If any of these landed, that is where the work is.
+        If any of these landed, that is where the work is. And if you are starting to see that the issue might be deeper than interview technique - that it is about how you are positioned in the market entirely - the <Link href="/resources/blogs/senior-ux-designer-delivery-person" className="text-accent hover:underline font-medium">PIE model for design influence</Link> is the framework we use to address it.
       </p>
 
       <hr className="my-10 border-g200" />

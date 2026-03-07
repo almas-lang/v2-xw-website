@@ -1300,6 +1300,470 @@ const blogContent: Record<string, React.ReactNode> = {
       </p>
     </>
   ),
+  'why-no-ux-interview-calls': (
+    <>
+      <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
+        Here&apos;s a pattern we&apos;ve seen more times than we can count.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        A designer comes to us frustrated. They&apos;ve applied to 80, sometimes 100 roles. Their portfolio looks good - at least compared to what they&apos;ve seen from peers. Some applications lead to a first call. Some of those calls go quiet. Most applications lead to nothing at all.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Their conclusion: the market is harsh. Nobody cares about real UX. It&apos;s all about connections.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Our conclusion, after working through this with 140+ designers: the job was won or lost before they clicked Apply.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        That&apos;s the uncomfortable truth at the centre of everything we&apos;re going to cover here. Not to discourage you - but because once you understand it, everything you need to fix becomes clear.
+      </p>
+
+      <h2 id="volume-game" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        You&apos;re Playing a Volume Game in a Credibility Market
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The most common job search strategy we see from mid-level designers: find a role on LinkedIn or Naukri, click apply, wait, repeat. Scale that up. Apply to more. Apply faster. Apply wider.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The logic feels sound. More applications = more chances. But here&apos;s what&apos;s actually happening on the other side.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        A recruiter shortlisting for a senior UX role isn&apos;t discovering who you are in the moment they open your application. They&apos;re confirming a belief they&apos;ve already formed - or haven&apos;t formed yet. If your name is unfamiliar, your profile has been dormant for months, and your application looks like every other PDF in the pile, there&apos;s nothing to confirm. The application gets a few seconds of attention and moves on.
+      </p>
+
+      <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-6">
+        <strong>THE HIDDEN JOB MARKET - WHAT RESEARCH SHOWS</strong><br /><br />
+        Studies consistently put the figure at 60-70% of positions being filled before they&apos;re ever publicly listed - through referrals, internal moves, and direct outreach to people hiring managers already know. (CareerXRoads, Jobvite, LinkedIn data).<br /><br />
+        This doesn&apos;t mean job boards are useless. It means job boards are where you go to compete with everyone. Your network is where you go to be considered before the competition starts.
+      </blockquote>
+
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Most designers know this intellectually. Very few act on it. Because building real visibility takes time, and clicking Apply is immediate. So they keep clicking Apply, and keep wondering why nothing changes.
+      </p>
+
+      <h2 id="one-year-of-silence" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        One Year of Silence. Three Months to a Top MNC. What Changed.
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        We worked with a designer - Arun - who had been out of work for over a year when he came to us.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        He was getting some calls. Not many. The ones he got often went quiet after the first conversation. For the few that progressed further, he struggled to explain the gap in his career convincingly. He came across as uncertain - and in hiring conversations, uncertainty is expensive. Every word matters.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        His portfolio wasn&apos;t the problem. His UX thinking wasn&apos;t the problem. What was broken was everything around the application - how he was showing up before, during, and after every touchpoint.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>What we found when we looked at his full picture</strong>
+      </p>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li>His LinkedIn profile existed only to apply for jobs. It had no activity, no posts, no engagement - nothing that would make a hiring manager feel like they already knew something about him before the interview.</li>
+        <li>His resume was well-designed but optimised for the wrong thing. It listed responsibilities, not outcomes. Recruiters form first impressions quickly - not in the mythologised &apos;6 seconds,&apos; but fast enough that a wall of text with no clear signal of impact gets bypassed.</li>
+        <li>On discovery calls, the story of his gap sounded rehearsed but unconvincing. He hadn&apos;t prepared for the emotional subtext of those questions - only the factual answers.</li>
+        <li>He had no presence on the platforms where design hiring actually happens. Not because he lacked opinions - but because he&apos;d never thought of sharing them as part of getting hired.</li>
+      </ul>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        We worked with him on one fundamental shift: stop treating the job search as a series of applications, and start treating it as a sustained effort to build credibility in the places where hiring decisions actually form.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        He started maintaining a proper pipeline - tracking where each opportunity was across every stage: applied, first call, assignment, whiteboarding, negotiation. When you see the data, you stop guessing. You know exactly where you&apos;re losing people, and you fix that stage specifically.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        He started sharing his thinking on LinkedIn - not performatively, but consistently. Not viral posts, just visible ones. Evidence that he was engaged, had opinions, and could communicate.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Three months later, he was at a top MNC. Not because his portfolio improved. Because how he was perceived - before anyone reviewed his portfolio - had changed completely.
+      </p>
+
+      <h2 id="linkedin-not-job-board" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        LinkedIn Is Not a Job Board. It&apos;s Where Hiring Decisions Happen Before You Apply.
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Here&apos;s what most mid-level designers do with LinkedIn: they update it when they need a job, add the Open to Work badge, apply through Easy Apply, and wait.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Here&apos;s what a hiring manager does when they receive your application: they open your profile. They check your activity. They look at when you last posted anything. They look at who you both know. They form an impression of who you are beyond what your resume says.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If your profile is static and your activity is zero, that impression forms in your absence - and it&apos;s usually not favourable.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>The Open to Work signal - what it actually communicates</strong>
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The Open to Work badge is a case study in good intentions creating the wrong perception. Making yourself visible to recruiters is smart. The public green banner is worth examining more carefully.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The implicit question a senior hiring manager asks when they see it: if this person is this good, why are they still available? It&apos;s an unfair assumption. But it&apos;s a real one. The badge that&apos;s meant to signal availability can inadvertently signal that others have passed.
+      </p>
+
+      <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-6">
+        <strong>XW OBSERVATION</strong><br /><br />
+        Among the designers we&apos;ve worked with, the ones who get headhunted - who get approached rather than having to apply - almost never have the public Open to Work badge on.<br /><br />
+        The setting that actually works: &apos;Open to Work - Recruiters Only.&apos; Visible to the people who can actually hire you, invisible to the network that will form opinions about your availability.
+      </blockquote>
+
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>What a genuinely activated profile actually looks like</strong>
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        It&apos;s not about posting every day or building an audience. It&apos;s about leaving enough evidence that a hiring manager can form a confident opinion before you&apos;ve said a word.
+      </p>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li>A headline that communicates what you do and the kind of problems you solve - not just your job title</li>
+        <li>Regular engagement: posts, comments, perspectives shared on design and business topics</li>
+        <li>Proof of breadth - you can speak to product strategy, business outcomes, not just deliverables</li>
+        <li>Specific outcomes in your experience section, not just responsibilities</li>
+        <li>Recommendations from people who&apos;ve worked with you - managers, collaborators, clients</li>
+        <li>A visible network that signals you&apos;re part of the industry, not observing it from the outside</li>
+      </ul>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The designers who get the best roles - often without applying - are the ones who built this consistently over months. Not when they needed a job. Long before.
+      </p>
+
+      <h2 id="desperation-signal" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Desperation Signal - And Why It Follows You Through Every Stage
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        We tell every senior designer the same thing: you cannot afford to think of yourself as just another fish in the sea, and getting a job cannot come at the expense of how you carry yourself.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        Desperation shows up in ways that feel harmless in the moment:
+      </p>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li>Applying to roles you&apos;re clearly overqualified for, just to get any call</li>
+        <li>Commenting &apos;I&apos;m interested&apos; on job posts instead of asking a real question about the role</li>
+        <li>Saying yes to everything in early conversations to move the process forward</li>
+        <li>Sending the same generic cold message to twenty recruiters in a week</li>
+        <li>Dropping your salary expectations early, before you understand the full offer</li>
+      </ul>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Each of these creates the same impression: this person can be overpowered. And once that perception exists, it travels. It affects how the offer gets structured. It affects how negotiations go. It affects whether they feel they need to respect your time.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Expressing genuine interest is not the same as signalling that you need any job that will take you. The first builds your position. The second dissolves it.
+      </p>
+
+      <h2 id="portfolio-is-strong" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        &quot;My Portfolio Is Strong&quot; - What We Actually Assess
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        When designers come to us having applied to dozens of roles with minimal callbacks, and they say &quot;my portfolio is strong&quot; - we don&apos;t immediately agree or disagree. We assess.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        What we most commonly find: they&apos;ve learned to wear a surgeon&apos;s gown. They haven&apos;t learned to perform surgery.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        The case studies are well-formatted. The presentation is clean. But underneath:
+      </p>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li><strong>No business tongue</strong> - design decisions aren&apos;t connected to commercial outcomes, user retention, conversion, cost reduction, or any metric the business actually tracked</li>
+        <li><strong>Shallow domain knowledge</strong> - they know the tools and the process, but not the industry context their work sat inside</li>
+        <li><strong>Blame patterns</strong> - &apos;the culture didn&apos;t value UX,&apos; &apos;the PM never listened,&apos; &apos;they just wanted to ship fast.&apos; These might be true. But they tell a hiring manager something about how you handle constraints.</li>
+        <li><strong>A comparison problem</strong> - they&apos;re comparing their portfolio to other designers&apos; portfolios, not to what a hiring manager actually needs to see</li>
+      </ul>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The hardest thing to say - and we say it plainly - is that the ability to build a portfolio that gets you a job is a completely different skill from the ability to do excellent UX work in the job. Both matter. Most designers only develop one.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Beyond the portfolio: we look at the full pipeline. How many applied, how many called back, how many first conversations, how many assignments, how many offers. When you map that funnel, you stop applying the same fix everywhere. Different stages break for different reasons. Apply the wrong fix to the wrong stage and nothing improves.
+      </p>
+
+      <h2 id="build-the-funnel" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Build the Funnel. Track the Stages. Fix the Right Thing.
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The single most useful thing you can do today: stop counting applications and start tracking a pipeline.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>Five stages every designer should be watching:</strong>
+      </p>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li><strong>Applied</strong> - how many applications sent</li>
+        <li><strong>Called back</strong> - how many responded at all</li>
+        <li><strong>First conversation</strong> - how many became a real discussion</li>
+        <li><strong>Assignment / whiteboarding</strong> - how many reached this stage</li>
+        <li><strong>Offer / negotiation</strong> - how many converted</li>
+      </ul>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Zero callbacks? The problem is at the top - visibility, positioning, how your profile reads before anyone sees your portfolio. Callbacks dying after round one? The problem is how you&apos;re showing up in conversation, not your case studies. Dying at assignment stage? That&apos;s a different problem again - one we cover separately.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Most designers apply the same fix to all five stages simultaneously. Which means nothing actually improves - they just get busier and more exhausted.
+      </p>
+
+      <h2 id="mindset-underneath" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Mindset Underneath All of This
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is a marathon, not a sprint. And in a marathon, how you prepare matters more than how hard you push on the day.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The designers who consistently land senior roles - and land them on their own terms - treat their career like a product. They understand who their &apos;users&apos; are: hiring managers, design leads, the people who will vouch for them. They design their touchpoints deliberately. They measure what&apos;s working. They iterate.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Your portfolio is not the novel of your career. It&apos;s a chapter. And it&apos;s being read by someone who has 200 other chapters to get through.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Make everything you put out work harder. Be someone a hiring manager has already made up their mind about before you walk in the door.
+      </p>
+
+      <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-6">
+        <strong>ON THE 80% - WHAT WE&apos;VE SEEN AT XW</strong><br /><br />
+        Among designers who complete the full Xperience Wave mentorship program, 80% achieve their career goal - a role change, a title jump, or a significant salary increase - within the program duration.<br /><br />
+        What separates the ones who do from the ones who don&apos;t is almost never portfolio quality. It&apos;s whether they were willing to build their visibility infrastructure before they needed it, and whether they were honest about where in the funnel they were actually losing.
+      </blockquote>
+
+      <hr className="my-10 border-g200" />
+
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Not getting calls? Let&apos;s find out exactly why.</strong>
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Book a free 45-minute strategy call with Xperience Wave. We&apos;ll map your full funnel - visibility, positioning, portfolio, pipeline - and give you a specific plan for what to fix first. No obligations. No pitch.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <Link href="/contact" className="text-accent hover:underline font-medium">Book your strategy call</Link>
+      </p>
+
+      <hr className="my-10 border-g200" />
+
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>Read Next</strong>
+      </p>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li><Link href="/resources/blogs/business-driven-ux-portfolio" className="text-accent hover:underline font-medium">From Pixel-Pusher to Impact-Maker: Building a Business-Driven UX Portfolio</Link></li>
+        <li><Link href="/programs" className="text-accent hover:underline font-medium">Explore the Current Mentorship Program</Link></li>
+      </ul>
+
+      <p className="text-base md:text-lg text-g500 italic mt-6">
+        - Murad, Head of Product and Design, Xperience Wave
+      </p>
+    </>
+  ),
+  'senior-ux-designer-delivery-person': (
+    <>
+      <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
+        Something shifts when you get the title. You expect things to change - the conversations you&apos;re invited into, the weight your opinion carries, the problems you&apos;re trusted with. Then Monday comes. Nothing changed.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        That confusion - between what the title promised and what the work actually looks like - is the thing I want to talk about. Not because you&apos;re doing something wrong. But because nobody told you what the title actually required of you.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        <strong>The title didn&apos;t change your role. You were supposed to change your role - and nobody told you that.</strong>
+      </p>
+
+      <h2 id="diagnostic-sentences" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Sentences That Reveal Everything
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        When I talk to senior designers, certain sentences come up again and again. I&apos;ve started calling them diagnostic sentences - not complaints, but symptoms.
+      </p>
+      <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-4">
+        &quot;I count screens. That&apos;s basically my KPI.&quot;
+      </blockquote>
+      <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-4">
+        &quot;The tech team overrides my decisions - sometimes down to colours.&quot;
+      </blockquote>
+      <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-4">
+        &quot;I haven&apos;t been in a single sprint planning session this quarter.&quot;
+      </blockquote>
+      <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-6">
+        &quot;I genuinely don&apos;t know what success looks like for this product - not according to the org.&quot;
+      </blockquote>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Each of these describes the same thing: a designer who is executing other people&apos;s ideas without realising it. A mason who is very skilled, but who is not the architect.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If you recognise one of those sentences - this is for you.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If you&apos;re also not getting interview callbacks despite having the experience, you might find this useful: <Link href="/resources/blogs/why-no-ux-interview-calls" className="text-accent hover:underline font-medium">Why You&apos;re Not Getting UX Interview Calls</Link>
+      </p>
+
+      <h2 id="data-confirms" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        This Isn&apos;t Just Your Experience. The Data Confirms It.
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        In 2019, InVision surveyed 2,200 organisations across 77 countries on how design was actually used inside their companies. The finding was hard to ignore: 83% of those organisations kept design at a purely executional level - focused on screens, flows, and handoffs, not on shaping the product strategy that preceded them.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        McKinsey&apos;s research reinforced this from a different angle. Across 300 publicly listed companies, they found that fewer than 5% of senior leaders could make objective design decisions - and over 40% of those companies weren&apos;t even talking to end users during development. Design was present. It just wasn&apos;t influential.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Nielsen Norman Group&apos;s maturity data - drawn from over 5,000 organisations - shows that 49% sit at what they call &quot;Emergent&quot; maturity: UX people in formal roles, but design not yet treated as a strategic priority. Only 4% of organisations reach a level where design is genuinely integrated into decisions.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        So when you feel like a delivery person with a senior title, you are not imagining things. You are experiencing what the data describes as the norm.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The same McKinsey study found that companies where design is integrated - where it sits at the strategic level - generated 32 percentage points more revenue growth and 56 percentage points more total returns to shareholders than their peers over five years. The business case for design influence is not philosophical. It is financial.
+      </p>
+
+      <h2 id="org-problem" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Org Problem Is Real. It Is Still Your Responsibility.
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        I want to be careful here, because I&apos;ve seen this go wrong in both directions.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        On one side, designers who carry all the blame themselves - who assume that if they just do better work, get sharper, produce cleaner outputs, the influence will follow. It won&apos;t. Organisational culture, leadership priorities, and power structures shape how design is used far more than the quality of any single designer&apos;s output.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        On the other side, designers who understand the org problem clearly, name it accurately - and stop there. They diagnose the culture and then wait for it to change. That is equally stuck.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The honest position is in the middle. The organisation is contributing to this situation. So are you, in ways you may not yet see. And the reason to address your part - even though the org needs to change too - is simple:
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>You cannot control the org. You can control how you show up inside it.</strong>
+      </p>
+
+      <h2 id="pie-model" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The PIE Model: Position, Integrate, Evidence
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        At Xperience Wave, working with mid-to-senior designers across India&apos;s product ecosystem, we&apos;ve observed a consistent pattern in how designers move from execution mode to genuine influence. We&apos;ve formalised it into three stages: PIE.
+      </p>
+
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>P - Position: How are you perceived before you enter the room?</strong>
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Most designers seek authority inside the org while their positioning outside the org is undefined. Positioning is not self-promotion - it is clarity about what you stand for and what problems you are equipped to solve.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        A designer who is known externally as someone with a clear point of view on a domain - AI-first product design, fintech onboarding, B2B SaaS research - walks into internal conversations differently than one who is only known by their job title. Positioning creates pull. It means stakeholders come to you rather than assigning to you.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is not about LinkedIn activity. It is about building subject-matter expertise with enough visibility that the people who matter - internally and externally - associate a specific kind of thinking with your name.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If positioning in the AI space is relevant to you, this is a useful read: <Link href="/resources/blogs/ai-first-design-senior-ux" className="text-accent hover:underline font-medium">AI-First Design: What Senior UX Designers Need to Know</Link>
+      </p>
+
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>I - Integrate: Are you speaking the language of the room?</strong>
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        One of the most common patterns I see: a senior designer presenting work to product and tech stakeholders using design language. Talking about hierarchy, affordance, research insights, user journeys. The room nods politely and overrides the decision anyway.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Influence does not come from having the right answer in the wrong language. It comes from learning to translate your design thinking into the terms that the business actually uses - retention, activation, conversion, development cost, time to market.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Integration also means presence in the right rooms at the right time - sprint planning, product reviews, quarterly strategy conversations. Not to represent design, but to contribute to the shared problem. That distinction matters. Representing design is advocacy. Contributing to the shared problem is influence.
+      </p>
+
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>E - Evidence: Can you show before you ask?</strong>
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is where &quot;build evidence&quot; becomes concrete. Evidence is not a portfolio. Evidence is a specific claim, linked to a specific outcome, that you made visible before asking for anything.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        It sounds like: &quot;That onboarding flow we redesigned last quarter - drop-off at step 3 went from 67% to 41%. Here&apos;s what we changed and why.&quot; Or: &quot;User research I ran three months ago flagged this problem. Here&apos;s what happened when engineering addressed it.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Evidence changes the ask. Instead of &quot;trust design more,&quot; you are saying &quot;here is what happens when you do.&quot; That is a different conversation. Most designers wait until they have authority to build evidence. The designers who gain authority are the ones who build it first.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Knowing how to frame and present research findings as business evidence is its own skill. This goes deep on it: <Link href="/resources/blogs/mixed-methods-ux-research-guide" className="text-accent hover:underline font-medium">Mixed-Methods UX Research: When to Use It, How to Do It</Link>
+      </p>
+
+      <h2 id="ashwins-story" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What This Looked Like in Practice: Ashwin&apos;s Story
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Ashwin was a senior designer at an AI-first product company. His tech co-founder was overriding UX decisions down to the colour of buttons. His team lead was functioning as a contributor, not a leader. Ashwin had stopped expecting the culture to change.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        When we started working together, his instinct was to push for a new title - design lead, head of design, something that would give him the authority he felt he should have. We reframed the goal. Before asking for the title, build what the title is supposed to represent.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Over four months, we worked through PIE in sequence.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Position first.</strong> We built his SME positioning around AI-first product design - a specific, credible, timely domain. LinkedIn content. One conference talk. Three long-form articles published over six weeks. Nothing dramatic, but consistent enough that when his name came up, people could attach a perspective to it.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Then integration.</strong> He spent six weeks learning the cross-functional language in his org - what the product team cared about, what the business metrics were, what the tech lead&apos;s constraints actually were. He stopped presenting design as design. He started presenting it as a solution to their problems. Slowly, he was invited into conversations he had previously been excluded from.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Then evidence.</strong> He documented every design decision that had a measurable downstream effect - even small ones. He made those outcomes visible in weekly standups, in Slack, in 1:1s with his manager. He was not boasting. He was creating a record.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Four months in, Ashwin was being positioned alongside the same team lead he had previously reported to. The gates to strategic conversations had opened - not because the culture changed, but because he had changed how the culture perceived him.
+      </p>
+
+      <h2 id="unpopular-opinion" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        An Unpopular Opinion About Where Most Designers Look
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        I&apos;ve noticed a pattern in what senior designers spend their energy on when they feel stuck. They worry about design systems when the real gap is governance - who decides what gets built. They learn new AI tools when what they need is AI-first thinking - a point of view on what AI means for their product&apos;s users, not proficiency in the tool. They pursue a new designation when what they need is to understand what a designation requires of you before it will work for you.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        There are three kinds of people who hold design leadership titles:
+      </p>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li>The first has the title in name - it was given, not earned through influence.</li>
+        <li>The second manages people but has no real strategic voice.</li>
+        <li>The third shapes direction, is treated as a peer by product and engineering leadership, and is accountable to business outcomes, not just design outputs.</li>
+      </ul>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The title is the same. The role is entirely different.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The PIE Model is about how you move from the first kind to the third - not by waiting for the org to give you a bigger title, but by becoming someone for whom the bigger title is the only accurate description.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If you&apos;re already at senior level and your goal is to move into a Head of Design, Director, or VP role, our <Link href="/programs" className="text-accent hover:underline font-medium">Tide programme</Link> is built specifically for that transition.
+      </p>
+
+      <h2 id="one-thing-this-week" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        One Thing to Do This Week
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Don&apos;t start with positioning. Don&apos;t start with integration. Start with evidence - because it requires no permission and no structural change.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Look back at the last 60 days. Find one design decision that had a downstream effect on a metric the business cares about. Write three sentences: what you changed, why you changed it, what happened. Share it in the next forum you have - a standup, a Slack channel, a 1:1.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        That is it. One data point, made visible. Rome was not built in a day. But Rome was built intentionally, brick by brick, by people who had decided what they were building before anyone else had seen the blueprint.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Your influence is built the same way.
+      </p>
+
+      <hr className="my-10 border-g200" />
+
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If you&apos;re a senior designer who has the title but not the influence - and you want to understand what stage of PIE you&apos;re at and what to do about it - we run a free 45-minute strategy call at Xperience Wave.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Most designers we speak to are in the right place for our <Link href="/programs" className="text-accent hover:underline font-medium">Current programme</Link> (for mid-to-senior designers) or our Tide programme (for designers ready to lead teams). The strategy call tells us which, or neither.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <Link href="/contact" className="text-accent hover:underline font-medium">Book your free strategy call</Link>
+      </p>
+
+      <hr className="my-10 border-g200" />
+
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>Sources</strong>
+      </p>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li>InVision, The New Design Frontier (2019). Survey of 2,200+ organisations across 77 countries.</li>
+        <li>McKinsey &amp; Company, The Business Value of Design (2018). 300 publicly listed companies, 2M+ data points.</li>
+        <li>Nielsen Norman Group, The State of UX Maturity: Data from Our Self-Assessment Quiz (2022). n=5,371.</li>
+      </ul>
+
+      <p className="text-base md:text-lg text-g500 italic mt-6">
+        - Almas, CEO &amp; Co-founder, Xperience Wave
+      </p>
+    </>
+  ),
 };
 
 // Table of contents for each blog post
@@ -1365,6 +1829,24 @@ const blogTableOfContents: Record<string, { id: string; title: string }[]> = {
     { id: 'career-impact', title: 'Why This Matters for Your Career' },
     { id: 'key-takeaways', title: 'Key Takeaways' },
   ],
+  'why-no-ux-interview-calls': [
+    { id: 'volume-game', title: 'You\'re Playing a Volume Game in a Credibility Market' },
+    { id: 'one-year-of-silence', title: 'One Year of Silence. Three Months to a Top MNC.' },
+    { id: 'linkedin-not-job-board', title: 'LinkedIn Is Not a Job Board' },
+    { id: 'desperation-signal', title: 'The Desperation Signal' },
+    { id: 'portfolio-is-strong', title: '"My Portfolio Is Strong" - What We Actually Assess' },
+    { id: 'build-the-funnel', title: 'Build the Funnel. Track the Stages. Fix the Right Thing.' },
+    { id: 'mindset-underneath', title: 'The Mindset Underneath All of This' },
+  ],
+  'senior-ux-designer-delivery-person': [
+    { id: 'diagnostic-sentences', title: 'The Sentences That Reveal Everything' },
+    { id: 'data-confirms', title: 'The Data Confirms It' },
+    { id: 'org-problem', title: 'The Org Problem Is Real. It Is Still Your Responsibility.' },
+    { id: 'pie-model', title: 'The PIE Model: Position, Integrate, Evidence' },
+    { id: 'ashwins-story', title: 'Ashwin\'s Story' },
+    { id: 'unpopular-opinion', title: 'An Unpopular Opinion About Where Most Designers Look' },
+    { id: 'one-thing-this-week', title: 'One Thing to Do This Week' },
+  ],
 };
 
 // Author data
@@ -1422,6 +1904,16 @@ const blogMetadata: Record<string, { title: string; description: string; keyword
     title: 'Mixed-Methods UX Research: A Practical Guide to Combining Qual & Quant | Xperience Wave',
     description: 'Most designers treat qual and quant as separate tools. Senior designers know how to combine them. Learn the SPEAR framework for mixed-methods research that actually drives business outcomes.',
     keywords: ['mixed methods UX research', 'qualitative quantitative UX research', 'UX research methods', 'combining qual quant UX', 'SPEAR research framework', 'how to combine qualitative and quantitative UX research', 'mixed methods research in UX design', 'UX research for senior designers'],
+  },
+  'why-no-ux-interview-calls': {
+    title: 'Why You\'re Not Getting UX Interview Calls (It\'s Not Your Portfolio) | Xperience Wave',
+    description: 'Sending 100 job applications and hearing nothing back? The real problem isn\'t your portfolio - it\'s how you\'re thinking about the entire process. Here\'s what we\'ve learned from 140+ UX mentorships.',
+    keywords: ['UX designer not getting interview calls', 'UX job search India 2026', 'senior UX job India', 'UX personal brand designer', 'UX interview tips', 'hidden job market design'],
+  },
+  'senior-ux-designer-delivery-person': {
+    title: 'You\'re a Senior Designer in Title. You\'re Still Being Treated Like a Delivery Person. | Xperience Wave',
+    description: 'You have the title. You still feel like a delivery person. Almas, Co-founder at Xperience Wave, breaks down why - and introduces the PIE Model: a three-stage approach to moving from execution to influence.',
+    keywords: ['senior UX designer delivery person', 'senior designer not respected at work', 'design leadership India', 'UX influence at work', 'design strategy role', 'PIE model design leadership'],
   },
 };
 

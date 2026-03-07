@@ -404,7 +404,7 @@ const blogContent: Record<string, React.ReactNode> = {
         This one kills me. Designers put their entire portfolio behind a password and say &quot;I&apos;m under NDA.&quot; Great. So when a recruiter lands on your site, they see... nothing. A locked door with no reason to knock.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        Here&apos;s the thing. Being under NDA doesn&apos;t mean you can&apos;t show your work at all. It means you need to be smarter about how you tell the story. Sanitise the data. Use percentages instead of absolute numbers. Change the brand name if you have to. Show the thinking, the decisions, the impact, without leaking proprietary information.
+        Here&apos;s the thing. Being under NDA doesn&apos;t mean you can&apos;t show your work at all. It means you need to be smarter about how you tell the story. Sanitise the data. Use percentages instead of absolute numbers. Change the brand name if you have to. Show the thinking, the decisions, the impact, without leaking proprietary information. We wrote an entire piece on <Link href="/resources/blogs/nda-work-ux-portfolio" className="text-accent hover:underline font-medium">how your NDA isn&apos;t the real problem</Link> with five specific approaches that work.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
         If you absolutely must password-protect a case study, at least give the recruiter enough context on the outside to make them want to request that password. A headline, a summary of the business problem, a hint at the outcome. Give them a reason to reach out.
@@ -420,7 +420,7 @@ const blogContent: Record<string, React.ReactNode> = {
         Hiring managers at senior levels aren&apos;t evaluating your visual craft. They&apos;re evaluating your thinking. How did you identify the problem? What was your strategy? What trade-offs did you make? Why this solution and not the fifteen others you considered?
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
-        A portfolio full of pretty screens tells a recruiter you can execute. It doesn&apos;t tell them you can think. And at the senior level, thinking is the job.
+        A portfolio full of pretty screens tells a recruiter you can execute. It doesn&apos;t tell them you can think. And at the senior level, thinking is the job. This is exactly why <Link href="/resources/blogs/ghosted-after-round-2-ux-interview" className="text-accent hover:underline font-medium">designers get ghosted after Round 2 interviews</Link> - the portfolio looked great but the narrative was hollow.
       </p>
 
       <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
@@ -474,7 +474,7 @@ const blogContent: Record<string, React.ReactNode> = {
         And guess what? Your next employer probably has some of the same problems. Tight budgets. Stakeholders who don&apos;t get design. Messy cross-functional dynamics. When you complain about these in your portfolio, the hiring manager doesn&apos;t think &quot;wow, they had it tough.&quot; They think &quot;this person will complain about us too.&quot;
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
-        Instead, show them how you navigated constraints. How you influenced without authority. How you adapted when the textbook process wasn&apos;t possible. That&apos;s what senior designers do.
+        Instead, show them how you navigated constraints. How you influenced without authority. How you adapted when the textbook process wasn&apos;t possible. That&apos;s what senior designers do. If this sounds familiar, our piece on <Link href="/resources/blogs/senior-ux-designer-delivery-person" className="text-accent hover:underline font-medium">moving from delivery person to design leader</Link> covers the PIE Model for exactly this shift.
       </p>
 
       <h2 id="business-driven-portfolio" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
@@ -615,13 +615,13 @@ const blogContent: Record<string, React.ReactNode> = {
         Then get feedback. Not from other designers who&apos;ll comment on your UI. From someone who hires designers, or from a mentor who&apos;s been on that side of the table. Ask them: &quot;Is the business value clear? Do you understand how I think?&quot;
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        If you&apos;ve been stuck, applying, interviewing, getting rejected, and you haven&apos;t seriously restructured your portfolio, this is probably where the problem lives. We&apos;ve seen it too many times. The work is there. The story isn&apos;t.
+        If you&apos;ve been stuck, applying, interviewing, getting rejected, and you haven&apos;t seriously restructured your portfolio, this is probably where the problem lives. We&apos;ve seen it too many times. The work is there. The story isn&apos;t. If you&apos;re not even getting interview calls, the issue might start <Link href="/resources/blogs/why-no-ux-interview-calls" className="text-accent hover:underline font-medium">before your portfolio</Link> - it could be how you&apos;re thinking about the entire process.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
         If you&apos;re curious about the other reasons mid-level designers stay stuck, we wrote about <Link href="/resources/blogs/why-courses-dont-work" className="text-accent hover:underline font-medium">why UX design courses don&apos;t get you senior roles</Link>, and what the designers who actually break through do differently. Worth reading alongside this one.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        And if you want to understand where the industry is heading for senior designers specifically, our piece on <Link href="/resources/blogs/ai-first-design-senior-ux" className="text-accent hover:underline font-medium">AI-first design and what senior UX designers need</Link> covers the skills that are separating candidates right now.
+        And if you want to understand where the industry is heading for senior designers specifically, our piece on <Link href="/resources/blogs/ai-first-design-senior-ux" className="text-accent hover:underline font-medium">AI-first design and what senior UX designers need</Link> covers the skills that are separating candidates right now. You might also want to read about <Link href="/resources/blogs/ai-job-designer-type" className="text-accent hover:underline font-medium">the type of designer that&apos;s actually replacing others</Link> in the AI era - it&apos;s not the tool, it&apos;s the mindset.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
         Whatever you do, stop treating your portfolio like a gallery. Start treating it like the most important business case you&apos;ll ever write. Because it is.

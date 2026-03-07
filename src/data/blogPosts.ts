@@ -107,6 +107,17 @@ export const blogPosts: BlogPost[] = [
     readTime: '4 min',
   },
   {
+    id: '20',
+    slug: 'ai-job-designer-type',
+    title: 'AI Isn\'t Taking Your Job. But This Type of Designer Will.',
+    excerpt: 'AI isn\'t the threat. A specific type of designer is. Here are the three archetypes emerging in the AI era - and which one hiring managers are choosing.',
+    category: 'industry',
+    image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&q=80',
+    author: { name: 'Shaik Murad' },
+    publishedAt: '2026-03-07',
+    readTime: '9 min',
+  },
+  {
     id: '19',
     slug: 'senior-ux-designer-delivery-person',
     title: 'You\'re a Senior Designer in Title. You\'re Still Being Treated Like a Delivery Person.',

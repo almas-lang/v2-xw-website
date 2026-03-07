@@ -1766,6 +1766,275 @@ const blogContent: Record<string, React.ReactNode> = {
       </p>
     </>
   ),
+  'ai-job-designer-type': (
+    <>
+      <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
+        Most designers using AI right now are making a foundational mistake. Not with the tools they&apos;ve chosen. With how they understand what AI actually is.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        They treat it like a knowledgeable colleague who happens to work very fast. They ask it questions and accept the answers. They use its outputs as a starting point and rarely interrogate whether the starting point is sound. And when AI is wrong - which it regularly is, not randomly but in patterns - they don&apos;t catch it, because they don&apos;t understand the mechanism that produced the error.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        AI is a predictive model. It generates outputs that are statistically likely given its training data and your prompt. It does not know what is true. It does not know your user. It does not understand your product context. And it delivers every response - the accurate ones and the completely wrong ones - with exactly the same confidence.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is not a limitation that is going to be patched in the next version. It is structural. A model trained on the wrong corpus, given a skewed prompt, or asked to operate outside its training distribution will produce polished, convincing, systematically flawed output. And a designer who doesn&apos;t understand this will not only miss the errors - they will build decisions on top of them.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The designers who are genuinely thriving right now are not the ones who use the most AI tools. They are the ones who understand this well enough to know what AI can be trusted with, what it cannot, and how to structure their thinking around the gap. That understanding is not in any tool tutorial. It comes from going deep enough to see how the model actually works.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        That is the starting point. Everything else in this piece builds from it.
+      </p>
+
+      <h2 id="work-already-gone" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Work That Is Already Gone
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        I want to be precise here, because the conversation is usually either panic or dismissal. Both are wrong in the same way - neither is specific enough to be useful.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        What AI is replacing is not designers. What it is replacing is a category of output: work that is repeatable, bounded, and does not require genuine contextual judgment to produce. Specifically:
+      </p>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li>Screen beautification where structure and content are already defined</li>
+        <li>Social media creatives built from brand templates</li>
+        <li>Interaction patterns for known problem types</li>
+        <li>Evaluative research on pre-formed hypotheses - agents now handle sample simulation, behavioral data, and heatmaps at a fraction of the time and cost</li>
+        <li>UI copy variations once tone and voice are established</li>
+      </ul>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Figma Make, Lovable, Nanobanana, Adobe Firefly, and CLI tools have largely commoditised these. Not perfectly - but well enough that the version of you defined entirely by producing them is no longer competitively priced.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The industry data is not subtle. UX designer job postings dropped 71% from their 2022 peak. UX researcher postings fell 73% in the same period. These are not economic corrections. They are structural signals about which roles could not demonstrate value above what automation provides.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The researcher cuts are the sharpest illustration of this. Google Cloud eliminated all UX researchers below a certain seniority level - not some, all. Meta, Amazon, and Microsoft followed similar patterns. The teams that survived were the ones whose work was visibly connected to product decisions that moved business outcomes. The ones that got cut produced insights in a silo, slowly, without connecting them to anything the organisation could act on.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The skill of research is not disappearing. The role of researcher as a separate, output-producing silo is. There is a direct line from this to what we covered in the <Link href="/resources/blogs/mixed-methods-ux-research-guide" className="text-accent hover:underline font-medium">mixed-methods research guide</Link> - insights that cannot demonstrate business impact become invisible in budget conversations. The same principle applies to every design role right now.
+      </p>
+
+      <h2 id="three-types-losing" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Three Types of Designer Who Are Losing Ground
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        When I look across the designers I have worked with, placed, and observed over the last two years, I see three recognisable patterns in the ones who are struggling. What is notable is that these patterns are not about skill level. They are about how someone has positioned themselves relative to a landscape that has already changed.
+      </p>
+
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>The Execution Specialist</strong>
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Technically strong. One lane. Years of being recognised and rewarded for doing it exceptionally well. The Figma files are immaculate. The component libraries are thorough. The interaction specs are precise.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The problem is not the skill. The problem is that the output of that skill is now reproducible at a fraction of the cost. The immaculate prototype can be generated in fifteen minutes. The component library can be scaffolded from a design system with a prompt. The precision that took years to develop is no longer the differentiator it was.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        I hear this regularly from designers with eight, ten, twelve years of experience: &quot;I am comfortable with Figma alone.&quot; In 2025, that is not a skill. That is a ceiling.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The Execution Specialist is not at risk because they are unskilled. They are at risk because they have not expanded the frame of what they do - and the frame they are in has become, through no fault of their own, substantially automated.
+      </p>
+
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>The Surface Expander</strong>
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is the more dangerous pattern, because it genuinely looks like adaptation. The Surface Expander discovered that AI could help them do things they couldn&apos;t before. They couldn&apos;t write SEO content - now they can. They couldn&apos;t code - now they can scaffold a landing page. They couldn&apos;t produce video scripts - now they can. They have expanded their surface area, and they feel capable.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        But none of it goes deep. The SEO content doesn&apos;t connect to a conversion strategy. The code doesn&apos;t reflect an understanding of what the developer actually needs to maintain it. The video script doesn&apos;t draw on a genuine understanding of narrative or audience psychology. Each capability is real in the narrowest sense - they can produce the output - but there is no depth underneath it.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Thinly spreading across capabilities you don&apos;t understand is not the same as building depth across disciplines you do.</strong> One looks productive. The other actually is.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The Surface Expander is particularly exposed because they feel capable. The tools are producing. The outputs exist. But when a product conversation gets strategic - when the question is what should we build, for whom, and why - the tools don&apos;t answer that. Thinking does. And the Surface Expander has been outsourcing their thinking to AI without building the judgment to evaluate what comes back.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is the predictive model problem again, at the career level. They have accepted confident-sounding outputs without the domain depth to know when those outputs are wrong.
+      </p>
+
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>The Refuser</strong>
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The Refuser has decided that AI is a trend worth waiting out. They have built this into their professional identity - the designer who still creates at a foundational level, who insists that real craft isn&apos;t prompt generation, that the human element cannot be replaced.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Some version of this is correct. Craft matters. Judgment matters. The human-centred part of this work is not automatable in any meaningful sense.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        But the Refuser uses this truth selectively, to justify not engaging at all. And the cost is now visible. Designers who have integrated AI into their process are moving faster, covering more ground, and getting access to more conversations as a result. The Refuser, equally capable on craft, is simply not in those rooms. Not because they were excluded - because they made themselves slower.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If you have landed the senior title but still feel like a delivery person in practice, this pattern is part of what we examine in the piece on <Link href="/resources/blogs/senior-ux-designer-delivery-person" className="text-accent hover:underline font-medium">design influence and the PIE model</Link>. The Refuser and the Execution Specialist often end up in the same place - executing without shaping - for different reasons.
+      </p>
+
+      <h2 id="kritikas-arc" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Kritika&apos;s Arc - What It Actually Teaches
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Kritika started in fashion design. Not UX, not product, not digital. Fashion.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Over years, she moved into communication design, then visual design, then UI, then product and UX leadership. Each move was not a pivot away from what she knew. It was an extension of it. The aesthetic sensibility she built in fashion carried into visual communication. The systems thinking from visual design carried into interface work. The earlier disciplines did not disappear - they became the foundation everything subsequent was built on.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        By the time she was leading product and UX design, she had genuine depth across multiple disciplines. She could have a real conversation about visual hierarchy because she had spent years in it. A real conversation about research because she had developed the habit of watching how people actually responded to what she made. A real conversation about product strategy because she had been involved in enough different project types to understand what success looked like at the business level - not just the design level.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        She did not become a generalist by collecting surface knowledge. She became one by going deep in multiple directions, one at a time, over time. The breadth is real because each column under it is real.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is the pattern I see consistently in designers who are thriving right now. Not broad and shallow. Deep in more than one column. Nielsen Norman Group formalised this in 2025 - AI is driving a return of the UX generalist, and specifically, the generalists who thrive are not people who dabble across disciplines, but people who have genuine cross-domain depth that lets them cross-pollinate insights in ways single-lane specialists cannot.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Kritika&apos;s arc is not a lucky sequence of job changes. It is a deliberate pattern of building adjacent depth - each move grounded in real expertise, each expansion building on what existed rather than replacing it. It is also a pattern that is teachable.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Identifying where your genuine depth already sits, and which adjacent discipline would make you significantly harder to replace, is one of the core things we map in the <Link href="/programs" className="text-accent hover:underline font-medium">Current programme</Link>.
+      </p>
+
+      <h2 id="ai-first-thinking" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What AI-First Thinking Actually Looks Like in Practice
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        There is a version of AI literacy that most articles are selling: learn these tools, add them to your resume, ship faster. This is tool adoption. It is not useless. But it is not the thing that separates the designers who are genuinely repositioning themselves from the ones who are keeping up.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        AI-first thinking is different. It starts with understanding what AI-enabled systems can now do that hardcoded systems could not - and designing around that from the beginning, not as an afterthought.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Specifically: systems can now learn with time and data rather than requiring manual updates. They can make autonomous decisions within defined parameters. Experiences can be meaningfully personalised at scale, not just A/B tested. There are patterns emerging across AI-native products that users are beginning to recognise and expect - and those patterns have design implications that don&apos;t exist in non-AI product work.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        There is also a question every AI-first designer must answer for each product: is AI the driver here, or is it the enabler underneath? Sometimes the technology should be invisible - what matters is what it allows the user to do, not what it is. Getting that call wrong in either direction creates products that feel either gimmicky or opaque.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Understanding this changes how you spend your time. The designer with AI-first thinking stops spending significant effort on detailed wireframes for interactions that will be dynamically generated. They stop producing design systems that are comprehensive component inventories rarely deployed in practice. They stop debating at the pixel level in situations where the system will adapt the output anyway. They get to the questions that actually matter - what should this system learn, what decisions should it make, where does human judgment need to stay in the loop - faster and earlier.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        And critically: they bring the predictive model problem into every product conversation. When the team assumes AI will handle a judgment call - who this is shown to, what it recommends, when it intervenes - the AI-first designer is the one asking: trained on what? Evaluated how? What does it get wrong, and what happens to the user when it does?
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        We go deeper on the product design implications of this in the <Link href="/resources/blogs/ai-first-design-senior-ux" className="text-accent hover:underline font-medium">AI-first design piece for senior UX designers</Link>. The short version: the designers who are building AI-native products well are not the ones who know the most tools. They are the ones who understand the model well enough to design responsibly around its failure modes.
+      </p>
+
+      <h2 id="irreplaceable-profile" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Profile of the Designer Who Won&apos;t Be Replaced
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Based on everything above - what I have observed across designers I have worked with, what the data shows, and what the landscape is visibly rewarding - the designer who remains irreplaceable combines three things. Not one. All three.
+      </p>
+
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>Deep Generalism</strong>
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Not shallow breadth. Genuine depth across multiple disciplines - research, interaction design, visual design, strategy, content, product thinking - developed the way Kritika developed it: one real expansion at a time, each built on existing depth rather than surface-level capability collected for the CV.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The bar for each discipline does not need to be specialist-level. But it needs to be deep enough to have a real conversation in it. Deep enough to catch what AI gets wrong in it. Deep enough to see how one discipline informs another in ways a single-lane expert cannot.
+      </p>
+
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>Design Centricity</strong>
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is the ability to hold user needs, business outcomes, technical constraints, and strategic direction simultaneously - and make design decisions that serve all of them at once. Not sequentially. Not by handing off between specialisms. In the same conversation, at the same moment.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Design centricity is what makes a designer indispensable rather than just useful. It is what allows someone like Kritika to walk into a product strategy conversation and contribute something that neither the PM nor the engineer could bring - not because she has a different title, but because she has trained herself to see problems through a lens that integrates all of those perspectives into something coherent.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is also the gap between being treated as a delivery person and being treated as a strategic contributor - which we examine directly in the piece on the <Link href="/resources/blogs/senior-ux-designer-delivery-person" className="text-accent hover:underline font-medium">PIE model and design influence</Link>.
+      </p>
+
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>AI-First Thinking</strong>
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Not AI tool usage. The distinction matters: tool usage means using AI to do what you were already doing, faster. AI-first thinking means you design products and workflows with a clear understanding of what AI-enabled systems can now do - and what they cannot be trusted to do without human judgment in the loop.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This includes understanding the predictive model problem at the product level. Not just in your own workflow, but in the products you are designing. When the system makes a recommendation, a decision, a personalisation - what is it actually doing, and what happens to the user when it gets it wrong?
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The designer who can answer that question is not just building products that happen to use AI. They are the person in the room who understands what the system is actually doing. That is a different kind of value from anything that can be replaced by another AI tool.
+      </p>
+
+      <h2 id="honest-question" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        One Honest Question for This Week
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        Look at the last three months of your work. Be specific.
+      </p>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li>What percentage of your output could have been substantially assisted - or replaced - by AI tools that already exist?</li>
+        <li>In the conversations where strategic decisions were made about your product or project, were you in the room? Were you shaping the decision, or executing after it was made?</li>
+        <li>When AI produced an output in your workflow - a layout suggestion, a research synthesis, a copy variation - did you evaluate it against your understanding of the domain, or accept it because it was polished and confident?</li>
+      </ul>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If the first number is high, the second is mostly no, and the third is mostly the latter - you are not at risk from AI. You are at risk from a designer who has answered these questions differently and acted on what they found.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The move from execution-layer designer to deep generalist with AI-first thinking is not a sudden shift. Kritika did not redesign her career in a month. She made adjacent moves, grounded in real depth, over years. The pattern is gradual and intentional - and the time to start is now, while there is still room to build deliberately rather than reactively.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If you are earlier in the career arc and wondering why the job market feels different than it should - this connects directly to what we covered in the piece on <Link href="/resources/blogs/why-no-ux-interview-calls" className="text-accent hover:underline font-medium">why UX applications stop converting to calls</Link>. The surface-level symptoms (no callbacks, no advancement) often trace back to positioning problems, not capability problems.
+      </p>
+
+      <h2 id="what-to-do-next" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Where You Sit in This - and What to Do Next
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        At Xperience Wave, we work with designers who are mid-career and want to build the depth and positioning that makes them harder to replace - by a tool, and by another designer.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The <Link href="/programs" className="text-accent hover:underline font-medium">Current programme</Link> is for designers at the 2-6 year mark who are ready to move from execution-layer work to strategic contribution. We map where genuine depth already exists, identify the adjacent discipline that creates the most leverage, and build the AI-first thinking that changes how you show up in product conversations.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The Tide programme is for designers at or approaching a leadership level, working through what the landscape shift means for how design leadership needs to operate from here.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If you are not sure which of the three patterns in this piece describes you - or whether you are somewhere between them - the clearest next step is a <Link href="/contact" className="text-accent hover:underline font-medium">free 45-minute strategy call</Link>. We will map where you actually are, what is working, and what to focus on first. No sales pitch. Walk away with clarity either way.
+      </p>
+
+      <hr className="my-10 border-g200" />
+
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>Read Next</strong>
+      </p>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li><Link href="/resources/blogs/why-no-ux-interview-calls" className="text-accent hover:underline font-medium">Why You&apos;re Not Getting UX Interview Calls (It&apos;s Not Your Portfolio)</Link></li>
+        <li><Link href="/resources/blogs/senior-ux-designer-delivery-person" className="text-accent hover:underline font-medium">You&apos;re a Senior Designer in Title. You&apos;re Still Being Treated Like a Delivery Person.</Link></li>
+        <li><Link href="/resources/blogs/business-driven-ux-portfolio" className="text-accent hover:underline font-medium">From Pixel-Pusher to Impact-Maker: Building a Business-Driven UX Portfolio</Link></li>
+      </ul>
+
+      <hr className="my-10 border-g200" />
+
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>Research References</strong>
+      </p>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li>ROSSUL (2025): How AI Is Changing What It Means to Be a UX Designer</li>
+        <li>Nielsen Norman Group (July 2025): The Return of the UX Generalist</li>
+        <li>State of User Research Report 2025, User Interviews</li>
+        <li>UXPA Salary Survey 2024</li>
+        <li>The Voice of User (Oct 2025): Google Cloud&apos;s Cuts and the Bigger Story</li>
+        <li>McKinsey State of AI 2025</li>
+        <li>PwC 2025 Global AI Jobs Barometer</li>
+      </ul>
+
+      <p className="text-base md:text-lg text-g500 italic mt-6">
+        - Murad, Co-founder &amp; Head of Design, Xperience Wave
+      </p>
+    </>
+  ),
 };
 
 // Table of contents for each blog post
@@ -1849,6 +2118,15 @@ const blogTableOfContents: Record<string, { id: string; title: string }[]> = {
     { id: 'unpopular-opinion', title: 'An Unpopular Opinion About Where Most Designers Look' },
     { id: 'one-thing-this-week', title: 'One Thing to Do This Week' },
   ],
+  'ai-job-designer-type': [
+    { id: 'work-already-gone', title: 'The Work That Is Already Gone' },
+    { id: 'three-types-losing', title: 'Three Types of Designer Who Are Losing Ground' },
+    { id: 'kritikas-arc', title: 'Kritika\'s Arc - What It Actually Teaches' },
+    { id: 'ai-first-thinking', title: 'What AI-First Thinking Actually Looks Like' },
+    { id: 'irreplaceable-profile', title: 'The Designer Who Won\'t Be Replaced' },
+    { id: 'honest-question', title: 'One Honest Question for This Week' },
+    { id: 'what-to-do-next', title: 'Where You Sit in This' },
+  ],
 };
 
 // Author data
@@ -1916,6 +2194,11 @@ const blogMetadata: Record<string, { title: string; description: string; keyword
     title: 'You\'re a Senior Designer in Title. You\'re Still Being Treated Like a Delivery Person. | Xperience Wave',
     description: 'You have the title. You still feel like a delivery person. Almas, Co-founder at Xperience Wave, breaks down why - and introduces the PIE Model: a three-stage approach to moving from execution to influence.',
     keywords: ['senior UX designer delivery person', 'senior designer not respected at work', 'design leadership India', 'UX influence at work', 'design strategy role', 'PIE model design leadership'],
+  },
+  'ai-job-designer-type': {
+    title: 'AI Isn\'t Taking Your Job. This Type of Designer Will | Xperience Wave',
+    description: 'AI isn\'t the threat. A specific type of designer is. Murad breaks down the three archetypes emerging in the AI era - and which one hiring managers are choosing.',
+    keywords: ['AI taking UX designer jobs', 'AI replacing UX designers', 'future of UX design India', 'deep generalism designer', 'AI-first UX thinking', 'UX designer career 2025'],
   },
 };
 

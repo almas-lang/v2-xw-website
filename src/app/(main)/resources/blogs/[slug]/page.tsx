@@ -2360,6 +2360,268 @@ const blogContent: Record<string, React.ReactNode> = {
       </p>
     </>
   ),
+  'ghosted-after-round-2-ux-interview': (
+    <>
+      <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
+        You got the call. You cleared the first round. Maybe you even completed an assignment. You sent a follow-up. You waited.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Nothing. Not a rejection with feedback. Not a call with results. Just automated silence, or a template email that tells you nothing about what actually happened. You are left wondering - was it the portfolio? The assignment? Something you said? Something you didn&apos;t say?
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        This is not an unusual story. We hear versions of it almost every week. Designers who are getting calls, clearing Round 1, sometimes submitting assignments that took them days to complete, and then disappearing into a void. I want to tell you what&apos;s actually happening in that silence. Not the polite version. The real one.
+      </p>
+
+      <h2 id="what-round-1-is" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        First, Understand What Round 1 Actually Is
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Round 1 is not an interview. Not in any meaningful sense. It is a vocabulary filter.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        A recruiter or hiring manager gets on a call with you for 20 to 45 minutes. They are checking three things: does this person use words that match the job description, do they fall within the budget range, and do they seem human enough to put in front of someone more senior. That is the entire scope of Round 1 for most organisations.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Almost anyone who has been working in design for two or more years can pass one. You know the language. You have done the projects. You can answer &apos;walk me through your process&apos; well enough to get to the next stage.
+      </p>
+      <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-6">
+        Round 1 is designed to filter out the obviously wrong candidates. Round 2 is designed to find the right one. These are fundamentally different problems.
+      </blockquote>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Round 2 is where someone starts asking questions that cannot be answered with vocabulary alone. Why did you make this decision? What did you consider and reject? How did you handle the constraint? What would you do differently? What happened when the PM pushed back? That is a different conversation entirely. And most designers are not prepared for it - because they prepared for Round 1 again.
+      </p>
+
+      <h2 id="funnel-nobody-told" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Funnel Nobody Told You About
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The interview process is a funnel. This is not a metaphor. It is a literal conversion problem, and most designers are treating it like a presentation.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Your resume gets someone to look at your portfolio. Your portfolio gets someone to call you. Your Round 1 performance gets you to Round 2. Each stage has a different audience, different evaluation criteria, and a different version of the question it is trying to answer. What works at one stage will not necessarily work at the next.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Here is where it breaks down. Designers spend enormous amounts of time on the top of the funnel. Resumes are polished. Portfolios are carefully crafted. And then the call comes, and they treat it exactly like the portfolio - as a monologue, a showcase, a performance of competence.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The portfolio is a vehicle. It opens the door. What you say when that door opens is a completely different skill, and most designers have spent almost no time developing it. If the top of your funnel isn&apos;t working at all, we cover that separately in <Link href="/resources/blogs/why-no-ux-interview-calls" className="text-accent hover:underline font-medium">why you&apos;re not getting UX interview calls</Link>.
+      </p>
+
+      <h2 id="you-are-a-salesperson" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Nobody Told You That You Are a Salesperson
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is going to sound uncomfortable. I am saying it anyway.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        When you are in an interview, you are selling your services. You are the product. The hiring organisation is the buyer. And whether you know it or not, every signal you send in that conversation is either moving the sale forward or killing it.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Here is what that looks like in practice. A recruiter calls. Before the recruiter has had a chance to explain the role, the designer is telling them their salary number. Not exploring the opportunity. Not asking questions. Declaring a position. &apos;I am not open to negotiating. I want X in hand, fixed, and anything above that is fine.&apos;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        I understand where this comes from. Designers have been undervalued. They have been overworked and underpaid. That frustration is legitimate. But what is being communicated in that opening exchange is not confidence. It is resistance. And a buyer who encounters resistance before they have even made a case for why they want to buy will walk away.
+      </p>
+      <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-6">
+        Chris Voss - former FBI hostage negotiator and author of Never Split the Difference - is direct about salary conversations: never state your number first. Whoever anchors first loses leverage. Treat every compensation conversation as a discovery exercise: understand what the role is actually worth to the organisation before you price yourself against it.
+      </blockquote>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The cocky opener is one failure mode. The opposite is also common - the designer who is so eager to please that they answer every question with what they think the interviewer wants to hear, contradict themselves twice in the same call, and leave no impression of any distinctive point of view. Neither version sells well.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Selling your services well means knowing your value, being able to articulate it clearly and specifically, asking good questions to understand what the organisation actually needs, and timing your positioning so it lands when it can actually be received.
+      </p>
+
+      <h2 id="mouth-broke-everything" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Portfolio Went In Fine. The Mouth Broke Everything.
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Building a portfolio has never been easier. Templates are accessible, references are abundant, AI can help with everything from copy to case study structure. A designer with two years of experience can produce a portfolio that looks like five years of work if they know what they are doing with the tools available.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        What it means is that the portfolio is no longer a reliable signal of depth. It has become a signal of effort and presentation skill. The interview - the actual live conversation - is now where depth gets tested. And that is exactly where the performance breaks down.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Nielsen Norman Group&apos;s research on UX hiring makes this gap explicit. Newer designers tend to define craft as visual impressiveness - the extra detail, the polished finish, the Figma precision. Experienced hiring managers define craft as the invisible things: the decisions that were made, the constraints that were navigated, the thinking that informed the outcome. Two completely different definitions of quality.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        A hiring manager asks: &apos;Why did you choose this approach over the alternatives?&apos; The designer who built the portfolio as a skin - who made the screens beautiful without deeply understanding the decisions behind them - has nowhere to go with that question. When pressed, the answer becomes vague. Then longer. Then defensive.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is not about designers being dishonest. Most of them are genuinely proud of their work. The problem is that building something and being able to explain the intellectual process behind it are two different skills. Many designers have only trained one of them.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If your portfolio itself needs rebuilding around business impact rather than just screens, start with the <Link href="/resources/blogs/business-driven-ux-portfolio" className="text-accent hover:underline font-medium">business-driven portfolio guide</Link>. If your best work is locked behind an NDA, we cover five specific strategies for that in the <Link href="/resources/blogs/nda-work-ux-portfolio" className="text-accent hover:underline font-medium">NDA portfolio piece</Link>.
+      </p>
+
+      <h2 id="deflection-patterns" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Deflection Patterns That End Careers in Interviews
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        When a designer cannot answer a question about their own work, something interesting happens. They do not say &apos;I do not know.&apos; They explain why the work was not their fault.
+      </p>
+
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>&apos;My PM did not allow it.&apos;</strong>
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is the most frequent. A hiring manager asks why the designer did not do usability testing, or why there is no evidence of research. There is a version of this answer that shows maturity: &apos;The PM had a different priority, so I had to find ways to bring in user insight without a formal research budget - here is what I did instead.&apos; And there is a version that is a display of helplessness: &apos;That was not my call to make.&apos; The difference is everything.
+      </p>
+
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>&apos;We did not have the budget.&apos;</strong>
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Budget constraints are real. But &apos;we did not have the budget&apos; as an explanation for why nothing meaningful happened is not a constraint - it is an exit. What did you do when the budget was not there? What did you propose? What low-cost approach did you find?
+      </p>
+
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>&apos;Ours is a service organisation.&apos;</strong>
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This one is shorthand for: we do not have the luxury of doing things properly. That may be true. It is also true of most design environments to varying degrees. The question is what you did within that reality - how you pushed back, how you carved out space, how you influenced direction even when the structure did not invite it.
+      </p>
+      <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-6">
+        Every excuse is a display of who is behind the facade. When a designer describes their constraints instead of their responses to constraints, they are telling you exactly what level they are operating at - and it is not senior.
+      </blockquote>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This gap between having the title and having the influence is exactly what we explore in the <Link href="/resources/blogs/senior-ux-designer-delivery-person" className="text-accent hover:underline font-medium">piece on moving from delivery person to strategic contributor</Link>.
+      </p>
+
+      <h2 id="whiteboard-reveals" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What the Whiteboard Actually Reveals
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Collaborative exercises - whiteboarding sessions, live design challenges, real-time problem-solving with a team - are the most revealing thing in the entire funnel. Not because they test whether you can design under pressure. Because they test who you actually are when the script runs out.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        Two things happen in a whiteboard session that do not happen anywhere else:
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>You find out if the designer can collaborate or if they can only perform.</strong> Some designers turn it into a solo presentation. They take over the conversation. They generate ideas rapidly and fill the space. They do not ask questions of the other people in the room. Design at a senior level is almost entirely collaborative. The designer who cannot share a problem - who cannot hold space for another perspective - is not a senior designer. They are a solo operator.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>You find out how the designer handles not knowing something.</strong> In a whiteboard session, gaps in knowledge surface immediately. Do they acknowledge the gap and propose a way forward? Or do they paper over it with confident-sounding language that turns out to be empty? A whiteboard session is the only point in the interview process where you cannot prepare a portfolio entry for it. What comes out is what is actually there.
+      </p>
+
+      <h2 id="round-2-measuring" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What Round 2 Is Actually Measuring
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        Let me be direct about what Round 2 interviewers are actually trying to understand. It is almost always some version of these four questions:
+      </p>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li>Can this person think, or can they only execute?</li>
+        <li>Can this person operate in a real environment - with constraints, ambiguity, and people who disagree with them?</li>
+        <li>Is the depth behind the portfolio real, or was the portfolio the entire performance?</li>
+        <li>Is this a person we will want to work with closely, or is working with them going to be expensive?</li>
+      </ul>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Notice that none of these are about whether the work looks good. The work looking good was established in Round 1. Round 2 is about everything underneath the work.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        A designer who understands this prepares for Round 2 completely differently. Instead of reviewing the portfolio and practising the walkthrough again, they ask harder questions of themselves. Why did I make each major decision? What did I consider and reject, and why? What would I do differently? How did I work with the people in the room? What happened when the project went wrong?
+      </p>
+
+      <h2 id="what-to-do-differently" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What to Do Differently - Specifically
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>Before the call: research the organisation as a buyer, not as a job seeker.</strong>
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        There is a difference between researching a company to answer &apos;what do you know about us&apos; and researching a company to understand what they actually need from a designer. What problems are they solving? What is the design maturity of the organisation? What constraints are they likely operating under? When you walk into a conversation having done that kind of research, your questions are better, your answers are more relevant, and you demonstrate something no amount of portfolio polish can demonstrate: that you thought about them, not just about yourself.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>In the conversation: stop presenting and start selling.</strong>
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Ask questions early. Find out what the interviewer is actually looking for. Then position your experience against that specific problem. If a recruiter asks about salary before you have had a chance to understand the full scope of the role, it is completely acceptable to say: &apos;I want to make sure we are looking at the same thing before we talk numbers - can you help me understand what this role is responsible for and what success looks like in the first six months?&apos;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>On your portfolio: know the decisions, not just the deliverables.</strong>
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        For every case study, you should be able to answer three questions with specificity and without hesitation: What was the core design problem? Why did I choose this approach over the realistic alternatives? What happened when it was challenged - by data, by stakeholders, by the reality of implementation?
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>On constraints: make them the context, not the excuse.</strong>
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        When constraints come up - and they will - your answer should follow a consistent structure: here is the constraint, here is what it meant for the project, here is how I worked within it or around it, here is what I learned from doing so. Four beats. Every time.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>On collaboration: show up to exercises as a participant, not a performer.</strong>
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        In any collaborative session, your job is not to be the most impressive person in the room. Your job is to be the most useful person in the room. Ask questions. Build on what others say. Identify what the group does not yet know before you start proposing solutions. The hiring managers watching are not scoring how many ideas you generated. They are watching how you treat other people&apos;s thinking.
+      </p>
+
+      <h2 id="silence-is-information" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Silence Is Not Rejection. It Is Information.
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        When the ghost comes - and it may - the most useful thing you can do is resist the urge to take it personally and instead read it as data.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        You cleared Round 1, which means something about your surface presentation worked. Something about your vocabulary, your portfolio, your initial impression was enough to move forward. That is not nothing.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        What the silence is telling you is that somewhere between Round 1 and the end of Round 2, the picture the organisation formed of you became inconsistent. The work said one thing. The conversation said something else. And when they had to choose, they chose the person whose work and words were aligned.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>That is fixable. Entirely and specifically fixable.</strong> But it requires understanding that the interview is a funnel - not a presentation - and that your job at every stage is to convert the person in front of you, not to perform for the idea of a hiring manager in your head.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        You are not being ghosted because your work is not good enough. You are being ghosted because your ability to sell that work has not kept pace with your ability to do it.
+      </p>
+
+      <h2 id="brief-diagnostic" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Before Your Next Application - A Brief Diagnostic
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        Read these questions honestly. Not the version of them you would answer in an interview. The actual honest version.
+      </p>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li>Can I explain the three most important design decisions in my lead case study - the decision, the alternatives I rejected, and why - in under two minutes?</li>
+        <li>In my last interview, did I ask at least as many questions as I answered?</li>
+        <li>When was the last time I was asked a question in an interview that I could not answer - and what did I do with it?</li>
+        <li>When I talk about projects where things went wrong, do I talk about what I did, or do I talk about what was done to me?</li>
+        <li>In a collaborative session, have I ever been the person who dominated the conversation without noticing it?</li>
+      </ul>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If any of these landed, that is where the work is.
+      </p>
+
+      <hr className="my-10 border-g200" />
+
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The designers we work with in the <Link href="/programs" className="text-accent hover:underline font-medium">Current programme</Link> - 2 to 6 years of experience, getting calls but not converting - work through exactly this. Not just portfolio strategy. The full interview funnel: how to present, how to position, how to answer the hard questions, and how to read what is actually happening at each stage.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If you are further along - senior and moving into leadership - the Tide programme is where that work happens.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <Link href="/contact" className="text-accent hover:underline font-medium">Book a free 45-minute strategy call</Link> - walk away with a clear read on where you are in the process and what specifically needs to change.
+      </p>
+
+      <hr className="my-10 border-g200" />
+
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>Read Next</strong>
+      </p>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li><Link href="/resources/blogs/why-no-ux-interview-calls" className="text-accent hover:underline font-medium">Why You&apos;re Not Getting UX Interview Calls (It&apos;s Not Your Portfolio)</Link></li>
+        <li><Link href="/resources/blogs/senior-ux-designer-delivery-person" className="text-accent hover:underline font-medium">You&apos;re a Senior Designer in Title. You&apos;re Still Being Treated Like a Delivery Person.</Link></li>
+        <li><Link href="/resources/blogs/ai-job-designer-type" className="text-accent hover:underline font-medium">AI Isn&apos;t Taking Your Job. But This Type of Designer Will.</Link></li>
+        <li><Link href="/resources/blogs/nda-work-ux-portfolio" className="text-accent hover:underline font-medium">Your NDA Isn&apos;t the Problem. Your Portfolio Strategy Is.</Link></li>
+      </ul>
+
+      <p className="text-base md:text-lg text-g500 italic mt-6">
+        - Almas Tasneem, Co-founder, Xperience Wave
+      </p>
+    </>
+  ),
 };
 
 // Table of contents for each blog post
@@ -2463,6 +2725,18 @@ const blogTableOfContents: Record<string, { id: string; title: string }[]> = {
     { id: 'interview-nda', title: 'What to Say in the Interview' },
     { id: 'one-question', title: 'One Question Before Your Next Application' },
   ],
+  'ghosted-after-round-2-ux-interview': [
+    { id: 'what-round-1-is', title: 'What Round 1 Actually Is' },
+    { id: 'funnel-nobody-told', title: 'The Funnel Nobody Told You About' },
+    { id: 'you-are-a-salesperson', title: 'Nobody Told You That You Are a Salesperson' },
+    { id: 'mouth-broke-everything', title: 'The Portfolio Went In Fine. The Mouth Broke Everything.' },
+    { id: 'deflection-patterns', title: 'The Deflection Patterns That End Careers' },
+    { id: 'whiteboard-reveals', title: 'What the Whiteboard Actually Reveals' },
+    { id: 'round-2-measuring', title: 'What Round 2 Is Actually Measuring' },
+    { id: 'what-to-do-differently', title: 'What to Do Differently' },
+    { id: 'silence-is-information', title: 'The Silence Is Not Rejection. It Is Information.' },
+    { id: 'brief-diagnostic', title: 'A Brief Diagnostic' },
+  ],
 };
 
 // Author data
@@ -2540,6 +2814,11 @@ const blogMetadata: Record<string, { title: string; description: string; keyword
     title: 'NDA Work in Your UX Portfolio: 5 Strategies That Work | Xperience Wave',
     description: 'Almost every designer with meaningful experience has NDA constraints. Murad walks through five specific approaches to showing the work - with Krishna\'s story as proof of concept.',
     keywords: ['how to show NDA work in UX portfolio', 'UX portfolio NDA India', 'confidential work portfolio design', 'UX case study without showing screens', 'NDA portfolio strategy designer'],
+  },
+  'ghosted-after-round-2-ux-interview': {
+    title: 'Why UX Designers Get Ghosted After Round 2 | Xperience Wave',
+    description: 'You cleared Round 1. Then nothing. Almas breaks down the two specific reasons UX designers get ghosted after Round 2 - the bad salesman problem and the hollow portfolio - and what to do about both.',
+    keywords: ['why UX designers get ghosted after round 2 interview', 'UX interview round 2 tips', 'design interview ghosted', 'UX job interview India 2026', 'how to pass second round design interview', 'UX portfolio interview depth'],
   },
 };
 

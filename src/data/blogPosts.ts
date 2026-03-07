@@ -107,6 +107,17 @@ export const blogPosts: BlogPost[] = [
     readTime: '4 min',
   },
   {
+    id: '22',
+    slug: 'ghosted-after-round-2-ux-interview',
+    title: 'Why UX Designers Get Ghosted After Round 2 Interviews',
+    excerpt: 'You cleared Round 1. Then nothing. Here are the two specific reasons UX designers get ghosted after Round 2 - the bad salesman problem and the hollow portfolio - and what to do about both.',
+    category: 'interviews',
+    image: 'https://images.unsplash.com/photo-1565688534245-05d6b5be184a?w=800&q=80',
+    author: { name: 'Almas Tasneem' },
+    publishedAt: '2026-03-07',
+    readTime: '10 min',
+  },
+  {
     id: '21',
     slug: 'nda-work-ux-portfolio',
     title: 'Your NDA Isn\'t the Problem. Your Portfolio Strategy Is.',

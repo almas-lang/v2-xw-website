@@ -2623,6 +2623,595 @@ const blogContent: Record<string, React.ReactNode> = {
       </p>
     </>
   ),
+  '12l-vs-30l-ux-designer-difference': (
+    <>
+      <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
+        Before you read any further, I know what some of you are already thinking.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        &quot;Money isn&apos;t everything. I care about the work. I care about growth. I&apos;m not in this for the pay.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Fine. Keep thinking that.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        But let me tell you what I&apos;ve watched happen to the designers who actually believe it.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        They do good work. Genuinely good work. They care about the craft, the user, the outcome. They show up, deliver, and don&apos;t complain. And then, every year, they sit across from their manager and accept 8 to 10%. Which, after inflation and rising cost of living in Bangalore, means they&apos;re standing still. And they tell themselves it&apos;s okay because they&apos;re not in it for the money.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Five years later, someone they trained, someone with less experience, is earning double. And suddenly they&apos;re very much in it for the money. They just don&apos;t know how they got left behind.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The salary conversation isn&apos;t about greed. It&apos;s about whether the organisation believes you are replaceable. A &#x20B9;12L salary doesn&apos;t mean you&apos;re doing bad work. It means the organisation thinks they can find someone else to do your work without it being expensive. That&apos;s the only thing it means.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        So when I say &quot;the difference between a &#x20B9;12L and &#x20B9;30L designer isn&apos;t skills&quot;, I&apos;m not giving you permission to stop caring about your craft. I&apos;m telling you that craft alone has never been how this conversation gets won. Not once. Not for anyone I&apos;ve ever placed.
+      </p>
+
+      <h2 id="visibility-trap" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Visibility Trap
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Here is the thing I want you to sit with.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The &#x20B9;30L designer is not 2.5 times better than the &#x20B9;12L designer. In most cases, the gap in raw ability, the quality of their thinking, their research rigour, their visual craft, is nowhere near that large.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        What the &#x20B9;30L designer has is legibility.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The organisation can read their value. It&apos;s visible. It shows up in meetings, in outcomes, in the way other teams talk about them. When someone with budget authority asks &quot;what would we lose if we lost this person?&quot; they have a specific, expensive answer.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The &#x20B9;12L designer is often doing comparable work. But their value is invisible. It lives in the files they delivered, the screens they shipped, the tickets they closed. When someone asks what would be lost, the answer is: we&apos;d have to hire someone else to do those screens.
+      </p>
+      <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-6">
+        The &#x20B9;30L designer isn&apos;t paid more because they do better work. They&apos;re paid more because their work is legible as valuable to people who don&apos;t speak design.
+      </blockquote>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        This is the trap. And most designers don&apos;t know they&apos;re in it. They keep improving the work, taking courses, refining the craft, building the portfolio, and they can&apos;t understand why nothing changes. They&apos;re solving the wrong problem. The work is fine. What&apos;s broken is everything around how the work is perceived.
+      </p>
+
+      <h2 id="market-pay" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What the Market Actually Pays, and What the Range Tells You
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        I want to use real numbers here, because the salary conversation in design happens entirely in whispers. Nobody talks about what they make. Nobody knows if they&apos;re behind. So let me be direct.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        These are approximate ranges for Bangalore&apos;s product design market, cross-referenced across Glassdoor India, AmbitionBox, Codezion&apos;s 2025 industry report, and what we see in actual offers our mentees receive and negotiate.
+      </p>
+      <ul className="list-disc pl-6 space-y-4 text-base md:text-lg text-g600 mb-6">
+        <li><strong>Associate Designer (0-2 YOE):</strong> &#x20B9;5-8L average. Top-tier product companies can start at &#x20B9;15L+.</li>
+        <li><strong>Senior Designer (3-5 YOE):</strong> &#x20B9;11-17L average. Glassdoor Bangalore average: &#x20B9;11.5L; Senior average: &#x20B9;17.2L.</li>
+        <li><strong>Design Lead (6-8 YOE):</strong> &#x20B9;17-28L average. The widest range at any level.</li>
+        <li><strong>Head of Design / People Manager (9+ YOE):</strong> &#x20B9;25-45L+. Documented cases at top fintechs: &#x20B9;36L+ total comp.</li>
+      </ul>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6 text-g500 italic">
+        Source note: Platform averages compress the range. The real spread at each level is significantly wider, determined by company type, funding stage, and the factors this blog is about. A product designer at a Series B Bangalore startup with 3 YOE and a strong research portfolio accepted &#x20B9;12L. The same profile at a funded fintech: &#x20B9;18-22L. The difference isn&apos;t credentials.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Look at those ranges. At Senior level alone, the gap between the low and high end is &#x20B9;6L. At Lead level, it&apos;s over &#x20B9;10L. That is not noise. That is not company size or industry. That is the gap between a designer whose value is legible and one whose value is invisible.
+      </p>
+      <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-6">
+        Two designers. Same YOE. Same domain. Same city. One at &#x20B9;12L, one at &#x20B9;22L. The difference is almost never their ability. It&apos;s almost always their legibility.
+      </blockquote>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        And here&apos;s the thing nobody tells you: there&apos;s a third variable beyond skills and legibility. Designation. Your title determines which salary band you&apos;re eligible for.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Every organisation structures salaries around bands, a defined minimum and maximum for each job level. A Senior Designer at a company that defines &quot;Senior&quot; as 3 YOE with a &#x20B9;14L ceiling is not competing in the same band as a Senior Designer at a company that defines &quot;Senior&quot; as strategic contribution and bands up to &#x20B9;25L. The same title. Completely different ceiling.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is how salary structures work across all professional organisations: each job grade has a band, and moving into a higher band requires moving into a higher grade. Annual increments of 8-10% (the Indian market average in 2025-26, per IBEF data) keep you inside your current band. Designation change is what moves you to the next one.
+      </p>
+      <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-8">
+        Chasing salary without managing designation is running on a treadmill. The increment comes. You stay inside the same band. Nothing structurally changes. Designation is the lever. Most designers don&apos;t know it exists.
+      </blockquote>
+
+      <h2 id="legibility-factors" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What Actually Makes a Designer Legible as Valuable
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        I&apos;m going to go through six things. Not as a checklist of virtues. As a diagnosis. For each one, I want you to be honest about which version you recognise in yourself.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        1. Whether you shape the problem or just solve it
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Most designers wait for the brief. The PM writes the problem statement, the business owner defines the scope, the engineering lead sets the constraints. The designer picks it up from there.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        I understand why this happens. It&apos;s the path of least resistance. Nobody gets into trouble for delivering what was asked.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        But it also means you are invisible to every conversation that happened before the brief landed on your desk. Which is exactly where the decisions that matter actually get made.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The &#x20B9;30L designer is in that earlier conversation. Not because they forced their way in, because they made themselves useful in it. They asked the question nobody else asked. They reframed the problem in a way that saved two weeks of work. They pointed out the assumption that would have killed the feature in month three.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        You cannot be seen as strategically valuable if you only show up after the strategy is set. This is not about being pushy. It is about making the brief better before you respond to it. Every time.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        2. Whether you can see the second-order effects
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Changing a button colour is not a simple task. I say this to designers all the time and I watch them smile politely like I&apos;m being dramatic.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        I&apos;m not.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        A button colour change touches the semantic meaning of that colour across the product. It touches every state: hover, disabled, loading, error. It touches brand consistency. It touches accessibility. It touches user expectation that was built over months of interaction. It touches the design system and every component that inherits from it.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        A designer who treats a button colour change as a button colour change is working at the resolution of someone executing instructions. That person gets paid to execute instructions. A designer who sees it as a system decision, who maps the second-order effects before touching the file, is working at the resolution of someone who understands the product. That person gets paid differently. Because their value is legible in a way the first person&apos;s isn&apos;t.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        3. Whether your work speaks to the room, or only to other designers
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is the one that makes designers uncomfortable, so I&apos;ll say it plainly.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The people who decide what you get paid are almost never designers. They are product managers optimising for velocity. Engineering leads managing debt. Finance partners watching headcount cost. Business heads looking at margin.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        None of them care about your design thinking in the language you use to describe it. They care about what your design thinking does to the numbers they&apos;re responsible for.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The &#x20B9;12L designer presents work to stakeholders and gets overridden. Then blames the culture. The org doesn&apos;t value design, the PM has too much power, nobody listens.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Some of that is true. But the &#x20B9;30L designer operates in the same culture and doesn&apos;t get overridden nearly as often. Not because they&apos;re louder. Because they&apos;ve learned to translate.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        &quot;This onboarding redesign reduced drop-off at step 3 from 67% to 41%.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        That is not a design argument. That is a retention argument in design&apos;s clothing.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Learn the difference. It will change every room you walk into.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        We built a whole framework around this. It&apos;s in: <Link href="/resources/blogs/senior-ux-designer-delivery-person" className="text-accent hover:underline font-medium">Senior Designer Still Treated Like a Delivery Person</Link>.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        4. Whether you have an edge or just have experience
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Something happens to a lot of designers around year four or five. They get good. They get recognised for being good. And then, quietly, they start optimising for not being wrong.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The willingness to propose something unexpected, to push on the brief in a way that makes the room uncomfortable, gets smoothed off. Being interesting is risky. Being reliable is safe. So they become reliable. And they plateau.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The &#x20B9;30L designer still has an edge. Not because they&apos;re contrarian. Because they&apos;re more interested in solving the problem well than in being accepted for solving it predictably.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        I&apos;m not saying blow up your credibility with every brief. I&apos;m saying: when was the last time you said something in a meeting that genuinely surprised the room? When was the last time you proposed a direction nobody had considered? If you can&apos;t remember, that&apos;s the answer.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        5. Whether your process has evolved or just accumulated
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        I&apos;ve met designers with eight years of experience who have been running the same process for six of them.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Stakeholder interview. Affinity map. User journey. Wireframe. Test with five users. Iterate. Repeat.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Regardless of whether the problem needs a two-week research sprint or a two-day design sprint. Regardless of whether the user base is large and quantitative or small and qualitative. Regardless of the actual context. The process runs because it has always run.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        That&apos;s not methodology. That&apos;s a comfort blanket described in UX vocabulary. The &#x20B9;30L designer reads the context first. They choose the right approach for this problem, not the familiar one. They question their own process, including the parts of it that have worked, because the context is always changing and the process should change with it.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        6. Whether you own outcomes or just deliver outputs
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is the one that determines compensation more than anything else on this list.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Ownership is not a title. It is a track record. It is evidence, built over time, that when you are responsible for something, it moves. And when it doesn&apos;t move, you say so clearly and propose what needs to change.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The &#x20B9;12L designer delivers the output and moves to the next ticket. The &#x20B9;30L designer stays attached to the outcome. They track what happened after the thing shipped. They know if it worked. They have an opinion about why it did or didn&apos;t. They bring that back into the next conversation.
+      </p>
+      <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-8">
+        The organisations that pay &#x20B9;30L aren&apos;t paying for better screens. They&apos;re paying for someone whose departure would be genuinely expensive. You become that person by owning outcomes, not by delivering outputs.
+      </blockquote>
+
+      <h2 id="negotiation" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        And Then There&apos;s the Negotiation, Which Most Designers Lose Before It Starts
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Everything above creates the conditions for a higher salary. None of it guarantees one if you walk into the conversation wrong.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The wrong way: &quot;I&apos;ve been here for two years. The market average for my level is X. I feel I deserve more.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        That&apos;s a fairness argument. And fairness arguments are the weakest negotiating position you can take. Because the person across from you can always say: we pay what we pay, here&apos;s 8%, take it or take a job offer elsewhere.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        They&apos;re not wrong. They&apos;re just not motivated. You gave them no reason to be.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The right way: &quot;Here&apos;s what I&apos;ve owned this year. Here&apos;s what changed as a result. Here&apos;s what I&apos;m being trusted with next, and here&apos;s what that kind of contribution is worth in the market.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        That&apos;s a value argument. It is much harder to dismiss. Because you&apos;re not asking for fairness, you&apos;re presenting a business case. And you&apos;re the one who built the evidence for it over the last twelve months.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The &#x20B9;30L designer has been building that case long before the conversation happens. They&apos;ve been making their outcomes visible, not just to their manager, but to the people in the room whose opinion shapes what the manager can actually offer.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        This exact dynamic plays out in interviews too, not just appraisals. If you&apos;re getting to the final round and disappearing: <Link href="/resources/blogs/ghosted-after-round-2-ux-interview" className="text-accent hover:underline font-medium">Why UX Designers Get Ghosted After Round 2 Interviews</Link>.
+      </p>
+
+      <h2 id="what-to-do" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What I Want You to Do With This
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        I&apos;m not asking you to care more about money. I&apos;m asking you to stop pretending you don&apos;t care about it while quietly wondering why your salary hasn&apos;t moved.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The &#x20B9;30L designer isn&apos;t more passionate about UX. They&apos;re not working harder. They haven&apos;t cracked some hidden cheat code that only comes with connections or luck.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        They made their value legible. To the right people. In the right language. Before anyone asked them to.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        That&apos;s it. That&apos;s the whole thing.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Now: which of the six things I listed is the specific gap for you? Not in general, for you, this week, in the role you&apos;re in right now. Because if you can name it specifically, you can close it specifically. And if you&apos;re not sure, that&apos;s a conversation worth having with someone who can look at your full picture.
+      </p>
+
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6 font-semibold">
+        Not sure where your specific gap is?
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <a href="https://xperiencewave.com/strategy" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Book a free 45-minute strategy call</a> with Xperience Wave. We&apos;ll look at your positioning, your compensation situation, and what specifically is keeping you in the wrong band. We work 1:1, no group sessions, no generic advice.
+      </p>
+
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>Read Next</strong>
+      </p>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li>If you&apos;re not getting calls despite the experience: <Link href="/resources/blogs/why-no-ux-interview-calls" className="text-accent hover:underline font-medium">Why You&apos;re Not Getting UX Interview Calls</Link></li>
+        <li>If you have the title but not the influence: <Link href="/resources/blogs/senior-ux-designer-delivery-person" className="text-accent hover:underline font-medium">Senior Designer Still Treated Like a Delivery Person</Link></li>
+        <li>If AI is the conversation you&apos;ve been avoiding: <Link href="/resources/blogs/ai-job-designer-type" className="text-accent hover:underline font-medium">AI Isn&apos;t Taking Your Job. But This Type of Designer Will.</Link></li>
+        <li>If you&apos;re clearing Round 1 and disappearing after: <Link href="/resources/blogs/ghosted-after-round-2-ux-interview" className="text-accent hover:underline font-medium">Why UX Designers Get Ghosted After Round 2</Link></li>
+        <li>Explore the programme: <Link href="/programs/senior-ux-designer-mentorship" className="text-accent hover:underline font-medium">Xperience Wave Current</Link></li>
+      </ul>
+
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>Sources &amp; References</strong>
+      </p>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li><a href="https://www.glassdoor.co.in/Salaries/bangalore-ux-designer-salary-SRCH_IL.0,9_IM1091_KO10,21.htm" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Glassdoor India, UX Designer Salary, Bangalore (March 2026)</a></li>
+        <li><a href="https://codezion.com/blog/ui-ux-designer-salary" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Codezion, UI/UX Designer Salary India 2025</a></li>
+        <li><a href="https://academy.keka.com/blog/salary-structure" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">IBEF / Keka Salary Structure Report 2026</a></li>
+        <li><a href="https://ca.indeed.com/hire/c/info/guide-to-job-grades-and-salary-bands" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Indeed, Guide to Job Grades and Salary Bands</a></li>
+        <li><a href="https://www.qandle.com/glossary-salary-bands-vs-grades" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Qandle, Salary Bands vs Job Grades</a></li>
+      </ul>
+
+      <p className="text-base md:text-lg text-g500 italic mt-6">
+        - Almas Tasneem, Co-founder, Xperience Wave
+      </p>
+    </>
+  ),
+  'ux-designer-product-strategy-table': (
+    <>
+      <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
+        Before we get into the how, I need to clear three things out of the way. Three reasons designers use to not engage with this topic at all. I&apos;ve heard all of them. None of them hold.
+      </p>
+
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4 font-semibold">
+        &quot;We work remotely. There&apos;s no table.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        You&apos;re right. There&apos;s no table.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        There&apos;s just a Slack thread where three people decided what your next six weeks look like. There&apos;s a Google Doc that became a roadmap before you knew it existed. There&apos;s a recurring call between the CPO, the engineering head, and a business lead, forty-five minutes, every two weeks, that you have never been invited to and nobody told you about.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        The table isn&apos;t furniture. It&apos;s wherever the decisions happen without you. Call it whatever you want. The outcome is the same: you find out about the direction after it&apos;s been set, and then you execute it.
+      </p>
+
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4 font-semibold">
+        &quot;Our organisation doesn&apos;t really do strategy. We move too fast for that.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Moving fast is a strategy. Deciding not to decide is a strategy. Piling feature on top of feature without asking whether the thing you&apos;re building is still the right thing, that is absolutely a strategy. It just happens to be a bad one. And at some point, someone will have to clean it up. Usually design.
+      </p>
+
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4 font-semibold">
+        &quot;Product strategy isn&apos;t really my area, is it?&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        This is the one I want to spend time on. Because it&apos;s the most common, and it does the most damage. Yes. It is your area. Here&apos;s why.
+      </p>
+
+      <h2 id="what-the-table-is" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What the Table Actually Is, and Why Products That Skip It Die
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The product strategy table is where decisions about a product&apos;s direction get made. Not the design decisions. Not the feature decisions. The direction decisions: what problem are we solving, for whom, and why does solving it matter to the business?
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Nobody calls it the product strategy table. It happens inside quarterly planning meetings, annual OKR sessions, board reviews, investor updates, leadership offsites. The agenda is usually framed around growth, market position, or technology. Design is almost never on it by default.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Here is why this matters to you specifically.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Customer expectations change. Technology changes. The cultural context that made your product relevant shifts. What worked three years ago, the interaction model, the user mental model, the navigation architecture, is now friction. Not because the design got worse. Because the world moved and the product didn&apos;t.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        What doesn&apos;t evolve, stops surviving.
+      </p>
+      <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-6">
+        Every product that has ever died at the height of its apparent success died because the people running it believed they had built something so good it no longer needed to change.
+      </blockquote>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Now: who is deciding what the product evolves into? Someone is making those calls. In most organisations, it&apos;s product management and engineering leadership. In some, it&apos;s the CEO. In others, the ones where design has been historically undervalued, it&apos;s whoever can get the most time in the right rooms.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The question is not whether you care about product strategy. The question is whether you&apos;re in the room where it&apos;s being decided. Because if you&apos;re not, the decisions get made without you, and then handed to you to execute. And you already know what that feels like.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Here&apos;s the scale of the problem. <a href="https://www.mckinsey.com/capabilities/mckinsey-design/our-insights/the-business-value-of-design" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">McKinsey&apos;s Business Value of Design research</a>, across more than 300 publicly listed companies, found that fewer than 5% of organisations had senior leaders who could make objective design decisions. Over 40% of companies weren&apos;t even talking to their end users during development. Design was present. It was just not in the room where direction was set.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The same McKinsey research found that top-quartile design companies generated 32% more revenue and 56% more in total returns to shareholders than industry peers over five years. The business case for design at the strategy table is not philosophical. It is financial.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        If you&apos;re a senior designer experiencing this right now, the execution-only dynamic, this is the same culture problem we covered here: <Link href="/resources/blogs/senior-ux-designer-delivery-person" className="text-accent hover:underline font-medium">Senior Designer Still Treated Like a Delivery Person</Link>.
+      </p>
+
+      <h2 id="fintech-story" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What It Actually Took: A Story From Inside a Fintech Organisation
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        When I joined a fintech organisation at around eight to nine years of experience, I had a role and I had a team. Neither of those things opened the door.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The culture I walked into had been shaped by the designers and leaders who came before me. Design&apos;s job, in that organisation&apos;s understanding, was to receive a brief from product, give it visual shape, and deliver it. The relationship between design and product strategy was the same as the relationship between a printer and an author. You don&apos;t ask the printer what the book should say.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        I understood the logic from their side. Design had never demonstrated anything beyond that capability. So why would the conversation include us?
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        There were two ways I could have responded. The first was to argue for design&apos;s value, to make the case in theory, using case studies from other companies, talking about the strategic role design plays at Apple or Airbnb. This is the approach most designers take. It almost never works. Because the organisation has no reason to believe the argument applies to them, to their team, to this specific situation.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The second was to make the argument in the only language that actually lands: proof.
+      </p>
+      <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-6">
+        You cannot argue your way to the product strategy table. You earn your way in. And the currency is evidence, not persuasion.
+      </blockquote>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This isn&apos;t just my experience. <a href="https://douglaspowell1.medium.com/designers-as-leaders-now-that-we-have-a-seat-at-the-table-how-do-we-prove-we-belong" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Doug Powell</a>, a design leader at IBM who spoke at the IXDA international conference, described what it takes to communicate design to business leadership: they are data-driven, opinionated, competitive, and have a finely-tuned no-bullshit meter. They will not respond to warm-and-fuzzy stories. They respond to clear evidence and quantifiable data. The framing matters more than most designers want to admit.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        And then I delivered. On one project, we doubled the conversion percentage. Not in six months. In the shortest timeline the team had seen for an initiative of that scope. That result, specific, measurable, undeniable, was the thing that opened the first door.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        After that, I was included in the annual planning. Then the half-yearly planning. Then the quarterly. The OKRs, which had always sat under product and technology, began to shift. Design started being upstream, talking directly to business about what kind of experience needed to be generated, and then delivering to that. Technology came after.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        I want to be honest about where this story ends, because most people who write about this topic skip the hard part.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        After two years of this, we still weren&apos;t fully there. Design was in the room. But OKRs still weren&apos;t owned by design. The perception that design can own strategic outcomes, not just contribute to them, is a harder cultural shift than getting invited to the meeting. I was getting a seat. I was not yet running the table.
+      </p>
+      <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-6">
+        Getting a seat at the strategy table is not a destination. It&apos;s a position you have to hold, re-earn, and defend. Sometimes in the same organisation. Sometimes indefinitely.
+      </blockquote>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Anyone who tells you otherwise has not actually done it.
+      </p>
+
+      <h2 id="the-werewolf" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Werewolf: Why Most Designers Fail at This Even When They Get In the Room
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        I want to give you a mental model for the kind of designer who survives, and thrives, in product strategy conversations. I call it the werewolf.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Not because it&apos;s dramatic. Because it&apos;s accurate.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        A werewolf knows exactly when to fight. When the conversation is going somewhere that would damage the product or the user, and you have the evidence to say so clearly, you fight. You don&apos;t politely suggest. You make the case, you hold the ground, you are willing to be uncomfortable.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        A werewolf knows when to retreat. When the decision has been made and the political cost of continuing to push outweighs the benefit, you let it go. You note your objection, you make it legible, and then you support the direction that was chosen. Because being the person who can&apos;t stop relitigating lost decisions is the fastest way to lose the seat you just earned.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        A werewolf knows when to show confidence. Not performance confidence, the kind that sounds impressive in a meeting and evaporates under questioning. Real confidence, which is built from knowing your domain deeply and being able to defend your thinking at multiple altitudes simultaneously: the thirty-thousand-foot view of where the product needs to go, and the ground-level specifics of how you&apos;d get there.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        And a werewolf makes friends. Not networking. Not relationship-building as a career strategy. Genuine understanding of the other people in the room: what they are responsible for, what constraints they operate under, what they&apos;re afraid of, what they need. Because the strategy table is not a design critique. It is a negotiation between people with different mandates, and you cannot negotiate with people you haven&apos;t taken the time to understand.
+      </p>
+      <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-6">
+        The designer who gets a permanent seat at the strategy table is not the smartest in the room. They are the most useful. They know when to push, when to yield, and when to simply make everyone else&apos;s job easier. That combination is rarer than intelligence.
+      </blockquote>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The designers who fail at this, and I have watched many fail at it, almost always do so in one of two ways. The first: they push too hard, too consistently, on too many things. They fight every battle. They make design feel like resistance rather than contribution. The room starts working around them. The second: they yield too much, too quickly. They attend the meetings but don&apos;t change anything. They are present but not useful. The room stops including them because their presence makes no difference.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        The werewolf does neither.
+      </p>
+
+      <h2 id="eight-things" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Eight Things That Actually Get You In and Keep You There
+      </h2>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        1. Get involved before the brief exists
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The single most important move is also the least glamorous. Find out where priorities are being formed, before they become tasks, before they become tickets, before they land in your queue as a brief to execute. That might be a monthly leadership sync you&apos;re not currently in. A product-business conversation that happens over a call you&apos;ve never been invited to. A document that gets written before the planning cycle officially starts.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Get close to that moment. Not by forcing your way in, but by making yourself useful to the people who are already in it. Ask questions. Contribute early thinking. Offer a perspective on what the user needs that nobody else in that conversation can offer. If you can&apos;t get in early, get close to someone who is. Know what is being prioritised. Know why. Know what assumptions are being made before they become decisions. That knowledge is how you show up informed, not reactive.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        2. Speak business first, design second
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is not a suggestion to stop being a designer. It is a suggestion to wear the right hat at the right moment.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        At the strategy table, the conversation is about growth, margin, market position, risk, and capability. If you enter that conversation talking about user journeys, affordance, or information architecture, you will be heard as a specialist with a narrow view. You will be listened to politely and then the conversation will move on without you.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The same thinking, reframed: &quot;This feature is introducing friction in an already-complex onboarding flow, and we&apos;re seeing dropout at the exact point where activation matters most. Here&apos;s what that costs us in monthly revenue.&quot; That lands. That contributes to the conversation that&apos;s already happening.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Design thinking is a capability. Business language is how you make that capability legible to the room. You need both. Most designers only bring one. This is exactly the kind of reframing we explored in <Link href="/resources/blogs/business-driven-ux-portfolio" className="text-accent hover:underline font-medium">building a business-driven UX portfolio</Link>.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        3. Be predictive, not just reactive
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        A designer who shows up with solutions is useful. A designer who shows up with a view of what&apos;s coming, before anyone else has named it, is irreplaceable.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Being predictive means reading the signals that others in the room are too close to their own responsibilities to see. Customer behaviour shifting. A technology change that will affect the interaction model in two product cycles. A competitive move that your current product architecture isn&apos;t equipped to respond to.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        It also means being honest about risk. Not performing confidence about a direction when you have genuine doubts. The people at the strategy table are making bets. They need to know the odds. A designer who can say &quot;here is what this hypothesis gets right, here is where it could fail, and here is the signal we&apos;d watch for&quot; is contributing to the quality of the bet, not just executing on it.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        4. Know the other people&apos;s constraints, not just their positions
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The product manager is not trying to undermine design. They are under pressure to ship. The engineering lead is not being obstructive. They are managing debt and realistic timelines. The finance partner is not anti-user. They are accountable for a number that the organisation has committed to.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        When you understand what someone is actually constrained by, not just what position they hold, you stop experiencing conflict as personal and start engaging with it as structural. And structural conflicts are solvable. Personal conflicts are exhausting. The werewolf makes friends by understanding what the room is actually under pressure about. That understanding is what allows you to contribute to their problem, not just push your own agenda.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        5. Operate at thirty thousand feet and at ground level simultaneously
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        One of the fastest ways to lose credibility at the strategy table is to get lost in detail at the wrong moment. One of the fastest ways to lose it permanently is to never be able to back up a strategic view with specifics.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        The designers who hold the seat are the ones who can switch altitude without warning. They can articulate the product direction at the level of a board conversation, and then immediately go to: here&apos;s what that means for the next sprint, here&apos;s the specific interaction problem we&apos;d have to solve, here&apos;s what we&apos;d need to validate before committing. Both directions. No lag. That combination signals that you are not just a thinker or just an executor. You are someone who can hold the whole picture.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        6. Speak in &quot;we&quot;, not &quot;I&quot;
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Nobody gets a strategy executed alone. The designers who understand this speak differently in these rooms. Not &quot;I would approach this by...&quot; but &quot;here&apos;s how we&apos;d bring this to life: the research we&apos;d need, the engineering alignment required, the timeline that makes this viable.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        That language signals that you are thinking about implementation, not just ideas. That you understand what it takes to actually move something from a strategic direction into a shipped experience. That you are not going to create more coordination problems than you solve. It is also, practically, how you start getting budget and resources allocated. You cannot resource an individual. You can resource a plan.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        7. Hold your ground without making it a fight
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        There will be moments where the direction being taken is wrong. You know it. You have the evidence. You need to say so.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The mistake most designers make here is one of two: they say nothing, or they make it a confrontation. The first makes you irrelevant. The second makes you a problem.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        The move is to name your concern specifically, attach it to a consequence the room cares about, and make it easy for the room to engage with it. &quot;I want to flag something before we commit to this direction. The assumption here is that users understand the new flow without guidance, and our research from the last release suggests that&apos;s not a safe assumption. Here&apos;s what we saw.&quot; That is not a fight. That is a contribution. Say it once, clearly. If the room hears it and still proceeds, note your concern and move with the direction. You have done your job. You have not made an enemy. You have left a record.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        8. Display leadership through what you enable, not what you produce
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The closer you get to the strategy table, the less the conversation is about your own design output. It is about what you enable across a team, across a function, across the organisation.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is the hardest shift for designers to make, because we have been trained to measure our contribution in deliverables. Case studies. Screens. Research reports. Those remain relevant. But the designer who holds a permanent seat at the strategy table is also the one who made their team better, who helped a product manager make a more informed decision, who showed a junior designer what it looks like to operate in a room that doesn&apos;t speak your language and still be heard.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Leadership is not about being the smartest in the room. It is about making the room smarter. When you can do that consistently, not just deliver well, but elevate the quality of the decisions being made around you, you stop being a contributor to the strategy and start being part of it.
+      </p>
+
+      <h2 id="honest-ending" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Honest Version of How This Ends
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        I told you the story of the fintech organisation. Two years of proof-building, culture-shifting, result-delivering. Getting into the annual plan, the half-year plan, the quarterly. Watching OKRs start to include design&apos;s perspective rather than just receive it.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        And I told you it still wasn&apos;t fully there after two years.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        I want to sit with that for a moment, because this is the part that most writing on this topic skips.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Getting a seat at the product strategy table is not a problem you solve once. It is a position you build, earn, lose partially, rebuild, and hold onto through a combination of consistent evidence, sustained relationships, and the kind of political fluency that nobody teaches in a design curriculum.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Some organisations will meet you halfway. Some will resist no matter what you deliver, because the culture around design&apos;s role was calcified long before you arrived and will outlast any single person&apos;s effort to change it. Knowing which situation you&apos;re in, and deciding accordingly whether to keep investing or to take what you&apos;ve learned somewhere it will compound faster, is itself a strategic decision.
+      </p>
+      <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-6">
+        You are not fighting for a seat at someone else&apos;s table. You are fighting to change what the table looks like. That is a longer fight. It is also the only one worth having.
+      </blockquote>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Start with one room. One conversation. One piece of evidence that you were not just a designer in that meeting, you were the person who changed the quality of the decision. That is how it begins. One room at a time.
+      </p>
+
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6 font-semibold">
+        Working on getting into the room, or trying to hold the seat you already have?
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        At Xperience Wave, we work 1:1 with mid-to-senior designers on exactly this: building the positioning, the language, and the evidence base to operate at the level the title requires. <a href="https://xperiencewave.com/strategy" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Book a free 45-minute strategy call.</a>
+      </p>
+
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>Read Next</strong>
+      </p>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li>If you have the title but not the influence yet: <Link href="/resources/blogs/senior-ux-designer-delivery-person" className="text-accent hover:underline font-medium">Senior Designer Still Treated Like a Delivery Person</Link></li>
+        <li>If AI is reshaping what strategy even means for design: <Link href="/resources/blogs/ai-job-designer-type" className="text-accent hover:underline font-medium">AI Isn&apos;t Taking Your Job. But This Type of Designer Will.</Link></li>
+        <li>If you&apos;re asking why the salary doesn&apos;t reflect the contribution: <Link href="/resources/blogs/12l-vs-30l-ux-designer-difference" className="text-accent hover:underline font-medium">The Difference Between a &#x20B9;12L and &#x20B9;30L UX Designer (It&apos;s Not Skills)</Link></li>
+        <li>Explore the programme built for this transition: <Link href="/programs/senior-ux-designer-mentorship" className="text-accent hover:underline font-medium">Xperience Wave Current</Link></li>
+      </ul>
+
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>Sources &amp; References</strong>
+      </p>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li><a href="https://www.mckinsey.com/capabilities/mckinsey-design/our-insights/the-business-value-of-design" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">McKinsey &amp; Company, The Business Value of Design (2018)</a></li>
+        <li><a href="https://douglaspowell1.medium.com/designers-as-leaders-now-that-we-have-a-seat-at-the-table-how-do-we-prove-we-belong" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Doug Powell, Designers As Leaders (IXDA Interaction 20, 2020)</a></li>
+      </ul>
+
+      <p className="text-base md:text-lg text-g500 italic mt-6">
+        - Murad, Co-founder &amp; Head of Design, Xperience Wave
+      </p>
+    </>
+  ),
 };
 
 // Table of contents for each blog post
@@ -2726,6 +3315,20 @@ const blogTableOfContents: Record<string, { id: string; title: string }[]> = {
     { id: 'interview-nda', title: 'What to Say in the Interview' },
     { id: 'one-question', title: 'One Question Before Your Next Application' },
   ],
+  '12l-vs-30l-ux-designer-difference': [
+    { id: 'visibility-trap', title: 'The Visibility Trap' },
+    { id: 'market-pay', title: 'What the Market Actually Pays' },
+    { id: 'legibility-factors', title: 'What Makes a Designer Legible as Valuable' },
+    { id: 'negotiation', title: 'The Negotiation' },
+    { id: 'what-to-do', title: 'What I Want You to Do With This' },
+  ],
+  'ux-designer-product-strategy-table': [
+    { id: 'what-the-table-is', title: 'What the Table Actually Is' },
+    { id: 'fintech-story', title: 'What It Actually Took: A Fintech Story' },
+    { id: 'the-werewolf', title: 'The Werewolf' },
+    { id: 'eight-things', title: 'Eight Things That Get You In and Keep You There' },
+    { id: 'honest-ending', title: 'The Honest Version of How This Ends' },
+  ],
   'ghosted-after-round-2-ux-interview': [
     { id: 'what-round-1-is', title: 'What Round 1 Actually Is' },
     { id: 'funnel-nobody-told', title: 'The Funnel Nobody Told You About' },
@@ -2815,6 +3418,16 @@ const blogMetadata: Record<string, { title: string; description: string; keyword
     title: 'NDA Work in Your UX Portfolio: 5 Strategies That Work | Xperience Wave',
     description: 'Almost every designer with meaningful experience has NDA constraints. Murad walks through five specific approaches to showing the work - with Krishna\'s story as proof of concept.',
     keywords: ['how to show NDA work in UX portfolio', 'UX portfolio NDA India', 'confidential work portfolio design', 'UX case study without showing screens', 'NDA portfolio strategy designer'],
+  },
+  '12l-vs-30l-ux-designer-difference': {
+    title: '\u20B912L vs \u20B930L UX Designer: What\u2019s the Real Difference | Xperience Wave',
+    description: 'The gap between a \u20B912L and \u20B930L UX designer in India has nothing to do with skills. Almas, Co-founder at Xperience Wave, explains the visibility trap and what actually makes a designer legible as valuable.',
+    keywords: ['UX designer salary difference India', 'how to increase UX designer salary India', 'UX designer salary Bangalore 2026', 'senior UX designer salary India', 'UX designer career growth', 'UX designer salary bands India'],
+  },
+  'ux-designer-product-strategy-table': {
+    title: 'How UX Designers Get a Seat at the Product Strategy Table | Xperience Wave',
+    description: 'Most UX designers are handed strategy as a brief, not a conversation. Murad, Co-founder at Xperience Wave, breaks down what the product strategy table actually is and the eight specific moves that get you in and keep you there.',
+    keywords: ['UX designer product strategy', 'how UX designers influence product decisions', 'design at the strategy table', 'UX design leadership India', 'senior UX designer career growth', 'product strategy for designers'],
   },
   'ghosted-after-round-2-ux-interview': {
     title: 'Why UX Designers Get Ghosted After Round 2 | Xperience Wave',

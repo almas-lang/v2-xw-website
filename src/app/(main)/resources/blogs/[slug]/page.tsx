@@ -3189,6 +3189,21 @@ const blogContent: Record<string, React.ReactNode> = {
         <li>If you want the full India career context: <Link href="/resources/blogs/ux-career-ladder-india" className="text-accent hover:underline font-medium">The UX Career Ladder Is Broken in India</Link></li>
         <li>Explore the programme: <Link href="/programs" className="text-accent hover:underline font-medium">Xperience Wave Current &rarr;</Link></li>
       </ul>
+      <h2 id="sources-references" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Sources &amp; References
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-8">
+        <li><a href="https://enhancv.com/blog/does-ats-reject-resumes" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Enhancv / HR Gazette (2025)</a> — Does the ATS Reject Your Resume? 25 structured interviews across industries covering 10 ATS platforms. Finding: 92% of recruiters do not configure content-based auto-rejection.</li>
+        <li><a href="https://www.hbs.edu/managing-the-future-of-work/Documents/research/hiddenworkers09032021.pdf" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Harvard Business School / Accenture (2021)</a> — Hidden Workers: Untapped Talent. Global study surveying 8,720 employers. Finding: 88% acknowledge their ATS configuration screens out qualified candidates through human-set filters.</li>
+        <li><a href="https://edligo.net/job-search-tips/i-analyzed-1000-rejected-resumes" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">EDLIGO (2025)</a> — Analysis of 1,000 rejected resumes across Workday, Taleo, and Greenhouse. Finding: 43% of rejections were due to formatting, parsing, or arbitrary filter failures, not qualification gaps.</li>
+        <li><a href="https://blog.theinterviewguys.com/ats-resume-rejection-myth" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">The Interview Guys (2025)</a> — Investigation tracing the &apos;75% auto-rejection&apos; claim to a 2012 sales pitch by Preptel. No methodology was ever published.</li>
+        <li><a href="https://blog.uxfol.io/ux-design-skills" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">UXfolio (2025)</a> — UX Designer Skills: What Hiring Managers Actually Look For. Design leads and recruiters no longer prioritise tool stacks or pixel-perfect UIs.</li>
+        <li><a href="https://indeed.design/article/ux-interview-advice-from-hiring-managers" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Indeed Design</a> — UX Interview Advice from Hiring Managers at Indeed, Facebook, and Google.</li>
+        <li><a href="https://thegrowthuxstudio.com/interview-process-for-a-senior-ux-designer" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">The Growth UX Studio (2025)</a> — Interview Process for a Senior UX Designer. Key insight: &apos;Mid-levels seek direction. Seniors create direction.&apos;</li>
+        <li><a href="https://hackajob.com/talent/technical-assessment/ui-ux-designer-interview" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">hackajob (2025)</a> — UI/UX Designer Interview Preparation Guide. Strategic thinking separates executional from senior/leadership-ready candidates.</li>
+        <li>Xperience Wave — direct observation. Portfolio review patterns and candidacy failure patterns drawn from reviewing hundreds of designer profiles and mentoring 140+ designers.</li>
+      </ul>
+
       <p className="text-base md:text-lg text-g500 italic mt-6">
         Almas Tasneem is Co-founder at Xperience Wave, where she leads sales, strategy, and client success. She has personally reviewed hundreds of designer profiles, salary situations, and interview processes, and has sat on both sides of the hiring conversation across the Bangalore product design ecosystem.
       </p>
@@ -3456,6 +3471,14 @@ const blogContent: Record<string, React.ReactNode> = {
         <li>If you are ready to get upstream into strategy: <Link href="/resources/blogs/ux-designer-product-strategy-table" className="text-accent hover:underline font-medium">How to Get a Seat at the Product Strategy Table</Link></li>
         <li>Explore the programme built for this transition: <Link href="/programs" className="text-accent hover:underline font-medium">Xperience Wave Current &rarr;</Link></li>
       </ul>
+      <h2 id="sources-references" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Sources &amp; References
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-8">
+        <li><a href="https://www.hofstede-insights.com/country/india" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Hofstede&apos;s Cultural Dimensions — India</a> — Power Distance Index score: 77 (world average: 56). Hierarchies are strongly accepted, decisions are centralised, criticism from subordinates is considered inappropriate, and employees do only what they are explicitly asked to do. Hiring and promotional decisions at senior levels are often relationship-based.</li>
+        <li>Xperience Wave — direct observation. Observations on India-specific design career patterns, title-vs-authority gaps, and the fork decision at Year 5 to 7 are drawn from 13+ years of direct experience and 140+ mentorship conversations.</li>
+      </ul>
+
       <p className="text-base md:text-lg text-g500 italic mt-6">
         Murad is Co-founder and Head of Design at Xperience Wave, a UX mentorship and education company based in Bangalore. He has 13+ years of design leadership experience across India, Japan, Singapore, Dubai, Australia, and the US, and has worked directly with 3,000+ designers across the country. He holds a Masters in Industrial Psychology.
       </p>
@@ -3877,6 +3900,7 @@ const blogTableOfContents: Record<string, { id: string; title: string }[]> = {
     { id: 'five-mistakes', title: 'Five Things Designers Get Wrong' },
     { id: 'how-to-prepare', title: 'How to Actually Prepare' },
     { id: 'strategy-call', title: 'Map Your Candidacy' },
+    { id: 'sources-references', title: 'Sources & References' },
     { id: 'read-next', title: 'Read Next' },
   ],
   'ux-career-ladder-india': [
@@ -3887,6 +3911,7 @@ const blogTableOfContents: Record<string, { id: string; title: string }[]> = {
     { id: 'three-things', title: 'Three Things You Can Do This Week' },
     { id: 'uncomfortable-truth', title: 'The Uncomfortable Truth' },
     { id: 'strategy-call', title: 'Want to Know Where You Are on This Map?' },
+    { id: 'sources-references', title: 'Sources & References' },
     { id: 'read-next', title: 'Read Next' },
   ],
   'ux-designer-product-strategy-table': [

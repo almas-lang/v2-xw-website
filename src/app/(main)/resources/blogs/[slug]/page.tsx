@@ -3452,6 +3452,304 @@ const blogContent: Record<string, React.ReactNode> = {
       </p>
     </>
   ),
+  'ic-to-manager-trap-designers': (
+    <>
+      <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
+        You were the best individual contributor on the team. Then they made you a manager. And everything that used to work stopped working.
+      </p>
+
+      <h2 id="three-weeks" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Three Weeks
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        I was sitting across a designer with eleven years of experience. That is not a junior profile. Eleven years means he had shipped products, survived reorgs, probably trained at least a few people informally. The kind of person you would expect to be leading a design function.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        He told me, very clearly: I cannot manage. I am really bad at it. I want to stay as an individual contributor.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        That statement, on its own, is perfectly valid. The IC track is a real career path. Some of the most impactful designers in the world never managed a single person. There is nothing inherently wrong with choosing depth over breadth.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        But I have had this conversation enough times to hear the difference between a genuine career preference and a wound talking. So I pushed.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        He circled. He deflected. Then, eventually: I was forced into a manager role once. It was the worst three weeks of my career. I wanted to quit.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Three weeks. That is how long it took for a designer with over a decade of experience to conclude, permanently, that he was not built for leadership.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        He is not an outlier. I hear this story constantly - from designers with seven, nine, twelve years of experience. The details change. The conclusion is always the same: I tried management, it was terrible, I am not cut for it.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        They are almost always wrong. They were not unfit for leadership. They were unprepared for it. And that distinction - between being unfit and being unprepared - is the one that determines whether they spend the rest of their career stuck at a ceiling or break through it.
+      </p>
+
+      <h2 id="the-data" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        This Is Not Just a Design Problem. The Data Is Ugly.
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Before you assume this is a personal failing - a weakness specific to designers or to India - look at what the research actually says.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>60% of new managers fail within their first 24 months.</strong> That is not a design industry number. That is across all industries, all functions, globally. The research, originally published by CEB (now Gartner), has been replicated and cited for over a decade. Six out of ten people promoted into management for the first time do not survive the role.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>82% of managers enter their role without any formal management or leadership training.</strong> The Chartered Management Institute (CMI) surveyed over 4,500 employees in the UK and found that the overwhelming majority of managers are what they call &apos;accidental managers&apos; - promoted because they were good at their previous job, not because they were prepared for the next one. The result: 28% of employees left organisations specifically because of a negative relationship with their manager.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>The better you are as an individual contributor, the worse you tend to perform as a manager.</strong> Researchers at Yale, MIT, and the University of Minnesota studied nearly 40,000 sales workers across 131 firms (Benson, Li, and Shue, published in the Quarterly Journal of Economics, 2019). They found that companies systematically promote their best individual performers - and that these top performers, once promoted, are associated with a 7.5% decline in the performance of the people they manage. The Peter Principle is not a joke. It is a measurable, costly organisational pattern.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Read those numbers again. This is not about individual weakness. This is a systemic failure in how organisations promote people. And design teams are hit especially hard, because the gap between what makes someone a great IC designer and what makes someone a functional design manager is wider than in almost any other discipline.
+      </p>
+
+      <h2 id="why-ics-thrive" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Why Individual Contributors Thrive - and Why That Becomes the Trap
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        To understand why the transition breaks so violently, you need to understand what made them successful in the first place.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Individual contributors earn everything under their own name. They set up strategy by themselves. They conducted research. They built insights. They delivered solutions. They got reviewed, adjusted, shipped. And when appraisals came, the recognition was clearly, specifically, personally theirs.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Over years, this builds a very specific identity: I am the person who delivers. I am reliable because of what I personally produce. And the organisation reinforces this at every step. Performance reviews reward individual output. Praise is directed at individual contribution. Promotions - at least in the early and mid years - are tied to what you personally shipped.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        None of this is wrong. But it is a completely different skill set from the one you will need as a leader. And nobody frames the transition honestly. It is not a promotion. It is a career change. The skills that made you the best player on the field are not the same skills required to make every player on the field better than they would have been alone. These two jobs are often in direct conflict.
+      </p>
+
+      <h2 id="what-happens" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What Actually Happens When an IC Becomes a Manager
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        When you move into a leadership position, you become like a father to a family. That sounds like a metaphor, but it is operationally accurate.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Simple decisions you used to make for yourself now impact the entire team. Every choice ripples through other people&apos;s work, their timelines, their morale. You are no longer accountable only for your output - you are accountable for the output, growth, and emotional state of every person reporting to you.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        You do not just fight your own fights anymore. You have to sit with someone else and help them understand how to fight theirs. And the uncomfortable reality is that your team is not sitting there waiting for your wisdom. They have their own opinions, their own frustrations, their own pace. Some of them think you are wrong. Some of them think they should have your job.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        And here is the part nobody tells you: no matter what you do, the labels are waiting.
+      </p>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li>Too involved? Micromanager.</li>
+        <li>Too much space? Absent. Checked out. Does not care.</li>
+        <li>Push for quality? Unreasonable expectations.</li>
+        <li>Accept what&apos;s delivered? Has no standards.</li>
+      </ul>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        There is no position you can take that will not be criticised by someone on the team. This is the fundamental nature of management, and it shocks people who spent their careers being praised for individual excellence.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        But the real damage is not the labels. The real damage is the internal monologue that starts running inside the new manager&apos;s head:
+      </p>
+      <blockquote className="border-l-4 border-accent pl-5 text-base md:text-lg text-g600 mb-8">
+        <p className="italic mb-4">&apos;Why do they even involve me when they are not clear about what they want?&apos;</p>
+        <p className="not-italic text-sm text-g500 mb-4">(You were supposed to bring that clarity. That is literally your job now.)</p>
+        <p className="italic mb-4">&apos;I do not know why they cannot work at my pace.&apos;</p>
+        <p className="not-italic text-sm text-g500 mb-4">(They are not you. They will never be you. That is not a flaw - it is the nature of a team.)</p>
+        <p className="italic mb-4">&apos;How can they be so stupid?&apos;</p>
+        <p className="not-italic text-sm text-g500">(They are not stupid. They have different experience levels, different contexts, different priorities. Your job is to close those gaps, not resent them.)</p>
+      </blockquote>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Every one of these thoughts is a sign that the person is still operating with an IC&apos;s mindset in a manager&apos;s role. They are measuring the team against themselves - their speed, their standards, their instincts. And the team will never match that benchmark, because a team is not a collection of clones. It is a collection of people with different strengths, different ceilings, and different speeds. Learning to work with that reality, rather than being frustrated by it, is the actual skill of leadership.
+      </p>
+
+      <h2 id="two-failure-modes" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Two Failure Modes (I Have Seen Both Destroy Teams)
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        When a strong IC gets pushed into management without preparation, they almost always fall into one of two patterns. Both feel like survival strategies. Both break the team.
+      </p>
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        The Conveyor Belt
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is the manager who becomes a pass-through. Leadership hands down decisions - they relay them to the team. The team produces work - they carry it back up. They do not add perspective. They do not push back. They do not shape strategy. They are a human email forward.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This happens because they never learned how to sit at the leadership table and contribute. They do not know how to challenge a product decision in business language. They do not know how to frame a design recommendation in terms a VP cares about. So they defer. They pass. They become invisible - and the team notices immediately.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        I have watched this happen in real time. A design team that was functioning well under an experienced lead lost that lead and got a promoted IC as their new manager. Within two months, the team&apos;s confidence was gone. The feeling was: our manager has no power. Nothing we say through them will matter. We are on our own. Strategy conversations happened without design in the room. Not because design was excluded - because the new manager did not know how to claim the seat. (If this pattern sounds familiar, the blog on <Link href="/resources/blogs/ux-designer-product-strategy-table" className="text-accent hover:underline font-medium">getting a seat at the product strategy table</Link> goes deeper into the werewolf skills required to survive those rooms.)
+      </p>
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        The One-Person Army
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is the opposite failure, and it is more common among strong ex-ICs. When they do not deliver personally, they feel like they have done nothing. So they pick one part of the project - usually the most interesting design problem - and go deep. They design. They prototype. They solve.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        And while they are heads-down on that one piece, everything else they are responsible for falls apart. The strategy that should be driving business alignment - ignored. Stakeholder relationships that need maintaining - neglected. Team performance and motivation - unmanaged. Resource allocation across the project - overlooked. Quality of deliverables outside their personal focus - unchecked.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        And the worst irony: despite doing excellent individual work on that one thing, they will still be called out. Leadership will say they are warming the seat. Not getting their hands dirty. Not understanding the ground reality. Because the ground is the entire project, not the corner they chose to occupy.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Both failure modes end in the same place. The designer concludes that management is not for them. But the failure was not in the person. It was in the preparation - or rather, the complete absence of it.
+      </p>
+
+      <h2 id="sprint-meeting" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Sprint Meeting That Made Me Understand the Real Cost
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        I have sat in sprint meetings where the design team is giggling and laughing. Comfortable. Relaxed. And I remember thinking: how are they this happy? What are they doing that I am clearly missing?
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        When I dug deeper, the answer was almost always the same: they were following instructions word for word. Product gave a brief. They executed exactly what was asked. No pushback. No questioning. No &apos;is this the right problem?&apos; No &apos;what if we approached this differently?&apos;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        It was easy. It was comfortable. It was rewarding - because nobody argues with you when you give them exactly what they asked for. You get praised, you get positive reviews, you go home on time.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        And the entire representation of design in that organisation went to the gutters.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is what happens when designers choose permanent comfort over growth. They become the garnish on someone else&apos;s plate - present, visible, but not essential. (I wrote about this pattern in detail in <Link href="/resources/blogs/conversations-senior-designers-have" className="text-accent hover:underline font-medium">5 Conversations Senior Designers Have That Mid-Level Designers Don&apos;t</Link> - the garnish concept is one of the most uncomfortable ideas in that blog, and one of the most true.)
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Why does this matter in a blog about the IC-to-manager transition? Because this is where many ICs end up if they never make the jump. Not stuck at a ceiling in the abstract sense. Stuck in a sprint meeting, following instructions, filling colours, getting praised for compliance, and slowly watching design&apos;s influence in the organisation disappear. The IC ceiling is not just a salary cap. It is a relevance cap.
+      </p>
+
+      <h2 id="stuck-zone" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Stuck Zone: Too Senior for IC, Too Scarred for Leadership
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Remember the designer with eleven years of experience? Here is what his career looks like now.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        He knows he is supposed to grow. He knows his salary has a ceiling as an IC. He knows the market increasingly expects senior designers to lead. But he also knows that the one time he tried, it was the worst experience of his career. So he is stuck.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        Designers in this position usually try to resolve the tension in one of two ways:
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Path A: Half-hearted leadership.</strong> The organisation pushes them toward a lead role. They accept, but without conviction. They attend leadership meetings but do not speak. They carry the title but not the behaviour. Everyone - the team, the stakeholders, the designer - knows it is not working.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Path B: Doubling down on craft.</strong> They decide to become the best possible IC. They learn new tools, new specialisations, go deeper on visual or interaction or research. But this has diminishing returns. After a certain seniority level, the market does not pay significantly more for deeper craft alone. (The blog on <Link href="/resources/blogs/12l-vs-30l-ux-designer-difference" className="text-accent hover:underline font-medium">the difference between a &#x20B9;12L and &#x20B9;30L designer</Link> breaks down exactly where this ceiling sits and why it exists.)
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Both paths lead to the same feeling: stuck. Not growing. Not earning what they could. Not enjoying the work. And the tragedy is that the problem was never capability. The eleven-year designer was not unfit to lead. He was thrown into a pool before anyone taught him to swim, and now he is afraid of water. The fear is real. But the conclusion - that he cannot swim - is not.
+      </p>
+
+      <h2 id="how-to-prepare" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        How to Actually Prepare (Before You Get the Title)
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The transition from IC to leader is not an event. It is a multi-year process that most designers skip entirely because nobody tells them it exists. Here is what the preparation actually looks like - not as theory, but as specific things you can start doing now.
+      </p>
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        Years 1-3: Build a Core Identity
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Before you can lead anyone, you need to know what you stand for as a designer. Pick your specialisation. Not a shallow familiarity with everything - genuine depth in an area you can own. This is the credibility that leadership will later run on. Without it, your team will not trust your judgment. And they should not.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If you are in this phase right now, the <a href="https://xperiencewave.com/resources/tools" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">10D Capability Assessment</a> can help you identify where your core gaps are and what to build first.
+      </p>
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        Years 3-5: Stop Solving Problems Alone
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is where most ICs stop growing. They keep solving problems individually - and they get very good at it. But they never learn the muscle that leadership actually requires: solving problems through other people.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Here is a concrete move you can make this week. The next time you identify a good problem to solve, do not solve it yourself. Bring people together. Run a workshop. Moderate a focused discussion. Let the group arrive at possible solutions. What you are doing is subtle but critical: you are still contributing, but you are also learning to direct outcomes without personally producing every output. That is the first muscle of leadership, and it only develops through deliberate practice.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        From here, go deeper. Try to understand the individual roles of everyone you work with - product, engineering, marketing, business, sales. Not just their function. Their objectives, their incentives, their constraints. We think of this as BTSM collaboration - Business, Technology, Sales, and Marketing. You need to understand these functions well enough that you could do part of their job. Not because you will, but because you cannot lead cross-functional conversations if you cannot speak cross-functional language.
+      </p>
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        Years 5-7: Learn to Navigate, Not Just Design
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        At this stage, growth is no longer about design skill. It is about organisational navigation. You need to understand design maturity not as a theoretical model but as a practical constraint. If your organisation expects you to deliver good-looking screens and nothing more, no amount of craft improvement will change your ceiling. You need to learn how to <Link href="/resources/blogs/ux-designer-product-strategy-table" className="text-accent hover:underline font-medium">get a seat at the product strategy table</Link> - the werewolf skills: speaking business, holding your ground, translating design value into terms that move budget decisions.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is also where you learn stakeholder management as a survival skill, not a soft skill. How to work with people who are unnecessarily bossy. How to collaborate with stakeholders who do not understand or respect design. When to hold your ground and when to let things go. (The <Link href="/resources/blogs/senior-ux-designer-delivery-person" className="text-accent hover:underline font-medium">delivery person blog</Link> goes deeper on this exact dynamic.)
+      </p>
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        Before You Step In: Build Your Brand
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This one surprises people. Before you take a leadership role, your personal brand needs to already signal leadership. Not through titles - through how people experience working with you.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Do people come to you for advice outside your immediate scope? Do stakeholders outside your team know your name? When a cross-functional decision is being made, does anyone think to include you?
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        If the answer is no, you are not ready - not because you lack the skills, but because the organisation does not see you that way yet. Walking into a leadership role without that perception already in place means you will spend your first months just trying to prove you belong, on top of learning how to actually do the job. Prepare the axe before you go cut the tree. A lot of people see a shining axe and fall in line. Make sure you build a presence that people would genuinely respect before you step into the role. Because if you arrive unprepared, you will conclude prematurely that you are not cut for it - just like the eleven-year designer did.
+      </p>
+
+      <h2 id="ic-skills-end" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Individual Contributor Skills End at You
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        For better or worse, IC skills are yours - your pace, your quality, your standards, your deliverables.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Design leaders are responsible for the team&apos;s success. And teams are not you. Some people are slow at things you find easy. Some are fast at things you struggle with. Some feel laid back when you want urgency. Some want urgency when you need patience.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If you thought everybody works at the same pace as you do - you are going to go crazy. That is not a flaw in the team. That is the nature of teams. And learning to work with that, rather than fighting it or retreating from it, is the actual skill of leadership.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The research says 60% of new managers fail. The CMI says 82% of them were never trained. The Benson study says the better you were individually, the harder the transition will be. None of this means you cannot lead. All of it means that the system is not designed to prepare you, and you need to prepare yourself.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        The eleven-year designer who quit in three weeks? If he had spent two years building the muscles described in this blog - moderating workshops, navigating stakeholders, understanding cross-functional language, building a brand that signalled leadership before he carried the title - those three weeks would have gone very differently. Not perfectly. But differently enough that he would still be growing instead of stuck. He was not unfit. He was unprepared. And now you know the difference.
+      </p>
+
+      <h2 id="strategy-call" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What to Do From Here
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If you are a senior IC hesitating about leadership because of a bad experience - or because you have watched others fail at it - the hesitation makes sense. But the conclusion that you are not built for it probably does not.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The transition from IC to leader requires specific, sequenced preparation. Not reading about it. Not attending a one-off workshop. But deliberately practising delegation, stakeholder navigation, team moderation, and strategic communication over months before you carry the title.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        That is what our 1:1 mentorship programme is designed for. We work with designers who have the experience and the skill but not the preparation, and we close that gap before the title arrives. Not management theory. Specific muscles for a specific transition.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        If that sounds like where you are: <a href="https://calendly.com/team-xperiencewave/xw-strategy" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">book a strategy call</a>. No sales pitch. Just an honest conversation about whether you are ready, what is missing, and what the path forward looks like.
+      </p>
+
+      <h2 id="read-next" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Read Next
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li>If you have the title but not the influence: <Link href="/resources/blogs/senior-ux-designer-delivery-person" className="text-accent hover:underline font-medium">Senior Designer Still Treated Like a Delivery Person</Link></li>
+        <li>On the real difference between mid-level and senior pay: <Link href="/resources/blogs/12l-vs-30l-ux-designer-difference" className="text-accent hover:underline font-medium">The Difference Between a &#x20B9;12L and &#x20B9;30L UX Designer</Link></li>
+        <li>How to enter the strategy conversations that determine your ceiling: <Link href="/resources/blogs/ux-designer-product-strategy-table" className="text-accent hover:underline font-medium">How to Get a Seat at the Product Strategy Table</Link></li>
+        <li>On the career phases that Indian organisations don&apos;t explain: <Link href="/resources/blogs/ux-career-ladder-india" className="text-accent hover:underline font-medium">The UX Career Ladder Is Broken in India</Link></li>
+        <li>The conversations that separate senior designers from everyone else: <Link href="/resources/blogs/conversations-senior-designers-have" className="text-accent hover:underline font-medium">5 Conversations Senior Designers Have That Mid-Level Designers Don&apos;t</Link></li>
+        <li>Explore the programme: <Link href="/programs" className="text-accent hover:underline font-medium">Xperience Wave Current &rarr;</Link></li>
+      </ul>
+
+      <h2 id="sources-references" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Sources &amp; References
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-8">
+        <li><a href="https://www.gartner.com" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">CEB/Gartner</a> - New manager failure rate research: 60% of new managers fail within their first 24 months. Multiple replications cited across PRADCO, Inc. Magazine, and Fast Company.</li>
+        <li><a href="https://www.managers.org.uk/knowledge-and-insights/research/better-managed-britain" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Chartered Management Institute (CMI) - Better Managed Britain Report, 2023</a> - Survey of 4,500+ employees. 82% of managers enter their role without formal training. 28% of employees left organisations because of a negative relationship with their manager.</li>
+        <li><a href="https://academic.oup.com/qje/article/134/4/2085/5550760" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Benson, Li, Shue - &apos;Promotions and the Peter Principle,&apos; Quarterly Journal of Economics, 2019</a> - Study of 39,000+ sales workers across 131 firms. Top individual performers, once promoted, are associated with a 7.5% decline in the performance of the people they manage.</li>
+        <li>Peter, L.J. and Hull, R. - The Peter Principle: Why Things Always Go Wrong. William Morrow, 1969.</li>
+        <li>Xperience Wave - direct observation. The eleven-year designer story, the conveyor belt and one-person army failure modes, the sprint meeting observation, and the preparation framework come from 13+ years of direct experience and hundreds of conversations with designers navigating this transition.</li>
+      </ul>
+
+      <p className="text-base md:text-lg text-g500 italic mt-6">
+        Murad is Co-founder and Head of Design at Xperience Wave, a UX mentorship and education company based in Bangalore. He has 13+ years of design leadership experience across India, Japan, Singapore, Dubai, Australia, and the US, and has worked directly with 3,000+ designers across the country. He holds a Masters in Industrial Psychology.
+      </p>
+    </>
+  ),
   'career-switch-to-ux-india-timeline': (
     <>
       <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
@@ -4591,6 +4889,20 @@ const blogTableOfContents: Record<string, { id: string; title: string }[]> = {
     { id: 'sources-references', title: 'Sources & References' },
     { id: 'read-next', title: 'Read Next' },
   ],
+  'ic-to-manager-trap-designers': [
+    { id: 'three-weeks', title: 'Three Weeks' },
+    { id: 'the-data', title: 'The Data Is Ugly' },
+    { id: 'why-ics-thrive', title: 'Why ICs Thrive - and Why That Becomes the Trap' },
+    { id: 'what-happens', title: 'What Actually Happens When an IC Becomes a Manager' },
+    { id: 'two-failure-modes', title: 'The Two Failure Modes' },
+    { id: 'sprint-meeting', title: 'The Sprint Meeting That Made Me Understand' },
+    { id: 'stuck-zone', title: 'The Stuck Zone' },
+    { id: 'how-to-prepare', title: 'How to Actually Prepare' },
+    { id: 'ic-skills-end', title: 'Individual Contributor Skills End at You' },
+    { id: 'strategy-call', title: 'What to Do From Here' },
+    { id: 'sources-references', title: 'Sources & References' },
+    { id: 'read-next', title: 'Read Next' },
+  ],
   'career-switch-to-ux-india-timeline': [
     { id: 'the-numbers', title: 'First - The Numbers' },
     { id: 'first-mistake', title: 'The Mistake Almost Everyone Makes First' },
@@ -4736,6 +5048,11 @@ const blogMetadata: Record<string, { title: string; description: string; keyword
     title: 'What Design Managers Look for When Hiring Senior UX Designers | Xperience Wave',
     description: 'In a job application, you are the product and the recruiter is the user. Almas, Co-founder at Xperience Wave, breaks down what design managers are actually evaluating at every stage of the senior UX hiring process and the signals that win and lose candidacies.',
     keywords: ['what design managers look for senior UX designer', 'senior UX designer hiring India', 'UX designer interview tips', 'UX portfolio hiring manager', 'senior UX designer skills 2026', 'UX job interview India'],
+  },
+  'ic-to-manager-trap-designers': {
+    title: 'The IC-to-Manager Trap: Why Great Designers Fail as Design Leaders | Xperience Wave',
+    description: '60% of new managers fail within 24 months. 82% were never trained. A designer with 11 years of experience quit in three weeks. Not because he couldn\'t lead - because he was never prepared to. Here is how to prepare before you get the title.',
+    keywords: ['UX designer IC to manager transition', 'design leadership failure', 'IC vs manager designer', 'design manager preparation', 'individual contributor ceiling', 'UX leadership skills India', 'accidental manager design', 'first time design manager'],
   },
   'career-switch-to-ux-india-timeline': {
     title: 'The Honest Career Switcher Timeline: From Zero to UX Job Offer in India | Xperience Wave',

@@ -140,6 +140,17 @@ export const blogPosts: BlogPost[] = [
     readTime: '9 min',
   },
   {
+    id: '30',
+    slug: 'ic-to-manager-trap-designers',
+    title: 'The IC-to-Manager Trap: Why Great Designers Fail as Design Leaders',
+    excerpt: '60% of new managers fail within 24 months. 82% were never trained. A designer with 11 years of experience quit in three weeks. Not because he couldn\'t lead - because he was never prepared to. Here is how to prepare before you get the title.',
+    category: 'career-growth',
+    image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&q=80',
+    author: { name: 'Shaik Murad' },
+    publishedAt: '2026-03-29',
+    readTime: '14 min',
+  },
+  {
     id: '29',
     slug: 'career-switch-to-ux-india-timeline',
     title: 'The Honest Career Switcher Timeline: From Zero to UX Job Offer in India',

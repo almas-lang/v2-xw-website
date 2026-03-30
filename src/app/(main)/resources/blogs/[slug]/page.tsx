@@ -1523,7 +1523,7 @@ const blogContent: Record<string, React.ReactNode> = {
         Book a free 45-minute strategy call with Xperience Wave. We&apos;ll map your full funnel - visibility, positioning, portfolio, pipeline - and give you a specific plan for what to fix first. No obligations. No pitch.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        <Link href="/contact" className="text-accent hover:underline font-medium">Book your strategy call</Link>
+        <a href="https://calendly.com/team-xperiencewave/xw-strategy" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Book your strategy call</a>
       </p>
 
       <hr className="my-10 border-g200" />
@@ -1747,7 +1747,7 @@ const blogContent: Record<string, React.ReactNode> = {
         Most designers we speak to are in the right place for our <Link href="/programs" className="text-accent hover:underline font-medium">Current programme</Link> (for mid-to-senior designers) or our Tide programme (for designers ready to lead teams). The strategy call tells us which, or neither.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        <Link href="/contact" className="text-accent hover:underline font-medium">Book your free strategy call</Link>
+        <a href="https://calendly.com/team-xperiencewave/xw-strategy" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Book your free strategy call</a>
       </p>
 
       <hr className="my-10 border-g200" />
@@ -2001,7 +2001,7 @@ const blogContent: Record<string, React.ReactNode> = {
         The Tide programme is for designers at or approaching a leadership level, working through what the landscape shift means for how design leadership needs to operate from here.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        If you are not sure which of the three patterns in this piece describes you - or whether you are somewhere between them - the clearest next step is a <Link href="/contact" className="text-accent hover:underline font-medium">free 45-minute strategy call</Link>. We will map where you actually are, what is working, and what to focus on first. No sales pitch. Walk away with clarity either way.
+        If you are not sure which of the three patterns in this piece describes you - or whether you are somewhere between them - the clearest next step is a <a href="https://calendly.com/team-xperiencewave/xw-strategy" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">free 45-minute strategy call</a>. We will map where you actually are, what is working, and what to focus on first. No sales pitch. Walk away with clarity either way.
       </p>
 
       <hr className="my-10 border-g200" />
@@ -2353,7 +2353,7 @@ const blogContent: Record<string, React.ReactNode> = {
         If you have NDA work sitting unused - or a portfolio that is not converting into interview calls - both are fixable problems with a specific approach. The <Link href="/programs" className="text-accent hover:underline font-medium">Current programme</Link> works through portfolio strategy as part of building designers from execution-layer contribution to strategic influence.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        <Link href="/contact" className="text-accent hover:underline font-medium">Book a free 45-minute strategy call</Link> - walk away with clarity on where to focus first.
+        <a href="https://calendly.com/team-xperiencewave/xw-strategy" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Book a free 45-minute strategy call</a> - walk away with clarity on where to focus first.
       </p>
 
       <p className="text-base md:text-lg text-g500 italic mt-6">
@@ -2603,7 +2603,7 @@ const blogContent: Record<string, React.ReactNode> = {
         If you are further along - senior and moving into leadership - the Tide programme is where that work happens.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        <Link href="/contact" className="text-accent hover:underline font-medium">Book a free 45-minute strategy call</Link> - walk away with a clear read on where you are in the process and what specifically needs to change.
+        <a href="https://calendly.com/team-xperiencewave/xw-strategy" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Book a free 45-minute strategy call</a> - walk away with a clear read on where you are in the process and what specifically needs to change.
       </p>
 
       <hr className="my-10 border-g200" />
@@ -2884,7 +2884,7 @@ const blogContent: Record<string, React.ReactNode> = {
         Not sure where your specific gap is?
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        <a href="https://xperiencewave.com/strategy" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Book a free 45-minute strategy call</a> with Xperience Wave. We&apos;ll look at your positioning, your compensation situation, and what specifically is keeping you in the wrong band. We work 1:1, no group sessions, no generic advice.
+        <a href="https://calendly.com/team-xperiencewave/xw-strategy" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Book a free 45-minute strategy call</a> with Xperience Wave. We&apos;ll look at your positioning, your compensation situation, and what specifically is keeping you in the wrong band. We work 1:1, no group sessions, no generic advice.
       </p>
 
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
@@ -3733,7 +3733,7 @@ const blogContent: Record<string, React.ReactNode> = {
         Working on getting into the room, or trying to hold the seat you already have?
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        At Xperience Wave, we work 1:1 with mid-to-senior designers on exactly this: building the positioning, the language, and the evidence base to operate at the level the title requires. <a href="https://xperiencewave.com/strategy" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Book a free 45-minute strategy call.</a>
+        At Xperience Wave, we work 1:1 with mid-to-senior designers on exactly this: building the positioning, the language, and the evidence base to operate at the level the title requires. <a href="https://calendly.com/team-xperiencewave/xw-strategy" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Book a free 45-minute strategy call.</a>
       </p>
 
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">

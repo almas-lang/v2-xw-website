@@ -3452,6 +3452,216 @@ const blogContent: Record<string, React.ReactNode> = {
       </p>
     </>
   ),
+  'career-switch-to-ux-india-timeline': (
+    <>
+      <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
+        You&apos;ve been reading about UX design for weeks. Maybe months. You&apos;ve watched the YouTube videos, gone through the forums, talked to a few designers. And somewhere between all of it you&apos;ve found a timeline that someone swears by - 3 months, 6 months, 12 months, take your pick.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Every number feels both too fast and too slow. Too fast because you don&apos;t know how anyone could actually learn this in 90 days. Too slow because you&apos;re sitting on years of professional experience that feels like it should count for something - and nobody is telling you whether it does or doesn&apos;t.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Here&apos;s what&apos;s actually happening: you&apos;re reading advice written for someone else. Most career switch content is written for freshers - people starting from nothing. You are not starting from nothing. You are starting from somewhere. And where you&apos;re starting from changes the timeline, the approach, and what you need to build that most guides are telling you to build from scratch.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        This blog gives you the honest version. Not what takes the longest. Not what sounds safest to promise. What actually works for someone who already has professional experience and wants to move into UX without starting over.
+      </p>
+
+      <h2 id="the-numbers" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        First - The Numbers
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The UX design field draws more career switchers than almost any other design discipline. An Indeed survey found that nearly half of the workforce has made a dramatic career switch at some point in their working life. UX specifically has always attracted people from non-traditional backgrounds - psychology, engineering, architecture, sales, development - because the discipline sits at the intersection of user behaviour, business logic, and technology. You don&apos;t have to have studied design to think about how people experience things.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The honest timeline for a committed career switcher in a structured programme: 6 to 9 months to a first job offer. Some faster - one of our mentees, Divya, came from interior design with no digital product experience and had a UX offer in 5 months. Some take 12. The variance is almost never about intelligence or design talent. It&apos;s about three things: how much relevant prior experience you&apos;re building from, whether you have structure and accountability, and whether you&apos;re spending your time on the right things.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        That last point is where most people lose 3 to 6 months.
+      </p>
+      <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-8">
+        Structured programme graduates land UX roles up to 40% faster than self-taught career switchers. Not because they learn more - because they waste less time figuring out what to learn next.
+        <br /><br />
+        <span className="not-italic text-sm text-g500">(Source: <a href="https://www.interaction-design.org/literature/article/how-to-change-your-career-to-ux-design" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">2024 industry study, career change research data via IxDF</a>)</span>
+      </blockquote>
+
+      <h2 id="first-mistake" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Mistake Almost Everyone Makes First
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        They start with the portfolio.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Not because the portfolio isn&apos;t important - it is. But because the portfolio is supposed to document the work, not precede it. When you build the portfolio before you&apos;ve done the work, you get a portfolio full of app redesigns, fictional briefs, and Dribbble-inspired screens that look like you spent three weeks learning Figma and called it UX. Any experienced hiring manager will close it in five minutes.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The advice to &apos;build a portfolio&apos; gets given so freely and so early that most career switchers spend their first three months optimising for something that&apos;s useless without the thinking behind it. It is the gown before the surgery. Wearing it correctly does not make you a surgeon.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The second mistake is treating previous experience as a liability to explain away. If you&apos;re a developer, you spend half your cover letter apologising for not having design experience. If you&apos;re an architect, you preface everything with &apos;I know I&apos;m not a traditional UX designer but...&apos; Stop. Your previous experience is not a gap to bridge. It is a shifting skill - a specific advantage that, if you understand it and position it correctly, makes you more valuable in certain product contexts than someone who went straight from a design degree into UX.
+      </p>
+      <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-8">
+        Developers who switch to UX build solutions that engineering teams can actually implement.<br />
+        Architects who switch think in systems and constraints before they think in screens.<br />
+        Sales and customer support people know what users actually complain about - not what they say in a usability test.
+        <br /><br />
+        None of these are weaknesses that need to be overcome. They are starting points that need to be positioned correctly.
+      </blockquote>
+
+      <h2 id="phase-1" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The 3+3+3 Framework - Phase 1: Learn to Think, Not Just to Do (Months 1 to 3)
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is not a course structure. It&apos;s a pattern observed across every career switch that has worked - and every one that stalled. The people who land roles consistently do three things in roughly this sequence. The ones who don&apos;t are almost always doing them out of order.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The foundation is not Figma. The foundation is how a UX designer thinks - how they interrogate a brief before accepting it, how they decide what to design before designing anything, how they connect a user&apos;s behaviour to a business decision and make that connection legible to people who don&apos;t speak design.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Most people skip this phase or compress it badly. They do a crash course, learn the five-stage design process by name, produce one wireframe, and declare themselves ready to build a portfolio. They are not ready. They have learned the vocabulary of design thinking without the underlying logic. When a hiring manager asks them why they made a specific design decision, they describe the process they followed rather than the reasoning behind the choice. That&apos;s the tell.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        What Phase 1 actually requires: core UX capability - research, interaction design, information architecture, wireframing, usability testing - at a functional level. Not expert level. You are not trying to be a senior UX designer yet. You are trying to be able to run a research session, map a user flow, and wireframe a feature end to end with a reason for every decision.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        It also requires something most guides don&apos;t mention: building your shifting skill inventory. Sit down and write out what you specifically know from your previous field. Not a generic list. Specific things. The developer knows what makes a handoff clean and what makes a developer want to redesign your feature in their head. The architect knows how to navigate constraints without losing the intent of the design. The sales person knows the three objections users raise that never appear in research reports. These are real competitive advantages. Identify them before Phase 2, because you need them in your portfolio narrative.
+      </p>
+      <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-8">
+        The trap in Phase 1: mistaking tool speed for design depth. Figma speed is praised in most junior environments. It feels like progress. You can show people something. But Figma skill without thinking skill is decoration. It impresses people who don&apos;t hire UX designers. It does not impress the people who do.
+      </blockquote>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        &rarr; On what the salary gap is actually driven by - not tools: <Link href="/resources/blogs/12l-vs-30l-ux-designer-difference" className="text-accent hover:underline font-medium">The Difference Between a &#x20B9;12L and &#x20B9;30L UX Designer</Link>
+      </p>
+
+      <h2 id="phase-2" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Phase 2: Build the Evidence (Months 4 to 6)
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is where most career switchers stall. They have done Phase 1 - more or less. They know the theory. They have done one or two practice exercises. And they don&apos;t know what to do next, so they either start applying too early with too thin a portfolio, or they go back to watching more content instead of producing more work.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Phase 2 is not about more learning. It is about proving - through real work - that you can think like a UX designer in an actual organisational context.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Divya was in this phase when she came to us. Five years of interior design experience. Understood constraints, clients, and the gap between concept and execution. What she didn&apos;t have was digital product work. We didn&apos;t ask her to start from scratch. We asked her to bring her spatial thinking into a digital context - a project where that constraint navigation actually mattered. Three weeks in, the case study looked nothing like an app redesign. It looked like a designer who already knew how to think. Five months after starting, she had a role.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        What Phase 2 requires: two to three case studies that show the full process - not the output. Problem identification, research, synthesis, design decision with reasoning, what happened when you tested it. The narrative matters as much as the screens. A case study without thinking visible in it is just a portfolio of pictures.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        It also requires building your personal brand - not your portfolio website, your positioning. You are not transitioning from something else into UX. You are a UX designer with a background in X. The difference is not cosmetic. It is the difference between a candidate who is explaining their past and one who is presenting their value.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        And it requires presentation practice - in front of people, not in your room. The ability to present work and defend your decisions under push-back is a skill that does not develop in isolation. Group clinics, peer critique sessions, presenting to people who don&apos;t already believe in your work - this is what builds the confidence that makes interviews survivable.
+      </p>
+      <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-8">
+        The test for whether you&apos;re ready to move to Phase 3: Can you explain a project in 10 minutes - what the problem was, what you did, why you made the decisions you made, and what you learned? Not just show the screens. Not just describe the stages you went through. Explain the reasoning. If you can do that for two projects, you are ready to apply.
+      </blockquote>
+
+      <h2 id="phase-3" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Phase 3: Target the Right Role (Months 7 to 9)
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The switch phase is where strategy matters as much as skill. Most career switchers apply to every UX role they can find with the same portfolio and the same story. Three months later they have a hundred rejections and no idea what went wrong.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        What went wrong is targeting. They applied to roles that required something they didn&apos;t have, ignored roles where their background was genuinely competitive, and wrote cover letters that apologised for their previous experience instead of leveraging it.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4 font-semibold">
+        Target by total experience, not UX experience:
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If you have five years of professional experience as a developer or an architect, you should not be applying for internships. You should be targeting UX roles where your previous background is an advantage - product companies in your industry, teams where you&apos;d talk to engineers every day, organisations building products with complex technical or spatial constraints. The designer who has spent five years doing something relevant is more valuable in that specific context than someone with two years of pure UX experience.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4 font-semibold">
+        Realistic first roles by background:
+      </p>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li><strong>Parallel digital designers (graphic, motion, UI):</strong> UX Designer, &#x20B9;5-8 LPA. Visual skill is an advantage. Research and systems thinking needs explicit demonstration in the portfolio.</li>
+        <li><strong>Non-digital designers (architecture, interior):</strong> UX Designer, &#x20B9;4-7 LPA. Systems and constraint thinking transfers well. Digital product context needs to be built in Phase 2 work.</li>
+        <li><strong>Developers and engineers:</strong> UX Designer with noted technical background, &#x20B9;5-9 LPA. Practical thinking is rare and valued. Don&apos;t undersell it.</li>
+        <li><strong>Non-design, non-tech backgrounds (sales, support, operations):</strong> Associate UX Designer or UX Researcher, &#x20B9;3.5-6 LPA. User proximity is the shifting skill. Research-heavy roles play to this strength.</li>
+        <li><strong>Fresh graduates and design school students:</strong> Associate UX Designer or internship-to-hire. The market is competitive at this level. Live project work in the transition period is the differentiator.</li>
+      </ul>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4 font-semibold">
+        UX interviews work differently:
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        You will be assessed on how you think under ambiguity. How you ask clarifying questions before jumping to solutions. How you handle constraints. The designers who fail UX interviews almost always fail because they can&apos;t explain their thinking, or they jump to solutions before they&apos;ve understood the problem. Neither of these is a talent problem. Both are fixable with practice.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4 font-semibold">
+        The network matters more than applications:
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        In the Indian design ecosystem, senior roles are almost never filled through job board applications. They&apos;re filled through referrals, introductions, and direct conversations. For career switchers specifically, being known in the community before you start applying dramatically changes the conversion rate. A community like WaveMakers Connect - where you&apos;re in the room with hiring managers and design heads - is worth more than 200 applications to roles you found on LinkedIn.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        &rarr; What design managers actually look for before you send anything: <Link href="/resources/blogs/what-design-managers-look-for-senior-ux-hiring" className="text-accent hover:underline font-medium">What Design Managers Look for When Hiring Senior UX Designers</Link>
+      </p>
+
+      <h2 id="three-traps" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Three Traps That Cost Most People Months
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Learning instead of building.</strong> After Phase 1, you do not need more theory. You need more work. The career switchers who take 12 months instead of 6 almost always spend months 4 to 9 consuming content rather than producing case studies. Another course, another framework to internalise. This feels like progress. It is not progress. Progress at this stage means work that can be shown to a hiring manager.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Targeting the wrong level.</strong> Coming from five years of professional experience and applying for internships because you have no UX experience is a waste of your leverage. Coming from no design background and applying for senior UX roles because the job description sounds interesting is a waste of time. Know where you are genuinely competitive. Apply there.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        <strong>Staying in the transition identity too long.</strong> There&apos;s a stage many career switchers get stuck in - they know they&apos;re changing, but they haven&apos;t fully committed to the new identity. They still introduce themselves as &apos;transitioning from architecture to UX.&apos; They hedge their portfolio. They haven&apos;t stopped being an architect yet. At some point, the switch has to happen in how you present yourself before it happens in the job title. The people who land fastest are the ones who make that commitment in their own head first.
+      </p>
+
+      <h2 id="what-this-requires" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What This Actually Requires
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        A career switch to UX is not a side project. It is a professional repositioning that requires consistent, committed effort over 6 to 9 months. The people who do it successfully are not exceptional. They are structured. They have someone pushing them when they slow down. They build from what they already have. And they do not mistake consuming content for making progress.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        If you&apos;ve read this and you know which phase you&apos;re in - the next step is not more research. It is a conversation about what your specific path looks like.
+      </p>
+
+      <h2 id="strategy-call" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Know Which Phase You&apos;re In? Want to Map the Specific Path?
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Book a free 45-minute strategy call. We&apos;ll tell you which phase you&apos;re in, what your shifting skills are, and what to build next. Whether you join us or not.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <a href="https://calendly.com/team-xperiencewave/xw-strategy" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Book your strategy call &rarr;</a>
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        Or explore the career transition programme: <Link href="/programs/career-transition-ux-mentorship" className="text-accent hover:underline font-medium">Xperience Wave Career Transition Programme &rarr;</Link>
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Common questions answered: <Link href="/resources/faq" className="text-accent hover:underline font-medium">xperiencewave.com/resources/faq &rarr;</Link>
+      </p>
+
+      <h2 id="read-next" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Read Next
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li>On the salary gap you&apos;re trying to close: <Link href="/resources/blogs/12l-vs-30l-ux-designer-difference" className="text-accent hover:underline font-medium">The Difference Between a &#x20B9;12L and &#x20B9;30L UX Designer</Link></li>
+        <li>Why the career ladder in India works differently: <Link href="/resources/blogs/ux-career-ladder-india" className="text-accent hover:underline font-medium">The UX Career Ladder Is Broken in India</Link></li>
+        <li>If you have the title but not the influence: <Link href="/resources/blogs/senior-ux-designer-delivery-person" className="text-accent hover:underline font-medium">Senior Designer Still Treated Like a Delivery Person</Link></li>
+        <li>Explore the programme: <Link href="/programs" className="text-accent hover:underline font-medium">Xperience Wave Current &rarr;</Link></li>
+      </ul>
+
+      <h2 id="sources-references" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Sources &amp; References
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-8">
+        <li><a href="https://www.interaction-design.org/literature/article/how-to-change-your-career-to-ux-design" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">IxDF - How to Change Your Career to UX Design</a> - 49% of the workforce has made a dramatic career switch (Indeed survey). Structured programme graduates land roles up to 40% faster than self-taught career switchers.</li>
+        <li><a href="https://www.ambitionbox.com/salaries/ux-designer-salary" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">AmbitionBox / Codezion (2025)</a> - Entry-level UX designer salary India: average &#x20B9;4-6 LPA at entry level. Salary bands by background and experience level.</li>
+        <li>Xperience Wave - direct observation. The 3+3+3 framework, the shifting skills concept, career switcher profiles, and the three traps are drawn from working with career switchers across all backgrounds within the Indian design ecosystem. Divya&apos;s story is a real mentee case study (name used with permission).</li>
+      </ul>
+
+      <p className="text-base md:text-lg text-g500 italic mt-6">
+        Almas Tasneem is Co-founder at Xperience Wave, where she leads sales, strategy, and client success. She has worked directly with career switchers across all backgrounds and has reviewed hundreds of career transition journeys within the Indian design ecosystem.
+      </p>
+    </>
+  ),
   'design-thinking-vs-design-strategy': (
     <>
       <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
@@ -4381,6 +4591,18 @@ const blogTableOfContents: Record<string, { id: string; title: string }[]> = {
     { id: 'sources-references', title: 'Sources & References' },
     { id: 'read-next', title: 'Read Next' },
   ],
+  'career-switch-to-ux-india-timeline': [
+    { id: 'the-numbers', title: 'First - The Numbers' },
+    { id: 'first-mistake', title: 'The Mistake Almost Everyone Makes First' },
+    { id: 'phase-1', title: 'Phase 1: Learn to Think (Months 1-3)' },
+    { id: 'phase-2', title: 'Phase 2: Build the Evidence (Months 4-6)' },
+    { id: 'phase-3', title: 'Phase 3: Target the Right Role (Months 7-9)' },
+    { id: 'three-traps', title: 'The Three Traps That Cost Most People Months' },
+    { id: 'what-this-requires', title: 'What This Actually Requires' },
+    { id: 'strategy-call', title: 'Map Your Path' },
+    { id: 'sources-references', title: 'Sources & References' },
+    { id: 'read-next', title: 'Read Next' },
+  ],
   'design-thinking-vs-design-strategy': [
     { id: 'what-design-thinking-was', title: 'What Design Thinking Actually Was' },
     { id: 'workshop-problem', title: 'Why the Workshop Became the Problem' },
@@ -4514,6 +4736,11 @@ const blogMetadata: Record<string, { title: string; description: string; keyword
     title: 'What Design Managers Look for When Hiring Senior UX Designers | Xperience Wave',
     description: 'In a job application, you are the product and the recruiter is the user. Almas, Co-founder at Xperience Wave, breaks down what design managers are actually evaluating at every stage of the senior UX hiring process and the signals that win and lose candidacies.',
     keywords: ['what design managers look for senior UX designer', 'senior UX designer hiring India', 'UX designer interview tips', 'UX portfolio hiring manager', 'senior UX designer skills 2026', 'UX job interview India'],
+  },
+  'career-switch-to-ux-india-timeline': {
+    title: 'The Honest Career Switcher Timeline: From Zero to UX Job Offer in India | Xperience Wave',
+    description: 'Most career switchers land a UX role in 6-9 months with the right structure. Almas, Co-founder at Xperience Wave, gives the honest timeline - the 3+3+3 framework, the shifting skills concept, and the three traps that cost most people months.',
+    keywords: ['career switch to UX India', 'how long to become UX designer', 'UX career change timeline', 'how to switch to UX design India', 'UX career transition India', 'career switch UX portfolio', 'UX designer salary India entry level'],
   },
   'design-thinking-vs-design-strategy': {
     title: 'Design Thinking Was Never For Designers. Design Strategy Is. | Xperience Wave',

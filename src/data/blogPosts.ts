@@ -140,6 +140,17 @@ export const blogPosts: BlogPost[] = [
     readTime: '9 min',
   },
   {
+    id: '29',
+    slug: 'career-switch-to-ux-india-timeline',
+    title: 'The Honest Career Switcher Timeline: From Zero to UX Job Offer in India',
+    excerpt: 'Most career switchers land a UX role in 6-9 months with the right structure. Almas gives the honest timeline - the 3+3+3 framework, the shifting skills concept, and the three traps that cost most people months.',
+    category: 'career-growth',
+    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80',
+    author: { name: 'Almas Tasneem' },
+    publishedAt: '2026-03-29',
+    readTime: '10 min',
+  },
+  {
     id: '28',
     slug: 'design-thinking-vs-design-strategy',
     title: 'Design Thinking Was Never For Designers. Design Strategy Is.',

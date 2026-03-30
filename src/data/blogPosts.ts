@@ -140,6 +140,17 @@ export const blogPosts: BlogPost[] = [
     readTime: '9 min',
   },
   {
+    id: '31',
+    slug: 'how-to-evaluate-ux-mentorship-program',
+    title: 'How to Evaluate a UX Mentorship Program (Before You Waste \u20B950K)',
+    excerpt: 'A 100-point framework for evaluating any UX mentorship program before you invest \u20B950K. Six categories, an interactive scoring tool, and the exact questions to ask.',
+    category: 'career-growth',
+    image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&q=80',
+    author: { name: 'Shaik Murad' },
+    publishedAt: '2026-03-29',
+    readTime: '11 min',
+  },
+  {
     id: '30',
     slug: 'ic-to-manager-trap-designers',
     title: 'The IC-to-Manager Trap: Why Great Designers Fail as Design Leaders',

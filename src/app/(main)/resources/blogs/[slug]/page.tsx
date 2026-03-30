@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { blogPosts, getPublishedPosts, getCategoryLabel, getCategoryColor, formatDate } from '@/data/blogPosts';
 import CTASection from '@/components/shared/CTASection';
 import MobileTOC from '@/components/blog/MobileTOC';
+import MentorshipEvaluator from '@/components/blog/MentorshipEvaluator';
 
 // Blog content with internal links for SEO
 const blogContent: Record<string, React.ReactNode> = {
@@ -3452,6 +3453,265 @@ const blogContent: Record<string, React.ReactNode> = {
       </p>
     </>
   ),
+  'how-to-evaluate-ux-mentorship-program': (
+    <>
+      <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
+        &#x20B9;50,000 is not a small number.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        For most designers in India - especially the ones at the 3 to 6 year mark who are stuck between mid-level and senior, trying to figure out why their career has stopped moving - &#x20B9;50K is a real decision. It&apos;s two months of savings. It&apos;s a conversation with your family. It&apos;s a number that requires you to be certain before you commit.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The UX mentorship market in India is not helping you be certain. There are cohort programs, bootcamps, 1:1 mentorships, offline workshops, online courses, hybrid models. The marketing all looks similar. The promises are all the same: senior role, higher salary, better portfolio, career transformation.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Most of them will not deliver what they promise. Not because the people running them are dishonest - though some are - but because most programs are built around what is easy to deliver, not what actually changes careers.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        This blog gives you a framework to evaluate any program before you spend. Six categories, a 100-point scoring tool, and the specific questions to ask before you hand over money to anyone.
+      </p>
+
+      <h2 id="three-failures" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Why Most Programs Don&apos;t Work - The Three Failures to Know First
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Tool-based training vs thinking-shifting training.</strong> This is the most important distinction in design education and the one most programs hope you won&apos;t ask about directly. Tool-based training teaches Figma workflows, prototyping techniques, research methods. You can see what you learned on day one. Thinking-shifting training changes how you interrogate a brief, how you decide what&apos;s worth designing, how you walk into a room full of people who don&apos;t speak design and make your work land. You cannot demonstrate thinking on day one. It shows up six months later, in a room you&apos;ve never been in before, when you know what to do.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Group programs vs individual direction.</strong> Cohorts are economically efficient for the program provider. You spread one instructor&apos;s time across 30 to 50 students. Your career problem, however, is not a group problem. Why you&apos;re not getting senior interviews, what&apos;s missing in your portfolio, why you&apos;re strong in execution but invisible in strategy conversations - these are individual. Group programs give you general knowledge. 1:1 programs give you specific direction. These are not equivalent, and they should not be priced as if they are.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Practitioners vs educators.</strong> Someone who has spent ten years teaching design knows pedagogy. Someone who has spent ten years doing design knows the reality of Indian product teams, the politics of a stakeholder room, what a hiring manager actually looks for, and what separates a &#x20B9;12L designer from a &#x20B9;30L designer. The best programs have both. Most have one or the other. And some have people who teach design because they couldn&apos;t sustain a career doing it.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        &rarr; On the &#x20B9;12L vs &#x20B9;30L gap - what&apos;s actually different between them: <Link href="/resources/blogs/12l-vs-30l-ux-designer-difference" className="text-accent hover:underline font-medium">The Difference Between a &#x20B9;12L and &#x20B9;30L UX Designer</Link>
+      </p>
+
+      <h2 id="six-categories" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The 6 Categories - What to Evaluate and Why
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Every category below is weighted based on how much it actually determines whether you get a return on your investment. Read the reasoning before you score.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        1. How You Learn - 20 Points
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This gets the highest weight because it determines whether the knowledge transfers. You can have the world&apos;s best mentor and learn nothing if the learning method doesn&apos;t match how you retain and apply things.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The difference between watching someone design and designing yourself is enormous. Between simulating on a dummy project nobody will ever use and working on a real brief with real constraints and real consequences. Between a structured week-by-week path and a content library that you will deprioritise the moment work gets busy.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Programs that produce consistent outcomes force application. Not content consumption. Not recordings. Not reading frameworks. Doing - with someone watching, correcting, and pushing you past the point where you would have stopped yourself.
+      </p>
+      <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-8">
+        Ask any program: show me what a student&apos;s week actually looks like. Not the curriculum PDF. The actual week. What is due on Friday? Who reviews it? Within what timeframe? If they can&apos;t answer this with specifics - the structure doesn&apos;t exist.
+      </blockquote>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        2. Curriculum Depth - 20 Points
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Most design curricula cover core UX: research, interaction design, prototyping, usability. That is the floor, not the ceiling. If a programme&apos;s curriculum stops at core skills, it is preparing you for a mid-level role - not a senior one.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The curriculum that changes careers builds three things beyond core skills. <strong>Systemic mastery:</strong> design systems thinking, the ability to make decisions that scale across a product, understanding how your work connects to the platform level. <strong>Relational mastery:</strong> how to navigate stakeholder rooms, how to present work to people who don&apos;t speak design, how to build the alliances that get design into strategy conversations. And <strong>personal brand:</strong> how to make your value visible both inside your organisation and in the market.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        AI belongs in the curriculum - not as a separate tools module but as an integrated thinking layer. How do you plan, research, design, and build with AI as a genuine collaborator? Programs that haven&apos;t answered this question are already behind the industry they claim to prepare you for.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        &rarr; What each career level actually demands: <Link href="/resources/blogs/ux-career-ladder-india" className="text-accent hover:underline font-medium">The UX Career Ladder Is Broken in India</Link>
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        3. Accountability and Drive - 15 Points
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Most designers who invest in a program and don&apos;t see results will say the program was bad. Often the program was adequate and accountability was missing. Transformation requires someone to push you past the point where you would have stopped on your own.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        1:1 conversations are the primary mechanism. Not group calls where you get three minutes if you&apos;re lucky - individual time where someone who knows your situation tells you specifically what you&apos;re avoiding and what needs to change.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Group clinics and peer sessions are a different but equally important mechanism. Presenting your work in front of other learners, watching how they present, getting feedback from peers who are working through similar problems - this builds the communication muscle that 1:1 conversations alone don&apos;t develop. Three to four structured group sessions per week is a meaningful cadence. One group call per month is not accountability.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        4. Career Outcome Support - 15 Points
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This answers the question: does the programme end when the curriculum ends, or does it end when you have what you came for?
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Portfolio review is not career support. Resume feedback is not career support. Real career support means someone actively helping you position yourself in the market - building your personal brand, helping you articulate your value in language hiring managers actually use, and connecting you to the people who create the opportunities you&apos;re looking for.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        &rarr; What design managers actually look for when hiring: <Link href="/resources/blogs/what-design-managers-look-for-senior-ux-hiring" className="text-accent hover:underline font-medium">What Design Managers Look for When Hiring Senior UX Designers</Link>
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        5. Mentor Quality - 15 Points
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Mentor quality matters - but it matters less than how you learn and what you learn. A great mentor delivering the wrong curriculum in the wrong format produces mediocre outcomes. This is why mentor quality sits at 15, not 25.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        The specific questions: are the mentors active practitioners or former practitioners turned educators? How many years of relevant experience, and in what kinds of organisations? How many students is each mentor personally handling - because 30 students per mentor is not mentorship, it&apos;s a webinar with a personalised label. And through what medium is the mentor actually available - do you talk to the person, or to a support layer that filters access?
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        6. Certification Rigour - 15 Points
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        A participation certificate says you paid and you attended. It says nothing about what you know or can do. Most Indian design programs issue participation certificates. This has quietly devalued the concept of program credentials to the point where many hiring managers ignore them entirely.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        An exam-graded certification with a real pass threshold is a different thing. It says someone other than the program you paid for assessed your knowledge and you met a standard. That is worth something - especially when the standard is backed by practitioners who have worked with certified designers and can speak to what the credential actually means.
+      </p>
+      <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-6">
+        The question that tells you everything: what happens if I fail your assessment?
+        <br /><br />
+        If the answer is &apos;we don&apos;t have an assessment&apos; - that&apos;s your answer.<br />
+        If the answer is &apos;everyone passes&apos; - that&apos;s also your answer.<br />
+        If the answer is &apos;you resit it&apos; - that&apos;s a program that believes its own standard.
+      </blockquote>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        To give you a concrete example of what external validation looks like: the XW certification standard is backed by Rishik Jha (Design Consultant) and Fatima Sultana (Product &amp; Leadership Advisor) - both listed as advisors on the <Link href="/about" className="text-accent hover:underline font-medium">Xperience Wave about page</Link> and both verifiable independently. Separately, designers who earned the XW certification were placed at organisations including Tech Mahindra, Bob, Salesforce, Synduct, and Infosys within 3 to 6 months of completing the programme. That is not a logo. That is a record.
+      </p>
+
+      <h2 id="evaluator" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Evaluator - Score Any Program Out of 100
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Use the calculator below to evaluate any UX mentorship program. Answer 20 specific sub-questions across the six categories. It totals automatically and tells you where the program stands.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>The scoring bands:</strong>
+      </p>
+      <ul className="list-disc pl-6 space-y-2 text-base md:text-lg text-g600 mb-6">
+        <li><strong>85-100:</strong> Strong program. Scrutinise the specifics but the structure is right.</li>
+        <li><strong>70-84:</strong> Good with gaps. Know what you&apos;re not getting before you commit.</li>
+        <li><strong>55-69:</strong> Partial fit. Will help with specific things but unlikely to change your trajectory.</li>
+        <li><strong>40-54:</strong> Weak program. Marketing is doing more work than the structure.</li>
+        <li><strong>Below 40:</strong> Walk away. The money is better spent elsewhere.</li>
+      </ul>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The calculator is honest enough that you can score any program - including ours. If Xperience Wave scores poorly on what matters to you specifically, that is worth knowing before you commit.
+      </p>
+
+      <MentorshipEvaluator />
+
+      <h2 id="questions-to-ask" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Questions to Ask Before You Pay
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Every program will send a brochure. Every program has testimonials. Ask the questions the brochure doesn&apos;t answer.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4 font-semibold">About learning:</p>
+      <ul className="list-disc pl-6 space-y-2 text-base md:text-lg text-g600 mb-6">
+        <li>Walk me through what a student&apos;s actual week looks like - not the curriculum, the week.</li>
+        <li>Who reviews my work, how specifically, and within what timeframe?</li>
+        <li>If I fall behind, who notices and what do they do?</li>
+        <li>Are the projects real briefs or dummy setups?</li>
+      </ul>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4 font-semibold">About the mentor:</p>
+      <ul className="list-disc pl-6 space-y-2 text-base md:text-lg text-g600 mb-6">
+        <li>Where are you working right now? What have you shipped in the last 12 months?</li>
+        <li>If I&apos;m stuck on something on a Tuesday afternoon, how do I reach you?</li>
+        <li>How many students are you personally mentoring right now?</li>
+        <li>What is something you&apos;ve been genuinely wrong about in your design career?</li>
+      </ul>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4 font-semibold">About outcomes:</p>
+      <ul className="list-disc pl-6 space-y-2 text-base md:text-lg text-g600 mb-6">
+        <li>What percentage of students got a role change or salary increase within 6 months of completing?</li>
+        <li>Can I speak to someone who didn&apos;t get what they wanted from the program?</li>
+        <li>What does career support look like after the curriculum ends?</li>
+        <li>Have students been hired by people directly in your network?</li>
+      </ul>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4 font-semibold">About certification:</p>
+      <ul className="list-disc pl-6 space-y-2 text-base md:text-lg text-g600 mb-8">
+        <li>What happens if I fail the assessment?</li>
+        <li>Can you show me a sample question?</li>
+        <li>Who outside the program has put their name to the standard - and can I look them up?</li>
+        <li>What percentage of students don&apos;t pass on the first attempt?</li>
+      </ul>
+
+      <h2 id="which-format" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Which Format Is Right for You
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Format matters less than quality of structure - but it does affect fit.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Online 1:1 mentorship</strong> - highest individual attention, highest flexibility. The risk: requires self-motivation. The best online 1:1 programs build external accountability into their structure so momentum doesn&apos;t depend on you alone.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Cohorts</strong> - peer learning is real. Seeing how others work through similar problems helps. The risk: general direction rather than specific. A curriculum built for 30 designers at different stages is built for the average - which may not be you.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Bootcamps</strong> - intensive, fast, useful for specific skills. Not designed for career transformation. A 3-week bootcamp changes what you know. It does not change how you think. These are different things with different shelf lives.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Offline / hybrid</strong> - proximity changes the learning dynamic for some people. The risk: geography limits access. Don&apos;t trade mentor quality for the comfort of being in a room.
+      </p>
+      <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-8">
+        The honest question to ask yourself before choosing a format: When have I actually followed through on self-directed learning? If the honest answer is rarely - you need external accountability built into the structure. Discipline you&apos;re hoping to find is less reliable than structure you don&apos;t have to choose.
+      </blockquote>
+
+      <h2 id="honest-limitation" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        One Honest Limitation Before You Decide Anything
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Every program has a specific kind of person it is not right for. Knowing this matters as much as knowing who it is right for.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        A structured, intensive 1:1 mentorship - the kind that pushes you, tracks your progress, and expects you to show up - is not right for someone who needs full flexibility to go at their own pace with no external pressure. That&apos;s not a criticism of the person. It&apos;s a mismatch of what the program delivers and what the person needs. A mismatch at &#x20B9;50K is expensive.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Before you evaluate any program on the six categories, evaluate your own working style first. Are you self-directed enough to show up when no one is checking? Or do you need someone to check? The honest answer to that question should come before the scorecard.
+      </p>
+
+      <h2 id="strategy-call" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Want to Walk Through the Scorecard Together?
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Book a free 45-minute strategy call. We&apos;ll apply this framework to Xperience Wave with you - honestly - and tell you whether we&apos;re the right fit for where you are right now. If we&apos;re not, we&apos;ll tell you that too.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <a href="https://calendly.com/team-xperiencewave/xw-strategy" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Book your strategy call &rarr;</a>
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Or explore our programmes: <Link href="/programs" className="text-accent hover:underline font-medium">xperiencewave.com/programs &rarr;</Link>
+      </p>
+      <p className="text-base md:text-lg text-g500 italic mb-8">
+        A note on transparency: Xperience Wave runs a UX mentorship programme. This framework reflects the values that shaped how we built it. Apply it to us - we should score well on what we say matters, and we should be honest about the categories where we are not the right fit for everyone.
+      </p>
+
+      <h2 id="read-next" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Read Next
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li>If you&apos;re not getting interview calls despite applying: <Link href="/resources/blogs/why-no-ux-interview-calls" className="text-accent hover:underline font-medium">Why You&apos;re Not Getting UX Interview Calls</Link></li>
+        <li>If salary is the specific gap you&apos;re trying to close: <Link href="/resources/blogs/12l-vs-30l-ux-designer-difference" className="text-accent hover:underline font-medium">The Difference Between a &#x20B9;12L and &#x20B9;30L UX Designer</Link></li>
+        <li>Why the UX career ladder in India works differently: <Link href="/resources/blogs/ux-career-ladder-india" className="text-accent hover:underline font-medium">The UX Career Ladder Is Broken in India</Link></li>
+        <li>Explore the programme: <Link href="/programs" className="text-accent hover:underline font-medium">Xperience Wave Current &rarr;</Link></li>
+      </ul>
+
+      <h2 id="sources-references" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Sources &amp; References
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-8">
+        <li>Xperience Wave - direct observation. The six-category framework, the three failure patterns, the scoring weights, and the questions to ask are drawn from 13+ years of experience running and evaluating design programmes, and working with 3,000+ designers across India and internationally. The certification validation examples (Rishik Jha, Fatima Sultana, placement organisations) are verifiable on the Xperience Wave about page.</li>
+      </ul>
+
+      <p className="text-base md:text-lg text-g500 italic mt-6">
+        Murad is Co-founder and Head of Design at Xperience Wave, a UX mentorship and education company based in Bangalore. He has 13+ years of design leadership experience and has worked directly with 3,000+ designers across India and internationally.
+      </p>
+    </>
+  ),
   'ic-to-manager-trap-designers': (
     <>
       <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
@@ -4889,6 +5149,17 @@ const blogTableOfContents: Record<string, { id: string; title: string }[]> = {
     { id: 'sources-references', title: 'Sources & References' },
     { id: 'read-next', title: 'Read Next' },
   ],
+  'how-to-evaluate-ux-mentorship-program': [
+    { id: 'three-failures', title: 'The Three Failures to Know First' },
+    { id: 'six-categories', title: 'The 6 Categories' },
+    { id: 'evaluator', title: 'The Evaluator - Score Any Program' },
+    { id: 'questions-to-ask', title: 'The Questions to Ask Before You Pay' },
+    { id: 'which-format', title: 'Which Format Is Right for You' },
+    { id: 'honest-limitation', title: 'One Honest Limitation' },
+    { id: 'strategy-call', title: 'Walk Through the Scorecard Together' },
+    { id: 'sources-references', title: 'Sources & References' },
+    { id: 'read-next', title: 'Read Next' },
+  ],
   'ic-to-manager-trap-designers': [
     { id: 'three-weeks', title: 'Three Weeks' },
     { id: 'the-data', title: 'The Data Is Ugly' },
@@ -5048,6 +5319,11 @@ const blogMetadata: Record<string, { title: string; description: string; keyword
     title: 'What Design Managers Look for When Hiring Senior UX Designers | Xperience Wave',
     description: 'In a job application, you are the product and the recruiter is the user. Almas, Co-founder at Xperience Wave, breaks down what design managers are actually evaluating at every stage of the senior UX hiring process and the signals that win and lose candidacies.',
     keywords: ['what design managers look for senior UX designer', 'senior UX designer hiring India', 'UX designer interview tips', 'UX portfolio hiring manager', 'senior UX designer skills 2026', 'UX job interview India'],
+  },
+  'how-to-evaluate-ux-mentorship-program': {
+    title: 'How to Evaluate a UX Mentorship Program (Before You Waste \u20B950K) | Xperience Wave',
+    description: 'A 100-point framework for evaluating any UX mentorship program before you invest \u20B950K. Six categories, an interactive scoring tool, and the exact questions to ask - from Murad, Co-founder at Xperience Wave.',
+    keywords: ['UX mentorship program India', 'best UX mentorship India', 'mentorship vs bootcamp', 'UX training review', 'UX design program India', 'UX career investment'],
   },
   'ic-to-manager-trap-designers': {
     title: 'The IC-to-Manager Trap: Why Great Designers Fail as Design Leaders | Xperience Wave',

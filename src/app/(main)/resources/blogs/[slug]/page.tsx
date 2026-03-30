@@ -3452,6 +3452,230 @@ const blogContent: Record<string, React.ReactNode> = {
       </p>
     </>
   ),
+  'design-thinking-vs-design-strategy': (
+    <>
+      <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
+        Ask any designer - from someone two months into their first role to someone ten years deep - what the Design Thinking process is.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        They&apos;ll tell you. Empathise, Define, Ideate, Prototype, Test. EDIPT. Clean stages. Usually delivered with just enough confidence to suggest they&apos;ve done it, and just enough vagueness to suggest they haven&apos;t done it the way the textbook describes.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        And here&apos;s the thing: they&apos;re not wrong. Design Thinking is a real framework with a real origin and real moments where it has produced real outcomes. IDEO built it. Stanford&apos;s d.school formalised it. Some genuinely important products have been shaped by it.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        But somewhere between David Kelley&apos;s whiteboard at Stanford and the Post-it covered walls of every corporate innovation workshop in 2015, something went badly wrong. The process became a product. The thinking became a template. And a framework that was built to help non-designers think more like designers ended up being sold back to designers as the thing they were supposed to do.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6 font-semibold">
+        That is the sentence I want you to sit with. Design Thinking was built to help non-designers think more like designers. It was never built to be how designers actually design.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Understanding that distinction - and understanding what Design Strategy is, and why it moves in a completely different direction - is the difference between a designer who gets treated like a delivery function and one who gets treated like a strategic partner.
+      </p>
+
+      <h2 id="what-design-thinking-was" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What Design Thinking Actually Was - Before It Became a Workshop Format
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Design Thinking has a genuinely interesting origin. The ideas go back to the 1960s at Stanford, through researchers who were studying how designers think - what makes design cognition different from scientific or engineering thinking. The work was grounded in psychology and creativity research. It was rigorous. It was built by people who deeply understood design.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        IDEO, founded in the early 1990s, took those ideas and turned them into a consulting methodology. Their version of the process - understand, observe, visualise, evaluate, implement - was designed for a specific context: helping large organisations innovate in areas where the people making decisions were not designers and did not have a design-trained understanding of how to approach a problem.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        That was the problem Design Thinking was actually solving. Not &apos;how do designers design better.&apos; It was &apos;how do we get a room full of MBAs, product managers, and business heads to think about users at all.&apos;
+      </p>
+      <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-8">
+        Design Thinking focuses on training business leaders to &apos;think like a designer.&apos; Strategic design embeds designers in strategic parts of the business.
+        <br /><br />
+        One moves toward the business. The other puts design inside it.
+        <br /><br />
+        <span className="not-italic text-sm text-g500">(Source: <a href="https://thefountaininstitute.com/blog/what-is-strategic-design" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">The Fountain Institute, What Is Strategic Design?</a>)</span>
+      </blockquote>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is the point that gets lost in almost every conversation about Design Thinking. It was a translation tool. It was designed to bridge the gap between how designers think and how organisations were structured to make decisions. When it worked, it worked because it gave non-designers a language and a process for engaging with user problems they would have otherwise ignored.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        The question is whether the translation tool should also be the designer&apos;s primary methodology. And the answer is clearly no.
+      </p>
+
+      <h2 id="workshop-problem" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Why the Workshop Became the Problem
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The five-day design sprint. The Post-it wall. The empathy map drawn by twelve people who have never done user research in their lives. The brainstorming session where the loudest person in the room drives the output, regardless of whether their idea is good, because deferred judgment is a rule of the process.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is what happened when Design Thinking became a packaged product. And the product was very successfully sold - to schools, to government departments, to corporate innovation labs, to HR teams running culture initiatives, to organisations that wanted the feeling of innovation without the cost and uncertainty of doing something actually new.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Jake Knapp, who ran Design Thinking workshops at Google, followed up on what actually happened after his sessions. His finding: the brainstorming and Post-it work rarely led to built products or solutions. Decisions kept happening the old way - a few people working separately and then selling their ideas to decision-makers. The workshops produced excitement. They produced alignment theatre. They didn&apos;t reliably produce outcomes.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        There are two specific reasons the group workshop format fails that I want to name directly, because they&apos;re not talked about clearly enough.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>First: group dynamics replace design thinking.</strong> When you bring a room of people together to ideate, the output is shaped by the social dynamics of that room - not by the quality of the ideas. The person with the most seniority or the most confidence drives the direction. The designer in the corner who actually knows how to solve the problem thinks better alone and presents poorly. The business head &apos;builds on&apos; ideas in ways that move them away from user needs and toward what they already wanted to do. You call it democratic. It is actually just unstructured.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Second: the process prioritises participation over expertise.</strong> Design Thinking&apos;s appeal to organisations was that anyone could do it. You don&apos;t need design training - here&apos;s a Post-it, here&apos;s a Sharpie, here&apos;s a framework. That democratisation was the selling point. It was also the failure mode. Because the moment you design a methodology so that anyone can participate without training, you have also designed a methodology where expert judgment gets averaged out. The designer&apos;s years of experience navigating user problems, business constraints, and interaction patterns gets treated as one vote among many.
+      </p>
+      <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-8">
+        &apos;Innovation theater&apos; is the term that has emerged for what this produces: checking a series of boxes without implementing meaningful shifts. Everyone leaves the workshop with their ideas heard, their Post-its on the wall, and their sense of contribution intact. The product remains unchanged.
+      </blockquote>
+
+      <h2 id="design-strategy-different" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Design Thinking Said &apos;Let Us Teach You to Think Like Us.&apos; Design Strategy Says Something Different.
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Here is the connection that most writing on this topic misses.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Design Thinking was a response to a specific problem: organisations were making decisions without thinking about users, and designers had no way into those conversations. The solution Design Thinking offered was: let us teach the people making decisions to think a little more like designers. Come to our workshop. Use our process. Think about empathy.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        That solution had a fundamental flaw. It put the burden of the problem on designers teaching everyone else to be a bit more like them. It did not change where designers sat in the organisation. It did not change whether design had a voice in strategy. It gave non-designers a taste of design thinking and sent them back to their seats - where they continued making decisions in the same way, now with a Post-it aesthetic.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Design Strategy moves in the opposite direction entirely.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Design Strategy doesn&apos;t ask non-designers to think like designers. It puts design inside the decision-making process itself. It&apos;s not about running a better workshop. It&apos;s about ensuring that before any significant product decision is made - before the brief is written, before resources are allocated, before the build starts - design thinking is embedded in how the question is framed and what counts as success.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        This is why Design Strategy is what gets you promoted. Not because it&apos;s a more sophisticated methodology. Because it requires the designer to operate at the level where businesses actually make consequential decisions - and that is the level where design influence compounds into career advancement.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        &rarr; On what it actually takes to get into those rooms: <Link href="/resources/blogs/ux-designer-product-strategy-table" className="text-accent hover:underline font-medium">How to Get a Seat at the Product Strategy Table</Link>
+      </p>
+
+      <h2 id="what-design-strategy-is" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What Design Strategy Actually Is - Not the Definition, the Practice
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Strategy, in any domain, is an action plan that structures effort toward specific outcomes. It names the goal, identifies the resources, anticipates the risks, and defines what success looks like before the work begins. Strategy is not execution. It is the thinking that makes execution coherent.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Design Strategy is strategy in which design sits at the centre - not as a delivery function, but as the function that connects user understanding to business outcomes.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        In practice this means: before a product team starts building anything significant, a design strategist has been in conversations with the business about what they&apos;re trying to achieve commercially. With sales and marketing about what they&apos;re telling the market. With technology about what&apos;s feasible and what&apos;s accumulating debt. And - this is the part that everyone else in those conversations hasn&apos;t done - with users about what the experience actually needs to deliver in order to work for a real human being.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Design Strategy produces a plan. Not a design plan - a business plan with design at its centre. It says: here is what we are trying to achieve, here is what we know and what we don&apos;t, here is where the research needs to happen and where it doesn&apos;t, here is what the experience needs to do to deliver the business outcome, and here is how we will know if it worked.
+      </p>
+      <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-8">
+        Design Strategy is the nexus between corporate strategy and design thinking. It is not a design process. It is a business process that design drives.
+        <br /><br />
+        <span className="not-italic text-sm text-g500">(Source: <a href="https://toptal.com/designers/product-design/design-strategy-guide" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Toptal, Design Strategy - A Guide to Tactical Thinking in Design</a>)</span>
+      </blockquote>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        The difference from Design Thinking is structural. Design Thinking positions design as a method others can borrow. Design Strategy positions design as the function that owns the thinking at the beginning - before anyone else has defined what the problem is.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        &rarr; On how the strategic conversation actually starts inside an organisation: <Link href="/resources/blogs/senior-ux-designer-delivery-person" className="text-accent hover:underline font-medium">Senior Designer Still Treated Like a Delivery Person</Link>
+      </p>
+
+      <h2 id="how-to-set-up" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        How to Actually Set Up a Design Strategy - And What Will Go Wrong
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The practical reality of building a Design Strategy is that it requires you to work upstream of where you currently are. Most designers receive a brief and design within it. Design Strategy requires you to be in the room before the brief is written.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        That is not a small ask in most Indian organisations. The hierarchy, the political structure, the default assumption that design is a delivery function - all of these work against it. I&apos;m not going to pretend otherwise.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        But here is what actually works:
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Start with business goals, not design goals.</strong> The first conversation in a Design Strategy is not &apos;what should we design.&apos; It&apos;s &apos;what is this project supposed to achieve commercially.&apos; Revenue? Retention? Market expansion? Churn reduction? Get specific. Get numbers. If nobody in the room has a number attached to success, the project doesn&apos;t have a strategy yet - it has an idea.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Talk to everyone who has already formed an opinion.</strong> Sales teams have been talking to customers. Marketing has a positioning. Technology has constraints that product hasn&apos;t fully accounted for. Before a single design decision is made, a design strategist has talked to all of these people and synthesised what they&apos;ve said into a picture of what the organisation actually believes, what it knows for certain, and where its assumptions are untested.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Identify the user knowledge gap - specifically.</strong> Not &apos;we need to do research.&apos; The specific question: what do we not know about this user&apos;s experience that, if we&apos;re wrong about it, makes this whole project fail? That is the research that&apos;s worth running. Everything else is either assumed correctly or discovered post-launch.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Produce a plan, not a document.</strong> A Design Strategy is not a strategy deck. It&apos;s a working plan: what we are trying to achieve, what we know, what we&apos;re assuming, what research we need, what the design will need to deliver, who needs to agree on what, and when we will know if it worked. It should take a week to produce, not a month. If it takes longer, you&apos;ve turned strategy into execution.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Expect resistance from product teams.</strong> The most common pushback against Design Strategy is that it looks like design is trying to take over product. Address this directly and early. Design Strategy is not trying to own the roadmap. It&apos;s trying to ensure that the decisions already being made are made with user reality in its input. Make that distinction clearly, often, and without defensiveness.
+      </p>
+      <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-8">
+        The designer who can walk into a business conversation, understand what the organisation is trying to achieve, connect it to what users actually need, and produce a plan that makes the connection between those two things legible - that designer is not a delivery function. They are a strategic partner. And they get treated accordingly.
+      </blockquote>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        &rarr; The five questions senior designers ask before they walk into any of these rooms: <Link href="/resources/blogs/conversations-senior-designers-have" className="text-accent hover:underline font-medium">The 5 Conversations Senior Designers Have That Mid-Level Designers Don&apos;t</Link>
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        If you want a tool that helps you build a Design Strategy document for your next project - asking you the questions a strategist would ask, not letting you give vague answers - we&apos;ve built one and it&apos;s available here: <a href="https://xperiencewave.com/resources/tools" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">xperiencewave.com/resources/tools</a> &rarr; Your email is required to access it.
+      </p>
+
+      <h2 id="real-shift" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Real Shift
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        I want to come back to where I started.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Design Thinking was built to solve a real problem: designers were invisible in the rooms where decisions were made. The solution it offered was to make everyone a bit of a designer. Teach them the process. Give them the framework. Hope that the empathy sticks.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        That solution reached its limit. Not because the ideas were wrong - human-centred thinking is still correct. But because the method of delivering those ideas - the workshop, the Post-it wall, the five-day sprint - didn&apos;t change where designers sat in the organisation. It gave non-designers a taste of design thinking and left designers exactly where they were: waiting for the brief.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Design Strategy is the answer to that limit. Not a replacement for design craft - but the thing that ensures design craft gets applied to the right problems, in the right context, with the right organisational backing.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The designers who understand this distinction don&apos;t wait for the brief. They&apos;re in the conversation where the brief is being written. They know what the business is trying to achieve before anyone has drafted a scope. They&apos;ve already talked to the user.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Design Thinking asked how to get organisations to care about users. Design Strategy asks how to ensure that what the organisation builds is shaped by user reality from the beginning. One is a cultural aspiration that requires everyone to temporarily borrow the designer&apos;s mindset. The other is a functional position that puts the designer inside the decisions that matter.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8 font-semibold">
+        Only one of them gets you a seat at the table. And you already know which one.
+      </p>
+
+      <h2 id="strategy-call" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Want to Understand How Design Strategy Applies to Your Role?
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Book a free 45-minute strategy call. We&apos;ll map the gap between where design sits in your organisation and where it should sit - and tell you what it takes to close it.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        <a href="https://calendly.com/team-xperiencewave/xw-strategy" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Book your strategy call &rarr;</a>
+      </p>
+
+      <h2 id="read-next" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Read Next
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li>If you have the title but not the influence: <Link href="/resources/blogs/senior-ux-designer-delivery-person" className="text-accent hover:underline font-medium">Senior Designer Still Treated Like a Delivery Person</Link></li>
+        <li>If you are ready to get into the rooms where strategy is made: <Link href="/resources/blogs/ux-designer-product-strategy-table" className="text-accent hover:underline font-medium">How to Get a Seat at the Product Strategy Table</Link></li>
+        <li>The five conversations senior designers have before any of these rooms: <Link href="/resources/blogs/conversations-senior-designers-have" className="text-accent hover:underline font-medium">The 5 Conversations Senior Designers Have That Mid-Level Designers Don&apos;t</Link></li>
+        <li>If the salary conversation has been confusing: <Link href="/resources/blogs/12l-vs-30l-ux-designer-difference" className="text-accent hover:underline font-medium">The Difference Between a &#x20B9;12L and &#x20B9;30L UX Designer</Link></li>
+        <li>If AI is reshaping what depth means for your career: <Link href="/resources/blogs/ai-job-designer-type" className="text-accent hover:underline font-medium">AI Is Not Taking Your Job. But This Type of Designer Will.</Link></li>
+        <li>Explore the programme: <Link href="/programs" className="text-accent hover:underline font-medium">Xperience Wave Current &rarr;</Link></li>
+      </ul>
+
+      <h2 id="sources-references" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Sources &amp; References
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-8">
+        <li><a href="https://www.technologyreview.com/2023/02/09/1067821/design-thinking-retrospective-what-went-wrong" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">MIT Technology Review (2023)</a> - Design thinking was supposed to fix the world. Where did it go wrong? Jake Knapp, who ran Design Thinking workshops at Google, found brainstorming sessions rarely led to built products. Decisions kept happening &apos;in the old way.&apos; Multiple social-impact initiatives struggled to move beyond pilot projects. The term &apos;innovation theater&apos; emerged to describe the pattern.</li>
+        <li><a href="https://thefountaininstitute.com/blog/what-is-strategic-design" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">The Fountain Institute - What Is Strategic Design?</a> - Design Thinking focuses on training business leaders to &apos;think like a designer.&apos; Strategic design embeds designers in strategic parts of the business. Design Thinking workshops amount to &apos;high-priced executive play dates&apos; - at best, they earn designers a nod from executives on their way out of the room.</li>
+        <li><a href="https://toptal.com/designers/product-design/design-strategy-guide" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Toptal - Design Strategy: A Guide to Tactical Thinking in Design</a> - Design Strategy is the nexus between corporate strategy and design thinking. It requires strategic thinking - understanding business objectives and translating them into design decisions that serve both user goals and business outcomes.</li>
+        <li><a href="https://onlinelibrary.wiley.com/doi/10.1111/jpim.12594" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Stanford / IDEO - Origin of Design Thinking</a> - Design Thinking was developed at Stanford&apos;s Joint Product Design program and formalised by IDEO in the 1990s. The original intent: bring human-centred thinking into organisations where non-designers were making product decisions. The framework was designed as a bridge, not as a replacement for design expertise.</li>
+        <li><a href="https://xperiencewave.com/resources/tools" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Xperience Wave - direct observation and Design Strategy GPT</a> - The design strategy framework, the critique of workshop formats in Indian organisations, and the practical build process are drawn from working with design teams across Indian product companies. The Design Strategy GPT tool is available at xperiencewave.com/resources/tools (email required to access).</li>
+      </ul>
+
+      <p className="text-base md:text-lg text-g500 italic mt-6">
+        Almas Tasneem is Co-founder at Xperience Wave, where she leads sales, strategy, and client success. She has reviewed hundreds of designer profiles, portfolio presentations, and organisational design structures across the Bangalore product ecosystem.
+      </p>
+    </>
+  ),
   'ux-career-ladder-india': (
     <>
       <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
@@ -4157,6 +4381,17 @@ const blogTableOfContents: Record<string, { id: string; title: string }[]> = {
     { id: 'sources-references', title: 'Sources & References' },
     { id: 'read-next', title: 'Read Next' },
   ],
+  'design-thinking-vs-design-strategy': [
+    { id: 'what-design-thinking-was', title: 'What Design Thinking Actually Was' },
+    { id: 'workshop-problem', title: 'Why the Workshop Became the Problem' },
+    { id: 'design-strategy-different', title: 'Design Strategy Says Something Different' },
+    { id: 'what-design-strategy-is', title: 'What Design Strategy Actually Is' },
+    { id: 'how-to-set-up', title: 'How to Actually Set Up a Design Strategy' },
+    { id: 'real-shift', title: 'The Real Shift' },
+    { id: 'strategy-call', title: 'Want to Understand How Design Strategy Applies?' },
+    { id: 'sources-references', title: 'Sources & References' },
+    { id: 'read-next', title: 'Read Next' },
+  ],
   'ux-career-ladder-india': [
     { id: 'ladder-doesnt-work', title: 'The Ladder Everyone Follows, and Why It Does Not Work' },
     { id: 'indian-design-culture', title: 'What Nobody Says Out Loud About Indian Design Culture' },
@@ -4279,6 +4514,11 @@ const blogMetadata: Record<string, { title: string; description: string; keyword
     title: 'What Design Managers Look for When Hiring Senior UX Designers | Xperience Wave',
     description: 'In a job application, you are the product and the recruiter is the user. Almas, Co-founder at Xperience Wave, breaks down what design managers are actually evaluating at every stage of the senior UX hiring process and the signals that win and lose candidacies.',
     keywords: ['what design managers look for senior UX designer', 'senior UX designer hiring India', 'UX designer interview tips', 'UX portfolio hiring manager', 'senior UX designer skills 2026', 'UX job interview India'],
+  },
+  'design-thinking-vs-design-strategy': {
+    title: 'Design Thinking Was Never For Designers. Design Strategy Is. | Xperience Wave',
+    description: 'Design Thinking was built to teach non-designers to think like designers. It was never built to be how designers actually design. Almas, Co-founder at Xperience Wave, explains what Design Thinking actually solved, why the workshop format failed, and what Design Strategy does differently.',
+    keywords: ['design strategy vs design thinking', 'what is design strategy', 'design thinking criticism', 'design strategy for UX designers', 'UX designer career strategy', 'design thinking dead', 'EDIPT process problems'],
   },
   'ux-career-ladder-india': {
     title: 'The UX Career Ladder Is Broken in India - Here\'s What Actually Works | Xperience Wave',

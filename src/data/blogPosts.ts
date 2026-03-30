@@ -140,6 +140,17 @@ export const blogPosts: BlogPost[] = [
     readTime: '9 min',
   },
   {
+    id: '28',
+    slug: 'design-thinking-vs-design-strategy',
+    title: 'Design Thinking Was Never For Designers. Design Strategy Is.',
+    excerpt: 'Design Thinking was built to teach non-designers to think like designers. It was never built to be how designers actually design. Almas explains what Design Thinking actually solved, why the workshop format failed, and what Design Strategy does differently.',
+    category: 'design-skills',
+    image: 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=800&q=80',
+    author: { name: 'Almas Tasneem' },
+    publishedAt: '2026-03-30',
+    readTime: '10 min',
+  },
+  {
     id: '25',
     slug: 'ux-career-ladder-india',
     title: 'The UX Career Ladder Is Broken in India. Here\'s the Path That Actually Works.',

@@ -118,6 +118,17 @@ export const blogPosts: BlogPost[] = [
     readTime: '8 min',
   },
   {
+    id: '25',
+    slug: 'ux-career-ladder-india',
+    title: 'The UX Career Ladder Is Broken in India. Here\'s the Path That Actually Works.',
+    excerpt: 'The standard UX career ladder was written for the West. Murad breaks down what actually moves designers forward in Indian workplaces, the hierarchy, the politics, and the real career map from 0 to 10+ years.',
+    category: 'career-growth',
+    image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&q=80',
+    author: { name: 'Shaik Murad' },
+    publishedAt: '2026-03-30',
+    readTime: '10 min',
+  },
+  {
     id: '23',
     slug: 'ux-designer-product-strategy-table',
     title: 'How to Get a Seat at the Product Strategy Table as a UX Designer',

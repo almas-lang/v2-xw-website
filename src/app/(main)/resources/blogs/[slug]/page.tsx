@@ -2914,6 +2914,273 @@ const blogContent: Record<string, React.ReactNode> = {
       </p>
     </>
   ),
+  'ux-career-ladder-india': (
+    <>
+      <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
+        Let me tell you something that most UX design blogs will not.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The career advice you have been reading, the frameworks, the &apos;just build your skills&apos; playbooks, the neatly illustrated career ladders from Associate to VP, they are written for a different workplace. A different culture. A different set of rules.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        They are written for the West.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        I have spent 13+ years working with design teams, not just in India, but in Japan, Singapore, Dubai, Australia, and the US. I have worked with over 3,000 designers across Bangalore, Mumbai, Pune, Hyderabad, and Chennai, and mentored 140+ through career transitions. The pattern is always the same: talented designers who do everything right, learn the tools, follow the process, deliver good work, and still get stuck.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Not because they lack skills. Because the ladder they are climbing was never built for the ground they are standing on.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        This piece is the honest version of what that ground looks like, and what actually moves you forward on it.
+      </p>
+
+      <h2 id="ladder-doesnt-work" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Ladder Everyone Follows, and Why It Does Not Work Here
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        If you Google &apos;UX career path&apos;, you will find some version of this:
+      </p>
+      <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-6">
+        Associate Designer &rarr; UX Designer &rarr; Senior Designer &rarr; Lead Designer &rarr; Design Manager &rarr; Director &rarr; VP &rarr; CXO
+      </blockquote>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Clean. Linear. Logical. It assumes that promotions are merit-based. That good work gets recognised. That there is a clear difference between each level. That your title reflects what you actually do.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        In many Indian organisations, none of this is true.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        What actually happens is messier. You get promoted because someone left and the seat needed filling. You get a &apos;Lead&apos; title but no one reports to you. You are called a &apos;Design Manager&apos; but you are still pushing pixels on the same project you were on two years ago. Or worse, you get the title, the responsibility, and zero authority to make decisions.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        I once spoke with a designer, sixteen years of experience, &apos;UX Manager&apos; title at a large Indian IT services company. On paper, he had a team of three. In practice? He could not decide which projects they worked on. He had no say in performance reviews. His actual job was to take whatever the delivery head decided, pass it down to his team, and make sure designs shipped on time. His biggest managerial power was approving leave requests.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        He was not a manager. He was a relay station.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        And he is not unusual. He is the norm. The gap between title and actual influence is exactly what we unpacked here: <Link href="/resources/blogs/senior-ux-designer-delivery-person" className="text-accent hover:underline font-medium">Senior Designer Still Treated Like a Delivery Person</Link>.
+      </p>
+
+      <h2 id="indian-design-culture" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What Nobody Says Out Loud About Indian Design Culture
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        In Indian workplaces, hierarchy is not just an org structure. It is a cultural operating system. It runs on seniority, deference, and the unspoken expectation that you respect the chain of command regardless of whether the chain makes any sense.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is not anecdotal. Geert Hofstede&apos;s cross-cultural research, one of the most cited frameworks in organisational psychology, gives India a Power Distance Index score of 77, significantly above the global average of 56. In high power-distance cultures, hierarchies are strictly followed, decisions are centralised at the top, and criticism from subordinates is often perceived as arrogance rather than contribution. Employees do what they are asked. They do not initiate.
+      </p>
+      <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-6">
+        Hofstede&apos;s research on India&apos;s workplace culture: &apos;Little delegation, therefore be patient because decisions are made at the highest level of the hierarchy. Criticism from subordinates are considered arrogant. Employees do only what they are asked to do.&apos;
+        <br /><br />
+        <span className="not-italic text-sm text-g500">(Source: <a href="https://www.hofstede-insights.com/country/india" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Hofstede Cultural Dimensions - India</a>, Power Distance Index score: 77 vs world average 56)</span>
+      </blockquote>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Now map that onto the design profession, a discipline that literally requires you to challenge assumptions, question decisions, and push back on bad ideas. These two forces collide every day in design teams across India. And designers are almost always the ones who lose.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4 font-semibold">
+        The &apos;VP said so&apos; problem.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        A VP or business head walks into a room and says &apos;I need this redesigned by tomorrow.&apos; No brief. No research. No understanding of user needs. The instruction flows downward. In cultures that reward individual thinking, a senior designer would say &apos;let me understand the problem first.&apos; In many Indian teams, that designer is seen as difficult.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4 font-semibold">
+        The conveyor belt manager.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Design managers who have perfected the art of looking busy while doing nothing original. They receive instructions from above, repackage them for the team below, and call it leadership. They tell their teams &apos;I do not micromanage&apos;, what they really mean is &apos;I do not understand what you do well enough to have an opinion.&apos; When things go wrong, they are nowhere to be found. When things go right, they are in the review meeting taking credit.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4 font-semibold">
+        The micromanager who gave up on you.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        On the other side: managers who jump into every Figma file, redo your work, and say things like &apos;you are too slow.&apos; They never learned to delegate because no one taught them that managing design is different from doing design.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4 font-semibold">
+        The skill ceiling.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        For the first three or four years, your core design skills matter. After that, in most Indian organisations, the skills that matter shift entirely. Suddenly it is about navigating relationships. Managing up. Making your boss look good. Knowing which battles to fight and which to quietly lose. The designers who thrive are not necessarily the most talented. They are the ones who figured out the politics fastest. None of this is written in any job description. But every designer working in India knows it is true.
+      </p>
+
+      <h2 id="bad-advice" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Why &apos;Just Build More Skills&apos; Is Bad Advice
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The standard advice: learn a new tool. Get a certification. Add another case study to your portfolio. Do a side project.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Skills matter. Especially in your first three years. If you do not build strong foundations in research, interaction design, and systems thinking early on, you will never get them back. That window closes fast.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        But after that? Adding more hard skills when your actual problem is positioning, communication, and influence is like practising free throws when you are not even getting picked for the team.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The designers I have seen break through, the ones who jump from 8 LPA to 20, from &apos;Senior Designer&apos; to &apos;Design Lead&apos; at a design-mature company, from feeling invisible to actually shaping product decisions, they did not do it by completing another Coursera course.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        They changed three things:
+      </p>
+      <ul className="list-disc pl-6 space-y-4 text-base md:text-lg text-g600 mb-6">
+        <li><strong>How they talk about their work.</strong> Not what they designed, but what problem they solved and what it was worth to the business. This is the difference between a portfolio and a business case, and most designers have never built the second one.</li>
+        <li><strong>Where they position themselves.</strong> Not chasing any open role, but targeting organisations where design actually has a seat at the table, where the conversation about what to build includes design before the brief is written.</li>
+        <li><strong>How they navigate people.</strong> Not playing politics, but understanding that influence is a skill, and one that nobody teaches in design school.</li>
+      </ul>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        The salary gap between designers is not skills. It is legibility and positioning. We broke this down here: <Link href="/resources/blogs/12l-vs-30l-ux-designer-difference" className="text-accent hover:underline font-medium">The Difference Between a &#x20B9;12L and &#x20B9;30L UX Designer (It&apos;s Not Skills)</Link>.
+      </p>
+
+      <h2 id="real-career-map" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Real Career Map for Indian Designers
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        So if the standard ladder does not work, what does? Here is what 13 years across Indian, Japanese, Singaporean, Australian, and US design teams, and 140+ mentorship conversations, have taught me about how careers actually move in India.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        Year 0 to 3: Build your foundation. No shortcuts.
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is your only window to get the fundamentals right. User research. Data comprehension models. Interaction patterns. Visual systems. Prototyping. If you skip this phase or rush through it, everything you build later will be shaky.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Do not get distracted by titles during this phase. Whether you are called a &apos;UX Designer&apos; or &apos;Product Designer&apos; or &apos;Experience Designer&apos;, the work is largely the same. You are learning to understand users, create usable systems, and validate your decisions.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        The trap in this phase: thinking that mastering Figma is the same as mastering design. Figma is a delivery tool. Design is a thinking discipline. They are not the same thing. The execution specialist trap, and where it leads, is covered here: <Link href="/resources/blogs/ai-job-designer-type" className="text-accent hover:underline font-medium">AI Is Not Taking Your Job. But This Type of Designer Will.</Link>
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        Year 3 to 5: Learn how the business actually works.
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is where most Indian designers plateau. They have got the craft. They can deliver. But they cannot articulate why their work matters in business terms.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Start here: learn what metrics your product team tracks. Understand what your PM cares about. Figure out how decisions actually get made in your organisation, not the org chart version, but the real version. Who influences whom? Where does budget come from? What does your VP&apos;s VP care about?
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is not selling out. This is becoming dangerous in the best way, a designer who can connect pixels to revenue. Translating design thinking into business language is the core of the PIE model we built here: <Link href="/resources/blogs/senior-ux-designer-delivery-person" className="text-accent hover:underline font-medium">Senior Designer Still Treated Like a Delivery Person</Link>.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        And if you are getting into interviews at this stage but not converting them: <Link href="/resources/blogs/ghosted-after-round-2-ux-interview" className="text-accent hover:underline font-medium">Why UX Designers Get Ghosted After Round 2 Interviews</Link>.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        Year 5 to 7: Make the fork decision. And make it consciously.
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        Two paths open up here, and most designers stumble into one without choosing.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Path A: Individual Contributor.</strong> Staff Designer. Principal Designer. You go deep on craft, work across multiple projects, shape design systems, set quality standards. You do not manage people. You manage impact. This is a legitimate, respected, well-compensated path, but only at organisations mature enough to have it. At most Indian companies under 500 people, this path does not exist. Know that before you choose it.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Path B: People Leadership.</strong> Design Manager. Design Director. You move from doing the work to enabling others to do it. This requires an entirely different skill set: facilitation, feedback, stakeholder influence, team health. If nobody trains you for this transition, you will become one of the two manager archetypes I described earlier: the conveyor belt or the micromanager. Both are career traps.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        The mistake I see most often: designers choosing Path B because it seems like the &apos;natural next step&apos; or because the salary is higher, without realising they need to develop a completely different set of capabilities to succeed in it. Getting a seat in the rooms where product direction is decided, which is what Path B ultimately requires, is what we covered in: <Link href="/resources/blogs/ux-designer-product-strategy-table" className="text-accent hover:underline font-medium">How to Get a Seat at the Product Strategy Table as a UX Designer</Link>.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        Year 7+: Your reputation becomes your career strategy.
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        At this level, jobs do not come from job boards. They come from people who know your work, respect your thinking, and trust your judgment. Your personal brand, how you show up on LinkedIn, what you write, who knows you, what you are known for, matters more than your resume.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is especially true in India, where hiring at the Director+ level is almost entirely relationship-driven. Hofstede&apos;s research on India specifically notes that hiring and promotional decisions at senior levels are often based on relationships rather than purely on merit. The VP of Design at a SaaS company is not posting on Naukri. They are asking their network: &apos;Do you know anyone good?&apos;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If no one in those conversations knows your name, you are invisible. Not because you lack talent. Because you never made your work visible. The hidden job market, LinkedIn visibility, and what a genuinely activated profile looks like: <Link href="/resources/blogs/why-no-ux-interview-calls" className="text-accent hover:underline font-medium">Why You Are Not Getting UX Interview Calls (It&apos;s Not Your Portfolio)</Link>.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        And if your best work is sitting hidden behind NDAs, preventing you from building that visibility: <Link href="/resources/blogs/nda-work-ux-portfolio" className="text-accent hover:underline font-medium">Your NDA Is Not the Problem. Your Portfolio Strategy Is.</Link>
+      </p>
+
+      <h2 id="three-things" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Three Things You Can Do This Week
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        Not vague inspiration. Three concrete moves.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4 font-semibold">
+        1. Audit your current role honestly.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Does your title match your actual responsibilities and authority? If there is a gap, if you are a &apos;Manager&apos; doing IC work, or a &apos;Lead&apos; with no decision-making power, acknowledge it. Not to complain about it, but to be clear-eyed about where you actually are. You cannot navigate if you do not know your starting point.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4 font-semibold">
+        2. Rewrite one piece of work as a business case.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Take a project you shipped. Instead of describing what you designed, write 200 words on: what the problem was, what it cost the business, what you changed, and what improved. If you cannot do this for any of your work, that is the gap to close first. Not a new Figma plugin. Not another course. This.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4 font-semibold">
+        3. Have one conversation you have been avoiding.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        With your manager about your growth path. With a peer at a company you admire. With someone who is two levels above where you are now. Indian workplace culture teaches us to wait for permission, wait for the right time, wait for someone to notice us. The designers who move fastest are the ones who stop waiting.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        If that conversation is a salary negotiation you have been avoiding: <Link href="/resources/blogs/12l-vs-30l-ux-designer-difference" className="text-accent hover:underline font-medium">The Difference Between a &#x20B9;12L and &#x20B9;30L UX Designer (It&apos;s Not Skills)</Link>.
+      </p>
+
+      <h2 id="uncomfortable-truth" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Uncomfortable Truth
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The UX career ladder in India is not broken because Indian designers are not skilled enough.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        It is broken because the system, the hierarchy, the politics, the gap between titles and reality, was never designed with design careers in mind. And the playbook written for designers in San Francisco does not account for a Power Distance Index of 77.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The designers who move fastest in India are not the ones who fight the system or the ones who accept it. They are the ones who see it clearly, who understand the hierarchy without being captured by it, who learn the political language without losing their design thinking, who build their visibility before they need it.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        That is a specific skill. It can be built. But not by taking another Figma course.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        You are not behind because you are not good enough.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        You are behind because the rules of this game were never explained to you.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        They should have been. They were not. So here they are.
+      </p>
+
+      <h2 id="strategy-call" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Want to Know Exactly Where You Are on This Map?
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Book a free 45-minute strategy call with Xperience Wave. We will tell you honestly where you stand and what is actually blocking you, whether you join us or not.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        <a href="https://calendly.com/team-xperiencewave/xw-strategy" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Book your strategy call &rarr;</a>
+      </p>
+
+      <h2 id="read-next" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Read Next
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li>If you are not getting interview calls despite the experience: <Link href="/resources/blogs/why-no-ux-interview-calls" className="text-accent hover:underline font-medium">Why You Are Not Getting UX Interview Calls</Link></li>
+        <li>If you have the title but not the influence: <Link href="/resources/blogs/senior-ux-designer-delivery-person" className="text-accent hover:underline font-medium">Senior Designer Still Treated Like a Delivery Person</Link></li>
+        <li>If AI is reshaping what depth means for your career: <Link href="/resources/blogs/ai-job-designer-type" className="text-accent hover:underline font-medium">AI Is Not Taking Your Job. But This Type of Designer Will.</Link></li>
+        <li>If your best work is hidden behind NDAs: <Link href="/resources/blogs/nda-work-ux-portfolio" className="text-accent hover:underline font-medium">Your NDA Is Not the Problem. Your Portfolio Strategy Is.</Link></li>
+        <li>If you are getting to Round 2 and disappearing: <Link href="/resources/blogs/ghosted-after-round-2-ux-interview" className="text-accent hover:underline font-medium">Why UX Designers Get Ghosted After Round 2 Interviews</Link></li>
+        <li>If the salary conversation has been confusing: <Link href="/resources/blogs/12l-vs-30l-ux-designer-difference" className="text-accent hover:underline font-medium">The Difference Between a &#x20B9;12L and &#x20B9;30L UX Designer</Link></li>
+        <li>If you are ready to get upstream into strategy: <Link href="/resources/blogs/ux-designer-product-strategy-table" className="text-accent hover:underline font-medium">How to Get a Seat at the Product Strategy Table</Link></li>
+        <li>Explore the programme built for this transition: <Link href="/programs" className="text-accent hover:underline font-medium">Xperience Wave Current &rarr;</Link></li>
+      </ul>
+      <p className="text-base md:text-lg text-g500 italic mt-6">
+        Murad is Co-founder and Head of Design at Xperience Wave, a UX mentorship and education company based in Bangalore. He has 13+ years of design leadership experience across India, Japan, Singapore, Dubai, Australia, and the US, and has worked directly with 3,000+ designers across the country. He holds a Masters in Industrial Psychology.
+      </p>
+    </>
+  ),
   'ux-designer-product-strategy-table': (
     <>
       <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
@@ -3322,6 +3589,16 @@ const blogTableOfContents: Record<string, { id: string; title: string }[]> = {
     { id: 'negotiation', title: 'The Negotiation' },
     { id: 'what-to-do', title: 'What I Want You to Do With This' },
   ],
+  'ux-career-ladder-india': [
+    { id: 'ladder-doesnt-work', title: 'The Ladder Everyone Follows, and Why It Does Not Work' },
+    { id: 'indian-design-culture', title: 'What Nobody Says Out Loud About Indian Design Culture' },
+    { id: 'bad-advice', title: 'Why \'Just Build More Skills\' Is Bad Advice' },
+    { id: 'real-career-map', title: 'The Real Career Map for Indian Designers' },
+    { id: 'three-things', title: 'Three Things You Can Do This Week' },
+    { id: 'uncomfortable-truth', title: 'The Uncomfortable Truth' },
+    { id: 'strategy-call', title: 'Want to Know Where You Are on This Map?' },
+    { id: 'read-next', title: 'Read Next' },
+  ],
   'ux-designer-product-strategy-table': [
     { id: 'what-the-table-is', title: 'What the Table Actually Is' },
     { id: 'fintech-story', title: 'What It Actually Took: A Fintech Story' },
@@ -3423,6 +3700,11 @@ const blogMetadata: Record<string, { title: string; description: string; keyword
     title: '\u20B912L vs \u20B930L UX Designer: What\u2019s the Real Difference | Xperience Wave',
     description: 'The gap between a \u20B912L and \u20B930L UX designer in India has nothing to do with skills. Almas, Co-founder at Xperience Wave, explains the visibility trap and what actually makes a designer legible as valuable.',
     keywords: ['UX designer salary difference India', 'how to increase UX designer salary India', 'UX designer salary Bangalore 2026', 'senior UX designer salary India', 'UX designer career growth', 'UX designer salary bands India'],
+  },
+  'ux-career-ladder-india': {
+    title: 'The UX Career Ladder Is Broken in India - Here\'s What Actually Works | Xperience Wave',
+    description: 'The standard UX career ladder was written for the West. Murad, Co-founder at Xperience Wave, breaks down what actually moves designers forward in Indian workplaces - the hierarchy, the politics, and the real career map from 0 to 10+ years.',
+    keywords: ['UX designer career growth India', 'UX career path India', 'UX designer ladder India', 'senior UX designer India stuck', 'product design career India', 'design leadership India', 'UX career map India', 'UX designer salary growth India'],
   },
   'ux-designer-product-strategy-table': {
     title: 'How UX Designers Get a Seat at the Product Strategy Table | Xperience Wave',

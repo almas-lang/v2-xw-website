@@ -210,28 +210,28 @@ export async function POST(request: NextRequest) {
             to: [{ email }],
             subject: 'Your UX Mentorship Program Evaluator is Ready',
             htmlContent: `
-              <div style="font-family: Arial, sans-serif; max-width: 560px; margin: 0 auto; padding: 32px 20px; background: #ffffff;">
-                <div style="text-align: center; margin-bottom: 32px;">
-                  <img src="https://www.xperiencewave.com/images/xw-logo.png" alt="Xperience Wave" style="height: 40px;" />
-                </div>
-                <h1 style="color: #1A1A1A; font-size: 24px; margin-bottom: 16px; text-align: center;">
-                  Your Evaluator is Ready
-                </h1>
-                <p style="color: #666; font-size: 16px; line-height: 1.6; margin-bottom: 24px;">
-                  Score any UX mentorship program across 6 weighted categories. 20 questions. 100 points. The calculator is honest enough to score any program - including ours.
-                </p>
-                <div style="text-align: center; margin-bottom: 32px;">
-                  <a href="https://www.xperiencewave.com/resources/tools/mentorship-evaluator" style="display: inline-block; padding: 14px 32px; background: #FF0023; color: #ffffff; text-decoration: none; font-weight: 600; border-radius: 8px; font-size: 16px;">
-                    Open the Evaluator &rarr;
+              <div style="font-family: Arial, sans-serif; max-width: 560px; margin: 0 auto; background: #030303; border-radius: 12px; overflow: hidden;">
+                <div style="padding: 32px 32px 0; text-align: center;">
+                  <img src="https://www.xperiencewave.com/images/xw-logo-light.png" alt="Xperience Wave" style="height: 36px; margin-bottom: 28px;" />
+                  <h1 style="color: #ffffff; font-size: 22px; font-weight: 700; margin: 0 0 12px;">
+                    Your Evaluator is Ready
+                  </h1>
+                  <p style="color: #aaaaaa; font-size: 15px; line-height: 1.6; margin: 0 0 28px;">
+                    Score any UX mentorship program across 6 weighted categories. 20 questions. 100 points.
+                  </p>
+                  <a href="https://www.xperiencewave.com/resources/tools/mentorship-evaluator" style="display: inline-block; padding: 14px 36px; background: #FF0023; color: #ffffff; text-decoration: none; font-weight: 600; border-radius: 8px; font-size: 16px;">
+                    Start Scoring &rarr;
                   </a>
                 </div>
-                <p style="color: #999; font-size: 14px; line-height: 1.5; margin-bottom: 24px;">
-                  Want to walk through the scorecard together? <a href="https://calendly.com/team-xperiencewave/xw-strategy" style="color: #FF0023;">Book a free strategy call</a> and we'll apply the framework with you.
-                </p>
-                <hr style="border: none; border-top: 1px solid #eee; margin: 24px 0;" />
-                <p style="color: #bbb; font-size: 12px; text-align: center;">
-                  Xperience Wave &middot; UX Mentorship &amp; Career Development &middot; Bangalore
-                </p>
+                <div style="padding: 28px 32px 24px;">
+                  <p style="color: #888888; font-size: 13px; line-height: 1.5; text-align: center; margin: 0 0 20px;">
+                    Want to walk through the scorecard together? <a href="https://calendly.com/team-xperiencewave/xw-strategy" style="color: #FF0023; text-decoration: none;">Book a free strategy call</a>
+                  </p>
+                  <hr style="border: none; border-top: 1px solid #222; margin: 0 0 16px;" />
+                  <p style="color: #555555; font-size: 11px; text-align: center; margin: 0;">
+                    Xperience Wave &middot; UX Mentorship &amp; Career Development &middot; Bangalore
+                  </p>
+                </div>
               </div>
             `,
           }),

@@ -9,6 +9,7 @@ const NOTIFICATION_EMAILS = [
 ];
 
 export type LeadType =
+  | 'mentorship-evaluator'
   | 'design-strategy-gpt'
   | 'research-synthesis-gpt'
   | 'microcopy-writer-gpt'
@@ -30,6 +31,14 @@ interface LeadConfig {
 }
 
 const leadConfigs: Record<LeadType, LeadConfig> = {
+  // Evaluator Tool
+  'mentorship-evaluator': {
+    name: 'UX Mentorship Program Evaluator',
+    redirectUrl: '/resources/tools/mentorship-evaluator',
+    notificationSubject: '📊 New Evaluator Access Request',
+    notificationText: 'Someone requested access to the UX Mentorship Program Evaluator',
+    leadSource: 'Mentorship Evaluator Tool',
+  },
   // GPT Tools
   'design-strategy-gpt': {
     name: 'Design Strategy GPT',
@@ -185,6 +194,52 @@ export async function POST(request: NextRequest) {
 
     // Send notification to team
     await sendNotificationEmail(email, leadType as LeadType);
+
+    // Send confirmation email with link for evaluator
+    if (leadType === 'mentorship-evaluator') {
+      try {
+        await fetch('https://api.brevo.com/v3/smtp/email', {
+          method: 'POST',
+          headers: {
+            'accept': 'application/json',
+            'content-type': 'application/json',
+            'api-key': BREVO_API_KEY || '',
+          },
+          body: JSON.stringify({
+            sender: { name: 'Xperience Wave', email: 'team@xperiencewave.com' },
+            to: [{ email }],
+            subject: 'Your UX Mentorship Program Evaluator is Ready',
+            htmlContent: `
+              <div style="font-family: Arial, sans-serif; max-width: 560px; margin: 0 auto; padding: 32px 20px; background: #ffffff;">
+                <div style="text-align: center; margin-bottom: 32px;">
+                  <img src="https://www.xperiencewave.com/images/xw-logo.png" alt="Xperience Wave" style="height: 40px;" />
+                </div>
+                <h1 style="color: #1A1A1A; font-size: 24px; margin-bottom: 16px; text-align: center;">
+                  Your Evaluator is Ready
+                </h1>
+                <p style="color: #666; font-size: 16px; line-height: 1.6; margin-bottom: 24px;">
+                  Score any UX mentorship program across 6 weighted categories. 20 questions. 100 points. The calculator is honest enough to score any program - including ours.
+                </p>
+                <div style="text-align: center; margin-bottom: 32px;">
+                  <a href="https://www.xperiencewave.com/resources/tools/mentorship-evaluator" style="display: inline-block; padding: 14px 32px; background: #FF0023; color: #ffffff; text-decoration: none; font-weight: 600; border-radius: 8px; font-size: 16px;">
+                    Open the Evaluator &rarr;
+                  </a>
+                </div>
+                <p style="color: #999; font-size: 14px; line-height: 1.5; margin-bottom: 24px;">
+                  Want to walk through the scorecard together? <a href="https://calendly.com/team-xperiencewave/xw-strategy" style="color: #FF0023;">Book a free strategy call</a> and we'll apply the framework with you.
+                </p>
+                <hr style="border: none; border-top: 1px solid #eee; margin: 24px 0;" />
+                <p style="color: #bbb; font-size: 12px; text-align: center;">
+                  Xperience Wave &middot; UX Mentorship &amp; Career Development &middot; Bangalore
+                </p>
+              </div>
+            `,
+          }),
+        });
+      } catch (error) {
+        console.error('Failed to send evaluator confirmation email:', error);
+      }
+    }
 
     return NextResponse.json({
       success: true,

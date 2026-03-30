@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { blogPosts, getPublishedPosts, getCategoryLabel, getCategoryColor, formatDate } from '@/data/blogPosts';
 import CTASection from '@/components/shared/CTASection';
 import MobileTOC from '@/components/blog/MobileTOC';
-import MentorshipEvaluator from '@/components/blog/MentorshipEvaluator';
+import EvaluatorGate from '@/components/blog/EvaluatorGate';
 
 // Blog content with internal links for SEO
 const blogContent: Record<string, React.ReactNode> = {
@@ -3602,7 +3602,7 @@ const blogContent: Record<string, React.ReactNode> = {
         The calculator is honest enough that you can score any program - including ours. If Xperience Wave scores poorly on what matters to you specifically, that is worth knowing before you commit.
       </p>
 
-      <MentorshipEvaluator />
+      <EvaluatorGate />
 
       <h2 id="questions-to-ask" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
         The Questions to Ask Before You Pay

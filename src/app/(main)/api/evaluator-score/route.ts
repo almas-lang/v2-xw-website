@@ -28,8 +28,8 @@ export async function POST(request: NextRequest) {
         const cat = parts[0] || line;
         const score = parts[1] || '';
         return `<tr>
-          <td style="padding: 10px 0; color: #dddddd; font-size: 14px; border-bottom: 1px solid #222222;">${cat}</td>
-          <td style="padding: 10px 0; color: #ffffff; font-size: 14px; font-weight: 700; border-bottom: 1px solid #222222; text-align: right;">${score}</td>
+          <td style="padding: 10px 0; color: #444444; font-size: 14px; border-bottom: 1px solid #eee;">${cat}</td>
+          <td style="padding: 10px 0; color: #1A1A1A; font-size: 14px; font-weight: 700; border-bottom: 1px solid #eee; text-align: right;">${score}</td>
         </tr>`;
       })
       .join('');
@@ -46,36 +46,37 @@ export async function POST(request: NextRequest) {
         to: [{ email }],
         subject: `Your Program Score: ${totalScore}/100 - ${label}`,
         htmlContent: `
-          <div style="font-family: Arial, sans-serif; max-width: 560px; margin: 0 auto; background: #030303; border-radius: 12px; overflow: hidden;">
-            <div style="padding: 32px 32px 0; text-align: center;">
-              <img src="https://www.xperiencewave.com/images/xw-logo-light.png" alt="Xperience Wave" style="height: 36px; margin-bottom: 28px;" />
+          <style>@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&family=Playfair+Display:wght@700;800&display=swap');</style>
+          <div style="font-family: 'Plus Jakarta Sans', Arial, sans-serif; max-width: 560px; margin: 0 auto; background: #ffffff; padding: 40px 32px;">
+            <div style="text-align: center;">
+              <img src="https://www.xperiencewave.com/images/xw-logo-mobile.png" alt="Xperience Wave" style="height: 36px; margin-bottom: 32px;" />
 
-              <p style="font-size: 72px; font-weight: 800; color: #ffffff; margin: 0; line-height: 1;">${totalScore}</p>
-              <p style="font-size: 13px; color: #888888; margin: 6px 0 16px;">out of 100</p>
-              <p style="font-size: 20px; font-weight: 700; color: ${scoreColor}; margin: 0 0 12px;">${label}</p>
-              <p style="color: #aaaaaa; font-size: 14px; line-height: 1.6; margin: 0 0 28px;">
+              <p style="font-family: 'Playfair Display', Georgia, serif; font-size: 64px; font-weight: 800; color: #1A1A1A; margin: 0; line-height: 1;">${totalScore}</p>
+              <p style="font-size: 13px; color: #999999; margin: 6px 0 16px;">out of 100</p>
+              <p style="font-family: 'Playfair Display', Georgia, serif; font-size: 20px; font-weight: 700; color: ${scoreColor}; margin: 0 0 12px;">${label}</p>
+              <p style="color: #666666; font-size: 14px; line-height: 1.6; margin: 0 0 28px;">
                 ${message}
               </p>
             </div>
 
-            <div style="margin: 0 32px; background: #111111; border-radius: 10px; padding: 20px; margin-bottom: 24px;">
-              <p style="font-size: 11px; font-weight: 600; color: #888888; margin: 0 0 12px; text-transform: uppercase; letter-spacing: 1px;">Category Breakdown</p>
+            <div style="background: #f8f8f8; border-radius: 10px; padding: 20px; margin-bottom: 28px;">
+              <p style="font-size: 11px; font-weight: 600; color: #999999; margin: 0 0 12px; text-transform: uppercase; letter-spacing: 1px;">Category Breakdown</p>
               <table style="width: 100%; border-collapse: collapse;">
                 ${breakdownRows}
               </table>
             </div>
 
-            <div style="text-align: center; padding: 0 32px 28px;">
+            <div style="text-align: center;">
               <a href="https://calendly.com/team-xperiencewave/xw-strategy" style="display: inline-block; padding: 14px 36px; background: #FF0023; color: #ffffff; text-decoration: none; font-weight: 600; border-radius: 8px; font-size: 15px;">
                 Walk Through Your Score &rarr;
               </a>
-              <p style="color: #666666; font-size: 13px; line-height: 1.5; margin: 20px 0 0;">
+              <p style="color: #999999; font-size: 13px; line-height: 1.5; margin: 20px 0 0;">
                 <a href="https://www.xperiencewave.com/resources/tools/mentorship-evaluator" style="color: #FF0023; text-decoration: none;">Score another program</a>
               </p>
             </div>
 
-            <div style="border-top: 1px solid #222222; padding: 16px 32px;">
-              <p style="color: #555555; font-size: 11px; text-align: center; margin: 0;">
+            <div style="border-top: 1px solid #eee; padding-top: 16px; margin-top: 28px;">
+              <p style="color: #bbbbbb; font-size: 11px; text-align: center; margin: 0;">
                 Xperience Wave &middot; UX Mentorship &amp; Career Development &middot; Bangalore
               </p>
             </div>

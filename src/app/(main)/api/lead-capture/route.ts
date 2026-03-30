@@ -210,25 +210,25 @@ export async function POST(request: NextRequest) {
             to: [{ email }],
             subject: 'Your UX Mentorship Program Evaluator is Ready',
             htmlContent: `
-              <div style="font-family: Arial, sans-serif; max-width: 560px; margin: 0 auto; background: #030303; border-radius: 12px; overflow: hidden;">
-                <div style="padding: 32px 32px 0; text-align: center;">
-                  <img src="https://www.xperiencewave.com/images/xw-logo-light.png" alt="Xperience Wave" style="height: 36px; margin-bottom: 28px;" />
-                  <h1 style="color: #ffffff; font-size: 22px; font-weight: 700; margin: 0 0 12px;">
+              <style>@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&family=Playfair+Display:wght@700&display=swap');</style>
+              <div style="font-family: 'Plus Jakarta Sans', Arial, sans-serif; max-width: 560px; margin: 0 auto; background: #ffffff; padding: 40px 32px;">
+                <div style="text-align: center;">
+                  <img src="https://www.xperiencewave.com/images/xw-logo-mobile.png" alt="Xperience Wave" style="height: 36px; margin-bottom: 32px;" />
+                  <h1 style="font-family: 'Playfair Display', Georgia, serif; color: #1A1A1A; font-size: 24px; font-weight: 700; margin: 0 0 12px;">
                     Your Evaluator is Ready
                   </h1>
-                  <p style="color: #aaaaaa; font-size: 15px; line-height: 1.6; margin: 0 0 28px;">
+                  <p style="color: #666666; font-size: 15px; line-height: 1.6; margin: 0 0 28px;">
                     Score any UX mentorship program across 6 weighted categories. 20 questions. 100 points.
                   </p>
                   <a href="https://www.xperiencewave.com/resources/tools/mentorship-evaluator" style="display: inline-block; padding: 14px 36px; background: #FF0023; color: #ffffff; text-decoration: none; font-weight: 600; border-radius: 8px; font-size: 16px;">
                     Start Scoring &rarr;
                   </a>
                 </div>
-                <div style="padding: 28px 32px 24px;">
-                  <p style="color: #888888; font-size: 13px; line-height: 1.5; text-align: center; margin: 0 0 20px;">
+                <div style="padding-top: 28px; margin-top: 28px; border-top: 1px solid #eee;">
+                  <p style="color: #999999; font-size: 13px; line-height: 1.5; text-align: center; margin: 0 0 16px;">
                     Want to walk through the scorecard together? <a href="https://calendly.com/team-xperiencewave/xw-strategy" style="color: #FF0023; text-decoration: none;">Book a free strategy call</a>
                   </p>
-                  <hr style="border: none; border-top: 1px solid #222; margin: 0 0 16px;" />
-                  <p style="color: #555555; font-size: 11px; text-align: center; margin: 0;">
+                  <p style="color: #bbbbbb; font-size: 11px; text-align: center; margin: 0;">
                     Xperience Wave &middot; UX Mentorship &amp; Career Development &middot; Bangalore
                   </p>
                 </div>

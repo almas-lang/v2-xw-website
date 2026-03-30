@@ -2914,6 +2914,286 @@ const blogContent: Record<string, React.ReactNode> = {
       </p>
     </>
   ),
+  'what-design-managers-look-for-senior-ux-hiring': (
+    <>
+      <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
+        You do UX research. You know how to understand what users actually want, how they actually make decisions, and how to design for them specifically, not for a generalised idea of who they might be.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        So let me ask you something uncomfortable.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Have you ever applied that same thinking to your own job search?
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Have you ever actually tried to understand the recruiter as a user, their journey, their constraints, what they are scanning for at each stage, what makes them stop and what makes them move on?
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Almost no designer has. And it is one of the most expensive blind spots in the entire job search process.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Here is the reframe: in a job application, you are the product. The recruiter is the user. Your resume, your portfolio, your interview performance, these are the touchpoints in their experience of you. And you have been designing those touchpoints without doing any research on the person who is actually moving through them.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        This blog is that research. Written from the side of the table most designers never sit at.
+      </p>
+
+      <h2 id="recruiter-journey" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Recruiter&apos;s Journey: What Is Actually Happening Before You Get the Call
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Most designers think the hiring process starts when they submit an application. It does not. By the time your resume lands in a queue, the organisation has already made a set of decisions that will shape everything that follows.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        A hiring manager identifies the need and gets budget approved. That request goes to HR or a recruiting team, who will source candidates from multiple places simultaneously: internal referrals, LinkedIn outreach, job platforms, sometimes specialised design recruiters. The pool that comes in from all of these gets reviewed by a human, usually very quickly.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4 font-semibold">
+        What is actually true about ATS, and why the popular version of this story is both wrong and right:
+      </p>
+      <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-6">
+        The widely cited &apos;75% of resumes are auto-rejected by ATS before a human sees them&apos; originated from a 2012 sales pitch by a defunct resume service called Preptel. No methodology was ever published. The claim has been recycled without a source ever since.
+        <br /><br />
+        <span className="not-italic text-sm text-g500">(Source: <a href="https://blog.theinterviewguys.com/ats-resume-rejection-myth" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">The Interview Guys, 2025</a>)</span>
+      </blockquote>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        What IS true: ATS systems are primarily organisational tools, not auto-rejection machines. <a href="https://enhancv.com/blog/does-ats-reject-resumes" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Enhancv&apos;s 2025 study</a> of 25 recruiters across Workday, Greenhouse, and Bullhorn found that 92% do not configure content-based auto-rejection. The software organises applications; humans make the calls.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        But here is where the advice to prepare ATS-friendly resumes remains completely correct: <a href="https://www.hbs.edu/managing-the-future-of-work/Documents/research/hiddenworkers09032021.pdf" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Harvard Business School&apos;s Hidden Workers study</a> found that 88% of employers acknowledge their ATS configuration screens out qualified candidates, through human-set filters like employment gaps, keyword mismatches, and years-of-experience thresholds. EDLIGO&apos;s analysis of 1,000 rejected resumes found 43% failed due to formatting and parsing errors, not skill gaps.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The mechanism is different from the myth. The result for a poorly formatted resume is the same: a human never gets to read it.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The practical implication: your resume needs to be ATS-friendly, clean formatting, keyword-aligned, no complex layouts or graphics that break parsing. Not because a bot will auto-delete it. Because a poorly structured resume gets deprioritised in a pile of 200 that a recruiter has four seconds each to sort through. The outcome is identical. The cause is different.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        After the initial screen, the process at design-mature organisations typically moves through: a pre-discovery call to check fit and bracket, then a portfolio walkthrough or assignment, then sometimes a live whiteboard or collaborative session, then cross-functional conversations with a PM or engineering lead, then a cultural fit discussion, then negotiation and offer.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Each stage is evaluating something different. And the biggest mistake designers make is showing up to every stage with the same presentation of themselves, the same story, the same framing, the same level of depth. That is not how good products are designed. Different users, different contexts, different needs at each touchpoint.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        If you are clearing early stages and losing it later, that is a specific problem with a specific fix. We covered what is actually happening in Round 2 here: <Link href="/resources/blogs/ghosted-after-round-2-ux-interview" className="text-accent hover:underline font-medium">Why UX Designers Get Ghosted After Round 2 Interviews</Link>.
+      </p>
+
+      <h2 id="what-senior-means" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What &apos;Senior&apos; Actually Means, and the Gap Between What You Think It Is and What They Are Testing For
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        In the Bangalore market, 3 to 5 years of experience typically qualifies someone for a senior UX designer title. But the title is the easy part. What the hiring manager is actually trying to determine is something much harder to prove from a portfolio.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Senior is not &apos;does more design&apos;. Senior is &apos;operates differently&apos;.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        A senior designer is expected to handle end-to-end flows, not just detailed components, but full user journeys and structural architecture. They own the design delivery for a defined scope, not just execute what someone else has scoped. They run research and connect it to decisions, not just produce research artefacts. They collaborate with product managers, engineering leads, and business stakeholders, not just other designers. And they do all of this with a confidence that comes from having navigated ambiguity before, not from having a checklist.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        The four questions a hiring manager is actually asking about a senior designer candidate:
+      </p>
+      <ol className="list-decimal pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li>Can they operate at structure level, or are they still thinking at the detail level?</li>
+        <li>Do they own their work, or do they wait for direction at every step?</li>
+        <li>Can they connect their design decisions to outcomes the business cares about?</li>
+        <li>Will working with them be a contribution or a coordination cost?</li>
+      </ol>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Notice what is not on that list: Figma proficiency. Tool stack breadth. The visual polish of their case studies.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <a href="https://blog.uxfol.io/ux-design-skills" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">UXfolio&apos;s 2025 hiring research</a> found the same shift: &apos;Design leads and recruiters no longer want to see endless tool stacks or pixel-perfect UIs. They are looking for signals that you can navigate complexity, communicate strategy, and connect work to business outcomes.&apos;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The specialisation point is also widely misunderstood. At senior level, you are not expected to be a full generalist, someone who does research, interaction, visual, content, and strategy at equal depth. That is unrealistic and not what the role requires. What is expected is that you have gone deep on two or three disciplines, can contribute meaningfully beyond them, and know clearly what you do and do not do.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        A senior designer who says &apos;I do everything&apos; is usually someone who does nothing at the depth the role actually needs. On what depth actually looks like vs the surface-expander pattern: <Link href="/resources/blogs/ai-job-designer-type" className="text-accent hover:underline font-medium">AI Is Not Taking Your Job. But This Type of Designer Will.</Link>
+      </p>
+
+      <h2 id="signals-that-kill" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Signals That Kill Candidacies: What a Hiring Manager Notices and Does Not Say
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The rejection almost never comes with honest feedback. But the patterns that cause it are consistent enough that after reviewing hundreds of designer profiles at Xperience Wave, they are predictable.
+      </p>
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        The tools trap
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The designer who leads with tools is flagging something they do not know they are flagging. &apos;I am proficient in Figma, Maze, Miro, Hotjar, and Adobe XD&apos;, this says nothing about how they think, what they own, or what they have produced that mattered. It says they know how to use software.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        At senior level, tools are assumed. Nobody asks a surgeon which scalpel they prefer. If the tool conversation is taking up real estate in your resume or your portfolio or your opening presentation of yourself, you are optimising for the wrong audience.
+      </p>
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        The silo worker
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Design that happens in a vacuum and gets presented as finished work is a senior-level red flag. A hiring manager is not just evaluating the output, they are trying to understand how you work. Did you make assumptions that a PM would have caught? Did you design something engineering cannot build? Did you validate with users or just with your own judgment?
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Working in opacity and &apos;revealing&apos; the work is the pattern of someone who is afraid of in-process feedback. That fear is expensive at senior level, because senior designers need to be able to operate in the open, sharing early thinking, incorporating input, adjusting direction before the full solution is complete.
+      </p>
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        The constraint blamer
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        &apos;I did not have enough time for proper research.&apos; &apos;The PM did not allow it.&apos; &apos;The org does not value UX.&apos;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        We covered these exact patterns in a blog specifically about Round 2 interviews, they are the phrases that end candidacies. At senior level, constraints are not explanations. They are the context within which you demonstrated what you could do. The hiring manager wants to know what you actually did within them, not what they prevented. <Link href="/resources/blogs/ghosted-after-round-2-ux-interview" className="text-accent hover:underline font-medium">Why UX Designers Get Ghosted After Round 2 Interviews</Link>.
+      </p>
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        The language mismatch
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        A senior designer who can only present work in design language is a designer who will only ever influence other designers. If you cannot say, clearly, without jargon, what the business problem was, what your solution changed about it, and what the measurable result looked like, you are not yet speaking senior.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        This does not mean abandoning design thinking. It means translating it. The hiring manager across the table is often a design director or a product leader who is trying to answer the question: will this person be able to operate credibly with our PM team, our engineering leads, our business stakeholders? The portfolio walkthrough is where they test that.
+      </p>
+
+      <h2 id="signals-that-win" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Signals That Win Candidacies: What &apos;Yes&apos; Actually Looks Like
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The positive signals are less about impressing the room and more about making the hiring manager&apos;s decision easy. They need to be able to go back to their team and say: this person can do what we need, and here is the evidence.
+      </p>
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        They own outcomes, not just deliverables
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The designer who can tell you specifically what changed after the thing shipped, a conversion number, a drop in support tickets, a user behaviour metric, is demonstrating something that a polished portfolio cannot. That they stayed attached to the outcome, not just the output. That they tracked what happened. That they have an opinion about why it worked or did not.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is not about having big impact numbers on every project. Some projects do not have clean metrics. But the ability to frame impact, even qualitatively, is the difference between a case study and a resume entry. On why the &#x20B9;30L designer stays attached to outcomes while the &#x20B9;12L designer moves to the next ticket: <Link href="/resources/blogs/12l-vs-30l-ux-designer-difference" className="text-accent hover:underline font-medium">The Difference Between a &#x20B9;12L and &#x20B9;30L UX Designer</Link>.
+      </p>
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        They can hold ground without making it a fight
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Anna Rowe, Senior UX Director at Indeed, describes what she is looking for in portfolio presentations: practice telling your story to someone who is not familiar with the work. &apos;Your goal: they understand it in minutes, and they are excited.&apos;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        That requires the ability to read the room, to know when to go deeper and when to zoom out, to know when to hold on a decision and when to fold gracefully. A senior designer who can defend a decision under questioning without becoming defensive is showing something rare: that they are confident enough in their thinking to subject it to scrutiny.
+      </p>
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        They validate and communicate risk
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        A senior designer who can say &apos;here is what I do not know yet, here is the assumption I am making, here is the risk if that assumption is wrong&apos; is more valuable than one who presents everything as solved. The hiring manager has worked with enough designers to know that everything is not solved. The designer who pretends otherwise is the one they do not trust.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Highlighting risk early, communicating it clearly, and having a hypothesis about how to test it, this is what senior design judgment looks like in practice.
+      </p>
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        They make the collaboration feel easy
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        The cross-functional conversation that happens in most senior hiring processes, with a PM or engineering lead, is not a formality. It is a check on whether the person sitting across from them will create coordination problems or reduce them. The signal they are looking for is not charisma. It is: does this person ask good questions? Do they listen before they position? Do they seem interested in what we are building, or only in presenting themselves? A designer who shows genuine curiosity about the product, the team, and the constraints is a designer who will be useful to work with.
+      </p>
+
+      <h2 id="five-mistakes" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Five Things Designers Get Wrong About Senior UX Hiring
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4 font-semibold">
+        1. &apos;They want a full generalist who can do everything.&apos;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        No. They want someone who has gone deep on two or three disciplines and can contribute meaningfully across adjacent ones. A senior designer who does research, interaction, visual, content, strategy, and systems design with equal depth does not exist. What does exist, and what gets hired, is someone who is genuinely strong in their core area, credibly functional in adjacent areas, and honest about where they stop.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4 font-semibold">
+        2. &apos;The portfolio is the job application.&apos;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The portfolio is the door. What happens after you walk through it is determined by everything else: how you present the thinking, how you respond to questions, how you handle the moment when the interviewer challenges a decision you made. A beautiful portfolio from a designer who cannot defend their own work is a liability. It raises expectations that the conversation then fails to meet.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4 font-semibold">
+        3. &apos;I will drive design decisions at a vision level.&apos;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        At senior level, you influence decisions. You do not drive them. The people who set product vision and philosophy are almost always above you in the structure, a Head of Design, a CPO, a founder. Your job is to make those decisions better through the quality of your thinking and the strength of your relationships. Misunderstanding this is one of the fastest ways to arrive in a new role expecting authority you were never going to have.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4 font-semibold">
+        4. &apos;A fancy designed resume will show my design skills.&apos;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The resume is read by an ATS system and then by a human who has 200 others on their list. A complex, graphically rich resume is frequently the one that parses badly, displays oddly, or gets skimmed past because the signal-to-noise ratio is too low. Use a clean, readable format. Put the outcomes front and centre. Design the resume for the person reading it, not for you.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4 font-semibold">
+        5. &apos;I will get full authority to do proper research.&apos;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Research happens when you make the case for it and the organisation agrees to the cost. At senior level, that is your job, not to assume research time will be given, but to build the argument for why this specific research, for this specific decision, is worth the investment. Designers who wait for permission to do research get less of it. Designers who show why it matters get more.
+      </p>
+
+      <h2 id="how-to-prepare" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        So How Do You Actually Prepare For This?
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4 font-semibold">
+        Run user research on your own hiring process.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Talk to someone who has hired at the level you are targeting. Not to get tips, to understand what the job looks like from their side. What are they actually afraid of when they are making this hire? What went wrong with the last person in this role? What does success look like for them in six months?
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        That information changes how you present yourself completely. Because instead of telling your story, you are telling the part of your story that answers what they actually need to hear.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The hiring manager is not looking for the best designer in the pool.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6 font-semibold">
+        They are looking for the designer who makes their specific problem easiest to solve.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The more you understand their problem, the easier it is to show that you are that person.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4 font-semibold">
+        Map your portfolio to their questions, not to your journey.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Most portfolio presentations walk through projects chronologically, or in order of personal pride. The better move: identify the two or three capabilities the role most needs, and lead with the evidence for each. The hiring manager&apos;s job is to answer four questions about you. Make those answers obvious before they have to search for them.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4 font-semibold">
+        Know your two or three pillars deeply.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Not everything at shallow depth. The most common interview collapse at senior level is the moment when the questioning goes below the surface of a case study and the designer has no depth to offer. If you cannot explain, in two minutes, to someone who does not speak design, why you made a specific decision, what you considered and rejected, and what you would do differently, you are not ready to present that project. On defending your thinking in Round 2, the specific questions that expose hollow portfolios: <Link href="/resources/blogs/ghosted-after-round-2-ux-interview" className="text-accent hover:underline font-medium">Why UX Designers Get Ghosted After Round 2 Interviews</Link>.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        <strong>Empower your design manager.</strong> The last thing: understand that the hiring manager is not your evaluator only. They are going to be your collaborator, your sponsor, your translator to the business. Going into an interview trying to impress them misses the point. Going in trying to understand them, what they are building, what they need, how you can make their job better, is a different conversation entirely. And it is the conversation that converts.
+      </p>
+
+      <h2 id="strategy-call" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Ready to Map Your Candidacy From the Hiring Manager&apos;s Perspective?
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        At Xperience Wave, we review portfolios and interview readiness 1:1, not with generic feedback, but with the specific diagnosis of where your candidacy is losing people and what to change. Book a free 45-minute strategy call.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        <a href="https://calendly.com/team-xperiencewave/xw-strategy" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Book your strategy call &rarr;</a>
+      </p>
+
+      <h2 id="read-next" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Read Next
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li>If you are not getting calls despite the experience: <Link href="/resources/blogs/why-no-ux-interview-calls" className="text-accent hover:underline font-medium">Why You Are Not Getting UX Interview Calls</Link></li>
+        <li>If you have the title but not the influence: <Link href="/resources/blogs/senior-ux-designer-delivery-person" className="text-accent hover:underline font-medium">Senior Designer Still Treated Like a Delivery Person</Link></li>
+        <li>If AI is reshaping what depth means for hiring: <Link href="/resources/blogs/ai-job-designer-type" className="text-accent hover:underline font-medium">AI Is Not Taking Your Job. But This Type of Designer Will.</Link></li>
+        <li>If your best work is hidden behind NDAs: <Link href="/resources/blogs/nda-work-ux-portfolio" className="text-accent hover:underline font-medium">Your NDA Is Not the Problem. Your Portfolio Strategy Is.</Link></li>
+        <li>If you are clearing Round 1 and disappearing after: <Link href="/resources/blogs/ghosted-after-round-2-ux-interview" className="text-accent hover:underline font-medium">Why UX Designers Get Ghosted After Round 2 Interviews</Link></li>
+        <li>If the salary gap is what is confusing you: <Link href="/resources/blogs/12l-vs-30l-ux-designer-difference" className="text-accent hover:underline font-medium">The Difference Between a &#x20B9;12L and &#x20B9;30L UX Designer</Link></li>
+        <li>If you are ready to get upstream into strategy: <Link href="/resources/blogs/ux-designer-product-strategy-table" className="text-accent hover:underline font-medium">How to Get a Seat at the Product Strategy Table</Link></li>
+        <li>If you want the full India career context: <Link href="/resources/blogs/ux-career-ladder-india" className="text-accent hover:underline font-medium">The UX Career Ladder Is Broken in India</Link></li>
+        <li>Explore the programme: <Link href="/programs" className="text-accent hover:underline font-medium">Xperience Wave Current &rarr;</Link></li>
+      </ul>
+      <p className="text-base md:text-lg text-g500 italic mt-6">
+        Almas Tasneem is Co-founder at Xperience Wave, where she leads sales, strategy, and client success. She has personally reviewed hundreds of designer profiles, salary situations, and interview processes, and has sat on both sides of the hiring conversation across the Bangalore product design ecosystem.
+      </p>
+    </>
+  ),
   'ux-career-ladder-india': (
     <>
       <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
@@ -3589,6 +3869,16 @@ const blogTableOfContents: Record<string, { id: string; title: string }[]> = {
     { id: 'negotiation', title: 'The Negotiation' },
     { id: 'what-to-do', title: 'What I Want You to Do With This' },
   ],
+  'what-design-managers-look-for-senior-ux-hiring': [
+    { id: 'recruiter-journey', title: 'The Recruiter\'s Journey' },
+    { id: 'what-senior-means', title: 'What \'Senior\' Actually Means' },
+    { id: 'signals-that-kill', title: 'The Signals That Kill Candidacies' },
+    { id: 'signals-that-win', title: 'The Signals That Win Candidacies' },
+    { id: 'five-mistakes', title: 'Five Things Designers Get Wrong' },
+    { id: 'how-to-prepare', title: 'How to Actually Prepare' },
+    { id: 'strategy-call', title: 'Map Your Candidacy' },
+    { id: 'read-next', title: 'Read Next' },
+  ],
   'ux-career-ladder-india': [
     { id: 'ladder-doesnt-work', title: 'The Ladder Everyone Follows, and Why It Does Not Work' },
     { id: 'indian-design-culture', title: 'What Nobody Says Out Loud About Indian Design Culture' },
@@ -3700,6 +3990,11 @@ const blogMetadata: Record<string, { title: string; description: string; keyword
     title: '\u20B912L vs \u20B930L UX Designer: What\u2019s the Real Difference | Xperience Wave',
     description: 'The gap between a \u20B912L and \u20B930L UX designer in India has nothing to do with skills. Almas, Co-founder at Xperience Wave, explains the visibility trap and what actually makes a designer legible as valuable.',
     keywords: ['UX designer salary difference India', 'how to increase UX designer salary India', 'UX designer salary Bangalore 2026', 'senior UX designer salary India', 'UX designer career growth', 'UX designer salary bands India'],
+  },
+  'what-design-managers-look-for-senior-ux-hiring': {
+    title: 'What Design Managers Look for When Hiring Senior UX Designers | Xperience Wave',
+    description: 'In a job application, you are the product and the recruiter is the user. Almas, Co-founder at Xperience Wave, breaks down what design managers are actually evaluating at every stage of the senior UX hiring process and the signals that win and lose candidacies.',
+    keywords: ['what design managers look for senior UX designer', 'senior UX designer hiring India', 'UX designer interview tips', 'UX portfolio hiring manager', 'senior UX designer skills 2026', 'UX job interview India'],
   },
   'ux-career-ladder-india': {
     title: 'The UX Career Ladder Is Broken in India - Here\'s What Actually Works | Xperience Wave',

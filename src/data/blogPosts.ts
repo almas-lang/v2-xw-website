@@ -118,6 +118,17 @@ export const blogPosts: BlogPost[] = [
     readTime: '8 min',
   },
   {
+    id: '26',
+    slug: 'what-design-managers-look-for-senior-ux-hiring',
+    title: 'What Design Managers Actually Look for When Hiring Senior UX Designers',
+    excerpt: 'In a job application, you are the product and the recruiter is the user. Almas breaks down what design managers are actually evaluating at every stage of the senior UX hiring process, and the signals that win and lose candidacies.',
+    category: 'career-growth',
+    image: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&q=80',
+    author: { name: 'Almas Tasneem' },
+    publishedAt: '2026-03-29',
+    readTime: '9 min',
+  },
+  {
     id: '25',
     slug: 'ux-career-ladder-india',
     title: 'The UX Career Ladder Is Broken in India. Here\'s the Path That Actually Works.',

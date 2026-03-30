@@ -118,6 +118,17 @@ export const blogPosts: BlogPost[] = [
     readTime: '8 min',
   },
   {
+    id: '27',
+    slug: 'conversations-senior-designers-have',
+    title: 'The 5 Conversations Senior Designers Have That Mid-Level Designers Don\'t',
+    excerpt: 'The gap between mid-level and senior UX designers is not experience or tools. It is five specific conversations, questions senior designers ask before walking into any room. Murad breaks them down.',
+    category: 'career-growth',
+    image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&q=80',
+    author: { name: 'Shaik Murad' },
+    publishedAt: '2026-03-28',
+    readTime: '9 min',
+  },
+  {
     id: '26',
     slug: 'what-design-managers-look-for-senior-ux-hiring',
     title: 'What Design Managers Actually Look for When Hiring Senior UX Designers',

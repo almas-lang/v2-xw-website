@@ -2914,6 +2914,249 @@ const blogContent: Record<string, React.ReactNode> = {
       </p>
     </>
   ),
+  'conversations-senior-designers-have': (
+    <>
+      <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
+        I have sat in a lot of sprint meetings with a lot of design teams over the years.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        And I have noticed a specific thing that happens in some of them. The designers are happy. Genuinely happy. They are laughing, engaged, moving quickly through the agenda. The energy is good. The velocity is high.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        When I dig a little deeper into what is actually happening in those teams, I almost always find the same thing: these designers have stopped being designers. They have become the garnish.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The garnish is on every plate. It makes things look complete. It arrives after every decision has been made, about what goes on the plate, how it is prepared, what it costs. Nobody consults the garnish. It just shows up at the end and makes it presentable. These designers receive decisions, make those decisions look good, and ship them. The brief arrives. They execute. Everyone is pleased. Life is easy.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        And here is the part that stays with me: when I tell them this, they are surprised. They were not being lazy. They were not cutting corners on purpose. They genuinely believed they were doing good work. Nobody told them they were not.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This blog is me telling you.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The gap between a mid-level designer and a senior designer is not years of experience. It is not the size of your portfolio or how deep your tool knowledge runs. It is five specific conversations, questions that senior designers ask themselves before they walk into any room, before they open Figma, before they accept any brief.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Mid-level designers do not have these conversations. Not because they are not smart enough. Because nobody showed them the questions exist.
+      </p>
+      <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-8">
+        Junior designers ask: what do I need to design?<br />
+        Mid-level designers ask: how should I approach this problem?<br />
+        Senior designers ask: should this problem exist at all?
+        <br /><br />
+        <span className="not-italic text-sm text-g500">(Source: <a href="https://uxbeginner.com/design-levels-junior-vs-mid-level-vs-senior-ux-designer" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">UX Beginner, understanding design levels</a>)</span>
+      </blockquote>
+
+      <h2 id="conversation-1" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Conversation 1: &quot;Is This Worth Solving, or Am I Just Making Someone Comfortable?&quot;
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is the conversation that happens before every brief is accepted. Before the first sticky note. Before the first wireframe.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        A mid-level designer receives a brief and starts designing. A senior designer receives a brief and interrogates it first. Not out of insubordination, out of professional obligation. Because the most expensive thing a design team can do is build the right solution to the wrong problem.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        The questions that make up this conversation:
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Is this a real problem or a comfort request?</strong> Someone powerful felt uncomfortable about something. The discomfort got turned into a brief. Now it is on your desk. Before you touch it: is there a user who has this problem? Is there data that says this matters? Or are you about to spend three weeks making a VP feel better about a feature that real users do not care about?
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Am I on a business priority project?</strong> Or am I working on something that occupies design time without moving anything that matters? Senior designers know which projects are connected to the metrics the organisation actually tracks, and they fight to be on those projects, not the ones that look busy but do not move numbers.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Am I satisfying my own ego by following a process?</strong> This one is uncomfortable. It is the mad scientist question. There are designers who run twelve weeks of research for a decision that needed to be made in two. Not because the research was required, because research feels like good design. It is not good design if it is not connected to a decision the business is actually going to make. Process is a tool, not a virtue.
+      </p>
+      <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-6">
+        The garnish never asks any of these questions. It receives the brief and makes it look good. The designer who is actually doing senior work asks all three, before they open a single file.
+      </blockquote>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        The business language gap is the specific thing that keeps senior designers stuck: <Link href="/resources/blogs/senior-ux-designer-delivery-person" className="text-accent hover:underline font-medium">Senior Designer Still Treated Like a Delivery Person</Link>.
+      </p>
+
+      <h2 id="conversation-2" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Conversation 2: &quot;Where Is the Money, and Who Owns It?&quot;
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is not a cynical question. It is an orientation question. And it is the question that separates designers who influence product direction from designers who receive it.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Every product decision is connected to a business bet. Someone has decided that this feature, this redesign, this research sprint is worth the organisation&apos;s resources. Who made that decision? What number were they trying to move? What does success look like, not in design terms, but in the terms your CFO or your VP of Growth would recognise?
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Senior designers know the answers before the project starts. Not because they are business consultants, because you cannot make good design decisions without understanding the business context the design is operating inside.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Where is the money in this?</strong> Which metric does this project connect to? Retention? Activation? Revenue per user? Cost reduction? If you cannot answer this, you do not know what success looks like. Which means you do not know what you are designing for.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Who owns that metric?</strong> This is the person whose opinion about your work actually matters beyond aesthetics. They are the one who, when they say &apos;this does not feel right,&apos; can stop the project. They are also the one who, when they say &apos;this is exactly what we needed,&apos; can open every door. Senior designers find this person early and build the relationship before they need it.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Is this a priority, for whom?</strong> Something can be a priority for the design team and irrelevant to the business. Something can be a priority for the business and logistically impossible for technology. Something can be a priority for technology and a terrible experience for the customer. Senior designers understand the hierarchy of priorities across business, technology, organisational capability, and customer, and they know which one is actually driving this project right now.
+      </p>
+      <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-6">
+        <a href="https://blog.logrocket.com/ux-design/the-truth-about-design-titles" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">LogRocket&apos;s research</a> on senior vs mid-level designers confirms it directly: senior designers advocate for initiatives that can lead to significant business or user value. Mid-level designers are assigned tickets to work on, which are usually defined for them.
+      </blockquote>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The difference is not talent. It is whether you know which question to ask first.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        On getting into the rooms where these business decisions are made: <Link href="/resources/blogs/ux-designer-product-strategy-table" className="text-accent hover:underline font-medium">How to Get a Seat at the Product Strategy Table</Link>.
+      </p>
+
+      <h2 id="conversation-3" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Conversation 3: &quot;How Much Proof Does This Decision Actually Need?&quot;
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is the research maturity conversation. And it is the one that the mad scientist and the pure intuition believer both fail at, from opposite ends.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>The mad scientist</strong> believes that more research is always better. More interviews, more usability tests, more data, more time. They use scientific rigour as a shield: if the research is not done properly, the findings are not valid, the decisions should not be made. This designer is often respected for their process and consistently behind on delivery. And here is the part nobody says directly: the research they run is frequently not connected to decisions the business was actually going to change. It is research for the sake of research.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>The pure intuition believer</strong> goes the other way. They have done this before. They know what works. Their gut is good. They ship fast, they learn fast, they do not waste time on research that will just confirm what they already know. This designer moves quickly and has an impressive hit rate. They also occasionally catastrophically misread a context they thought was familiar.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The senior designer lives in the middle, but it is a specific, calibrated middle. The question they ask is not &apos;should I do research&apos; but &apos;what is the cost of being wrong on this decision, and does that cost justify the time required to be more certain?&apos;
+      </p>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li><strong>High cost of being wrong + reversible decision</strong> = lightweight validation before you commit</li>
+        <li><strong>High cost of being wrong + irreversible decision</strong> = proper research before you commit</li>
+        <li><strong>Low cost of being wrong + reversible decision</strong> = build it, measure it, iterate</li>
+        <li><strong>Low cost of being wrong + irreversible decision</strong> = rare, but worth a beat to think about</li>
+      </ul>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Do I need this research, or can I fairly assume and evaluate accuracy later?</strong> This is not a lazy question. It is a resource allocation question. Not every design decision warrants six weeks of discovery. Some decisions warrant two hours of assumption mapping. Senior designers know the difference and can articulate why.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Who can help me get answers I do not have?</strong> Senior designers do not put everything on the PM&apos;s desk and wait for the brief to get better. They identify who in the organisation knows things they need to know, customer success, data analytics, engineering, business development, and they go get those answers themselves. Research is not just a methodology. It is a mindset about where information lives and who has it.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>How will I validate after?</strong> Not every assumption gets validated before shipping. But senior designers make their assumptions explicit, they write them down, they articulate what would prove them right or wrong, and they watch for the signal after launch. This is what turns delivery into learning. And it is what builds the track record that makes senior designers trusted.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        The specific difference between designers who own outcomes and those who just deliver outputs: <Link href="/resources/blogs/12l-vs-30l-ux-designer-difference" className="text-accent hover:underline font-medium">The Difference Between a &#x20B9;12L and &#x20B9;30L UX Designer</Link>.
+      </p>
+
+      <h2 id="conversation-4" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Conversation 4: &quot;Who Actually Matters in This Room, and What Do They Need From Me?&quot;
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Every design presentation, every stakeholder meeting, every sprint review is a political landscape. Not political in the pejorative sense, political in the accurate sense. There are people in those rooms with different mandates, different incentives, different fears, and different definitions of success.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Mid-level designers walk into these rooms with their work and hope the work speaks for itself. It does not. Work speaks to people who already believe in what you are trying to do. Everyone else hears a story they need to be persuaded by.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Senior designers map the room before they enter it.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Who is the real decision-maker?</strong> Not the most senior person, the person whose opinion will actually determine what happens next. Sometimes these are the same. Often they are not. The VP who attends the review may have strong opinions, but the engineering lead who has to build the thing is the one who can stop it. Senior designers know the difference.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Who is the customer&apos;s genuine ally, and who thinks they are but is not?</strong> Every room has someone who will advocate for the user when it is comfortable and fold when it is costly. Senior designers know which person is which. They build alliances with genuine allies and do not waste time trying to convert the performative ones.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>How do I storyboard this so I do not sound like a designer?</strong> The question is not how to dumb things down. It is how to translate. The PM in the room cares about velocity. The engineering lead cares about feasibility and debt. The business head cares about margin and market position. The same design decision needs to be framed differently for each of them, not because you are being manipulative, but because the same outcome genuinely means different things to different people. Senior designers learn to speak all of these languages without losing their own.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>How do I make my manager successful?</strong> This is the question that most designers never think to ask. Your manager is accountable for outcomes above your individual contribution. When you walk into a meeting, you are not just representing your work, you are representing your manager&apos;s bet on you. Senior designers understand this relationship and actively make their manager look good. Not through flattery. Through the quality of their thinking and the clarity of their communication in rooms their manager cares about.
+      </p>
+      <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-6">
+        The garnish is comfortable because it removes this conversation entirely. You never have to map the room if your job is just to make things look good after the decisions are already made. The cost is that you never get invited to the room where the decisions happen.
+      </blockquote>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        On what hiring managers are actually evaluating when they see how you present work: <Link href="/resources/blogs/what-design-managers-look-for-senior-ux-hiring" className="text-accent hover:underline font-medium">What Design Managers Look for When Hiring Senior UX Designers</Link>.
+      </p>
+
+      <h2 id="conversation-5" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Conversation 5: &quot;Am I Still Attached to This After It Ships?&quot;
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is the ownership conversation. And it is the one that, once you start having it, makes being the garnish genuinely impossible.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Mid-level designers measure success at delivery. The thing shipped. It went through review. Stakeholders approved it. Job done. Next ticket.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Senior designers stay attached to what happens after. Not because they are anxious or controlling, because they understand that delivery is not impact. Delivery is the beginning of impact. What matters is whether the thing that shipped actually moved the thing it was supposed to move.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Did users understand the new flow? Did activation improve? Did the thing we hypothesised would happen, happen? Did it happen for the reasons we thought, or for different reasons that tell us something we need to know going forward?
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>If it did not work, do I know why?</strong> This is a harder question than it looks. Most designers do not follow up after launch because the information is uncomfortable. If the feature underperformed, there is a temptation to attribute it to implementation, or marketing, or timing, anything except the design. Senior designers follow up specifically because the discomfort is where the learning is.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>What do I carry into the next conversation?</strong> Every project produces something beyond the deliverable, a better understanding of where users struggle, which stakeholder frames are most effective, what the organisation&apos;s real constraints are versus the stated ones. Senior designers extract this systematically and bring it back. Their next project starts richer because of what happened on the last one.
+      </p>
+      <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-6">
+        <a href="https://uxbeginner.com/design-levels-junior-vs-mid-level-vs-senior-ux-designer" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">UX Beginner&apos;s research on design levels</a> states it directly: senior designers can propose and advocate the need for research. They do not just execute it. They measure impact. They understand outcomes qualitatively and quantitatively.
+      </blockquote>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        This is the difference between a portfolio of pretty screens and a track record of decisions. The companion piece on what each level of the ladder actually demands: <Link href="/resources/blogs/ux-career-ladder-india" className="text-accent hover:underline font-medium">The UX Career Ladder Is Broken in India. Here&apos;s the Path That Actually Works.</Link>
+      </p>
+
+      <h2 id="question-that-changes" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Question That Changes Everything
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        I started this blog with the designers in the sprint meetings. Happy. Moving fast. Being the garnish without knowing it.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        I want to be clear about something: I do not blame them. The system rewards the garnish. It is easier to manage, easier to measure, easier to approve. It produces fewer uncomfortable conversations. If nobody in the room is asking the hard questions, the hard questions do not get asked, and everyone goes home on time.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        But here is what is lost when design becomes decoration: the user. The actual human being whose experience was supposed to be the whole point. When designers stop interrogating briefs and start executing them without question, the user stops having a genuine advocate in the room. They just have someone who makes the decisions look good.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The five conversations I have described are not about being difficult. They are not about challenging for the sake of challenging. They are about doing the actual job, which is to make sure that what gets built is worth building, and that what gets shipped actually works for the people it was supposed to serve.
+      </p>
+      <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-6">
+        The designers who stay at mid-level are not less talented than the ones who move forward. They just have not started having these conversations yet. The moment you start asking them, you cannot go back to being the garnish. Not because it becomes harder, because it becomes impossible to unsee.
+      </blockquote>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Start with one. The next time a brief lands on your desk, before you open Figma, before the first sketch, ask: is this worth solving? Or am I just making someone comfortable? That question alone will change how you show up.
+      </p>
+
+      <h2 id="strategy-call" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Recognising Yourself in the Mid-Level Pattern?
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        At Xperience Wave, we work 1:1 with designers who are ready to stop executing and start influencing. Book a free 45-minute strategy call. We will tell you honestly where the gaps are and what to work on first.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        <a href="https://calendly.com/team-xperiencewave/xw-strategy" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Book your strategy call &rarr;</a>
+      </p>
+
+      <h2 id="sources-references" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Sources &amp; References
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-8">
+        <li><a href="https://uxbeginner.com/design-levels-junior-vs-mid-level-vs-senior-ux-designer" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">UX Beginner</a> — Understanding design levels: Junior vs Mid-level vs Senior UX Designer. The progression of questions by seniority: juniors ask &apos;what&apos;, mid-level asks &apos;how&apos;, seniors ask &apos;why&apos;. Senior designers seek holistic views, propose and advocate for research, and measure qualitative and quantitative outcomes.</li>
+        <li><a href="https://blog.logrocket.com/ux-design/the-truth-about-design-titles" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">LogRocket (2025)</a> — Why some designers stay stuck at mid-level. Mid-level designers are assigned tickets defined for them. Senior designers advocate for initiatives that drive significant business or user value.</li>
+        <li>Xperience Wave — direct observation. The garnish pattern, sprint meeting dynamics, and the five conversations are drawn from 13+ years of working with design teams across India and internationally, and from mentoring 140+ designers through career transitions.</li>
+      </ul>
+
+      <h2 id="read-next" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Read Next
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li>If you have the senior title but still feel like a delivery person: <Link href="/resources/blogs/senior-ux-designer-delivery-person" className="text-accent hover:underline font-medium">Senior Designer Still Treated Like a Delivery Person</Link></li>
+        <li>If the salary gap is what is bothering you: <Link href="/resources/blogs/12l-vs-30l-ux-designer-difference" className="text-accent hover:underline font-medium">The Difference Between a &#x20B9;12L and &#x20B9;30L UX Designer</Link></li>
+        <li>If you are ready to get into the rooms where strategy gets made: <Link href="/resources/blogs/ux-designer-product-strategy-table" className="text-accent hover:underline font-medium">How to Get a Seat at the Product Strategy Table</Link></li>
+        <li>Why the UX career ladder is broken in India: <Link href="/resources/blogs/ux-career-ladder-india" className="text-accent hover:underline font-medium">The UX Career Ladder Is Broken in India</Link></li>
+        <li>What hiring managers are actually looking for at senior level: <Link href="/resources/blogs/what-design-managers-look-for-senior-ux-hiring" className="text-accent hover:underline font-medium">What Design Managers Look for When Hiring Senior UX Designers</Link></li>
+        <li>Explore the programme built for this transition: <Link href="/programs" className="text-accent hover:underline font-medium">Xperience Wave Current &rarr;</Link></li>
+      </ul>
+      <p className="text-base md:text-lg text-g500 italic mt-6">
+        Murad is Co-founder and Head of Design at Xperience Wave, a UX mentorship and education company based in Bangalore. He has 13+ years of design leadership experience across India, Japan, Singapore, Dubai, Australia, and the US, and has worked directly with 3,000+ designers.
+      </p>
+    </>
+  ),
   'what-design-managers-look-for-senior-ux-hiring': (
     <>
       <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
@@ -3892,6 +4135,17 @@ const blogTableOfContents: Record<string, { id: string; title: string }[]> = {
     { id: 'negotiation', title: 'The Negotiation' },
     { id: 'what-to-do', title: 'What I Want You to Do With This' },
   ],
+  'conversations-senior-designers-have': [
+    { id: 'conversation-1', title: 'Is This Worth Solving?' },
+    { id: 'conversation-2', title: 'Where Is the Money?' },
+    { id: 'conversation-3', title: 'How Much Proof Does This Need?' },
+    { id: 'conversation-4', title: 'Who Actually Matters in This Room?' },
+    { id: 'conversation-5', title: 'Am I Still Attached After It Ships?' },
+    { id: 'question-that-changes', title: 'The Question That Changes Everything' },
+    { id: 'strategy-call', title: 'Recognising the Mid-Level Pattern?' },
+    { id: 'sources-references', title: 'Sources & References' },
+    { id: 'read-next', title: 'Read Next' },
+  ],
   'what-design-managers-look-for-senior-ux-hiring': [
     { id: 'recruiter-journey', title: 'The Recruiter\'s Journey' },
     { id: 'what-senior-means', title: 'What \'Senior\' Actually Means' },
@@ -4015,6 +4269,11 @@ const blogMetadata: Record<string, { title: string; description: string; keyword
     title: '\u20B912L vs \u20B930L UX Designer: What\u2019s the Real Difference | Xperience Wave',
     description: 'The gap between a \u20B912L and \u20B930L UX designer in India has nothing to do with skills. Almas, Co-founder at Xperience Wave, explains the visibility trap and what actually makes a designer legible as valuable.',
     keywords: ['UX designer salary difference India', 'how to increase UX designer salary India', 'UX designer salary Bangalore 2026', 'senior UX designer salary India', 'UX designer career growth', 'UX designer salary bands India'],
+  },
+  'conversations-senior-designers-have': {
+    title: 'The 5 Conversations Senior Designers Have That Mid-Level Designers Don\'t | Xperience Wave',
+    description: 'The gap between mid-level and senior UX designers is not experience or tools. It is five specific conversations, questions senior designers ask before walking into any room. Murad, Co-founder at Xperience Wave, breaks them down.',
+    keywords: ['senior UX designer skills', 'senior vs mid level designer', 'senior designer vs junior', 'how to become senior UX designer', 'UX designer strategic thinking', 'design career growth India'],
   },
   'what-design-managers-look-for-senior-ux-hiring': {
     title: 'What Design Managers Look for When Hiring Senior UX Designers | Xperience Wave',

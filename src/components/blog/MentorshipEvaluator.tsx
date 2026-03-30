@@ -394,25 +394,27 @@ export default function MentorshipEvaluator() {
               <span className="text-white/60 font-medium mr-2">{qIdx + 1}.</span>
               {q.question}
             </p>
-            <div className="flex items-center gap-2 sm:gap-3 mb-3">
-              {radioOptions.map(val => (
-                <button
-                  key={val}
-                  onClick={() => handleAnswer(q.id, val)}
-                  className={`w-11 h-11 sm:w-12 sm:h-12 rounded-xl text-sm font-semibold transition-all ${
-                    answers[q.id] === val
-                      ? 'bg-accent text-white shadow-lg shadow-accent/30 scale-105'
-                      : 'bg-white/5 border border-white/10 text-white/60 hover:bg-white/10 hover:text-white/70 hover:border-white/20'
-                  }`}
-                  aria-label={`Score ${val} for question ${q.id}`}
-                >
-                  {val}
-                </button>
-              ))}
-            </div>
-            <div className="flex justify-between text-xs text-white/70 gap-2">
-              <span className="max-w-[30%]">{q.labels[0]}</span>
-              <span className="max-w-[30%] text-right">{q.labels[2]}</span>
+            <div className="inline-flex flex-col">
+              <div className="flex items-center gap-2 sm:gap-3 mb-2">
+                {radioOptions.map(val => (
+                  <button
+                    key={val}
+                    onClick={() => handleAnswer(q.id, val)}
+                    className={`w-11 h-11 sm:w-12 sm:h-12 rounded-xl text-sm font-semibold transition-all ${
+                      answers[q.id] === val
+                        ? 'bg-accent text-white shadow-lg shadow-accent/30 scale-105'
+                        : 'bg-white/5 border border-white/10 text-white/60 hover:bg-white/10 hover:text-white/70 hover:border-white/20'
+                    }`}
+                    aria-label={`Score ${val} for question ${q.id}`}
+                  >
+                    {val}
+                  </button>
+                ))}
+              </div>
+              <div className="flex justify-between text-xs text-white/70">
+                <span>{q.labels[0]}</span>
+                <span className="text-right">{q.labels[2]}</span>
+              </div>
             </div>
           </div>
         ))}

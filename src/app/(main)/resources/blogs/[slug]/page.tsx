@@ -10,6 +10,302 @@ import SalaryNegotiationGPTGate from '@/components/blog/SalaryNegotiationGPTGate
 
 // Blog content with internal links for SEO
 const blogContent: Record<string, React.ReactNode> = {
+  'ux-career-ladder-levels-india': (
+    <>
+      <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
+        In <Link href="/resources/blogs/ux-career-ladder-india" className="text-accent hover:underline font-medium">The UX Career Ladder Is Broken in India</Link>, I wrote about why the standard career framework doesn&apos;t work here - the hierarchy, the politics, the gap between what your title says and what you&apos;re actually allowed to do. That blog was about the system.
+      </p>
+      <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
+        This one is about you inside it. What does each level actually demand of you in practice? What changes? And where do most Indian designers find themselves stuck - not because they aren&apos;t capable, but because nobody told them what was actually required at the next stage?
+      </p>
+      <p className="text-lg md:text-xl text-g600 leading-relaxed mb-8">
+        I&apos;m going to walk through every level from Associate to CXO. I&apos;ll spend the most time between Year 3 and Year 8, because that&apos;s where the Indian design career diverges most sharply from anything a Western career guide would prepare you for. That&apos;s where careers are made or quietly killed.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        One thing upfront: after a certain point in India, your design skill is no longer the primary thing that moves you forward. That shift happens earlier than most people expect. Understanding when it&apos;s coming - and starting to build for it before it arrives - is the whole point of this blog.
+      </p>
+
+      <h2 id="year-0-2" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Year 0-2: Associate / Junior UX Designer
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is where everyone starts, and it&apos;s the level with the fewest surprises. Which is both reassuring and, if you&apos;re not careful, the beginning of a bad habit.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        At this stage, the work is defined for you. You&apos;re executing tasks within a project someone else is leading. Building wireframes from flows a senior designer mapped. Working inside a design system someone else set up. Sitting in on user research but not yet running it.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        That&apos;s correct for this level. The problem is when designers mistake the clarity of defined tasks for a measure of their own competence. You can be very fast, very tidy, and very wrong about how ready you are for the next step.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        The one habit that separates the designers who move fast from those who plateau early: asking why.
+      </p>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li>Not what to design. Why this screen exists. Why this flow was chosen over another.</li>
+        <li>Why the business cares about this feature at all right now.</li>
+      </ul>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The designers who ask why early become the ones trusted with harder decisions later. The ones who don&apos;t remain very good executors of other people&apos;s thinking - sometimes indefinitely.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>Where designers get stuck:</strong> Equating tool speed with design depth. In most Indian bootcamps and junior roles, the visible measure of performance is delivery speed - how fast you turn around a wireframe, how quickly you close tickets. You get faster. You get praised for being faster. And without noticing, you start optimising for speed over thinking. This is one of the hardest habits to unlearn, because the reward system actively reinforces it.
+      </p>
+
+      <h2 id="year-2-3" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Year 2-3: UX Designer - and the Title Problem
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        After a year or two, you move into proper UX Designer roles. This is also where Indian organisations immediately get confusing with titles.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        You might be called a UX Designer, Experience Designer, Digital Experience Designer, Product Designer, or just &apos;Designer.&apos; Sometimes this signals a genuine difference in scope. More often, it&apos;s HR convention or internal politics.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The distinction that actually matters: UX Designer versus Product Designer. The IxDF defines it clearly - a UX designer focuses primarily on the user experience: researching behaviour, designing interaction, advocating for the user. A Product Designer guides the full product lifecycle: balancing user needs, business goals, and technical feasibility together. The scope is broader and the business accountability is higher.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        In practice, LogRocket puts it honestly: most companies don&apos;t get it right - someone&apos;s actual role may revolve around product strategy but their title still says &apos;UX Designer.&apos; And in India especially, the titles are applied inconsistently enough that the title alone tells you very little.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        What actually matters: does your role expect you to own business outcomes - or just experience outcomes?
+      </p>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li>If the answer is business outcomes, you are functionally a Product Designer regardless of your title.</li>
+        <li>If it&apos;s experience outcomes only, you are a UX Designer.</li>
+        <li>Know which one you actually are. It affects what you need to build next.</li>
+      </ul>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Some organisations layer these into Level 1, Level 2, Level 3. Here&apos;s what that actually means structurally: each level corresponds to a salary band - a defined minimum and maximum for that grade. Annual increments move you within the band. A level change (L1 to L2) moves you to a slightly higher band, but you&apos;re still inside the same title. The jump in title - from UX Designer to Senior UX Designer - is what changes the band meaningfully.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The honest observation from inside Indian organisations: L1, L2, L3 within the same title are frequently used as salary management tools. They let an organisation give you something that looks like a promotion - a new level number, a modest bump - without the structural change of a title promotion, which would require opening a new band and formally recognising a new scope of responsibility. You feel like you moved. The organisation&apos;s cost structure barely changed.
+      </p>
+      <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-6">
+        The jump from L1 to L2 feels significant from inside - you worked for it, your manager acknowledged it. From outside - from a hiring manager at another company - it is invisible. You cannot put &apos;UX Designer L2&apos; on your resume and expect anyone to know or care. The only thing that crosses company boundaries is the title itself. Which means the only promotion that actually builds your market value is a title change, not a level change.
+      </blockquote>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Where designers get stuck:</strong> Job-hopping for level bumps without accumulating depth. I&apos;ve reviewed portfolios from designers who&apos;ve been at four companies in three years, each time moving to a higher-sounding level. None of them stayed long enough to see a project through from discovery to post-launch impact. The portfolio has breadth but no depth. When they interview for senior roles at design-mature organisations, the conversation ends early - not because they&apos;re not talented, but because nothing in their work goes below the surface.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        If you&apos;re in this phase and already thinking about how to get interviews: <Link href="/resources/blogs/why-no-ux-interview-calls" className="text-accent hover:underline font-medium">Why You&apos;re Not Getting UX Interview Calls</Link>
+      </p>
+
+      <h2 id="year-3-5" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Year 3-5: Senior UX Designer - Where the Game Changes
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        On paper, a Senior Designer handles complexity independently. You can foresee how a full design process should unfold, make confident trade-off decisions, run research and translate findings into direction. That&apos;s accurate. But it&apos;s the easy part.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Here&apos;s the part nobody writes down: at Senior level in India, for the first time, your design skill is no longer the primary thing being evaluated. What&apos;s being evaluated is whether you can make the people around you - product managers, engineers, business stakeholders - care about what design produces. The McKinsey Business Value of Design research found that fewer than 5% of organisations have senior leadership capable of making objective design decisions. That means in most rooms you&apos;ll ever be in, the people with the budget and the authority don&apos;t speak design. Learning to translate is not optional. It&apos;s the job.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        I&apos;ll say this plainly: the Senior Designers who remain Senior for the next five years are almost always the ones who hit this level with real confidence and mistook that confidence for capability. They know enough to have strong opinions. They&apos;ve seen projects succeed. They feel like they have it figured out. They don&apos;t. And the gap between what they think they know and what the next level actually requires is exactly where careers stall in India - sometimes for years.
+      </p>
+
+      <h3 id="senior-requires" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        What Senior actually requires that nobody tells you
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Business awareness, not design theory.</strong> Learn what metrics your product team tracks. What does your PM worry about? What shows up in the quarterly business review? If you can&apos;t answer these questions, you&apos;re operating in a bubble - and in India, designers in bubbles don&apos;t get promoted. They get sidelined. Quietly. With a polite performance review that says nothing specific.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Relationships outside the design team.</strong> Your relationship with your engineering lead matters more than you think. Your ability to walk into a business meeting and speak in terms of revenue, retention, activation, and cost - rather than flows, affordances, and usability - matters more than your ability to make a beautiful interaction. In Indian workplaces, where hierarchy drives access, the designers who get into the rooms where decisions are made are the ones who&apos;ve already built trust with the people in those rooms.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Comfort with ambiguity - before you&apos;re asked for it.</strong> At junior and mid level, someone defines the problem for you. At Senior, you&apos;re expected to help define it. The brief that lands on your desk is often incomplete, politically shaped, and wrong in at least one important way. If you wait for a perfectly scoped brief, you&apos;ll wait forever. The designers who advance are the ones who walk into ambiguity, structure it themselves, and propose a direction with a clear rationale before anyone asked them to.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        Related reading:
+      </p>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li><Link href="/resources/blogs/senior-ux-designer-delivery-person" className="text-accent hover:underline font-medium">Senior Designer Still Treated Like a Delivery Person</Link></li>
+        <li><Link href="/resources/blogs/12l-vs-30l-ux-designer-difference" className="text-accent hover:underline font-medium">The Difference Between a &#x20B9;12L and &#x20B9;30L UX Designer</Link></li>
+      </ul>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        <strong>Where designers get stuck:</strong> Staying in your comfort zone because the comfort finally arrived. You&apos;re good now. You can deliver consistently. The feedback is positive. This feeling - after years of uncertainty - is genuinely earned. It is also the most dangerous moment in an Indian design career. The next level requires entirely different muscles. If you don&apos;t start building them now, you won&apos;t have them when the opportunity appears. And the opportunity does not wait for you to feel ready.
+      </p>
+
+      <h2 id="year-5-7" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Year 5-7: Lead Designer - the Most Misunderstood Title in Indian Design
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Let me say this plainly, because almost every Indian organisation gets it wrong: Lead does not mean you manage a team. Lead means you lead the work.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        You&apos;re responsible for the design direction of a project - the strategic decisions, the quality bar, the coherence of the full experience. To achieve that, you might work alongside researchers, interaction designers, visual designers, motion designers, content writers. You are not managing their careers or their performance reviews. You are aligning their work toward a shared outcome.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This distinction matters because a large number of Indian organisations treat Lead as a junior management position. They give you the title, expect you to handle resourcing and timelines, and give you none of the strategic authority that should come with it. You become a project coordinator with a design label. You&apos;re responsible for delivery without the power to shape direction.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        If that&apos;s happening to you - name it clearly. You are not in a Lead role. You are in an execution management role with a Lead title. Those are different jobs with different futures attached to them.
+      </p>
+
+      <h3 id="lead-actually-does" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        What a real Lead Designer actually does
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        You shape the design approach before anyone opens Figma. You decide which problems are worth solving and which are distractions. You create the framework within which the team designs. You&apos;re the one who says: we&apos;re not designing five features, we&apos;re solving one problem, and here&apos;s the lens we&apos;re using.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        You also become the bridge - translating business goals into design strategy for your team, and translating design rationale into business language for stakeholders. This is a full-time communication job layered on top of a full-time design job.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        The specific capability Lead requires that Senior didn&apos;t: making decisions with incomplete information and defending them clearly.
+      </p>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li>At Senior, you can hold a decision until you have more data.</li>
+        <li>At Lead, the team is waiting on you. The stakeholders are waiting. The business has a timeline that doesn&apos;t care about your uncertainty.</li>
+        <li>You make the call. You explain the reasoning. You stay open to being wrong. You move.</li>
+      </ul>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <Link href="/resources/blogs/ux-designer-product-strategy-table" className="text-accent hover:underline font-medium">How to Get a Seat at the Product Strategy Table</Link>
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        <strong>Where designers get stuck:</strong> Staying hands-on with everything because letting go feels dangerous. At Lead level, if you&apos;re still personally designing every major screen, you&apos;re not leading - you&apos;re doing Senior work with a Lead title. The hardest transition at this level is trusting other designers to carry the craft while you focus on direction.
+      </p>
+
+      <h2 id="the-fork" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Year 6-8: The Fork - The Decision Most Indian Designers Never Actually Make
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is the most critical juncture in the Indian UX career. Two paths diverge, and most designers stumble into one without ever consciously choosing.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        I&apos;ve watched this play out more times than I can count. The designer stays in a vaguely lead-ish role - half-managing, half-designing, fully frustrated - for two or three years without committing to either direction. They&apos;re not building the strategic depth a strong IC needs. They&apos;re not building the people skills a good manager needs. They&apos;re doing a diluted version of both, and wondering why they feel stuck.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        The fork is a decision. Make it deliberately.
+      </p>
+
+      <h3 id="path-a-ic" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        Path A: Individual Contributor - Staff Designer and Principal Designer
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        First, the assumption that needs to be challenged directly: the idea that staying an IC means you&apos;ve stopped growing - or hit a ceiling - is not a career truth. It&apos;s an organisational maturity failure that gets mistaken for one.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        At mature design organisations globally, IC tracks are explicitly designed to be as prestigious, impactful, and well-compensated as management tracks. Google, Meta, Netflix, Airbnb, and Intercom all have documented IC design paths that go from Senior to Staff to Principal - with increasing scope, influence, and compensation - without requiring anyone to manage a single direct report.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Intercom&apos;s published career framework shows Principal Designers working at the group level, partnering with cross-functional group leaders, driving product vision, and acting as force multipliers for the entire group - while their only management responsibility is influencing work, not reviewing performance.
+      </p>
+      <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-6">
+        The assumption &apos;not managing people = stopped growing&apos; is an organisational maturity problem, not a career ceiling problem. At a company that has built the infrastructure for IC growth, a Principal Designer can have the same organisational influence as a VP of Design - without managing a single person. If your current organisation has no IC path above Senior, that is a signal about the organisation. Not about the validity of the IC path.
+      </blockquote>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Staff Designer.</strong> You&apos;re responsible for design culture within the organisation. Design systems, knowledge sharing, how design decisions get made and documented across teams - not on any single project but across all of them. You maintain the operational backbone of the design practice. You typically need seven to eight years of experience.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Principal Designer.</strong> Your allocation is distributed across multiple projects simultaneously. You&apos;re not going deep on one product - you&apos;re providing senior design judgment across several. This requires the ability to context-switch at a strategic level.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        <strong>Where designers get stuck:</strong> Choosing the IC path but staying at an organisation that has no IC infrastructure above Senior. The decision then is: fight for three years to create the role, or find an organisation where the path already exists. Both are legitimate. But you need to know which situation you&apos;re in.
+      </p>
+
+      <h3 id="path-b-leadership" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        Path B: People Leadership - Manager, Director, VP, CXO
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is the path most Indian designers default into. It&apos;s more visible, the salary tends to be higher at transition, and Indian work culture treats management as the natural signal of seniority.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Design Manager (Year 7-9).</strong> You have a team. Designers who report to you. You&apos;re responsible for their project allocations, their growth, and in most organisations, their performance reviews. Here&apos;s what nobody tells you about this transition: the job is completely different from everything you&apos;ve been doing for the last seven years. Everything that made you a great designer - attention to detail, strong opinions about craft, the drive to get things right personally - can actively work against you as a manager.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If you can&apos;t let go of the Figma file, you&apos;ll micromanage. If you can&apos;t give honest feedback without making it a confrontation, you&apos;ll either avoid hard conversations or handle them badly.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Director of Design / AVP Design (Year 9-12).</strong> You&apos;re no longer managing individual designers day to day. You&apos;re managing managers, or owning design direction across an entire product line or business unit. Your conversations are mostly with other directors - product, engineering, marketing - and your job is to ensure design has a seat where strategic decisions are made. In Indian organisations, this is where the political navigation becomes the job.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        <strong>VP of Design / Head of Design (Year 12+).</strong> You own design across the organisation. You set the vision, build the team, define the culture, represent design to the C-suite. These roles in India are almost never filled through job boards. They&apos;re filled through networks.
+      </p>
+
+      <h3 id="cxo-level" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        CXO Level: Chief Design Officer and Chief Experience Officer
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        These positions exist at companies where design is a strategic function, not a service function. The Chief Design Officer owns design as a competitive capability. The Chief Experience Officer owns the end-to-end experience across all customer and product touchpoints.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        In India, these roles are still uncommon. When they exist, they&apos;re at large, forward-thinking organisations or at companies where the founder has a design background.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Nobody arrives here by being the best designer in the room. They arrive by being the person who made design impossible to ignore at an organisational level, for long enough that the right people noticed.
+      </p>
+
+      <h2 id="where-stuck" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Where Indian Designers Actually Get Stuck - The Honest Version
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Stuck at Senior, Year 3-6.</strong> The most common plateau. The designer has the craft but not the communication. They can design well but can&apos;t explain why their work matters in business terms. The bottleneck has not been skills for two years. The bottleneck is positioning and language, and nobody told them.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The &#x20B9;12L vs &#x20B9;30L gap is almost always this gap: <Link href="/resources/blogs/12l-vs-30l-ux-designer-difference" className="text-accent hover:underline font-medium">The Difference Between a &#x20B9;12L and &#x20B9;30L UX Designer</Link>
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Stuck at the fork, Year 6-8.</strong> The designer doesn&apos;t choose IC or management, so they do neither. They stay in a vaguely lead-ish role - half-managing, half-designing, fully frustrated - for two or three years.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        <strong>Stuck at Manager, Year 8-12.</strong> The designer was promoted into management without being trained for it. They&apos;re struggling with delegation, honest feedback, and stakeholder influence.
+      </p>
+
+      <h2 id="what-to-do" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What to Do With This
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Year 0-3:</strong> protect your learning window. Don&apos;t rush toward titles.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Year 3-5:</strong> stop adding skills and start building influence. Learn how your business works. Build one strong relationship outside the design team.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Year 5-8, at the fork:</strong> make the choice. IC or leadership - both are legitimate, both require specific muscles.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Manager and above:</strong> the skills that got you here will not get you further. Craft got you to Lead. Influence got you to Manager. Organisational design, strategic thinking, and deliberate leadership development are what take you from here.
+      </p>
+      <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-8">
+        Wherever you are on this ladder, the worst thing you can do is assume the next step will happen naturally. In India, it won&apos;t. The system doesn&apos;t reward patience. It rewards clarity, positioning, and the ability to make your value impossible to ignore. Those are learnable. But only if you start before you need them.
+      </blockquote>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Not sure which level you&apos;re actually at - or what&apos;s specifically blocking you? <a href="https://calendly.com/team-xperiencewave/xw-strategy" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Book a free 45-minute strategy call</a>. We&apos;ll tell you honestly where you are, what the actual gap is, and what to work on first - whether you join us or not.
+      </p>
+
+      <h2 id="sources-references" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Sources &amp; References
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-8">
+        <li>IxDF - Product Design and UX Design Roles: Unveiling the Differences. Product Designer focuses on the full product lifecycle. UX Designer focuses primarily on the user experience.</li>
+        <li>LogRocket - Product Designer vs UX Designer. Most companies don&apos;t get the distinction right.</li>
+        <li>McKinsey - The Business Value of Design (2018). Fewer than 5% of organisations have senior leaders who can make objective design decisions.</li>
+        <li>Intercom - Leadership Without Management: Expanding our Product Design Career Path. Documented parallel IC and management tracks.</li>
+        <li>Fundament Design - Does every designer ultimately have to manage people? (2026). IC path allows designers to grow without moving into management.</li>
+        <li>Rosenfeld Media - What&apos;s Next for ICs: Exploring Staff and Principal Designer Roles (2024). IC design leadership paths are less formalised and often self-defined.</li>
+        <li>Xperience Wave - Direct observation. Career transition patterns from 13+ years of design leadership and mentoring 140+ designers.</li>
+      </ul>
+
+      <h2 id="read-next" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Read Next
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li>The companion piece - why the ladder is broken in India: <Link href="/resources/blogs/ux-career-ladder-india" className="text-accent hover:underline font-medium">The UX Career Ladder Is Broken in India</Link></li>
+        <li>If you have the title but not the influence: <Link href="/resources/blogs/senior-ux-designer-delivery-person" className="text-accent hover:underline font-medium">Senior Designer Still Treated Like a Delivery Person</Link></li>
+        <li>If AI is reshaping what depth means: <Link href="/resources/blogs/ai-job-designer-type" className="text-accent hover:underline font-medium">AI Isn&apos;t Taking Your Job. But This Type of Designer Will.</Link></li>
+        <li>The salary gap: <Link href="/resources/blogs/12l-vs-30l-ux-designer-difference" className="text-accent hover:underline font-medium">The Difference Between a &#x20B9;12L and &#x20B9;30L UX Designer</Link></li>
+        <li>Getting ghosted after Round 2: <Link href="/resources/blogs/ghosted-after-round-2-ux-interview" className="text-accent hover:underline font-medium">Why UX Designers Get Ghosted After Round 2 Interviews</Link></li>
+        <li>Getting upstream into strategy: <Link href="/resources/blogs/ux-designer-product-strategy-table" className="text-accent hover:underline font-medium">How to Get a Seat at the Product Strategy Table</Link></li>
+        <li>What hiring managers look for: <Link href="/resources/blogs/what-design-managers-look-for-senior-ux-hiring" className="text-accent hover:underline font-medium">What Design Managers Look for When Hiring Senior UX Designers</Link></li>
+        <li>Explore the programme: <Link href="/programs/career-transition-ux-mentorship" className="text-accent hover:underline font-medium">Xperience Wave Current</Link></li>
+      </ul>
+
+      <p className="text-base md:text-lg text-g500 italic mt-6">
+        Murad is Co-founder and Head of Design at Xperience Wave, a UX mentorship and education company based in Bangalore. He has 13+ years of design leadership experience across India, Japan, Singapore, Dubai, Australia, and the US, and has worked directly with 3,000+ designers across the country. He holds a Masters in Industrial Psychology.
+      </p>
+    </>
+  ),
   'ai-first-design-senior-ux': (
     <>
       <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
@@ -5622,6 +5918,17 @@ const blogContent: Record<string, React.ReactNode> = {
 
 // Table of contents for each blog post
 const blogTableOfContents: Record<string, { id: string; title: string }[]> = {
+  'ux-career-ladder-levels-india': [
+    { id: 'year-0-2', title: 'Year 0-2: Associate / Junior' },
+    { id: 'year-2-3', title: 'Year 2-3: UX Designer' },
+    { id: 'year-3-5', title: 'Year 3-5: Senior UX Designer' },
+    { id: 'year-5-7', title: 'Year 5-7: Lead Designer' },
+    { id: 'the-fork', title: 'Year 6-8: The Fork' },
+    { id: 'where-stuck', title: 'Where Indian Designers Get Stuck' },
+    { id: 'what-to-do', title: 'What to Do With This' },
+    { id: 'sources-references', title: 'Sources & References' },
+    { id: 'read-next', title: 'Read Next' },
+  ],
   'ai-first-design-senior-ux': [
     { id: 'ai-first-mindset', title: 'The AI-First Design Mindset' },
     { id: 'core-ai-skills', title: 'Core AI Skills Every Senior Designer Needs' },
@@ -5868,6 +6175,11 @@ const authorData: Record<string, { role: string; bio: string; image: string }> =
 
 // Blog-specific metadata for SEO
 const blogMetadata: Record<string, { title: string; description: string; keywords: string[] }> = {
+  'ux-career-ladder-levels-india': {
+    title: 'Junior to CXO: What Each UX Career Level Actually Demands in India | Xperience Wave',
+    description: 'What does each level of the UX career ladder actually demand in India - not on paper, but in practice? Murad, Co-founder at Xperience Wave, walks through every stage from Associate to CXO, including where Indian designers get stuck at each one and what the research actually says about IC vs management paths.',
+    keywords: ['UX designer career levels India', 'UX career ladder India', 'senior UX designer India', 'lead designer India', 'design manager India', 'UX career growth India', 'product designer vs UX designer India', 'IC designer career India'],
+  },
   'ai-first-design-senior-ux': {
     title: 'AI-First Design: What Senior UX Designers Need to Know in 2026',
     description: 'Learn how AI is transforming UX design and what skills senior designers need to stay competitive. Discover prompt engineering, AI-assisted research, and building an AI-first portfolio.',

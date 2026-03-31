@@ -51,6 +51,17 @@ export const getCategoryLabel = (category: string): string => {
 // Sample blog posts with Unsplash images
 export const blogPosts: BlogPost[] = [
   {
+    id: '34',
+    slug: 'ux-career-ladder-levels-india',
+    title: 'Junior to CXO: What Each Level of the UX Career Ladder Actually Demands in India',
+    excerpt: 'What does each level of the UX career ladder actually demand in India - not on paper, but in practice? From Associate to CXO, including where Indian designers get stuck at each level.',
+    category: 'career-growth' as const,
+    image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&q=80',
+    author: { name: 'Shaik Murad' },
+    publishedAt: '2026-03-31',
+    readTime: '12 min',
+  },
+  {
     id: '33',
     slug: 'inside-look-1-1-ux-mentorship',
     title: 'What Happens in Week 1-12 of a 1:1 UX Mentorship (An Inside Look)',

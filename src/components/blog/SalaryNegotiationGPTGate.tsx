@@ -83,25 +83,11 @@ export default function SalaryNegotiationGPTGate() {
             <span className="text-xs font-medium text-accent">Free Tool</span>
           </div>
           <h3 className="font-heading text-xl md:text-2xl font-bold text-white mb-2">
-            Practise Your Salary Negotiation Before the Real Conversation
+            Practise your salary negotiation before the real conversation
           </h3>
-          <p className="text-sm text-white/70 mb-4">
-            Three modes. One tool. Built on the RIVER framework.
+          <p className="text-sm text-white/70">
+            Custom scripts, HR simulation, and coaching - built on the RIVER framework.
           </p>
-          <ul className="text-sm text-white/60 space-y-2 mb-2">
-            <li className="flex items-start gap-2">
-              <span className="text-accent mt-0.5">-</span>
-              <span><strong className="text-white/80">Personalised coaching</strong> - describe your situation, get custom scripts</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-accent mt-0.5">-</span>
-              <span><strong className="text-white/80">Script generator</strong> - input your details, get copy-paste ready scripts</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-accent mt-0.5">-</span>
-              <span><strong className="text-white/80">HR simulator</strong> - practise negotiating with a realistic Indian HR</span>
-            </li>
-          </ul>
         </div>
 
         {/* Email capture */}

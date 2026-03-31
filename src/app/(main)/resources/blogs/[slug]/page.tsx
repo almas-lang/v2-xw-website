@@ -5337,6 +5337,287 @@ const blogContent: Record<string, React.ReactNode> = {
       </p>
     </>
   ),
+
+  'inside-look-1-1-ux-mentorship': (
+    <>
+      <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
+        Sheetal became a Design Lead in 2 months. Shreekanth landed a Senior UX role at Wipro in 5 weeks. Kritika landed a Lead Designer role at a German company in 3 months. This is not what they learned. This is how they were taught.
+      </p>
+
+      <h2 id="we-say-no" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Before Anything: We Say No More Often Than You Think
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Not everyone who comes to us gets in. And not everyone should.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If you cannot communicate professionally in English, we cannot prepare you for roles that require it. If your situation needs clinical support before career support, we will say so. If we assess that you are not in a position where mentorship will make a measurable difference right now, we will tell you that too.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        We are not a course that takes your money and hopes you figure it out. We are a mentorship that takes responsibility for your outcome. And that means we need to believe we can actually help you before we start.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        When we do believe it - you are locked in. You cannot escape the success you deserve anymore.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        What does &quot;help&quot; look like? It depends entirely on you. You want to earn more - we work on that. You want to shift into UX from another field - we build that transition. You want to become a design leader, manage a team, set up a design practice in your organisation, work outside India, navigate a difficult manager, get your work recognised, find more time for your family by getting more effective at work - we have mentors with 10-15 years of practitioner experience who have done this with hundreds of designers. At a 1:1 level. Not a classroom. Not a batch. You.
+      </p>
+
+      <h2 id="why-this-works" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Why This Works When Courses Do Not
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Most UX education in India follows the same model: pre-recorded content, generic assignments, a batch of 50-200 students, and a certificate at the end. The assumption is that if you consume enough content, you will be ready.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        That assumption is wrong. And the proof is in every designer who has finished 3-5 courses and still cannot crack a senior role.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Our approach is built on how adults actually learn - not how content is conveniently delivered. Every principle below is grounded in established learning science. We did not invent these ideas. We applied them to UX career development in a way nobody else in India has.
+      </p>
+
+      <h3 id="principle-1" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        Principle 1: Diagnostic Before Prescription
+      </h3>
+      <p className="text-base md:text-lg text-g500 italic mb-4">
+        (In learning science, this is called diagnostic assessment - understanding where the learner is before designing the path.)
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Before any teaching happens, your mentor sits with you and maps everything. Your career history. Your goals - short-term and long-term. Your blockers. Your strengths. Your weaknesses. Your available schedule. Your family commitments. Your current organisation&apos;s design maturity. The specific frustrations that made you seek help in the first place.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        A designer came to us recently with 6+ years of experience, including 3 in graphic design. She had self-diagnosed her problems: imposter syndrome about leadership, low research exposure, gaps in storytelling, weak business thinking. Her list was accurate. But her conclusion about what to do next was wrong.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Her mentor pushed back. He looked at her career trajectory and told her that the path she was planning - while it could bring higher designations - would not attract the kind of organisations she actually wanted. That one conversation, before any &quot;teaching&quot; happened, changed her entire plan.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        No course does this. No cohort does this. A course delivers content. A mentor reads the person.
+      </p>
+
+      <h3 id="principle-2" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        Principle 2: Your Real Work Is the Learning Material
+      </h3>
+      <p className="text-base md:text-lg text-g500 italic mb-4">
+        (This is situated learning - first described by Lave and Wenger in 1991. Learning that happens in the context where it will be applied transfers far more effectively than learning in artificial environments.)
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        We do not give you fictional projects. If you are working at an organisation right now, your current project becomes the learning material. Your real stakeholders. Your real constraints. Your real users. Your real deadlines.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Why? Because the gap between &quot;I learned this in a course&quot; and &quot;I can do this at work&quot; is the gap that keeps designers stuck. When you learn research methods by conducting real interviews for your actual product, the skill sticks. When you learn stakeholder communication by navigating your actual manager, the learning is permanent.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Can you bring your current project into the sessions? Yes. That is actually preferred. That is where the reality of people, culture, and organisational constraints gets tested against what you are learning.
+      </p>
+
+      <h3 id="principle-3" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        Principle 3: Tools Are Learned Through the Work, Not Taught Separately
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        We do not teach tools. Figma tutorials are the easiest thing to find on the internet. What we do is embed tools into activities so that you learn them by using them for something real.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        In one session, you might set up Hotjar and explore how user behaviour data is captured and visualised. In another, you might use Claude or ChatGPT to build a custom agent that behaves like your user and answers questions about your product. In another, you might use HeyGen to document interaction patterns that feel distinctive.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        The tool is learned because the activity requires it. Not because there is a tutorial on the syllabus. This is the difference between knowing a tool and knowing when and why to use it.
+      </p>
+
+      <h3 id="principle-4" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        Principle 4: The Mentor Adapts to How You Learn
+      </h3>
+      <p className="text-base md:text-lg text-g500 italic mb-4">
+        (This is differentiated instruction combined with scaffolding - the mentor adjusts support based on the learner&apos;s pace and gradually removes it as competence grows.)
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Your activities are not the same as everyone else&apos;s. Your mentor is learning every passing day how you absorb information, where you struggle, and what makes things click for you.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The plan built in the first session is not rigid. If you are absorbing research methods faster than expected, the mentor accelerates. If stakeholder communication is harder than anticipated, the mentor spends more time there. If your organisation&apos;s culture creates a constraint that was not visible at the start, the plan adapts.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The sequence is calibrated so that you do not feel pushed hard enough to snap, and you do not feel like you are coasting. This calibration is something only a practitioner with 10+ years of experience can do. Someone who has managed teams, navigated organisational politics, coached hundreds of people, and can pattern-match your situation to outcomes they have seen before.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        That is why our mentors have 10-15 years of experience. Not for credentials on the website. Because a mentor who has never faced the challenge you are dealing with cannot coach you through it.
+      </p>
+
+      <h3 id="principle-5" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        Principle 5: You Are Never Alone Between Sessions
+      </h3>
+      <p className="text-base md:text-lg text-g500 italic mb-4">
+        (This is social constructivism - Vygotsky&apos;s principle that learning is strengthened through interaction with peers at similar developmental stages.)
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The 1:1 sessions are the backbone. But the programme does not disappear between them.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If you are stuck, you are a chat or phone call away. When you have made progress on your activities, you can jump on a call and get clarity without waiting for the next scheduled session.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Weekly clinics.</strong> Live group sessions where you present your work, see what designers at your level are working on, and get feedback from peers and mentors. These are not webinars. They are working sessions - reviews, critiques, and exposure to how other people are solving similar problems. Mentees consistently tell us these are some of the most valuable hours in the programme.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        <strong>Wave Academy.</strong> All reference materials, articles, lessons, assessments, and videos are available on our LMS platform. This is your library - it stays accessible throughout and after the programme.
+      </p>
+
+      <h3 id="principle-6" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        Principle 6: The Programme Does Not End Until You Achieve Your Goal
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is the one that separates us from everything else.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Courses end when the content ends. Cohorts end when the batch ends. Our programmes end when you achieve your stated goal. That is the conditional support guarantee.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <Link href="/programs/career-transition-ux-mentorship" className="text-accent hover:underline font-medium">Ripple</Link> (career transition) includes 1 month of conditional support beyond the 3-month programme. <Link href="/programs/ux-leadership-mentorship" className="text-accent hover:underline font-medium">Tide</Link> (design leadership) includes 3 months of conditional support. <Link href="/programs/career-transition-ux-mentorship" className="text-accent hover:underline font-medium">Current</Link> (mid-level to senior) is 3 months with continued support until your goal is met.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        80% of our mentees achieve their stated goal. Not a single metric like placement or salary hike - because goals are personal. Some want MAANG. Some want a product company. Some want to build their own practice. Some want to lead a team. Success means you achieved what you came for.
+      </p>
+
+      <h2 id="proof" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Proof: Real People, Real Timelines
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        These are not hypothetical outcomes. These are designers who went through the programme and came out the other side with measurable results.
+      </p>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-8">
+        <li><strong>Sheetal Pimparwar</strong> - Design Lead at CX100. 2 months.</li>
+        <li><strong>Kritika Singh</strong> - Lead UX Designer at Synduct, Germany. 3 months.</li>
+        <li><strong>Shreekanth</strong> - Sr. UX Designer at Wipro. 5 weeks.</li>
+        <li><strong>Jerin John</strong> - Sr. Product Designer at CGI. 1.5 months.</li>
+        <li><strong>Jonah Immanuel</strong> - Sr. Lead Designer at Infosys. 2 months.</li>
+        <li><strong>Maulin Rajput</strong> - Sr. UX Designer at Augmented.AI. 90 days.</li>
+        <li><strong>Radhakrishna A</strong> - Lead Designer to Principal Designer at Informatica. 4 months.</li>
+        <li><strong>Pavitra Suji</strong> - Sr. Designer at McKinsey &amp; Company.</li>
+        <li><strong>Vignesh</strong> - Sr. UX Designer at Siemens.</li>
+      </ul>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Every one of these designers went through the same philosophy: diagnostic assessment, real-work learning, adaptive mentoring, peer clinics, and support until the goal was achieved. The content of their programmes was different - because their situations were different. But the approach was the same.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Our mentees now work at JP Morgan, McKinsey, Intel, Deloitte, Accenture, Siemens, Bosch, Infosys, and more. The average salary hike across mentees whose goal included a compensation outcome is 38%.
+      </p>
+
+      <h2 id="programmes" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Three Programmes. Which One Fits You.
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        We run three mentorship programmes. Each is built for a different career stage. The philosophy is the same. The depth, focus, and support duration adapt to where you are.
+      </p>
+      <div className="overflow-x-auto mb-8">
+        <table className="w-full border-collapse text-base md:text-lg text-g600">
+          <thead>
+            <tr className="border-b-2 border-g200">
+              <th className="text-left py-3 pr-4 font-bold text-carbon"></th>
+              <th className="text-left py-3 pr-4 font-bold text-carbon"><Link href="/programs/career-transition-ux-mentorship" className="text-accent hover:underline">Ripple</Link></th>
+              <th className="text-left py-3 pr-4 font-bold text-carbon"><Link href="/programs/career-transition-ux-mentorship" className="text-accent hover:underline">Current</Link> (Most Popular)</th>
+              <th className="text-left py-3 pr-4 font-bold text-carbon"><Link href="/programs/ux-leadership-mentorship" className="text-accent hover:underline">Tide</Link></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="border-b border-g200">
+              <td className="py-3 pr-4 font-bold text-carbon">For</td>
+              <td className="py-3 pr-4">Fresh graduates or career switchers from any background</td>
+              <td className="py-3 pr-4">Mid-level designers with 2+ years who want senior/leadership roles</td>
+              <td className="py-3 pr-4">Designers ready to lead teams, manage, and drive strategic influence</td>
+            </tr>
+            <tr className="border-b border-g200">
+              <td className="py-3 pr-4 font-bold text-carbon">Duration</td>
+              <td className="py-3 pr-4">3 months + 1 month support</td>
+              <td className="py-3 pr-4">3 months + support until goal achieved</td>
+              <td className="py-3 pr-4">3 months + 3 months support</td>
+            </tr>
+            <tr className="border-b border-g200">
+              <td className="py-3 pr-4 font-bold text-carbon">Outcome</td>
+              <td className="py-3 pr-4">First UX job. Portfolio + interview prep</td>
+              <td className="py-3 pr-4">Senior/lead role. Better company. Salary hike. Portfolio + interview + negotiation</td>
+              <td className="py-3 pr-4">Leadership role. Team management. Design practice setup. Evidence library + pipeline</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        ~80% of our mentees are on <Link href="/programs/career-transition-ux-mentorship" className="text-accent hover:underline font-medium">Current</Link> - mid-level designers who know they are capable of more but have not been able to break through to senior roles. If that sounds like you, that is probably your programme.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Not sure? Book a free <a href="https://calendly.com/team-xperiencewave/xw-strategy" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">strategy call</a> - 45 minutes, no obligations. We assess where you are, understand your goals, and recommend the right path. You walk away with clarity either way.
+      </p>
+
+      <h2 id="honesty" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What We Will Not Tell You
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        We will not tell you that everyone succeeds. 80% do. That means 20% do not - and the reasons vary. Some do not put in the hours. Some face life situations that take priority. Some realise mid-programme that their goal has changed and need to restart the process. We are honest about this because pretending otherwise would be dishonest.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        We will not tell you it is easy. The programme demands 5-8 hours per week of real work - not passive video watching, but activities, research, interviews, case studies, and presentations. If you are looking for something you can do in the background while watching Netflix, this is not it.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        We will not tell you the mentor will do the work for you. The mentor provides the diagnosis, the plan, the activities, the review, the direction, and the push. You provide the effort. That is the deal.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        But if you show up and do the work - the system works. Sheetal did it in 2 months. Shreekanth in 5 weeks. Kritika landed a Lead role at a German startup. Radhakrishna went from Lead to Principal at Informatica. The system works when you work it.
+      </p>
+
+      <h2 id="strategy-call" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What Happens Next
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        You have read the blogs. You have seen the success stories. You have read the inside look. Now you know the philosophy, the principles, and the proof.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The next step is a conversation. The strategy call is 45 minutes. Free. No obligations. We assess where you are, understand your goals, identify your gaps, and recommend the right programme. You walk away with clarity - whether you join or not.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If you have been thinking about this for weeks or months - this is the step.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        <a href="https://calendly.com/team-xperiencewave/xw-strategy" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Book your strategy call</a>
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        Or explore the programmes directly:
+      </p>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-8">
+        <li><Link href="/programs/career-transition-ux-mentorship" className="text-accent hover:underline font-medium">Current - For mid-level designers ready for senior roles (Most Popular)</Link></li>
+        <li><Link href="/programs/career-transition-ux-mentorship" className="text-accent hover:underline font-medium">Ripple - For career transition into UX</Link></li>
+        <li><Link href="/programs/ux-leadership-mentorship" className="text-accent hover:underline font-medium">Tide - For design leadership</Link></li>
+      </ul>
+
+      <h2 id="sources-references" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Sources &amp; References
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-8">
+        <li><strong>Diagnostic Assessment</strong> - Standard pedagogical practice in adaptive learning design. Understanding the learner&apos;s current state before designing the learning path.</li>
+        <li><strong>Situated Learning</strong> - Lave, J. &amp; Wenger, E. (1991). &quot;Situated Learning: Legitimate Peripheral Participation.&quot; Cambridge University Press. Learning in the context where it will be applied transfers more effectively than abstract instruction.</li>
+        <li><strong>Differentiated Instruction + Scaffolding</strong> - Vygotsky, L.S. (1978). &quot;Mind in Society.&quot; Zone of Proximal Development. Support calibrated to the learner&apos;s level and gradually removed as competence grows.</li>
+        <li><strong>Social Constructivism</strong> - Vygotsky, L.S. (1978). Learning strengthened through interaction with peers at similar developmental stages. The theoretical basis for the weekly clinic model.</li>
+      </ul>
+
+      <h2 id="about-author" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        About the Author
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Almas Tasneem is Co-founder and CEO at Xperience Wave, a UX design career development company based in Bangalore. She leads sales, strategy, client success, and the mentorship programme operations. The principles and outcomes described in this blog come from direct work with 140+ designers across the Ripple, Current, and Tide programmes. 3,000+ designers consulted. 80% of mentees achieved their stated goals.
+      </p>
+
+      <h2 id="read-next" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Read Next
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li>On what separates a &#x20B9;12L designer from a &#x20B9;30L designer: <Link href="/resources/blogs/12l-vs-30l-ux-designer-difference" className="text-accent hover:underline font-medium">The Difference Between a &#x20B9;12L and &#x20B9;30L UX Designer Is Not Skill.</Link></li>
+        <li>On preparing for the IC-to-manager transition: <Link href="/resources/blogs/ic-to-manager-trap-designers" className="text-accent hover:underline font-medium">The IC-to-Manager Trap: Why Great Designers Fail as Design Leaders.</Link></li>
+        <li>On negotiating your salary with data and scripts: <Link href="/resources/blogs/salary-negotiation-ux-designers-india" className="text-accent hover:underline font-medium">Salary Negotiation for UX Designers: Scripts, Data, and What Actually Works in India.</Link></li>
+      </ul>
+
+      <p className="text-base md:text-lg text-g500 italic mt-6">
+        - Almas, Co-founder &amp; CEO, Xperience Wave
+      </p>
+    </>
+  ),
 };
 
 // Table of contents for each blog post
@@ -5559,6 +5840,16 @@ const blogTableOfContents: Record<string, { id: string; title: string }[]> = {
     { id: 'sources-references', title: 'Sources & References' },
     { id: 'read-next', title: 'Read Next' },
   ],
+  'inside-look-1-1-ux-mentorship': [
+    { id: 'we-say-no', title: 'We Say No More Often Than You Think' },
+    { id: 'why-this-works', title: 'Why This Works When Courses Do Not' },
+    { id: 'proof', title: 'The Proof: Real People, Real Timelines' },
+    { id: 'programmes', title: 'Three Programmes - Which One Fits You' },
+    { id: 'honesty', title: 'What We Will Not Tell You' },
+    { id: 'strategy-call', title: 'What Happens Next' },
+    { id: 'sources-references', title: 'Sources & References' },
+    { id: 'read-next', title: 'Read Next' },
+  ],
 };
 
 // Author data
@@ -5691,6 +5982,11 @@ const blogMetadata: Record<string, { title: string; description: string; keyword
     title: 'Salary Negotiation for UX Designers: Scripts, Data, and What Actually Works in India | Xperience Wave',
     description: 'Vaibhav was laid off at \u20B917L. One month later: \u20B921L and \u20B924L offers. Same skills. Different negotiation. Verified salary data, the RIVER framework, and word-for-word scripts for UX designers in India.',
     keywords: ['UX designer salary negotiation India', 'UX salary India 2026', 'design salary hike', 'salary negotiation scripts UX', 'UX designer salary Bangalore', 'RIVER negotiation framework', 'design career salary India'],
+  },
+  'inside-look-1-1-ux-mentorship': {
+    title: 'What Happens in Week 1-12 of a 1:1 UX Mentorship (An Inside Look) | Xperience Wave',
+    description: 'Sheetal became Design Lead in 2 months. Shreekanth landed Wipro in 5 weeks. Kritika landed a Lead role at a German startup in 3 months. This is not what they learned - it is how they were taught. An inside look at 1:1 UX mentorship.',
+    keywords: ['1:1 UX mentorship program', 'Xperience Wave mentorship', 'UX mentorship experience', 'inside look mentorship', 'UX career mentorship India', 'design mentorship programme', '1:1 UX coaching India'],
   },
 };
 

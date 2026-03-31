@@ -51,6 +51,17 @@ export const getCategoryLabel = (category: string): string => {
 // Sample blog posts with Unsplash images
 export const blogPosts: BlogPost[] = [
   {
+    id: '33',
+    slug: 'inside-look-1-1-ux-mentorship',
+    title: 'What Happens in Week 1-12 of a 1:1 UX Mentorship (An Inside Look)',
+    excerpt: 'Sheetal became Design Lead in 2 months. Shreekanth landed Wipro in 5 weeks. Kritika landed a Lead role at a German startup in 3 months. This is not what they learned - it is how they were taught.',
+    category: 'career-growth' as const,
+    image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80',
+    author: { name: 'Almas Tasneem' },
+    publishedAt: '2026-04-24',
+    readTime: '14 min',
+  },
+  {
     id: '32',
     slug: 'salary-negotiation-ux-designers-india',
     title: 'Salary Negotiation for UX Designers: Scripts, Data, and What Actually Works in India',

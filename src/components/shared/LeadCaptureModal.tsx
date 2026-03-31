@@ -68,12 +68,12 @@ const leadConfigs: Record<LeadType, LeadConfig> = {
     isWaitlist: true,
   },
   'salary-negotiation-gpt': {
-    title: 'Salary Negotiation GPT',
-    description: 'Be the first to know when this tool launches. Get scripts and tactics for negotiating UX offers.',
-    buttonText: 'Join Waitlist',
-    badgeText: 'Coming Soon',
-    successMessage: 'You\'re on the list!',
-    isWaitlist: true,
+    title: 'Access Salary Negotiation GPT',
+    description: 'Scripts and tactics for negotiating UX offers in India. Built on the RIVER framework.',
+    buttonText: 'Get Free Access',
+    badgeText: 'Free Tool',
+    successMessage: 'Redirecting to the GPT...',
+    isWaitlist: false,
   },
   'ux-audit-gpt': {
     title: 'UX Audit GPT',

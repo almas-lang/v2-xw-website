@@ -73,9 +73,10 @@ const leadConfigs: Record<LeadType, LeadConfig> = {
   },
   'salary-negotiation-gpt': {
     name: 'Salary Negotiation GPT',
-    notificationSubject: '🤖 New GPT Waitlist Signup',
-    notificationText: 'Someone joined the waitlist for Salary Negotiation GPT',
-    leadSource: 'Salary Negotiation GPT Waitlist',
+    redirectUrl: 'https://chatgpt.com/g/g-69cb92908a048191a028bf15615a8f17-salary-negotiation-for-ux-designers-xperience-wave',
+    notificationSubject: '🤖 New Salary Negotiation GPT Access',
+    notificationText: 'Someone requested access to Salary Negotiation GPT',
+    leadSource: 'Salary Negotiation GPT Access',
   },
   'ux-audit-gpt': {
     name: 'UX Audit GPT',
@@ -238,6 +239,52 @@ export async function POST(request: NextRequest) {
         });
       } catch (error) {
         console.error('Failed to send evaluator confirmation email:', error);
+      }
+    }
+
+    // Send confirmation email with link for salary negotiation GPT
+    if (leadType === 'salary-negotiation-gpt') {
+      try {
+        await fetch('https://api.brevo.com/v3/smtp/email', {
+          method: 'POST',
+          headers: {
+            'accept': 'application/json',
+            'content-type': 'application/json',
+            'api-key': BREVO_API_KEY || '',
+          },
+          body: JSON.stringify({
+            sender: { name: 'Xperience Wave', email: 'team@xperiencewave.com' },
+            to: [{ email }],
+            subject: 'Your Salary Negotiation GPT is Ready',
+            htmlContent: `
+              <style>@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&family=Playfair+Display:wght@700&display=swap');</style>
+              <div style="font-family: 'Plus Jakarta Sans', Arial, sans-serif; max-width: 560px; margin: 0 auto; background: #ffffff; padding: 40px 32px;">
+                <div style="text-align: center;">
+                  <img src="https://www.xperiencewave.com/images/xw-logo-mobile.png" alt="Xperience Wave" style="height: 36px; margin-bottom: 32px;" />
+                  <h1 style="font-family: 'Playfair Display', Georgia, serif; color: #1A1A1A; font-size: 24px; font-weight: 700; margin: 0 0 12px;">
+                    Your Salary Negotiation GPT is Ready
+                  </h1>
+                  <p style="color: #666666; font-size: 15px; line-height: 1.6; margin: 0 0 28px;">
+                    Three modes: personalised coaching, script generator, and HR simulator. Built on the RIVER framework.
+                  </p>
+                  <a href="https://chatgpt.com/g/g-69cb92908a048191a028bf15615a8f17-salary-negotiation-for-ux-designers-xperience-wave" style="display: inline-block; padding: 14px 36px; background: #FF0023; color: #ffffff; text-decoration: none; font-weight: 600; border-radius: 8px; font-size: 16px;">
+                    Start Practising &rarr;
+                  </a>
+                </div>
+                <div style="padding-top: 28px; margin-top: 28px; border-top: 1px solid #eee;">
+                  <p style="color: #999999; font-size: 13px; line-height: 1.5; text-align: center; margin: 0 0 16px;">
+                    Want to talk salary strategy with a mentor? <a href="https://calendly.com/team-xperiencewave/xw-strategy" style="color: #FF0023; text-decoration: none;">Book a free strategy call</a>
+                  </p>
+                  <p style="color: #bbbbbb; font-size: 11px; text-align: center; margin: 0;">
+                    Xperience Wave &middot; UX Mentorship &amp; Career Development &middot; Bangalore
+                  </p>
+                </div>
+              </div>
+            `,
+          }),
+        });
+      } catch (error) {
+        console.error('Failed to send salary negotiation GPT confirmation email:', error);
       }
     }
 

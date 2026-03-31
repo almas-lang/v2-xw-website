@@ -6,6 +6,7 @@ import { blogPosts, getPublishedPosts, getCategoryLabel, getCategoryColor, forma
 import CTASection from '@/components/shared/CTASection';
 import MobileTOC from '@/components/blog/MobileTOC';
 import EvaluatorGate from '@/components/blog/EvaluatorGate';
+import SalaryNegotiationGPTGate from '@/components/blog/SalaryNegotiationGPTGate';
 
 // Blog content with internal links for SEO
 const blogContent: Record<string, React.ReactNode> = {
@@ -5017,6 +5018,325 @@ const blogContent: Record<string, React.ReactNode> = {
       </p>
     </>
   ),
+
+  'salary-negotiation-ux-designers-india': (
+    <>
+      <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
+        Vaibhav was laid off at &#x20B9;17 lakhs. One month later, he had two offers: &#x20B9;21L and &#x20B9;24L. Same designer. Same four years of experience. The only thing that changed was how he walked into the room.
+      </p>
+
+      <h2 id="what-changed" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What Changed Between &#x20B9;17L and &#x20B9;24L Was Not Skill. It Was Negotiation.
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Vaibhav had four years of experience and was based in Pune. His company laid him off. Within a month, he had three interviews lined up. And his head was exactly where yours would be: anything I can secure is good. I have a family to take care of.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        I told him one thing: imagine all three offered you. Go in with that confidence. Not cocky. Confident. The confidence of someone who has options - because he did.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        He went from a company that had valued him at &#x20B9;17L to two offers: one at &#x20B9;21L, another at &#x20B9;24L. Four years of experience. Pune - not Bangalore. No new skills learned in that one month. No additional certifications. No change in his portfolio.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The only thing that changed was the energy he brought to the negotiation. He stopped thinking &quot;I need this job&quot; and started thinking &quot;They need what I can do.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        That shift - from desperation to confidence - is the difference between accepting the first number and shaping the final one. And it is a shift that most designers never make, because nobody teaches them that negotiation is part of the job.
+      </p>
+
+      <h2 id="selling-a-service" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        You Are Not Asking for a Favour. You Are Selling a Service.
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is the mindset shift that needs to happen before any tactical advice matters.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        When you are looking for a job, you are selling a service. The employer is the customer. Think about that framing for a moment. You have skills. You have experience. You have the ability to solve a specific set of problems. The employer needs those problems solved. This is a transaction between two parties, not a favour being granted.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Would a service provider accept whatever the customer offers without understanding the market rate? Would they say &quot;I do not care about the fee, just give me the project&quot;? Would they price their work based on what they charged a different customer three years ago, in a different city, for a different scope?
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        That is exactly what most designers do with their salary. And the data shows how much it costs them.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        People who negotiate earn an average of 18.83% more than those who accept the first offer. A 2024-2025 meta-review of every major salary negotiation study found this consistently - across industries, geographies, and seniority levels.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        In India, 68% of professionals never negotiate their first offer. Seven out of ten people walk away from money that was available to them because they did not ask.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        A starting salary difference of even &#x20B9;5,000/month compounds to over &#x20B9;63 lakhs in lost earnings over a career (assuming 5% annual raises). Harvard&apos;s Program on Negotiation published this calculation. Your starting number is not just this year&apos;s salary. It is the baseline for every raise, every appraisal, every job change for the rest of your career.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Imagine you were going to buy a car. The salesperson gives you the first price. You do not ask for clarity. You do not ask about discounts. You do not ask what offers are available. You either say yes or walk away. In both cases, you did not even try to understand what a good number looks like.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Unlike a car, this purchase compounds. Every year. For decades.
+      </p>
+
+      <h2 id="salary-data" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What UX Designers Actually Earn in India (Verified Data, 2025-2026)
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Before you negotiate, you need to know the market. Not what your friend earns. Not what a recruiter told you once. Verified data.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Sources:</strong> Glassdoor (813+ salary submissions, Bangalore, Feb 2026), Coursera/Glassdoor salary guide (Sep 2025), AmbitionBox, PayScale, GeeksforGeeks, SalaryInHand.in.
+      </p>
+
+      <div className="overflow-x-auto mb-8">
+        <table className="w-full text-left border-collapse text-base md:text-lg text-g600">
+          <thead>
+            <tr className="border-b-2 border-g200">
+              <th className="py-3 pr-4 font-bold text-carbon">Experience</th>
+              <th className="py-3 pr-4 font-bold text-carbon">Typical Role</th>
+              <th className="py-3 pr-4 font-bold text-carbon">Avg CTC (Bangalore)</th>
+              <th className="py-3 pr-4 font-bold text-carbon">Range</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="border-b border-g200">
+              <td className="py-3 pr-4">0-1 yrs</td>
+              <td className="py-3 pr-4">Associate / Junior</td>
+              <td className="py-3 pr-4">&#x20B9;4-6.5L</td>
+              <td className="py-3 pr-4">&#x20B9;2.5L - &#x20B9;10L</td>
+            </tr>
+            <tr className="border-b border-g200">
+              <td className="py-3 pr-4">1-3 yrs</td>
+              <td className="py-3 pr-4">Designer (L1-L2)</td>
+              <td className="py-3 pr-4">&#x20B9;7-12L</td>
+              <td className="py-3 pr-4">&#x20B9;5L - &#x20B9;16.5L</td>
+            </tr>
+            <tr className="border-b border-g200">
+              <td className="py-3 pr-4">3-5 yrs</td>
+              <td className="py-3 pr-4">Senior Designer</td>
+              <td className="py-3 pr-4">&#x20B9;12-18L</td>
+              <td className="py-3 pr-4">&#x20B9;8.5L - &#x20B9;25L</td>
+            </tr>
+            <tr className="border-b border-g200">
+              <td className="py-3 pr-4">5-8 yrs</td>
+              <td className="py-3 pr-4">Lead Designer</td>
+              <td className="py-3 pr-4">&#x20B9;18-25L</td>
+              <td className="py-3 pr-4">&#x20B9;11L - &#x20B9;35L</td>
+            </tr>
+            <tr className="border-b border-g200">
+              <td className="py-3 pr-4">8-12 yrs</td>
+              <td className="py-3 pr-4">Design Manager / Head</td>
+              <td className="py-3 pr-4">&#x20B9;25-40L</td>
+              <td className="py-3 pr-4">&#x20B9;18L - &#x20B9;55L</td>
+            </tr>
+            <tr className="border-b border-g200">
+              <td className="py-3 pr-4">12+ yrs</td>
+              <td className="py-3 pr-4">Director / VP Design</td>
+              <td className="py-3 pr-4">&#x20B9;35-55L+</td>
+              <td className="py-3 pr-4">&#x20B9;25L - &#x20B9;80L+</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>City Adjustments:</strong>
+      </p>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li><strong>Bangalore:</strong> +19.8% above national average. The benchmark city.</li>
+        <li><strong>Gurgaon/Delhi NCR:</strong> +12-16.6%.</li>
+        <li><strong>Mumbai:</strong> +2-7%. Higher living costs, similar pay.</li>
+        <li><strong>Pune:</strong> +7%. (Vaibhav&apos;s &#x20B9;24L at 4 YOE was above this average - that is the negotiation premium.)</li>
+        <li><strong>Chennai:</strong> -8 to 9.8%. Consistently lowest-paying metro for UX.</li>
+        <li><strong>Hyderabad:</strong> -4.5%.</li>
+        <li><strong>Product companies</strong> pay 30-40% more than service/agency companies for the same experience level. This is often a bigger variable than city.</li>
+      </ul>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        For a deeper breakdown of what separates a &#x20B9;12L designer from a &#x20B9;30L designer beyond negotiation: <Link href="/resources/blogs/12l-vs-30l-ux-designer-difference" className="text-accent hover:underline font-medium">that blog covers it</Link>.
+      </p>
+
+      <h2 id="river-framework" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The RIVER Framework: How We Coach Designers to Negotiate
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        At Xperience Wave, we have coached hundreds of designers through salary negotiations. Vaibhav used this approach. So did every designer in our mentorship programme who has successfully negotiated above their initial offer.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        We call it RIVER. Five steps that cover what happens before, during, and after the negotiation.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        R - Research
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Know the market before anyone asks you a number. Use Glassdoor, AmbitionBox, PayScale. Talk to people in similar roles. Cross-reference at least two sources. Know the range for your role, your city, your experience level.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        I - Identity Shift
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is where most designers fail before the conversation even starts. You are not a grateful applicant hoping for a chance. You are a service provider with a specific skill set, and the employer is the customer who needs that skill set. Your previous salary is what you charged the last customer - it is not relevant to this one. The next customer comes after more experience, a bigger role, different demands. The old number is not a valid anchor.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        When I asked Bharat - a fresh engineering graduate who had completed a UX programme - why he was willing to accept no money for his first year, his answer was: &quot;I just want the designation.&quot; I asked him: are you doubting that you can actually do this role? Is that why? And that triggered something. He started asking: well, what can I ask for?
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        That is the identity shift. From &quot;I should be grateful for anything&quot; to &quot;What is the fair price for the service I am providing?&quot; Once a designer makes this shift, the negotiation changes completely - because the employer is the customer, and a good service provider does not let the customer set the price without understanding the market.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        V - Value Articulation
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Know what you bring and say it in one sentence. Not &quot;I am a hard worker.&quot; Specific. Measurable. Connected to what this organisation needs.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        This is where career switchers get it wrong most often. A designer came to me with eight years of professional experience - content writing for most of it, then switched to UX. She started as an intern at &#x20B9;4L because she felt her previous experience did not count. Three years later, she was at &#x20B9;7L when she should have been at &#x20B9;14-18L. The gap was not skill. It was that she never articulated the value of her transferable experience - stakeholder management, corporate communication, cross-functional collaboration. All of it relevant. None of it priced in.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        E - Exchange, Not Surrender
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Negotiation is a two-way exchange, not a plea. Present a researched range. Position yourself at the higher end. If base salary is fixed, negotiate ESOPs, signing bonus, paid breaks, a structured review at 6 months.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        This is exactly what Rahul did. He was offered &#x20B9;12L for a senior design role. Instead of accepting, he did his research, knew the market range, and asked about budget flexibility. He did not argue - he presented data. The final package: &#x20B9;18L, including ESOPs and a joining bonus. Same company, same role. &#x20B9;6L more - because he had one conversation that most designers skip.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        R - Resolve
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Commit to your decision and move forward. Someone will always say you could have asked for more. Only you know the reality of the room. You know who you talked to. You know how the HR treated you. Make the call and stand by it.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        And remember: if an organisation is not open to negotiation at all, they are telling you something about how they will treat you after you join.
+      </p>
+
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Want to practise these steps with a coach that never sleeps? Our free Salary Negotiation GPT walks you through the RIVER framework, generates personalised scripts, and even simulates an HR negotiation so you can practise before the real conversation.
+      </p>
+      <SalaryNegotiationGPTGate />
+
+      <h2 id="scripts" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Three Scripts That Changed Real Outcomes
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        All five scripts plus a live negotiation simulator are available in our free Salary Negotiation GPT.
+      </p>
+
+      <h3 id="script-current-ctc" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        Script 1 - When HR Asks &quot;What Is Your Current CTC?&quot;
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is the most common trap in Indian hiring. &quot;What is your current CTC?&quot; is designed to anchor the offer against your existing salary, not your market value.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Think of it like this: you are a service provider. How much you charged the previous customer is not relevant to the next one. The next engagement comes after more experience. It could be a bigger scope. A different city. The old price is not valid.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>If your current salary is in a good range and anchoring against it will not hurt:</strong>
+      </p>
+      <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-6">
+        &quot;I am happy to share my full salary details once we both feel confident we want to work together. Right now, I think it is more productive to discuss the role and see if there is a mutual fit first.&quot;
+      </blockquote>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>If you are pushed and the system requires a number:</strong>
+      </p>
+      <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-6">
+        &quot;My current CTC is &#x20B9;[X]. I want to be transparent. But anchoring my next offer against this number would not be appropriate - I have done market research for this role, this city, and this experience level, and the data says the range is &#x20B9;[Y] to &#x20B9;[Z]. I am looking at the higher end.&quot;
+      </blockquote>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        <strong>Why this works:</strong> You are honest about the number while immediately reframing the conversation from &quot;current + percentage&quot; to &quot;market value.&quot; HR respects this because it shows preparation, not entitlement.
+      </p>
+
+      <h3 id="script-low-offer" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        Script 2 - When the Offer Comes in Below Your Researched Range
+      </h3>
+      <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-6">
+        &quot;Thank you for the offer. I am genuinely excited about this role. Based on my market research for [role] in [city] at [X years], I was expecting the base closer to &#x20B9;[Y]. Is there room to revisit?&quot;
+      </blockquote>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>If they say base is fixed:</strong>
+      </p>
+      <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-6">
+        &quot;I understand. Could we look at other ways to bridge the gap? I am open to ESOPs, a signing bonus, paid breaks, or a structured review at 6 months with a defined salary correction. I want to make this work.&quot;
+      </blockquote>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        This is Rahul&apos;s playbook. Base at &#x20B9;12L, would not move. By asking about ESOPs and joining bonus, he turned the total package into &#x20B9;18L. Most organisations have more flexibility on benefits than base salary. If you do not ask, the answer is always no.
+      </p>
+
+      <h3 id="script-career-switcher" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        Script 3 - When You Are a Career Switcher With a Low Current Salary
+      </h3>
+      <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-6">
+        &quot;My current compensation reflects my previous role in [content writing / development / marketing], which is a different function. This role requires UX-specific skills I have built through [programme / projects], plus [X years] of transferable professional experience in stakeholder management, cross-functional collaboration, and corporate communication. The market rate for this role in [city] is &#x20B9;[A] to &#x20B9;[B], and I believe that is a fair range.&quot;
+      </blockquote>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        <strong>Why this works:</strong> You are not pretending the gap does not exist. You are explaining it and redirecting to transferable skills. The designer with eight years in content writing was not a beginner. She was a professional with a decade of corporate experience who had never learned to price it correctly. This script does the pricing for you.
+      </p>
+
+      <h2 id="what-not-to-do" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What Not to Do
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-8">
+        <li><strong>Do not benchmark against a friend.</strong> &quot;My friend earns &#x20B9;12L so I should earn at least &#x20B9;12L&quot; is not a strategy. Your friend may be in a different city, industry, role. You are a service provider - your rate is set by the market and the value you bring, not by what someone else charges.</li>
+        <li><strong>Do not use the 20-30% hike as your only anchor.</strong> If you are at &#x20B9;4L because of a career switch, 20% of &#x20B9;4L is &#x20B9;4.8L. That is still dramatically below market. Your next employer&apos;s offer should reflect the value of the role, not a percentage on a broken baseline.</li>
+        <li><strong>Do not overdo it.</strong> You are going to work with these people after you join. Establish a good rapport. Know when to stretch and when to accept. If they genuinely cannot meet your number after a real conversation, that is okay. Sometimes businesses cannot reach good terms. Be okay letting go.</li>
+        <li><strong>Do not accept without trying.</strong> Bharat was ready to work for free &quot;for the designation.&quot; The eight-year career-switcher accepted &#x20B9;4L because she was &quot;grateful for the opportunity.&quot; In both cases, the employer was the customer - and the service provider set the price at zero before the customer even made an offer. That is not humility. That is underpricing. And the market will hold you to it for years.</li>
+        <li><strong>Do not doubt the outcome after.</strong> Someone will always say you could have asked for more. Only you know the reality. Make your decision and do not be fickle about it.</li>
+      </ul>
+
+      <h2 id="practise-tool" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Practise Before the Real Conversation
+      </h2>
+      <SalaryNegotiationGPTGate />
+
+      <h2 id="what-to-do" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What to Do From Here
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If your salary is below market and you have a job change or appraisal coming up, the single most valuable thing you can do is research your number before the conversation starts. Use the table above. Cross-reference Glassdoor and AmbitionBox. Talk to people in similar roles. Know your range before anyone asks.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        If you want help beyond negotiation - positioning yourself for the right role, not just the right number - that is what our 1:1 mentorship programme is designed for. Salary is one part. The bigger question is: what kind of designer are you, and what should you be earning for the value you bring? If that is where you are: <a href="https://calendly.com/team-xperiencewave/xw-strategy" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">book a strategy call</a>.
+      </p>
+
+      <h2 id="sources-references" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Sources &amp; References
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-8">
+        <li>Interview Guys / Harvard / NBER - 2024-2025 meta-review: 18.83% avg increase for those who negotiate.</li>
+        <li>TheIndiaJobs.com - 68% of Indian professionals do not negotiate first offer; negotiators earn 7-12% more.</li>
+        <li>Harvard PON (Marks &amp; Harold, 2009) - Starting salary difference compounds 10-15x over career at 5% annual raises.</li>
+        <li>Glassdoor India - UX Designer Bangalore avg &#x20B9;10.3L (813 submissions, Feb 2026). Senior UX avg &#x20B9;15L. Lead UX avg &#x20B9;20L.</li>
+        <li>Coursera/Glassdoor Salary Guide, Sep 2025 - UX Designer India avg &#x20B9;8L. Bangalore &#x20B9;10L. Mumbai &#x20B9;7L. Pune &#x20B9;8L.</li>
+        <li>PayScale - Bangalore +19.8% above national avg. Gurgaon +16.6%. Delhi +12%. Chennai -9.8%. Hyderabad -4.5%.</li>
+        <li>GeeksforGeeks/AmbitionBox - Lead/Senior UX: &#x20B9;8.9-35L avg &#x20B9;17L. Director UX: &#x20B9;18-55L avg &#x20B9;35L.</li>
+        <li>SalaryInHand.in - Mid-level avg &#x20B9;13L. Senior at top companies &#x20B9;35-55L. Product cos pay 30-40% more than agencies.</li>
+        <li>BATNA/ZOPA - Fisher &amp; Ury, &quot;Getting to Yes,&quot; 1981. Standard negotiation theory.</li>
+      </ul>
+
+      <h2 id="about-author" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        About the Author
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Murad is Co-founder and Head of Design at Xperience Wave, a UX design career development company based in Bangalore. He has 13+ years of design leadership experience and works directly with mid-senior designers through the mentorship programme. The RIVER framework and the negotiation scripts in this blog come from real coaching conversations with designers like Vaibhav, Rahul, and hundreds of others navigating job changes and appraisals in the Indian market. Names used with permission.
+      </p>
+
+      <h2 id="read-next" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Read Next
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li>On what separates a &#x20B9;12L designer from a &#x20B9;30L designer: <Link href="/resources/blogs/12l-vs-30l-ux-designer-difference" className="text-accent hover:underline font-medium">The Difference Between a &#x20B9;12L and &#x20B9;30L UX Designer Is Not Skill.</Link></li>
+        <li>On the career phases that determine your ceiling: <Link href="/resources/blogs/ux-career-ladder-india" className="text-accent hover:underline font-medium">The UX Career Ladder Is Broken in India.</Link></li>
+        <li>If you are not getting interview calls at all: <Link href="/resources/blogs/why-no-ux-interview-calls" className="text-accent hover:underline font-medium">Why You&apos;re Not Getting UX Interview Calls.</Link></li>
+      </ul>
+
+      <p className="text-base md:text-lg text-g500 italic mt-6">
+        - Murad, Co-founder &amp; Head of Design, Xperience Wave
+      </p>
+    </>
+  ),
 };
 
 // Table of contents for each blog post
@@ -5227,6 +5547,18 @@ const blogTableOfContents: Record<string, { id: string; title: string }[]> = {
     { id: 'silence-is-information', title: 'The Silence Is Not Rejection. It Is Information.' },
     { id: 'brief-diagnostic', title: 'A Brief Diagnostic' },
   ],
+  'salary-negotiation-ux-designers-india': [
+    { id: 'what-changed', title: 'What Changed Between \u20B917L and \u20B924L' },
+    { id: 'selling-a-service', title: 'You Are Not Asking for a Favour' },
+    { id: 'salary-data', title: 'What UX Designers Actually Earn in India' },
+    { id: 'river-framework', title: 'The RIVER Framework' },
+    { id: 'scripts', title: 'Three Scripts That Changed Real Outcomes' },
+    { id: 'what-not-to-do', title: 'What Not to Do' },
+    { id: 'practise-tool', title: 'Practise Before the Real Conversation' },
+    { id: 'what-to-do', title: 'What to Do From Here' },
+    { id: 'sources-references', title: 'Sources & References' },
+    { id: 'read-next', title: 'Read Next' },
+  ],
 };
 
 // Author data
@@ -5354,6 +5686,11 @@ const blogMetadata: Record<string, { title: string; description: string; keyword
     title: 'Why UX Designers Get Ghosted After Round 2 | Xperience Wave',
     description: 'You cleared Round 1. Then nothing. Almas breaks down the two specific reasons UX designers get ghosted after Round 2 - the bad salesman problem and the hollow portfolio - and what to do about both.',
     keywords: ['why UX designers get ghosted after round 2 interview', 'UX interview round 2 tips', 'design interview ghosted', 'UX job interview India 2026', 'how to pass second round design interview', 'UX portfolio interview depth'],
+  },
+  'salary-negotiation-ux-designers-india': {
+    title: 'Salary Negotiation for UX Designers: Scripts, Data, and What Actually Works in India | Xperience Wave',
+    description: 'Vaibhav was laid off at \u20B917L. One month later: \u20B921L and \u20B924L offers. Same skills. Different negotiation. Verified salary data, the RIVER framework, and word-for-word scripts for UX designers in India.',
+    keywords: ['UX designer salary negotiation India', 'UX salary India 2026', 'design salary hike', 'salary negotiation scripts UX', 'UX designer salary Bangalore', 'RIVER negotiation framework', 'design career salary India'],
   },
 };
 

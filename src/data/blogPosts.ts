@@ -51,6 +51,17 @@ export const getCategoryLabel = (category: string): string => {
 // Sample blog posts with Unsplash images
 export const blogPosts: BlogPost[] = [
   {
+    id: '32',
+    slug: 'salary-negotiation-ux-designers-india',
+    title: 'Salary Negotiation for UX Designers: Scripts, Data, and What Actually Works in India',
+    excerpt: 'Vaibhav was laid off at \u20B917L. One month later: \u20B921L and \u20B924L offers. Same skills. Different negotiation. Verified salary data, the RIVER framework, and word-for-word scripts for UX designers in India.',
+    category: 'career-growth',
+    image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80',
+    author: { name: 'Shaik Murad' },
+    publishedAt: '2026-04-21',
+    readTime: '16 min',
+  },
+  {
     id: '1',
     slug: 'ai-first-design-senior-ux',
     title: 'AI-First Design: What Senior UX Designers Need',

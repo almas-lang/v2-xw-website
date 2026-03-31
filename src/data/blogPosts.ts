@@ -51,6 +51,17 @@ export const getCategoryLabel = (category: string): string => {
 // Sample blog posts with Unsplash images
 export const blogPosts: BlogPost[] = [
   {
+    id: '35',
+    slug: 'hidden-cost-promoting-ic-designer-manager',
+    title: 'The Hidden Cost of Promoting Your Best IC Designer to Manager',
+    excerpt: 'You did not just get a bad manager. You lost your best designer. That is two losses in one decision. The numbers, the patterns, and what to do instead.',
+    category: 'career-growth' as const,
+    image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&q=80',
+    author: { name: 'Almas Tasneem' },
+    publishedAt: '2026-04-18',
+    readTime: '12 min',
+  },
+  {
     id: '34',
     slug: 'ux-career-ladder-levels-india',
     title: 'Junior to CXO: What Each Level of the UX Career Ladder Actually Demands in India',

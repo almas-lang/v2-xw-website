@@ -5914,6 +5914,229 @@ const blogContent: Record<string, React.ReactNode> = {
       </p>
     </>
   ),
+
+  'hidden-cost-promoting-ic-designer-manager': (
+    <>
+      <p className="text-lg md:text-xl text-g600 leading-relaxed mb-8">
+        You did not just get a bad manager. You lost your best designer. That is two losses in one decision.
+      </p>
+
+      <h2 id="promotion-breaks" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Promotion That Breaks Two Things at Once
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        A design leader we work with described the moment he knew the promotion was a mistake. Not for himself - for the entire team.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        He had been the strongest individual contributor on the team. Fastest delivery. Highest quality. Best stakeholder feedback scores. The obvious choice for the open manager role. So the organisation promoted him.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Within six weeks, two things happened simultaneously. The project he had been carrying as an IC - the one that was on track specifically because of his personal output - started slipping. Nobody on the team could produce at the level he had been producing. And the team he was now supposed to manage started losing direction. He did not know how to delegate. He did not know how to run a strategy conversation in business language. He did not know how to develop the people reporting to him.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The organisation lost its best contributor and gained an untrained manager. Two losses in one decision. And it took six months to see the full cost.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        This is not an unusual story. We see this pattern across every organisation we work with - from 20-person startups to 500-person product companies. It is the single most expensive people decision design teams make, and most organisations do not even recognise it as a cost.
+      </p>
+
+      <h2 id="the-numbers" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Numbers That Should Concern Every Design Leader
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is not a soft problem. It is a measurable, expensive one.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Managers account for 70% of the variance in team engagement.</strong> That is Gallup&apos;s number, from the State of the Global Workplace report, replicated across thousands of business units worldwide. When a manager is disengaged or ineffective, the team&apos;s engagement collapses - and engagement is directly tied to productivity, quality, and retention.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>50% of employees have quit a job specifically because of a bad manager.</strong> Gallup surveyed over 7,000 professionals and found that half of them had resigned - put in notice and walked out - because of their direct manager. Not because of the company. Not because of the work. Because of the person managing them.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Employees under ineffective managers are 37% more likely to leave.</strong> DecisionWise research found that negative perception of a manager is the single strongest predictor of voluntary turnover - stronger than compensation, benefits, or career path.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Replacing a manager-level employee costs 1-2x their annual salary.</strong> SHRM estimates that the total cost of losing a managerial employee - recruiting, onboarding, ramp-up, lost productivity - runs between 90% and 200% of their annual compensation. For a design manager earning &#x20B9;25-40L, that is &#x20B9;22L to &#x20B9;80L per failed transition.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Global employee engagement fell to 21% in 2024.</strong> Gallup&apos;s 2025 report found that manager engagement specifically dropped from 30% to 27%, and that this decline is the primary driver of overall engagement collapse. The estimated cost: $438 billion in lost productivity globally.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        When you promote your best IC designer to manager without preparation, you are not just risking one person&apos;s career. You are risking the engagement, retention, and output of every person on their team.
+      </p>
+
+      <h2 id="why-mistake" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Why Organisations Keep Making This Mistake
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The logic seems sound. Your best designer understands the work better than anyone. They have the respect of the team. They deliver consistently. They seem like the natural choice.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        But the logic is based on a flawed assumption: that the skills that make someone excellent at producing design work are the same skills needed to lead a design team. They are not. In most cases, they are in direct conflict.
+      </p>
+      <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-4">
+        An IC&apos;s job: Assess a situation, adapt, and deliver the best possible output individually.
+      </blockquote>
+      <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-6">
+        A manager&apos;s job: Enable a team of people with different speeds, skills, and motivations to deliver collective output that exceeds what any one of them could produce alone.
+      </blockquote>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        These are fundamentally different competencies. And the Benson, Li, and Shue study across 131 firms and nearly 40,000 workers proved it empirically: the best individual performers, once promoted, were associated with a 7.5% decline in the performance of the people they managed. The better the IC, the worse the manager - when the transition is untrained.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The Chartered Management Institute calls this the &quot;accidental manager&quot; problem. Their research found that 82% of managers enter their roles without any formal management or leadership training. They are promoted because they were good at the previous job, available, or popular - not because they were prepared for the next job.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        In design teams, this problem is amplified. Design leadership requires a specific combination of skills that are rarely developed through IC work alone: stakeholder translation, strategic communication in business language, team motivation, delegation, and cross-functional navigation. None of these appear in the job description of an individual contributor.
+      </p>
+
+      <h2 id="failed-transition-cost" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What the Failed Transition Actually Costs Your Organisation
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        When the promotion goes wrong, it does not fail quietly. It fails in two specific patterns, and both have measurable organisational costs.
+      </p>
+
+      <h3 id="pattern-1" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        Pattern 1: The Pass-Through Manager
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The new manager becomes a relay between leadership and the design team. Leadership decisions go down. Team output goes up. The manager adds no perspective, no pushback, no strategic value. They are a human forwarding address.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        The organisational cost: Design loses its seat at the strategy table. Not because design was excluded - because no one is representing it. Product and engineering decisions get made without design input. The design team&apos;s work becomes reactive - executing briefs rather than shaping direction. Over two to three quarters, the organisation&apos;s design maturity regresses visibly. Stakeholders start bypassing the design team entirely because the output has become predictable and unchallenging.
+      </p>
+
+      <h3 id="pattern-2" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        Pattern 2: The Manager Who Keeps Delivering
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The promoted IC cannot stop producing. They pick the most interesting problem and go deep - designing, prototyping, solving. They are doing excellent individual work. But they are doing it at the cost of everything a manager is supposed to do.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        The organisational cost: Strategy alignment with business stakeholders - neglected. Team performance management - absent. Resource allocation across projects - overlooked. Quality control on deliverables outside their personal focus - unchecked. The team starts operating as a collection of individuals rather than a coordinated function. Junior designers stall because nobody is developing them. Senior designers leave because they see no leadership worth following.
+      </p>
+
+      <h3 id="compounding-cost" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        The compounding cost
+      </h3>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li>The promoted IC is unhappy (they miss the recognition and clarity of IC work).</li>
+        <li>The team is disengaged (70% of their engagement was determined by this one person).</li>
+        <li>The best people on the team start interviewing elsewhere (37% higher turnover probability).</li>
+        <li>The organisation spends 1-2x annual salary to replace each person who leaves.</li>
+        <li>Design&apos;s credibility with leadership erodes. Budget conversations become harder. The next hire is positioned as &quot;the person who will fix design.&quot;</li>
+      </ul>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        This is the cascade. It does not happen overnight. It happens over two to three quarters, and by the time it is visible, the damage is structural.
+      </p>
+
+      <h2 id="loss-nobody-counts" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Loss Nobody Counts: The IC Who Will Never Lead Again
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        There is a third cost that does not appear on any balance sheet. The promoted designer - the one who failed in the transition - does not just go back to being an IC. They go back as someone who has concluded, permanently, that they are not built for leadership.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        We see this in our mentorship work constantly. Designers with seven, nine, twelve years of experience who tell us they want to stay as individual contributors. When we push deeper, the story is almost always the same: they were thrown into a manager role once, without preparation. It went badly. They decided it is not for them.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        That conclusion is wrong. They were not unfit. They were unprepared. But the scar is real, and for many of them, it is permanent. The organisation that promoted them prematurely did not just lose a manager. They permanently removed a future leader from the pipeline.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        (We wrote about this in detail from the designer&apos;s perspective: <Link href="/resources/blogs/ic-to-manager-trap-designers" className="text-accent hover:underline font-medium">The IC-to-Manager Trap: Why Great Designers Fail as Design Leaders</Link>. If you manage a design team, reading both perspectives will give you the full picture.)
+      </p>
+
+      <h2 id="what-to-do" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What Organisations Should Do Instead
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The answer is not to stop promoting ICs into leadership. The answer is to stop promoting them unprepared.
+      </p>
+
+      <h3 id="step-1" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        1. Separate the Promotion Decision from the Readiness Decision
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Being the best IC on the team is not evidence of readiness for management. It is evidence of IC excellence. Treat them as two different assessments. Evaluate the candidate specifically for delegation skill, strategic communication, team development capability, and cross-functional navigation - not output quality.
+      </p>
+
+      <h3 id="step-2" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        2. Invest in Transition Training Before the Title
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        The CMI research is clear: organisations that invest in formal management training see a 23% increase in organisational performance and a 32% increase in employee engagement and productivity. The training needs to happen before the promotion, not after it. Once someone is in the seat and struggling, the damage to their confidence and the team&apos;s trust is already underway.
+      </p>
+
+      <h3 id="step-3" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        3. Build Design Leadership Skills Systematically
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Design leadership is not generic management. It requires specific skills: translating design value into business language, navigating stakeholders who do not understand or respect design, building and maintaining design maturity in an organisation that was not built for it, and developing a team of people with very different skill profiles and career aspirations.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        These are trainable skills. But they require structured intervention - not a two-hour workshop, not a book recommendation, not &quot;observe how the current manager does it.&quot;
+      </p>
+
+      <h3 id="step-4" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        4. Create an IC Leadership Track That Is Not a Consolation Prize
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Many organisations offer an IC track as an alternative to management. But it is often a dead-end path with no real progression, no strategic influence, and no salary growth beyond a ceiling. If your IC track is a consolation prize, your best people will either leave or reluctantly accept a management role they are not ready for. Neither outcome serves the organisation.
+      </p>
+
+      <h2 id="training-problem" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        This Is a Training Problem, Not a Hiring Problem
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Most organisations try to solve this by hiring external design managers. That works sometimes. But it does not solve the systemic issue: your internal pipeline of future design leaders remains empty. Every time you promote from within, the same failure pattern repeats.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The fix is training. Structured, design-specific leadership development that prepares your ICs for the transition before they step into the role. Not generic management courses. Not mentoring programmes that depend on the quality of whoever happens to be senior. A deliberate curriculum that builds the specific muscles design leaders need.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        That is what our corporate training programme is built for. We work with design teams at funded SMEs - typically 5 to 50 designers - and close the gap between IC excellence and leadership readiness. The programme is built on real patterns from our work with hundreds of designers, not on management theory.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If your design team has a promotion decision coming up and you want to make sure it does not become the two-loss scenario described in this blog: <Link href="/for-business/training-for-teams" className="text-accent hover:underline font-medium">book a training call</Link>. We will assess your team&apos;s current state and tell you honestly whether training can close the gap or whether the timeline requires a different approach.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        <Link href="/programs/ux-leadership-mentorship" className="text-accent hover:underline font-medium">Explore the Tide leadership mentorship programme</Link>
+      </p>
+
+      <h2 id="sources-references" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Sources &amp; References
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li>Gallup - State of the Global Workplace 2025 Report. Managers account for 70% of variance in team engagement. Manager engagement dropped from 30% to 27% in 2024. $438B global productivity cost.</li>
+        <li>Gallup - Survey of 7,272 professionals: 50% quit because of a bad manager. 52% of voluntary exits say the manager could have prevented their departure.</li>
+        <li>DecisionWise - Employees with negative perception of their manager are 37% more likely to leave.</li>
+        <li>SHRM - Replacement cost for managerial employees: 90-200% of annual salary. Average cost per hire: $4,700. Average time to fill: 42 days.</li>
+        <li>CMI - Better Managed Britain Report, 2023: 82% of managers enter role without formal training. Organisations investing in management development see 23% increase in performance, 32% increase in engagement.</li>
+        <li>Benson, Li, Shue - &quot;Promotions and the Peter Principle,&quot; QJE, 2019. 39,000+ workers across 131 firms. Top IC performers associated with 7.5% decline in subordinate performance post-promotion.</li>
+      </ul>
+
+      <h2 id="about-author" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        About the Author
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Almas Tasneem is Co-founder and CEO at Xperience Wave, a UX design career development company based in Bangalore. She leads sales, strategy, client success, and the corporate training programme. The patterns in this blog come from direct work with design teams at product companies across India - from funded startups to mid-sized enterprises. When a design team&apos;s growth stalls, the cause is almost always traceable to one of the patterns described here.
+      </p>
+
+      <h2 id="read-next" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Read Next
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li>The designer&apos;s perspective on this exact transition: <Link href="/resources/blogs/ic-to-manager-trap-designers" className="text-accent hover:underline font-medium">The IC-to-Manager Trap: Why Great Designers Fail as Design Leaders.</Link></li>
+        <li>When senior designers have the title but not the influence: <Link href="/resources/blogs/senior-ux-designer-delivery-person" className="text-accent hover:underline font-medium">You&apos;re a Senior Designer in Title. You&apos;re Still Being Treated Like a Delivery Person.</Link></li>
+        <li>On the real difference between mid-level and senior compensation: <Link href="/resources/blogs/12l-vs-30l-ux-designer-difference" className="text-accent hover:underline font-medium">The Difference Between a &#x20B9;12L and &#x20B9;30L UX Designer Is Not Skill.</Link></li>
+      </ul>
+
+      <p className="text-base md:text-lg text-g500 italic mt-6">
+        - Almas, Co-founder &amp; CEO, Xperience Wave
+      </p>
+    </>
+  ),
 };
 
 // Table of contents for each blog post
@@ -6157,6 +6380,17 @@ const blogTableOfContents: Record<string, { id: string; title: string }[]> = {
     { id: 'sources-references', title: 'Sources & References' },
     { id: 'read-next', title: 'Read Next' },
   ],
+  'hidden-cost-promoting-ic-designer-manager': [
+    { id: 'promotion-breaks', title: 'The Promotion That Breaks Two Things' },
+    { id: 'the-numbers', title: 'The Numbers That Should Concern Every Design Leader' },
+    { id: 'why-mistake', title: 'Why Organisations Keep Making This Mistake' },
+    { id: 'failed-transition-cost', title: 'What the Failed Transition Costs' },
+    { id: 'loss-nobody-counts', title: 'The Loss Nobody Counts' },
+    { id: 'what-to-do', title: 'What Organisations Should Do Instead' },
+    { id: 'training-problem', title: 'This Is a Training Problem' },
+    { id: 'sources-references', title: 'Sources & References' },
+    { id: 'read-next', title: 'Read Next' },
+  ],
 };
 
 // Author data
@@ -6299,6 +6533,11 @@ const blogMetadata: Record<string, { title: string; description: string; keyword
     title: 'What Happens in Week 1-12 of a 1:1 UX Mentorship (An Inside Look) | Xperience Wave',
     description: 'Sheetal became Design Lead in 2 months. Shreekanth landed Wipro in 5 weeks. Kritika landed a Lead role at a German startup in 3 months. This is not what they learned - it is how they were taught. An inside look at 1:1 UX mentorship.',
     keywords: ['1:1 UX mentorship program', 'Xperience Wave mentorship', 'UX mentorship experience', 'inside look mentorship', 'UX career mentorship India', 'design mentorship programme', '1:1 UX coaching India'],
+  },
+  'hidden-cost-promoting-ic-designer-manager': {
+    title: 'The Hidden Cost of Promoting Your Best IC Designer to Manager | Xperience Wave',
+    description: 'You promoted your best designer. Now you have a bad manager and a gap where your best IC used to be. The hidden cost of promoting without preparation - and what to do instead.',
+    keywords: ['cost of promoting IC designer to manager', 'design manager transition cost', 'IC to manager failure', 'design team leadership training', 'accidental manager design', 'design leadership development corporate', 'UX team management training India'],
   },
 };
 

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import ScrollToTop from "@/components/layout/ScrollToTop";
+import WhatsAppButton from "@/components/shared/WhatsAppButton";
 import SchemaOrg from "@/components/seo/SchemaOrg";
 import Analytics from "@/components/Analytics";
 
@@ -120,6 +121,7 @@ export default function MainLayout({
       <Header />
       <main id="main-content">{children}</main>
       <Footer />
+      <WhatsAppButton />
     </>
   );
 }

@@ -3,6 +3,7 @@ import { FTHeader } from "@/components/freetraining/Header";
 import { FTFooter } from "@/components/freetraining/Footer";
 import { FTMetaPixel } from "@/components/freetraining/FTAnalytics";
 import Analytics from "@/components/Analytics";
+import WhatsAppButton from "@/components/shared/WhatsAppButton";
 
 export const metadata: Metadata = {
   title: {
@@ -35,6 +36,7 @@ export default function FreeTrainingLayout({
       <FTHeader />
       <main>{children}</main>
       <FTFooter />
+      <WhatsAppButton />
     </>
   );
 }

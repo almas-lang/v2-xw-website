@@ -1,3 +1,5 @@
+import WhatsAppButton from "@/components/shared/WhatsAppButton";
+
 export default function MentorshipEvaluatorLayout({
   children,
 }: {
@@ -9,6 +11,7 @@ export default function MentorshipEvaluatorLayout({
       style={{ background: '#030303' }}
     >
       {children}
+      <WhatsAppButton />
     </div>
   );
 }

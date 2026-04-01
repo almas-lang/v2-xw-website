@@ -51,7 +51,6 @@ const tools: Tool[] = [
     color: 'accent',
     leadType: 'design-team-systems-audit',
     available: true,
-    href: '/resources/tools/design-team-systems-audit',
   },
   {
     id: 'research-synthesis',

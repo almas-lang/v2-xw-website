@@ -3,6 +3,7 @@
 import { useState } from 'react';
 
 export type LeadType =
+  | 'mentorship-evaluator'
   | 'design-team-systems-audit'
   | 'design-strategy-gpt'
   | 'research-synthesis-gpt'
@@ -26,6 +27,15 @@ interface LeadConfig {
 }
 
 const leadConfigs: Record<LeadType, LeadConfig> = {
+  // Evaluator Tool
+  'mentorship-evaluator': {
+    title: 'Access UX Mentorship Evaluator',
+    description: 'Score any UX mentorship program across 6 weighted categories. 20 questions. 100 points.',
+    buttonText: 'Get Free Access',
+    badgeText: 'Free Tool',
+    successMessage: 'Redirecting to the evaluator...',
+    isWaitlist: false,
+  },
   // Audit Tool
   'design-team-systems-audit': {
     title: 'Access Design Team Systems Audit',

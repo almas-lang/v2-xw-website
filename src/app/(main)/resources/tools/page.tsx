@@ -33,9 +33,8 @@ const tools: Tool[] = [
       </svg>
     ),
     color: 'accent',
-    leadType: 'design-strategy-gpt',
+    leadType: 'mentorship-evaluator',
     available: true,
-    href: '/resources/tools/mentorship-evaluator',
   },
   {
     id: 'design-team-systems-audit',

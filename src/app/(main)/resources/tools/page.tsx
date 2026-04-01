@@ -38,6 +38,22 @@ const tools: Tool[] = [
     href: '/resources/tools/mentorship-evaluator',
   },
   {
+    id: 'design-team-systems-audit',
+    name: 'Design Team Systems Audit',
+    tagline: 'Score your team\'s systems out of 100',
+    description: 'Audit your design team across 5 dimensions: review cadence, stakeholder integration, role clarity, maturity roadmap, and growth systems. 20 questions.',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-full h-full">
+        <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M9 14l2 2 4-4" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+    color: 'accent',
+    leadType: 'design-team-systems-audit',
+    available: true,
+    href: '/resources/tools/design-team-systems-audit',
+  },
+  {
     id: 'research-synthesis',
     name: 'Research Synthesis GPT',
     tagline: 'From chaos to clarity',

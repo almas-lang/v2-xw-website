@@ -10,6 +10,7 @@ const NOTIFICATION_EMAILS = [
 
 export type LeadType =
   | 'mentorship-evaluator'
+  | 'design-team-systems-audit'
   | 'design-strategy-gpt'
   | 'research-synthesis-gpt'
   | 'microcopy-writer-gpt'
@@ -38,6 +39,14 @@ const leadConfigs: Record<LeadType, LeadConfig> = {
     notificationSubject: '📊 New Evaluator Access Request',
     notificationText: 'Someone requested access to the UX Mentorship Program Evaluator',
     leadSource: 'Mentorship Evaluator Tool',
+  },
+  // Design Team Systems Audit
+  'design-team-systems-audit': {
+    name: 'Design Team Systems Audit',
+    redirectUrl: '/resources/tools/design-team-systems-audit',
+    notificationSubject: '📊 New Design Team Systems Audit Request',
+    notificationText: 'Someone requested access to the Design Team Systems Audit',
+    leadSource: 'Design Team Systems Audit',
   },
   // GPT Tools
   'design-strategy-gpt': {
@@ -239,6 +248,52 @@ export async function POST(request: NextRequest) {
         });
       } catch (error) {
         console.error('Failed to send evaluator confirmation email:', error);
+      }
+    }
+
+    // Send confirmation email with link for design team systems audit
+    if (leadType === 'design-team-systems-audit') {
+      try {
+        await fetch('https://api.brevo.com/v3/smtp/email', {
+          method: 'POST',
+          headers: {
+            'accept': 'application/json',
+            'content-type': 'application/json',
+            'api-key': BREVO_API_KEY || '',
+          },
+          body: JSON.stringify({
+            sender: { name: 'Xperience Wave', email: 'team@xperiencewave.com' },
+            to: [{ email }],
+            subject: 'Your Design Team Systems Audit is Ready',
+            htmlContent: `
+              <style>@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&family=Playfair+Display:wght@700&display=swap');</style>
+              <div style="font-family: 'Plus Jakarta Sans', Arial, sans-serif; max-width: 560px; margin: 0 auto; background: #ffffff; padding: 40px 32px;">
+                <div style="text-align: center;">
+                  <img src="https://www.xperiencewave.com/images/xw-logo-mobile.png" alt="Xperience Wave" style="height: 36px; margin-bottom: 32px;" />
+                  <h1 style="font-family: 'Playfair Display', Georgia, serif; color: #1A1A1A; font-size: 24px; font-weight: 700; margin: 0 0 12px;">
+                    Your Audit is Ready
+                  </h1>
+                  <p style="color: #666666; font-size: 15px; line-height: 1.6; margin: 0 0 28px;">
+                    Score your design team's systems across 5 dimensions. 20 questions. 100 points.
+                  </p>
+                  <a href="https://www.xperiencewave.com/resources/tools/design-team-systems-audit" style="display: inline-block; padding: 14px 36px; background: #FF0023; color: #ffffff; text-decoration: none; font-weight: 600; border-radius: 8px; font-size: 16px;">
+                    Start Scoring &rarr;
+                  </a>
+                </div>
+                <div style="padding-top: 28px; margin-top: 28px; border-top: 1px solid #eee;">
+                  <p style="color: #999999; font-size: 13px; line-height: 1.5; text-align: center; margin: 0 0 16px;">
+                    Want to discuss your results? <a href="https://calendly.com/team-xperiencewave/xw-strategy" style="color: #FF0023; text-decoration: none;">Book a free training call</a>
+                  </p>
+                  <p style="color: #bbbbbb; font-size: 11px; text-align: center; margin: 0;">
+                    Xperience Wave &middot; UX Mentorship &amp; Career Development &middot; Bangalore
+                  </p>
+                </div>
+              </div>
+            `,
+          }),
+        });
+      } catch (error) {
+        console.error('Failed to send audit confirmation email:', error);
       }
     }
 

@@ -434,15 +434,14 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: '11',
-    slug: 'user-research-budget',
-    title: 'Conducting User Research on a Tight Budget',
-    excerpt: 'You don\'t need expensive tools or big budgets to do meaningful research. Here are scrappy techniques that deliver real insights.',
-    category: 'design-skills',
-    image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&q=80',
-    author: { name: 'Almas Tasneem' },
-    publishedAt: '2025-12-10',
-    readTime: '8 min',
-    upcoming: true,
+    slug: 'design-team-systems-problem',
+    title: 'Your Design Team Doesn\'t Have a Skills Problem - They Have a Systems Problem',
+    excerpt: 'You hired good designers. They went through a rigorous interview process. Then they joined your organisation and stopped being strategic. McKinsey tracked 300 companies and found the difference is never the talent - it is the system.',
+    category: 'industry',
+    image: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&q=80',
+    author: { name: 'Shaik Murad' },
+    publishedAt: '2026-04-03',
+    readTime: '14 min',
   },
 ];
 

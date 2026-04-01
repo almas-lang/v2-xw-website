@@ -3,6 +3,7 @@
 import { useState } from 'react';
 
 export type LeadType =
+  | 'design-team-systems-audit'
   | 'design-strategy-gpt'
   | 'research-synthesis-gpt'
   | 'microcopy-writer-gpt'
@@ -25,6 +26,15 @@ interface LeadConfig {
 }
 
 const leadConfigs: Record<LeadType, LeadConfig> = {
+  // Audit Tool
+  'design-team-systems-audit': {
+    title: 'Access Design Team Systems Audit',
+    description: 'Score your design team\'s operational systems across 5 dimensions. 20 questions. 100 points.',
+    buttonText: 'Get Free Access',
+    badgeText: 'Free Tool',
+    successMessage: 'Redirecting to the audit...',
+    isWaitlist: false,
+  },
   // GPT Tools - Available
   'design-strategy-gpt': {
     title: 'Access Design Strategy GPT',

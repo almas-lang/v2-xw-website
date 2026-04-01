@@ -8,6 +8,7 @@ import MobileTOC from '@/components/blog/MobileTOC';
 import EvaluatorGate from '@/components/blog/EvaluatorGate';
 import SalaryNegotiationGPTGate from '@/components/blog/SalaryNegotiationGPTGate';
 import SystemsAuditGate from '@/components/blog/SystemsAuditGate';
+import BudgetPrepKitGate from '@/components/blog/BudgetPrepKitGate';
 
 // Blog content with internal links for SEO
 const blogContent: Record<string, React.ReactNode> = {
@@ -631,6 +632,11 @@ const blogContent: Record<string, React.ReactNode> = {
         The audit will tell you which systems are missing. That diagnosis is the foundation for every conversation that follows - with your VP, your founder, your engineering counterpart, and your own team.
       </p>
       <SystemsAuditGate />
+
+      <h2 id="budget-kit" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Get the Budget Conversation Prep Kit
+      </h2>
+      <BudgetPrepKitGate />
 
       <h2 id="if-this-is-your-team" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
         If This Is Your Team
@@ -6582,6 +6588,7 @@ const blogTableOfContents: Record<string, { id: string; title: string }[]> = {
     { id: 'what-goes-wrong', title: 'What Actually Goes Wrong at 10' },
     { id: 'breaking-through', title: 'What Breaking Through Requires' },
     { id: 'honest-assessment', title: 'Start With an Honest Assessment' },
+    { id: 'budget-kit', title: 'Budget Conversation Prep Kit' },
     { id: 'if-this-is-your-team', title: 'If This Is Your Team' },
     { id: 'sources-references', title: 'Sources & References' },
     { id: 'read-next', title: 'Read Next' },

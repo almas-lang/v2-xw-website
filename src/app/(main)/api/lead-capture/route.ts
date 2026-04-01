@@ -11,6 +11,7 @@ const NOTIFICATION_EMAILS = [
 export type LeadType =
   | 'mentorship-evaluator'
   | 'design-team-systems-audit'
+  | 'budget-prep-kit'
   | 'design-strategy-gpt'
   | 'research-synthesis-gpt'
   | 'microcopy-writer-gpt'
@@ -39,6 +40,13 @@ const leadConfigs: Record<LeadType, LeadConfig> = {
     notificationSubject: '📊 New Evaluator Access Request',
     notificationText: 'Someone requested access to the UX Mentorship Program Evaluator',
     leadSource: 'Mentorship Evaluator Tool',
+  },
+  // Budget Conversation Prep Kit (email-only, no redirect)
+  'budget-prep-kit': {
+    name: 'Budget Conversation Prep Kit',
+    notificationSubject: '📊 New Budget Prep Kit Download',
+    notificationText: 'Someone requested the Budget Conversation Prep Kit',
+    leadSource: 'Budget Conversation Prep Kit',
   },
   // Design Team Systems Audit
   'design-team-systems-audit': {
@@ -248,6 +256,52 @@ export async function POST(request: NextRequest) {
         });
       } catch (error) {
         console.error('Failed to send evaluator confirmation email:', error);
+      }
+    }
+
+    // Send confirmation email with kit link for budget prep kit
+    if (leadType === 'budget-prep-kit') {
+      try {
+        await fetch('https://api.brevo.com/v3/smtp/email', {
+          method: 'POST',
+          headers: {
+            'accept': 'application/json',
+            'content-type': 'application/json',
+            'api-key': BREVO_API_KEY || '',
+          },
+          body: JSON.stringify({
+            sender: { name: 'Xperience Wave', email: 'team@xperiencewave.com' },
+            to: [{ email }],
+            subject: 'Your Budget Conversation Prep Kit is Ready',
+            htmlContent: `
+              <style>@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&family=Playfair+Display:wght@700&display=swap');</style>
+              <div style="font-family: 'Plus Jakarta Sans', Arial, sans-serif; max-width: 560px; margin: 0 auto; background: #ffffff; padding: 40px 32px;">
+                <div style="text-align: center;">
+                  <img src="https://www.xperiencewave.com/images/xw-logo-mobile.png" alt="Xperience Wave" style="height: 36px; margin-bottom: 32px;" />
+                  <h1 style="font-family: 'Playfair Display', Georgia, serif; color: #1A1A1A; font-size: 24px; font-weight: 700; margin: 0 0 12px;">
+                    Your Prep Kit is Ready
+                  </h1>
+                  <p style="color: #666666; font-size: 15px; line-height: 1.6; margin: 0 0 28px;">
+                    Everything you need to walk into a budget meeting prepared: capacity mapping template, headcount scripts, one-slide investment case, and verified data points.
+                  </p>
+                  <a href="https://app.xperiencewave.com/budget-conversation-prep-kit" style="display: inline-block; padding: 14px 36px; background: #FF0023; color: #ffffff; text-decoration: none; font-weight: 600; border-radius: 8px; font-size: 16px;">
+                    Download the Kit &rarr;
+                  </a>
+                </div>
+                <div style="padding-top: 28px; margin-top: 28px; border-top: 1px solid #eee;">
+                  <p style="color: #999999; font-size: 13px; line-height: 1.5; text-align: center; margin: 0 0 16px;">
+                    Want to walk through the budget conversation with a mentor? <a href="https://calendly.com/team-xperiencewave/xw-strategy" style="color: #FF0023; text-decoration: none;">Book a free training call</a>
+                  </p>
+                  <p style="color: #bbbbbb; font-size: 11px; text-align: center; margin: 0;">
+                    Xperience Wave &middot; UX Mentorship &amp; Career Development &middot; Bangalore
+                  </p>
+                </div>
+              </div>
+            `,
+          }),
+        });
+      } catch (error) {
+        console.error('Failed to send budget prep kit confirmation email:', error);
       }
     }
 

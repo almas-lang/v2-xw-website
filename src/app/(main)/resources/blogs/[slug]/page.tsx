@@ -461,48 +461,224 @@ const blogContent: Record<string, React.ReactNode> = {
       </p>
     </>
   ),
-  'why-courses-dont-get-good-roles': (
+  'design-team-plateau-10-people': (
     <>
       <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
-        You&apos;ve watched the YouTube tutorials. Completed Coursera courses. Built portfolio projects. Yet you&apos;re not getting callbacks. Here&apos;s what&apos;s really going on.
+        You have 10 designers and 200 developers. You never asked for that ratio. Nobody planned it. And now you cannot explain why you need an eleventh designer - because you never built the case for the first ten.
       </p>
 
-      <h2 id="course-trap" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
-        The Course Trap for Career Switchers
+      <h2 id="how-you-got-to-10" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        How You Got to 10 Without a Plan
       </h2>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        Courses are designed to teach concepts to thousands of people at once. They don&apos;t know your background, your transferable skills, or what specific gaps are holding you back. For career switchers, this generic approach is particularly harmful because you need guidance on positioning your unique experience.
+        Nobody sat down and said: we need a design team of 10 people, here is why, here is the structure, here are the roles, here is the maturity plan. That conversation never happened.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        What happened was this: product needed screens. Someone hired a designer. Then another project started and they needed another designer. Then the team grew because demand grew. Engineering hired strategically - with job families, levels, capacity plans, and budget justifications. Design hired reactively - because a project was bottlenecked and someone needed to make the mockups.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The first 10 designers were not hired by the design leader. They were allocated. The decision about how many designers the company needs was made by someone who does not directly manage designers, does not understand design capacity, and does not know the difference between a visual designer and a UX researcher. They made a headcount decision the same way they would allocate any other resource: how many do we need to keep the projects moving?
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        And the design leader accepted it. Not because they agreed with the number, but because they were never asked to have a different conversation. They were asked to deliver, so they delivered. The budget conversation never started, because the design leader was never in the room where budgets were discussed. They were in the room where deadlines were discussed.
       </p>
 
-      <h2 id="hiring-managers" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
-        What Hiring Managers Actually Look For
+      <h2 id="why-stops-at-10" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Why It Stops at 10
       </h2>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        When companies hire junior designers, they&apos;re not just looking for Figma skills. They want to see:
+        The first 10 happened because of project demand. When demand stops growing - or when leadership decides the current demand is covered - the team size freezes.
       </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        And here is the part that hurts: the design leader starts believing it too. After years of managing delivery, fielding requests, and keeping projects moving with whatever headcount they were given, they internalise the cap. The internal monologue shifts from &quot;I need more people&quot; to &quot;I genuinely do not know what I would do with more people.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        That is not a headcount problem. That is a vision problem. The design leader has been in delivery mode so long that they cannot imagine what a design practice looks like beyond delivery. They have never built a research function. They have never hired a design ops person. They have never created a content design capability or a service design layer. They think design equals UI, because that is what the organisation has told them design is. And they believe it now.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Meanwhile, on the other side of the office, there are 200 developers. Engineering has capacity plans, growth roadmaps, tech leads who own architecture, engineering managers who own people development, and a VP who fights for budget every quarter. Nobody in engineering looks at their team of 200 and thinks: this is probably enough.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        But the design leader looks at 10 and thinks exactly that. Because they were never taught to think differently.
+      </p>
+
+      <h2 id="what-goes-wrong" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What Actually Goes Wrong at 10
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Ten people is the exact size where ad hoc management stops working and the absence of systems becomes visible. Everything that worked at 3-5 designers breaks.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        The leader becomes a project manager.
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        At 3 designers, the lead could review everyone&apos;s work, maintain quality, and still do their own design work. At 10, they are routing requests, managing dependencies, sitting in alignment meetings, and resolving conflicts between product managers who all think their project is the priority. They have become a traffic controller for the team, not a leader of the practice.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Nielsen Norman Group&apos;s research found that only 13% of design teams have formal DesignOps leads or managers. The other 87% distribute operational work across design leads and managers who are already overloaded. As the team approaches 6-7 designers, NNG recommends introducing a design manager to handle day-to-day support so the lead can focus on vision. At 10, without this split, the lead has no time for vision at all.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        Design becomes invisible to leadership.
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        When design was 3 people, the founder or VP knew every designer by name. At 10, design is a department - and departments are evaluated by what they produce, not by what they could produce if given the right infrastructure. Nobody in the leadership meeting asks &quot;what does design think?&quot; They ask &quot;is design done with the screens?&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        McKinsey&apos;s research found that fewer than 5% of company leaders could make objective design decisions. The problem is not that leaders do not care about design. It is that nobody has educated them on what design at a mature level looks like - and the design leader, who is buried in delivery, has not had time to do that education. Design is invisible because the design leader is invisible. And the design leader is invisible because they are managing projects instead of managing the practice.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        The team has no culture beyond delivery.
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        At 10 people, a design team without intentional culture has no rituals that are not project-related. No design all-hands. No shared vision for what design should become. No regular knowledge-sharing sessions. No team identity beyond &quot;the people who make the screens.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The team exists as a resource pool, not a practice. Designers are assigned to products. They interact with their product teams more than with each other. There is no shared learning, no peer critique, no collective ambition. Each designer&apos;s growth depends entirely on whatever their product team exposes them to - which is usually &quot;more of the same work they did last quarter.&quot; (This is the garnish problem at the team level - present, visible, but not shaping anything.)
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        The team becomes easy to replace.
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is the consequence that should terrify every design leader. When design operates as a service function with no unique strategic contribution, the organisation starts to believe it can be replaced. By a smaller team. By an agency. By AI tools. By developers who &quot;also do design.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        And the tragic part is: they are not entirely wrong. If the design team&apos;s only contribution is producing screens to spec, that contribution can be replicated by cheaper alternatives. What cannot be replicated is a design practice that shapes product strategy, conducts original research, builds design systems, develops designers into leaders, and creates compounding value over time. But that practice was never built - because the leader was too busy delivering screens.
+      </p>
+
+      <h2 id="breaking-through" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What Breaking Through Actually Requires
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Breaking through the 10-person plateau is not about getting budget for an eleventh designer. It is about transforming how design operates within the organisation. This requires the design leader to stop being a delivery manager and start being a practice architect.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        1. Own the budget conversation.
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Engineering leaders present budget proposals every quarter. They justify headcount with capacity data, project roadmaps, and tech debt calculations. Design leaders need to do the same - and most have never done it because they were never asked to.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Start by mapping design capacity against demand. How many products are you supporting? How many designers per product? What is the ratio of design requests to design capacity? What work is not getting done because there are not enough people? What is the cost of that undone work - in delayed launches, poor user experience, increased support tickets, or lost revenue?
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        When you present a budget request with this data, you are speaking the language that VPs and founders understand. You are not asking for more designers because you are overwhelmed. You are showing a business case for investment in design capacity.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        2. Define what you need before you hire.
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Most design leaders at 10 people think the next hire should be &quot;another UI designer.&quot; Because that is all they know. The team has 10 generalists who all do the same type of work at varying levels of quality.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The breakthrough requires hiring for capabilities the team does not have. A UX researcher who builds an original research practice. A design ops lead who handles tooling, process, and team operations. A content designer or UX writer. A service designer who maps end-to-end experiences. A design systems specialist who creates the shared language that prevents inconsistency.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        NNG found that only 10% of organisations have reached the highest level of DesignOps maturity. The organisations that break through the plateau are the ones that stop hiring more of the same and start hiring for the capabilities that transform design from a production function into a strategic practice.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        3. Separate practice leadership from project delivery.
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is the structural change that matters most. At 10 people, the design leader cannot do both. If they are managing project delivery, they are not building the practice. If they are building the practice, someone else needs to manage project delivery. (The <Link href="/resources/blogs/ic-to-manager-trap-designers" className="text-accent hover:underline font-medium">IC-to-Manager blog</Link> covers why this split is critical for individual designers. The same principle applies to the leader of the team.)
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The practice leader&apos;s job is: Define the design vision. Build the maturity roadmap. Own the budget. Develop the team. Educate leadership on design&apos;s value. Create the systems (reviews, stakeholder integration, role clarity, growth frameworks) that <Link href="/resources/blogs/design-team-systems-problem" className="text-accent hover:underline font-medium">Blog 11 identified as missing</Link> in most teams.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The delivery manager&apos;s job is: Route work. Manage timelines. Coordinate with product and engineering. Ensure quality on active projects. These are different jobs. At 10 people, they cannot be done by the same person.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        4. Build design culture before you need it.
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        A design all-hands. A monthly show-and-tell. A quarterly design strategy presentation to the executive team. A learning session where designers share something new. A team charter that articulates what the design team stands for and where it is going.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        None of these require budget. All of them require the design leader to stop thinking of the team as a resource pool and start thinking of it as a practice. A practice has rituals, values, a shared language, and a trajectory. A resource pool has a backlog.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        InVision&apos;s research found that 81% of companies that invest in DesignOps report better alignment between design, product, and engineering. NNG found that organisations with mature design operations see a 228% higher ROI compared to those with low design maturity. The investment is not in tools or headcount - it is in the systems and culture that allow the tools and headcount to produce compounding value.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        5. Make design&apos;s impact visible to people who control the budget.
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The single biggest reason design teams plateau is that leadership does not see design&apos;s value beyond screen production. And the single biggest reason leadership does not see that value is that nobody has shown them.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Design leaders need to present design impact in business terms. Not &quot;we redesigned the onboarding flow.&quot; But: &quot;The redesigned onboarding flow increased activation from 23% to 41%. That represents &#x20B9;X in additional annual revenue.&quot; The first statement is a design update. The second is a business case for investing more in design.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        McKinsey&apos;s MDI research found that companies where design leaders set quantified targets for design performance were in the top quartile. Only 14% of companies were doing this. The design leaders who break through the plateau are the ones who learn to translate design outcomes into the metrics that leadership already tracks.
+      </p>
+
+      <h2 id="honest-assessment" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Start With an Honest Assessment
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Before you ask for budget, before you restructure, before you hire - assess where your team&apos;s systems actually are. The Design Team Systems Audit scores your team across five dimensions (review cadence, stakeholder integration, role clarity, design maturity, feedback and growth). 20 questions. 10 minutes. Free.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The audit will tell you which systems are missing. That diagnosis is the foundation for every conversation that follows - with your VP, your founder, your engineering counterpart, and your own team.
+      </p>
+      <SystemsAuditGate />
+
+      <h2 id="if-this-is-your-team" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        If This Is Your Team
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If you are a design leader at 10 people and recognise yourself in this blog - the plateau is not permanent. But breaking through requires a different kind of work than what got you to 10. Delivery management got you here. Practice architecture gets you to the next level.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Our <Link href="/for-business/training-for-teams" className="text-accent hover:underline font-medium">corporate training programme</Link> is built to help design leaders make this transition. Not generic management training - design-specific systems building: budget conversations, maturity roadmaps, team structure, stakeholder integration, and the leadership skills that transform a team of 10 into a practice that scales.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        We also offer <Link href="/for-business/ux-design-services" className="text-accent hover:underline font-medium">UX design services</Link> for organisations that need to augment capacity while building internal capability.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <a href="https://calendly.com/team-xperiencewave/xw-strategy" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Book a team training call</a> and we will assess where your team is stuck and what it takes to break through.
+      </p>
+
+      <h2 id="sources-references" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Sources &amp; References
+      </h2>
       <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
-        <li>Clear design thinking and problem-solving approach</li>
-        <li>Ability to communicate design decisions</li>
-        <li>Coachability and willingness to learn</li>
-        <li>A portfolio that tells stories, not just shows screens</li>
-        <li>Understanding of how design connects to business goals</li>
+        <li>McKinsey - &quot;The Business Value of Design,&quot; 2018. 300 companies, 5 years. Top-quartile: +32% revenue, +56% TRS. &lt;5% design-competent leadership. Only 14% set quantified design targets.</li>
+        <li>McKinsey - &quot;Are You Asking Enough from Your Design Leaders?&quot; 2020. 90% not reaching full potential. 60% of design decisions made in isolation. Only 10% at highest maturity.</li>
+        <li>Nielsen Norman Group - DesignOps research. Only 10% broad DesignOps understanding. Only 13% have formal DesignOps leads. At 6-7 designers, introduce a design manager.</li>
+        <li>Nielsen Norman Group - Organisations with mature DesignOps see 228% higher ROI vs low maturity.</li>
+        <li>InVision - Design Maturity Report 2020. 81% of companies with DesignOps investment report better alignment between design, product, and engineering.</li>
+        <li>Deloitte - 2025 Global Human Capital Trends. 93% say flexible structures important vs 19% ready.</li>
+        <li>Xperience Wave - direct observation from corporate training engagements with design teams at product companies across India.</li>
       </ul>
 
-      <h2 id="experience-asset" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
-        Your Previous Experience is an Asset
+      <h2 id="about-author" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        About the Author
       </h2>
-      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        Whether you come from marketing, development, sales, or any other field - your background gives you a unique perspective. The key is learning to position it as a strength, not hiding it.
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Murad is Co-founder and Head of Design at Xperience Wave, a UX design career development company based in Bangalore. He has 13+ years of design leadership experience across fintech, healthtech, and industrial technology. The scaling patterns in this blog come from direct work with design teams at product companies across India - from early-stage startups to 500-person enterprises - through XW&apos;s mentorship and corporate training programmes.
       </p>
 
-      <h2 id="mentorship-difference" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
-        The Mentorship Difference
+      <h2 id="read-next" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Read Next
       </h2>
-      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        1:1 mentorship addresses what courses cannot. A mentor who has hired designers can tell you exactly what&apos;s missing from your portfolio, how to position your career switch story, and what specific skills to develop based on the roles you&apos;re targeting.
-      </p>
-      <p className="text-base md:text-lg text-g600 leading-relaxed">
-        If you&apos;re serious about breaking into UX design, check out our <Link href="/programs/career-transition-ux-mentorship" className="text-accent hover:underline font-medium">career transition mentorship program</Link>.
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li>On the five systems most design teams are missing: <Link href="/resources/blogs/design-team-systems-problem" className="text-accent hover:underline font-medium">Your Design Team Doesn&apos;t Have a Skills Problem - They Have a Systems Problem.</Link></li>
+        <li>On the IC-to-manager transition that breaks most design teams: <Link href="/resources/blogs/ic-to-manager-trap-designers" className="text-accent hover:underline font-medium">The IC-to-Manager Trap.</Link></li>
+        <li>On the hidden cost of promoting without preparation: <Link href="/resources/blogs/hidden-cost-promoting-ic-designer-manager" className="text-accent hover:underline font-medium">The Hidden Cost of Promoting Your Best IC Designer to Manager.</Link></li>
+      </ul>
+
+      <p className="text-base md:text-lg text-g500 italic mt-6">
+        - Murad, Co-founder &amp; Head of Design, Xperience Wave
       </p>
     </>
   ),
@@ -6400,11 +6576,15 @@ const blogTableOfContents: Record<string, { id: string; title: string }[]> = {
     { id: 'personal-brand', title: 'The Personal Brand Factor' },
     { id: 'why-mentorship', title: 'Why Mentorship Works for Leadership' },
   ],
-  'why-courses-dont-get-good-roles': [
-    { id: 'course-trap', title: 'The Course Trap for Career Switchers' },
-    { id: 'hiring-managers', title: 'What Hiring Managers Actually Look For' },
-    { id: 'experience-asset', title: 'Your Previous Experience is an Asset' },
-    { id: 'mentorship-difference', title: 'The Mentorship Difference' },
+  'design-team-plateau-10-people': [
+    { id: 'how-you-got-to-10', title: 'How You Got to 10 Without a Plan' },
+    { id: 'why-stops-at-10', title: 'Why It Stops at 10' },
+    { id: 'what-goes-wrong', title: 'What Actually Goes Wrong at 10' },
+    { id: 'breaking-through', title: 'What Breaking Through Requires' },
+    { id: 'honest-assessment', title: 'Start With an Honest Assessment' },
+    { id: 'if-this-is-your-team', title: 'If This Is Your Team' },
+    { id: 'sources-references', title: 'Sources & References' },
+    { id: 'read-next', title: 'Read Next' },
   ],
   'why-courses-dont-work': [
     { id: 'curriculum-doesnt-care', title: 'Their Curriculum Doesn\'t Care About You' },
@@ -6667,10 +6847,10 @@ const blogMetadata: Record<string, { title: string; description: string; keyword
     description: 'Discover why courses fail senior designers seeking Director and VP roles. Learn what executive positions actually require and how mentorship fills the gap.',
     keywords: ['UX design leadership', 'design director', 'VP of design', 'design management', 'UX career advancement'],
   },
-  'why-courses-dont-get-good-roles': {
-    title: "Why UX Design Courses Don't Get You Good Roles (And What Actually Works)",
-    description: "You've completed courses but callbacks aren't coming. Learn why generic courses fail career switchers and what actually works to land your first UX role.",
-    keywords: ['career switch to UX', 'UX design for beginners', 'break into UX design', 'UX portfolio tips', 'UX job hunting'],
+  'design-team-plateau-10-people': {
+    title: 'Why Most Design Teams Plateau After 10 People (And How to Break Through) | Xperience Wave',
+    description: 'You have 10 designers and 200 developers. Nobody planned that ratio. Here is why design teams plateau at 10 and the five shifts that break through.',
+    keywords: ['scaling design team', 'design team growth', 'design org scaling', 'UX team structure', 'design team plateau', 'design leadership scaling', 'DesignOps', 'design team budget'],
   },
   'why-courses-dont-work': {
     title: "Why UX Design Courses Don't Get You Senior Roles | Xperience Wave",

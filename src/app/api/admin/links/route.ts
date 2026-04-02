@@ -60,44 +60,27 @@ export async function POST(request: NextRequest) {
   return NextResponse.json({ success: true, link: newLink });
 }
 
-// PUT - update a link or reorder links
+// PUT - bulk save all links (replaces entire list)
 export async function PUT(request: NextRequest) {
   const authError = await requireAuth();
   if (authError) return authError;
 
   const body = await request.json();
-  const data = await getLinks();
 
-  // Bulk reorder: { reorder: ["id1", "id2", ...] }
-  if (body.reorder) {
-    const orderedIds: string[] = body.reorder;
-    data.links = data.links.map((link) => ({
+  if (!body.links || !Array.isArray(body.links)) {
+    return NextResponse.json({ error: 'links array required' }, { status: 400 });
+  }
+
+  const linksData = {
+    links: (body.links as LinkItem[]).map((link, index) => ({
       ...link,
-      order: orderedIds.indexOf(link.id),
-    }));
-    data.links = reorderLinks(data.links);
-    data.updatedAt = new Date().toISOString();
-    await saveLinks(data);
-    return NextResponse.json({ success: true });
-  }
+      order: index,
+    })),
+    updatedAt: new Date().toISOString(),
+  };
 
-  // Single link update: { id, title?, url?, icon?, active? }
-  const index = data.links.findIndex((l) => l.id === body.id);
-  if (index === -1) {
-    return NextResponse.json({ error: 'Link not found' }, { status: 404 });
-  }
-
-  if (body.title !== undefined) data.links[index].title = body.title;
-  if (body.subtitle !== undefined) data.links[index].subtitle = body.subtitle;
-  if (body.url !== undefined) data.links[index].url = body.url;
-  if (body.icon !== undefined) data.links[index].icon = body.icon;
-  if (body.style !== undefined) data.links[index].style = body.style;
-  if (body.active !== undefined) data.links[index].active = body.active;
-
-  data.updatedAt = new Date().toISOString();
-  await saveLinks(data);
-
-  return NextResponse.json({ success: true, link: data.links[index] });
+  await saveLinks(linksData);
+  return NextResponse.json({ success: true });
 }
 
 // DELETE - remove a link

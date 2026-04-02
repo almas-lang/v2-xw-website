@@ -22,15 +22,23 @@ const STYLE_COLORS: Record<LinkStyle, string> = {
   'social': 'border-l-g400',
 };
 
+function generateId(): string {
+  return Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
+}
+
 export default function AdminLinks() {
   const [links, setLinks] = useState<LinkItem[]>([]);
+  const [savedLinks, setSavedLinks] = useState<LinkItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
+  const [saveStatus, setSaveStatus] = useState<'idle' | 'saved' | 'error'>('idle');
   const [showAddForm, setShowAddForm] = useState(false);
   const [editingId, setEditingId] = useState<string | null>(null);
   const [newLink, setNewLink] = useState({ title: '', subtitle: '', url: '', icon: '🔗', style: 'card' as LinkStyle });
   const [editLink, setEditLink] = useState({ title: '', subtitle: '', url: '', icon: '🔗', style: 'card' as LinkStyle });
   const router = useRouter();
+
+  const hasChanges = JSON.stringify(links) !== JSON.stringify(savedLinks);
 
   const fetchLinks = useCallback(async () => {
     try {
@@ -40,7 +48,9 @@ export default function AdminLinks() {
         return;
       }
       const data = await res.json();
-      setLinks(data.links?.sort((a: LinkItem, b: LinkItem) => a.order - b.order) || []);
+      const sorted = (data.links || []).sort((a: LinkItem, b: LinkItem) => a.order - b.order);
+      setLinks(sorted);
+      setSavedLinks(sorted);
     } catch {
       // ignore
     } finally {
@@ -52,67 +62,87 @@ export default function AdminLinks() {
     fetchLinks();
   }, [fetchLinks]);
 
-  async function handleAdd(e: React.FormEvent) {
+  // --- Save all changes ---
+  async function handleSaveAll() {
+    setSaving(true);
+    setSaveStatus('idle');
+
+    try {
+      const res = await fetch('/api/admin/links', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ links }),
+      });
+
+      if (res.ok) {
+        setSavedLinks([...links]);
+        setSaveStatus('saved');
+        setTimeout(() => setSaveStatus('idle'), 2000);
+      } else {
+        setSaveStatus('error');
+      }
+    } catch {
+      setSaveStatus('error');
+    } finally {
+      setSaving(false);
+    }
+  }
+
+  // --- Add link locally ---
+  function handleAdd(e: React.FormEvent) {
     e.preventDefault();
     if (!newLink.title || !newLink.url) return;
-    setSaving(true);
 
-    await fetch('/api/admin/links', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(newLink),
-    });
+    const link: LinkItem = {
+      id: generateId(),
+      title: newLink.title,
+      subtitle: newLink.subtitle || undefined,
+      url: newLink.url,
+      icon: newLink.icon,
+      style: newLink.style,
+      active: true,
+      order: links.length,
+    };
 
+    setLinks([...links, link]);
     setNewLink({ title: '', subtitle: '', url: '', icon: '🔗', style: 'card' });
     setShowAddForm(false);
-    setSaving(false);
-    fetchLinks();
   }
 
-  async function handleUpdate(id: string) {
-    setSaving(true);
-    await fetch('/api/admin/links', {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ id, ...editLink }),
-    });
+  // --- Update link locally ---
+  function handleUpdate(id: string) {
+    setLinks(links.map((l) =>
+      l.id === id
+        ? { ...l, title: editLink.title, subtitle: editLink.subtitle || undefined, url: editLink.url, icon: editLink.icon, style: editLink.style }
+        : l
+    ));
     setEditingId(null);
-    setSaving(false);
-    fetchLinks();
   }
 
-  async function handleToggle(link: LinkItem) {
-    await fetch('/api/admin/links', {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ id: link.id, active: !link.active }),
-    });
-    fetchLinks();
+  // --- Toggle active locally ---
+  function handleToggle(id: string) {
+    setLinks(links.map((l) => l.id === id ? { ...l, active: !l.active } : l));
   }
 
-  async function handleDelete(id: string) {
+  // --- Delete locally ---
+  function handleDelete(id: string) {
     if (!confirm('Delete this link?')) return;
-    await fetch('/api/admin/links', {
-      method: 'DELETE',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ id }),
-    });
-    fetchLinks();
+    setLinks(links.filter((l) => l.id !== id));
   }
 
-  async function handleMove(index: number, direction: 'up' | 'down') {
+  // --- Reorder locally ---
+  function handleMove(index: number, direction: 'up' | 'down') {
     const newLinks = [...links];
     const swapIndex = direction === 'up' ? index - 1 : index + 1;
     if (swapIndex < 0 || swapIndex >= newLinks.length) return;
-
     [newLinks[index], newLinks[swapIndex]] = [newLinks[swapIndex], newLinks[index]];
-
     setLinks(newLinks);
-    await fetch('/api/admin/links', {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ reorder: newLinks.map((l) => l.id) }),
-    });
+  }
+
+  // --- Discard changes ---
+  function handleDiscard() {
+    setLinks([...savedLinks]);
+    setEditingId(null);
   }
 
   async function handleLogout() {
@@ -134,7 +164,7 @@ export default function AdminLinks() {
   }
 
   return (
-    <div className="min-h-screen pb-24">
+    <div className="min-h-screen pb-28">
       {/* Header */}
       <div className="sticky top-0 z-10 bg-carbon/95 backdrop-blur-sm border-b border-g700">
         <div className="max-w-2xl mx-auto px-4 py-3 flex items-center justify-between">
@@ -221,10 +251,10 @@ export default function AdminLinks() {
             <div className="flex gap-2">
               <button
                 type="submit"
-                disabled={saving || !newLink.title || !newLink.url}
+                disabled={!newLink.title || !newLink.url}
                 className="flex-1 py-2.5 bg-accent hover:bg-accent-hover text-white font-semibold rounded-lg transition-colors disabled:opacity-50 text-sm"
               >
-                {saving ? 'Adding...' : 'Add Link'}
+                Add Link
               </button>
               <button
                 type="button"
@@ -290,10 +320,9 @@ export default function AdminLinks() {
                   <div className="flex gap-2">
                     <button
                       onClick={() => handleUpdate(link.id)}
-                      disabled={saving}
                       className="flex-1 py-2 bg-accent text-white font-semibold rounded-lg text-sm"
                     >
-                      Save
+                      Done
                     </button>
                     <button
                       onClick={() => setEditingId(null)}
@@ -341,7 +370,7 @@ export default function AdminLinks() {
 
                   <div className="flex items-center gap-1.5">
                     <button
-                      onClick={() => handleToggle(link)}
+                      onClick={() => handleToggle(link.id)}
                       className={`w-9 h-5 rounded-full transition-colors relative ${
                         link.active ? 'bg-success' : 'bg-g600'
                       }`}
@@ -381,6 +410,44 @@ export default function AdminLinks() {
           </div>
         )}
       </div>
+
+      {/* ========== STICKY SAVE BAR ========== */}
+      {hasChanges && (
+        <div className="fixed bottom-0 left-0 right-0 z-20 bg-carbon/95 backdrop-blur-sm border-t border-g700">
+          <div className="max-w-2xl mx-auto px-4 py-3 flex items-center justify-between gap-3">
+            <span className="text-g400 text-sm">
+              You have unsaved changes
+            </span>
+            <div className="flex items-center gap-2">
+              <button
+                onClick={handleDiscard}
+                className="px-4 py-2 text-sm text-g300 hover:text-white transition-colors"
+              >
+                Discard
+              </button>
+              <button
+                onClick={handleSaveAll}
+                disabled={saving}
+                className="px-6 py-2 bg-accent hover:bg-accent-hover text-white font-heading font-semibold rounded-lg transition-colors disabled:opacity-50 text-sm"
+              >
+                {saving ? 'Saving...' : 'Save Changes'}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Save confirmation toast */}
+      {saveStatus === 'saved' && (
+        <div className="fixed bottom-4 left-1/2 -translate-x-1/2 z-30 bg-success text-white px-4 py-2 rounded-lg text-sm font-medium animate-slide-up">
+          Changes saved!
+        </div>
+      )}
+      {saveStatus === 'error' && (
+        <div className="fixed bottom-4 left-1/2 -translate-x-1/2 z-30 bg-accent text-white px-4 py-2 rounded-lg text-sm font-medium animate-slide-up">
+          Failed to save. Try again.
+        </div>
+      )}
     </div>
   );
 }

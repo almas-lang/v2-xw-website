@@ -128,6 +128,7 @@ export async function saveLinks(data: LinksData): Promise<void> {
   await put(BLOB_PATH, JSON.stringify(data), {
     access: 'public',
     addRandomSuffix: false,
+    allowOverwrite: true,
     contentType: 'application/json',
   });
 }

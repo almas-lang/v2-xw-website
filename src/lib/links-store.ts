@@ -1,4 +1,4 @@
-import { put, head } from '@vercel/blob';
+import { put, list } from '@vercel/blob';
 import type { LinksData, LinkItem } from '@/types/links';
 
 const BLOB_PATH = 'admin/links.json';
@@ -107,14 +107,19 @@ const DEFAULT_LINKS: LinksData = {
 
 export async function getLinks(): Promise<LinksData> {
   try {
-    // Use head() to get the blob metadata, then fetch with cache-bust
-    const blob = await head(BLOB_PATH);
-    const response = await fetch(blob.url, { cache: 'no-store' });
+    const { blobs } = await list({ prefix: BLOB_PATH });
+
+    if (blobs.length === 0) {
+      await saveLinks(DEFAULT_LINKS);
+      return DEFAULT_LINKS;
+    }
+
+    // Cache-bust to always get the latest data after saves
+    const response = await fetch(blobs[0].url, { cache: 'no-store' });
     const data: LinksData = await response.json();
     return data;
-  } catch {
-    // Blob doesn't exist yet — seed with defaults
-    await saveLinks(DEFAULT_LINKS);
+  } catch (error) {
+    console.error('Failed to fetch links:', error);
     return DEFAULT_LINKS;
   }
 }

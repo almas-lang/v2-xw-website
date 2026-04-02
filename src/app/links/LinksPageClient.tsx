@@ -166,11 +166,11 @@ export default function LinksPageClient() {
           className="block w-full rounded-xl px-5 py-4 bg-accent hover:bg-accent-hover transition-all duration-200 shadow-sm hover:shadow-md active:scale-[0.98]"
           style={{ minHeight: '44px' }}
         >
-          <div className="font-heading text-sm font-semibold text-white">
+          <div className="font-heading text-base font-semibold text-white">
             {link.title}
           </div>
           {link.subtitle && (
-            <div className="font-heading text-[11px] text-white/85 mt-0.5">
+            <div className="font-heading text-sm text-white/85 mt-0.5">
               {link.subtitle}
             </div>
           )}
@@ -191,11 +191,11 @@ export default function LinksPageClient() {
             className="block w-full rounded-xl px-5 py-4 bg-carbon dark:bg-white text-left transition-all duration-200 hover:opacity-90 active:scale-[0.98]"
             style={{ minHeight: '44px' }}
           >
-            <div className="font-heading text-sm font-semibold text-white dark:text-carbon">
+            <div className="font-heading text-base font-semibold text-white dark:text-carbon">
               {link.title}
             </div>
             {link.subtitle && (
-              <div className="font-heading text-[11px] text-white/85 dark:text-carbon/70 mt-0.5">
+              <div className="font-heading text-sm text-white/85 dark:text-carbon/70 mt-0.5">
                 {link.subtitle}
               </div>
             )}
@@ -221,11 +221,11 @@ export default function LinksPageClient() {
         >
           <span className="text-lg flex-shrink-0">{link.icon}</span>
           <div className="flex-1 min-w-0">
-            <span className="font-heading text-[13px] font-medium text-carbon dark:text-white block truncate">
+            <span className="font-heading text-[15px] font-medium text-carbon dark:text-white block truncate">
               {link.title}
             </span>
             {link.subtitle && (
-              <span className="font-heading text-[11px] text-g500 dark:text-g400">
+              <span className="font-heading text-[13px] text-g500 dark:text-g400">
                 {link.subtitle}
               </span>
             )}
@@ -248,11 +248,11 @@ export default function LinksPageClient() {
       >
         <span className="text-lg flex-shrink-0">{link.icon}</span>
         <div className="flex-1 min-w-0">
-          <span className="font-heading text-[13px] font-medium text-carbon dark:text-white block truncate">
+          <span className="font-heading text-[15px] font-medium text-carbon dark:text-white block truncate">
             {link.title}
           </span>
           {link.subtitle && (
-            <span className="font-heading text-[11px] text-g500 dark:text-g400">
+            <span className="font-heading text-[13px] text-g500 dark:text-g400">
               {link.subtitle}
             </span>
           )}
@@ -281,14 +281,14 @@ export default function LinksPageClient() {
             />
           </div>
 
-          <h1 className="font-heading text-lg font-semibold text-carbon dark:text-white">
+          <h1 className="font-heading text-xl font-bold text-carbon dark:text-white">
             Xperience Wave
           </h1>
 
-          <p className="font-heading text-[14px] font-medium text-carbon dark:text-white mt-1">
+          <p className="font-heading text-base font-medium text-carbon dark:text-white mt-1">
             Better designers. Better products.
           </p>
-          <p className="font-heading text-[11px] text-g500 dark:text-g400 mt-1 leading-relaxed">
+          <p className="font-heading text-[13px] text-g500 dark:text-g400 mt-1.5 leading-relaxed">
             1:1 Mentorship | Design services: Hiring, Design, and Development | Bangalore, India
           </p>
         </div>
@@ -306,7 +306,7 @@ export default function LinksPageClient() {
             {ctaLinks.length > 0 && (
               <>
                 <div className="mb-2">
-                  <span className="font-heading text-[10px] font-semibold uppercase tracking-wider text-g400">
+                  <span className="font-heading text-[11px] font-semibold uppercase tracking-wider text-g400">
                     Take Action
                   </span>
                 </div>
@@ -320,7 +320,7 @@ export default function LinksPageClient() {
             {cardLinks.length > 0 && (
               <>
                 <div className="mb-2 mt-5">
-                  <span className="font-heading text-[10px] font-semibold uppercase tracking-wider text-g400">
+                  <span className="font-heading text-[11px] font-semibold uppercase tracking-wider text-g400">
                     Explore
                   </span>
                 </div>
@@ -334,7 +334,7 @@ export default function LinksPageClient() {
             {communityLinks.length > 0 && (
               <>
                 <div className="mb-2 mt-5">
-                  <span className="font-heading text-[10px] font-semibold uppercase tracking-wider text-g400">
+                  <span className="font-heading text-[11px] font-semibold uppercase tracking-wider text-g400">
                     Community
                   </span>
                 </div>
@@ -369,7 +369,7 @@ export default function LinksPageClient() {
         <div className="text-center mt-6">
           <a
             href="https://xperiencewave.com"
-            className="font-heading text-[11px] text-g400 hover:text-g600 dark:hover:text-g300 transition-colors"
+            className="font-heading text-[13px] text-g400 hover:text-g600 dark:hover:text-g300 transition-colors"
           >
             xperiencewave.com
           </a>

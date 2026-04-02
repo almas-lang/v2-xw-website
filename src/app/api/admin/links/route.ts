@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { isAuthenticated } from '@/lib/admin-auth';
-import { getLinks, saveLinks, generateId, reorderLinks } from '@/lib/links-store';
+import { getLinks, saveLinks, generateId } from '@/lib/links-store';
 import type { LinkItem } from '@/types/links';
 
 async function requireAuth() {
@@ -65,36 +65,49 @@ export async function PUT(request: NextRequest) {
   const authError = await requireAuth();
   if (authError) return authError;
 
-  const body = await request.json();
+  try {
+    const body = await request.json();
 
-  if (!body.links || !Array.isArray(body.links)) {
-    return NextResponse.json({ error: 'links array required' }, { status: 400 });
+    if (!body.links || !Array.isArray(body.links)) {
+      return NextResponse.json({ error: 'links array required' }, { status: 400 });
+    }
+
+    const linksData = {
+      links: (body.links as LinkItem[]).map((link, index) => ({
+        ...link,
+        order: index,
+      })),
+      updatedAt: new Date().toISOString(),
+    };
+
+    await saveLinks(linksData);
+    return NextResponse.json({ success: true });
+  } catch (error) {
+    console.error('Failed to save links:', error);
+    return NextResponse.json(
+      { error: `Save failed: ${error instanceof Error ? error.message : 'Unknown error'}` },
+      { status: 500 }
+    );
   }
-
-  const linksData = {
-    links: (body.links as LinkItem[]).map((link, index) => ({
-      ...link,
-      order: index,
-    })),
-    updatedAt: new Date().toISOString(),
-  };
-
-  await saveLinks(linksData);
-  return NextResponse.json({ success: true });
 }
 
-// DELETE - remove a link
+// DELETE - kept for backwards compat but bulk PUT is preferred
 export async function DELETE(request: NextRequest) {
   const authError = await requireAuth();
   if (authError) return authError;
 
-  const { id } = await request.json();
-  const data = await getLinks();
-
-  data.links = data.links.filter((l) => l.id !== id);
-  data.links = reorderLinks(data.links);
-  data.updatedAt = new Date().toISOString();
-  await saveLinks(data);
-
-  return NextResponse.json({ success: true });
+  try {
+    const { id } = await request.json();
+    const data = await getLinks();
+    data.links = data.links.filter((l) => l.id !== id);
+    data.updatedAt = new Date().toISOString();
+    await saveLinks(data);
+    return NextResponse.json({ success: true });
+  } catch (error) {
+    console.error('Failed to delete link:', error);
+    return NextResponse.json(
+      { error: `Delete failed: ${error instanceof Error ? error.message : 'Unknown error'}` },
+      { status: 500 }
+    );
+  }
 }

@@ -32,6 +32,7 @@ export default function AdminLinks() {
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [saveStatus, setSaveStatus] = useState<'idle' | 'saved' | 'error'>('idle');
+  const [errorMsg, setErrorMsg] = useState('');
   const [showAddForm, setShowAddForm] = useState(false);
   const [editingId, setEditingId] = useState<string | null>(null);
   const [newLink, setNewLink] = useState({ title: '', subtitle: '', url: '', icon: '🔗', style: 'card' as LinkStyle });
@@ -77,11 +78,15 @@ export default function AdminLinks() {
       if (res.ok) {
         setSavedLinks([...links]);
         setSaveStatus('saved');
+        setErrorMsg('');
         setTimeout(() => setSaveStatus('idle'), 2000);
       } else {
+        const data = await res.json().catch(() => ({}));
+        setErrorMsg(data.error || `HTTP ${res.status}`);
         setSaveStatus('error');
       }
-    } catch {
+    } catch (err) {
+      setErrorMsg(err instanceof Error ? err.message : 'Network error');
       setSaveStatus('error');
     } finally {
       setSaving(false);
@@ -445,7 +450,7 @@ export default function AdminLinks() {
       )}
       {saveStatus === 'error' && (
         <div className="fixed bottom-4 left-1/2 -translate-x-1/2 z-30 bg-accent text-white px-4 py-2 rounded-lg text-sm font-medium animate-slide-up">
-          Failed to save. Try again.
+          Failed: {errorMsg || 'Unknown error'}
         </div>
       )}
     </div>

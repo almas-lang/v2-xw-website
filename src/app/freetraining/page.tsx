@@ -65,7 +65,7 @@ function FreeTrainingHomeContent() {
       <section className="bg-white py-14 md:py-20 px-5">
         <div className="max-w-[900px] mx-auto">
           <div className="text-center mb-10 md:mb-14">
-            <p className="text-[12px] font-bold text-accent uppercase tracking-[3px] mb-3">What you&apos;ll learn</p>
+            <p className="text-[13px] font-bold text-accent uppercase tracking-[3px] mb-3">What you&apos;ll learn</p>
             <h2 className="text-[24px] md:text-[36px] font-heading font-bold text-ft-dark-surface leading-tight">
               {ftContent.discover.title}
             </h2>
@@ -87,15 +87,15 @@ function FreeTrainingHomeContent() {
                   <span className={`w-2.5 h-2.5 rounded-full ${
                     i === 0 ? 'bg-accent' : i === 1 ? 'bg-accent' : 'bg-[#2FB83C]'
                   }`} />
-                  <span className="text-[12px] font-bold text-ft-muted uppercase tracking-wider">
+                  <span className="text-[13px] font-bold text-ft-muted uppercase tracking-wider">
                     {card.number}
                   </span>
                 </div>
 
-                <h3 className="text-[16px] md:text-[17px] font-bold text-ft-dark-surface mb-2 leading-snug">
+                <h3 className="text-[17px] md:text-[18px] font-bold text-ft-dark-surface mb-2 leading-snug">
                   {card.title}
                 </h3>
-                <p className="text-[13px] md:text-[14px] text-gray-500 leading-relaxed">
+                <p className="text-[14px] md:text-[15px] text-gray-500 leading-relaxed">
                   {card.description}
                 </p>
               </div>
@@ -113,7 +113,7 @@ function FreeTrainingHomeContent() {
           <div className="text-center mb-8">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-accent/[0.08] border border-accent/15 rounded-full mb-4">
               <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-              <span className="text-[12px] font-semibold text-accent">Free. 28 minutes.</span>
+              <span className="text-[13px] font-semibold text-accent">Free. 28 minutes.</span>
             </div>
             <h2 className="text-[22px] md:text-[28px] font-heading font-bold text-white">
               {ftContent.form.title}
@@ -133,11 +133,11 @@ function FreeTrainingHomeContent() {
       <section className="bg-white py-12 md:py-16 px-5">
         <div className="max-w-[900px] mx-auto">
           <div className="text-center mb-8 md:mb-10">
-            <p className="text-[12px] font-bold text-accent uppercase tracking-[3px] mb-3">Real results</p>
+            <p className="text-[13px] font-bold text-accent uppercase tracking-[3px] mb-3">Real results</p>
             <h2 className="text-[20px] md:text-[28px] font-heading font-bold text-ft-dark-surface mb-2">
               {ftContent.results.title}
             </h2>
-            <p className="text-[14px] text-gray-500">
+            <p className="text-[15px] text-gray-500">
               {ftContent.results.statsLine}
             </p>
           </div>
@@ -159,14 +159,14 @@ function FreeTrainingHomeContent() {
                     <img src={card.image} alt={card.name} className="w-full h-full object-cover" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="text-[14px] font-bold text-ft-dark-surface">{card.name}</p>
-                    <p className="text-[12px] text-gray-500 leading-snug">{card.role}</p>
+                    <p className="text-[15px] font-bold text-ft-dark-surface">{card.name}</p>
+                    <p className="text-[13px] text-gray-500 leading-snug">{card.role}</p>
                   </div>
                   <div className="inline-flex items-center gap-1 px-2.5 py-1 bg-accent/[0.06] rounded-md shrink-0">
                     <svg className="w-3 h-3 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                     </svg>
-                    <span className="text-[12px] font-bold text-accent">{card.timeline}</span>
+                    <span className="text-[13px] font-bold text-accent">{card.timeline}</span>
                   </div>
                   {'linkedin' in card && card.linkedin && (
                     <svg className="w-4 h-4 text-gray-300 group-hover:text-accent shrink-0 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -183,7 +183,7 @@ function FreeTrainingHomeContent() {
               href={ftContent.results.seeAllUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-[13px] font-semibold text-accent hover:underline cursor-pointer"
+              className="inline-flex items-center gap-2 text-[14px] font-semibold text-accent hover:underline cursor-pointer"
             >
               {ftContent.results.seeAllText}
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -203,7 +203,7 @@ function FreeTrainingHomeContent() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
-            <p className="text-[12px] md:text-[13px] text-ft-dark-surface/70 leading-relaxed">
+            <p className="text-[13px] md:text-[14px] text-ft-dark-surface/70 leading-relaxed">
               {ftContent.qualifier.text}
             </p>
           </div>
@@ -213,7 +213,7 @@ function FreeTrainingHomeContent() {
       {/* ============ SECTION 6: ABOUT MURAD ============ */}
       <section className="bg-white py-12 md:py-16 px-5">
         <div className="max-w-[400px] mx-auto text-center">
-          <p className="text-[16px] md:text-[18px] font-heading font-bold text-ft-dark-surface mb-5">
+          <p className="text-[17px] md:text-[19px] font-heading font-bold text-ft-dark-surface mb-5">
             Your host: Shaik Murad
           </p>
           <div className="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden bg-gray-100 ring-2 ring-ft-purple-cta/10 ring-offset-4 ring-offset-white mx-auto mb-4">
@@ -223,10 +223,10 @@ function FreeTrainingHomeContent() {
               className="w-full h-full object-cover object-[center_20%]"
             />
           </div>
-          <p className="text-[13px] md:text-[14px] text-gray-600 font-medium mb-1">
+          <p className="text-[14px] md:text-[15px] text-gray-600 font-medium mb-1">
             Co-founder &amp; Head of Product and Design at Xperience Wave
           </p>
-          <p className="text-[12px] md:text-[13px] text-gray-500">
+          <p className="text-[13px] md:text-[14px] text-gray-500">
             13+ years in design leadership | 3000+ career transitions guided | Ex-Credit Saison, Ex-Milaap, Ex-KredX
           </p>
         </div>
@@ -239,18 +239,18 @@ function FreeTrainingHomeContent() {
             {ftContent.seoContent.title}
           </h2>
           {ftContent.seoContent.body.split('\n\n').map((paragraph, i) => (
-            <p key={i} className="text-[15px] text-gray-600 leading-[160%] mb-4">
+            <p key={i} className="text-[16px] text-gray-600 leading-[160%] mb-4">
               {paragraph}
             </p>
           ))}
           <div className="mt-8 p-5 bg-white rounded-xl border border-gray-100">
-            <p className="text-[12px] font-bold text-ft-muted uppercase tracking-wider mb-3">Related reads</p>
+            <p className="text-[13px] font-bold text-ft-muted uppercase tracking-wider mb-3">Related reads</p>
             <div className="space-y-2.5">
               {ftContent.seoContent.relatedLinks.map((link) => (
                 <Link
                   key={link.slug}
                   href={`/resources/blogs/${link.slug}`}
-                  className="flex items-center gap-2 text-[13px] text-accent hover:underline group"
+                  className="flex items-center gap-2 text-[14px] text-accent hover:underline group"
                 >
                   <svg className="w-3.5 h-3.5 shrink-0 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -267,7 +267,7 @@ function FreeTrainingHomeContent() {
       <section className="bg-white py-14 md:py-20 px-5">
         <div className="max-w-[700px] mx-auto">
           <div className="text-center mb-10">
-            <p className="text-[12px] font-bold text-ft-muted uppercase tracking-[3px] mb-3">Got questions?</p>
+            <p className="text-[13px] font-bold text-ft-muted uppercase tracking-[3px] mb-3">Got questions?</p>
             <h2 className="text-[22px] md:text-[30px] font-heading font-bold text-ft-dark-surface">
               Frequently asked questions
             </h2>
@@ -289,7 +289,7 @@ function FreeTrainingHomeContent() {
           <h2 className="text-[24px] md:text-[40px] font-heading font-bold text-white mb-3 leading-tight">
             {ftContent.finalCta.headline}
           </h2>
-          <p className="text-[14px] text-ft-muted-light mb-10">
+          <p className="text-[15px] text-ft-muted-light mb-10">
             {ftContent.finalCta.trustText}
           </p>
 
@@ -342,7 +342,7 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
         onClick={() => setIsOpen(!isOpen)}
         className="w-full flex items-center justify-between text-left gap-4 p-5 cursor-pointer"
       >
-        <span className="text-[14px] md:text-[15px] font-semibold text-ft-dark-surface">{question}</span>
+        <span className="text-[15px] md:text-[16px] font-semibold text-ft-dark-surface">{question}</span>
         <span className={`w-7 h-7 rounded-full bg-white flex items-center justify-center shrink-0 shadow-sm transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}>
           <svg
             className="w-3.5 h-3.5 text-ft-dark-surface"
@@ -356,7 +356,7 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
       </button>
       {isOpen && (
         <div className="px-5 pb-5">
-          <p className="text-[13px] md:text-[14px] text-gray-500 leading-relaxed">
+          <p className="text-[14px] md:text-[15px] text-gray-500 leading-relaxed">
             {answer}
           </p>
         </div>

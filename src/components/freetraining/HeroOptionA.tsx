@@ -39,7 +39,7 @@ export function HeroOptionA({ onCtaClick }: { onCtaClick: () => void }) {
           {/* Qualifier badge */}
           <div className="mb-6 md:mb-8 inline-flex items-center gap-2.5 px-5 py-2.5 bg-accent/[0.08] border border-accent/20 rounded-full">
             <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-            <span className="text-[12px] md:text-[13px] text-accent/90 font-semibold uppercase tracking-wider">
+            <span className="text-[13px] md:text-[14px] text-accent/90 font-semibold uppercase tracking-wider">
               {hero.qualifier}
             </span>
           </div>
@@ -57,12 +57,12 @@ export function HeroOptionA({ onCtaClick }: { onCtaClick: () => void }) {
           </p>
 
           {/* Sub-headline */}
-          <p className="text-[15px] md:text-[18px] text-[#BFBFCC] leading-[180%] mb-3 max-w-[620px] mx-auto">
+          <p className="text-[16px] md:text-[19px] text-[#BFBFCC] leading-[180%] mb-3 max-w-[620px] mx-auto">
             {hero.subheadline}
           </p>
 
           {/* Without clause */}
-          <p className="text-[13px] text-[#9999B0] italic mb-8 md:mb-10">
+          <p className="text-[14px] text-[#9999B0] italic mb-8 md:mb-10">
             {hero.withoutClause}
           </p>
 
@@ -83,7 +83,7 @@ export function HeroOptionA({ onCtaClick }: { onCtaClick: () => void }) {
           {/* CTA */}
           <button
             onClick={onCtaClick}
-            className="group inline-flex items-center gap-3 px-10 py-4.5 bg-accent hover:bg-accent-hover text-white font-bold text-[16px] md:text-[17px] rounded-xl transition-all duration-200 shadow-[0_0_40px_rgba(255,0,35,0.25)] hover:shadow-[0_0_60px_rgba(255,0,35,0.35)] cursor-pointer"
+            className="group inline-flex items-center gap-3 px-10 py-4.5 bg-accent hover:bg-accent-hover text-white font-bold text-[17px] md:text-[18px] rounded-xl transition-all duration-200 shadow-[0_0_40px_rgba(255,0,35,0.25)] hover:shadow-[0_0_60px_rgba(255,0,35,0.35)] cursor-pointer"
           >
             {hero.cta}
             <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">

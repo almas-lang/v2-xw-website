@@ -30,9 +30,9 @@ export function FTHeader() {
                 </svg>
               ))}
             </div>
-            <span className="font-body text-sm text-white font-bold">4.8</span>
+            <span className="font-body text-[15px] text-white font-bold">4.8</span>
             <span className="w-px h-4 bg-white/10" />
-            <span className="font-body text-xs text-white/40">{getRatingCount().toLocaleString('en-IN')} ratings</span>
+            <span className="font-body text-[13px] text-white/40">{getRatingCount().toLocaleString('en-IN')} ratings</span>
           </div>
         </div>
       </header>

@@ -168,12 +168,12 @@ function WatchContent() {
         {/* Section 1: CTA — white bg */}
         <section className="bg-white py-8 md:py-12 px-5">
           <div className="max-w-[420px] mx-auto text-center">
-            <h2 className="text-[18px] md:text-[22px] font-heading font-bold text-ft-dark-surface leading-snug mb-5">
+            <h2 className="text-[20px] md:text-[24px] font-heading font-bold text-ft-dark-surface leading-snug mb-5">
               {ftContent.watch.bookCall.headline}
             </h2>
             <button
               onClick={handleBookClick}
-              className="w-full max-w-[320px] h-[48px] bg-accent hover:bg-accent-hover text-white font-bold text-[14px] rounded-xl transition-all duration-200 shadow-[0_0_30px_rgba(255,0,35,0.2)] hover:shadow-[0_0_50px_rgba(255,0,35,0.3)] cursor-pointer"
+              className="w-full max-w-[320px] h-[48px] bg-accent hover:bg-accent-hover text-white font-bold text-[15px] rounded-xl transition-all duration-200 shadow-[0_0_30px_rgba(255,0,35,0.2)] hover:shadow-[0_0_50px_rgba(255,0,35,0.3)] cursor-pointer"
             >
               {ftContent.watch.bookCall.cta}
             </button>
@@ -186,7 +186,7 @@ function WatchContent() {
             <h3 className="text-[20px] md:text-[24px] font-heading font-bold text-ft-dark-surface leading-snug mb-5 text-center">On this call, we&apos;ll</h3>
             <ul className="space-y-1.5 mb-8 pl-1">
               {ftContent.watch.bookCall.details.map((detail) => (
-                <li key={detail} className="flex items-start gap-2.5 text-[14px] md:text-[15px] text-ft-dark-surface leading-[1.6]">
+                <li key={detail} className="flex items-start gap-2.5 text-[15px] md:text-[16px] text-ft-dark-surface leading-[1.6]">
                   <span className="text-ft-dark-surface mt-0.5 shrink-0">•</span>
                   {detail}
                 </li>
@@ -196,7 +196,7 @@ function WatchContent() {
             {/* Guarantee badge */}
             <div className="flex items-center gap-3">
               <img src="/images/gaurantee.svg" alt="Guarantee" className="w-[34px] h-[34px] shrink-0" />
-              <p className="text-[14px] md:text-[15px] font-semibold text-ft-dark-surface">
+              <p className="text-[15px] md:text-[16px] font-semibold text-ft-dark-surface">
                 {ftContent.watch.bookCall.guarantee}
               </p>
             </div>
@@ -223,11 +223,11 @@ function WatchContent() {
       {showStickyBar && !stickyDismissed && (
         <div className="fixed bottom-0 left-0 right-0 bg-white border-t shadow-[0_-2px_10px_rgba(0,0,0,0.08)] z-50 animate-slide-up">
           <div className="max-w-lg mx-auto flex items-center justify-between px-5 py-3">
-            <p className="text-[14px] text-ft-dark-surface font-medium">{ftContent.watch.stickyCta.text}</p>
+            <p className="text-[15px] text-ft-dark-surface font-medium">{ftContent.watch.stickyCta.text}</p>
             <div className="flex items-center gap-2">
               <button
                 onClick={handleBookClick}
-                className="bg-accent hover:bg-accent-hover text-white text-[14px] font-semibold px-4 py-2.5 rounded-lg transition-colors cursor-pointer"
+                className="bg-accent hover:bg-accent-hover text-white text-[15px] font-semibold px-4 py-2.5 rounded-lg transition-colors cursor-pointer"
               >
                 {ftContent.watch.stickyCta.cta}
               </button>

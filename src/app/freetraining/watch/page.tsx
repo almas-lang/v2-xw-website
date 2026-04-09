@@ -47,6 +47,24 @@ function WatchContent() {
     }
   }, []);
 
+  // Timer-based CTA gate: reveal after 5 minutes on page
+  useEffect(() => {
+    if (showBookCall && showStickyBar) return; // already revealed
+
+    const timer = setTimeout(() => {
+      if (!showBookCall) {
+        setShowBookCall(true);
+        setStorageItem("ft_book_call_revealed", "true");
+      }
+      if (!showStickyBar) {
+        setShowStickyBar(true);
+        setStorageItem("ft_sticky_revealed", "true");
+      }
+    }, 5 * 60 * 1000); // 5 minutes
+
+    return () => clearTimeout(timer);
+  }, [showBookCall, showStickyBar]);
+
   useEffect(() => {
     trackPageView("/freetraining/watch", "Watch Training");
 

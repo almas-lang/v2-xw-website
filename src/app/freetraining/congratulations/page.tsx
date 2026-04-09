@@ -209,10 +209,10 @@ function CongratulationsContent() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-green-50/40 via-white to-white">
-      <div className="max-w-[600px] mx-auto px-5 py-8 md:py-12">
+      <div className="max-w-[700px] mx-auto px-5 py-8 md:py-14 lg:py-20">
 
         {/* ── Section 1: Murad's Video ── */}
-        <section className="mb-8">
+        <section className="mb-8 md:mb-12">
           {CONGRATS_VIDEO_ID && BUNNY_LIBRARY_ID ? (
             <BunnyPlayer videoId={CONGRATS_VIDEO_ID} libraryId={BUNNY_LIBRARY_ID} />
           ) : (
@@ -229,7 +229,7 @@ function CongratulationsContent() {
                   <div className="w-16 h-16 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center mx-auto mb-3 shadow-lg transition-transform duration-200 hover:scale-105">
                     <PlayIcon className="w-7 h-7 text-ft-purple-cta ml-0.5" />
                   </div>
-                  <p className="text-sm text-white/90 font-medium drop-shadow-md">Personal message from Shaik Murad</p>
+                  <p className="text-[14px] md:text-[15px] text-white/90 font-medium drop-shadow-md">Personal message from Shaik Murad</p>
                 </div>
               </div>
             </div>
@@ -237,22 +237,20 @@ function CongratulationsContent() {
         </section>
 
         {/* ── Section 2: Booking Confirmation ── */}
-        <section className="mb-8">
-          <div className="bg-white rounded-2xl border border-green-200 shadow-sm p-6 text-center">
-            {/* Success badge */}
+        <section className="mb-8 md:mb-12">
+          <div className="bg-white rounded-2xl border border-green-200 shadow-sm p-6 md:p-8 text-center">
             <div className="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <CheckCircleIcon className="w-8 h-8 text-green-600" />
             </div>
 
-            <h1 className="text-2xl md:text-3xl font-bold text-ft-dark-surface mb-1 tracking-tight">
+            <h1 className="text-[24px] md:text-[32px] font-bold text-ft-dark-surface mb-1 tracking-tight">
               You&apos;re booked!
             </h1>
-            <p className="text-sm text-gray-500 mb-5">Your strategy call is confirmed for:</p>
+            <p className="text-[14px] md:text-[15px] text-gray-500 mb-5">Your strategy call is confirmed for:</p>
 
-            {/* Booking details card */}
-            <div className="bg-gray-50 rounded-xl p-4 mb-5 inline-block w-full">
+            <div className="bg-gray-50 rounded-xl p-4 md:p-5 mb-5 max-w-[420px] mx-auto">
               {bookingDate && (
-                <div className="flex items-center justify-center gap-5 text-[15px] font-semibold text-ft-dark-surface mb-3">
+                <div className="flex items-center justify-center gap-5 text-[15px] md:text-[16px] font-semibold text-ft-dark-surface mb-3">
                   <span className="inline-flex items-center gap-1.5">
                     <CalendarIcon className="w-4.5 h-4.5 text-ft-purple-cta" />
                     {bookingDate}
@@ -265,7 +263,7 @@ function CongratulationsContent() {
                   )}
                 </div>
               )}
-              <div className="flex items-center justify-center gap-1.5 text-sm text-gray-500 mb-1">
+              <div className="flex items-center justify-center gap-1.5 text-[13px] md:text-[14px] text-gray-500 mb-1">
                 <VideoCameraIcon className="w-4 h-4 text-gray-400" />
                 <span>Google Meet</span>
               </div>
@@ -274,18 +272,17 @@ function CongratulationsContent() {
                   href={meetLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-ft-purple-cta hover:underline break-all cursor-pointer transition-colors duration-200"
+                  className="text-[13px] md:text-[14px] text-ft-purple-cta hover:underline break-all cursor-pointer transition-colors duration-200"
                 >
                   {meetLink}
                 </a>
               )}
             </div>
 
-            <p className="text-xs text-gray-400 mb-5">
+            <p className="text-[12px] text-gray-400 mb-5">
               Save this — you&apos;ll also receive it via email and WhatsApp
             </p>
 
-            {/* Calendar buttons */}
             {bookingDate && (
               <div className="flex items-center justify-center gap-3">
                 <a
@@ -314,20 +311,20 @@ function CongratulationsContent() {
         </section>
 
         {/* ── Section 3: Homework ── */}
-        <section className="mb-8">
-          <h2 className="text-lg font-bold text-ft-dark-surface mb-4">Before your call, do these 2 things:</h2>
-          <div className="space-y-3">
+        <section className="mb-8 md:mb-12">
+          <h2 className="text-[20px] md:text-[24px] font-bold text-ft-dark-surface mb-4 md:mb-5">Before your call, do these 2 things:</h2>
+          <div className="space-y-3 md:space-y-4">
             {ftContent.congratulations.homework.map((task, i) => (
-              <div key={i} className="bg-white rounded-xl border border-gray-100 p-4 shadow-sm">
-                <div className="flex items-start gap-3">
-                  <span className="flex-shrink-0 w-7 h-7 rounded-full bg-ft-purple-cta/10 text-ft-purple-cta text-xs font-bold flex items-center justify-center mt-0.5">
+              <div key={i} className="bg-white rounded-xl border border-gray-100 p-4 md:p-5 shadow-sm">
+                <div className="flex items-start gap-3 md:gap-4">
+                  <span className="flex-shrink-0 w-7 h-7 md:w-8 md:h-8 rounded-full bg-ft-purple-cta/10 text-ft-purple-cta text-[12px] font-bold flex items-center justify-center mt-0.5">
                     {i + 1}
                   </span>
                   <div className="min-w-0">
-                    <p className="text-[14px] font-semibold text-ft-dark-surface mb-1 leading-snug">
+                    <p className="text-[14px] md:text-[15px] font-semibold text-ft-dark-surface mb-1 leading-snug">
                       {task.title}
                     </p>
-                    <p className="text-[13px] text-gray-500 leading-relaxed">{task.description}</p>
+                    <p className="text-[13px] md:text-[14px] text-gray-500 leading-relaxed">{task.description}</p>
                   </div>
                 </div>
               </div>
@@ -336,20 +333,20 @@ function CongratulationsContent() {
         </section>
 
         {/* ── Section 4: Help Us Prepare ── */}
-        <section className="mb-8">
-          <div className="bg-white rounded-2xl border border-gray-100 p-5 shadow-sm">
+        <section className="mb-8 md:mb-12">
+          <div className="bg-white rounded-2xl border border-gray-100 p-5 md:p-7 shadow-sm">
             <div className="mb-4">
-              <h2 className="text-lg font-bold text-ft-dark-surface">Help us prepare for YOUR call</h2>
-              <p className="text-xs text-gray-400 mt-0.5">Optional but recommended</p>
+              <h2 className="text-[20px] md:text-[24px] font-bold text-ft-dark-surface">Help us prepare for YOUR call</h2>
+              <p className="text-[12px] text-gray-400 mt-0.5">Optional but recommended</p>
             </div>
-            <p className="text-[13px] text-gray-500 mb-5 leading-relaxed">
+            <p className="text-[13px] md:text-[14px] text-gray-500 mb-5 leading-relaxed">
               Your LinkedIn is already shared — we&apos;ll review it before the call.
             </p>
 
-            <div className="space-y-4">
+            <div className="space-y-4 md:space-y-5">
               {/* Portfolio URL */}
               <div>
-                <label htmlFor="portfolio-url" className="block text-[13px] font-medium text-gray-700 mb-1.5">
+                <label htmlFor="portfolio-url" className="block text-[13px] md:text-[14px] font-medium text-gray-700 mb-1.5">
                   Got a portfolio? Share the link:
                 </label>
                 <div className="flex gap-2">
@@ -359,12 +356,12 @@ function CongratulationsContent() {
                     value={portfolioUrl}
                     onChange={(e) => { setPortfolioUrl(e.target.value); setPortfolioSaved(false); }}
                     placeholder="https://your-portfolio.com"
-                    className="flex-1 min-w-0 px-3 py-2.5 text-[14px] rounded-lg border border-gray-200 bg-gray-50 focus:bg-white focus:border-ft-purple-cta focus:ring-2 focus:ring-ft-purple-cta/20 focus:outline-none transition-all duration-200"
+                    className="flex-1 min-w-0 px-3 py-2.5 md:py-3 text-[14px] rounded-lg border border-gray-200 bg-gray-50 focus:bg-white focus:border-ft-purple-cta focus:ring-2 focus:ring-ft-purple-cta/20 focus:outline-none transition-all duration-200"
                   />
                   <button
                     onClick={handlePortfolioShare}
                     disabled={!portfolioUrl || portfolioSaved || portfolioSaving}
-                    className="px-5 py-2.5 bg-ft-purple-cta text-white text-[13px] font-semibold rounded-lg hover:bg-[#5B53E6] active:scale-[0.97] transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer min-w-[72px] flex items-center justify-center"
+                    className="px-5 py-2.5 md:py-3 bg-ft-purple-cta text-white text-[13px] font-semibold rounded-lg hover:bg-[#5B53E6] active:scale-[0.97] transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer min-w-[72px] flex items-center justify-center"
                   >
                     {portfolioSaving ? (
                       <div className="animate-spin rounded-full h-4 w-4 border-2 border-white/30 border-t-white" />
@@ -379,7 +376,7 @@ function CongratulationsContent() {
 
               {/* Resume upload */}
               <div>
-                <label className="block text-[13px] font-medium text-gray-700 mb-1.5">Got an updated resume?</label>
+                <label className="block text-[13px] md:text-[14px] font-medium text-gray-700 mb-1.5">Got an updated resume?</label>
                 {resumeStatus === 'done' ? (
                   <div className="inline-flex items-center gap-2 px-4 py-3 bg-green-50 border border-green-200 rounded-lg">
                     <CheckCircleIcon className="w-5 h-5 text-green-600" />
@@ -412,35 +409,32 @@ function CongratulationsContent() {
               </div>
             </div>
 
-            <p className="text-xs text-gray-400 mt-4 leading-relaxed">
+            <p className="text-[12px] text-gray-400 mt-4 leading-relaxed">
               The more we know about you beforehand, the faster we get to actionable advice.
             </p>
           </div>
         </section>
 
         {/* ── Section 5: Call Structure ── */}
-        <section className="mb-8">
-          <h2 className="text-lg font-bold text-ft-dark-surface mb-4">What happens on the call:</h2>
+        <section className="mb-8 md:mb-12">
+          <h2 className="text-[20px] md:text-[24px] font-bold text-ft-dark-surface mb-4 md:mb-5">What happens on the call:</h2>
           <div className="space-y-1">
             {ftContent.congratulations.callBreakdown.map((step, i) => (
-              <div key={step.time} className="flex items-start gap-4 py-3">
-                {/* Timeline connector */}
-                <div className="flex flex-col items-center flex-shrink-0 w-[72px]">
-                  <span className="text-[11px] font-bold text-ft-purple-cta uppercase tracking-wide leading-tight text-right w-full">
+              <div key={step.time} className="flex items-start gap-4 py-3 md:py-4">
+                <div className="flex flex-col items-center flex-shrink-0 w-[72px] md:w-[84px]">
+                  <span className="text-[11px] md:text-[12px] font-bold text-ft-purple-cta uppercase tracking-wide leading-tight text-right w-full">
                     {step.time}
                   </span>
                 </div>
-                {/* Divider dot */}
                 <div className="flex flex-col items-center pt-1 flex-shrink-0">
                   <div className="w-2 h-2 rounded-full bg-ft-purple-cta" />
                   {i < ftContent.congratulations.callBreakdown.length - 1 && (
                     <div className="w-px flex-1 bg-ft-purple-cta/20 mt-1 min-h-[28px]" />
                   )}
                 </div>
-                {/* Content */}
                 <div className="pb-1">
-                  <p className="text-[14px] font-semibold text-ft-dark-surface leading-snug">{step.label}</p>
-                  <p className="text-[13px] text-gray-500 leading-relaxed">{step.detail}</p>
+                  <p className="text-[14px] md:text-[15px] font-semibold text-ft-dark-surface leading-snug">{step.label}</p>
+                  <p className="text-[13px] md:text-[14px] text-gray-500 leading-relaxed">{step.detail}</p>
                 </div>
               </div>
             ))}
@@ -448,17 +442,17 @@ function CongratulationsContent() {
         </section>
 
         {/* ── Section 6: What We Offer ── */}
-        <section className="mb-8">
-          <div className="bg-ft-purple-cta/[0.03] rounded-2xl border border-ft-purple-cta/10 p-5">
-            <h2 className="text-lg font-bold text-ft-dark-surface mb-2">What we offer:</h2>
-            <p className="text-[13px] text-gray-600 leading-relaxed mb-4">
+        <section className="mb-8 md:mb-12">
+          <div className="bg-ft-purple-cta/[0.03] rounded-2xl border border-ft-purple-cta/10 p-5 md:p-7">
+            <h2 className="text-[20px] md:text-[24px] font-bold text-ft-dark-surface mb-2">What we offer:</h2>
+            <p className="text-[13px] md:text-[14px] text-gray-600 leading-relaxed mb-4">
               Xperience Wave runs 1:1 mentorship programs (not courses) tailored to your career stage. On the strategy call, if we think we can help, we&apos;ll walk you through which program fits your situation and what the investment looks like.
             </p>
             <Link
               href="/programs"
               target="_blank"
               rel="noopener"
-              className="inline-flex items-center gap-1 text-[13px] font-semibold text-ft-purple-cta hover:underline cursor-pointer transition-colors duration-200"
+              className="inline-flex items-center gap-1 text-[13px] md:text-[14px] font-semibold text-ft-purple-cta hover:underline cursor-pointer transition-colors duration-200"
             >
               Explore our programs
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -469,12 +463,12 @@ function CongratulationsContent() {
         </section>
 
         {/* ── Section 7: Call Testimonials ── */}
-        <section className="mb-8">
-          <div className="space-y-3">
+        <section className="mb-8 md:mb-12">
+          <div className="space-y-3 md:space-y-4">
             {ftContent.congratulations.callTestimonials.map((t) => (
-              <div key={t.name} className="bg-white rounded-xl border border-gray-100 p-5 shadow-sm">
+              <div key={t.name} className="bg-white rounded-xl border border-gray-100 p-5 md:p-6 shadow-sm">
                 <QuoteIcon className="w-6 h-6 text-ft-purple-cta/20 mb-2" />
-                <p className="text-[13px] text-gray-700 leading-relaxed mb-3">
+                <p className="text-[13px] md:text-[14px] text-gray-700 leading-relaxed mb-3">
                   {t.quote}
                 </p>
                 <div className="flex items-center gap-2">
@@ -487,9 +481,9 @@ function CongratulationsContent() {
         </section>
 
         {/* ── Section 8: FAQ ── */}
-        <section className="mb-8">
-          <h2 className="text-lg font-bold text-ft-dark-surface mb-1">Have questions before the call?</h2>
-          <p className="text-[13px] text-gray-500 mb-5">
+        <section className="mb-8 md:mb-12">
+          <h2 className="text-[20px] md:text-[24px] font-bold text-ft-dark-surface mb-1">Have questions before the call?</h2>
+          <p className="text-[13px] md:text-[14px] text-gray-500 mb-5">
             <a
               href="https://wa.me/919380506841"
               target="_blank"
@@ -500,11 +494,11 @@ function CongratulationsContent() {
             </a>
             {' '}— we typically respond within 2 hours.
           </p>
-          <div className="space-y-4">
+          <div className="space-y-4 md:space-y-5">
             {ftContent.congratulations.callFaqs.map((faq) => (
               <div key={faq.q}>
-                <p className="text-[14px] font-semibold text-ft-dark-surface mb-1">{faq.q}</p>
-                <p className="text-[13px] text-gray-500 leading-relaxed">{faq.a}</p>
+                <p className="text-[14px] md:text-[15px] font-semibold text-ft-dark-surface mb-1">{faq.q}</p>
+                <p className="text-[13px] md:text-[14px] text-gray-500 leading-relaxed">{faq.a}</p>
               </div>
             ))}
           </div>

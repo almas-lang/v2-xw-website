@@ -18,12 +18,8 @@ import { ftContent } from "@/lib/freetraining/content";
 import { getStorageJSON, getStorageItem, setStorageItem } from "@/lib/freetraining/storage";
 import { ftPath } from "@/lib/freetraining/constants";
 
-// Configure these with your Bunny Stream credentials
 const BUNNY_VIDEO_ID = process.env.NEXT_PUBLIC_FT_BUNNY_VIDEO_ID || "";
 const BUNNY_LIBRARY_ID = process.env.NEXT_PUBLIC_FT_BUNNY_LIBRARY_ID || "";
-
-// Fallback to YouTube if Bunny not configured
-const YOUTUBE_VIDEO_ID = process.env.NEXT_PUBLIC_FT_YOUTUBE_VIDEO_ID || "GVl8_yg_HJM";
 
 function WatchContent() {
   const searchParams = useSearchParams();
@@ -40,7 +36,6 @@ function WatchContent() {
   const hasTrackedPlayRef = useRef(false);
 
   const leadId = searchParams.get("lead_id");
-  const useBunny = Boolean(BUNNY_VIDEO_ID && BUNNY_LIBRARY_ID);
 
   // Restore CTA states from localStorage
   useEffect(() => {
@@ -78,21 +73,19 @@ function WatchContent() {
   const handlePlay = useCallback(() => {
     if (!hasTrackedPlayRef.current) {
       hasTrackedPlayRef.current = true;
-      const videoId = useBunny ? BUNNY_VIDEO_ID : YOUTUBE_VIDEO_ID;
-      trackVideoView(videoId, { lead_id: leadId });
+      trackVideoView(BUNNY_VIDEO_ID, { lead_id: leadId });
     }
-  }, [leadId, useBunny]);
+  }, [leadId]);
 
   const handleTimeUpdate = useCallback((currentTime: number, duration: number) => {
     if (duration <= 0) return;
     const percent = (currentTime / duration) * 100;
-    const videoId = useBunny ? BUNNY_VIDEO_ID : YOUTUBE_VIDEO_ID;
 
     // Track milestones: 25%, 50%, 75%, 100%
     for (const milestone of [25, 50, 75, 100]) {
       if (percent >= milestone && !progressMilestonesRef.current.has(milestone)) {
         progressMilestonesRef.current.add(milestone);
-        trackVideoProgress(videoId, milestone);
+        trackVideoProgress(BUNNY_VIDEO_ID, milestone);
       }
     }
 
@@ -107,21 +100,19 @@ function WatchContent() {
       setShowStickyBar(true);
       setStorageItem("ft_sticky_revealed", "true");
     }
-  }, [showBookCall, showStickyBar, useBunny]);
+  }, [showBookCall, showStickyBar]);
 
   const handleEnded = useCallback(() => {
-    const videoId = useBunny ? BUNNY_VIDEO_ID : YOUTUBE_VIDEO_ID;
-    trackVideoComplete(videoId);
+    trackVideoComplete(BUNNY_VIDEO_ID);
     setShowBookCall(true);
     setStorageItem("ft_book_call_revealed", "true");
     setShowStickyBar(true);
     setStorageItem("ft_sticky_revealed", "true");
-  }, [useBunny]);
+  }, []);
 
   const handlePause = useCallback((currentTime: number) => {
-    const videoId = useBunny ? BUNNY_VIDEO_ID : YOUTUBE_VIDEO_ID;
-    trackVideoPaused(videoId, currentTime);
-  }, [useBunny]);
+    trackVideoPaused(BUNNY_VIDEO_ID, currentTime);
+  }, []);
 
   const bookCallUrl = ftContent.watch.bookCall.ctaUrl;
 
@@ -143,20 +134,14 @@ function WatchContent() {
       <section className="bg-white w-full">
         <div className="max-w-4xl mx-auto px-5 pt-6 md:pt-10 pb-6 md:pb-10">
           <div className="rounded-lg overflow-hidden shadow-sm border border-g200">
-          {useBunny ? (
-            <BunnyPlayer
-              videoId={BUNNY_VIDEO_ID}
-              libraryId={BUNNY_LIBRARY_ID}
-              onPlay={handlePlay}
-              onTimeUpdate={handleTimeUpdate}
-              onEnded={handleEnded}
-              onPause={handlePause}
-            />
-          ) : (
-            <YouTubeFallback
-              videoId={YOUTUBE_VIDEO_ID}
-            />
-          )}
+          <BunnyPlayer
+            videoId={BUNNY_VIDEO_ID}
+            libraryId={BUNNY_LIBRARY_ID}
+            onPlay={handlePlay}
+            onTimeUpdate={handleTimeUpdate}
+            onEnded={handleEnded}
+            onPause={handlePause}
+          />
           </div>
         </div>
       </section>
@@ -255,25 +240,6 @@ function WatchContent() {
   );
 }
 
-// YouTube fallback player when Bunny isn't configured
-function YouTubeFallback({
-  videoId,
-}: {
-  videoId: string;
-}) {
-  return (
-    <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
-      <iframe
-        src={`https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1&autoplay=0`}
-        className="absolute inset-0 w-full h-full"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-        loading="lazy"
-        title="Free Training Video"
-      />
-    </div>
-  );
-}
 
 export default function WatchPage() {
   return (

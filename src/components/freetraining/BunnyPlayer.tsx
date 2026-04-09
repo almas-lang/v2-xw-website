@@ -24,9 +24,16 @@ export function BunnyPlayer({
 
   const handleMessage = useCallback((event: MessageEvent) => {
     // Bunny Stream player posts messages for player events
-    if (!event.data || typeof event.data !== 'object') return;
+    if (!event.data) return;
 
-    const { event: eventType, currentTime, duration } = event.data;
+    // Bunny Stream may send data as a JSON string or an object
+    let data = event.data;
+    if (typeof data === 'string') {
+      try { data = JSON.parse(data); } catch (_e) { return; }
+    }
+    if (typeof data !== 'object') return;
+
+    const { event: eventType, currentTime, duration } = data;
 
     switch (eventType) {
       case 'play':

@@ -96,8 +96,8 @@ function WatchContent() {
       }
     }
 
-    // Reveal book call section at 15 minutes (900 seconds)
-    if (currentTime >= 900 && !showBookCall) {
+    // Reveal book call section at 5 minutes (300 seconds)
+    if (currentTime >= 300 && !showBookCall) {
       setShowBookCall(true);
       setStorageItem("ft_book_call_revealed", "true");
     }
@@ -161,7 +161,7 @@ function WatchContent() {
         </div>
       </section>
 
-      {/* Below-video content — hidden until 15-min mark or video ends */}
+      {/* Below-video content — hidden until 5-min mark or video ends */}
       <div
         className={`transition-opacity duration-500 ${showBookCall ? 'opacity-100' : 'opacity-0 h-0 overflow-hidden'}`}
       >

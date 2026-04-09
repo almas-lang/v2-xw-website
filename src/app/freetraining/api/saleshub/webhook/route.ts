@@ -22,7 +22,7 @@ export async function POST(request: NextRequest) {
       name: name || '',
       email,
       phone: phone || '',
-      source: 'ft-landing-page',
+      source: 'freetraining',
       utm_source: utm_source || '',
       utm_medium: utm_medium || '',
       utm_campaign: utm_campaign || '',
@@ -36,7 +36,7 @@ export async function POST(request: NextRequest) {
     if (portfolio_url) payload.portfolio_url = portfolio_url;
     if (resume_url) payload.resume_url = resume_url;
 
-    const url = `${SALESHUB_WEBHOOK_URL}?secret=${SALESHUB_WEBHOOK_SECRET}`;
+    const url = `${SALESHUB_WEBHOOK_URL}?key=${SALESHUB_WEBHOOK_SECRET}`;
 
     const response = await fetch(url, {
       method: 'POST',

@@ -27,14 +27,8 @@ export default function ApplyRejectedPage() {
     }
   }, []);
 
-  const updateSheetStatus = async (email: string, category?: string, reason?: string) => {
-    try {
-      await fetch('/freetraining/api/sheets/append', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ action: 'update', data: { email, stage: 'apply_rejected', applyQualified: false, applyQualificationReason: reason || category || 'not_qualified' } }),
-      });
-    } catch (error) { console.error('Error updating sheet:', error); }
+  const updateSheetStatus = async (_email: string, _category?: string, _reason?: string) => {
+    // Previously sent to Google Sheets — now handled by SalesHub
   };
 
   const getMessage = () => {

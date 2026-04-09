@@ -7,16 +7,26 @@ import WhatsAppButton from "@/components/shared/WhatsAppButton";
 
 export const metadata: Metadata = {
   title: {
-    default: "Free Training: Break Into Senior UX Roles in 90 Days | Xperience Wave",
-    template: "%s | Xperience Wave Free Training",
+    default: "Free Training: How Designers Break Into Senior UX Roles in 90 Days | Xperience Wave",
+    template: "%s | Xperience Wave",
   },
-  description: "Watch the free training that shows UX/UI designers exactly how to break into senior & leadership positions in 90 days and 2X your salary.",
+  description:
+    "Watch Shaik Murad's free 28-min training on why skilled UX, UI, and Product designers stay stuck at mid-level — and how 830+ designers landed senior & leadership roles paying ₹18-28 LPA in under 90 days.",
   openGraph: {
     title: "Free Training: Break Into Senior UX Roles in 90 Days",
-    description: "Watch the free training that shows UX/UI designers exactly how to break into senior & leadership positions in 90 days and 2X your salary.",
+    description:
+      "3 uncomfortable truths keeping talented designers stuck — and what designers earning ₹18-28 LPA figured out instead.",
     url: "https://xperiencewave.com/freetraining",
     siteName: "Xperience Wave",
     type: "website",
+    // TODO: Add OG image when ready — Murad's face + VSL title
+    // images: [{ url: '/freetraining/og-image.png', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
+  alternates: {
+    canonical: "https://xperiencewave.com/freetraining",
   },
   robots: {
     index: true,

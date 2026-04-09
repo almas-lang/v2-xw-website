@@ -1,113 +1,81 @@
 'use client';
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { Button } from "./Button";
 import { ftContent } from "@/lib/freetraining/content";
 import { getStorageJSON, setStorageJSON } from "@/lib/freetraining/storage";
+import {
+  trackFormViewed,
+  trackFormFieldFocused,
+  trackFormFieldCompleted,
+  trackFormSubmitted,
+  trackLead,
+  trackConversionAPI,
+} from "@/lib/freetraining/track";
 
 const schema = z.object({
-  name: z.string().min(4, "Name must be at least 4 characters"),
+  name: z.string().min(2, "Please enter your name"),
   email: z.string().email("Please enter a valid email address"),
-  phone: z
+  whatsapp: z
     .string()
-    .min(10, "Phone number must be exactly 10 digits")
-    .max(10, "Phone number must be exactly 10 digits")
-    .regex(/^\d{10}$/, "Please enter a valid 10-digit phone number"),
-  employmentStatus: z.string().min(1, "Please select your employment status"),
-  yearsOfExperience: z.string().min(1, "Please select your years of experience"),
-  monthlySalary: z.string().optional(),
+    .min(10, "Please enter a valid 10-digit number")
+    .max(10, "Please enter a valid 10-digit number")
+    .regex(/^\d{10}$/, "Please enter a valid 10-digit number"),
 });
 
-interface LeadFormData {
-  name: string;
-  email: string;
-  phone: string;
-  employmentStatus: string;
-  yearsOfExperience: string;
-  monthlySalary?: string;
-}
-
-interface QualificationResult {
-  qualified: boolean;
-  reason: string;
-  category: string;
-}
+type FormData = z.infer<typeof schema>;
 
 interface LeadFormProps {
-  onSuccess: (leadId: string, qualificationResult: QualificationResult) => void;
+  onSuccess: (leadId: string) => void;
   onError: (message: string) => void;
-  onCancel: () => void;
+  variant?: 'default' | 'on-purple';
 }
 
-export function LeadForm({ onSuccess, onError, onCancel }: LeadFormProps) {
+export function LeadForm({ onSuccess, onError, variant = 'default' }: LeadFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
+  const hasTrackedView = useRef(false);
 
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
-  } = useForm<LeadFormData>({
+  } = useForm<FormData>({
     resolver: zodResolver(schema),
   });
 
-  const employmentStatusValue = watch("employmentStatus");
-  const yearsOfExperienceValue = watch("yearsOfExperience");
+  // Track form_viewed when it scrolls into viewport
+  useEffect(() => {
+    if (!formRef.current || hasTrackedView.current) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasTrackedView.current) {
+          trackFormViewed();
+          hasTrackedView.current = true;
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.5 }
+    );
+    observer.observe(formRef.current);
+    return () => observer.disconnect();
+  }, []);
 
-  const checkQualification = (data: LeadFormData): QualificationResult => {
-    const isEmployed = data.employmentStatus === "yes";
-    const hasExperience = data.yearsOfExperience === "2_to_5" || data.yearsOfExperience === "5_plus";
-
-    if (isEmployed && hasExperience) {
-      return { qualified: true, reason: "meets_all_criteria", category: "qualified" };
-    }
-    if (!isEmployed) {
-      return { qualified: false, reason: "not_employed", category: "employment" };
-    }
-    if (!hasExperience) {
-      return { qualified: false, reason: "insufficient_experience", category: "experience" };
-    }
-    return { qualified: false, reason: "general_disqualification", category: "general" };
-  };
-
-  const onSubmit = async (data: LeadFormData) => {
+  const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);
     try {
-      const qualificationResult = checkQualification(data);
       const utmParams = getStorageJSON<Record<string, string>>("utm_params") || {};
 
-      // SalesHub webhook (fire-and-forget, don't block user)
-      fetch("/freetraining/api/saleshub/webhook", {
+      // SalesHub webhook — single data destination
+      const response = await fetch("/freetraining/api/saleshub/webhook", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           name: data.name,
           email: data.email,
-          phone: data.phone,
-          utm_source: utmParams.utm_source || "",
-          utm_medium: utmParams.utm_medium || "",
-          utm_campaign: utmParams.utm_campaign || "",
-          utm_content: utmParams.utm_content || "",
-          utm_term: utmParams.utm_term || "",
-        }),
-      }).catch((err) => console.error("SalesHub webhook failed:", err));
-
-      const response = await fetch("/freetraining/api/brevo/subscribe", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: data.name,
-          email: data.email,
-          phone: "+91" + data.phone,
-          employmentStatus: data.employmentStatus,
-          yearsOfExperience: data.yearsOfExperience,
-          monthlySalary: data.monthlySalary || "",
-          qualified: qualificationResult.qualified,
-          qualificationReason: qualificationResult.reason,
-          qualificationCategory: qualificationResult.category,
+          phone: "+91" + data.whatsapp,
           utm_source: utmParams.utm_source || "",
           utm_medium: utmParams.utm_medium || "",
           utm_campaign: utmParams.utm_campaign || "",
@@ -116,59 +84,28 @@ export function LeadForm({ onSuccess, onError, onCancel }: LeadFormProps) {
         }),
       });
 
-      let result;
-      try {
-        const text = await response.text();
-        result = text ? JSON.parse(text) : { success: false, error: "Empty response from server" };
-      } catch {
-        throw new Error("Server returned an invalid response. Please try again.");
-      }
+      const result = await response.json();
 
-      if (!result.success) {
-        throw new Error(result.error || "Failed to submit form");
-      }
+      // Track events regardless of webhook response
+      trackFormSubmitted({ email: data.email });
+      trackLead({ lead_id: result.leadId || 'unknown' });
+      trackConversionAPI("Lead", data.email, "+91" + data.whatsapp, {
+        content_name: "VSL Webinar Registration",
+      });
 
+      // Store lead data locally
+      const leadId = result.leadId || `lead_${Date.now()}`;
       setStorageJSON("lead_data", {
-        leadId: result.leadId,
+        leadId,
         email: data.email,
         timestamp: new Date().toISOString(),
       });
-
       setStorageJSON("lead_form_data", {
         name: data.name,
-        phone: "+91" + data.phone,
+        phone: "+91" + data.whatsapp,
       });
 
-      try {
-        await fetch("/freetraining/api/sheets/append", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            action: "create",
-            data: {
-              email: data.email,
-              name: data.name,
-              phone: "+91" + data.phone,
-              employmentStatus: data.employmentStatus,
-              yearsOfExperience: data.yearsOfExperience,
-              monthlySalary: data.monthlySalary,
-              qualified: qualificationResult.qualified,
-              qualificationReason: qualificationResult.reason,
-              qualificationCategory: qualificationResult.category,
-              utm_source: utmParams.utm_source || "",
-              utm_medium: utmParams.utm_medium || "",
-              utm_campaign: utmParams.utm_campaign || "",
-              utm_content: utmParams.utm_content || "",
-              utm_term: utmParams.utm_term || "",
-              stage: "lead"
-            }
-          })
-        });
-      } catch (sheetsError) {
-        console.error("Failed to save to Google Sheets:", sheetsError);
-      }
-
-      onSuccess(result.leadId, qualificationResult);
+      onSuccess(leadId);
     } catch (error: any) {
       console.error("Form submission error:", error);
       onError(error.message || "Something went wrong. Please try again.");
@@ -177,140 +114,103 @@ export function LeadForm({ onSuccess, onError, onCancel }: LeadFormProps) {
     }
   };
 
+  const isPurple = variant === 'on-purple';
+  const inputClasses = isPurple
+    ? "w-full px-4 py-3.5 text-[15px] rounded-lg border bg-white border-[#D9D7FF] text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/30 transition"
+    : "w-full px-4 py-3.5 text-[15px] rounded-lg border-2 border-gray-200 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-ft-purple-cta/30 focus:border-ft-purple-cta transition";
+
+  const errorClasses = isPurple
+    ? "border-red-300"
+    : "border-red-300 focus:border-red-500 focus:ring-red-200";
+
+  const buttonClasses = isPurple
+    ? "w-full max-w-[335px] mx-auto h-[52px] bg-ft-dark-surface text-white font-bold text-[16px] rounded-lg hover:bg-[#252538] transition-colors disabled:opacity-60"
+    : "w-full max-w-[335px] mx-auto h-[52px] bg-ft-purple-cta text-white font-bold text-[16px] rounded-lg hover:bg-[#5B53E6] transition-colors disabled:opacity-60";
+
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 md:space-y-6 p-4 sm:p-6 md:p-8 bg-white rounded-lg shadow-sm">
-      {/* Name Field */}
+    <form
+      ref={formRef}
+      onSubmit={handleSubmit(onSubmit)}
+      className="space-y-3 max-w-[335px] md:max-w-[400px] mx-auto"
+    >
+      {/* Name */}
       <div>
-        <label htmlFor="name" className="block text-sm md:text-base text-gray-700 font-medium mb-2">Name</label>
         <input
           {...register("name")}
-          id="name"
           type="text"
-          className={`w-full px-3 py-2.5 md:px-4 md:py-3 text-base rounded-lg border-2 focus:outline-none focus:ring-2 transition ${
-            errors.name ? "border-red-300 focus:border-red-500 focus:ring-red-200" : "border-gray-200 focus:border-ft-purple focus:ring-purple-200"
-          }`}
-          placeholder="Enter your full name"
+          placeholder={ftContent.form.fields.name.placeholder}
+          className={`${inputClasses} ${errors.name ? errorClasses : ''}`}
           aria-invalid={errors.name ? "true" : "false"}
-          aria-describedby={errors.name ? "name-error" : undefined}
+          onFocus={() => trackFormFieldFocused('name')}
+          onBlur={(e) => { if (e.target.value) trackFormFieldCompleted('name'); }}
         />
-        {errors.name && <p id="name-error" className="mt-1.5 text-xs md:text-sm text-red-600" role="alert">{errors.name.message}</p>}
+        {errors.name && <p className="mt-1 text-xs text-red-400">{errors.name.message}</p>}
       </div>
 
-      {/* Email Field */}
+      {/* Email */}
       <div>
-        <label htmlFor="email" className="block text-sm md:text-base text-gray-700 font-medium mb-2">Email address</label>
         <input
           {...register("email")}
-          id="email"
           type="email"
-          className={`w-full px-3 py-2.5 md:px-4 md:py-3 text-base rounded-lg border-2 focus:outline-none focus:ring-2 transition ${
-            errors.email ? "border-red-300 focus:border-red-500 focus:ring-red-200" : "border-gray-200 focus:border-ft-purple focus:ring-purple-200"
-          }`}
-          placeholder="your@email.com"
+          placeholder={ftContent.form.fields.email.placeholder}
+          className={`${inputClasses} ${errors.email ? errorClasses : ''}`}
           aria-invalid={errors.email ? "true" : "false"}
-          aria-describedby={errors.email ? "email-error" : undefined}
+          onFocus={() => trackFormFieldFocused('email')}
+          onBlur={(e) => { if (e.target.value) trackFormFieldCompleted('email'); }}
         />
-        {errors.email && <p id="email-error" className="mt-1.5 text-xs md:text-sm text-red-600" role="alert">{errors.email.message}</p>}
+        {errors.email && <p className="mt-1 text-xs text-red-400">{errors.email.message}</p>}
       </div>
 
-      {/* Phone Field */}
+      {/* WhatsApp */}
       <div>
-        <label htmlFor="phone" className="block text-sm md:text-base text-gray-700 font-medium mb-2">Mobile number</label>
         <div className="flex gap-2">
-          <div className="flex items-center px-3 py-2.5 md:px-4 md:py-3 bg-gray-100 border-2 border-gray-200 rounded-lg">
-            <span className="text-sm md:text-base text-gray-700 font-medium">+91</span>
+          <div className="flex items-center px-3 py-3.5 bg-gray-100 border-2 border-gray-200 rounded-lg shrink-0">
+            <svg className="w-4 h-4 mr-1.5 text-green-500" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+              <path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.955 9.955 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z" fillRule="evenodd" />
+            </svg>
+            <span className="text-sm text-gray-700 font-medium">+91</span>
           </div>
           <input
-            {...register("phone")}
-            id="phone"
+            {...register("whatsapp")}
             type="tel"
             maxLength={10}
-            className={`flex-1 px-3 py-2.5 md:px-4 md:py-3 text-base rounded-lg border-2 focus:outline-none focus:ring-2 transition ${
-              errors.phone ? "border-red-300 focus:border-red-500 focus:ring-red-200" : "border-gray-200 focus:border-ft-purple focus:ring-purple-200"
-            }`}
-            placeholder="0000000000"
-            aria-invalid={errors.phone ? "true" : "false"}
-            aria-describedby={errors.phone ? "phone-error" : undefined}
+            placeholder={ftContent.form.fields.whatsapp.placeholder}
+            className={`flex-1 ${inputClasses} ${errors.whatsapp ? errorClasses : ''}`}
+            aria-invalid={errors.whatsapp ? "true" : "false"}
+            onFocus={() => trackFormFieldFocused('whatsapp')}
+            onBlur={(e) => { if (e.target.value) trackFormFieldCompleted('whatsapp'); }}
             onKeyDown={(e) => {
-              if (!/[0-9]/.test(e.key) && e.key !== 'Backspace' && e.key !== 'Delete' && e.key !== 'Tab' && e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') {
+              if (!/[0-9]/.test(e.key) && !['Backspace', 'Delete', 'Tab', 'ArrowLeft', 'ArrowRight'].includes(e.key)) {
                 e.preventDefault();
               }
             }}
           />
         </div>
-        {errors.phone && <p id="phone-error" className="mt-1.5 text-xs md:text-sm text-red-600" role="alert">{errors.phone.message}</p>}
-      </div>
-
-      {/* Employment Status */}
-      <div>
-        <label htmlFor="employmentStatus" className="block text-sm md:text-base text-gray-700 font-medium mb-2">{ftContent.qualifying.employmentStatus.label}</label>
-        <div className="relative">
-          <select
-            {...register("employmentStatus")}
-            id="employmentStatus"
-            className={`w-full px-3 py-2.5 md:px-4 md:py-3 text-base rounded-lg border-2 focus:outline-none focus:ring-2 transition appearance-none bg-white pr-10 ${
-              errors.employmentStatus ? "border-red-300 focus:border-red-500 focus:ring-red-200" : "border-gray-200 focus:border-ft-purple focus:ring-purple-200"
-            }`}
-            style={{ color: employmentStatusValue ? '#111827' : '#9CA3AF' }}
-            aria-invalid={errors.employmentStatus ? "true" : "false"}
-          >
-            <option value="" className="text-gray-400">Select an option</option>
-            {ftContent.qualifying.employmentStatus.options.map((option) => (
-              <option key={option.value} value={option.value} className="text-gray-900">{option.label}</option>
-            ))}
-          </select>
-          <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-500">
-            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-            </svg>
-          </div>
-        </div>
-        {errors.employmentStatus && <p className="mt-1.5 text-xs md:text-sm text-red-600" role="alert">{errors.employmentStatus.message}</p>}
-      </div>
-
-      {/* Years of Experience */}
-      <div>
-        <label htmlFor="yearsOfExperience" className="block text-sm md:text-base text-gray-700 font-medium mb-2">{ftContent.qualifying.yearsOfExperience.label}</label>
-        <div className="relative">
-          <select
-            {...register("yearsOfExperience")}
-            id="yearsOfExperience"
-            className={`w-full px-3 py-2.5 md:px-4 md:py-3 text-base rounded-lg border-2 focus:outline-none focus:ring-2 transition appearance-none bg-white pr-10 ${
-              errors.yearsOfExperience ? "border-red-300 focus:border-red-500 focus:ring-red-200" : "border-gray-200 focus:border-ft-purple focus:ring-purple-200"
-            }`}
-            style={{ color: yearsOfExperienceValue ? '#111827' : '#9CA3AF' }}
-            aria-invalid={errors.yearsOfExperience ? "true" : "false"}
-          >
-            <option value="" className="text-gray-400">Select an option</option>
-            {ftContent.qualifying.yearsOfExperience.options.map((option) => (
-              <option key={option.value} value={option.value} className="text-gray-900">{option.label}</option>
-            ))}
-          </select>
-          <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-500">
-            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-            </svg>
-          </div>
-        </div>
-        {errors.yearsOfExperience && <p className="mt-1.5 text-xs md:text-sm text-red-600" role="alert">{errors.yearsOfExperience.message}</p>}
-      </div>
-
-      {/* Submit Button */}
-      <Button type="submit" variant="primary" size="lg" isLoading={isSubmitting} className="w-full text-base md:text-lg">
-        {ftContent.modal.cta}
-      </Button>
-      <button type="button" onClick={onCancel} className="w-full text-sm md:text-base text-gray-600 hover:text-gray-800 font-medium transition-colors py-2">
-        Cancel
-      </button>
-
-      <div className="text-[11px] sm:text-xs text-gray-600 leading-relaxed text-center pt-3 border-t border-gray-200">
-        <p className="font-medium mb-2">
-          <span className="font-semibold">Important:</span> This training is for UX/UI/Product designers earning 6+ LPA with 2+ years experience. If you&apos;re a student, unemployed, or looking for job placement services - this won&apos;t be relevant for you.
+        <p className={`mt-1 text-[11px] ${isPurple ? 'text-[#CBC9FF]' : 'text-gray-400'}`}>
+          {ftContent.form.fields.whatsapp.helperText}
         </p>
+        {errors.whatsapp && <p className="mt-1 text-xs text-red-400">{errors.whatsapp.message}</p>}
       </div>
 
-      <div className="text-[10px] sm:text-xs text-gray-500 leading-relaxed text-center">
-        {ftContent.modal.consent}
+      {/* Submit */}
+      <div className="flex flex-col items-center pt-1">
+        <button type="submit" disabled={isSubmitting} className={buttonClasses}>
+          {isSubmitting ? (
+            <span className="inline-flex items-center gap-2">
+              <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" /><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" /></svg>
+              Submitting...
+            </span>
+          ) : (
+            <>
+              {ftContent.form.cta}
+              <svg className="inline w-4 h-4 ml-1.5 -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+            </>
+          )}
+        </button>
+        <p className={`mt-3 text-[11px] text-center ${isPurple ? 'text-[#CBC9FF]' : 'text-[#80808C]'}`}>
+          {isPurple ? ftContent.finalCta.trustText : ftContent.form.trustText}
+        </p>
       </div>
     </form>
   );

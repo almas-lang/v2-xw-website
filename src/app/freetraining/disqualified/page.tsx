@@ -3,8 +3,9 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { getStorageJSON } from '@/lib/freetraining/storage';
-import { ftContent } from '@/lib/freetraining/content';
 import { ftPath } from '@/lib/freetraining/constants';
+
+const CAPABILITY_ASSESSMENT_URL = "https://drive.google.com/file/d/1Gh5B013xApIML717yzcTZNkgFhxXikQg/view?usp=drive_link";
 
 export default function DisqualifiedPage() {
   const [userName, setUserName] = useState('');
@@ -35,7 +36,7 @@ export default function DisqualifiedPage() {
           <div className="border-t border-gray-700 my-8"></div>
           <div className="bg-ft-purple/10 rounded-xl p-6 md:p-8 mb-8 border border-ft-purple/30">
             <p className="text-base md:text-lg text-gray-200 mb-6">Download our free &quot;Designers Current Capability Assessment&quot;</p>
-            <a href={ftContent.disqualified.designerCapabilityAssessmentUrl} target="_blank" rel="noopener noreferrer" className="inline-block bg-ft-red hover:bg-red-500 text-white font-semibold px-8 py-3 rounded-lg transition-colors text-sm md:text-base shadow-lg">Download Free Assessment</a>
+            <a href={CAPABILITY_ASSESSMENT_URL} target="_blank" rel="noopener noreferrer" className="inline-block bg-ft-red hover:bg-red-500 text-white font-semibold px-8 py-3 rounded-lg transition-colors text-sm md:text-base shadow-lg">Download Free Assessment</a>
           </div>
           <div className="bg-gray-800/50 rounded-xl p-6 md:p-8 border border-gray-700">
             <h3 className="text-lg md:text-xl font-semibold text-white mb-4">What happens next?</h3>

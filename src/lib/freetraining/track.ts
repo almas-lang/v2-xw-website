@@ -42,7 +42,7 @@ export const trackPageView = (pagePath: string, pageTitle?: string) => {
 
 export const trackLead = (data?: TrackingData) => {
   trackFacebookPixel("Lead", {
-    content_name: "VSL Webinar",
+    content_name: "VSL Webinar Registration",
     content_category: "Lead Generation",
     ...data,
   });
@@ -79,6 +79,41 @@ export const trackClick = (buttonName: string, data?: TrackingData) => {
   trackGA4("click", {
     button_name: buttonName,
     ...data,
+  });
+};
+
+// Granular form tracking
+export const trackFormViewed = () => {
+  trackGA4("form_viewed", { form_name: "ft_lead_form" });
+};
+
+export const trackFormFieldFocused = (fieldName: string) => {
+  trackGA4("form_field_focused", { field_name: fieldName, form_name: "ft_lead_form" });
+};
+
+export const trackFormFieldCompleted = (fieldName: string) => {
+  trackGA4(`form_field_completed_${fieldName}`, { form_name: "ft_lead_form" });
+};
+
+export const trackFormSubmitted = (data?: TrackingData) => {
+  trackGA4("form_submitted", { form_name: "ft_lead_form", ...data });
+};
+
+// Video progress tracking
+export const trackVideoProgress = (videoId: string, percent: number) => {
+  trackGA4(`video_progress_${percent}`, { video_id: videoId });
+};
+
+export const trackVideoPaused = (videoId: string, currentTime: number) => {
+  trackGA4("video_paused", { video_id: videoId, current_time: currentTime });
+};
+
+export const trackVideoComplete = (videoId: string) => {
+  trackGA4("video_complete", { video_id: videoId });
+  trackFacebookPixel("ViewContent", {
+    content_name: "VSL Complete",
+    content_type: "video",
+    content_ids: [videoId],
   });
 };
 

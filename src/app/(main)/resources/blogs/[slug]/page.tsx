@@ -9,6 +9,7 @@ import EvaluatorGate from '@/components/blog/EvaluatorGate';
 import SalaryNegotiationGPTGate from '@/components/blog/SalaryNegotiationGPTGate';
 import SystemsAuditGate from '@/components/blog/SystemsAuditGate';
 import BudgetPrepKitGate from '@/components/blog/BudgetPrepKitGate';
+import { FreeTrainingCTA } from '@/components/blog/FreeTrainingCTA';
 
 // Blog content with internal links for SEO
 const blogContent: Record<string, React.ReactNode> = {
@@ -306,6 +307,8 @@ const blogContent: Record<string, React.ReactNode> = {
       <p className="text-base md:text-lg text-g500 italic mt-6">
         Murad is Co-founder and Head of Design at Xperience Wave, a UX mentorship and education company based in Bangalore. He has 13+ years of design leadership experience across India, Japan, Singapore, Dubai, Australia, and the US, and has worked directly with 3,000+ designers across the country. He holds a Masters in Industrial Psychology.
       </p>
+
+      <FreeTrainingCTA text="Want a personalized plan to move up the ladder? Watch our free 28-min training" />
     </>
   ),
   'ai-first-design-senior-ux': (
@@ -686,6 +689,8 @@ const blogContent: Record<string, React.ReactNode> = {
       <p className="text-base md:text-lg text-g500 italic mt-6">
         - Murad, Co-founder &amp; Head of Design, Xperience Wave
       </p>
+
+      <FreeTrainingCTA text="AI changes the game, but only if you're playing the right one. Watch the free training" />
     </>
   ),
   'why-courses-dont-work': (
@@ -857,6 +862,8 @@ const blogContent: Record<string, React.ReactNode> = {
       <p className="text-base md:text-lg text-g500 italic mt-6">
         Almas is the CEO &amp; Staff Trainer at Xperience Wave, a 1:1 UX design mentorship studio based in Bangalore. More at <Link href="https://xperiencewave.com" className="text-accent hover:underline font-medium" target="_blank" rel="noopener noreferrer">xperiencewave.com</Link>. For unfiltered design career conversations, listen to the <Link href="/podcast" className="text-accent hover:underline font-medium">Vivid Yellow Podcast</Link>.
       </p>
+
+      <FreeTrainingCTA text="If courses failed you, here's what actually works" />
     </>
   ),
   'business-driven-ux-portfolio': (
@@ -4488,6 +4495,8 @@ const blogContent: Record<string, React.ReactNode> = {
       <p className="text-base md:text-lg text-g500 italic mt-6">
         Murad is Co-founder and Head of Design at Xperience Wave, a UX mentorship and education company based in Bangalore. He has 13+ years of design leadership experience across India, Japan, Singapore, Dubai, Australia, and the US, and has worked directly with 3,000+ designers across the country. He holds a Masters in Industrial Psychology.
       </p>
+
+      <FreeTrainingCTA text="Thinking about the move to management? Start here" />
     </>
   ),
   'career-switch-to-ux-india-timeline': (
@@ -5814,6 +5823,8 @@ const blogContent: Record<string, React.ReactNode> = {
       <p className="text-base md:text-lg text-g500 italic mt-6">
         - Murad, Co-founder &amp; Head of Design, Xperience Wave
       </p>
+
+      <FreeTrainingCTA text="Before you negotiate, make sure you're positioned for the right role. Watch the free training" />
     </>
   ),
 

@@ -105,47 +105,6 @@ export function ApplyForm({ onSuccess, onError }: ApplyFormProps) {
 
       const formData = getStorageJSON<{ name: string; phone: string }>("lead_form_data") || { name: '', phone: '' };
 
-      try {
-        await fetch("/freetraining/api/brevo/subscribe", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            name: formData.name || "",
-            email: leadData.email,
-            phone: formData.phone || "",
-            applyQualified: qualificationResult.qualified,
-            applyQualificationReason: qualificationResult.reason,
-            applyQualificationCategory: qualificationResult.category,
-            stage: qualificationResult.qualified ? "applied_qualified" : "applied_disqualified",
-          }),
-        });
-      } catch (brevoError) {
-        console.error("Failed to update Brevo:", brevoError);
-      }
-
-      await fetch("/freetraining/api/sheets/append", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          action: "update",
-          data: {
-            email: leadData.email,
-            linkedinUrl: data.linkedinUrl,
-            currentRole: data.currentRole,
-            currentCompany: data.currentCompany,
-            targetRole: data.targetRole,
-            targetSalary: data.targetSalary,
-            blockingIssue: data.blockingIssue,
-            whyImportant: data.whyImportant,
-            investmentReadiness: data.investmentReadiness,
-            timeline: data.timeline,
-            applyQualified: qualificationResult.qualified,
-            applyQualificationReason: qualificationResult.reason,
-            stage: qualificationResult.qualified ? "applied_qualified" : "applied_disqualified",
-          },
-        }),
-      });
-
       setStorageJSON("apply_qualification", {
         qualified: qualificationResult.qualified,
         reason: qualificationResult.reason,

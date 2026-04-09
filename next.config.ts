@@ -57,6 +57,9 @@ const nextConfig: NextConfig = {
       { source: '/freetraining/privacy', destination: '/privacy-policy', permanent: true },
       { source: '/freetraining/terms', destination: '/terms-of-service', permanent: true },
       { source: '/freetraining/refund', destination: '/refund-policy', permanent: true },
+
+      // Free Training funnel redirects (spec April 2026)
+      { source: '/freetraining/getstarted', destination: '/freetraining#get-access', permanent: true },
     ];
   },
 };

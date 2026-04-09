@@ -105,17 +105,8 @@ export default function BookPage() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [router]);
 
-  const updateSheetStage = async (email: string) => {
-    if (!email) return;
-    try {
-      await fetch("/freetraining/api/sheets/append", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ action: "update", data: { email, stage: "booked", bookedAt: new Date().toISOString() } }),
-      });
-    } catch (error) {
-      console.error("Error updating sheet:", error);
-    }
+  const updateSheetStage = async (_email: string) => {
+    // Previously sent to Google Sheets — now handled by SalesHub
   };
 
 

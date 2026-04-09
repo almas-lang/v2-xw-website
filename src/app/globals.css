@@ -62,6 +62,15 @@
   /* Free Training LP Brand Colors */
   --color-ft-red: #F24646;
   --color-ft-purple: #7677EA;
+  --color-ft-purple-cta: #6C63FF;
+  --color-ft-dark: #15152A;
+  --color-ft-dark-surface: #1A1A26;
+  --color-ft-dark-border: #3F3F59;
+  --color-ft-muted: #80809B;
+  --color-ft-muted-light: #BFBFCC;
+  --color-ft-card-bg: #F6F5FF;
+  --color-ft-section-bg: #F6F6F9;
+  --color-ft-footer-bg: #121220;
 }
 
 /* ============================================

@@ -46,3 +46,19 @@ public/images/success-stories/*.MP4
 public/videos/*.mp4
 public/videos/*.MP4
 .env*.local
+
+# AI tool configs
+.agent/
+.claude/
+.codebuddy/
+.codex/
+.continue/
+.cursor/
+.gemini/
+.github/
+.kiro/
+.opencode/
+.qoder/
+.roo/
+.trae/
+.windsurf/

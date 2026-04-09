@@ -127,7 +127,7 @@ export function ApplyForm({ onSuccess, onError }: ApplyFormProps) {
       });
 
       if (qualificationResult.qualified) {
-        router.push(ftPath("/book"));
+        window.location.href = "https://app.xperiencewave.com/book/design-career-strategy-call";
       } else {
         router.push(ftPath("/apply-rejected"));
       }

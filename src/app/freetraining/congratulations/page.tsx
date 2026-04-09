@@ -2,16 +2,91 @@
 
 import { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
+import Image from "next/image";
 import Link from "next/link";
 import { trackPageView, trackConversionAPI, trackGA4 } from "@/lib/freetraining/track";
 import { getStorageJSON } from "@/lib/freetraining/storage";
 import { ftContent } from "@/lib/freetraining/content";
+import { BunnyPlayer } from "@/components/freetraining/BunnyPlayer";
+
+const CONGRATS_VIDEO_ID = process.env.NEXT_PUBLIC_CONGRATS_BUNNY_VIDEO_ID || '';
+const BUNNY_LIBRARY_ID = process.env.NEXT_PUBLIC_FT_BUNNY_LIBRARY_ID || '';
+
+/* ─── SVG Icon Components ─── */
+
+function CheckCircleIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>
+  );
+}
+
+function CalendarIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
+    </svg>
+  );
+}
+
+function ClockIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>
+  );
+}
+
+function VideoCameraIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="m15.75 10.5 4.72-4.72a.75.75 0 0 1 1.28.53v11.38a.75.75 0 0 1-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25h-9A2.25 2.25 0 0 0 2.25 7.5v9a2.25 2.25 0 0 0 2.25 2.25Z" />
+    </svg>
+  );
+}
+
+function PlayIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M8 5v14l11-7z" />
+    </svg>
+  );
+}
+
+function UploadIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+    </svg>
+  );
+}
+
+function CheckIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+    </svg>
+  );
+}
+
+function QuoteIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311C9.591 11.68 11 13.166 11 15c0 1.933-1.567 3.5-3.5 3.5-1.289 0-2.449-.637-2.917-1.179zM14.583 17.321C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311C19.591 11.68 21 13.166 21 15c0 1.933-1.567 3.5-3.5 3.5-1.289 0-2.449-.637-2.917-1.179z" />
+    </svg>
+  );
+}
+
+/* ─── Main Component ─── */
 
 function CongratulationsContent() {
   const searchParams = useSearchParams();
   const [portfolioUrl, setPortfolioUrl] = useState("");
+  const [portfolioSaved, setPortfolioSaved] = useState(false);
+  const [portfolioSaving, setPortfolioSaving] = useState(false);
+  const [resumeStatus, setResumeStatus] = useState<'idle' | 'uploading' | 'done' | 'error'>('idle');
 
-  // Read booking details from SalesHub redirect query params
   const bookingDate = searchParams.get("date") || "";
   const bookingTime = searchParams.get("time") || "";
   const meetLink = searchParams.get("meet_link") || searchParams.get("meetLink") || "";
@@ -33,13 +108,66 @@ function CongratulationsContent() {
     });
   }, [bookingDate]);
 
-  const handlePortfolioShare = () => {
-    if (!portfolioUrl) return;
+  const handlePortfolioShare = async () => {
+    if (!portfolioUrl || portfolioSaving) return;
+    setPortfolioSaving(true);
     trackGA4("portfolio_shared", { url: portfolioUrl });
-    // Could POST to SalesHub to attach to lead record
+
+    const leadData = getStorageJSON<{ email: string }>("lead_data");
+    if (leadData?.email) {
+      try {
+        await fetch("/freetraining/api/saleshub/webhook", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email: leadData.email, portfolio_url: portfolioUrl }),
+        });
+        setPortfolioSaved(true);
+      } catch (err) {
+        console.warn("Failed to save portfolio URL:", err);
+      }
+    }
+    setPortfolioSaving(false);
   };
 
-  // Generate Google Calendar URL
+  const handleResumeUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    if (file.size > 10 * 1024 * 1024) {
+      alert("File is too large. Maximum size is 10MB.");
+      e.target.value = '';
+      return;
+    }
+
+    setResumeStatus('uploading');
+    trackGA4("resume_uploaded", { file_name: file.name });
+
+    const leadData = getStorageJSON<{ email: string }>("lead_data");
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('email', leadData?.email || '');
+
+    try {
+      const res = await fetch("/freetraining/api/upload-resume", { method: "POST", body: formData });
+      const data = await res.json();
+
+      if (data.success && data.url) {
+        if (leadData?.email) {
+          await fetch("/freetraining/api/saleshub/webhook", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email: leadData.email, resume_url: data.url }),
+          });
+        }
+        setResumeStatus('done');
+      } else {
+        setResumeStatus('error');
+      }
+    } catch {
+      setResumeStatus('error');
+    }
+  };
+
   const getGoogleCalendarUrl = () => {
     if (!bookingDate || !bookingTime) return "#";
     const title = "Design Career Strategy Call - Xperience Wave";
@@ -47,17 +175,13 @@ function CongratulationsContent() {
       ? `Google Meet: ${meetLink}\n\nPrepare:\n1. Your #1 career goal for the next 90 days\n2. Have LinkedIn profile open`
       : "Prepare:\n1. Your #1 career goal for the next 90 days\n2. Have LinkedIn profile open";
     const location = "Google Meet";
-    // Parse date/time — expecting formats like "2026-04-15" and "14:00"
     const startDate = bookingDate.replace(/-/g, '') + 'T' + (bookingTime.replace(/:/g, '') || '110000');
-    // 45 min call
     const endHour = bookingTime ? parseInt(bookingTime.split(':')[0]) : 11;
     const endMin = bookingTime ? parseInt(bookingTime.split(':')[1] || '0') + 45 : 45;
     const endDate = bookingDate.replace(/-/g, '') + 'T' + String(endHour + Math.floor(endMin / 60)).padStart(2, '0') + String(endMin % 60).padStart(2, '0') + '00';
-
     return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&dates=${startDate}/${endDate}&details=${encodeURIComponent(details)}&location=${encodeURIComponent(location)}&ctz=Asia/Kolkata`;
   };
 
-  // Generate .ics file content for Apple Calendar
   const downloadICS = () => {
     const title = "Design Career Strategy Call - Xperience Wave";
     const start = bookingDate ? bookingDate.replace(/-/g, '') + 'T' + (bookingTime?.replace(/:/g, '') || '1100') + '00' : '';
@@ -84,204 +208,308 @@ function CongratulationsContent() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-b from-green-50/40 via-white to-white">
       <div className="max-w-[600px] mx-auto px-5 py-8 md:py-12">
 
-        {/* Section 1: Murad's Video */}
-        <section className="mb-10">
-          <div className="relative w-full rounded-xl overflow-hidden bg-gray-100" style={{ paddingBottom: '56.25%' }}>
-            {/* TODO: Replace with Murad's 60-90s personal video */}
-            <div className="absolute inset-0 flex items-center justify-center bg-ft-dark text-white text-center p-6">
-              <div>
-                <div className="w-16 h-16 rounded-full bg-ft-purple-cta flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-7 h-7 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
+        {/* ── Section 1: Murad's Video ── */}
+        <section className="mb-8">
+          {CONGRATS_VIDEO_ID && BUNNY_LIBRARY_ID ? (
+            <BunnyPlayer videoId={CONGRATS_VIDEO_ID} libraryId={BUNNY_LIBRARY_ID} />
+          ) : (
+            <div className="relative w-full rounded-2xl overflow-hidden shadow-lg" style={{ paddingBottom: '56.25%' }}>
+              <Image
+                src="/images/Murad.png"
+                alt="Shaik Murad - Personal message"
+                fill
+                className="object-cover"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent flex items-center justify-center">
+                <div className="text-center">
+                  <div className="w-16 h-16 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center mx-auto mb-3 shadow-lg transition-transform duration-200 hover:scale-105">
+                    <PlayIcon className="w-7 h-7 text-ft-purple-cta ml-0.5" />
+                  </div>
+                  <p className="text-sm text-white/90 font-medium drop-shadow-md">Personal message from Shaik Murad</p>
                 </div>
-                <p className="text-sm text-ft-muted-light">Personal message from Shaik Murad</p>
-                <p className="text-xs text-ft-muted mt-1">Video coming soon</p>
               </div>
             </div>
-          </div>
+          )}
         </section>
 
-        {/* Section 2: Booking Confirmation */}
-        <section className="mb-10">
-          <div className="bg-green-50 rounded-xl p-6 text-center">
-            <div className="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
-              <svg className="w-7 h-7 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-              </svg>
+        {/* ── Section 2: Booking Confirmation ── */}
+        <section className="mb-8">
+          <div className="bg-white rounded-2xl border border-green-200 shadow-sm p-6 text-center">
+            {/* Success badge */}
+            <div className="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <CheckCircleIcon className="w-8 h-8 text-green-600" />
             </div>
-            <h1 className="text-2xl md:text-3xl font-bold text-ft-dark-surface mb-3">You're booked!</h1>
-            <p className="text-sm text-gray-600 mb-4">Your strategy call is confirmed for:</p>
 
-            {bookingDate && (
-              <div className="flex items-center justify-center gap-4 text-[15px] font-semibold text-ft-dark-surface mb-2">
-                <span>📅 {bookingDate}</span>
-                {bookingTime && <span>🕐 {bookingTime} IST</span>}
+            <h1 className="text-2xl md:text-3xl font-bold text-ft-dark-surface mb-1 tracking-tight">
+              You&apos;re booked!
+            </h1>
+            <p className="text-sm text-gray-500 mb-5">Your strategy call is confirmed for:</p>
+
+            {/* Booking details card */}
+            <div className="bg-gray-50 rounded-xl p-4 mb-5 inline-block w-full">
+              {bookingDate && (
+                <div className="flex items-center justify-center gap-5 text-[15px] font-semibold text-ft-dark-surface mb-3">
+                  <span className="inline-flex items-center gap-1.5">
+                    <CalendarIcon className="w-4.5 h-4.5 text-ft-purple-cta" />
+                    {bookingDate}
+                  </span>
+                  {bookingTime && (
+                    <span className="inline-flex items-center gap-1.5">
+                      <ClockIcon className="w-4.5 h-4.5 text-ft-purple-cta" />
+                      {bookingTime} IST
+                    </span>
+                  )}
+                </div>
+              )}
+              <div className="flex items-center justify-center gap-1.5 text-sm text-gray-500 mb-1">
+                <VideoCameraIcon className="w-4 h-4 text-gray-400" />
+                <span>Google Meet</span>
               </div>
-            )}
-            <p className="text-sm text-gray-500 mb-1">📹 Google Meet</p>
-            {meetLink && (
-              <a href={meetLink} target="_blank" rel="noopener noreferrer" className="text-sm text-ft-purple-cta hover:underline break-all">
-                {meetLink}
-              </a>
-            )}
-            <p className="text-[12px] text-gray-400 mt-3">
-              Save this — you'll also receive it via email and WhatsApp
+              {meetLink && (
+                <a
+                  href={meetLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-ft-purple-cta hover:underline break-all cursor-pointer transition-colors duration-200"
+                >
+                  {meetLink}
+                </a>
+              )}
+            </div>
+
+            <p className="text-xs text-gray-400 mb-5">
+              Save this — you&apos;ll also receive it via email and WhatsApp
             </p>
 
             {/* Calendar buttons */}
             {bookingDate && (
-              <div className="flex items-center justify-center gap-3 mt-5">
+              <div className="flex items-center justify-center gap-3">
                 <a
                   href={getGoogleCalendarUrl()}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-[13px] font-medium text-ft-purple-cta border border-ft-purple-cta/30 rounded-lg px-4 py-2 hover:bg-ft-purple-cta/5 transition"
+                  onClick={() => trackGA4("calendar_added_google")}
+                  className="inline-flex items-center gap-2 text-[13px] font-semibold text-ft-purple-cta bg-ft-purple-cta/5 border border-ft-purple-cta/20 rounded-lg px-4 py-2.5 hover:bg-ft-purple-cta/10 active:scale-[0.98] transition-all duration-200 cursor-pointer"
                 >
-                  Add to Google Calendar
+                  <CalendarIcon className="w-4 h-4" />
+                  Google Calendar
                 </a>
                 <button
-                  onClick={downloadICS}
-                  className="inline-flex items-center gap-1.5 text-[13px] font-medium text-ft-purple-cta border border-ft-purple-cta/30 rounded-lg px-4 py-2 hover:bg-ft-purple-cta/5 transition"
+                  onClick={() => {
+                    trackGA4("calendar_added_apple");
+                    downloadICS();
+                  }}
+                  className="inline-flex items-center gap-2 text-[13px] font-semibold text-ft-purple-cta bg-ft-purple-cta/5 border border-ft-purple-cta/20 rounded-lg px-4 py-2.5 hover:bg-ft-purple-cta/10 active:scale-[0.98] transition-all duration-200 cursor-pointer"
                 >
-                  Add to Apple Calendar
+                  <CalendarIcon className="w-4 h-4" />
+                  Apple Calendar
                 </button>
               </div>
             )}
           </div>
         </section>
 
-        {/* Section 3: Homework */}
-        <section className="mb-10">
+        {/* ── Section 3: Homework ── */}
+        <section className="mb-8">
           <h2 className="text-lg font-bold text-ft-dark-surface mb-4">Before your call, do these 2 things:</h2>
-          <div className="space-y-4">
-            {ftContent.congratulations.homework.map((task, i) => (
-              <div key={i} className="bg-gray-50 rounded-lg p-4">
-                <p className="text-[14px] font-semibold text-ft-dark-surface mb-2">
-                  {i + 1}. {task.title}
-                </p>
-                <p className="text-[13px] text-gray-600 leading-relaxed">{task.description}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Section 4: Help Us Prepare (Optional) */}
-        <section className="mb-10">
-          <h2 className="text-lg font-bold text-ft-dark-surface mb-1">Help us prepare for YOUR call</h2>
-          <p className="text-[12px] text-gray-400 mb-4">Optional but recommended</p>
-          <p className="text-[13px] text-gray-600 mb-4">
-            Your LinkedIn is already shared — we'll review it before the call.
-          </p>
           <div className="space-y-3">
-            <div>
-              <label className="block text-[13px] font-medium text-gray-700 mb-1">Got a portfolio? Share the link:</label>
-              <div className="flex gap-2">
-                <input
-                  type="url"
-                  value={portfolioUrl}
-                  onChange={(e) => setPortfolioUrl(e.target.value)}
-                  placeholder="https://your-portfolio.com"
-                  className="flex-1 px-3 py-2.5 text-[14px] rounded-lg border-2 border-gray-200 focus:border-ft-purple-cta focus:ring-2 focus:ring-ft-purple-cta/20 focus:outline-none transition"
-                />
-                <button
-                  onClick={handlePortfolioShare}
-                  disabled={!portfolioUrl}
-                  className="px-4 py-2.5 bg-ft-purple-cta text-white text-[13px] font-medium rounded-lg hover:bg-[#5B53E6] transition disabled:opacity-40"
-                >
-                  Save
-                </button>
+            {ftContent.congratulations.homework.map((task, i) => (
+              <div key={i} className="bg-white rounded-xl border border-gray-100 p-4 shadow-sm">
+                <div className="flex items-start gap-3">
+                  <span className="flex-shrink-0 w-7 h-7 rounded-full bg-ft-purple-cta/10 text-ft-purple-cta text-xs font-bold flex items-center justify-center mt-0.5">
+                    {i + 1}
+                  </span>
+                  <div className="min-w-0">
+                    <p className="text-[14px] font-semibold text-ft-dark-surface mb-1 leading-snug">
+                      {task.title}
+                    </p>
+                    <p className="text-[13px] text-gray-500 leading-relaxed">{task.description}</p>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div>
-              <label className="block text-[13px] font-medium text-gray-700 mb-1">Got an updated resume?</label>
-              <label className="inline-flex items-center gap-2 px-4 py-2.5 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-ft-purple-cta/50 transition">
-                <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
-                </svg>
-                <span className="text-[13px] text-gray-500">Upload PDF or DOCX (max 10MB)</span>
-                <input
-                  type="file"
-                  accept=".pdf,.docx"
-                  className="hidden"
-                  onChange={(e) => {
-                    if (e.target.files?.[0]) {
-                      trackGA4("resume_uploaded", { file_name: e.target.files[0].name });
-                    }
-                  }}
-                />
-              </label>
-            </div>
+            ))}
           </div>
-          <p className="text-[12px] text-gray-400 mt-3 leading-relaxed">
-            The more we know about you beforehand, the faster we get to actionable advice.
-          </p>
         </section>
 
-        {/* Section 5: What Happens on the Call */}
-        <section className="mb-10">
+        {/* ── Section 4: Help Us Prepare ── */}
+        <section className="mb-8">
+          <div className="bg-white rounded-2xl border border-gray-100 p-5 shadow-sm">
+            <div className="mb-4">
+              <h2 className="text-lg font-bold text-ft-dark-surface">Help us prepare for YOUR call</h2>
+              <p className="text-xs text-gray-400 mt-0.5">Optional but recommended</p>
+            </div>
+            <p className="text-[13px] text-gray-500 mb-5 leading-relaxed">
+              Your LinkedIn is already shared — we&apos;ll review it before the call.
+            </p>
+
+            <div className="space-y-4">
+              {/* Portfolio URL */}
+              <div>
+                <label htmlFor="portfolio-url" className="block text-[13px] font-medium text-gray-700 mb-1.5">
+                  Got a portfolio? Share the link:
+                </label>
+                <div className="flex gap-2">
+                  <input
+                    id="portfolio-url"
+                    type="url"
+                    value={portfolioUrl}
+                    onChange={(e) => { setPortfolioUrl(e.target.value); setPortfolioSaved(false); }}
+                    placeholder="https://your-portfolio.com"
+                    className="flex-1 min-w-0 px-3 py-2.5 text-[14px] rounded-lg border border-gray-200 bg-gray-50 focus:bg-white focus:border-ft-purple-cta focus:ring-2 focus:ring-ft-purple-cta/20 focus:outline-none transition-all duration-200"
+                  />
+                  <button
+                    onClick={handlePortfolioShare}
+                    disabled={!portfolioUrl || portfolioSaved || portfolioSaving}
+                    className="px-5 py-2.5 bg-ft-purple-cta text-white text-[13px] font-semibold rounded-lg hover:bg-[#5B53E6] active:scale-[0.97] transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer min-w-[72px] flex items-center justify-center"
+                  >
+                    {portfolioSaving ? (
+                      <div className="animate-spin rounded-full h-4 w-4 border-2 border-white/30 border-t-white" />
+                    ) : portfolioSaved ? (
+                      <span className="inline-flex items-center gap-1">
+                        <CheckIcon className="w-3.5 h-3.5" /> Saved
+                      </span>
+                    ) : "Save"}
+                  </button>
+                </div>
+              </div>
+
+              {/* Resume upload */}
+              <div>
+                <label className="block text-[13px] font-medium text-gray-700 mb-1.5">Got an updated resume?</label>
+                {resumeStatus === 'done' ? (
+                  <div className="inline-flex items-center gap-2 px-4 py-3 bg-green-50 border border-green-200 rounded-lg">
+                    <CheckCircleIcon className="w-5 h-5 text-green-600" />
+                    <span className="text-[13px] text-green-700 font-medium">Resume uploaded successfully</span>
+                  </div>
+                ) : resumeStatus === 'uploading' ? (
+                  <div className="inline-flex items-center gap-2.5 px-4 py-3 border border-ft-purple-cta/20 bg-ft-purple-cta/5 rounded-lg">
+                    <div className="animate-spin rounded-full h-4 w-4 border-2 border-ft-purple-cta/30 border-t-ft-purple-cta" />
+                    <span className="text-[13px] text-ft-purple-cta font-medium">Uploading...</span>
+                  </div>
+                ) : (
+                  <label className="inline-flex items-center gap-2.5 px-4 py-3 border border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-ft-purple-cta/40 hover:bg-ft-purple-cta/[0.02] active:scale-[0.99] transition-all duration-200">
+                    <UploadIcon className="w-4.5 h-4.5 text-gray-400" />
+                    <span className="text-[13px] text-gray-500">
+                      {resumeStatus === 'error' ? (
+                        <span className="text-red-500">Upload failed — tap to try again</span>
+                      ) : (
+                        'Upload PDF or DOCX (max 10MB)'
+                      )}
+                    </span>
+                    <input
+                      type="file"
+                      accept=".pdf,.docx"
+                      className="hidden"
+                      onChange={handleResumeUpload}
+                      aria-label="Upload resume file"
+                    />
+                  </label>
+                )}
+              </div>
+            </div>
+
+            <p className="text-xs text-gray-400 mt-4 leading-relaxed">
+              The more we know about you beforehand, the faster we get to actionable advice.
+            </p>
+          </div>
+        </section>
+
+        {/* ── Section 5: Call Structure ── */}
+        <section className="mb-8">
           <h2 className="text-lg font-bold text-ft-dark-surface mb-4">What happens on the call:</h2>
-          <div className="space-y-4">
-            {ftContent.congratulations.callBreakdown.map((step) => (
-              <div key={step.time} className="flex gap-3">
-                <div className="w-20 shrink-0">
-                  <p className="text-[12px] font-bold text-ft-purple-cta">{step.time}</p>
+          <div className="space-y-1">
+            {ftContent.congratulations.callBreakdown.map((step, i) => (
+              <div key={step.time} className="flex items-start gap-4 py-3">
+                {/* Timeline connector */}
+                <div className="flex flex-col items-center flex-shrink-0 w-[72px]">
+                  <span className="text-[11px] font-bold text-ft-purple-cta uppercase tracking-wide leading-tight text-right w-full">
+                    {step.time}
+                  </span>
                 </div>
-                <div>
-                  <p className="text-[14px] font-semibold text-ft-dark-surface">{step.label}</p>
-                  <p className="text-[13px] text-gray-600">{step.detail}</p>
+                {/* Divider dot */}
+                <div className="flex flex-col items-center pt-1 flex-shrink-0">
+                  <div className="w-2 h-2 rounded-full bg-ft-purple-cta" />
+                  {i < ftContent.congratulations.callBreakdown.length - 1 && (
+                    <div className="w-px flex-1 bg-ft-purple-cta/20 mt-1 min-h-[28px]" />
+                  )}
+                </div>
+                {/* Content */}
+                <div className="pb-1">
+                  <p className="text-[14px] font-semibold text-ft-dark-surface leading-snug">{step.label}</p>
+                  <p className="text-[13px] text-gray-500 leading-relaxed">{step.detail}</p>
                 </div>
               </div>
             ))}
           </div>
         </section>
 
-        {/* Section 6: What We Offer */}
-        <section className="mb-10">
-          <h2 className="text-lg font-bold text-ft-dark-surface mb-3">What we offer:</h2>
-          <p className="text-[13px] text-gray-600 leading-relaxed mb-3">
-            Xperience Wave runs 1:1 mentorship programs (not courses) tailored to your career stage. On the strategy call, if we think we can help, we'll walk you through which program fits your situation and what the investment looks like.
-          </p>
-          <Link
-            href="/programs"
-            target="_blank"
-            rel="noopener"
-            className="text-[13px] font-semibold text-ft-purple-cta hover:underline"
-          >
-            Explore our programs →
-          </Link>
+        {/* ── Section 6: What We Offer ── */}
+        <section className="mb-8">
+          <div className="bg-ft-purple-cta/[0.03] rounded-2xl border border-ft-purple-cta/10 p-5">
+            <h2 className="text-lg font-bold text-ft-dark-surface mb-2">What we offer:</h2>
+            <p className="text-[13px] text-gray-600 leading-relaxed mb-4">
+              Xperience Wave runs 1:1 mentorship programs (not courses) tailored to your career stage. On the strategy call, if we think we can help, we&apos;ll walk you through which program fits your situation and what the investment looks like.
+            </p>
+            <Link
+              href="/programs"
+              target="_blank"
+              rel="noopener"
+              className="inline-flex items-center gap-1 text-[13px] font-semibold text-ft-purple-cta hover:underline cursor-pointer transition-colors duration-200"
+            >
+              Explore our programs
+              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </Link>
+          </div>
         </section>
 
-        {/* Section 7: Call Testimonials */}
-        <section className="mb-10">
-          <div className="space-y-4">
+        {/* ── Section 7: Call Testimonials ── */}
+        <section className="mb-8">
+          <div className="space-y-3">
             {ftContent.congratulations.callTestimonials.map((t) => (
-              <div key={t.name} className="bg-gray-50 rounded-lg p-5">
-                <p className="text-[13px] text-gray-700 leading-relaxed italic mb-3">"{t.quote}"</p>
-                <p className="text-[12px] font-semibold text-ft-dark-surface">— {t.name}, {t.role}</p>
+              <div key={t.name} className="bg-white rounded-xl border border-gray-100 p-5 shadow-sm">
+                <QuoteIcon className="w-6 h-6 text-ft-purple-cta/20 mb-2" />
+                <p className="text-[13px] text-gray-700 leading-relaxed mb-3">
+                  {t.quote}
+                </p>
+                <div className="flex items-center gap-2">
+                  <div className="w-1 h-4 rounded-full bg-ft-purple-cta/30" />
+                  <p className="text-[12px] font-semibold text-ft-dark-surface">{t.name}, <span className="font-normal text-gray-500">{t.role}</span></p>
+                </div>
               </div>
             ))}
           </div>
         </section>
 
-        {/* Section 8: Questions */}
-        <section className="mb-10">
+        {/* ── Section 8: FAQ ── */}
+        <section className="mb-8">
           <h2 className="text-lg font-bold text-ft-dark-surface mb-1">Have questions before the call?</h2>
           <p className="text-[13px] text-gray-500 mb-5">
-            WhatsApp us — we typically respond within 2 hours.
+            <a
+              href="https://wa.me/919380506841"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-ft-purple-cta hover:underline font-medium cursor-pointer transition-colors duration-200"
+            >
+              WhatsApp us at +91 93805 06841
+            </a>
+            {' '}— we typically respond within 2 hours.
           </p>
           <div className="space-y-4">
             {ftContent.congratulations.callFaqs.map((faq) => (
               <div key={faq.q}>
                 <p className="text-[14px] font-semibold text-ft-dark-surface mb-1">{faq.q}</p>
-                <p className="text-[13px] text-gray-600">{faq.a}</p>
+                <p className="text-[13px] text-gray-500 leading-relaxed">{faq.a}</p>
               </div>
             ))}
           </div>
         </section>
+
       </div>
     </div>
   );
@@ -289,7 +517,7 @@ function CongratulationsContent() {
 
 export default function CongratulationsPage() {
   return (
-    <Suspense fallback={<div className="min-h-screen bg-white" />}>
+    <Suspense fallback={<div className="min-h-screen bg-gradient-to-b from-green-50/40 via-white to-white" />}>
       <CongratulationsContent />
     </Suspense>
   );

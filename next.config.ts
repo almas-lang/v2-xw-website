@@ -1,6 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  turbopack: {
+    root: __dirname,
+  },
   images: {
     remotePatterns: [
       {
@@ -52,6 +55,9 @@ const nextConfig: NextConfig = {
       { source: '/my-account', destination: '/', permanent: true },
       { source: '/checkout', destination: '/programs', permanent: true },
       { source: '/wp-sitemap.xml', destination: '/sitemap.xml', permanent: true },
+
+      // SEO: consolidate /terms to /terms-of-service
+      { source: '/terms', destination: '/terms-of-service', permanent: true },
 
       // Free Training LP legal pages → main site legal pages
       { source: '/freetraining/privacy', destination: '/privacy-policy', permanent: true },

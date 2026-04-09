@@ -263,7 +263,7 @@ function CongratulationsContent() {
                   )}
                 </div>
               )}
-              <div className="flex items-center justify-center gap-1.5 text-[13px] md:text-[14px] text-gray-500 mb-1">
+              <div className="flex items-center justify-center gap-1.5 text-[14px] md:text-[15px] text-gray-500 mb-1">
                 <VideoCameraIcon className="w-4 h-4 text-gray-400" />
                 <span>Google Meet</span>
               </div>
@@ -272,14 +272,14 @@ function CongratulationsContent() {
                   href={meetLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[13px] md:text-[14px] text-ft-purple-cta hover:underline break-all cursor-pointer transition-colors duration-200"
+                  className="text-[14px] md:text-[15px] text-ft-purple-cta hover:underline break-all cursor-pointer transition-colors duration-200"
                 >
                   {meetLink}
                 </a>
               )}
             </div>
 
-            <p className="text-[12px] text-gray-400 mb-5">
+            <p className="text-[13px] text-gray-400 mb-5">
               Save this — you&apos;ll also receive it via email and WhatsApp
             </p>
 
@@ -324,7 +324,7 @@ function CongratulationsContent() {
                     <p className="text-[14px] md:text-[15px] font-semibold text-ft-dark-surface mb-1 leading-snug">
                       {task.title}
                     </p>
-                    <p className="text-[13px] md:text-[14px] text-gray-500 leading-relaxed">{task.description}</p>
+                    <p className="text-[14px] md:text-[15px] text-gray-500 leading-relaxed">{task.description}</p>
                   </div>
                 </div>
               </div>
@@ -337,16 +337,16 @@ function CongratulationsContent() {
           <div className="bg-white rounded-2xl border border-gray-100 p-5 md:p-7 shadow-sm">
             <div className="mb-4">
               <h2 className="text-[20px] md:text-[24px] font-bold text-ft-dark-surface">Help us prepare for YOUR call</h2>
-              <p className="text-[12px] text-gray-400 mt-0.5">Optional but recommended</p>
+              <p className="text-[13px] text-gray-400 mt-0.5">Optional but recommended</p>
             </div>
-            <p className="text-[13px] md:text-[14px] text-gray-500 mb-5 leading-relaxed">
+            <p className="text-[14px] md:text-[15px] text-gray-500 mb-5 leading-relaxed">
               Your LinkedIn is already shared — we&apos;ll review it before the call.
             </p>
 
             <div className="space-y-4 md:space-y-5">
               {/* Portfolio URL */}
               <div>
-                <label htmlFor="portfolio-url" className="block text-[13px] md:text-[14px] font-medium text-gray-700 mb-1.5">
+                <label htmlFor="portfolio-url" className="block text-[14px] md:text-[15px] font-medium text-gray-700 mb-1.5">
                   Got a portfolio? Share the link:
                 </label>
                 <div className="flex gap-2">
@@ -376,7 +376,7 @@ function CongratulationsContent() {
 
               {/* Resume upload */}
               <div>
-                <label className="block text-[13px] md:text-[14px] font-medium text-gray-700 mb-1.5">Got an updated resume?</label>
+                <label className="block text-[14px] md:text-[15px] font-medium text-gray-700 mb-1.5">Got an updated resume?</label>
                 {resumeStatus === 'done' ? (
                   <div className="inline-flex items-center gap-2 px-4 py-3 bg-green-50 border border-green-200 rounded-lg">
                     <CheckCircleIcon className="w-5 h-5 text-green-600" />
@@ -409,7 +409,7 @@ function CongratulationsContent() {
               </div>
             </div>
 
-            <p className="text-[12px] text-gray-400 mt-4 leading-relaxed">
+            <p className="text-[13px] text-gray-400 mt-4 leading-relaxed">
               The more we know about you beforehand, the faster we get to actionable advice.
             </p>
           </div>
@@ -434,7 +434,7 @@ function CongratulationsContent() {
                 </div>
                 <div className="pb-1">
                   <p className="text-[14px] md:text-[15px] font-semibold text-ft-dark-surface leading-snug">{step.label}</p>
-                  <p className="text-[13px] md:text-[14px] text-gray-500 leading-relaxed">{step.detail}</p>
+                  <p className="text-[14px] md:text-[15px] text-gray-500 leading-relaxed">{step.detail}</p>
                 </div>
               </div>
             ))}
@@ -445,14 +445,14 @@ function CongratulationsContent() {
         <section className="mb-8 md:mb-12">
           <div className="bg-ft-purple-cta/[0.03] rounded-2xl border border-ft-purple-cta/10 p-5 md:p-7">
             <h2 className="text-[20px] md:text-[24px] font-bold text-ft-dark-surface mb-2">What we offer:</h2>
-            <p className="text-[13px] md:text-[14px] text-gray-600 leading-relaxed mb-4">
+            <p className="text-[14px] md:text-[15px] text-gray-600 leading-relaxed mb-4">
               Xperience Wave runs 1:1 mentorship programs (not courses) tailored to your career stage. On the strategy call, if we think we can help, we&apos;ll walk you through which program fits your situation and what the investment looks like.
             </p>
             <Link
               href="/programs"
               target="_blank"
               rel="noopener"
-              className="inline-flex items-center gap-1 text-[13px] md:text-[14px] font-semibold text-ft-purple-cta hover:underline cursor-pointer transition-colors duration-200"
+              className="inline-flex items-center gap-1 text-[14px] md:text-[15px] font-semibold text-ft-purple-cta hover:underline cursor-pointer transition-colors duration-200"
             >
               Explore our programs
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -468,12 +468,12 @@ function CongratulationsContent() {
             {ftContent.congratulations.callTestimonials.map((t) => (
               <div key={t.name} className="bg-white rounded-xl border border-gray-100 p-5 md:p-6 shadow-sm">
                 <QuoteIcon className="w-6 h-6 text-ft-purple-cta/20 mb-2" />
-                <p className="text-[13px] md:text-[14px] text-gray-700 leading-relaxed mb-3">
+                <p className="text-[14px] md:text-[15px] text-gray-700 leading-relaxed mb-3">
                   {t.quote}
                 </p>
                 <div className="flex items-center gap-2">
                   <div className="w-1 h-4 rounded-full bg-ft-purple-cta/30" />
-                  <p className="text-[12px] font-semibold text-ft-dark-surface">{t.name}, <span className="font-normal text-gray-500">{t.role}</span></p>
+                  <p className="text-[13px] font-semibold text-ft-dark-surface">{t.name}, <span className="font-normal text-gray-500">{t.role}</span></p>
                 </div>
               </div>
             ))}
@@ -483,7 +483,7 @@ function CongratulationsContent() {
         {/* ── Section 8: FAQ ── */}
         <section className="mb-8 md:mb-12">
           <h2 className="text-[20px] md:text-[24px] font-bold text-ft-dark-surface mb-1">Have questions before the call?</h2>
-          <p className="text-[13px] md:text-[14px] text-gray-500 mb-5">
+          <p className="text-[14px] md:text-[15px] text-gray-500 mb-5">
             <a
               href="https://wa.me/919380506841"
               target="_blank"
@@ -498,7 +498,7 @@ function CongratulationsContent() {
             {ftContent.congratulations.callFaqs.map((faq) => (
               <div key={faq.q}>
                 <p className="text-[14px] md:text-[15px] font-semibold text-ft-dark-surface mb-1">{faq.q}</p>
-                <p className="text-[13px] md:text-[14px] text-gray-500 leading-relaxed">{faq.a}</p>
+                <p className="text-[14px] md:text-[15px] text-gray-500 leading-relaxed">{faq.a}</p>
               </div>
             ))}
           </div>

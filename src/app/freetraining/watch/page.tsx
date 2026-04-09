@@ -30,7 +30,8 @@ function WatchContent() {
   const router = useRouter();
   const [toast, setToast] = useState({ isVisible: false, message: "", type: "info" as "success" | "error" | "info" });
 
-  // Sticky bar states
+  // CTA visibility states
+  const [showBookCall, setShowBookCall] = useState(false);
   const [showStickyBar, setShowStickyBar] = useState(false);
   const [stickyDismissed, setStickyDismissed] = useState(false);
 
@@ -41,8 +42,11 @@ function WatchContent() {
   const leadId = searchParams.get("lead_id");
   const useBunny = Boolean(BUNNY_VIDEO_ID && BUNNY_LIBRARY_ID);
 
-  // Restore sticky bar state from localStorage
+  // Restore CTA states from localStorage
   useEffect(() => {
+    if (getStorageItem("ft_book_call_revealed") === "true") {
+      setShowBookCall(true);
+    }
     if (getStorageItem("ft_sticky_revealed") === "true") {
       setShowStickyBar(true);
     }
@@ -92,16 +96,24 @@ function WatchContent() {
       }
     }
 
+    // Reveal book call section at 15 minutes (900 seconds)
+    if (currentTime >= 900 && !showBookCall) {
+      setShowBookCall(true);
+      setStorageItem("ft_book_call_revealed", "true");
+    }
+
     // Reveal sticky bar at 50%
     if (percent >= 50 && !showStickyBar) {
       setShowStickyBar(true);
       setStorageItem("ft_sticky_revealed", "true");
     }
-  }, [showStickyBar, useBunny]);
+  }, [showBookCall, showStickyBar, useBunny]);
 
   const handleEnded = useCallback(() => {
     const videoId = useBunny ? BUNNY_VIDEO_ID : YOUTUBE_VIDEO_ID;
     trackVideoComplete(videoId);
+    setShowBookCall(true);
+    setStorageItem("ft_book_call_revealed", "true");
     setShowStickyBar(true);
     setStorageItem("ft_sticky_revealed", "true");
   }, [useBunny]);
@@ -149,8 +161,10 @@ function WatchContent() {
         </div>
       </section>
 
-      {/* Below-video content */}
-      <div>
+      {/* Below-video content — hidden until 15-min mark or video ends */}
+      <div
+        className={`transition-opacity duration-500 ${showBookCall ? 'opacity-100' : 'opacity-0 h-0 overflow-hidden'}`}
+      >
         {/* Section 1: CTA — white bg */}
         <section className="bg-white py-8 md:py-12 px-5">
           <div className="max-w-[420px] mx-auto text-center">

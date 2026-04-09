@@ -2,7 +2,6 @@
 
 import { useEffect, useState, useRef, useCallback, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import Image from "next/image";
 import { BunnyPlayer } from "@/components/freetraining/BunnyPlayer";
 import { Toast } from "@/components/freetraining/Toast";
 import {
@@ -16,7 +15,7 @@ import {
   trackClick,
 } from "@/lib/freetraining/track";
 import { ftContent } from "@/lib/freetraining/content";
-import { getStorageJSON, setStorageJSON, getStorageItem, setStorageItem } from "@/lib/freetraining/storage";
+import { getStorageJSON, getStorageItem, setStorageItem } from "@/lib/freetraining/storage";
 import { ftPath } from "@/lib/freetraining/constants";
 
 // Configure these with your Bunny Stream credentials
@@ -31,8 +30,7 @@ function WatchContent() {
   const router = useRouter();
   const [toast, setToast] = useState({ isVisible: false, message: "", type: "info" as "success" | "error" | "info" });
 
-  // Timed reveal states
-  const [showBookCall, setShowBookCall] = useState(false);
+  // Sticky bar states
   const [showStickyBar, setShowStickyBar] = useState(false);
   const [stickyDismissed, setStickyDismissed] = useState(false);
 
@@ -43,11 +41,8 @@ function WatchContent() {
   const leadId = searchParams.get("lead_id");
   const useBunny = Boolean(BUNNY_VIDEO_ID && BUNNY_LIBRARY_ID);
 
-  // Restore revealed state from localStorage
+  // Restore sticky bar state from localStorage
   useEffect(() => {
-    if (getStorageItem("ft_book_call_revealed") === "true") {
-      setShowBookCall(true);
-    }
     if (getStorageItem("ft_sticky_revealed") === "true") {
       setShowStickyBar(true);
     }
@@ -97,25 +92,17 @@ function WatchContent() {
       }
     }
 
-    // Reveal "Book Call" section at 15 minutes (900 seconds) or 50% — whichever comes first
-    if ((currentTime >= 900 || percent >= 50) && !showBookCall) {
-      setShowBookCall(true);
-      setStorageItem("ft_book_call_revealed", "true");
-    }
-
     // Reveal sticky bar at 50%
     if (percent >= 50 && !showStickyBar) {
       setShowStickyBar(true);
       setStorageItem("ft_sticky_revealed", "true");
     }
-  }, [showBookCall, showStickyBar, useBunny]);
+  }, [showStickyBar, useBunny]);
 
   const handleEnded = useCallback(() => {
     const videoId = useBunny ? BUNNY_VIDEO_ID : YOUTUBE_VIDEO_ID;
     trackVideoComplete(videoId);
-    setShowBookCall(true);
     setShowStickyBar(true);
-    setStorageItem("ft_book_call_revealed", "true");
     setStorageItem("ft_sticky_revealed", "true");
   }, [useBunny]);
 
@@ -139,10 +126,11 @@ function WatchContent() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-white">
+    <div className="min-h-screen flex flex-col bg-white font-body">
       {/* Video Section */}
-      <section className="bg-[#0D0D14] w-full">
-        <div className="max-w-5xl mx-auto px-4 py-4 md:py-6">
+      <section className="bg-white w-full">
+        <div className="max-w-4xl mx-auto px-5 pt-6 md:pt-10 pb-6 md:pb-10">
+          <div className="rounded-lg overflow-hidden shadow-sm border border-g200">
           {useBunny ? (
             <BunnyPlayer
               videoId={BUNNY_VIDEO_ID}
@@ -155,82 +143,83 @@ function WatchContent() {
           ) : (
             <YouTubeFallback
               videoId={YOUTUBE_VIDEO_ID}
-              onPlay={handlePlay}
-              onEnded={handleEnded}
             />
           )}
-        </div>
-      </section>
-
-      {/* Book Call Section — hidden until 15 min mark */}
-      <section
-        className={`transition-all duration-700 ${
-          showBookCall ? 'opacity-100 max-h-[2000px]' : 'opacity-0 max-h-0 overflow-hidden'
-        }`}
-      >
-        <div className="bg-white py-9 md:py-12 px-5">
-          <div className="max-w-[500px] mx-auto text-center">
-            <h2 className="text-[20px] md:text-2xl font-bold text-ft-dark-surface mb-5">
-              {ftContent.watch.bookCall.headline}
-            </h2>
-            <button
-              onClick={handleBookClick}
-              className="w-full max-w-[335px] h-[52px] bg-ft-purple-cta text-white font-bold text-[16px] rounded-lg hover:bg-[#5B53E6] transition-colors mb-6"
-            >
-              {ftContent.watch.bookCall.cta}
-            </button>
-
-            {/* Call details */}
-            <div className="text-left max-w-[350px] mx-auto mb-6">
-              <p className="text-[13px] text-[#595964] mb-3">On this call, we'll:</p>
-              <ul className="space-y-2">
-                {ftContent.watch.bookCall.details.map((detail) => (
-                  <li key={detail} className="flex items-start gap-2 text-[13px] text-[#595964] leading-[200%]">
-                    <span className="text-ft-purple-cta mt-0.5">•</span>
-                    {detail}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Guarantee badge */}
-            <div className="bg-[#F2FBF5] rounded-lg px-4 py-3">
-              <p className="text-[13px] font-semibold text-[#27804D]">
-                {ftContent.watch.bookCall.guarantee}
-              </p>
-            </div>
-
-            {/* WhatsApp testimonial screenshots */}
-            <div className="mt-8 space-y-4">
-              {['shreekanth-whatsapp.png', 'kritika-whatsapp.png'].map((img) => (
-                <img
-                  key={img}
-                  src={`/freetraining/testimonials/${img}`}
-                  alt="WhatsApp testimonial from mentee"
-                  className="w-full rounded-lg shadow-sm"
-                  loading="lazy"
-                />
-              ))}
-            </div>
           </div>
         </div>
       </section>
 
+      {/* Below-video content */}
+      <div>
+        {/* Section 1: CTA — white bg */}
+        <section className="bg-white py-8 md:py-12 px-5">
+          <div className="max-w-[420px] mx-auto text-center">
+            <h2 className="text-[18px] md:text-[22px] font-heading font-bold text-ft-dark-surface leading-snug mb-5">
+              {ftContent.watch.bookCall.headline}
+            </h2>
+            <button
+              onClick={handleBookClick}
+              className="w-full max-w-[320px] h-[48px] bg-accent hover:bg-accent-hover text-white font-bold text-[14px] rounded-xl transition-all duration-200 shadow-[0_0_30px_rgba(255,0,35,0.2)] hover:shadow-[0_0_50px_rgba(255,0,35,0.3)] cursor-pointer"
+            >
+              {ftContent.watch.bookCall.cta}
+            </button>
+          </div>
+        </section>
+
+        {/* Section 2: Call details — gray bg */}
+        <section className="bg-ft-section-bg py-8 md:py-12 px-5">
+          <div className="max-w-[420px] mx-auto">
+            <h3 className="text-[20px] md:text-[24px] font-heading font-bold text-ft-dark-surface leading-snug mb-5 text-center">On this call, we&apos;ll</h3>
+            <ul className="space-y-1.5 mb-8 pl-1">
+              {ftContent.watch.bookCall.details.map((detail) => (
+                <li key={detail} className="flex items-start gap-2.5 text-[14px] md:text-[15px] text-ft-dark-surface leading-[1.6]">
+                  <span className="text-ft-dark-surface mt-0.5 shrink-0">•</span>
+                  {detail}
+                </li>
+              ))}
+            </ul>
+
+            {/* Guarantee badge */}
+            <div className="flex items-center gap-3">
+              <img src="/images/gaurantee.svg" alt="Guarantee" className="w-[34px] h-[34px] shrink-0" />
+              <p className="text-[14px] md:text-[15px] font-semibold text-ft-dark-surface">
+                {ftContent.watch.bookCall.guarantee}
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Section 3: WhatsApp testimonials — white bg */}
+        <section className="bg-white py-8 md:py-12 px-5">
+          <div className="max-w-[420px] mx-auto space-y-4">
+            {['akash.png', 'maitreyee.png', 'kritika2.png', 'abhishek.png'].map((img) => (
+              <img
+                key={img}
+                src={`/freetraining/testimonials/${img}`}
+                alt="WhatsApp testimonial from mentee"
+                className="w-full"
+                loading="lazy"
+              />
+            ))}
+          </div>
+        </section>
+      </div>
+
       {/* Sticky CTA Bar — appears after 50% watched */}
       {showStickyBar && !stickyDismissed && (
-        <div className="fixed bottom-0 left-0 right-0 bg-white border-t shadow-lg z-50 animate-slide-up">
-          <div className="max-w-lg mx-auto flex items-center justify-between px-4 py-3">
-            <p className="text-[14px] text-[#333] font-medium">{ftContent.watch.stickyCta.text}</p>
+        <div className="fixed bottom-0 left-0 right-0 bg-white border-t shadow-[0_-2px_10px_rgba(0,0,0,0.08)] z-50 animate-slide-up">
+          <div className="max-w-lg mx-auto flex items-center justify-between px-5 py-3">
+            <p className="text-[14px] text-ft-dark-surface font-medium">{ftContent.watch.stickyCta.text}</p>
             <div className="flex items-center gap-2">
               <button
                 onClick={handleBookClick}
-                className="bg-ft-purple-cta text-white text-[14px] font-semibold px-4 py-2 rounded-lg hover:bg-[#5B53E6] transition-colors"
+                className="bg-accent hover:bg-accent-hover text-white text-[14px] font-semibold px-4 py-2.5 rounded-lg transition-colors cursor-pointer"
               >
                 {ftContent.watch.stickyCta.cta}
               </button>
               <button
                 onClick={() => setStickyDismissed(true)}
-                className="text-gray-400 hover:text-gray-600 p-1"
+                className="text-gray-400 hover:text-gray-600 p-2.5"
                 aria-label="Dismiss"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -255,18 +244,14 @@ function WatchContent() {
 // YouTube fallback player when Bunny isn't configured
 function YouTubeFallback({
   videoId,
-  onPlay,
-  onEnded,
 }: {
   videoId: string;
-  onPlay?: () => void;
-  onEnded?: () => void;
 }) {
   return (
     <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
       <iframe
         src={`https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1&autoplay=0`}
-        className="absolute inset-0 w-full h-full rounded-lg"
+        className="absolute inset-0 w-full h-full"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
         loading="lazy"
@@ -280,8 +265,8 @@ export default function WatchPage() {
   return (
     <Suspense
       fallback={
-        <div className="min-h-screen flex items-center justify-center bg-[#0D0D14]">
-          <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-ft-purple" />
+        <div className="min-h-screen flex items-center justify-center bg-white">
+          <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-accent" />
         </div>
       }
     >

@@ -37,6 +37,7 @@ export function LeadForm({ onSuccess, onError, variant = 'default' }: LeadFormPr
   const [isSubmitting, setIsSubmitting] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
   const hasTrackedView = useRef(false);
+  const isPurple = variant === 'on-purple';
 
   const {
     register,
@@ -68,7 +69,7 @@ export function LeadForm({ onSuccess, onError, variant = 'default' }: LeadFormPr
     try {
       const utmParams = getStorageJSON<Record<string, string>>("utm_params") || {};
 
-      // SalesHub webhook — single data destination
+      // SalesHub webhook - single data destination
       const response = await fetch("/freetraining/api/saleshub/webhook", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -114,24 +115,14 @@ export function LeadForm({ onSuccess, onError, variant = 'default' }: LeadFormPr
     }
   };
 
-  const isPurple = variant === 'on-purple';
-  const inputClasses = isPurple
-    ? "w-full px-4 py-3.5 text-[15px] rounded-lg border bg-white border-[#D9D7FF] text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/30 transition"
-    : "w-full px-4 py-3.5 text-[15px] rounded-lg border-2 border-gray-200 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-ft-purple-cta/30 focus:border-ft-purple-cta transition";
-
-  const errorClasses = isPurple
-    ? "border-red-300"
-    : "border-red-300 focus:border-red-500 focus:ring-red-200";
-
-  const buttonClasses = isPurple
-    ? "w-full max-w-[335px] mx-auto h-[52px] bg-ft-dark-surface text-white font-bold text-[16px] rounded-lg hover:bg-[#252538] transition-colors disabled:opacity-60"
-    : "w-full max-w-[335px] mx-auto h-[52px] bg-ft-purple-cta text-white font-bold text-[16px] rounded-lg hover:bg-[#5B53E6] transition-colors disabled:opacity-60";
+  const inputClasses = "w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-g400 focus:outline-none focus:border-accent transition-colors autofill:bg-white/5 autofill:text-white autofill:shadow-[inset_0_0_0px_1000px_rgba(255,255,255,0.05)]";
+  const errorClasses = "border-red-500/50 focus:border-red-500";
 
   return (
     <form
       ref={formRef}
       onSubmit={handleSubmit(onSubmit)}
-      className="space-y-3 max-w-[335px] md:max-w-[400px] mx-auto"
+      className="space-y-4 max-w-[335px] md:max-w-[400px] mx-auto"
     >
       {/* Name */}
       <div>
@@ -164,12 +155,12 @@ export function LeadForm({ onSuccess, onError, variant = 'default' }: LeadFormPr
       {/* WhatsApp */}
       <div>
         <div className="flex gap-2">
-          <div className="flex items-center px-3 py-3.5 bg-gray-100 border-2 border-gray-200 rounded-lg shrink-0">
+          <div className="flex items-center px-3 py-3 bg-white/5 border border-white/10 rounded-xl shrink-0">
             <svg className="w-4 h-4 mr-1.5 text-green-500" viewBox="0 0 24 24" fill="currentColor">
               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
               <path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.955 9.955 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z" fillRule="evenodd" />
             </svg>
-            <span className="text-sm text-gray-700 font-medium">+91</span>
+            <span className="text-sm text-white/70 font-medium">+91</span>
           </div>
           <input
             {...register("whatsapp")}
@@ -187,7 +178,7 @@ export function LeadForm({ onSuccess, onError, variant = 'default' }: LeadFormPr
             }}
           />
         </div>
-        <p className={`mt-1 text-[11px] ${isPurple ? 'text-[#CBC9FF]' : 'text-gray-400'}`}>
+        <p className="mt-1 text-[12px] text-white/40">
           {ftContent.form.fields.whatsapp.helperText}
         </p>
         {errors.whatsapp && <p className="mt-1 text-xs text-red-400">{errors.whatsapp.message}</p>}
@@ -195,20 +186,24 @@ export function LeadForm({ onSuccess, onError, variant = 'default' }: LeadFormPr
 
       {/* Submit */}
       <div className="flex flex-col items-center pt-1">
-        <button type="submit" disabled={isSubmitting} className={buttonClasses}>
+        <button
+          type="submit"
+          disabled={isSubmitting}
+          className="w-full max-w-[335px] mx-auto px-6 py-3.5 bg-accent hover:bg-accent-hover text-white font-semibold rounded-xl transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+        >
           {isSubmitting ? (
-            <span className="inline-flex items-center gap-2">
+            <>
               <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" /><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" /></svg>
               Submitting...
-            </span>
+            </>
           ) : (
             <>
               {ftContent.form.cta}
-              <svg className="inline w-4 h-4 ml-1.5 -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
             </>
           )}
         </button>
-        <p className={`mt-3 text-[11px] text-center ${isPurple ? 'text-[#CBC9FF]' : 'text-[#80808C]'}`}>
+        <p className="mt-3 text-[12px] text-center text-white/40">
           {isPurple ? ftContent.finalCta.trustText : ftContent.form.trustText}
         </p>
       </div>

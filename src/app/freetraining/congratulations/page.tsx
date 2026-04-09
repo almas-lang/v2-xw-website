@@ -128,7 +128,7 @@ function CongratulationsContent() {
                 {meetLink}
               </a>
             )}
-            <p className="text-[11px] text-gray-400 mt-3">
+            <p className="text-[12px] text-gray-400 mt-3">
               Save this — you'll also receive it via email and WhatsApp
             </p>
 

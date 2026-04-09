@@ -11,15 +11,15 @@ export const metadata: Metadata = {
     template: "%s | Xperience Wave",
   },
   description:
-    "Watch Shaik Murad's free 28-min training on why skilled UX, UI, and Product designers stay stuck at mid-level — and how 830+ designers landed senior & leadership roles paying ₹18-28 LPA in under 90 days.",
+    "Watch Shaik Murad's free 28-min training on why skilled UX, UI, and Product designers stay stuck at mid-level - and how 830+ designers landed senior & leadership roles paying ₹18-28 LPA in under 90 days.",
   openGraph: {
     title: "Free Training: Break Into Senior UX Roles in 90 Days",
     description:
-      "3 uncomfortable truths keeping talented designers stuck — and what designers earning ₹18-28 LPA figured out instead.",
+      "3 uncomfortable truths keeping talented designers stuck - and what designers earning ₹18-28 LPA figured out instead.",
     url: "https://xperiencewave.com/freetraining",
     siteName: "Xperience Wave",
     type: "website",
-    // TODO: Add OG image when ready — Murad's face + VSL title
+    // TODO: Add OG image when ready - Murad's face + VSL title
     // images: [{ url: '/freetraining/og-image.png', width: 1200, height: 630 }],
   },
   twitter: {

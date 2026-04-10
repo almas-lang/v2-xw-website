@@ -57,9 +57,9 @@ export const ftContent = {
       { name: 'Sheetal P.', role: 'Design Lead @ CX100', timeline: 'in 2 months', image: '/images/sheetal.png', linkedin: 'https://www.linkedin.com/in/sheetalpimparwar/' },
       { name: 'Kritika S.', role: 'Lead UX @ Synduct, Germany', timeline: 'in 3 months', image: '/images/Kritika Singh.jpeg', linkedin: 'https://www.linkedin.com/in/kritikasinghchauhan/' },
       { name: 'Radhakrishna A.', role: 'Principal UX @ Informatica', timeline: 'in 3 months', image: '/images/Radhakrishna Aekbote.jpeg', linkedin: 'https://www.linkedin.com/in/radhakrishnaaekbote/' },
-      { name: 'Shreekanth', role: 'Sr. UX Designer @ Wipro', timeline: 'in 5 weeks', image: '/images/Sreekanth VK.jpeg' },
+      { name: 'Shreekanth', role: 'Sr. UX Designer @ Wipro', timeline: 'in 5 weeks', image: '/images/Sreekanth VK.jpeg', linkedin: 'https://www.linkedin.com/in/shreekantvk/' },
       { name: 'Jonah I.', role: 'Sr. Lead Designer @ Infosys', timeline: 'in 2 months', image: '/images/Jonah_Immanuel.png', linkedin: 'https://www.linkedin.com/in/jonahimmanuel/' },
-      { name: 'Maulin R.', role: 'Sr. UX @ Augmented.AI', timeline: 'in 90 days', image: '/images/Maulin Rajput.jpeg' },
+      { name: 'Maulin R.', role: 'Sr. UX @ Augmented.AI', timeline: 'in 90 days', image: '/images/Maulin Rajput.jpeg', linkedin: 'https://www.linkedin.com/in/maulin-rajput/' },
     ],
   },
   qualifier: {

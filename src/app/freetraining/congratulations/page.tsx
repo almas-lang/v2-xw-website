@@ -375,7 +375,7 @@ function CongratulationsContent() {
 
         {/* ── Section 4: Help Us Prepare ── */}
         <section className="mb-8 md:mb-12">
-          <div className="bg-white rounded-2xl border border-gray-100 p-5 md:p-7 shadow-sm">
+          <div className="bg-gradient-to-br from-white via-white to-ft-purple-cta/[0.04] rounded-2xl border border-ft-purple-cta/20 p-5 md:p-7 shadow-[0_4px_24px_-4px_rgba(107,92,255,0.12)] ring-1 ring-ft-purple-cta/[0.08]">
             <div className="mb-4">
               <h2 className="text-[20px] md:text-[24px] font-bold text-ft-dark-surface">Help us prepare for YOUR call</h2>
               <p className="text-[14px] text-gray-400 mt-0.5">Optional but recommended</p>

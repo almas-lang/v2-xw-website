@@ -52,7 +52,7 @@ export const ftContent = {
     title: 'Designers who watched this and took action:',
     statsLine: 'Average 38% salary increase across 140+ mentees',
     seeAllText: 'See all 87 success stories →',
-    seeAllUrl: 'https://love.senja.io/xperiencewave', // Senja page - opens in new tab
+    seeAllUrl: 'https://senja.io/p/expwave-experiencewave/7kRIxt1', // Senja page - opens in new tab
     cards: [
       { name: 'Sheetal P.', role: 'Design Lead @ CX100', timeline: 'in 2 months', image: '/images/sheetal.png', linkedin: 'https://www.linkedin.com/in/sheetalpimparwar/' },
       { name: 'Kritika S.', role: 'Lead UX @ Synduct, Germany', timeline: 'in 3 months', image: '/images/Kritika Singh.jpeg', linkedin: 'https://www.linkedin.com/in/kritikasinghchauhan/' },
@@ -73,9 +73,9 @@ export const ftContent = {
     title: 'Why talented designers stay stuck at mid-level',
     body: "Most UX, UI, and Product designers in India hit a ceiling at the 2-5 year mark. They've mastered Figma, built strong portfolios, and consistently deliver great work - but promotions to senior designer, design lead, or design manager roles keep going to someone else.\n\nThe problem isn't skill. It's strategy. Senior UX designer roles at companies like McKinsey, Informatica, Wipro, and Infosys don't go to the hardest worker - they go to the designer who plays the right game.\n\nThis free training breaks down exactly what that means - in 28 minutes, with real examples from designers who made the transition.",
     relatedLinks: [
-      { text: 'The UX Career Ladder in India: From Junior to CXO', slug: 'ux-career-ladder-levels-india' },
-      { text: "Why UX Courses and Certificates Don't Get You Senior Roles", slug: 'why-courses-dont-work' },
-      { text: 'Salary Negotiation for UX Designers in India (RIVER Framework)', slug: 'salary-negotiation-ux-designers-india' },
+      { text: 'The UX Career Ladder in India: From Junior to CXO', slug: 'ux-career-ladder-levels-india', image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&q=80', readTime: '12 min' },
+      { text: "Why UX Courses and Certificates Don't Get You Senior Roles", slug: 'why-courses-dont-work', image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&q=80', readTime: '7 min' },
+      { text: 'Salary Negotiation for UX Designers in India (RIVER Framework)', slug: 'salary-negotiation-ux-designers-india', image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80', readTime: '16 min' },
     ],
   },
   faqs: [

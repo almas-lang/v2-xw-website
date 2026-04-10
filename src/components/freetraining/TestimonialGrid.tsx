@@ -1,6 +1,3 @@
-import Link from 'next/link';
-import { ftPath } from '@/lib/freetraining/constants';
-
 export function TestimonialGrid() {
 
   return (
@@ -43,11 +40,6 @@ export function TestimonialGrid() {
           ))}
         </div>
 
-        <div className="text-center">
-          <Link href={ftPath("/success-stories")} className="text-ft-red hover:text-red-600 font-semibold text-xl inline-flex items-center gap-2">
-            See all success stories &gt;
-          </Link>
-        </div>
       </div>
     </section>
   );

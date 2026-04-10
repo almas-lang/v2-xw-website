@@ -234,7 +234,7 @@ function FreeTrainingHomeContent() {
 
       {/* ============ SECTION 7: SEO CONTENT ============ */}
       <section className="bg-ft-section-bg py-14 md:py-18 px-6 md:px-8">
-        <div className="max-w-[700px] mx-auto">
+        <div className="max-w-[900px] mx-auto">
           <h2 className="text-[21px] md:text-[29px] font-heading font-bold text-ft-dark-surface mb-6">
             {ftContent.seoContent.title}
           </h2>
@@ -243,19 +243,36 @@ function FreeTrainingHomeContent() {
               {paragraph}
             </p>
           ))}
-          <div className="mt-8 p-5 bg-white rounded-xl border border-gray-100">
-            <p className="text-[14px] font-bold text-ft-muted uppercase tracking-wider mb-3">Related reads</p>
-            <div className="space-y-2.5">
+          <div className="mt-8">
+            <p className="text-[14px] font-bold text-ft-muted uppercase tracking-wider mb-4">Related reads</p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {ftContent.seoContent.relatedLinks.map((link) => (
                 <Link
                   key={link.slug}
                   href={`/resources/blogs/${link.slug}`}
-                  className="flex items-center gap-2 text-[15px] text-accent hover:underline group"
+                  className="group block rounded-xl overflow-hidden border border-gray-100 bg-white hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
                 >
-                  <svg className="w-3.5 h-3.5 shrink-0 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                  {link.text}
+                  <div className="relative aspect-[3/2] overflow-hidden">
+                    <img
+                      src={link.image}
+                      alt={link.text}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                  <div className="p-4">
+                    <h4 className="text-[14px] font-semibold text-ft-dark-surface leading-snug line-clamp-2 mb-2">
+                      {link.text}
+                    </h4>
+                    <div className="flex items-center justify-between">
+                      <span className="text-[12px] text-gray-400">{link.readTime} read</span>
+                      <span className="inline-flex items-center gap-1 text-[13px] font-semibold text-accent group-hover:gap-2 transition-all">
+                        Read
+                        <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </span>
+                    </div>
+                  </div>
                 </Link>
               ))}
             </div>

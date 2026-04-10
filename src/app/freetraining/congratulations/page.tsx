@@ -90,23 +90,26 @@ function CongratulationsContent() {
   const bookingDate = searchParams.get("date") || "";
   const bookingTime = searchParams.get("time") || "";
   const meetLink = searchParams.get("meet_link") || searchParams.get("meetLink") || "";
+  const emailFromParams = searchParams.get("email") || "";
+
+  const leadEmail = emailFromParams || getStorageJSON<{ email: string }>("lead_data")?.email || "";
 
   useEffect(() => {
     trackPageView("/freetraining/congratulations", "Call Confirmed");
 
-    const leadData = getStorageJSON<{ email: string; leadId: string }>("lead_data");
-    if (leadData?.email) {
-      trackConversionAPI("Schedule", leadData.email, undefined, {
+    if (leadEmail) {
+      const leadData = getStorageJSON<{ leadId: string }>("lead_data");
+      trackConversionAPI("Schedule", leadEmail, undefined, {
         content_name: "Strategy Call Booked",
         status: "confirmed",
-        lead_id: leadData.leadId,
+        lead_id: leadData?.leadId,
       });
     }
     trackGA4("schedule_appointment", {
       appointment_type: "strategy_call",
       booking_date: bookingDate,
     });
-  }, [bookingDate]);
+  }, [bookingDate, leadEmail]);
 
   const handleResumeSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -125,22 +128,22 @@ function CongratulationsContent() {
     if ((!portfolioUrl && !resumeFile) || submitStatus === 'submitting') return;
     setSubmitStatus('submitting');
 
-    const leadData = getStorageJSON<{ email: string }>("lead_data");
-    if (!leadData?.email) { setSubmitStatus('error'); return; }
+    if (!leadEmail) { setSubmitStatus('error'); return; }
 
     try {
-      const webhookPayload: Record<string, string> = { email: leadData.email };
+      const webhookPayload: Record<string, string> = { email: leadEmail };
 
       if (portfolioUrl) {
-        webhookPayload.portfolio_url = portfolioUrl;
-        trackGA4("portfolio_shared", { url: portfolioUrl });
+        const normalizedUrl = portfolioUrl.match(/^https?:\/\//) ? portfolioUrl : `https://${portfolioUrl}`;
+        webhookPayload.portfolio_url = normalizedUrl;
+        trackGA4("portfolio_shared", { url: normalizedUrl });
       }
 
       if (resumeFile) {
         trackGA4("resume_uploaded", { file_name: resumeFile.name });
         const formData = new FormData();
         formData.append('file', resumeFile);
-        formData.append('email', leadData.email);
+        formData.append('email', leadEmail);
         const res = await fetch("/freetraining/api/upload-resume", { method: "POST", body: formData });
         const data = await res.json();
         if (data.success && data.url) {
@@ -151,11 +154,15 @@ function CongratulationsContent() {
         }
       }
 
-      await fetch("/freetraining/api/saleshub/webhook", {
+      const webhookRes = await fetch("/freetraining/api/saleshub/update", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(webhookPayload),
       });
+      if (!webhookRes.ok) {
+        setSubmitStatus('error');
+        return;
+      }
       setSubmitStatus('done');
     } catch {
       setSubmitStatus('error');

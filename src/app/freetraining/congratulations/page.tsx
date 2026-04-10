@@ -121,6 +121,7 @@ function CongratulationsContent() {
   const [resumeFile, setResumeFile] = useState<File | null>(null);
   const [resumeError, setResumeError] = useState("");
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'submitting' | 'done' | 'error'>('idle');
+  const [submitError, setSubmitError] = useState("");
 
   const bookingDate = searchParams.get("date") || "";
   const bookingTime = searchParams.get("time") || "";
@@ -162,8 +163,13 @@ function CongratulationsContent() {
   const handleSubmit = async () => {
     if ((!portfolioUrl && !resumeFile) || submitStatus === 'submitting') return;
     setSubmitStatus('submitting');
+    setSubmitError("");
 
-    if (!leadEmail) { setSubmitStatus('error'); return; }
+    if (!leadEmail) {
+      setSubmitError("We couldn't find your email. Please go back and book your call again.");
+      setSubmitStatus('error');
+      return;
+    }
 
     try {
       const webhookPayload: Record<string, string> = { email: leadEmail };
@@ -184,6 +190,7 @@ function CongratulationsContent() {
         if (data.success && data.url) {
           webhookPayload.resume_url = data.url;
         } else {
+          setSubmitError(data.error || "Resume upload failed. Please try a smaller file or different format.");
           setSubmitStatus('error');
           return;
         }
@@ -195,11 +202,13 @@ function CongratulationsContent() {
         body: JSON.stringify(webhookPayload),
       });
       if (!webhookRes.ok) {
+        setSubmitError("Could not save your details. Please check your connection and try again.");
         setSubmitStatus('error');
         return;
       }
       setSubmitStatus('done');
     } catch {
+      setSubmitError("Something went wrong. Please check your connection and try again.");
       setSubmitStatus('error');
     }
   };
@@ -396,7 +405,7 @@ function CongratulationsContent() {
                   value={portfolioUrl}
                   onChange={(e) => { setPortfolioUrl(e.target.value); setSubmitStatus('idle'); }}
                   placeholder="https://your-portfolio.com"
-                  className="w-full px-3 py-2.5 md:py-3 text-[14px] rounded-lg border border-gray-200 bg-gray-50 focus:bg-white focus:border-ft-purple-cta focus:ring-2 focus:ring-ft-purple-cta/20 focus:outline-none transition-all duration-200"
+                  className="w-full px-3 py-2.5 md:py-3 text-[14px] text-gray-900 rounded-lg border border-gray-200 bg-gray-50 focus:bg-white focus:border-ft-purple-cta focus:ring-2 focus:ring-ft-purple-cta/20 focus:outline-none transition-all duration-200"
                 />
               </div>
 
@@ -458,8 +467,8 @@ function CongratulationsContent() {
                       'Submit'
                     )}
                   </button>
-                  {submitStatus === 'error' && (
-                    <p className="text-[13px] text-red-500 mt-1">Something went wrong. Please check your connection and try again.</p>
+                  {submitStatus === 'error' && submitError && (
+                    <p className="text-[13px] text-red-500 mt-1">{submitError}</p>
                   )}
                 </>
               )}

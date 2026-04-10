@@ -10,6 +10,27 @@ interface BunnyPlayerProps {
   onEnded?: () => void;
   onPause?: (currentTime: number) => void;
 }
+declare global {
+  interface Window {
+    playerjs: {
+      Player: new (el: HTMLIFrameElement) => PlayerJsInstance;
+    };
+  }
+}
+
+interface PlayerJsInstance {
+  on(event: 'ready', cb: () => void): void;
+  on(event: 'play', cb: () => void): void;
+  on(event: 'pause', cb: () => void): void;
+  on(event: 'ended', cb: () => void): void;
+  on(event: 'timeupdate', cb: (data: { seconds: number; duration: number }) => void): void;
+  play(): void;
+  pause(): void;
+  mute(): void;
+  unmute(): void;
+  setCurrentTime(seconds: number): void;
+  getCurrentTime(cb: (seconds: number) => void): void;
+}
 
 export function BunnyPlayer({
   videoId,
@@ -20,65 +41,77 @@ export function BunnyPlayer({
   onPause,
 }: BunnyPlayerProps) {
   const iframeRef = useRef<HTMLIFrameElement>(null);
+  const playerRef = useRef<PlayerJsInstance | null>(null);
   const hasPlayedRef = useRef(false);
+  const userStartedRef = useRef(false);
   const [userStarted, setUserStarted] = useState(false);
 
-  const postCommand = useCallback((command: string, value?: number) => {
-    const iframe = iframeRef.current;
-    if (!iframe?.contentWindow) return;
-    const msg: Record<string, unknown> = { event: 'command', func: command };
-    if (value !== undefined) msg.value = value;
-    iframe.contentWindow.postMessage(JSON.stringify(msg), '*');
-  }, []);
+  // Keep callbacks in a ref to avoid stale closures in Player.js listeners
+  const callbacksRef = useRef({ onPlay, onTimeUpdate, onEnded, onPause });
+  useEffect(() => {
+    callbacksRef.current = { onPlay, onTimeUpdate, onEnded, onPause };
+  }, [onPlay, onTimeUpdate, onEnded, onPause]);
+
+  // Sync userStarted state to ref for Player.js callbacks
+  useEffect(() => {
+    userStartedRef.current = userStarted;
+  }, [userStarted]);
+
+  // Load Player.js script and initialise player
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = '//assets.mediadelivery.net/playerjs/playerjs-latest.min.js';
+    script.async = true;
+
+    script.onload = () => {
+      const iframe = iframeRef.current;
+      if (!iframe || !window.playerjs) return;
+
+      const player = new window.playerjs.Player(iframe);
+      playerRef.current = player;
+
+      player.on('ready', () => {
+        player.on('play', () => {
+          if (!hasPlayedRef.current && userStartedRef.current) {
+            hasPlayedRef.current = true;
+            callbacksRef.current.onPlay?.();
+          }
+        });
+
+        player.on('timeupdate', (data) => {
+          if (userStartedRef.current) {
+            callbacksRef.current.onTimeUpdate?.(data.seconds, data.duration);
+          }
+        });
+
+        player.on('ended', () => {
+          callbacksRef.current.onEnded?.();
+        });
+
+        player.on('pause', () => {
+          if (userStartedRef.current) {
+            player.getCurrentTime((seconds) => {
+              callbacksRef.current.onPause?.(seconds);
+            });
+          }
+        });
+      });
+    };
+
+    document.head.appendChild(script);
+    return () => { script.remove(); };
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const handleUserPlay = useCallback(() => {
     setUserStarted(true);
-    // Seek to beginning, unmute, and play
-    postCommand('seek', 0);
-    postCommand('unmute');
-    postCommand('play');
-  }, [postCommand]);
-
-  const handleMessage = useCallback((event: MessageEvent) => {
-    if (!event.data) return;
-
-    let data = event.data;
-    if (typeof data === 'string') {
-      try { data = JSON.parse(data); } catch (_e) { return; }
+    const player = playerRef.current;
+    if (player) {
+      player.setCurrentTime(0);
+      player.unmute();
+      player.play();
     }
-    if (typeof data !== 'object') return;
+  }, []);
 
-    const { event: eventType, currentTime, duration } = data;
-
-    switch (eventType) {
-      case 'play':
-        if (!hasPlayedRef.current && userStarted) {
-          hasPlayedRef.current = true;
-          onPlay?.();
-        }
-        break;
-      case 'timeupdate':
-        if (userStarted && typeof currentTime === 'number' && typeof duration === 'number') {
-          onTimeUpdate?.(currentTime, duration);
-        }
-        break;
-      case 'ended':
-        onEnded?.();
-        break;
-      case 'pause':
-        if (userStarted && typeof currentTime === 'number') {
-          onPause?.(currentTime);
-        }
-        break;
-    }
-  }, [onPlay, onTimeUpdate, onEnded, onPause, userStarted]);
-
-  useEffect(() => {
-    window.addEventListener('message', handleMessage);
-    return () => window.removeEventListener('message', handleMessage);
-  }, [handleMessage]);
-
-  // Autoplay muted in background; user click restarts with sound
   const embedUrl = `https://iframe.mediadelivery.net/embed/${libraryId}/${videoId}?autoplay=true&muted=true&preload=true&responsive=true`;
 
   return (

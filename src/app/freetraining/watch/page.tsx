@@ -155,12 +155,12 @@ function WatchContent() {
         {/* Section 1: CTA — white bg */}
         <section className="bg-white py-8 md:py-12 px-5">
           <div className="max-w-[420px] mx-auto text-center">
-            <h2 className="text-[20px] md:text-[24px] font-heading font-bold text-ft-dark-surface leading-snug mb-5">
+            <h2 className="text-[21px] md:text-[25px] font-heading font-bold text-ft-dark-surface leading-snug mb-5">
               {ftContent.watch.bookCall.headline}
             </h2>
             <button
               onClick={handleBookClick}
-              className="w-full max-w-[320px] h-[48px] bg-accent hover:bg-accent-hover text-white font-bold text-[15px] rounded-xl transition-all duration-200 shadow-[0_0_30px_rgba(255,0,35,0.2)] hover:shadow-[0_0_50px_rgba(255,0,35,0.3)] cursor-pointer"
+              className="w-full max-w-[320px] h-[48px] bg-accent hover:bg-accent-hover text-white font-bold text-[16px] rounded-xl transition-all duration-200 shadow-[0_0_30px_rgba(255,0,35,0.2)] hover:shadow-[0_0_50px_rgba(255,0,35,0.3)] cursor-pointer"
             >
               {ftContent.watch.bookCall.cta}
             </button>
@@ -170,10 +170,10 @@ function WatchContent() {
         {/* Section 2: Call details — gray bg */}
         <section className="bg-ft-section-bg py-8 md:py-12 px-5">
           <div className="max-w-[420px] mx-auto">
-            <h3 className="text-[20px] md:text-[24px] font-heading font-bold text-ft-dark-surface leading-snug mb-5 text-center">On this call, we&apos;ll</h3>
+            <h3 className="text-[21px] md:text-[25px] font-heading font-bold text-ft-dark-surface leading-snug mb-5 text-center">On this call, we&apos;ll</h3>
             <ul className="space-y-1.5 mb-8 pl-1">
               {ftContent.watch.bookCall.details.map((detail) => (
-                <li key={detail} className="flex items-start gap-2.5 text-[15px] md:text-[16px] text-ft-dark-surface leading-[1.6]">
+                <li key={detail} className="flex items-start gap-2.5 text-[16px] md:text-[17px] text-ft-dark-surface leading-[1.6]">
                   <span className="text-ft-dark-surface mt-0.5 shrink-0">•</span>
                   {detail}
                 </li>
@@ -183,7 +183,7 @@ function WatchContent() {
             {/* Guarantee badge */}
             <div className="flex items-center gap-3">
               <img src="/images/gaurantee.svg" alt="Guarantee" className="w-[34px] h-[34px] shrink-0" />
-              <p className="text-[15px] md:text-[16px] font-semibold text-ft-dark-surface">
+              <p className="text-[16px] md:text-[17px] font-semibold text-ft-dark-surface">
                 {ftContent.watch.bookCall.guarantee}
               </p>
             </div>

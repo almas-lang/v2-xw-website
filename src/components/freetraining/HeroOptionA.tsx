@@ -39,30 +39,30 @@ export function HeroOptionA({ onCtaClick }: { onCtaClick: () => void }) {
           {/* Qualifier badge */}
           <div className="mb-6 md:mb-8 inline-flex items-center gap-2.5 px-5 py-2.5 bg-accent/[0.08] border border-accent/20 rounded-full">
             <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-            <span className="text-[13px] md:text-[14px] text-accent/90 font-semibold uppercase tracking-wider">
+            <span className="text-[14px] md:text-[15px] text-accent/90 font-semibold uppercase tracking-wider">
               {hero.qualifier}
             </span>
           </div>
 
           {/* Headline - two parts with dash */}
-          <h1 className="font-heading text-[28px] sm:text-[38px] md:text-[50px] lg:text-[58px] font-bold text-white leading-[1.08] tracking-tight mb-2 md:mb-3">
+          <h1 className="font-heading text-[29px] sm:text-[39px] md:text-[51px] lg:text-[59px] font-bold text-white leading-[1.08] tracking-tight mb-2 md:mb-3">
             Still Getting Overlooked For{' '}
             <span className="relative inline-block">
               <span className="relative z-10 text-accent">Senior & Lead Roles</span>
               <span className="absolute bottom-1 left-0 right-0 h-[6px] md:h-[8px] bg-accent/20 rounded-full" />
             </span>
           </h1>
-          <p className="font-heading text-[24px] sm:text-[32px] md:text-[40px] lg:text-[46px] text-ft-muted-light italic font-normal leading-[1.15] mb-6 md:mb-8">
+          <p className="font-heading text-[25px] sm:text-[33px] md:text-[41px] lg:text-[47px] text-ft-muted-light italic font-normal leading-[1.15] mb-6 md:mb-8">
             Despite Being Better Than Half The People Getting Promoted?
           </p>
 
           {/* Sub-headline */}
-          <p className="text-[16px] md:text-[19px] text-[#BFBFCC] leading-[180%] mb-3 max-w-[620px] mx-auto">
+          <p className="text-[17px] md:text-[20px] text-[#BFBFCC] leading-[180%] mb-3 max-w-[620px] mx-auto">
             {hero.subheadline}
           </p>
 
           {/* Without clause */}
-          <p className="text-[14px] text-[#9999B0] italic mb-8 md:mb-10">
+          <p className="text-[15px] text-[#9999B0] italic mb-8 md:mb-10">
             {hero.withoutClause}
           </p>
 
@@ -83,7 +83,7 @@ export function HeroOptionA({ onCtaClick }: { onCtaClick: () => void }) {
           {/* CTA */}
           <button
             onClick={onCtaClick}
-            className="group inline-flex items-center gap-3 px-10 py-4.5 bg-accent hover:bg-accent-hover text-white font-bold text-[17px] md:text-[18px] rounded-xl transition-all duration-200 shadow-[0_0_40px_rgba(255,0,35,0.25)] hover:shadow-[0_0_60px_rgba(255,0,35,0.35)] cursor-pointer"
+            className="group inline-flex items-center gap-3 px-10 py-4.5 bg-accent hover:bg-accent-hover text-white font-bold text-[18px] md:text-[19px] rounded-xl transition-all duration-200 shadow-[0_0_40px_rgba(255,0,35,0.25)] hover:shadow-[0_0_60px_rgba(255,0,35,0.35)] cursor-pointer"
           >
             {hero.cta}
             <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">

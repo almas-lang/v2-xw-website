@@ -91,7 +91,7 @@ function FaqItem({ question, answer }: { question: string; answer: string }) {
         className="w-full flex items-center justify-between gap-4 px-4 md:px-5 py-4 text-left cursor-pointer hover:bg-gray-50 transition-colors duration-150"
         aria-expanded={open}
       >
-        <span className="text-[15px] md:text-[16px] font-semibold text-ft-dark-surface">{question}</span>
+        <span className="text-[16px] md:text-[17px] font-semibold text-ft-dark-surface">{question}</span>
         <svg
           className={`w-4 h-4 text-gray-400 flex-shrink-0 transition-transform duration-200 ${open ? 'rotate-180' : ''}`}
           fill="none"
@@ -106,7 +106,7 @@ function FaqItem({ question, answer }: { question: string; answer: string }) {
         className={`grid transition-all duration-200 ease-in-out ${open ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
       >
         <div className="overflow-hidden">
-          <p className="px-4 md:px-5 pb-4 text-[15px] md:text-[16px] text-gray-500 leading-relaxed">{answer}</p>
+          <p className="px-4 md:px-5 pb-4 text-[16px] md:text-[17px] text-gray-500 leading-relaxed">{answer}</p>
         </div>
       </div>
     </div>
@@ -293,7 +293,7 @@ function CongratulationsContent() {
                   <div className="w-16 h-16 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center mx-auto mb-3 shadow-lg transition-transform duration-200 hover:scale-105">
                     <PlayIcon className="w-7 h-7 text-ft-purple-cta ml-0.5" />
                   </div>
-                  <p className="text-[15px] md:text-[16px] text-white/90 font-medium drop-shadow-md">Personal message from Shaik Murad</p>
+                  <p className="text-[16px] md:text-[17px] text-white/90 font-medium drop-shadow-md">Personal message from Shaik Murad</p>
                 </div>
               </div>
             </div>
@@ -307,27 +307,27 @@ function CongratulationsContent() {
               <CheckCircleIcon className="w-8 h-8 text-green-600" />
             </div>
 
-            <h1 className="text-[24px] md:text-[32px] font-bold text-ft-dark-surface mb-1 tracking-tight">
+            <h1 className="text-[25px] md:text-[33px] font-bold text-ft-dark-surface mb-1 tracking-tight">
               You&apos;re booked!
             </h1>
             {bookingDate ? (
               <>
-                <p className="text-[15px] md:text-[16px] text-gray-500 mb-5">Your strategy call is confirmed for:</p>
+                <p className="text-[16px] md:text-[17px] text-gray-500 mb-5">Your strategy call is confirmed for:</p>
                 <div className="bg-gray-50 rounded-xl p-4 md:p-5 mb-5 max-w-[420px] mx-auto">
-                  <div className="flex items-center justify-center gap-1.5 text-[16px] md:text-[17px] font-semibold text-ft-dark-surface mb-1">
+                  <div className="flex items-center justify-center gap-1.5 text-[17px] md:text-[18px] font-semibold text-ft-dark-surface mb-1">
                     <CalendarIcon className="w-4.5 h-4.5 text-ft-purple-cta" />
                     {formattedDate}
                   </div>
                   {formattedTime && (
-                    <div className="flex items-center justify-center gap-1.5 text-[16px] md:text-[17px] font-semibold text-ft-dark-surface mb-1">
+                    <div className="flex items-center justify-center gap-1.5 text-[17px] md:text-[18px] font-semibold text-ft-dark-surface mb-1">
                       <ClockIcon className="w-4.5 h-4.5 text-ft-purple-cta" />
                       {formattedTime} IST
                       {durationMinutes && (
-                        <span className="text-[14px] font-normal text-gray-400 ml-1">({durationMinutes} min)</span>
+                        <span className="text-[15px] font-normal text-gray-400 ml-1">({durationMinutes} min)</span>
                       )}
                     </div>
                   )}
-                  <div className="flex items-center justify-center gap-1.5 text-[15px] md:text-[16px] text-gray-500 mt-2 mb-1">
+                  <div className="flex items-center justify-center gap-1.5 text-[16px] md:text-[17px] text-gray-500 mt-2 mb-1">
                     <VideoCameraIcon className="w-4 h-4 text-gray-400" />
                     <span>Google Meet</span>
                   </div>
@@ -336,7 +336,7 @@ function CongratulationsContent() {
                       href={meetLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[15px] md:text-[16px] text-ft-purple-cta hover:underline break-all cursor-pointer transition-colors duration-200"
+                      className="text-[16px] md:text-[17px] text-ft-purple-cta hover:underline break-all cursor-pointer transition-colors duration-200"
                     >
                       {meetLink}
                     </a>
@@ -344,12 +344,12 @@ function CongratulationsContent() {
                 </div>
               </>
             ) : (
-              <p className="text-[15px] md:text-[16px] text-gray-500 mb-5">
+              <p className="text-[16px] md:text-[17px] text-gray-500 mb-5">
                 Your strategy call is confirmed. Check your email and WhatsApp for the date, time, and meeting link.
               </p>
             )}
 
-            <p className="text-[14px] text-gray-400 mb-5">
+            <p className="text-[15px] text-gray-400 mb-5">
               Save this — you&apos;ll also receive it via email and WhatsApp
             </p>
 
@@ -360,7 +360,7 @@ function CongratulationsContent() {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => trackGA4("calendar_added_google")}
-                  className="inline-flex items-center gap-2 text-[14px] font-semibold text-ft-purple-cta bg-ft-purple-cta/5 border border-ft-purple-cta/20 rounded-lg px-4 py-2.5 hover:bg-ft-purple-cta/10 active:scale-[0.98] transition-all duration-200 cursor-pointer"
+                  className="inline-flex items-center gap-2 text-[15px] font-semibold text-ft-purple-cta bg-ft-purple-cta/5 border border-ft-purple-cta/20 rounded-lg px-4 py-2.5 hover:bg-ft-purple-cta/10 active:scale-[0.98] transition-all duration-200 cursor-pointer"
                 >
                   <CalendarIcon className="w-4 h-4" />
                   Google Calendar
@@ -370,7 +370,7 @@ function CongratulationsContent() {
                     trackGA4("calendar_added_apple");
                     downloadICS();
                   }}
-                  className="inline-flex items-center gap-2 text-[14px] font-semibold text-ft-purple-cta bg-ft-purple-cta/5 border border-ft-purple-cta/20 rounded-lg px-4 py-2.5 hover:bg-ft-purple-cta/10 active:scale-[0.98] transition-all duration-200 cursor-pointer"
+                  className="inline-flex items-center gap-2 text-[15px] font-semibold text-ft-purple-cta bg-ft-purple-cta/5 border border-ft-purple-cta/20 rounded-lg px-4 py-2.5 hover:bg-ft-purple-cta/10 active:scale-[0.98] transition-all duration-200 cursor-pointer"
                 >
                   <CalendarIcon className="w-4 h-4" />
                   Apple Calendar
@@ -382,19 +382,19 @@ function CongratulationsContent() {
 
         {/* ── Section 3: Homework ── */}
         <section className="mb-8 md:mb-12">
-          <h2 className="text-[20px] md:text-[24px] font-bold text-ft-dark-surface mb-4 md:mb-5">Before your call, do these 2 things:</h2>
+          <h2 className="text-[21px] md:text-[25px] font-bold text-ft-dark-surface mb-4 md:mb-5">Before your call, do these 2 things:</h2>
           <div className="space-y-3 md:space-y-4">
             {ftContent.congratulations.homework.map((task, i) => (
               <div key={i} className="bg-white rounded-xl border border-gray-100 p-4 md:p-5 shadow-sm">
                 <div className="flex items-start gap-3 md:gap-4">
-                  <span className="flex-shrink-0 w-7 h-7 md:w-8 md:h-8 rounded-full bg-ft-purple-cta/10 text-ft-purple-cta text-[14px] font-bold flex items-center justify-center mt-0.5">
+                  <span className="flex-shrink-0 w-7 h-7 md:w-8 md:h-8 rounded-full bg-ft-purple-cta/10 text-ft-purple-cta text-[15px] font-bold flex items-center justify-center mt-0.5">
                     {i + 1}
                   </span>
                   <div className="min-w-0">
-                    <p className="text-[15px] md:text-[16px] font-semibold text-ft-dark-surface mb-1 leading-snug">
+                    <p className="text-[16px] md:text-[17px] font-semibold text-ft-dark-surface mb-1 leading-snug">
                       {task.title}
                     </p>
-                    <p className="text-[15px] md:text-[16px] text-gray-500 leading-relaxed">{task.description}</p>
+                    <p className="text-[16px] md:text-[17px] text-gray-500 leading-relaxed">{task.description}</p>
                   </div>
                 </div>
               </div>
@@ -406,17 +406,17 @@ function CongratulationsContent() {
         <section className="mb-8 md:mb-12">
           <div className="bg-gradient-to-br from-white via-white to-ft-purple-cta/[0.04] rounded-2xl border border-ft-purple-cta/20 p-5 md:p-7 shadow-[0_4px_24px_-4px_rgba(107,92,255,0.12)] ring-1 ring-ft-purple-cta/[0.08]">
             <div className="mb-4">
-              <h2 className="text-[20px] md:text-[24px] font-bold text-ft-dark-surface">Help us prepare for YOUR call</h2>
-              <p className="text-[14px] text-gray-400 mt-0.5">Optional but recommended</p>
+              <h2 className="text-[21px] md:text-[25px] font-bold text-ft-dark-surface">Help us prepare for YOUR call</h2>
+              <p className="text-[15px] text-gray-400 mt-0.5">Optional but recommended</p>
             </div>
-            <p className="text-[15px] md:text-[16px] text-gray-500 mb-5 leading-relaxed">
+            <p className="text-[16px] md:text-[17px] text-gray-500 mb-5 leading-relaxed">
               Your LinkedIn is already shared — we&apos;ll review it before the call.
             </p>
 
             <div className="space-y-4 md:space-y-5">
               {/* Portfolio URL */}
               <div>
-                <label htmlFor="portfolio-url" className="block text-[15px] md:text-[16px] font-medium text-gray-700 mb-1.5">
+                <label htmlFor="portfolio-url" className="block text-[16px] md:text-[17px] font-medium text-gray-700 mb-1.5">
                   Got a portfolio? Share the link:
                 </label>
                 <input
@@ -425,17 +425,17 @@ function CongratulationsContent() {
                   value={portfolioUrl}
                   onChange={(e) => { setPortfolioUrl(e.target.value); setSubmitStatus('idle'); }}
                   placeholder="https://your-portfolio.com"
-                  className="w-full px-3 py-2.5 md:py-3 text-[14px] text-gray-900 rounded-lg border border-gray-200 bg-gray-50 focus:bg-white focus:border-ft-purple-cta focus:ring-2 focus:ring-ft-purple-cta/20 focus:outline-none transition-all duration-200"
+                  className="w-full px-3 py-2.5 md:py-3 text-[15px] text-gray-900 rounded-lg border border-gray-200 bg-gray-50 focus:bg-white focus:border-ft-purple-cta focus:ring-2 focus:ring-ft-purple-cta/20 focus:outline-none transition-all duration-200"
                 />
               </div>
 
               {/* Resume select */}
               <div>
-                <label className="block text-[15px] md:text-[16px] font-medium text-gray-700 mb-1.5">Got an updated resume?</label>
+                <label className="block text-[16px] md:text-[17px] font-medium text-gray-700 mb-1.5">Got an updated resume?</label>
                 {resumeFile ? (
                   <div className="inline-flex items-center gap-2 px-4 py-3 bg-ft-purple-cta/5 border border-ft-purple-cta/20 rounded-lg">
                     <CheckIcon className="w-4 h-4 text-ft-purple-cta" />
-                    <span className="text-[14px] text-gray-700 font-medium truncate max-w-[200px]">{resumeFile.name}</span>
+                    <span className="text-[15px] text-gray-700 font-medium truncate max-w-[200px]">{resumeFile.name}</span>
                     <button
                       type="button"
                       onClick={() => { setResumeFile(null); setSubmitStatus('idle'); }}
@@ -448,7 +448,7 @@ function CongratulationsContent() {
                 ) : (
                   <label className="inline-flex items-center gap-2.5 px-4 py-3 border border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-ft-purple-cta/40 hover:bg-ft-purple-cta/[0.02] active:scale-[0.99] transition-all duration-200">
                     <UploadIcon className="w-4.5 h-4.5 text-gray-400" />
-                    <span className="text-[14px] text-gray-500">Upload PDF or DOCX (max 10MB)</span>
+                    <span className="text-[15px] text-gray-500">Upload PDF or DOCX (max 10MB)</span>
                     <input
                       type="file"
                       accept=".pdf,.docx"
@@ -459,7 +459,7 @@ function CongratulationsContent() {
                   </label>
                 )}
                 {resumeError && (
-                  <p className="text-[13px] text-red-500 mt-1">{resumeError}</p>
+                  <p className="text-[14px] text-red-500 mt-1">{resumeError}</p>
                 )}
               </div>
 
@@ -467,14 +467,14 @@ function CongratulationsContent() {
               {submitStatus === 'done' ? (
                 <div className="inline-flex items-center gap-2 px-4 py-3 bg-green-50 border border-green-200 rounded-lg">
                   <CheckCircleIcon className="w-5 h-5 text-green-600" />
-                  <span className="text-[14px] text-green-700 font-medium">Submitted successfully</span>
+                  <span className="text-[15px] text-green-700 font-medium">Submitted successfully</span>
                 </div>
               ) : (
                 <>
                   <button
                     onClick={handleSubmit}
                     disabled={(!portfolioUrl && !resumeFile) || submitStatus === 'submitting'}
-                    className="w-full py-3 bg-ft-purple-cta text-white text-[15px] font-semibold rounded-lg hover:bg-[#5B53E6] active:scale-[0.98] transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer flex items-center justify-center gap-2"
+                    className="w-full py-3 bg-ft-purple-cta text-white text-[16px] font-semibold rounded-lg hover:bg-[#5B53E6] active:scale-[0.98] transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer flex items-center justify-center gap-2"
                   >
                     {submitStatus === 'submitting' ? (
                       <>
@@ -488,13 +488,13 @@ function CongratulationsContent() {
                     )}
                   </button>
                   {submitStatus === 'error' && submitError && (
-                    <p className="text-[13px] text-red-500 mt-1">{submitError}</p>
+                    <p className="text-[14px] text-red-500 mt-1">{submitError}</p>
                   )}
                 </>
               )}
             </div>
 
-            <p className="text-[14px] text-gray-400 mt-4 leading-relaxed">
+            <p className="text-[15px] text-gray-400 mt-4 leading-relaxed">
               The more we know about you beforehand, the faster we get to actionable advice.
             </p>
           </div>
@@ -502,12 +502,12 @@ function CongratulationsContent() {
 
         {/* ── Section 5: Call Structure ── */}
         <section className="mb-8 md:mb-12">
-          <h2 className="text-[20px] md:text-[24px] font-bold text-ft-dark-surface mb-4 md:mb-5">What happens on the call:</h2>
+          <h2 className="text-[21px] md:text-[25px] font-bold text-ft-dark-surface mb-4 md:mb-5">What happens on the call:</h2>
           <div className="space-y-1">
             {ftContent.congratulations.callBreakdown.map((step, i) => (
               <div key={step.time} className="flex items-start gap-4 py-3 md:py-4">
                 <div className="flex flex-col items-center flex-shrink-0 w-[72px] md:w-[84px]">
-                  <span className="text-[12px] md:text-[13px] font-bold text-ft-purple-cta uppercase tracking-wide leading-tight text-right w-full">
+                  <span className="text-[13px] md:text-[14px] font-bold text-ft-purple-cta uppercase tracking-wide leading-tight text-right w-full">
                     {step.time}
                   </span>
                 </div>
@@ -518,8 +518,8 @@ function CongratulationsContent() {
                   )}
                 </div>
                 <div className="pb-1">
-                  <p className="text-[15px] md:text-[16px] font-semibold text-ft-dark-surface leading-snug">{step.label}</p>
-                  <p className="text-[15px] md:text-[16px] text-gray-500 leading-relaxed">{step.detail}</p>
+                  <p className="text-[16px] md:text-[17px] font-semibold text-ft-dark-surface leading-snug">{step.label}</p>
+                  <p className="text-[16px] md:text-[17px] text-gray-500 leading-relaxed">{step.detail}</p>
                 </div>
               </div>
             ))}
@@ -529,15 +529,15 @@ function CongratulationsContent() {
         {/* ── Section 6: What We Offer ── */}
         <section className="mb-8 md:mb-12">
           <div className="bg-ft-purple-cta/[0.03] rounded-2xl border border-ft-purple-cta/10 p-5 md:p-7">
-            <h2 className="text-[20px] md:text-[24px] font-bold text-ft-dark-surface mb-2">What we offer:</h2>
-            <p className="text-[15px] md:text-[16px] text-gray-600 leading-relaxed mb-4">
+            <h2 className="text-[21px] md:text-[25px] font-bold text-ft-dark-surface mb-2">What we offer:</h2>
+            <p className="text-[16px] md:text-[17px] text-gray-600 leading-relaxed mb-4">
               Xperience Wave runs 1:1 mentorship programs (not courses) tailored to your career stage. On the strategy call, if we think we can help, we&apos;ll walk you through which program fits your situation and what the investment looks like.
             </p>
             <Link
               href="/programs"
               target="_blank"
               rel="noopener"
-              className="inline-flex items-center gap-1 text-[15px] md:text-[16px] font-semibold text-ft-purple-cta hover:underline cursor-pointer transition-colors duration-200"
+              className="inline-flex items-center gap-1 text-[16px] md:text-[17px] font-semibold text-ft-purple-cta hover:underline cursor-pointer transition-colors duration-200"
             >
               Explore our programs
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -553,12 +553,12 @@ function CongratulationsContent() {
             {ftContent.congratulations.callTestimonials.map((t) => (
               <div key={t.name} className="bg-white rounded-xl border border-gray-100 p-5 md:p-6 shadow-sm">
                 <QuoteIcon className="w-6 h-6 text-ft-purple-cta/20 mb-2" />
-                <p className="text-[15px] md:text-[16px] text-gray-700 leading-relaxed mb-3">
+                <p className="text-[16px] md:text-[17px] text-gray-700 leading-relaxed mb-3">
                   {t.quote}
                 </p>
                 <div className="flex items-center gap-2">
                   <div className="w-1 h-4 rounded-full bg-ft-purple-cta/30" />
-                  <p className="text-[14px] font-semibold text-ft-dark-surface">{t.name}, <span className="font-normal text-gray-500">{t.role}</span></p>
+                  <p className="text-[15px] font-semibold text-ft-dark-surface">{t.name}, <span className="font-normal text-gray-500">{t.role}</span></p>
                 </div>
               </div>
             ))}
@@ -567,8 +567,8 @@ function CongratulationsContent() {
 
         {/* ── Section 8: FAQ ── */}
         <section className="mb-8 md:mb-12">
-          <h2 className="text-[20px] md:text-[24px] font-bold text-ft-dark-surface mb-1">Have questions before the call?</h2>
-          <p className="text-[15px] md:text-[16px] text-gray-500 mb-5">
+          <h2 className="text-[21px] md:text-[25px] font-bold text-ft-dark-surface mb-1">Have questions before the call?</h2>
+          <p className="text-[16px] md:text-[17px] text-gray-500 mb-5">
             <a
               href="https://wa.me/919380506841"
               target="_blank"

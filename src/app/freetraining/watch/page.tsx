@@ -28,8 +28,6 @@ function WatchContent() {
 
   // CTA visibility states
   const [showBookCall, setShowBookCall] = useState(false);
-  const [showStickyBar, setShowStickyBar] = useState(false);
-  const [stickyDismissed, setStickyDismissed] = useState(false);
 
   // Progress tracking
   const progressMilestonesRef = useRef(new Set<number>());
@@ -42,28 +40,21 @@ function WatchContent() {
     if (getStorageItem("ft_book_call_revealed") === "true") {
       setShowBookCall(true);
     }
-    if (getStorageItem("ft_sticky_revealed") === "true") {
-      setShowStickyBar(true);
-    }
   }, []);
 
   // Timer-based CTA gate: reveal after 5 minutes on page
   useEffect(() => {
-    if (showBookCall && showStickyBar) return; // already revealed
+    if (showBookCall) return; // already revealed
 
     const timer = setTimeout(() => {
       if (!showBookCall) {
         setShowBookCall(true);
         setStorageItem("ft_book_call_revealed", "true");
       }
-      if (!showStickyBar) {
-        setShowStickyBar(true);
-        setStorageItem("ft_sticky_revealed", "true");
-      }
     }, 5 * 60 * 1000); // 5 minutes
 
     return () => clearTimeout(timer);
-  }, [showBookCall, showStickyBar]);
+  }, [showBookCall]);
 
   useEffect(() => {
     trackPageView("/freetraining/watch", "Watch Training");
@@ -113,19 +104,12 @@ function WatchContent() {
       setStorageItem("ft_book_call_revealed", "true");
     }
 
-    // Reveal sticky bar at 50%
-    if (percent >= 50 && !showStickyBar) {
-      setShowStickyBar(true);
-      setStorageItem("ft_sticky_revealed", "true");
-    }
-  }, [showBookCall, showStickyBar]);
+  }, [showBookCall]);
 
   const handleEnded = useCallback(() => {
     trackVideoComplete(BUNNY_VIDEO_ID);
     setShowBookCall(true);
     setStorageItem("ft_book_call_revealed", "true");
-    setShowStickyBar(true);
-    setStorageItem("ft_sticky_revealed", "true");
   }, []);
 
   const handlePause = useCallback((currentTime: number) => {
@@ -222,31 +206,6 @@ function WatchContent() {
         </section>
       </div>
 
-      {/* Sticky CTA Bar — appears after 50% watched */}
-      {showStickyBar && !stickyDismissed && (
-        <div className="fixed bottom-0 left-0 right-0 bg-white border-t shadow-[0_-2px_10px_rgba(0,0,0,0.08)] z-50 animate-slide-up">
-          <div className="max-w-lg mx-auto flex items-center justify-between px-5 py-3">
-            <p className="text-[15px] text-ft-dark-surface font-medium">{ftContent.watch.stickyCta.text}</p>
-            <div className="flex items-center gap-2">
-              <button
-                onClick={handleBookClick}
-                className="bg-accent hover:bg-accent-hover text-white text-[15px] font-semibold px-4 py-2.5 rounded-lg transition-colors cursor-pointer"
-              >
-                {ftContent.watch.stickyCta.cta}
-              </button>
-              <button
-                onClick={() => setStickyDismissed(true)}
-                className="text-gray-400 hover:text-gray-600 p-2.5"
-                aria-label="Dismiss"
-              >
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
 
       <Toast
         message={toast.message}

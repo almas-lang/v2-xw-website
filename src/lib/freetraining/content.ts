@@ -119,10 +119,6 @@ export const ftContent = {
       ],
       guarantee: 'We work with you until you get there.',
     },
-    stickyCta: {
-      text: 'Ready to take action?',
-      cta: 'Book Free Call →',
-    },
   },
   congratulations: {
     videoScript: "Hey - congratulations on booking your strategy call.",

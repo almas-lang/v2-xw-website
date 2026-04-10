@@ -143,7 +143,7 @@ function WatchContent() {
         lead_id: leadId,
       });
     }
-    window.open(bookCallUrl, '_blank', 'noopener');
+    window.location.href = bookCallUrl;
   };
 
   return (

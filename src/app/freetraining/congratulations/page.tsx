@@ -83,9 +83,9 @@ function QuoteIcon({ className }: { className?: string }) {
 function CongratulationsContent() {
   const searchParams = useSearchParams();
   const [portfolioUrl, setPortfolioUrl] = useState("");
-  const [portfolioSaved, setPortfolioSaved] = useState(false);
-  const [portfolioSaving, setPortfolioSaving] = useState(false);
-  const [resumeStatus, setResumeStatus] = useState<'idle' | 'uploading' | 'done' | 'error'>('idle');
+  const [resumeFile, setResumeFile] = useState<File | null>(null);
+  const [resumeError, setResumeError] = useState("");
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'submitting' | 'done' | 'error'>('idle');
 
   const bookingDate = searchParams.get("date") || "";
   const bookingTime = searchParams.get("time") || "";
@@ -108,63 +108,57 @@ function CongratulationsContent() {
     });
   }, [bookingDate]);
 
-  const handlePortfolioShare = async () => {
-    if (!portfolioUrl || portfolioSaving) return;
-    setPortfolioSaving(true);
-    trackGA4("portfolio_shared", { url: portfolioUrl });
-
-    const leadData = getStorageJSON<{ email: string }>("lead_data");
-    if (leadData?.email) {
-      try {
-        await fetch("/freetraining/api/saleshub/webhook", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email: leadData.email, portfolio_url: portfolioUrl }),
-        });
-        setPortfolioSaved(true);
-      } catch (err) {
-        console.warn("Failed to save portfolio URL:", err);
-      }
-    }
-    setPortfolioSaving(false);
-  };
-
-  const handleResumeUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleResumeSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file) return;
-
+    setResumeError("");
     if (file.size > 10 * 1024 * 1024) {
-      alert("File is too large. Maximum size is 10MB.");
+      setResumeError("File is too large. Maximum size is 10MB.");
       e.target.value = '';
       return;
     }
+    setResumeFile(file);
+    setSubmitStatus('idle');
+  };
 
-    setResumeStatus('uploading');
-    trackGA4("resume_uploaded", { file_name: file.name });
+  const handleSubmit = async () => {
+    if ((!portfolioUrl && !resumeFile) || submitStatus === 'submitting') return;
+    setSubmitStatus('submitting');
 
     const leadData = getStorageJSON<{ email: string }>("lead_data");
-    const formData = new FormData();
-    formData.append('file', file);
-    formData.append('email', leadData?.email || '');
+    if (!leadData?.email) { setSubmitStatus('error'); return; }
 
     try {
-      const res = await fetch("/freetraining/api/upload-resume", { method: "POST", body: formData });
-      const data = await res.json();
+      const webhookPayload: Record<string, string> = { email: leadData.email };
 
-      if (data.success && data.url) {
-        if (leadData?.email) {
-          await fetch("/freetraining/api/saleshub/webhook", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ email: leadData.email, resume_url: data.url }),
-          });
-        }
-        setResumeStatus('done');
-      } else {
-        setResumeStatus('error');
+      if (portfolioUrl) {
+        webhookPayload.portfolio_url = portfolioUrl;
+        trackGA4("portfolio_shared", { url: portfolioUrl });
       }
+
+      if (resumeFile) {
+        trackGA4("resume_uploaded", { file_name: resumeFile.name });
+        const formData = new FormData();
+        formData.append('file', resumeFile);
+        formData.append('email', leadData.email);
+        const res = await fetch("/freetraining/api/upload-resume", { method: "POST", body: formData });
+        const data = await res.json();
+        if (data.success && data.url) {
+          webhookPayload.resume_url = data.url;
+        } else {
+          setSubmitStatus('error');
+          return;
+        }
+      }
+
+      await fetch("/freetraining/api/saleshub/webhook", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(webhookPayload),
+      });
+      setSubmitStatus('done');
     } catch {
-      setResumeStatus('error');
+      setSubmitStatus('error');
     }
   };
 
@@ -349,64 +343,79 @@ function CongratulationsContent() {
                 <label htmlFor="portfolio-url" className="block text-[15px] md:text-[16px] font-medium text-gray-700 mb-1.5">
                   Got a portfolio? Share the link:
                 </label>
-                <div className="flex gap-2">
-                  <input
-                    id="portfolio-url"
-                    type="url"
-                    value={portfolioUrl}
-                    onChange={(e) => { setPortfolioUrl(e.target.value); setPortfolioSaved(false); }}
-                    placeholder="https://your-portfolio.com"
-                    className="flex-1 min-w-0 px-3 py-2.5 md:py-3 text-[14px] rounded-lg border border-gray-200 bg-gray-50 focus:bg-white focus:border-ft-purple-cta focus:ring-2 focus:ring-ft-purple-cta/20 focus:outline-none transition-all duration-200"
-                  />
-                  <button
-                    onClick={handlePortfolioShare}
-                    disabled={!portfolioUrl || portfolioSaved || portfolioSaving}
-                    className="px-5 py-2.5 md:py-3 bg-ft-purple-cta text-white text-[14px] font-semibold rounded-lg hover:bg-[#5B53E6] active:scale-[0.97] transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer min-w-[72px] flex items-center justify-center"
-                  >
-                    {portfolioSaving ? (
-                      <div className="animate-spin rounded-full h-4 w-4 border-2 border-white/30 border-t-white" />
-                    ) : portfolioSaved ? (
-                      <span className="inline-flex items-center gap-1">
-                        <CheckIcon className="w-3.5 h-3.5" /> Saved
-                      </span>
-                    ) : "Save"}
-                  </button>
-                </div>
+                <input
+                  id="portfolio-url"
+                  type="url"
+                  value={portfolioUrl}
+                  onChange={(e) => { setPortfolioUrl(e.target.value); setSubmitStatus('idle'); }}
+                  placeholder="https://your-portfolio.com"
+                  className="w-full px-3 py-2.5 md:py-3 text-[14px] rounded-lg border border-gray-200 bg-gray-50 focus:bg-white focus:border-ft-purple-cta focus:ring-2 focus:ring-ft-purple-cta/20 focus:outline-none transition-all duration-200"
+                />
               </div>
 
-              {/* Resume upload */}
+              {/* Resume select */}
               <div>
                 <label className="block text-[15px] md:text-[16px] font-medium text-gray-700 mb-1.5">Got an updated resume?</label>
-                {resumeStatus === 'done' ? (
-                  <div className="inline-flex items-center gap-2 px-4 py-3 bg-green-50 border border-green-200 rounded-lg">
-                    <CheckCircleIcon className="w-5 h-5 text-green-600" />
-                    <span className="text-[14px] text-green-700 font-medium">Resume uploaded successfully</span>
-                  </div>
-                ) : resumeStatus === 'uploading' ? (
-                  <div className="inline-flex items-center gap-2.5 px-4 py-3 border border-ft-purple-cta/20 bg-ft-purple-cta/5 rounded-lg">
-                    <div className="animate-spin rounded-full h-4 w-4 border-2 border-ft-purple-cta/30 border-t-ft-purple-cta" />
-                    <span className="text-[14px] text-ft-purple-cta font-medium">Uploading...</span>
+                {resumeFile ? (
+                  <div className="inline-flex items-center gap-2 px-4 py-3 bg-ft-purple-cta/5 border border-ft-purple-cta/20 rounded-lg">
+                    <CheckIcon className="w-4 h-4 text-ft-purple-cta" />
+                    <span className="text-[14px] text-gray-700 font-medium truncate max-w-[200px]">{resumeFile.name}</span>
+                    <button
+                      type="button"
+                      onClick={() => { setResumeFile(null); setSubmitStatus('idle'); }}
+                      className="ml-1 p-0.5 rounded-full hover:bg-gray-200 transition-colors cursor-pointer"
+                      aria-label="Remove file"
+                    >
+                      <svg className="w-3.5 h-3.5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+                    </button>
                   </div>
                 ) : (
                   <label className="inline-flex items-center gap-2.5 px-4 py-3 border border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-ft-purple-cta/40 hover:bg-ft-purple-cta/[0.02] active:scale-[0.99] transition-all duration-200">
                     <UploadIcon className="w-4.5 h-4.5 text-gray-400" />
-                    <span className="text-[14px] text-gray-500">
-                      {resumeStatus === 'error' ? (
-                        <span className="text-red-500">Upload failed — tap to try again</span>
-                      ) : (
-                        'Upload PDF or DOCX (max 10MB)'
-                      )}
-                    </span>
+                    <span className="text-[14px] text-gray-500">Upload PDF or DOCX (max 10MB)</span>
                     <input
                       type="file"
                       accept=".pdf,.docx"
                       className="hidden"
-                      onChange={handleResumeUpload}
+                      onChange={handleResumeSelect}
                       aria-label="Upload resume file"
                     />
                   </label>
                 )}
+                {resumeError && (
+                  <p className="text-[13px] text-red-500 mt-1">{resumeError}</p>
+                )}
               </div>
+
+              {/* Submit button */}
+              {submitStatus === 'done' ? (
+                <div className="inline-flex items-center gap-2 px-4 py-3 bg-green-50 border border-green-200 rounded-lg">
+                  <CheckCircleIcon className="w-5 h-5 text-green-600" />
+                  <span className="text-[14px] text-green-700 font-medium">Submitted successfully</span>
+                </div>
+              ) : (
+                <>
+                  <button
+                    onClick={handleSubmit}
+                    disabled={(!portfolioUrl && !resumeFile) || submitStatus === 'submitting'}
+                    className="w-full py-3 bg-ft-purple-cta text-white text-[15px] font-semibold rounded-lg hover:bg-[#5B53E6] active:scale-[0.98] transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer flex items-center justify-center gap-2"
+                  >
+                    {submitStatus === 'submitting' ? (
+                      <>
+                        <div className="animate-spin rounded-full h-4 w-4 border-2 border-white/30 border-t-white" />
+                        Submitting...
+                      </>
+                    ) : submitStatus === 'error' ? (
+                      'Try again'
+                    ) : (
+                      'Submit'
+                    )}
+                  </button>
+                  {submitStatus === 'error' && (
+                    <p className="text-[13px] text-red-500 mt-1">Something went wrong. Please check your connection and try again.</p>
+                  )}
+                </>
+              )}
             </div>
 
             <p className="text-[14px] text-gray-400 mt-4 leading-relaxed">

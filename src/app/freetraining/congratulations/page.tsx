@@ -1,6 +1,6 @@
 'use client';
 
-import { Suspense, useEffect, useState } from "react";
+import { Suspense, useCallback, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
@@ -75,6 +75,41 @@ function QuoteIcon({ className }: { className?: string }) {
     <svg className={className} fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
       <path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311C9.591 11.68 11 13.166 11 15c0 1.933-1.567 3.5-3.5 3.5-1.289 0-2.449-.637-2.917-1.179zM14.583 17.321C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311C19.591 11.68 21 13.166 21 15c0 1.933-1.567 3.5-3.5 3.5-1.289 0-2.449-.637-2.917-1.179z" />
     </svg>
+  );
+}
+
+/* ─── FAQ Accordion Item ─── */
+
+function FaqItem({ question, answer }: { question: string; answer: string }) {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div className="bg-white">
+      <button
+        type="button"
+        onClick={() => setOpen(!open)}
+        className="w-full flex items-center justify-between gap-4 px-4 md:px-5 py-4 text-left cursor-pointer hover:bg-gray-50 transition-colors duration-150"
+        aria-expanded={open}
+      >
+        <span className="text-[15px] md:text-[16px] font-semibold text-ft-dark-surface">{question}</span>
+        <svg
+          className={`w-4 h-4 text-gray-400 flex-shrink-0 transition-transform duration-200 ${open ? 'rotate-180' : ''}`}
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+      <div
+        className={`grid transition-all duration-200 ease-in-out ${open ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
+      >
+        <div className="overflow-hidden">
+          <p className="px-4 md:px-5 pb-4 text-[15px] md:text-[16px] text-gray-500 leading-relaxed">{answer}</p>
+        </div>
+      </div>
+    </div>
   );
 }
 
@@ -210,7 +245,7 @@ function CongratulationsContent() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-green-50/40 via-white to-white">
-      <div className="max-w-[700px] mx-auto px-5 py-8 md:py-14 lg:py-20">
+      <div className="max-w-[700px] lg:max-w-[1000px] mx-auto px-5 py-8 md:py-14 lg:py-20">
 
         {/* ── Section 1: Murad's Video ── */}
         <section className="mb-8 md:mb-12">
@@ -247,38 +282,43 @@ function CongratulationsContent() {
             <h1 className="text-[24px] md:text-[32px] font-bold text-ft-dark-surface mb-1 tracking-tight">
               You&apos;re booked!
             </h1>
-            <p className="text-[15px] md:text-[16px] text-gray-500 mb-5">Your strategy call is confirmed for:</p>
-
-            <div className="bg-gray-50 rounded-xl p-4 md:p-5 mb-5 max-w-[420px] mx-auto">
-              {bookingDate && (
-                <div className="flex items-center justify-center gap-5 text-[16px] md:text-[17px] font-semibold text-ft-dark-surface mb-3">
-                  <span className="inline-flex items-center gap-1.5">
-                    <CalendarIcon className="w-4.5 h-4.5 text-ft-purple-cta" />
-                    {bookingDate}
-                  </span>
-                  {bookingTime && (
+            {bookingDate ? (
+              <>
+                <p className="text-[15px] md:text-[16px] text-gray-500 mb-5">Your strategy call is confirmed for:</p>
+                <div className="bg-gray-50 rounded-xl p-4 md:p-5 mb-5 max-w-[420px] mx-auto">
+                  <div className="flex items-center justify-center gap-5 text-[16px] md:text-[17px] font-semibold text-ft-dark-surface mb-3">
                     <span className="inline-flex items-center gap-1.5">
-                      <ClockIcon className="w-4.5 h-4.5 text-ft-purple-cta" />
-                      {bookingTime} IST
+                      <CalendarIcon className="w-4.5 h-4.5 text-ft-purple-cta" />
+                      {bookingDate}
                     </span>
+                    {bookingTime && (
+                      <span className="inline-flex items-center gap-1.5">
+                        <ClockIcon className="w-4.5 h-4.5 text-ft-purple-cta" />
+                        {bookingTime} IST
+                      </span>
+                    )}
+                  </div>
+                  <div className="flex items-center justify-center gap-1.5 text-[15px] md:text-[16px] text-gray-500 mb-1">
+                    <VideoCameraIcon className="w-4 h-4 text-gray-400" />
+                    <span>Google Meet</span>
+                  </div>
+                  {meetLink && (
+                    <a
+                      href={meetLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[15px] md:text-[16px] text-ft-purple-cta hover:underline break-all cursor-pointer transition-colors duration-200"
+                    >
+                      {meetLink}
+                    </a>
                   )}
                 </div>
-              )}
-              <div className="flex items-center justify-center gap-1.5 text-[15px] md:text-[16px] text-gray-500 mb-1">
-                <VideoCameraIcon className="w-4 h-4 text-gray-400" />
-                <span>Google Meet</span>
-              </div>
-              {meetLink && (
-                <a
-                  href={meetLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[15px] md:text-[16px] text-ft-purple-cta hover:underline break-all cursor-pointer transition-colors duration-200"
-                >
-                  {meetLink}
-                </a>
-              )}
-            </div>
+              </>
+            ) : (
+              <p className="text-[15px] md:text-[16px] text-gray-500 mb-5">
+                Your strategy call is confirmed. Check your email and WhatsApp for the date, time, and meeting link.
+              </p>
+            )}
 
             <p className="text-[14px] text-gray-400 mb-5">
               Save this — you&apos;ll also receive it via email and WhatsApp
@@ -506,16 +546,14 @@ function CongratulationsContent() {
               rel="noopener noreferrer"
               className="text-ft-purple-cta hover:underline font-medium cursor-pointer transition-colors duration-200"
             >
+              <svg className="inline w-4 h-4 mr-1 -mt-0.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.611l4.458-1.495A11.96 11.96 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.37 0-4.567-.818-6.297-2.187a.5.5 0 00-.42-.084l-3.162 1.06 1.06-3.162a.5.5 0 00-.083-.42A9.956 9.956 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
               WhatsApp us at +91 93805 06841
             </a>
             {' '}— we typically respond within 2 hours.
           </p>
-          <div className="space-y-4 md:space-y-5">
+          <div className="divide-y divide-gray-100 border border-gray-100 rounded-xl overflow-hidden">
             {ftContent.congratulations.callFaqs.map((faq) => (
-              <div key={faq.q}>
-                <p className="text-[15px] md:text-[16px] font-semibold text-ft-dark-surface mb-1">{faq.q}</p>
-                <p className="text-[15px] md:text-[16px] text-gray-500 leading-relaxed">{faq.a}</p>
-              </div>
+              <FaqItem key={faq.q} question={faq.q} answer={faq.a} />
             ))}
           </div>
         </section>

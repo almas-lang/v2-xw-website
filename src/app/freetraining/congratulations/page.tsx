@@ -125,8 +125,26 @@ function CongratulationsContent() {
 
   const bookingDate = searchParams.get("date") || "";
   const bookingTime = searchParams.get("time") || "";
+  const durationMinutes = searchParams.get("duration") || "";
   const meetLink = searchParams.get("meet_link") || searchParams.get("meetLink") || "";
   const emailFromParams = searchParams.get("email") || "";
+
+  const formattedDate = bookingDate
+    ? new Date(bookingDate + "T00:00:00").toLocaleDateString("en-IN", {
+        weekday: "long",
+        day: "numeric",
+        month: "long",
+        year: "numeric",
+      })
+    : "";
+
+  const formattedTime = bookingTime
+    ? new Date(`2000-01-01T${bookingTime}`).toLocaleTimeString("en-IN", {
+        hour: "numeric",
+        minute: "2-digit",
+        hour12: true,
+      })
+    : "";
 
   const leadEmail = emailFromParams || getStorageJSON<{ email: string }>("lead_data")?.email || "";
 
@@ -221,8 +239,9 @@ function CongratulationsContent() {
       : "Prepare:\n1. Your #1 career goal for the next 90 days\n2. Have LinkedIn profile open";
     const location = "Google Meet";
     const startDate = bookingDate.replace(/-/g, '') + 'T' + (bookingTime.replace(/:/g, '') || '110000');
+    const dur = parseInt(durationMinutes) || 45;
     const endHour = bookingTime ? parseInt(bookingTime.split(':')[0]) : 11;
-    const endMin = bookingTime ? parseInt(bookingTime.split(':')[1] || '0') + 45 : 45;
+    const endMin = bookingTime ? parseInt(bookingTime.split(':')[1] || '0') + dur : dur;
     const endDate = bookingDate.replace(/-/g, '') + 'T' + String(endHour + Math.floor(endMin / 60)).padStart(2, '0') + String(endMin % 60).padStart(2, '0') + '00';
     return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&dates=${startDate}/${endDate}&details=${encodeURIComponent(details)}&location=${encodeURIComponent(location)}&ctz=Asia/Kolkata`;
   };
@@ -238,7 +257,7 @@ function CongratulationsContent() {
       `SUMMARY:${title}`,
       meetLink ? `LOCATION:${meetLink}` : '',
       `DESCRIPTION:Prepare: 1. Your #1 career goal 2. LinkedIn profile open`,
-      'DURATION:PT45M',
+      `DURATION:PT${parseInt(durationMinutes) || 45}M`,
       'END:VEVENT',
       'END:VCALENDAR',
     ].filter(Boolean).join('\r\n');
@@ -295,19 +314,20 @@ function CongratulationsContent() {
               <>
                 <p className="text-[15px] md:text-[16px] text-gray-500 mb-5">Your strategy call is confirmed for:</p>
                 <div className="bg-gray-50 rounded-xl p-4 md:p-5 mb-5 max-w-[420px] mx-auto">
-                  <div className="flex items-center justify-center gap-5 text-[16px] md:text-[17px] font-semibold text-ft-dark-surface mb-3">
-                    <span className="inline-flex items-center gap-1.5">
-                      <CalendarIcon className="w-4.5 h-4.5 text-ft-purple-cta" />
-                      {bookingDate}
-                    </span>
-                    {bookingTime && (
-                      <span className="inline-flex items-center gap-1.5">
-                        <ClockIcon className="w-4.5 h-4.5 text-ft-purple-cta" />
-                        {bookingTime} IST
-                      </span>
-                    )}
+                  <div className="flex items-center justify-center gap-1.5 text-[16px] md:text-[17px] font-semibold text-ft-dark-surface mb-1">
+                    <CalendarIcon className="w-4.5 h-4.5 text-ft-purple-cta" />
+                    {formattedDate}
                   </div>
-                  <div className="flex items-center justify-center gap-1.5 text-[15px] md:text-[16px] text-gray-500 mb-1">
+                  {formattedTime && (
+                    <div className="flex items-center justify-center gap-1.5 text-[16px] md:text-[17px] font-semibold text-ft-dark-surface mb-1">
+                      <ClockIcon className="w-4.5 h-4.5 text-ft-purple-cta" />
+                      {formattedTime} IST
+                      {durationMinutes && (
+                        <span className="text-[14px] font-normal text-gray-400 ml-1">({durationMinutes} min)</span>
+                      )}
+                    </div>
+                  )}
+                  <div className="flex items-center justify-center gap-1.5 text-[15px] md:text-[16px] text-gray-500 mt-2 mb-1">
                     <VideoCameraIcon className="w-4 h-4 text-gray-400" />
                     <span>Google Meet</span>
                   </div>

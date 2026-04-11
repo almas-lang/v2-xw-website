@@ -135,7 +135,7 @@ export function LeadForm({ onSuccess, onError, variant = 'default' }: LeadFormPr
           onFocus={() => trackFormFieldFocused('name')}
           onBlur={(e) => { if (e.target.value) trackFormFieldCompleted('name'); }}
         />
-        {errors.name && <p className="mt-1 text-[13px] text-red-400">{errors.name.message}</p>}
+        {errors.name && <p className="mt-1 text-[13px] text-red-400 text-left flex items-center gap-1"><svg className="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="12" /><line x1="12" y1="16" x2="12.01" y2="16" /></svg>{errors.name.message}</p>}
       </div>
 
       {/* Email */}
@@ -149,7 +149,7 @@ export function LeadForm({ onSuccess, onError, variant = 'default' }: LeadFormPr
           onFocus={() => trackFormFieldFocused('email')}
           onBlur={(e) => { if (e.target.value) trackFormFieldCompleted('email'); }}
         />
-        {errors.email && <p className="mt-1 text-[13px] text-red-400">{errors.email.message}</p>}
+        {errors.email && <p className="mt-1 text-[13px] text-red-400 text-left flex items-center gap-1"><svg className="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="12" /><line x1="12" y1="16" x2="12.01" y2="16" /></svg>{errors.email.message}</p>}
       </div>
 
       {/* WhatsApp */}
@@ -181,7 +181,7 @@ export function LeadForm({ onSuccess, onError, variant = 'default' }: LeadFormPr
         <p className="mt-1 text-[13px] text-white/40">
           {ftContent.form.fields.whatsapp.helperText}
         </p>
-        {errors.whatsapp && <p className="mt-1 text-[13px] text-red-400">{errors.whatsapp.message}</p>}
+        {errors.whatsapp && <p className="mt-1 text-[13px] text-red-400 text-left flex items-center gap-1"><svg className="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="12" /><line x1="12" y1="16" x2="12.01" y2="16" /></svg>{errors.whatsapp.message}</p>}
       </div>
 
       {/* Submit */}

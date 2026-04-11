@@ -2,12 +2,13 @@
 
 import { Suspense, useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import Link from "next/link";
 import Script from "next/script";
 import { LeadForm } from "@/components/freetraining/LeadForm";
 import { Toast } from "@/components/freetraining/Toast";
 import { HeroOptionA } from "@/components/freetraining/HeroOptionA";
 import { ftContent } from "@/lib/freetraining/content";
+import { blogPosts } from "@/data/blogPosts";
+import BlogCard from "@/components/resources/BlogCard";
 import { setStorageJSON } from "@/lib/freetraining/storage";
 import { ftPath } from "@/lib/freetraining/constants";
 import { trackPageView } from "@/lib/freetraining/track";
@@ -239,42 +240,18 @@ function FreeTrainingHomeContent() {
             {ftContent.seoContent.title}
           </h2>
           {ftContent.seoContent.body.split('\n\n').map((paragraph, i) => (
-            <p key={i} className="text-[17px] text-gray-600 leading-[160%] mb-4">
+            <p key={i} className="text-[15px] text-gray-600 leading-[160%] mb-4">
               {paragraph}
             </p>
           ))}
           <div className="mt-8">
             <p className="text-[14px] font-bold text-ft-muted uppercase tracking-wider mb-4">Related reads</p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              {ftContent.seoContent.relatedLinks.map((link) => (
-                <Link
-                  key={link.slug}
-                  href={`/resources/blogs/${link.slug}`}
-                  className="group block rounded-xl overflow-hidden border border-gray-100 bg-white hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
-                >
-                  <div className="relative aspect-[3/2] overflow-hidden">
-                    <img
-                      src={link.image}
-                      alt={link.text}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
-                  <div className="p-4">
-                    <h4 className="text-[14px] font-semibold text-ft-dark-surface leading-snug line-clamp-2 mb-2">
-                      {link.text}
-                    </h4>
-                    <div className="flex items-center justify-between">
-                      <span className="text-[12px] text-gray-400">{link.readTime} read</span>
-                      <span className="inline-flex items-center gap-1 text-[13px] font-semibold text-accent group-hover:gap-2 transition-all">
-                        Read
-                        <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
-                      </span>
-                    </div>
-                  </div>
-                </Link>
-              ))}
+              {ftContent.seoContent.relatedLinks.map((link, i) => {
+                const post = blogPosts.find((p) => p.slug === link.slug);
+                if (!post) return null;
+                return <BlogCard key={post.slug} post={post} index={i} isVisible />;
+              })}
             </div>
           </div>
         </div>

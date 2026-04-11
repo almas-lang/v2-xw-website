@@ -38,8 +38,8 @@ export function HeroOptionA({ onCtaClick }: { onCtaClick: () => void }) {
         <div className="max-w-[800px] mx-auto text-center">
           {/* Qualifier badge */}
           <div className="mb-6 md:mb-8 inline-flex items-center gap-2.5 px-5 py-2.5 bg-accent/[0.08] border border-accent/20 rounded-full">
-            <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-            <span className="text-[14px] md:text-[15px] text-accent/90 font-semibold uppercase tracking-wider">
+            <span className="w-2 h-2 rounded-full bg-accent shrink-0" />
+            <span className="text-[12px] md:text-[13px] text-accent/90 font-semibold uppercase tracking-wider">
               {hero.qualifier}
             </span>
           </div>

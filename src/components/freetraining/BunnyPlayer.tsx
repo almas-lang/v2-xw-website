@@ -71,6 +71,13 @@ export function BunnyPlayer({
       playerRef.current = player;
 
       player.on('ready', () => {
+        // Ensure background autoplay (muted) kicks in even if the iframe's
+        // autoplay query param was blocked by the browser.
+        if (!userStartedRef.current) {
+          player.mute();
+          player.play();
+        }
+
         player.on('play', () => {
           if (!hasPlayedRef.current && userStartedRef.current) {
             hasPlayedRef.current = true;
@@ -122,7 +129,6 @@ export function BunnyPlayer({
         className="absolute inset-0 w-full h-full rounded-lg"
         allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
         allowFullScreen
-        loading="lazy"
         title="Free Training Video - How Designers Break Into Senior UX Roles"
       />
       {/* Play button overlay — shown until user clicks */}

@@ -5,6 +5,7 @@ import { useEffect, useRef, useCallback, useState } from "react";
 interface BunnyPlayerProps {
   videoId: string;
   libraryId: string;
+  aspectRatio?: '16/9' | '9/16';
   onPlay?: () => void;
   onTimeUpdate?: (currentTime: number, duration: number) => void;
   onEnded?: () => void;
@@ -35,11 +36,13 @@ interface PlayerJsInstance {
 export function BunnyPlayer({
   videoId,
   libraryId,
+  aspectRatio = '16/9',
   onPlay,
   onTimeUpdate,
   onEnded,
   onPause,
 }: BunnyPlayerProps) {
+  const paddingBottom = aspectRatio === '9/16' ? '177.78%' : '56.25%';
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const playerRef = useRef<PlayerJsInstance | null>(null);
   const hasPlayedRef = useRef(false);
@@ -122,7 +125,7 @@ export function BunnyPlayer({
   const embedUrl = `https://iframe.mediadelivery.net/embed/${libraryId}/${videoId}?autoplay=true&muted=true&preload=true&responsive=true`;
 
   return (
-    <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+    <div className="relative w-full" style={{ paddingBottom }}>
       <iframe
         ref={iframeRef}
         src={embedUrl}

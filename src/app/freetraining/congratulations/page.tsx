@@ -4,7 +4,7 @@ import { Suspense, useCallback, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { trackPageView, trackConversionAPI, trackGA4 } from "@/lib/freetraining/track";
+import { trackPageView, trackSubmitApplication, trackGA4 } from "@/lib/freetraining/track";
 import { getStorageJSON } from "@/lib/freetraining/storage";
 import { ftContent } from "@/lib/freetraining/content";
 import { BunnyPlayer } from "@/components/freetraining/BunnyPlayer";
@@ -153,8 +153,7 @@ function CongratulationsContent() {
 
     if (leadEmail) {
       const leadData = getStorageJSON<{ leadId: string }>("lead_data");
-      trackConversionAPI("Schedule", leadEmail, undefined, {
-        content_name: "Strategy Call Booked",
+      trackSubmitApplication(leadEmail, {
         status: "confirmed",
         lead_id: leadData?.leadId,
       });
@@ -278,7 +277,9 @@ function CongratulationsContent() {
         {/* ── Section 1: Murad's Video ── */}
         <section className="mb-8 md:mb-12">
           {CONGRATS_VIDEO_ID && BUNNY_LIBRARY_ID ? (
-            <BunnyPlayer videoId={CONGRATS_VIDEO_ID} libraryId={BUNNY_LIBRARY_ID} />
+            <div className="max-w-full sm:max-w-[340px] mx-auto">
+              <BunnyPlayer videoId={CONGRATS_VIDEO_ID} libraryId={BUNNY_LIBRARY_ID} aspectRatio="9/16" />
+            </div>
           ) : (
             <div className="relative w-full rounded-2xl overflow-hidden shadow-lg" style={{ paddingBottom: '56.25%' }}>
               <Image

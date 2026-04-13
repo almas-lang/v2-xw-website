@@ -3,6 +3,7 @@ import crypto from 'crypto';
 
 const PIXEL_ID = process.env.FB_PIXEL_ID || '1406183214178910';
 const ACCESS_TOKEN = process.env.FB_ACCESS_TOKEN || '';
+const TEST_EVENT_CODE = process.env.FB_TEST_EVENT_CODE || '';
 
 function hashData(data: string): string {
   return crypto.createHash('sha256').update(data.toLowerCase().trim()).digest('hex');
@@ -14,11 +15,12 @@ export async function POST(request: NextRequest) {
   }
 
   try {
-    const { event_name, email, phone, fbp, fbc, event_source_url, custom_data } = await request.json();
+    const { event_name, event_id, email, phone, fbp, fbc, event_source_url, custom_data } = await request.json();
 
     const event: any = {
       event_name,
       event_time: Math.floor(Date.now() / 1000),
+      ...(event_id ? { event_id } : {}),
       user_data: {
         client_ip_address: request.headers.get('x-forwarded-for')?.split(',')[0] || request.headers.get('x-real-ip') || '',
         client_user_agent: request.headers.get('user-agent') || '',
@@ -38,7 +40,10 @@ export async function POST(request: NextRequest) {
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ data: [event] }),
+        body: JSON.stringify({
+          data: [event],
+          ...(TEST_EVENT_CODE ? { test_event_code: TEST_EVENT_CODE } : {}),
+        }),
       }
     );
 

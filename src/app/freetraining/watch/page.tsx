@@ -6,12 +6,10 @@ import { BunnyPlayer } from "@/components/freetraining/BunnyPlayer";
 import { Toast } from "@/components/freetraining/Toast";
 import {
   trackPageView,
-  trackVideoView,
   trackVideoProgress,
   trackVideoPaused,
-  trackVideoComplete,
-  trackConversionAPI,
-  trackLead,
+  trackViewContentVideo,
+  trackInitiateCheckout,
   trackClick,
 } from "@/lib/freetraining/track";
 import { ftContent } from "@/lib/freetraining/content";
@@ -60,31 +58,21 @@ function WatchContent() {
     trackPageView("/freetraining/watch", "Watch Training");
 
     const leadData = getStorageJSON<{ email: string }>("lead_data");
-    const isNewLead = searchParams.get("new_lead");
-
-    if (isNewLead === "true") {
-      trackLead({ lead_id: leadId });
-      if (leadData?.email) {
-        trackConversionAPI("Lead", leadData.email, undefined, {
-          content_name: "VSL Webinar Registration",
-          lead_id: leadId,
-        });
-      }
-    }
 
     // Check if user has lead data — if not, redirect to landing
     if (!leadData && !leadId) {
       setToast({ isVisible: true, message: "Please register first to access the training.", type: "info" });
       setTimeout(() => router.push(ftPath("/")), 2000);
     }
-  }, [leadId, router, searchParams]);
+  }, [leadId, router]);
 
   const handlePlay = useCallback(() => {
     if (!hasTrackedPlayRef.current) {
       hasTrackedPlayRef.current = true;
-      trackVideoView(BUNNY_VIDEO_ID, { lead_id: leadId });
+      const email = getStorageJSON<{ email: string }>("lead_data")?.email;
+      trackViewContentVideo("start", BUNNY_VIDEO_ID, email);
     }
-  }, [leadId]);
+  }, []);
 
   const handleTimeUpdate = useCallback((currentTime: number, duration: number) => {
     if (duration <= 0) return;
@@ -107,7 +95,8 @@ function WatchContent() {
   }, [showBookCall]);
 
   const handleEnded = useCallback(() => {
-    trackVideoComplete(BUNNY_VIDEO_ID);
+    const email = getStorageJSON<{ email: string }>("lead_data")?.email;
+    trackViewContentVideo("complete", BUNNY_VIDEO_ID, email);
     setShowBookCall(true);
     setStorageItem("ft_book_call_revealed", "true");
   }, []);
@@ -121,12 +110,7 @@ function WatchContent() {
   const handleBookClick = () => {
     trackClick("book_strategy_call", { source: "watch_page", lead_id: leadId });
     const leadData = getStorageJSON<{ email: string }>("lead_data");
-    if (leadData?.email) {
-      trackConversionAPI("InitiateCheckout", leadData.email, undefined, {
-        content_name: "Strategy Call Booking",
-        lead_id: leadId,
-      });
-    }
+    trackInitiateCheckout(leadData?.email, { lead_id: leadId });
     window.location.href = bookCallUrl;
   };
 

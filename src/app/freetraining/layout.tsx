@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { FTHeader } from "@/components/freetraining/Header";
 import { FTFooter } from "@/components/freetraining/Footer";
-import { FTMetaPixel } from "@/components/freetraining/FTAnalytics";
+import { FTMetaPixel, FTPageViewTracker } from "@/components/freetraining/FTAnalytics";
 import Analytics from "@/components/Analytics";
 import WhatsAppButton from "@/components/shared/WhatsAppButton";
 
@@ -43,6 +43,7 @@ export default function FreeTrainingLayout({
     <>
       <Analytics />
       <FTMetaPixel />
+      <FTPageViewTracker />
       <FTHeader />
       <main>{children}</main>
       <FTFooter />

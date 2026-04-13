@@ -13,6 +13,7 @@ import {
   trackFormSubmitted,
   trackLead,
   trackConversionAPI,
+  newEventId,
 } from "@/lib/freetraining/track";
 
 const schema = z.object({
@@ -89,10 +90,11 @@ export function LeadForm({ onSuccess, onError, variant = 'default' }: LeadFormPr
 
       // Track events regardless of webhook response
       trackFormSubmitted({ email: data.email });
-      trackLead({ lead_id: result.leadId || 'unknown' });
+      const leadEventId = newEventId();
+      trackLead({ lead_id: result.leadId || 'unknown' }, leadEventId);
       trackConversionAPI("Lead", data.email, "+91" + data.whatsapp, {
         content_name: "VSL Webinar Registration",
-      });
+      }, leadEventId);
 
       // Store lead data locally
       const leadId = result.leadId || `lead_${Date.now()}`;

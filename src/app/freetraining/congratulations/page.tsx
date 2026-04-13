@@ -1,6 +1,6 @@
 'use client';
 
-import { Suspense, useCallback, useEffect, useState } from "react";
+import { Suspense, useCallback, useEffect, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
@@ -148,21 +148,24 @@ function CongratulationsContent() {
 
   const leadEmail = emailFromParams || getStorageJSON<{ email: string }>("lead_data")?.email || "";
 
+  const hasFiredConversionRef = useRef(false);
   useEffect(() => {
+    if (hasFiredConversionRef.current) return;
+    hasFiredConversionRef.current = true;
+
     trackPageView("/freetraining/congratulations", "Call Confirmed");
 
-    if (leadEmail) {
-      const leadData = getStorageJSON<{ leadId: string }>("lead_data");
-      trackSubmitApplication(leadEmail, {
-        status: "confirmed",
-        lead_id: leadData?.leadId,
-      });
-    }
+    const leadData = getStorageJSON<{ leadId: string }>("lead_data");
+    trackSubmitApplication(leadEmail || undefined, {
+      status: "confirmed",
+      lead_id: leadData?.leadId,
+      booking_date: bookingDate,
+    });
     trackGA4("schedule_appointment", {
       appointment_type: "strategy_call",
       booking_date: bookingDate,
     });
-  }, [bookingDate, leadEmail]);
+  }, []);
 
   const handleResumeSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -274,34 +277,7 @@ function CongratulationsContent() {
     <div className="min-h-screen bg-gradient-to-b from-green-50/40 via-white to-white">
       <div className="max-w-[700px] lg:max-w-[1000px] mx-auto px-5 py-8 md:py-14 lg:py-20">
 
-        {/* ── Section 1: Murad's Video ── */}
-        <section className="mb-8 md:mb-12">
-          {CONGRATS_VIDEO_ID && BUNNY_LIBRARY_ID ? (
-            <div className="max-w-full sm:max-w-[340px] mx-auto">
-              <BunnyPlayer videoId={CONGRATS_VIDEO_ID} libraryId={BUNNY_LIBRARY_ID} aspectRatio="9/16" />
-            </div>
-          ) : (
-            <div className="relative w-full rounded-2xl overflow-hidden shadow-lg" style={{ paddingBottom: '56.25%' }}>
-              <Image
-                src="/images/Murad.png"
-                alt="Shaik Murad - Personal message"
-                fill
-                className="object-cover"
-                priority
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-16 h-16 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center mx-auto mb-3 shadow-lg transition-transform duration-200 hover:scale-105">
-                    <PlayIcon className="w-7 h-7 text-ft-purple-cta ml-0.5" />
-                  </div>
-                  <p className="text-[16px] md:text-[17px] text-white/90 font-medium drop-shadow-md">Personal message from Shaik Murad</p>
-                </div>
-              </div>
-            </div>
-          )}
-        </section>
-
-        {/* ── Section 2: Booking Confirmation ── */}
+        {/* ── Section 1: Booking Confirmation ── */}
         <section className="mb-8 md:mb-12">
           <div className="bg-white rounded-2xl border border-green-200 shadow-sm p-6 md:p-8 text-center">
             <div className="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -379,6 +355,33 @@ function CongratulationsContent() {
               </div>
             )}
           </div>
+        </section>
+
+        {/* ── Section 2: Murad's Video ── */}
+        <section className="mb-8 md:mb-12">
+          {CONGRATS_VIDEO_ID && BUNNY_LIBRARY_ID ? (
+            <div className="max-w-full sm:max-w-[340px] mx-auto">
+              <BunnyPlayer videoId={CONGRATS_VIDEO_ID} libraryId={BUNNY_LIBRARY_ID} aspectRatio="9/16" />
+            </div>
+          ) : (
+            <div className="relative w-full rounded-2xl overflow-hidden shadow-lg" style={{ paddingBottom: '56.25%' }}>
+              <Image
+                src="/images/Murad.png"
+                alt="Shaik Murad - Personal message"
+                fill
+                className="object-cover"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent flex items-center justify-center">
+                <div className="text-center">
+                  <div className="w-16 h-16 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center mx-auto mb-3 shadow-lg transition-transform duration-200 hover:scale-105">
+                    <PlayIcon className="w-7 h-7 text-ft-purple-cta ml-0.5" />
+                  </div>
+                  <p className="text-[16px] md:text-[17px] text-white/90 font-medium drop-shadow-md">Personal message from Shaik Murad</p>
+                </div>
+              </div>
+            </div>
+          )}
         </section>
 
         {/* ── Section 3: Homework ── */}

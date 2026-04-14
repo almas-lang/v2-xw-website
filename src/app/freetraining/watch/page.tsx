@@ -100,11 +100,11 @@ function WatchContent() {
     const params = new URLSearchParams();
     if (leadForm?.name) {
       const { first, last } = splitName(leadForm.name);
-      if (first) params.set("f1", first);
-      if (last) params.set("f2", last);
+      if (first) params.set("first_name", first);
+      if (last) params.set("last_name", last);
     }
-    if (leadData?.email) params.set("f3", leadData.email);
-    if (leadForm?.phone) params.set("f4", leadForm.phone);
+    if (leadData?.email) params.set("email", leadData.email);
+    if (leadForm?.phone) params.set("phone", leadForm.phone);
     const qs = params.toString();
     if (!qs) return bookCallUrl;
     return bookCallUrl + (bookCallUrl.includes("?") ? "&" : "?") + qs;

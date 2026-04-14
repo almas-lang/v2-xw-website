@@ -79,11 +79,42 @@ function WatchContent() {
 
   const bookCallUrl = ftContent.watch.bookCall.ctaUrl;
 
+  const splitName = (fullName: string): { first: string; last: string } => {
+    const tokens = fullName.trim().split(/\s+/).filter(Boolean);
+    if (tokens.length === 0) return { first: "", last: "" };
+    if (tokens.length === 1) return { first: tokens[0], last: "" };
+    // Leading initial (e.g. "S", "S.", "Jr") — pair it with the next token as first name
+    const isInitial = /^[A-Za-z]{1,2}\.?$/.test(tokens[0]);
+    if (isInitial && tokens.length >= 3) {
+      return { first: `${tokens[0]} ${tokens[1]}`, last: tokens.slice(2).join(" ") };
+    }
+    if (isInitial && tokens.length === 2) {
+      return { first: `${tokens[0]} ${tokens[1]}`, last: "" };
+    }
+    return { first: tokens[0], last: tokens.slice(1).join(" ") };
+  };
+
+  const buildBookingUrl = (): string => {
+    const leadData = getStorageJSON<{ email: string }>("lead_data");
+    const leadForm = getStorageJSON<{ name: string; phone: string }>("lead_form_data");
+    const params = new URLSearchParams();
+    if (leadForm?.name) {
+      const { first, last } = splitName(leadForm.name);
+      if (first) params.set("f1", first);
+      if (last) params.set("f2", last);
+    }
+    if (leadData?.email) params.set("f3", leadData.email);
+    if (leadForm?.phone) params.set("f4", leadForm.phone);
+    const qs = params.toString();
+    if (!qs) return bookCallUrl;
+    return bookCallUrl + (bookCallUrl.includes("?") ? "&" : "?") + qs;
+  };
+
   const handleBookClick = () => {
     trackClick("book_strategy_call", { source: "watch_page", lead_id: leadId });
     const leadData = getStorageJSON<{ email: string }>("lead_data");
     trackInitiateCheckout(leadData?.email, { lead_id: leadId });
-    window.location.href = bookCallUrl;
+    window.location.href = buildBookingUrl();
   };
 
   return (

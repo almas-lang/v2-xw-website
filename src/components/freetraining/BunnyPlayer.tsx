@@ -122,7 +122,7 @@ export function BunnyPlayer({
     }
   }, []);
 
-  const embedUrl = `https://iframe.mediadelivery.net/embed/${libraryId}/${videoId}?autoplay=true&muted=true&preload=true&responsive=true`;
+  const embedUrl = `https://iframe.mediadelivery.net/embed/${libraryId}/${videoId}?autoplay=true&muted=true&preload=true&responsive=true&playsinline=true`;
 
   return (
     <div className="relative w-full" style={{ paddingBottom }}>
@@ -130,7 +130,7 @@ export function BunnyPlayer({
         ref={iframeRef}
         src={embedUrl}
         className="absolute inset-0 w-full h-full rounded-lg"
-        allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
+        allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; playsinline"
         allowFullScreen
         title="Free Training Video - How Designers Break Into Senior UX Roles"
       />

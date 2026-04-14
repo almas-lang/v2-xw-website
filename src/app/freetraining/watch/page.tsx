@@ -13,7 +13,7 @@ import {
   trackClick,
 } from "@/lib/freetraining/track";
 import { ftContent } from "@/lib/freetraining/content";
-import { getStorageJSON, getStorageItem, setStorageItem } from "@/lib/freetraining/storage";
+import { getStorageJSON, setStorageItem } from "@/lib/freetraining/storage";
 import { ftPath } from "@/lib/freetraining/constants";
 
 const BUNNY_VIDEO_ID = process.env.NEXT_PUBLIC_FT_BUNNY_VIDEO_ID || "";
@@ -24,35 +24,15 @@ function WatchContent() {
   const router = useRouter();
   const [toast, setToast] = useState({ isVisible: false, message: "", type: "info" as "success" | "error" | "info" });
 
-  // CTA visibility states
-  const [showBookCall, setShowBookCall] = useState(false);
-
   // Progress tracking
   const progressMilestonesRef = useRef(new Set<number>());
   const hasTrackedPlayRef = useRef(false);
 
   const leadId = searchParams.get("lead_id");
 
-  // Restore CTA states from localStorage
   useEffect(() => {
-    if (getStorageItem("ft_book_call_revealed") === "true") {
-      setShowBookCall(true);
-    }
+    setStorageItem("ft_book_call_revealed", "true");
   }, []);
-
-  // Timer-based CTA gate: reveal after 5 minutes on page
-  useEffect(() => {
-    if (showBookCall) return; // already revealed
-
-    const timer = setTimeout(() => {
-      if (!showBookCall) {
-        setShowBookCall(true);
-        setStorageItem("ft_book_call_revealed", "true");
-      }
-    }, 5 * 60 * 1000); // 5 minutes
-
-    return () => clearTimeout(timer);
-  }, [showBookCall]);
 
   useEffect(() => {
     trackPageView("/freetraining/watch", "Watch Training");
@@ -86,19 +66,11 @@ function WatchContent() {
       }
     }
 
-    // Reveal book call section at 5 minutes (300 seconds)
-    if (currentTime >= 300 && !showBookCall) {
-      setShowBookCall(true);
-      setStorageItem("ft_book_call_revealed", "true");
-    }
-
-  }, [showBookCall]);
+  }, []);
 
   const handleEnded = useCallback(() => {
     const email = getStorageJSON<{ email: string }>("lead_data")?.email;
     trackViewContentVideo("complete", BUNNY_VIDEO_ID, email);
-    setShowBookCall(true);
-    setStorageItem("ft_book_call_revealed", "true");
   }, []);
 
   const handlePause = useCallback((currentTime: number) => {
@@ -132,10 +104,7 @@ function WatchContent() {
         </div>
       </section>
 
-      {/* Below-video content — hidden until 5-min mark or video ends */}
-      <div
-        className={`transition-opacity duration-500 ${showBookCall ? 'opacity-100' : 'opacity-0 h-0 overflow-hidden'}`}
-      >
+      <div>
         {/* Section 1: CTA — white bg */}
         <section className="bg-white py-8 md:py-12 px-5">
           <div className="max-w-[420px] mx-auto text-center">

@@ -42,7 +42,7 @@ export function FreeTrainingPromo({ variant, source }: FreeTrainingPromoProps) {
         <div className="md:hidden p-5">
           <div className="flex items-center gap-4">
             <div className="relative shrink-0 w-[76px] h-[76px] rounded-xl overflow-hidden bg-ft-dark">
-              <img src="/images/Murad.png" alt="Shaik Murad" className="w-full h-full object-cover" />
+              <img src="/images/Murad.png" alt="Shaik Murad" className="w-full h-full object-cover scale-x-[-1]" />
               <div className="absolute bottom-1 right-1 w-6 h-6 rounded-full bg-ft-purple-cta flex items-center justify-center shadow-md">
                 <svg className="w-3 h-3 text-white ml-[1px]" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M8 5v14l11-7z" />
@@ -80,7 +80,7 @@ export function FreeTrainingPromo({ variant, source }: FreeTrainingPromoProps) {
             <img
               src="/images/Murad.png"
               alt="Shaik Murad — host of the free training"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover scale-x-[-1]"
             />
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="w-14 h-14 rounded-full bg-ft-purple-cta flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
@@ -126,7 +126,7 @@ export function FreeTrainingPromo({ variant, source }: FreeTrainingPromoProps) {
         <img
           src="/images/Murad.png"
           alt="Shaik Murad"
-          className="w-[64px] h-[64px] md:w-[72px] md:h-[72px] rounded-full object-cover shrink-0"
+          className="w-[64px] h-[64px] md:w-[72px] md:h-[72px] rounded-full object-cover shrink-0 scale-x-[-1]"
         />
         <div className="flex-1 min-w-0">
           <h3 className="font-heading text-[16px] md:text-[18px] font-bold text-ft-dark-surface leading-snug">

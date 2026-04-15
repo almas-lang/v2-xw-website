@@ -40,7 +40,7 @@ export function FreeTrainingPromo({ variant, source }: FreeTrainingPromoProps) {
       >
         {/* Mobile layout */}
         <div className="md:hidden p-5">
-          <div className="flex flex-row-reverse items-center gap-4">
+          <div className="flex items-center gap-4">
             <div className="relative shrink-0 w-[76px] h-[76px] rounded-xl overflow-hidden bg-ft-dark">
               <img src="/images/Murad.png" alt="Shaik Murad" className="w-full h-full object-cover" />
               <div className="absolute bottom-1 right-1 w-6 h-6 rounded-full bg-ft-purple-cta flex items-center justify-center shadow-md">
@@ -75,7 +75,7 @@ export function FreeTrainingPromo({ variant, source }: FreeTrainingPromoProps) {
         </div>
 
         {/* Desktop layout */}
-        <div className="hidden md:flex flex-row-reverse">
+        <div className="hidden md:flex">
           <div className="relative w-2/5 bg-ft-dark">
             <img
               src="/images/Murad.png"
@@ -122,7 +122,7 @@ export function FreeTrainingPromo({ variant, source }: FreeTrainingPromoProps) {
       href={href}
       className="font-body group block my-6 rounded-xl bg-ft-card-bg p-4 md:p-5 shadow-sm hover:shadow-md transition-shadow"
     >
-      <div className="flex flex-row-reverse items-center gap-4">
+      <div className="flex items-center gap-4">
         <img
           src="/images/Murad.png"
           alt="Shaik Murad"

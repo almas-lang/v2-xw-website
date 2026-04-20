@@ -207,6 +207,8 @@ const menteeWall = [
   { name: 'Pratibha Thikpurle', role: 'Senior UX Designer | Enterprise', image: '/images/Pratibha.jpeg' },
   { name: 'Rohit Panse', role: 'Senior UX Designer at NeoSOFT', image: '/images/Rohit.png' },
   { name: 'Vandana Prajapati', role: 'User Experience | Human Psychology | Facilitator | Design System', image: '/images/Vandana.jpeg' },
+  { name: 'Devendra', role: 'UX Designer', image: '/images/Devendra.jpeg' },
+  { name: 'Nikhita Naidu', role: 'UX Designer', image: '/images/Nikhita Naidu.jpeg' },
 ];
 
 const hiringManagerQuotes = [

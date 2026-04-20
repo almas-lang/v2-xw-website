@@ -170,7 +170,6 @@ const menteeWall = [
   { name: 'Chaitanya', role: 'UX Designer', image: '/images/Chaitanya.jpeg' },
   { name: 'Charusheela Dasari', role: 'UX Designer', image: '/images/Charusheela Dasari.jpeg' },
   { name: 'Eisa Ghaznavi', role: 'UX Designer', image: '/images/Eisa Ghaznavi.jpeg' },
-  { name: 'Fatima', role: 'UX Designer', image: '/images/fatima.jpeg' },
   { name: 'Gopicca B R', role: 'UX Designer', image: '/images/Gopicca B R.jpeg' },
   { name: 'Hari Krishnaa S', role: 'UX Designer', image: '/images/Hari Krishnaa S.jpeg' },
   { name: 'Huseini Indorewala', role: 'UX Designer', image: '/images/Huseini Indorewala.jpeg' },
@@ -197,6 +196,17 @@ const menteeWall = [
   { name: 'Tanvi Kale', role: 'UX Designer', image: '/images/Tanvi Kale.jpeg' },
   { name: 'Vijay Sriramdas', role: 'UX Designer', image: '/images/Vijay Sriramdas.png' },
   { name: 'Zaman Bayezid', role: 'UX Designer', image: '/images/Zaman Bayezid.jpeg' },
+  { name: 'Nithin Narayan', role: 'Creative Leader | UX Designer | Design System Designer', image: '/images/Nithin Narayan.jpeg' },
+  { name: 'Niharshini Malla', role: 'Product Designer | B2B SaaS', image: '/images/Niharshini malla.jpeg' },
+  { name: 'Lipsa Behera', role: 'Design Head at 7 Dots Smart Solutions', image: '/images/Lipsa Bahera.jpeg' },
+  { name: 'Jithesh Khanna', role: 'Senior UX/UI Designer at Cognizant', image: '/images/Jitesh Khanna.jpeg' },
+  { name: 'Harikumaran SM', role: 'Snr Product Designer at Hoomanely', image: '/images/Harikumaran.jpeg' },
+  { name: 'Akshay Hirave', role: 'UX Designer', image: '/images/Akshay Hirave.jpeg' },
+  { name: 'Anushka Sahore', role: 'UX Designer', image: '/images/Anushka Sahore.jpeg' },
+  { name: 'Ashish More', role: 'UX Designer', image: '/images/Ashish More.jpeg' },
+  { name: 'Pratibha Thikpurle', role: 'Senior UX Designer | Enterprise', image: '/images/Pratibha.jpeg' },
+  { name: 'Rohit Panse', role: 'Senior UX Designer at NeoSOFT', image: '/images/Rohit.png' },
+  { name: 'Vandana Prajapati', role: 'User Experience | Human Psychology | Facilitator | Design System', image: '/images/Vandana.jpeg' },
 ];
 
 const hiringManagerQuotes = [

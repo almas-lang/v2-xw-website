@@ -196,7 +196,7 @@ export default function ProgramHero({
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-              <Button href="https://calendly.com/team-xperiencewave/xw-strategy" showArrow>
+              <Button href="https://app.xperiencewave.com/book/dc-strategy-call" showArrow>
                 Book strategy call
               </Button>
               <Link

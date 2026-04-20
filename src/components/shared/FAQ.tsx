@@ -136,7 +136,7 @@ export default function FAQ({
   faqs,
   showCTA = true,
   ctaText = 'Book strategy call',
-  ctaHref = 'https://calendly.com/team-xperiencewave/xw-strategy',
+  ctaHref = 'https://app.xperiencewave.com/book/dc-strategy-call',
   showSeeAllLink = false,
   seeAllHref = '/resources/faq',
   theme = 'default',

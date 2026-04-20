@@ -1503,7 +1503,7 @@ export default function ContactPage() {
                 <h3 className="font-heading text-sm font-semibold text-white uppercase tracking-wider mb-3">Quick Links</h3>
                 <ul className="space-y-2">
                   <li>
-                    <Link href="https://calendly.com/team-xperiencewave/xw-strategy" target="_blank" className="text-sm text-accent hover:underline">
+                    <Link href="https://app.xperiencewave.com/book/dc-strategy-call" target="_blank" className="text-sm text-accent hover:underline">
                       Book a Strategy Call
                     </Link>
                   </li>

@@ -345,7 +345,7 @@ export default function WhatYoullLearn({
               <p className="font-body text-sm text-neutral-400 mb-5">
                 Not sure if this fits?
               </p>
-              <Button href="https://calendly.com/team-xperiencewave/xw-strategy">
+              <Button href="https://app.xperiencewave.com/book/dc-strategy-call">
                 Book a call
               </Button>
               <p className="font-body text-xs text-neutral-500 mt-4 italic">

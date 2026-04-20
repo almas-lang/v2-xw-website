@@ -293,7 +293,7 @@ export default function ProgramFitCheck({
           }}
         >
           <p className="font-body text-lg text-g600 mb-4">Not sure if this fits?</p>
-          <Button href="https://calendly.com/team-xperiencewave/xw-strategy" size="lg">
+          <Button href="https://app.xperiencewave.com/book/dc-strategy-call" size="lg">
             Book a free strategy call
           </Button>
           <p className="font-body text-sm text-g500 mt-4 italic">— we&apos;ll tell you honestly</p>

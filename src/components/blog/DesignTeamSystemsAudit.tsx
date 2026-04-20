@@ -341,7 +341,7 @@ export default function DesignTeamSystemsAudit() {
           <p className="text-sm text-white/60 mb-5 max-w-md mx-auto">
             Want to fix this? Book a training call. We&apos;ll review your audit results and recommend a plan.
           </p>
-          <a href="https://calendly.com/team-xperiencewave/xw-strategy" target="_blank" rel="noopener noreferrer"
+          <a href="https://app.xperiencewave.com/book/dc-strategy-call" target="_blank" rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-8 py-3.5 bg-accent hover:bg-accent/90 text-white font-heading font-semibold rounded-xl transition-colors">
             Book a Training Call
           </a>

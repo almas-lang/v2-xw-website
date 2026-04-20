@@ -615,7 +615,7 @@ export default function ProgramFinder() {
           <p className="font-body text-sm sm:text-base text-g400">
             Not sure this is right? Let&apos;s talk.
           </p>
-          <Button href="https://calendly.com/team-xperiencewave/xw-strategy" size="md" showArrow>
+          <Button href="https://app.xperiencewave.com/book/dc-strategy-call" size="md" showArrow>
             Book a free call
           </Button>
         </div>

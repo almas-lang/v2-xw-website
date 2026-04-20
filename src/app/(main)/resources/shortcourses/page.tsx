@@ -402,7 +402,7 @@ export default function ShortCoursesPage() {
             </Link>
 
             <Link
-              href="https://calendly.com/team-xperiencewave/xw-strategy"
+              href="https://app.xperiencewave.com/book/dc-strategy-call"
               className="inline-flex items-center gap-2 px-5 py-3 md:px-7 md:py-3.5 bg-transparent border-2 border-alice/30 hover:border-alice/50 text-alice font-heading font-semibold rounded-xl transition-all duration-300"
             >
               Book Free Call

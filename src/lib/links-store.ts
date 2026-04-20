@@ -9,7 +9,7 @@ const DEFAULT_LINKS: LinksData = {
       id: '1',
       title: 'Book your free strategy call',
       subtitle: '15 min — see if 1:1 mentorship is right for you',
-      url: 'https://calendly.com/team-xperiencewave/xw-strategy',
+      url: 'https://app.xperiencewave.com/book/dc-strategy-call',
       icon: '📞',
       style: 'cta-red',
       active: true,

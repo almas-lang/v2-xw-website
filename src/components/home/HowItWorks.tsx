@@ -187,7 +187,7 @@ export default function HowItWorks() {
             transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.8s',
           }}
         >
-          <Button href="https://calendly.com/team-xperiencewave/xw-strategy" showArrow>
+          <Button href="https://app.xperiencewave.com/book/dc-strategy-call" showArrow>
             Start with Step 1
           </Button>
         </div>

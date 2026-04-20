@@ -556,7 +556,7 @@ export default function Header() {
                 isPodcastPage ? "https://open.spotify.com/show/5ULMerqiVi3L2HLHMeynoL" :
                 isHireDesignersPage || isTrainingPage || isUXServicesPage ? "/contact" :
                 isCommunityPage ? "/community/register" :
-                "https://calendly.com/team-xperiencewave/xw-strategy"
+                "https://app.xperiencewave.com/book/dc-strategy-call"
               }
               size="lg"
               className="w-full justify-center"
@@ -994,7 +994,7 @@ export default function Header() {
               isPodcastPage ? "https://open.spotify.com/show/5ULMerqiVi3L2HLHMeynoL" :
               isHireDesignersPage || isTrainingPage || isUXServicesPage ? "/contact" :
               isCommunityPage ? "/community/register" :
-              "https://calendly.com/team-xperiencewave/xw-strategy"
+              "https://app.xperiencewave.com/book/dc-strategy-call"
             }
             size="sm"
             variant={isPodcastPage ? "yellow" : isHireDesignersPage || isTrainingPage || isUXServicesPage || isCommunityPage ? "indigo" : "primary"}

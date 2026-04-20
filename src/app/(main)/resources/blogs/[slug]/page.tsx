@@ -274,7 +274,7 @@ const blogContent: Record<string, React.ReactNode> = {
         Wherever you are on this ladder, the worst thing you can do is assume the next step will happen naturally. In India, it won&apos;t. The system doesn&apos;t reward patience. It rewards clarity, positioning, and the ability to make your value impossible to ignore. Those are learnable. But only if you start before you need them.
       </blockquote>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
-        Not sure which level you&apos;re actually at - or what&apos;s specifically blocking you? <a href="https://calendly.com/team-xperiencewave/xw-strategy" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Book a free 45-minute strategy call</a>. We&apos;ll tell you honestly where you are, what the actual gap is, and what to work on first - whether you join us or not.
+        Not sure which level you&apos;re actually at - or what&apos;s specifically blocking you? <a href="https://app.xperiencewave.com/book/dc-strategy-call" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Book a free 45-minute strategy call</a>. We&apos;ll tell you honestly where you are, what the actual gap is, and what to work on first - whether you join us or not.
       </p>
 
       <h2 id="sources-references" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
@@ -654,7 +654,7 @@ const blogContent: Record<string, React.ReactNode> = {
         We also offer <Link href="/for-business/ux-design-services" className="text-accent hover:underline font-medium">UX design services</Link> for organisations that need to augment capacity while building internal capability.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        <a href="https://calendly.com/team-xperiencewave/xw-strategy" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Book a team training call</a> and we will assess where your team is stuck and what it takes to break through.
+        <a href="https://app.xperiencewave.com/book/dc-strategy-call" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Book a team training call</a> and we will assess where your team is stuck and what it takes to break through.
       </p>
 
       <h2 id="sources-references" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
@@ -2011,7 +2011,7 @@ const blogContent: Record<string, React.ReactNode> = {
         Book a free 45-minute strategy call with Xperience Wave. We&apos;ll map your full funnel - visibility, positioning, portfolio, pipeline - and give you a specific plan for what to fix first. No obligations. No pitch.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        <a href="https://calendly.com/team-xperiencewave/xw-strategy" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Book your strategy call</a>
+        <a href="https://app.xperiencewave.com/book/dc-strategy-call" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Book your strategy call</a>
       </p>
 
       <hr className="my-10 border-g200" />
@@ -2235,7 +2235,7 @@ const blogContent: Record<string, React.ReactNode> = {
         Most designers we speak to are in the right place for our <Link href="/programs" className="text-accent hover:underline font-medium">Current programme</Link> (for mid-to-senior designers) or our Tide programme (for designers ready to lead teams). The strategy call tells us which, or neither.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        <a href="https://calendly.com/team-xperiencewave/xw-strategy" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Book your free strategy call</a>
+        <a href="https://app.xperiencewave.com/book/dc-strategy-call" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Book your free strategy call</a>
       </p>
 
       <hr className="my-10 border-g200" />
@@ -2489,7 +2489,7 @@ const blogContent: Record<string, React.ReactNode> = {
         The Tide programme is for designers at or approaching a leadership level, working through what the landscape shift means for how design leadership needs to operate from here.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        If you are not sure which of the three patterns in this piece describes you - or whether you are somewhere between them - the clearest next step is a <a href="https://calendly.com/team-xperiencewave/xw-strategy" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">free 45-minute strategy call</a>. We will map where you actually are, what is working, and what to focus on first. No sales pitch. Walk away with clarity either way.
+        If you are not sure which of the three patterns in this piece describes you - or whether you are somewhere between them - the clearest next step is a <a href="https://app.xperiencewave.com/book/dc-strategy-call" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">free 45-minute strategy call</a>. We will map where you actually are, what is working, and what to focus on first. No sales pitch. Walk away with clarity either way.
       </p>
 
       <hr className="my-10 border-g200" />
@@ -2841,7 +2841,7 @@ const blogContent: Record<string, React.ReactNode> = {
         If you have NDA work sitting unused - or a portfolio that is not converting into interview calls - both are fixable problems with a specific approach. The <Link href="/programs" className="text-accent hover:underline font-medium">Current programme</Link> works through portfolio strategy as part of building designers from execution-layer contribution to strategic influence.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        <a href="https://calendly.com/team-xperiencewave/xw-strategy" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Book a free 45-minute strategy call</a> - walk away with clarity on where to focus first.
+        <a href="https://app.xperiencewave.com/book/dc-strategy-call" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Book a free 45-minute strategy call</a> - walk away with clarity on where to focus first.
       </p>
 
       <p className="text-base md:text-lg text-g500 italic mt-6">
@@ -3091,7 +3091,7 @@ const blogContent: Record<string, React.ReactNode> = {
         If you are further along - senior and moving into leadership - the Tide programme is where that work happens.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        <a href="https://calendly.com/team-xperiencewave/xw-strategy" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Book a free 45-minute strategy call</a> - walk away with a clear read on where you are in the process and what specifically needs to change.
+        <a href="https://app.xperiencewave.com/book/dc-strategy-call" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Book a free 45-minute strategy call</a> - walk away with a clear read on where you are in the process and what specifically needs to change.
       </p>
 
       <hr className="my-10 border-g200" />
@@ -3372,7 +3372,7 @@ const blogContent: Record<string, React.ReactNode> = {
         Not sure where your specific gap is?
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        <a href="https://calendly.com/team-xperiencewave/xw-strategy" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Book a free 45-minute strategy call</a> with Xperience Wave. We&apos;ll look at your positioning, your compensation situation, and what specifically is keeping you in the wrong band. We work 1:1, no group sessions, no generic advice.
+        <a href="https://app.xperiencewave.com/book/dc-strategy-call" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Book a free 45-minute strategy call</a> with Xperience Wave. We&apos;ll look at your positioning, your compensation situation, and what specifically is keeping you in the wrong band. We work 1:1, no group sessions, no generic advice.
       </p>
 
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
@@ -3617,7 +3617,7 @@ const blogContent: Record<string, React.ReactNode> = {
         At Xperience Wave, we work 1:1 with designers who are ready to stop executing and start influencing. Book a free 45-minute strategy call. We will tell you honestly where the gaps are and what to work on first.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
-        <a href="https://calendly.com/team-xperiencewave/xw-strategy" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Book your strategy call &rarr;</a>
+        <a href="https://app.xperiencewave.com/book/dc-strategy-call" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Book your strategy call &rarr;</a>
       </p>
 
       <h2 id="sources-references" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
@@ -3903,7 +3903,7 @@ const blogContent: Record<string, React.ReactNode> = {
         At Xperience Wave, we review portfolios and interview readiness 1:1, not with generic feedback, but with the specific diagnosis of where your candidacy is losing people and what to change. Book a free 45-minute strategy call.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
-        <a href="https://calendly.com/team-xperiencewave/xw-strategy" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Book your strategy call &rarr;</a>
+        <a href="https://app.xperiencewave.com/book/dc-strategy-call" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Book your strategy call &rarr;</a>
       </p>
 
       <h2 id="read-next" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
@@ -4168,7 +4168,7 @@ const blogContent: Record<string, React.ReactNode> = {
         Book a free 45-minute strategy call. We&apos;ll apply this framework to Xperience Wave with you - honestly - and tell you whether we&apos;re the right fit for where you are right now. If we&apos;re not, we&apos;ll tell you that too.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
-        <a href="https://calendly.com/team-xperiencewave/xw-strategy" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Book your strategy call &rarr;</a>
+        <a href="https://app.xperiencewave.com/book/dc-strategy-call" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Book your strategy call &rarr;</a>
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
         Or explore our programmes: <Link href="/programs" className="text-accent hover:underline font-medium">xperiencewave.com/programs &rarr;</Link>
@@ -4466,7 +4466,7 @@ const blogContent: Record<string, React.ReactNode> = {
         That is what our 1:1 mentorship programme is designed for. We work with designers who have the experience and the skill but not the preparation, and we close that gap before the title arrives. Not management theory. Specific muscles for a specific transition.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
-        If that sounds like where you are: <a href="https://calendly.com/team-xperiencewave/xw-strategy" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">book a strategy call</a>. No sales pitch. Just an honest conversation about whether you are ready, what is missing, and what the path forward looks like.
+        If that sounds like where you are: <a href="https://app.xperiencewave.com/book/dc-strategy-call" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">book a strategy call</a>. No sales pitch. Just an honest conversation about whether you are ready, what is missing, and what the path forward looks like.
       </p>
 
       <h2 id="read-next" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
@@ -4676,7 +4676,7 @@ const blogContent: Record<string, React.ReactNode> = {
         Book a free 45-minute strategy call. We&apos;ll tell you which phase you&apos;re in, what your shifting skills are, and what to build next. Whether you join us or not.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
-        <a href="https://calendly.com/team-xperiencewave/xw-strategy" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Book your strategy call &rarr;</a>
+        <a href="https://app.xperiencewave.com/book/dc-strategy-call" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Book your strategy call &rarr;</a>
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
         Or explore the career transition programme: <Link href="/programs/career-transition-ux-mentorship" className="text-accent hover:underline font-medium">Xperience Wave Career Transition Programme &rarr;</Link>
@@ -4902,7 +4902,7 @@ const blogContent: Record<string, React.ReactNode> = {
         Book a free 45-minute strategy call. We&apos;ll map the gap between where design sits in your organisation and where it should sit - and tell you what it takes to close it.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
-        <a href="https://calendly.com/team-xperiencewave/xw-strategy" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Book your strategy call &rarr;</a>
+        <a href="https://app.xperiencewave.com/book/dc-strategy-call" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Book your strategy call &rarr;</a>
       </p>
 
       <h2 id="read-next" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
@@ -5179,7 +5179,7 @@ const blogContent: Record<string, React.ReactNode> = {
         Book a free 45-minute strategy call with Xperience Wave. We will tell you honestly where you stand and what is actually blocking you, whether you join us or not.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
-        <a href="https://calendly.com/team-xperiencewave/xw-strategy" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Book your strategy call &rarr;</a>
+        <a href="https://app.xperiencewave.com/book/dc-strategy-call" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Book your strategy call &rarr;</a>
       </p>
 
       <h2 id="read-next" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
@@ -5480,7 +5480,7 @@ const blogContent: Record<string, React.ReactNode> = {
         Working on getting into the room, or trying to hold the seat you already have?
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        At Xperience Wave, we work 1:1 with mid-to-senior designers on exactly this: building the positioning, the language, and the evidence base to operate at the level the title requires. <a href="https://calendly.com/team-xperiencewave/xw-strategy" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Book a free 45-minute strategy call.</a>
+        At Xperience Wave, we work 1:1 with mid-to-senior designers on exactly this: building the positioning, the language, and the evidence base to operate at the level the title requires. <a href="https://app.xperiencewave.com/book/dc-strategy-call" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Book a free 45-minute strategy call.</a>
       </p>
 
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
@@ -5786,7 +5786,7 @@ const blogContent: Record<string, React.ReactNode> = {
         If your salary is below market and you have a job change or appraisal coming up, the single most valuable thing you can do is research your number before the conversation starts. Use the table above. Cross-reference Glassdoor and AmbitionBox. Talk to people in similar roles. Know your range before anyone asks.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
-        If you want help beyond negotiation - positioning yourself for the right role, not just the right number - that is what our 1:1 mentorship programme is designed for. Salary is one part. The bigger question is: what kind of designer are you, and what should you be earning for the value you bring? If that is where you are: <a href="https://calendly.com/team-xperiencewave/xw-strategy" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">book a strategy call</a>.
+        If you want help beyond negotiation - positioning yourself for the right role, not just the right number - that is what our 1:1 mentorship programme is designed for. Salary is one part. The bigger question is: what kind of designer are you, and what should you be earning for the value you bring? If that is where you are: <a href="https://app.xperiencewave.com/book/dc-strategy-call" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">book a strategy call</a>.
       </p>
 
       <h2 id="sources-references" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
@@ -6034,7 +6034,7 @@ const blogContent: Record<string, React.ReactNode> = {
         ~80% of our mentees are on <Link href="/programs/career-transition-ux-mentorship" className="text-accent hover:underline font-medium">Current</Link> - mid-level designers who know they are capable of more but have not been able to break through to senior roles. If that sounds like you, that is probably your programme.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
-        Not sure? Book a free <a href="https://calendly.com/team-xperiencewave/xw-strategy" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">strategy call</a> - 45 minutes, no obligations. We assess where you are, understand your goals, and recommend the right path. You walk away with clarity either way.
+        Not sure? Book a free <a href="https://app.xperiencewave.com/book/dc-strategy-call" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">strategy call</a> - 45 minutes, no obligations. We assess where you are, understand your goals, and recommend the right path. You walk away with clarity either way.
       </p>
 
       <h2 id="honesty" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
@@ -6066,7 +6066,7 @@ const blogContent: Record<string, React.ReactNode> = {
         If you have been thinking about this for weeks or months - this is the step.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
-        <a href="https://calendly.com/team-xperiencewave/xw-strategy" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Book your strategy call</a>
+        <a href="https://app.xperiencewave.com/book/dc-strategy-call" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Book your strategy call</a>
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
         Or explore the programmes directly:
@@ -6527,7 +6527,7 @@ const blogContent: Record<string, React.ReactNode> = {
         Our <Link href="/for-business/training-for-teams" className="text-accent hover:underline font-medium">corporate training programme</Link> is built for exactly this. We work with design teams at funded product companies and help them build design-specific systems: review cadences, stakeholder integration protocols, role definitions, maturity roadmaps, and leadership development for the people managing the team. Not generic management training. Systems that make your existing designers more effective.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        The conversation starts with a systems audit. <a href="https://calendly.com/team-xperiencewave/xw-strategy" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Book a training call</a> and we will assess which systems are missing and what it takes to build them.
+        The conversation starts with a systems audit. <a href="https://app.xperiencewave.com/book/dc-strategy-call" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Book a training call</a> and we will assess which systems are missing and what it takes to build them.
       </p>
 
       <h2 id="sources-references" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">

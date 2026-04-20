@@ -12,6 +12,7 @@ import JoinConversation from "@/components/shared/JoinConversation";
 import FAQ from "@/components/shared/FAQ";
 import BlogSection from "@/components/home/BlogSection";
 import CTASection from "@/components/shared/CTASection";
+import { FreeTrainingPromo } from "@/components/shared/FreeTrainingPromo";
 
 const homeFaqs = [
   {
@@ -56,6 +57,11 @@ export default function Home() {
       <MentorshipComparison />
       <MenteesWorkAt />
       <SuccessStories />
+      <section className="bg-white py-8 md:py-12 px-5">
+        <div className="max-w-3xl mx-auto">
+          <FreeTrainingPromo variant="card" source="homepage" />
+        </div>
+      </section>
       <Programs />
       <JoinConversation heading="Beyond Mentorship" />
       <FAQ faqs={homeFaqs} theme="default" />

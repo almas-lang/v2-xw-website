@@ -91,6 +91,7 @@ export default function UpcomingEdition() {
 
       <div className="relative z-10 max-w-[1200px] mx-auto px-5 py-16 md:py-20 lg:py-28">
         {/* Header */}
+        {false && (<>
         <div
           className="text-center mb-8 md:mb-10"
           style={{
@@ -227,9 +228,10 @@ export default function UpcomingEdition() {
             ))}
           </div>
         </div>
+        </>)}
 
         {/* Schedule section */}
-        <div
+        {false && (<div
           style={{
             opacity: isVisible ? 1 : 0,
             transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
@@ -338,7 +340,7 @@ export default function UpcomingEdition() {
               Register Now
             </Button>
           </div>
-        </div>
+        </div>)}
       </div>
 
       {/* Bottom border */}

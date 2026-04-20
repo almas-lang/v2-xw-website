@@ -223,7 +223,7 @@ export default function Hero() {
                   transition: 'all 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.35s',
                 }}
               >
-                <Button href="https://calendly.com/team-xperiencewave/xw-strategy" size="lg" showArrow>
+                <Button href="https://app.xperiencewave.com/book/dc-strategy-call" size="lg" showArrow>
                   Book strategy call
                 </Button>
               </div>

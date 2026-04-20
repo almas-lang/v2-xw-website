@@ -25,7 +25,7 @@ export default function CTASection({
   ),
   subtitle = "Book a free strategy call and get clarity on what's blocking you - whether you join us or not",
   buttonText = "Book strategy call",
-  buttonHref = "https://calendly.com/team-xperiencewave/xw-strategy",
+  buttonHref = "https://app.xperiencewave.com/book/dc-strategy-call",
   benefits = defaultBenefits,
 }: CTASectionProps) {
   return (

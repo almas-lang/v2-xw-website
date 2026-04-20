@@ -250,7 +250,7 @@ export default function InvestmentSection({
             transitionDelay: '400ms',
           }}
         >
-          <Button href="https://calendly.com/team-xperiencewave/xw-strategy" size="lg">
+          <Button href="https://app.xperiencewave.com/book/dc-strategy-call" size="lg">
             Book a free strategy call
           </Button>
         </div>

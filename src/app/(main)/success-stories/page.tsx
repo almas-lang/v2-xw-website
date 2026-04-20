@@ -308,57 +308,152 @@ export default function SuccessStoriesPage() {
         ref={setRef('hero')}
         className="relative overflow-hidden bg-carbon text-white"
       >
+        {/* Ambient glow layers */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
             background: `
-              radial-gradient(ellipse 80% 50% at 20% 30%, rgba(99,102,241,0.15) 0%, transparent 55%),
-              radial-gradient(ellipse 60% 40% at 80% 70%, rgba(220,238,255,0.06) 0%, transparent 50%)
+              radial-gradient(ellipse 70% 50% at 20% 20%, rgba(99,102,241,0.28) 0%, transparent 55%),
+              radial-gradient(ellipse 60% 45% at 85% 30%, rgba(236,72,153,0.12) 0%, transparent 55%),
+              radial-gradient(ellipse 80% 50% at 50% 100%, rgba(16,185,129,0.10) 0%, transparent 55%)
             `,
           }}
         />
         <div
           className="absolute inset-0 opacity-30"
           style={{
-            backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.04) 1px, transparent 0)',
+            backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0)',
             backgroundSize: '32px 32px',
           }}
         />
-        <div className="relative z-10 max-w-6xl mx-auto px-5 py-20 sm:py-24 md:py-28 lg:py-32 text-center">
-          <div className="inline-flex items-center gap-3 mb-6" style={fadeIn('hero', 0)}>
-            <div className="w-8 h-[2px] bg-indigo-400" />
-            <span className="font-body text-xs uppercase tracking-[0.2em] font-medium text-indigo-300">
-              Success Stories
-            </span>
-            <div className="w-8 h-[2px] bg-indigo-400" />
+        {/* Soft top edge gradient line */}
+        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-indigo-400/40 to-transparent" />
+
+        <div className="relative z-10 max-w-6xl mx-auto px-5 py-16 sm:py-20 md:py-24 lg:py-28 text-center">
+          {/* Avatar stack — social proof anchor */}
+          <div className="flex flex-col items-center gap-4 mb-8" style={fadeIn('hero', 0)}>
+            <div className="flex items-center -space-x-3">
+              {[
+                '/images/Kritika Singh.jpeg',
+                '/images/Jonah_Immanuel.png',
+                '/images/Pavan Mutyala.jpeg',
+                '/images/sheetal.png',
+                '/images/Radhakrishna Aekbote.jpeg',
+                '/images/suril.jpeg',
+                '/images/shah_rukh.jpeg',
+              ].map((src, i) => (
+                <div
+                  key={src}
+                  className="w-10 h-10 sm:w-11 sm:h-11 rounded-full overflow-hidden ring-2 ring-carbon shadow-lg"
+                  style={{ zIndex: 10 - i }}
+                >
+                  <img src={src} alt="" className="w-full h-full object-cover" />
+                </div>
+              ))}
+              <div
+                className="relative w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-gradient-to-br from-indigo-500 to-indigo-700 ring-2 ring-carbon shadow-lg flex items-center justify-center"
+                style={{ zIndex: 1 }}
+              >
+                <span className="font-heading text-[10px] sm:text-xs font-bold text-white">+3k</span>
+              </div>
+            </div>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 backdrop-blur-sm border border-white/10">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400" />
+              </span>
+              <span className="font-body text-[11px] sm:text-xs font-medium text-white/80 tracking-wide">
+                Designers landing offers every week
+              </span>
+            </div>
           </div>
+
+          {/* Headline */}
           <h1
-            className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 max-w-4xl mx-auto"
+            className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.05] tracking-tight mb-6 max-w-5xl mx-auto"
             style={fadeIn('hero', 100)}
           >
-            Real transformations. Real careers.
+            Real{' '}
+            <span className="relative inline-block">
+              <span className="bg-gradient-to-r from-indigo-300 via-indigo-400 to-fuchsia-300 bg-clip-text text-transparent">
+                transformations.
+              </span>
+            </span>
+            <br className="hidden sm:block" />
+            {' '}Real careers.
           </h1>
+
           <p
-            className="font-body text-base sm:text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-12"
+            className="font-body text-base sm:text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-12 leading-relaxed"
             style={fadeIn('hero', 200)}
           >
             Designers who turned senior titles, leadership roles, and dream offers into reality &mdash;
             in their own words.
           </p>
+
+          {/* Stat cards — glowing tiles */}
           <div
-            className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 max-w-4xl mx-auto"
+            className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 max-w-5xl mx-auto"
             style={fadeIn('hero', 300)}
           >
-            {stats.map((stat) => (
-              <div key={stat.label} className="text-center">
-                <div className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-1">
-                  {stat.value}
-                </div>
-                <div className="font-body text-xs sm:text-sm text-white/60 uppercase tracking-wider">
-                  {stat.label}
+            {stats.map((stat, i) => (
+              <div
+                key={stat.label}
+                className="group relative rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-sm px-4 py-5 sm:px-5 sm:py-6 overflow-hidden transition-all duration-300 hover:border-indigo-400/40 hover:bg-white/[0.06]"
+              >
+                <div
+                  className="absolute -top-12 -right-12 w-32 h-32 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                  style={{
+                    background: i % 2 === 0
+                      ? 'radial-gradient(circle, rgba(99,102,241,0.35) 0%, transparent 70%)'
+                      : 'radial-gradient(circle, rgba(236,72,153,0.25) 0%, transparent 70%)',
+                  }}
+                />
+                <div className="relative">
+                  <div className="font-heading text-3xl sm:text-4xl md:text-5xl font-extrabold leading-none mb-2 bg-gradient-to-b from-white to-white/70 bg-clip-text text-transparent">
+                    {stat.value}
+                  </div>
+                  <div className="font-body text-[10px] sm:text-xs text-white/60 uppercase tracking-[0.15em] font-medium">
+                    {stat.label}
+                  </div>
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Trust row */}
+          <div
+            className="mt-12 sm:mt-14 flex flex-col items-center gap-4"
+            style={fadeIn('hero', 400)}
+          >
+            <div className="flex items-center gap-2">
+              <div className="flex items-center gap-0.5">
+                {[0, 1, 2, 3, 4].map((i) => (
+                  <svg key={i} className="w-4 h-4 text-amber-400" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.367 2.446a1 1 0 00-.363 1.118l1.286 3.957c.3.922-.755 1.688-1.54 1.118l-3.366-2.447a1 1 0 00-1.176 0l-3.366 2.447c-.784.57-1.838-.196-1.539-1.118l1.286-3.957a1 1 0 00-.363-1.118L2.076 9.384c-.784-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z" />
+                  </svg>
+                ))}
+              </div>
+              <span className="font-body text-xs sm:text-sm text-white/70">
+                <span className="font-bold text-white">4.9/5</span> from 500+ mentees
+              </span>
+            </div>
+            <div className="font-body text-[10px] sm:text-xs uppercase tracking-[0.2em] text-white/40 font-medium">
+              Hired at
+            </div>
+            <div className="flex flex-wrap justify-center items-center gap-x-5 gap-y-2 sm:gap-x-8 font-heading text-xs sm:text-sm font-semibold text-white/60">
+              <span>McKinsey</span>
+              <span className="text-white/20">•</span>
+              <span>Siemens</span>
+              <span className="text-white/20">•</span>
+              <span>Informatica</span>
+              <span className="text-white/20">•</span>
+              <span>Deloitte</span>
+              <span className="text-white/20">•</span>
+              <span>JLL</span>
+              <span className="text-white/20">•</span>
+              <span>Wongdoody</span>
+            </div>
           </div>
         </div>
       </section>
@@ -580,6 +675,29 @@ export default function SuccessStoriesPage() {
                 </div>
               </div>
             ))}
+            {/* "250+ mentees" hero tile — fills trailing grid slots */}
+            <div
+              className="col-span-3 sm:col-span-2 md:col-span-3 lg:col-span-3 rounded-lg overflow-hidden shadow-md relative"
+              style={fadeIn('wall', 40 + menteeWall.length * 12)}
+            >
+              <div className="relative aspect-[3/1] sm:aspect-auto sm:h-full min-h-[120px] bg-gradient-to-br from-indigo-600 via-indigo-500 to-indigo-700 flex items-center justify-center p-4 text-center">
+                <div
+                  className="absolute inset-0 opacity-20"
+                  style={{
+                    backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.4) 1px, transparent 0)',
+                    backgroundSize: '16px 16px',
+                  }}
+                />
+                <div className="relative">
+                  <div className="font-heading text-2xl sm:text-3xl md:text-4xl font-extrabold text-white leading-none mb-1">
+                    250+
+                  </div>
+                  <div className="font-body text-[11px] sm:text-xs md:text-sm text-white/90 font-medium leading-tight">
+                    1:1 mentees achieving success
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

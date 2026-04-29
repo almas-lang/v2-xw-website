@@ -17,13 +17,14 @@ import {
 } from "@/lib/freetraining/track";
 
 const schema = z.object({
-  name: z.string().min(2, "Please enter your name"),
-  email: z.string().email("Please enter a valid email address"),
+  name: z
+    .string()
+    .min(2, "Please enter your name")
+    .regex(/^[a-zA-ZÀ-ɏऀ-ॿ\s'.-]+$/, { message: "Please enter a valid name" }),
+  email: z.email({ message: "Please enter a valid email address" }),
   whatsapp: z
     .string()
-    .min(10, "Please enter a valid 10-digit number")
-    .max(10, "Please enter a valid 10-digit number")
-    .regex(/^\d{10}$/, "Please enter a valid 10-digit number"),
+    .regex(/^[6-9]\d{9}$/, { message: "Please enter a valid 10-digit number" }),
 });
 
 type FormData = z.infer<typeof schema>;

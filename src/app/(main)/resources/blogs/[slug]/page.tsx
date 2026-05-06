@@ -13,6 +13,345 @@ import { FreeTrainingCTA } from '@/components/blog/FreeTrainingCTA';
 
 // Blog content with internal links for SEO
 const blogContent: Record<string, React.ReactNode> = {
+  'stakeholder-management-for-designers': (
+    <>
+      <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
+        Let me describe a pattern I have watched play out hundreds of times.
+      </p>
+      <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
+        A designer does solid work. The research is thorough, the solution is grounded, the screens look sharp. They walk into a stakeholder review expecting productive feedback. Instead, the VP fixates on a button colour. The PM says &quot;looks great&quot; and then quietly changes direction two weeks later. The engineering lead asks questions the designer already answered in slide three - but nobody was paying attention by then because the first two slides were a process timeline nobody asked for.
+      </p>
+      <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
+        The designer walks out frustrated, convinced stakeholders &quot;just don&apos;t get design.&quot;
+      </p>
+      <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
+        But here is the thing. The stakeholders are not the problem. The way the designer managed them is.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        After mentoring 140+ designers at Xperience Wave and auditing how design functions inside organisations of all sizes, I can tell you: stakeholder management is not a soft skill you pick up along the way. It is the skill that determines whether your design work shapes decisions or decorates them. And in 2026, with design teams getting leaner and expectations getting broader, it has never mattered more.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Nielsen Norman Group&apos;s State of UX 2026 report makes this explicit: successful practitioners need research, stakeholder management, and leadership alongside design craft. Not instead of it - alongside it. And Maze&apos;s Future of User Research report found that business acumen, storytelling, and stakeholder management are now the most valuable assets for anyone doing research-informed design work.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        This blog covers the complete picture - not just &quot;how to present better,&quot; but how to build the kind of stakeholder relationships where your work gets implemented, not just applauded.
+      </p>
+
+      <h2 id="why-not-optional" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Why Stakeholder Management Is Not Optional
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Before we get into tactics, let us be clear about what is at stake.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Design is not done in isolation. It exists to solve problems that align with business strategy. When that alignment breaks - when design operates as a service function producing screens to spec - the organisation starts to believe design can be replaced. By a smaller team. By an agency. By AI tools. By developers who &quot;also do design.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        McKinsey&apos;s research on design-led companies found that those with top-quartile design maturity increased revenues and shareholder returns substantially faster than competitors. But the same research found that more than 40 percent of companies surveyed do not talk to their end users during development, and over 50 percent have no system for evaluating the results of project teams.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        That is not a design quality problem. That is a stakeholder management problem. Stakeholder management is essential because it does four things:
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>It aligns design and business goals.</strong> When you understand what your stakeholders are trying to achieve - in their language, not yours - you design solutions they can champion, not solutions they have to be convinced of.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>It builds buy-in that reduces pushback.</strong> The more involved stakeholders are in the process, the more ownership they feel over the outcome. People do not push back on decisions they helped make.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>It manages expectations before they become conflicts.</strong> Stakeholders come in with assumptions about what design will produce, how long it will take, and what it will look like. If you do not set expectations early, they will fill the gap with their own - and then hold you to standards you never agreed to.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        <strong>It builds the trust that lets you influence decisions.</strong> When stakeholders trust you, they stop seeing you as the person who makes the screens and start seeing you as the person who helps them make better decisions. That shift changes everything about your role.
+      </p>
+
+      <h2 id="know-your-audience" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Know Who You Are Talking To (And What They Actually Care About)
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        You already know who your stakeholders are. The mistake is treating them as a monolith. Each type operates with a fundamentally different definition of success - and if you are presenting the same way to your PM, your VP, and your engineering lead, you are failing at least two of them.
+      </p>
+
+      <h3 id="product-managers" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        Product Managers
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        You know what your PM cares about: the roadmap, the timeline, the quarterly goal. What you probably underestimate is how much of their internal credibility depends on the features they ship. When you present to a PM, they are not evaluating your design rationale. They are silently calculating: can engineering build this in time, will it move the metric I committed to, and can I defend this in my next leadership review?
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>What they need from you:</strong> Evidence that your design solves the problem the roadmap is targeting - not a better problem you found along the way. If you discovered a more important problem during research, frame it as a risk to their goal, not as a redirect you are imposing.
+      </p>
+
+      <h3 id="developers" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        Developers and Engineering Teams
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Engineers are not your production team. They are your reality check. When you show a beautiful interaction, they are estimating sprint costs. If your design creates architectural headaches you did not anticipate, you will lose their trust fast - and an engineer who does not trust the design will quietly simplify it during implementation without telling you.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>What they need from you:</strong> Early involvement in decisions that affect architecture. Not sign-off on your mockups - genuine input on feasibility before you commit to a direction in front of the VP.
+      </p>
+
+      <h3 id="executives" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        Executives (VPs, C-suite, Founders)
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Executives operate at a level of abstraction most designers are not trained for. They do not care about your wireframes. They care about what the design does to the metrics they report to the board. If you cannot draw a line from your design to revenue, retention, or cost reduction, your work is invisible to them - regardless of how good it is.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>What they need from you:</strong> Not &quot;we improved the checkout flow&quot; but &quot;we expect this change to recover 25 percent of abandoned checkouts, which represents roughly $X in quarterly revenue.&quot; The specificity matters. Vague impact claims sound like guesses. Quantified impact claims sound like strategy.
+      </p>
+
+      <h3 id="marketing-sales-support" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        Marketing, Sales, and Customer Support Teams
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        These teams live with the downstream consequences of every design decision you make. Marketing has to position what you built. Sales has to demo it without worrying about edge cases breaking mid-call. Support has to field the tickets when something confusing ships. They do not approve your designs, but they can make your life significantly harder if you blindside them.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>What they need from you:</strong> A heads-up before major changes ship. Not approval - awareness. The same feature that delights a user in testing might generate a wave of support tickets if the error states are not handled.
+      </p>
+
+      <h3 id="users-and-clients" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        A Note on Users and Clients
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Users and clients are not stakeholders - at least not in the way this blog uses the term. Stakeholders are people inside the organisation who have influence over or a stake in the decisions you make as a builder. Users are who you design for. Stakeholders are who you navigate while designing. Conflating the two weakens your ability to manage either well. Your user research informs your design. Your stakeholder management ensures the design gets shipped.
+      </p>
+
+      {/* Inline image 1 - Stakeholder mapping / strategic planning visual */}
+      <div className="relative aspect-[16/9] rounded-xl overflow-hidden my-10">
+        <Image
+          src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=800&q=80"
+          alt="Strategic stakeholder mapping session with sticky notes and framework boards on a wall"
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 720px"
+        />
+      </div>
+
+      <h2 id="five-scenarios" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Five Stakeholder Scenarios That Break Designers (And How to Handle Each One)
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Generic advice like &quot;communicate clearly&quot; and &quot;know your audience&quot; is true but useless. The real challenge is knowing what to do in specific situations that every designer eventually faces. Here are the five most common ones.
+      </p>
+
+      <h3 id="scenario-1" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        Scenario 1: The Stakeholder You Involved Too Late
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is the most common and most damaging scenario. You disappear for two weeks. You do your research, your synthesis, your exploration. You build something you are proud of. Then you walk into a meeting and unveil it.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The stakeholder&apos;s first reaction is not about the design. It is about the gap. Where were you? What were you doing? Why am I only seeing this now?
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        When stakeholders are surprised by your work, they do not evaluate it - they interrogate it. The reveal model feels dramatic, but it destroys trust. Because trust is built through visibility, not through big presentations.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        One of our mentees at a well-known fintech company was struggling badly with this. Her design work was strong. Her research was thorough. But stakeholders kept questioning her decisions and asking for changes late in the process.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        When we dug into it, the problem was clear. She was doing all the right work in isolation. By the time she presented, stakeholders had no context for her decisions. They had not been part of the journey. So they pushed back - not because the work was bad, but because they had no ownership over it.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        We changed one thing: she started communicating from day one. Before starting work, she aligned with stakeholders on what exactly she was going to help them achieve. She told them her process in plain language. She shared rough work early. She flagged risks before they became problems.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        The transformation happened mid-process. Stakeholders started showing up to check-ins with their own ideas. They started defending her design decisions to other teams. They started saying &quot;our design direction&quot; instead of &quot;what the designer came up with.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>What to do:</strong> Before you start any design work, have a 15-minute alignment conversation. Not a presentation - a conversation. Cover three things: what problem are we solving, what does success look like, and what constraints should I know about.
+      </p>
+      <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-8">
+        &quot;Before I start on this, I want to make sure we are aligned on what we are solving for. Can I get 15 minutes to walk through the problem as I understand it? I do not want to go off and build something for two weeks only to find out we were solving different problems.&quot;
+      </blockquote>
+
+      <h3 id="scenario-2" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        Scenario 2: The Stakeholder Who Fixates on Pixels
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Your VP spends the entire review talking about button colours and font sizes. Meanwhile, the actual design decision - whether to split the checkout into three steps or keep it as one - goes unaddressed.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This happens because you gave them nothing else to react to. When you present a polished, pixel-perfect screen, stakeholders cannot evaluate the logic. They can only evaluate what they can see. And what they can see is pixels. So they comment on pixels.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>What to do:</strong> Present the thinking before the pixels. Lead with the insight, not the screen. Most designers present like this: &quot;Here is the screen. Here is another screen. Here is the flow.&quot; Instead, present like this: &quot;Here is what we learned. Here is what it means. Here is how the design responds to it.&quot;
+      </p>
+      <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-6">
+        &quot;Before I show you the screens, let me share what we found. When we looked at [data source], [specific finding]. That told us [insight]. Based on that, the design does [specific thing] to address it. Here is what that looks like.&quot;
+      </blockquote>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Now the stakeholder evaluates the logic, not the pixels. If they disagree, they disagree with the reasoning - which is a productive conversation. The data does not need to be a 400-person survey. It can be five user interviews. A pattern in support tickets. An analytics screenshot showing a 40 percent drop-off. The point is evidence, not opinion.
+      </p>
+
+      <h3 id="scenario-3" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        Scenario 3: The Stakeholder Who Says &quot;Looks Great&quot; Then Reverses
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This might be the most frustrating scenario. You present. Everyone nods. &quot;Looks great.&quot; You move forward. Two weeks later, someone quietly changes direction. Or worse, the same stakeholder who approved the design now wants something completely different.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This happens because they did not actually understand what they approved. They saw the surface and said yes to the surface. They did not understand the structural decisions underneath - because you did not make those decisions visible.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>What to do:</strong> Separate approval of direction from approval of execution. Get explicit sign-off on the approach before you design anything. After your alignment conversation, send a short written summary: &quot;Here is my understanding of the problem, the approach I am taking, and the expected output. If this looks right, I will move to the next step.&quot; Get a reply. That reply becomes your anchor if things shift later.
+      </p>
+      <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-8">
+        &quot;I hear the new direction. Before we switch, I want to flag - we aligned on [original approach] on [date] because [reason]. The new direction changes [specific thing]. I am happy to explore it, but I want us to make that call deliberately, not accidentally.&quot;
+      </blockquote>
+
+      <h3 id="scenario-4" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        Scenario 4: The Stakeholder Who Does Not Believe in Design
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Some stakeholders see design as decoration - the team that makes things look nice after the real decisions have been made. They do not actively oppose you. They just do not think about you until they need screens.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is often a UX maturity problem, not a personality problem. In organisations with low design maturity, designers have to constantly evangelise about their work, why it matters, and why they should be allowed to continue doing it. NNGroup&apos;s research found that organisations only performed 22 percent of recommended DesignOps efforts across 500+ companies.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>What to do:</strong> Stop trying to convince them with arguments. Convince them with outcomes. Pick one small project. Apply your full process - research, data, design, measurement. Track the result. Then share the result in their language: not &quot;we improved the experience&quot; but &quot;support tickets for this flow dropped 30 percent&quot; or &quot;conversion on this page increased from 2.1 to 3.4 percent.&quot;
+      </p>
+      <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-8">
+        &quot;I know design sometimes feels like a black box. I would like to run a quick pilot on [specific project] - I will share my process as I go and measure the outcome so we can see what impact it has. If it works, we have a model for how design can contribute. If it does not, I will adjust.&quot;
+      </blockquote>
+
+      <h3 id="scenario-5" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        Scenario 5: The Cross-Functional Stakeholder Who Blocks Your Work
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        A design leader at an enterprise software company described this perfectly: he led a CEO-backed UX redesign, but when the work was introduced to other teams, he encountered severe resistance. Teams who had felt shut out of the process found fault with minor details and actively resisted the roll-out.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is a political problem, not a design problem. And it happens more often than anyone admits. The person blocking your work might not disagree with your design. They might disagree with the fact that they were not consulted. Or they might feel threatened by a project that changes their workflow.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>What to do:</strong> Map your stakeholders before you start. Not just the people who need to approve your work, but the people who can block it. Use a simple power-interest matrix: who has high influence and high interest (manage closely), who has high influence but low interest (keep satisfied), who has low influence but high interest (keep informed).
+      </p>
+      <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-8">
+        &quot;I know this project touches [their area]. Before we go too far, I would love to get your perspective on [specific aspect]. Your team deals with this daily - I want to make sure we are not designing something that creates problems downstream.&quot;
+      </blockquote>
+
+      <h2 id="you-are-stakeholder" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Flip Side: You Are a Stakeholder Too
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Most content about stakeholder management focuses on managing upwards - your PM, your VP, your client. But designers are also stakeholders to other teams, and understanding this changes how you operate.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>To Engineering:</strong> Your designs dictate what engineers build - the features, the flows, the interactions. If you design without understanding technical constraints, you are the difficult stakeholder. If you hand over designs without context, engineers will make assumptions. Those assumptions might break your design. <em>Fix: Include engineering in design decisions early. Not for approval - for feasibility.</em>
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>To Product Management:</strong> Your design expertise ensures the product meets user needs and aligns with the vision. But if you cannot articulate why your design serves the business goal - if you only speak in terms of UX principles - you are a stakeholder they have to manage, not a partner they want to consult. <em>Fix: Learn their language. Understand the metrics they track. Frame your design work in terms of the outcomes they are responsible for.</em>
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        <strong>To Marketing, Support, and Sales:</strong> These teams live with the consequences of your design decisions every day. Marketing has to sell what you built. Support has to troubleshoot it. Sales has to demo it. <em>Fix: Loop them in on major design changes. A 10-minute heads-up before launch saves weeks of friction afterwards.</em>
+      </p>
+
+      <h2 id="challenging-stakeholders" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Handling Challenging Stakeholders
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Not every stakeholder is reasonable. Some are difficult - and you need specific strategies for specific types.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>The stakeholder with strong opinions and no data:</strong> Empathise with their position first. Then redirect to evidence. &quot;That is a really interesting perspective. Let me show you what we found when we tested something similar - it might change the approach.&quot; If they insist without data, document their feedback and present it alongside the research-backed alternative. Let the evidence compete with the opinion.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>The stakeholder who wants to design for you:</strong> They open your Figma file and start moving things around. Or they sketch their solution on a whiteboard and tell you to build it. This is usually about control, not about design. The fix is to acknowledge their idea and then expand the conversation. &quot;I like the thinking behind this. Let me explore a few variations - including this direction - and bring them back with the trade-offs mapped out.&quot; You are giving them credit while retaining control of the design.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>The stakeholder who goes quiet and then surprises you:</strong> Some stakeholders seem disengaged - they do not attend reviews, they do not give feedback. Then suddenly they appear with a completely different vision. This is a keep-satisfied stakeholder you mistook for a keep-informed one. Proactively send them updates even when they do not ask. Short. Async. &quot;Quick update on [project]. Here is where we are. Flag anything that concerns you.&quot; The goal is to prevent the surprise, not react to it.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        <strong>The stakeholder who escalates everything:</strong> Some stakeholders bypass you and take feedback directly to your manager or the VP. This is usually a trust problem. They do not believe you will act on their feedback, so they go over your head. The fix is to close the loop visibly. Every piece of feedback should get a documented response: &quot;You said X. Here is what we did about it and why.&quot; When people see their input reflected in the work, they stop escalating.
+      </p>
+
+      <h2 id="communication-rhythm" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Building a Communication Rhythm That Prevents Most of These Problems
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The majority of stakeholder conflicts come from one root cause: silence. When a designer goes dark, stakeholders fill the silence with anxiety.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        Build a rhythm and stick to it:
+      </p>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li><strong>Start of project:</strong> Alignment conversation. 15 minutes. Problem, success criteria, constraints.</li>
+        <li><strong>Weekly async update:</strong> Takes five minutes to write. &quot;This week I [what you did]. Two things stood out: [finding 1] and [finding 2]. Next step: [what is coming]. One risk I am watching: [risk].&quot;</li>
+        <li><strong>Before major decisions:</strong> Quick check-in. &quot;I am about to commit to [direction]. Here is why. Any concerns before I move forward?&quot;</li>
+        <li><strong>After completion:</strong> Close the loop. &quot;Here is what we delivered. Here is how it performed against the success criteria we set at the start.&quot;</li>
+      </ul>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        This rhythm costs you maybe 30 minutes a week. It prevents 90 percent of stakeholder conflicts. It also quietly builds a paper trail of your contributions - which matters enormously when promotion conversations happen.
+      </p>
+
+      {/* Inline image 2 - Team trust / collaborative communication visual */}
+      <div className="relative aspect-[16/9] rounded-xl overflow-hidden my-10">
+        <Image
+          src="https://images.unsplash.com/photo-1552581234-26160f608093?w=800&q=80"
+          alt="Team of professionals engaged in a collaborative discussion around a shared workspace"
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 720px"
+        />
+      </div>
+
+      <h2 id="best-designers" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What the Best Designers Do Differently
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Tom Greever, author of Articulating Design Decisions, puts it well: the goal is not to argue with stakeholders about who is right. It is to create an environment where stakeholders can clearly see your expertise and thought process, so that they want to support you.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        The best designers I have worked with - the ones who get promoted, who get their designs shipped, who earn that seat at the table - all share three habits:
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>They speak business first, design second.</strong> They understand what metrics their stakeholders track and they frame every design decision in terms of those metrics. Not &quot;this improves usability&quot; but &quot;this reduces the support burden on your team by roughly 20 percent.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>They share early, before they are comfortable.</strong> They show rough sketches, unfinished thinking, half-formed ideas. Not because they are unsure, but because they know that early input is cheap and late feedback is expensive.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>They treat every stakeholder interaction as a deposit into a trust account.</strong> Every clear update, every risk flagged early, every time they close the loop on feedback - it builds trust. And trust is the currency that lets you push back when it matters, take creative risks when needed, and be the person stakeholders cannot make decisions without.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        That is the shift. From the person who makes the screens to the person who shapes the decisions. And it does not start with a better Figma file. It starts with a 15-minute conversation before you open Figma at all.
+      </p>
+
+      <FreeTrainingCTA text="Stakeholder management is one of the core skills we build. Watch the free training to see how" />
+
+      <p className="text-base md:text-lg text-g600 leading-relaxed mt-8 mb-6">
+        At Xperience Wave, stakeholder communication is one of the core skills we build in our 1:1 mentorship and our short course on stakeholder management for designers. It is not about making you more &quot;political.&quot; It is about making sure your work sees the light of day - and drives the impact it deserves. If your design work keeps getting ignored, overruled, or diluted, <a href="https://app.xperiencewave.com/book/dc-strategy-call" className="text-accent hover:underline font-medium" target="_blank" rel="noopener noreferrer">book a free strategy call</a> and let us dig into what is actually going on.
+      </p>
+
+      <h2 id="sources-references" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Sources &amp; References
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-8">
+        <li>Nielsen Norman Group - State of UX 2026</li>
+        <li>Maze - Future of User Research Report</li>
+        <li>McKinsey &amp; Company - The Business Value of Design (2018)</li>
+        <li>NNGroup - DesignOps Efforts Across 500+ Companies</li>
+        <li>Tom Greever - Articulating Design Decisions (O&apos;Reilly Media)</li>
+      </ul>
+
+      <h2 id="related-reading" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Related Reading
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-8">
+        <li><Link href="/resources/blogs/senior-ux-designer-delivery-person" className="text-accent hover:underline font-medium">A Senior UX Designer Is Not a Delivery Person</Link> - the fundamental shift from executing to influencing</li>
+        <li><Link href="/resources/blogs/ux-designer-product-strategy-table" className="text-accent hover:underline font-medium">How to Get a Seat at the Product Strategy Table</Link> - what happens when stakeholder trust reaches the point where you are part of strategic conversations</li>
+        <li><Link href="/resources/blogs/design-team-systems-problem" className="text-accent hover:underline font-medium">Your Design Team Doesn&apos;t Have a Skills Problem - They Have a Systems Problem</Link> - when stakeholder issues are actually systemic design function issues</li>
+        <li><Link href="/resources/blogs/12l-vs-30l-ux-designer-difference" className="text-accent hover:underline font-medium">The 12L vs 30L UX Designer: What&apos;s the Difference?</Link> - how stakeholder management and business fluency directly impact compensation</li>
+        <li><Link href="/resources/blogs/mixed-methods-ux-research-guide" className="text-accent hover:underline font-medium">Mixed-Methods UX Research: A Complete Guide</Link> - backing up stakeholder conversations with research that stakeholders cannot ignore</li>
+        <li><Link href="/resources/blogs/design-team-plateau-10-people" className="text-accent hover:underline font-medium">Why Most Design Teams Plateau After 10 People</Link> - organisational dynamics that make stakeholder management harder at scale</li>
+      </ul>
+    </>
+  ),
   'ux-career-ladder-levels-india': (
     <>
       <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
@@ -6567,6 +6906,17 @@ const blogContent: Record<string, React.ReactNode> = {
 
 // Table of contents for each blog post
 const blogTableOfContents: Record<string, { id: string; title: string }[]> = {
+  'stakeholder-management-for-designers': [
+    { id: 'why-not-optional', title: 'Why Stakeholder Management Is Not Optional' },
+    { id: 'know-your-audience', title: 'Know Who You Are Talking To' },
+    { id: 'five-scenarios', title: 'The Five Scenarios That Break Designers' },
+    { id: 'you-are-stakeholder', title: 'The Flip Side: You Are a Stakeholder Too' },
+    { id: 'challenging-stakeholders', title: 'Handling Challenging Stakeholders' },
+    { id: 'communication-rhythm', title: 'Building a Communication Rhythm' },
+    { id: 'best-designers', title: 'What the Best Designers Do Differently' },
+    { id: 'sources-references', title: 'Sources & References' },
+    { id: 'related-reading', title: 'Related Reading' },
+  ],
   'ux-career-ladder-levels-india': [
     { id: 'year-0-2', title: 'Year 0-2: Associate / Junior' },
     { id: 'year-2-3', title: 'Year 2-3: UX Designer' },
@@ -6850,6 +7200,11 @@ const authorData: Record<string, { role: string; bio: string; image: string }> =
 
 // Blog-specific metadata for SEO
 const blogMetadata: Record<string, { title: string; description: string; keywords: string[] }> = {
+  'stakeholder-management-for-designers': {
+    title: 'Stakeholder Management for Designers: Why Your Best Work Gets Ignored | Xperience Wave',
+    description: 'Stakeholder management is not a soft skill. It is the skill that determines whether your design work shapes decisions or decorates them. Five real scenarios, scripts, and the communication rhythm that prevents 90% of conflicts.',
+    keywords: ['stakeholder management for designers', 'presenting design work to stakeholders', 'stakeholder communication UX', 'design stakeholder buy-in', 'managing challenging stakeholders design', 'stakeholder alignment design process', 'UX stakeholder management', 'cross-functional collaboration design'],
+  },
   'ux-career-ladder-levels-india': {
     title: 'Junior to CXO: What Each UX Career Level Actually Demands in India | Xperience Wave',
     description: 'What does each level of the UX career ladder actually demand in India - not on paper, but in practice? Murad, Co-founder at Xperience Wave, walks through every stage from Associate to CXO, including where Indian designers get stuck at each one and what the research actually says about IC vs management paths.',

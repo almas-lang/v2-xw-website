@@ -51,6 +51,17 @@ export const getCategoryLabel = (category: string): string => {
 // Sample blog posts with Unsplash images
 export const blogPosts: BlogPost[] = [
   {
+    id: '36',
+    slug: 'stakeholder-management-for-designers',
+    title: 'Stakeholder Management for Designers: Why Your Best Work Keeps Getting Ignored (And How to Fix It)',
+    excerpt: 'Stakeholder management is not a soft skill you pick up along the way. It is the skill that determines whether your design work shapes decisions or decorates them.',
+    category: 'design-skills' as const,
+    image: 'https://images.unsplash.com/photo-1560439514-4e9645039924?w=800&q=80',
+    author: { name: 'Shaik Murad' },
+    publishedAt: '2026-05-06',
+    readTime: '16 min',
+  },
+  {
     id: '35',
     slug: 'hidden-cost-promoting-ic-designer-manager',
     title: 'The Hidden Cost of Promoting Your Best IC Designer to Manager',

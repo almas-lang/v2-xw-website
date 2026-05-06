@@ -1,15 +1,15 @@
 export const ftContent = {
   meta: {
     title: 'Free Training: How Designers Break Into Senior UX Roles in 90 Days | Xperience Wave',
-    description: "Watch Shaik Murad's free 28-min training on why skilled UX, UI, and Product designers stay stuck at mid-level — and how 830+ designers landed senior & leadership roles paying ₹18-28 LPA in under 90 days.",
+    description: "Watch Shaik Murad's free 28-min training on why skilled UX, UI, and Product designers stay stuck at mid-level - and how 830+ designers landed senior & leadership roles paying ₹18-28 LPA in under 90 days.",
     ogTitle: 'Free Training: Break Into Senior UX Roles in 90 Days',
-    ogDescription: '3 uncomfortable truths keeping talented designers stuck — and what designers earning ₹18-28 LPA figured out instead.',
+    ogDescription: '3 uncomfortable truths keeping talented designers stuck - and what designers earning ₹18-28 LPA figured out instead.',
     ogUrl: 'https://xperiencewave.com/freetraining',
   },
   hero: {
     qualifier: 'For UX/UI/Product Designers with 2-8 Years Who Keep Getting Passed Over For Senior Roles',
-    headline: 'Still Getting Overlooked For Senior Roles — Despite Being Better Than Half The People Getting Promoted?',
-    subheadline: "Watch this free 28-min training where Shaik Murad breaks down why this keeps happening — and how 830+ designers landed senior & leadership roles paying ₹18-28 LPA in under 90 days.",
+    headline: 'Still Getting Overlooked For Senior Roles - Despite Being Better Than Half The People Getting Promoted?',
+    subheadline: "Watch this free 28-min training where Shaik Murad breaks down why this keeps happening - and how 830+ designers landed senior & leadership roles paying ₹18-28 LPA in under 90 days.",
     withoutClause: 'Without a fancy degree, big-brand resume, or prior team leadership experience.',
     cta: 'Watch free training',
     rating: {
@@ -57,7 +57,7 @@ export const ftContent = {
       { name: 'Sheetal P.', role: 'Design Lead @ CX100', timeline: 'in 2 months', image: '/images/sheetal.png', linkedin: 'https://www.linkedin.com/in/sheetalpimparwar/' },
       { name: 'Kritika S.', role: 'Lead UX @ Synduct, Germany', timeline: 'in 3 months', image: '/images/Kritika Singh.jpeg', linkedin: 'https://www.linkedin.com/in/kritikasinghchauhan/' },
       { name: 'Radhakrishna A.', role: 'Principal UX @ Informatica', timeline: 'in 3 months', image: '/images/Radhakrishna Aekbote.jpeg', linkedin: 'https://www.linkedin.com/in/radhakrishnaaekbote/' },
-      { name: 'Shreekanth', role: 'Sr. UX Designer @ Wipro', timeline: 'in 5 weeks', image: '/freetraining/testimonials/shreekanth.png', linkedin: 'https://www.linkedin.com/in/shreekantvk/' },
+      { name: 'Shreekanth', role: 'Sr. UX Designer @ Wipro', timeline: 'in 5 weeks', image: '/images/Sreekanth VK.jpeg', linkedin: 'https://www.linkedin.com/in/shreekantvk/' },
       { name: 'Jonah I.', role: 'Sr. Lead Designer @ Infosys', timeline: 'in 2 months', image: '/images/Jonah_Immanuel.png', linkedin: 'https://www.linkedin.com/in/jonahimmanuel/' },
       { name: 'Maulin R.', role: 'Sr. UX @ Augmented.AI', timeline: 'in 90 days', image: '/images/Maulin Rajput.jpeg', linkedin: 'https://www.linkedin.com/in/maulin-rajput/' },
     ],
@@ -71,11 +71,11 @@ export const ftContent = {
   },
   seoContent: {
     title: 'Why talented designers stay stuck at mid-level',
-    body: "Most UX, UI, and Product designers in India hit a ceiling at the 2-5 year mark. They've mastered Figma, built strong portfolios, and consistently deliver great work — but promotions to senior designer, design lead, or design manager roles keep going to someone else.\n\nThe problem isn't skill. It's strategy. Senior UX designer roles at companies like McKinsey, Informatica, Wipro, and Infosys don't go to the hardest worker — they go to the designer who plays the right game.\n\nThis free training breaks down exactly what that means — in 28 minutes, with real examples from designers who made the transition.",
+    body: "Most UX, UI, and Product designers in India hit a ceiling at the 2-5 year mark. They've mastered Figma, built strong portfolios, and consistently deliver great work - but promotions to senior designer, design lead, or design manager roles keep going to someone else.\n\nThe problem isn't skill. It's strategy. Senior UX designer roles at companies like McKinsey, Informatica, Wipro, and Infosys don't go to the hardest worker - they go to the designer who plays the right game.\n\nThis free training breaks down exactly what that means - in 28 minutes, with real examples from designers who made the transition.",
     relatedLinks: [
-      { text: 'The UX Career Ladder in India: From Junior to CXO', slug: 'ux-career-ladder-levels-india' },
-      { text: "Why UX Courses and Certificates Don't Get You Senior Roles", slug: 'why-courses-dont-work' },
-      { text: 'Salary Negotiation for UX Designers in India (RIVER Framework)', slug: 'salary-negotiation-ux-designers-india' },
+      { text: 'The UX Career Ladder in India: From Junior to CXO', slug: 'ux-career-ladder-levels-india', image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&q=80', readTime: '12 min' },
+      { text: "Why UX Courses and Certificates Don't Get You Senior Roles", slug: 'why-courses-dont-work', image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&q=80', readTime: '7 min' },
+      { text: 'Salary Negotiation for UX Designers in India (RIVER Framework)', slug: 'salary-negotiation-ux-designers-india', image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80', readTime: '16 min' },
     ],
   },
   faqs: [
@@ -106,7 +106,7 @@ export const ftContent = {
   },
   watch: {
     title: 'Watch: How Designers Break Into Senior UX Roles in 90 Days | Xperience Wave',
-    description: "Watch Shaik Murad's free training on the 3 uncomfortable truths keeping talented designers stuck — and the career system that gets results in 90 days.",
+    description: "Watch Shaik Murad's free training on the 3 uncomfortable truths keeping talented designers stuck - and the career system that gets results in 90 days.",
     bookCall: {
       headline: 'Ready to build your personal career plan?',
       cta: 'Book Your Free Strategy Call',
@@ -119,27 +119,23 @@ export const ftContent = {
       ],
       guarantee: 'We work with you until you get there.',
     },
-    stickyCta: {
-      text: 'Ready to take action?',
-      cta: 'Book Free Call →',
-    },
   },
   congratulations: {
-    videoScript: "Hey — congratulations on booking your strategy call.",
+    videoScript: "Hey - congratulations on booking your strategy call.",
     homework: [
       {
         title: 'Get clear on your #1 career goal for the next 90 days.',
-        description: '"I want to land a Senior UX role at a product company paying 18+ LPA" — that\'s specific. "I want to grow" — that\'s not. The clearer you are, the more valuable our 45 minutes together will be.',
+        description: '"I want to land a Senior UX role at a product company paying 18+ LPA" - that\'s specific. "I want to grow" - that\'s not. The clearer you are, the more valuable our 45 minutes together will be.',
       },
       {
         title: 'Have your LinkedIn profile open during the call.',
-        description: "We'll review it together and show you exactly how to reposition yourself for senior roles. If your profile needs updating — that's fine, that's part of what the call is for.",
+        description: "We'll review it together and show you exactly how to reposition yourself for senior roles. If your profile needs updating - that's fine, that's part of what the call is for.",
       },
     ],
     callBreakdown: [
       { time: 'First 10 min', label: 'We listen.', detail: 'You tell us where you are and where you want to go.' },
       { time: 'Next 20 min', label: 'We diagnose.', detail: "We'll identify the 2-3 specific gaps between where you are and a senior/leadership offer." },
-      { time: 'Last 15 min', label: 'We plan.', detail: "You'll leave with a 90-day action plan you can start immediately — whether you work with us or not." },
+      { time: 'Last 15 min', label: 'We plan.', detail: "You'll leave with a 90-day action plan you can start immediately - whether you work with us or not." },
     ],
     callTestimonials: [
       {

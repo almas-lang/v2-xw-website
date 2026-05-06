@@ -229,6 +229,24 @@ const hiringManagerQuotes = [
   },
 ];
 
+interface LinkedInPost {
+  src: string;
+  alt: string;
+  author: string;
+  role: string;
+  url: string;
+}
+
+const linkedInPosts: LinkedInPost[] = [
+  {
+    src: '/images/linkedin/sunitha-bisoyi.png',
+    alt: 'LinkedIn post by Sunitha Bisoyi reflecting on a mentorship insight from Shaik Ahamed',
+    author: 'Sunitha Bisoyi',
+    role: 'UX Design Lead',
+    url: 'https://www.linkedin.com/posts/bisoyi-sunitha_uxdesign-humancentereddesign-aiindesign-share-7451561633090416640-rA2r',
+  },
+];
+
 const whatsappScreenshots: WhatsAppScreenshot[] = [
   { src: '/freetraining/testimonials/akash.png', alt: 'WhatsApp message from Akash Kale — got a 32% hike' },
   { src: '/freetraining/testimonials/maitreyee.png', alt: 'WhatsApp message from Maitreyee — offered UI/UX role at Montran' },
@@ -484,6 +502,54 @@ export default function SuccessStoriesPage() {
               part2="/images/Review-part2.jpeg"
             />
             <WhatsAppWall screenshots={whatsappScreenshots} />
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================ */}
+      {/* LINKEDIN POSTS */}
+      {/* ============================================ */}
+      <section ref={setRef('linkedin')} className="relative bg-white border-t border-g100">
+        <div className="max-w-[1200px] mx-auto px-5 py-16 sm:py-20 md:py-24">
+          <div className="text-center mb-12 md:mb-16" style={fadeIn('linkedin', 0)}>
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <div className="w-8 h-[2px] bg-[#0A66C2]" />
+              <span className="font-body text-xs uppercase tracking-[0.2em] font-medium text-[#0A66C2]">
+                On LinkedIn
+              </span>
+              <div className="w-8 h-[2px] bg-[#0A66C2]" />
+            </div>
+            <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-carbon mb-3">
+              Mentees posting about the work
+            </h2>
+            <p className="font-body text-sm md:text-base text-g500 max-w-xl mx-auto">
+              Public reflections from designers — shared on their own feeds, in their own voice.
+            </p>
+          </div>
+
+          <div className={`grid gap-6 ${linkedInPosts.length === 1 ? 'max-w-[640px] mx-auto' : 'sm:grid-cols-2 lg:grid-cols-3'}`}>
+            {linkedInPosts.map((post, i) => (
+              <a
+                key={post.src}
+                href={post.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Read ${post.author}'s post on LinkedIn`}
+                className="group relative rounded-2xl overflow-hidden border border-g200 bg-white shadow-sm transition-all duration-300 sm:hover:border-[#0A66C2]/40 sm:hover:shadow-lg block"
+                style={fadeIn('linkedin', 150 + i * 100)}
+              >
+                <div className="absolute top-3 right-3 z-10 w-8 h-8 rounded-full bg-white/95 backdrop-blur-sm shadow-sm flex items-center justify-center text-[#0A66C2] sm:group-hover:bg-[#0A66C2] sm:group-hover:text-white transition-colors">
+                  <LinkedInIcon className="w-4 h-4" />
+                </div>
+                <img
+                  src={post.src}
+                  alt={post.alt}
+                  loading="lazy"
+                  className="w-full h-auto block"
+                />
+                <span className="sr-only">{post.author} — {post.role}</span>
+              </a>
+            ))}
           </div>
         </div>
       </section>

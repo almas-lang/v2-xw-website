@@ -52,7 +52,7 @@ export const ftContent = {
     title: 'Designers who watched this and took action:',
     statsLine: 'Average 38% salary increase across 140+ mentees',
     seeAllText: 'See all 87 success stories →',
-    seeAllUrl: 'https://senja.io/p/expwave-experiencewave/7kRIxt1', // Senja page - opens in new tab
+    seeAllUrl: 'https://xperiencewave.com/success-stories',
     cards: [
       { name: 'Sheetal P.', role: 'Design Lead @ CX100', timeline: 'in 2 months', image: '/images/sheetal.png', linkedin: 'https://www.linkedin.com/in/sheetalpimparwar/' },
       { name: 'Kritika S.', role: 'Lead UX @ Synduct, Germany', timeline: 'in 3 months', image: '/images/Kritika Singh.jpeg', linkedin: 'https://www.linkedin.com/in/kritikasinghchauhan/' },

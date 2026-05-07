@@ -43,7 +43,7 @@ export default function ReferenceCheckCard({ part1, part2 }: ReferenceCheckCardP
               </span>
             </span>
             <span className="font-body text-xs sm:text-sm text-white/90">
-              A prospective mentee messaged our alumnus directly on Naukri &mdash; here&apos;s how it went.
+              A prospective mentee messaged our alumnus directly on LinkedIn &mdash; here&apos;s how it went.
             </span>
           </div>
 

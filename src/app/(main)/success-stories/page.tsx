@@ -248,6 +248,7 @@ const linkedInPosts: LinkedInPost[] = [
 ];
 
 const whatsappScreenshots: WhatsAppScreenshot[] = [
+  { src: '/freetraining/testimonials/sunitha-bisoyi.jpeg', alt: 'WhatsApp message from Sunitha Bisoyi' },
   { src: '/freetraining/testimonials/akash.png', alt: 'WhatsApp message from Akash Kale — got a 32% hike' },
   { src: '/freetraining/testimonials/maitreyee.png', alt: 'WhatsApp message from Maitreyee — offered UI/UX role at Montran' },
   { src: '/freetraining/testimonials/kritika2.png', alt: 'WhatsApp message from Kritika Singh — founding designer at a German AI startup' },

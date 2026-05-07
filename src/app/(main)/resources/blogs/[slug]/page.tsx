@@ -13,6 +13,344 @@ import { FreeTrainingCTA } from '@/components/blog/FreeTrainingCTA';
 
 // Blog content with internal links for SEO
 const blogContent: Record<string, React.ReactNode> = {
+  'ux-research-never-makes-it-into-roadmap': (
+    <>
+      <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
+        A designer identifies a research opportunity. They conduct interviews, map journeys, synthesise findings. They present a deck. The PM nods. The slides end up in a shared drive. The roadmap does not change.
+      </p>
+      <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
+        The designer concludes that the organisation &quot;is not mature enough for research.&quot;
+      </p>
+      <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
+        And this is where I disagree.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The organisation is not the bottleneck. The way the designer positioned the research is. They ran a study nobody asked for, framed it in language nobody outside design understands, and then blamed the system for not acting on it.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        This is not a maturity problem. It is a selling problem. And until designers learn to sell research as a business input rather than a design activity, their insights will keep dying in slide decks.
+      </p>
+
+      <h2 id="core-problem" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Core Problem: Designers Learn the Process, Not the Purpose
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Most designers are taught research as a step in the design process. Empathise, define, ideate, prototype, test. Research sits in the &quot;empathise&quot; phase &mdash; you do it because the process says to do it. But nobody teaches you when research actually matters, what kind of research to do for what kind of decision, or how to position it so that the people who control the roadmap see it as essential rather than optional. The result is a designer who can technically conduct a study but cannot answer the question a PM will inevitably ask: &quot;Why should we spend two weeks on this instead of building the feature the sales team is asking for?&quot; If your answer to that question is &quot;because good design requires research,&quot; you have already lost. That is a process argument. Roadmaps are not built on process. They are built on evidence of impact.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This disconnect is something we have written about before &mdash; the difference between <Link href="/resources/blogs/design-thinking-vs-design-strategy" className="text-accent hover:underline font-medium">design thinking and design strategy</Link> maps directly onto this problem. Design thinking gives you a process to follow. Design strategy gives you the judgment to know which parts of that process apply to your specific situation. Research suffers from the same gap. Designers learn the mechanics of conducting a study but not the strategic thinking required to decide whether a study is needed, what kind, and how to position the findings so they become impossible to ignore. The mechanics are necessary &mdash; but they are not sufficient. What is missing is the business fluency to connect research to the questions that drive roadmap decisions, and the stakeholder skills to ensure the people making those decisions are invested in the answer before the research even begins.
+      </p>
+
+      <h2 id="isolation-trap" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Why This Keeps Happening: The Isolation Trap
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is not a theoretical problem. It plays out in design teams everywhere, and the pattern is remarkably consistent. A designer joins an organisation. They notice the team does not do much research. They see an opportunity &mdash; maybe the onboarding flow has issues, maybe support tickets reveal a pattern, maybe a competitor just launched something that changes the landscape. But instead of making the case internally, they go quiet. They work on the research during gaps between tasks, sometimes on weekends. They build a deck nobody asked for. They find real insights &mdash; sometimes genuinely important ones. Then they present it. The PM says it is interesting but the quarter is already planned. The designer is frustrated. Over the next few months, they start saying things like &quot;this company is not ready for design thinking&quot; or &quot;the leadership does not understand UX.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The research was real. The insight might have been valuable. But the designer never sold it to anyone before doing it. They never tied it to a business question the PM was already trying to answer. They never framed it as de-risking a decision the roadmap was about to make. They did it in isolation, from their own conviction, and expected the organisation to reorganise around their output. This is especially common for solo designers working without a team, where there is no design leadership to champion research on your behalf. In that situation, the designer has to be both the researcher and the salesperson &mdash; and most are only trained for the first role.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Blaming the system for not being mature enough is an understandable reaction, but it is also a convenient one. It avoids the harder truth: the designer did not know how to make the case for research before conducting it. And in organisations where design teams already struggle with <Link href="/resources/blogs/design-team-systems-problem" className="text-accent hover:underline font-medium">systemic problems</Link> &mdash; unclear roles, misaligned expectations, poor communication between functions &mdash; adding unsolicited research into the mix without stakeholder buy-in is a recipe for the findings being shelved. The system might genuinely have maturity issues, but operating as if those issues do not exist and then being surprised when they show up is not a strategy.
+      </p>
+
+      {/* Inline image 1 */}
+      <div className="relative aspect-[16/9] rounded-xl overflow-hidden my-10">
+        <Image
+          src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&q=80"
+          alt="A designer presenting research findings to a team in a meeting room with sticky notes and whiteboards"
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 720px"
+        />
+      </div>
+
+      <h2 id="what-data-says" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What the Data Says
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is not just an anecdotal observation. The numbers back it up.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Maze&apos;s 2026 Future of User Research report found that when research is used to inform overall business strategy, organisations see 2.7 times better outcomes. 43 percent of organisations reported increased revenue when research was connected to business strategy &mdash; compared to just 15 percent when research was conducted but rarely used in decisions.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Read that again. The research was conducted. The insights existed. But only when those insights were tied to business strategy did they produce measurable impact. The act of doing research is not enough. The connection to decisions is what matters.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The same report found that the role of the researcher is shifting from insight producer to business partner &mdash; and that business acumen, storytelling, and stakeholder management are the most valuable assets for anyone in a research role today.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        This tracks with what we have observed working with design teams across industries. The designers whose research consistently influences roadmaps are not the ones with the most sophisticated methodologies. They are the ones who understand the business well enough to position their research as the answer to a question someone with budget authority is already asking.
+      </p>
+
+      <h2 id="five-reasons" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Five Reasons Research Dies Before It Reaches the Roadmap
+      </h2>
+
+      <h3 id="reason-1" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        1. The Research Answered a Question Nobody Was Asking
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        You noticed a pattern. You were curious. You investigated. That instinct is good &mdash; but curiosity alone does not justify a research project in a resource-constrained environment.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Roadmap slots are finite. Every week spent on research is a week not spent on building. If the people who allocate those slots did not ask the question your research answers, they have no reason to prioritise the findings.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>The fix:</strong> Before you conduct any research, find the open question. Talk to your PM, your engineering lead, your VP. What decision are they struggling with? What bet are they about to make without enough confidence? Position your research as the thing that reduces the risk of that specific bet. Now they need you.
+      </p>
+
+      <h3 id="reason-2" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        2. The Findings Were Presented in Design Language
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        &quot;Users exhibit high cognitive load during the onboarding flow, resulting in elevated drop-off rates correlated with information architecture complexity.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        That sentence is accurate. It is also invisible to anyone outside design. Your PM heard jargon. Your VP heard nothing actionable.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>The fix:</strong> Translate findings into the language of the person who controls the roadmap. &quot;32 percent of users drop off at step 3 of onboarding. The pattern in interviews suggests they cannot distinguish between the two options we present. If we simplify this step, we estimate recovering a meaningful portion of those users before they churn.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Same finding. Different framing. One gets filed. The other gets built.
+      </p>
+
+      <h3 id="reason-3" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        3. The Research Delivered Observations, Not Recommendations
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Many research presentations end with: &quot;Here is what we found.&quot; And then silence &mdash; or worse, a vague &quot;we recommend further investigation.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Stakeholders do not want findings. They want direction. &quot;Here is what we found&quot; puts the interpretive burden on the PM, who is already managing twelve other inputs. If you do not tell them what to do with the information, they will do what is easiest: nothing.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>The fix:</strong> Every research readout should end with a clear recommendation tied to a specific action. Not &quot;users struggle with onboarding&quot; but &quot;we recommend splitting step 3 into two screens and running an A/B test &mdash; here is the hypothesis and here is how we measure it.&quot; The specificity matters. It moves the conversation from &quot;interesting&quot; to &quot;let us scope this.&quot;
+      </p>
+
+      <h3 id="reason-4" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        4. The Research Arrived at the Wrong Time
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Research that arrives in the middle of a sprint cannot influence that sprint. Research that arrives after roadmap planning cannot influence that roadmap. Timing is not a detail &mdash; it is the single most important factor in whether research gets used.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If deep research takes four weeks and your roadmap planning cycle is quarterly, you need to start your research six weeks before planning begins &mdash; not the week after planning concludes.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>The fix:</strong> Map your research calendar to your product&apos;s planning cycle. Understand when roadmap decisions are made, work backwards from that date, and deliver findings with enough lead time for them to be absorbed, discussed, and acted on. Research that arrives on time is more valuable than perfect research that arrives late.
+      </p>
+
+      <h3 id="reason-5" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        5. The Researcher Has No Relationship With the Decision-Maker
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is the one nobody wants to talk about. You can have the perfect insight, framed in business language, delivered at the right time &mdash; and it will still be ignored if the person receiving it does not trust you.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Trust is not built in the presentation. It is built in the months before the presentation &mdash; through small wins, reliable updates, accurate predictions, and a demonstrated understanding of the business context. If you are invisible until you need something from the roadmap, you are a stranger asking for a favour. This is one of the core differences in how <Link href="/resources/blogs/senior-ux-designer-delivery-person" className="text-accent hover:underline font-medium">senior designers operate</Link> &mdash; they invest in stakeholder relationships continuously, not transactionally.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        <strong>The fix:</strong> Invest in the relationship before you need it. Attend product syncs. Understand the PM&apos;s goals. Share small insights informally &mdash; &quot;I noticed X in the support data, thought you might find it useful.&quot; When the time comes to present a major finding, you are not a stranger with a deck. You are a trusted partner with an insight they have been waiting for.
+      </p>
+
+      {/* Inline image 2 */}
+      <div className="relative aspect-[16/9] rounded-xl overflow-hidden my-10">
+        <Image
+          src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&q=80"
+          alt="Professionals collaborating on a business strategy document with charts and data visualisations"
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 720px"
+        />
+      </div>
+
+      <h2 id="blueprint" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        How to Make Research a Roadmap Input: The 5-Step Research Integration Blueprint
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        We developed a framework called the Research Integration Blueprint to address exactly this gap. Most research frameworks &mdash; Double Diamond, Lean UX, NNGroup&apos;s ResearchOps model &mdash; assume the organisation already values research. They teach you how to do it well or scale it efficiently. This blueprint starts from a different assumption: that the organisation does not yet see research as essential. And it shows you how to change that.
+      </p>
+
+      <h3 id="step-1" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        Step 1: Know What Is Available to You
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If you only know how to run interviews, you will try to interview your way out of every problem &mdash; including problems that need quantitative validation, competitive analysis, or analytics review. The full landscape of research spans qualitative and quantitative, attitudinal and behavioural, generative and evaluative, formative and summative. Within those categories sit dozens of methods from ethnographic research and diary studies to A/B testing and correlational analysis.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        You do not need to master all of them. But you need to know they exist so you can pick the right tool for the question. This step is table stakes &mdash; if you have two or more years of experience, you likely know most of this. The real skill is in Steps 2 through 5: knowing which method to use given your specific situation.
+      </p>
+
+      <h3 id="step-2" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        Step 2: Assess the Reality of Your Project and Culture
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is the step that separates designers who get research approved from designers who get research ignored. Before you propose anything, you need to honestly evaluate the environment you are operating in &mdash; not the environment you wish you were in.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        Ask yourself five questions:
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>Project context:</strong> Is this a new build or a revamp? Are you familiar with the domain? How deeply are requirements already frozen? A new project with open requirements gives you room to shape the direction through research. A revamp with frozen requirements and a launch date means you need a fundamentally different approach &mdash; probably rapid validation rather than deep exploration. Proposing a 6-week generative study on a project that ships in 4 weeks is not ambitious. It is tone-deaf.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>Team capabilities:</strong> Can you or someone on your team actually run the kind of study you are proposing? Does your team see research as valuable or as waste? If your team has never run a formal study, proposing ethnographic research is setting yourself up to fail. Start with what the team can credibly execute. Build capability through small wins, not through overcommitting on the first project.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>Organisational maturity:</strong> Is UX maturity low, medium, or high? Does the org currently collect relevant user data? Is there existing research you can build on? This question alone changes your entire strategy. In a high-maturity org, you can propose research and expect support. In a low-maturity org, you first have to demonstrate that research produces something the business can use &mdash; which means your first study needs to be small, fast, and undeniably tied to a metric someone cares about.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>Timeline and involvement:</strong> When was design brought into this project? Are deliverables already decided? If you were brought in after the roadmap was set, your window for influencing direction through research is narrow. You need to work within that constraint, not pretend it does not exist.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Influence and strategic position:</strong> Where do you sit in the decision-making hierarchy? Do people with budget authority know your name? A designer with a seat at the planning table can propose research as part of the project scope. A designer three layers removed from the decision-maker has to build influence before they can propose anything &mdash; and the way you build that influence is through the small, fast wins mentioned above.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Industry data confirms these barriers are real, not imagined: 31 percent of researchers cite organisational structure and bureaucracy as their biggest challenge. 24 percent cite their research tool stack. 20 percent cite budget. 16 percent cite lack of buy-in about the importance of research. And another 16 percent say their research is conducted but simply not applied to decisions. Your proposal has to account for whichever of these barriers exists in your specific situation &mdash; because a proposal that ignores the environment it will land in is a proposal that will be ignored.
+      </p>
+
+      <h3 id="step-3" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        Step 3: Identify Your Constraints
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is where you get honest about what you actually have to work with.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>Time:</strong> Do you have four weeks for a proper study or four days for a guerrilla approach? Both are valid &mdash; but they lead to completely different research designs.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>Current capabilities:</strong> What tools does your team have access to? Figma and Google Workspace cover 75 percent of researcher workflows. Miro, Confluence, and Dovetail fill analysis gaps. If you do not have specialised research tools, design your study around what you do have.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>Available resources:</strong> Do you have access to users? How does your team currently recruit participants? Can you leverage support tickets, analytics, or sales call recordings as secondary data sources?
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Budget:</strong> Research does not have to be expensive. The majority of research studies cost under $500. Gift cards remain the most common incentive at 67 percent, followed by cash equivalents at 38 percent. If budget is zero, desk research, analytics reviews, and internal stakeholder interviews cost nothing and still produce actionable insights.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The point is not to list reasons you cannot do research. It is to design a research approach that works within the constraints you actually have &mdash; rather than proposing an ideal study that gets rejected because it requires resources that do not exist.
+      </p>
+
+      <h3 id="step-4" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        Step 4: Customise a Research Model That Fits Your Situation
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is the core of the blueprint &mdash; and the part that makes it fundamentally different from generic research advice.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Most frameworks give you a single process: do research this way. But your situation is not generic. The approach that works for a new project with a specialised team and high UX maturity is completely wrong for a revamp with frozen requirements and sceptical stakeholders. Treating them the same is how research proposals get rejected.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        We use a combination matrix that maps your answers from Steps 2 and 3 into a specific research strategy. Here is how different situations lead to different approaches:
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>New project + specialised team + high UX maturity:</strong> You have full support. Use advanced methodologies &mdash; longitudinal studies, ethnographic research, mixed methods. Go deep. This is the situation most research frameworks are written for.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>Revamp + existing data + familiar domain:</strong> You do not need to start from scratch. Focus on specific areas that need improvement. Mine existing analytics, support data, and past research first. Supplement with targeted studies where gaps exist.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>New project + some flexibility + existing data sources:</strong> Adapt research as new findings emerge. Leverage what exists and fill gaps with lightweight studies. This is where speed and resourcefulness matter more than methodological purity.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>Limited time + low UX maturity + no existing data:</strong> This is the hardest situation &mdash; and the most common one our designers face. You need to conduct basic, credible research quickly. Guerrilla usability testing, analytics reviews, and 5-user interview sprints. The goal is not comprehensive insight. It is one undeniable data point that proves research is worth investing in next time.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Revamp + frozen requirements + sceptical stakeholders:</strong> This requires the strongest advocacy. You are not just doing research &mdash; you are building a case for why research should exist at all. You need compelling evidence tied directly to a metric the sceptic already cares about. Anything else will be dismissed as process overhead.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        Two things to get right regardless of your situation:
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>Find objectives that align with other teams&apos; goals.</strong> &quot;How many users dropped off?&quot; is a question the PM already cares about. &quot;Why did they drop off?&quot; is the question research answers. Frame your objectives so that the <em>what</em> connects to the PM&apos;s metrics and the <em>why</em> is your contribution. When your research objective is their business objective, you do not need to sell it &mdash; they are already waiting for the answer.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Mix and match study models.</strong> Sometimes the right approach is interviews followed by a survey to validate patterns at scale. Sometimes it is the reverse &mdash; a survey to identify the problem area, then interviews to understand the underlying cause. The sequence depends on what you already know and what gap you need to fill. The designers who get this right are not the ones who know the most methods. They are the ones who know which combination fits which situation.
+      </p>
+
+      <h3 id="step-5" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        Step 5: Present a Business Proposal, Not a Research Plan
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is the step that changes everything &mdash; and the one nobody else is teaching.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Most designers present research as a research plan: &quot;I want to run 8 interviews and a survey.&quot; That is a methodology pitch. It tells the PM what you want to do but not why they should care.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        Instead, present a business proposal. The structure:
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>Start with the agreed goal</strong> &mdash; what the team is trying to achieve this quarter. Not your research goal. Their business goal. &quot;The team is targeting a 15 percent improvement in onboarding completion this quarter.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>Frame the research as risk mitigation or opportunity identification.</strong> &quot;Before we commit engineering resources to redesigning the flow, I want to identify which specific step is causing the drop-off and why &mdash; so we build the right solution the first time instead of iterating blindly.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-4">
+        <strong>Lay out the approach in plain language</strong> &mdash; not methodological jargon. &quot;I will review our analytics to identify the highest-drop-off step, then run 5 short interviews with recent users who abandoned at that point. Timeline: 8 working days. Cost: two $25 gift cards per participant.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Connect the investment directly to the outcome.</strong> &quot;If we identify the root cause before building, we save the team from a potential rebuild cycle &mdash; which based on past sprints would cost approximately 3 weeks of engineering time.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        The format shift matters: a research plan asks for permission. A business proposal asks for a decision. The PM is not evaluating whether your methodology is sound &mdash; they are evaluating whether the investment is worth the return. When you present research as &quot;spend X to learn Y, which de-risks Z,&quot; you are speaking the language of the roadmap.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        And that is how research stops being optional and starts being a line item.
+      </p>
+
+      <h2 id="shift" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Shift That Changes Everything
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The designers and researchers who consistently get their work into roadmaps share one thing: they do not think of themselves as researchers who need to convince the business. They think of themselves as business partners who happen to use research as a tool. That reframe changes everything &mdash; how you scope studies, how you present findings, how you invest your time between projects. It is the same shift that separates a <Link href="/resources/blogs/12l-vs-30l-ux-designer-difference" className="text-accent hover:underline font-medium">designer earning 12 LPA from one earning 30 LPA</Link> &mdash; the higher-earning designer does not necessarily have better craft skills, but they operate with a fundamentally different understanding of where they sit in the value chain.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Research is not a right. It is not something you deserve to do because the process says so. It is a tool &mdash; and like any tool, its value is determined by the problem it solves, not by the elegance of how it was used. If your research keeps dying in slide decks, the answer is probably not better research. It is better positioning, better timing, better relationships, and a much clearer understanding of what the people who control the roadmap actually need from you. The designers who figure this out do not just get their research shipped &mdash; they get a seat at the <Link href="/resources/blogs/ux-designer-product-strategy-table" className="text-accent hover:underline font-medium">product strategy table</Link>, which is where roadmap decisions are actually made. And once you are in that room, you stop having to sell research altogether &mdash; because you are already part of the conversation where priorities are set.
+      </p>
+
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The Research Integration Blueprint is part of what we cover in depth at Xperience Wave &mdash; through our programmes for individual designers and our short course on integrating research into real project workflows. The blog gives you the framework. The course gives you the combination matrix, the templates, and the practice of applying it to real scenarios. If your research keeps getting sidelined, <a href="https://app.xperiencewave.com/book/dc-strategy-call" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">book a free strategy call</a> &mdash; we will dig into what is actually going on.
+      </p>
+
+      <h2 id="sources-references" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Sources &amp; References
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li>Maze &mdash; &quot;Future of User Research 2026.&quot; Research connected to business strategy produces 2.7x better outcomes. 43% report revenue increase when research informs strategy vs 15% when research is conducted but unused.</li>
+        <li>Nielsen Norman Group &mdash; &quot;State of UX 2026.&quot; Successful practitioners need research, stakeholder management, and leadership alongside design craft.</li>
+        <li>Xperience Wave &mdash; direct observation from mentorship and corporate training engagements with design teams at product companies across India.</li>
+      </ul>
+
+      <h2 id="related-reading" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Related Reading
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li><Link href="/resources/blogs/design-team-systems-problem" className="text-accent hover:underline font-medium">Your Design Team Doesn&apos;t Have a Skills Problem &mdash; They Have a Systems Problem</Link> &mdash; when research fails because the organisation&apos;s design function is structurally broken</li>
+        <li><Link href="/resources/blogs/senior-ux-designer-delivery-person" className="text-accent hover:underline font-medium">A Senior UX Designer Is Not a Delivery Person</Link> &mdash; the shift from executing tasks to influencing decisions</li>
+        <li><Link href="/resources/blogs/mixed-methods-ux-research-guide" className="text-accent hover:underline font-medium">Mixed-Methods UX Research: A Complete Guide</Link> &mdash; how to combine qualitative and quantitative research for stronger findings</li>
+        <li><Link href="/resources/blogs/what-design-managers-look-for-senior-ux-hiring" className="text-accent hover:underline font-medium">What Design Managers Actually Look For When Hiring Senior UX Designers</Link> &mdash; research and stakeholder skills as hiring criteria</li>
+        <li><Link href="/resources/blogs/conversations-senior-designers-have" className="text-accent hover:underline font-medium">The Conversations Senior Designers Have That Others Don&apos;t</Link> &mdash; the strategic conversations that shape roadmap influence</li>
+        <li><Link href="/resources/blogs/design-team-plateau-10-people" className="text-accent hover:underline font-medium">Why Most Design Teams Plateau After 10 People</Link> &mdash; organisational maturity and its impact on design effectiveness</li>
+      </ul>
+
+      <h2 id="about-author" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        About the Author
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Almas is Co-founder and CEO at Xperience Wave, a UX design career development company based in Bangalore. She has 12+ years of experience across consulting, enterprise SaaS, and product design leadership. The Research Integration Blueprint was developed from direct work with designers and design teams navigating the gap between research quality and research influence.
+      </p>
+
+      <p className="text-base md:text-lg text-g500 italic mt-6">
+       - Almas, Co-founder &amp; CEO, Xperience Wave
+      </p>
+
+      <FreeTrainingCTA text="Research influence is one of the skills that separates mid-level from senior. Watch the free training to see how we build it" />
+    </>
+  ),
   'stakeholder-management-for-designers': (
     <>
       <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
@@ -6906,6 +7244,16 @@ const blogContent: Record<string, React.ReactNode> = {
 
 // Table of contents for each blog post
 const blogTableOfContents: Record<string, { id: string; title: string }[]> = {
+  'ux-research-never-makes-it-into-roadmap': [
+    { id: 'core-problem', title: 'The Core Problem: Process vs Purpose' },
+    { id: 'isolation-trap', title: 'Why This Keeps Happening: The Isolation Trap' },
+    { id: 'what-data-says', title: 'What the Data Says' },
+    { id: 'five-reasons', title: 'Five Reasons Research Dies' },
+    { id: 'blueprint', title: 'The 5-Step Research Integration Blueprint' },
+    { id: 'shift', title: 'The Shift That Changes Everything' },
+    { id: 'sources-references', title: 'Sources & References' },
+    { id: 'related-reading', title: 'Related Reading' },
+  ],
   'stakeholder-management-for-designers': [
     { id: 'why-not-optional', title: 'Why Stakeholder Management Is Not Optional' },
     { id: 'know-your-audience', title: 'Know Who You Are Talking To' },
@@ -7200,6 +7548,11 @@ const authorData: Record<string, { role: string; bio: string; image: string }> =
 
 // Blog-specific metadata for SEO
 const blogMetadata: Record<string, { title: string; description: string; keywords: string[] }> = {
+  'ux-research-never-makes-it-into-roadmap': {
+    title: 'Why Your UX Research Never Makes It Into the Roadmap | Xperience Wave',
+    description: 'Your research is not getting ignored because the organisation is immature. It is getting ignored because you positioned it as a design activity instead of a business input. The 5-Step Research Integration Blueprint that changes that.',
+    keywords: ['UX research roadmap', 'why UX research gets ignored', 'research to product decisions', 'design research influence', 'presenting research findings', 'research stakeholder buy-in', 'research integration framework', 'UX research strategy', 'research operations', 'design maturity'],
+  },
   'stakeholder-management-for-designers': {
     title: 'Stakeholder Management for Designers: Why Your Best Work Gets Ignored | Xperience Wave',
     description: 'Stakeholder management is not a soft skill. It is the skill that determines whether your design work shapes decisions or decorates them. Five real scenarios, scripts, and the communication rhythm that prevents 90% of conflicts.',

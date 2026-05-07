@@ -51,6 +51,17 @@ export const getCategoryLabel = (category: string): string => {
 // Sample blog posts with Unsplash images
 export const blogPosts: BlogPost[] = [
   {
+    id: '37',
+    slug: 'ux-research-never-makes-it-into-roadmap',
+    title: 'Why Your UX Research Never Makes It Into the Roadmap',
+    excerpt: 'The organisation is not the bottleneck. The way you positioned the research is. Until designers learn to sell research as a business input rather than a design activity, their insights will keep dying in slide decks.',
+    category: 'design-skills' as const,
+    image: 'https://images.unsplash.com/photo-1531545514256-b1400bc00f31?w=800&q=80',
+    author: { name: 'Almas Tasneem' },
+    publishedAt: '2026-05-07',
+    readTime: '18 min',
+  },
+  {
     id: '36',
     slug: 'stakeholder-management-for-designers',
     title: 'Stakeholder Management for Designers: Why Your Best Work Keeps Getting Ignored (And How to Fix It)',

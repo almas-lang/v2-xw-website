@@ -51,6 +51,17 @@ export const getCategoryLabel = (category: string): string => {
 // Sample blog posts with Unsplash images
 export const blogPosts: BlogPost[] = [
   {
+    id: '38',
+    slug: 'hiring-senior-designers-immature-design-org',
+    title: 'What Happens When You Hire Senior Designers Into an Immature Design Org',
+    excerpt: 'A company decides it needs better design and hires a senior designer. The senior designer arrives and discovers there is no design function to elevate. The mismatch damages both sides - and it is systemic.',
+    category: 'industry' as const,
+    image: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&q=80',
+    author: { name: 'Shaik Murad' },
+    publishedAt: '2026-05-11',
+    readTime: '20 min',
+  },
+  {
     id: '37',
     slug: 'ux-research-never-makes-it-into-roadmap',
     title: 'Why Your UX Research Never Makes It Into the Roadmap',

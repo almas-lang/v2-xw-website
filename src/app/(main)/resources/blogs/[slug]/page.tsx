@@ -13,6 +13,280 @@ import { FreeTrainingCTA } from '@/components/blog/FreeTrainingCTA';
 
 // Blog content with internal links for SEO
 const blogContent: Record<string, React.ReactNode> = {
+  'hiring-senior-designers-immature-design-org': (
+    <>
+      <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
+        A few years ago, I joined a data security organisation as a Principal Designer. On paper, it was exactly the kind of role that should have worked - a company investing in design by hiring at a senior level, a product space with genuine complexity, and a title that suggested the organisation understood what senior design leadership looks like.
+      </p>
+      <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
+        Within weeks, the CPO and the product manager sat me down to discuss my growth plan. Their suggestion: I should learn how to create explainer videos. That was the path they saw for a Principal Designer. Meanwhile, the product owners treated my time as something they could claim and direct - I was essentially a production resource with a senior title. The requirements that came my way were purely UI-driven, the kind of work a mid-level designer could have handled without breaking stride. It became clear, slowly and then all at once, that the organisation had hired a senior designer without knowing what a senior designer actually does.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        What made it worse was not the work itself - it was the effect it had on me. When an organisation consistently asks you to operate below your capability, you do not just feel underutilised. You start questioning your own understanding of the role. You begin wondering whether you have been wrong all along about what a UX designer is supposed to do, whether the industry has shifted in ways you missed, whether the expectations you carried from previous roles were inflated. That self-doubt is the hidden damage of this mismatch, and it is far more corrosive than boredom.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        I eventually left. The experience became one of the reasons Almas and I built Xperience Wave - because we saw that this mismatch was not unique to one company. It is systemic, and it damages both sides of the equation.
+      </p>
+
+      {/* Inline image 1 */}
+      <div className="relative aspect-[16/9] rounded-xl overflow-hidden my-10">
+        <Image
+          src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80"
+          alt="A team gathered around a whiteboard in a meeting room, illustrating the gap between organisational expectations and design reality"
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 720px"
+        />
+      </div>
+
+      <h2 id="not-rare-problem" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        This Is Not a Rare Problem
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If my story were unusual, it would be an anecdote. It is not. Research from Matej Latin&apos;s annual study on why designers quit found that 77.5 percent of designers rate their organisation&apos;s UX maturity at levels 1 through 3 on a 6-level scale. That means roughly three out of four designers work in organisations that are, by any reasonable definition, design-immature. The same study found that UX maturity and lack of career progression are the primary reasons designers leave their jobs - and the designers leaving are disproportionately experienced ones, departing smaller teams and solo positions at companies that never figured out how to use them.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The pattern is consistent enough to be predictable. A company decides it needs &quot;better design.&quot; It hires a senior or principal designer - someone with a strong portfolio, years of experience, credibility from previous roles. The expectation, often unstated, is that this single hire will elevate the design function. What actually happens is that the senior designer arrives and discovers there is no design function to elevate. There is no research practice. There is no design system. There are no established rituals for critique, review, or stakeholder alignment. Requirements arrive as feature requests or, worse, as pre-decided solutions that just need to be &quot;made pretty.&quot; Product owners control the designer&apos;s time and output. The PM sees design as a downstream activity - something that happens after decisions have been made, not something that informs them.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        The senior designer, who was hired precisely because of their ability to think strategically, lead through ambiguity, and connect design to business outcomes, finds themselves doing none of those things. They are turning screens. And the organisation, which is paying a senior salary, is getting mid-level output - not because the designer lacks capability, but because the environment does not allow that capability to surface.
+      </p>
+
+      {/* Inline image 2 */}
+      <div className="relative aspect-[16/9] rounded-xl overflow-hidden my-10">
+        <Image
+          src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&q=80"
+          alt="A frustrated professional sitting alone at a desk surrounded by empty chairs, representing the isolation of a senior hire in an unsupportive environment"
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 720px"
+        />
+      </div>
+
+      <h2 id="why-orgs-mistake" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Why Organisations Make This Mistake
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The root cause is a fundamental misunderstanding of what design maturity means and what it takes to build it. Organisations at low maturity levels tend to believe that design quality is a function of individual talent. If the designs are not good enough, hire a better designer. If the team is not strategic enough, hire a more senior one. The assumption is that a single exceptional hire can compensate for systemic gaps in process, culture, and infrastructure.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This rarely works, for the same reason that hiring a world-class chef does not fix a restaurant with no kitchen. The chef&apos;s skill is real, but it requires an environment where that skill can be applied. Without the right equipment, ingredients, and operating model, even the best chef will produce mediocre food - and will probably leave within a year, frustrated and undervalued. Design works the same way, but organisations are slower to recognise it because design output is more visible than design process. A senior designer can still produce polished screens in an immature org. The screens look fine. Leadership sees them and concludes that the hire is working. What they do not see is everything the designer is not doing - the research that is not happening, the strategic conversations that are not taking place, the business problems that are not being framed through a design lens - because the organisation never created the conditions for that work to exist.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Misha Frolov&apos;s framework for evaluating design hires describes this as a &quot;stage mismatch&quot; - the right designer at the wrong company stage. A designer who thrives in a mature design org with established processes, cross-functional collaboration, and executive buy-in will struggle in a pre-maturity org that needs someone to build all of that from scratch. And a designer who excels at building design culture from zero may be frustrated in a mature org where the systems are already in place and the work is primarily about execution within those systems. The stage has to match, not just the skill.
+      </p>
+
+      <h2 id="five-things-wrong" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Five Things That Go Wrong (And How They Compound)
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        These failures do not happen in isolation. They compound, each one making the others worse, until the mismatch becomes unsalvageable.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        1. The org expects the designer to produce faster, not think deeper
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The most common expectation gap is speed, not scope. Leadership hired a senior designer expecting higher throughput - more screens, faster turnaround, better visual quality. They did not hire someone to question the product strategy, push back on requirements, or spend a week on research before opening Figma. When the senior designer tries to operate at a strategic level - asking why before jumping to how - they are perceived as slow, difficult, or overcomplicating things. This is the <Link href="/resources/blogs/senior-ux-designer-delivery-person" className="text-accent hover:underline font-medium">delivery person trap</Link> applied at the organisational level: the company hired a strategic thinker and measured them on tactical output.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        2. Leadership does not give them decision-making authority
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        A senior title without decision-making authority is a costume, not a role. In immature orgs, design decisions are often made by product managers, engineering leads, or founders - and the designer is brought in to execute those decisions, not to make them. The senior designer&apos;s judgment, which is the primary thing the company is paying for at that salary level, goes unused. When they try to exercise that judgment - by proposing a different approach, challenging a requirement, or recommending research before building - they run into resistance. Not because the idea is bad, but because the organisational power structure was never set up for a designer to have that kind of influence. The <Link href="/resources/blogs/conversations-senior-designers-have" className="text-accent hover:underline font-medium">conversations that senior designers need to have</Link> - about business strategy, product direction, and resource allocation - simply do not happen because nobody invited them to the table.
+      </p>
+
+      {/* Inline image 3 */}
+      <div className="relative aspect-[16/9] rounded-xl overflow-hidden my-10">
+        <Image
+          src="https://images.unsplash.com/photo-1573497620053-ea5300f94f21?w=800&q=80"
+          alt="A professional looking overwhelmed at their desk with multiple screens and sticky notes, representing the impossible expectations placed on a solo senior designer"
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 720px"
+        />
+      </div>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        3. There is no design infrastructure
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        No design system. No research practice. No component library. No established way to document design decisions or share learnings across projects. The senior designer is expected to produce excellent work on top of infrastructure that does not exist - and simultaneously build that infrastructure from scratch, while still meeting the tactical demands of their feature work. This is a job for a team, not a person. But in an immature org, the senior designer is often the only designer, or one of two or three. They are expected to be the <Link href="/resources/blogs/grow-as-solo-designer" className="text-accent hover:underline font-medium">solo designer who does everything</Link> - research, strategy, systems, production, stakeholder management - without the support structure that any of those activities require.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        4. The designer gets frustrated and starts blaming the org
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        After a few months of operating below capacity, the designer starts to feel the friction. They have tried to introduce better practices and been met with indifference. They have proposed research and been told there is no time. They have pushed for a seat at the strategy table and been told that is &quot;not how we work here.&quot; The frustration turns into resentment, and the resentment turns into a narrative: this organisation is not mature enough. The leadership does not get design. The culture is broken. Some of that may be true. But the narrative, once it solidifies, becomes self-fulfilling. The designer stops trying to influence the environment and starts waiting for the environment to change. It does not change. The designer begins to disengage.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        5. The designer leaves, and the org concludes design does not work
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is the most damaging outcome - not just for the designer, but for every designer who comes after them. The senior hire leaves within 6 to 12 months. Leadership, having invested a senior salary and seen no transformative results, concludes that the investment was not worth it. &quot;We tried hiring a senior designer and it did not make a difference.&quot; The next hire is more junior. The expectations are lower. Design slips further down the priority list. The org becomes even less mature, making it even harder for the next designer who joins. It is a downward spiral, and it starts with a single hiring decision that mistook individual talent for organisational capability.
+      </p>
+
+      {/* Inline image 4 */}
+      <div className="relative aspect-[16/9] rounded-xl overflow-hidden my-10">
+        <Image
+          src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=800&q=80"
+          alt="An empty office meeting room with whiteboards full of plans but no people, representing the gap between intention and execution in design orgs"
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 720px"
+        />
+      </div>
+
+      <h2 id="what-leaders-should-do" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What Leaders and Founders Should Do Instead
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If you are a design leader, VP, or founder reading this, the fix is not to stop hiring senior designers. It is to stop hiring them into environments that are structurally unable to utilise them. Here is what that means in practice.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        Assess your design maturity honestly before you hire
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Before you write the job description, answer five questions with uncomfortable honesty. Does design have a seat at the table where product decisions are made, or does it sit downstream of those decisions? Do you have established processes for research, critique, and design review, or does each project start from scratch? Does the person in this role report to someone who understands design, or will they report to an engineering lead or PM who sees design as a service function? Will they have the authority to push back on requirements, or are they expected to execute what they are given? Is there budget and organisational willingness to invest in the infrastructure - tools, research, systems - that a senior designer needs to operate at their level?
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If the answer to most of these questions is no, you are not ready for a senior design hire. You are ready for a mid-level designer who can grow into the role as the organisation matures, or you are ready for a design consultant or training partner who can help you build the infrastructure first.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        If you do hire senior, give them the mandate to build - not just produce
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The job description should explicitly state that this person&apos;s role is to establish design practices, not just to produce design work. The first 90 days should be dedicated to auditing the current state, building relationships with stakeholders, and proposing a design operating model - not to shipping screens. This is a genuinely difficult thing for many leaders to accept, because it means paying a senior salary for what appears to be no visible output for three months. But the alternative - throwing a senior designer straight into feature work and expecting them to build infrastructure on the side - is how you guarantee the mismatch plays out exactly as described above. The designer drowns in tactical work, the infrastructure never gets built, and three months later you are in the same position you were before the hire, except now you are also dealing with a disengaged employee who is updating their portfolio on weekends.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Be specific about what the mandate includes. &quot;Establish design practices&quot; is vague enough to mean anything - and in an immature org, vague mandates get eaten alive by urgent feature requests. Instead, define concrete deliverables for the first quarter: a design process documentation, a stakeholder alignment plan, a recommendation for tools and systems, and a clear proposal for how design should integrate into the product development workflow. Give the designer authority to say no to tactical work that conflicts with this mandate, and make sure their manager and the broader product leadership team understand and support that authority. Without this protection, the mandate is aspirational at best and meaningless at worst.
+      </p>
+
+      {/* Inline image 5 */}
+      <div className="relative aspect-[16/9] rounded-xl overflow-hidden my-10">
+        <Image
+          src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80"
+          alt="Two professionals having a focused one-on-one conversation at a table, representing the honest assessment leaders need to have before hiring"
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 720px"
+        />
+      </div>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        Match the seniority to the stage
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Not every company needs a Principal Designer. Not every team needs a Design Director. What you need depends on where you are, and mismatching that creates exactly the problems described above. If you are pre-maturity - no design processes, no research practice, no design culture - you need someone who is energised by building from zero. That is a very specific kind of senior designer, not just any senior designer. Many experienced designers thrive in structured environments and struggle in ambiguity. Others thrive in chaos and get bored when the systems are established. Know which one you need before you hire.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        Stop treating design hires as a substitute for design maturity
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Hiring a great designer is necessary but not sufficient. Design maturity is an organisational capability, not an individual skill. It requires investment in processes, tools, culture, and - critically - leadership buy-in. BCG&apos;s research on design maturity identifies eight elements that influence it: strategy, culture, measurement, methods, tools, governance, people, and training. Hiring addresses only one of those eight. The other seven require organisational commitment that no individual hire can provide, regardless of how senior they are. This is the same structural failure we see when <Link href="/resources/blogs/design-team-systems-problem" className="text-accent hover:underline font-medium">design teams have a systems problem, not a skills problem</Link>.
+      </p>
+
+      <h2 id="what-designers-should-do" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What Senior Designers Should Do Before Accepting the Role
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If you are a senior designer considering a role at a company where you will be the first or only design hire, or where the design function is clearly immature, ask these questions in the interview - and pay close attention to how they are answered.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>&quot;What does success look like for this role in the first six months?&quot;</strong> If the answer is about screens shipped or features delivered, the org sees you as a production resource. If the answer involves establishing practices, building culture, or influencing product direction, they might actually understand the role.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>&quot;Who does this role report to?&quot;</strong> If you report to an engineering lead or a PM, design is a service function in this organisation. That is not necessarily a dealbreaker, but you need to go in with your eyes open about the influence you will have.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>&quot;What design infrastructure exists today?&quot;</strong> Design system? Research practice? Critique rituals? Past research? If the answer is &quot;nothing, that is what we are hiring you to build,&quot; ask whether you will have the time, budget, and authority to do that in addition to your feature work. If the answer is &quot;we have not thought about that,&quot; you have your answer.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        <strong>&quot;Can I speak with the last designer who was in this role?&quot;</strong> If there was a previous designer and they left quickly, that tells you something. If there was never a designer in this role, that tells you something different - but equally important. The absence of a predecessor means you will be defining the role from scratch, and the organisation may not even know what to expect from you.
+      </p>
+
+      {/* Inline image 6 */}
+      <div className="relative aspect-[16/9] rounded-xl overflow-hidden my-10">
+        <Image
+          src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80"
+          alt="A professional in a thoughtful pose during an interview, representing the diagnostic questions senior designers should ask before accepting a role"
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 720px"
+        />
+      </div>
+
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        These are not trick questions. They are diagnostic. A mature organisation will have thoughtful answers. An immature one will fumble - and the way they fumble will tell you exactly what you are walking into.
+      </p>
+
+      <h2 id="cost-is-real" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Cost Is Real - For Both Sides
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The cost of this mismatch is not abstract. For the designer, it is months of professional stagnation, self-doubt, and the emotional toll of operating in an environment that does not understand what you do. For the organisation, it is a failed hire, a wasted salary, a reinforced belief that design is not worth investing in, and an increasingly hostile environment for the next designer who tries. Every time this cycle plays out - and it plays out constantly, across industries, across company sizes, across geographies - both sides lose. The designer loses time and confidence. The organisation loses the opportunity to build a design capability that could have transformed how they build products.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        The fix is not complicated. It is just uncomfortable: leaders need to be honest about where their organisation actually is on the maturity spectrum, and designers need to be honest about what kind of environment they actually thrive in. When those two assessments match, the hire works. When they do not, everyone pays the price.
+      </p>
+
+      {/* Inline image 7 */}
+      <div className="relative aspect-[16/9] rounded-xl overflow-hidden my-10">
+        <Image
+          src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=800&q=80"
+          alt="Two hands reaching toward each other across a gap, representing the alignment needed between organisational maturity and designer seniority"
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 720px"
+        />
+      </div>
+
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        At Xperience Wave, we work with both sides of this equation. For organisations building or scaling design teams, we offer <Link href="/for-business/training-for-teams" className="text-accent hover:underline font-medium">training programmes and design services</Link> that build the infrastructure and maturity needed before - or alongside - senior hires. For individual designers navigating these transitions, our programmes help you assess the environments you are entering and operate effectively regardless of maturity level. If you are a leader struggling with design hiring or a designer stuck in a mismatch, <Link href="https://calendly.com/xperiencewave/strategy-call" className="text-accent hover:underline font-medium">book a free strategy call</Link> and let us dig into what is actually going on.
+      </p>
+
+      <h2 id="sources-references" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Sources &amp; References
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li>Matej Latin - Annual study on why designers quit. 77.5% of designers rate their organisation&apos;s UX maturity at levels 1-3 on a 6-level scale. UX maturity and lack of career progression are the primary reasons designers leave.</li>
+        <li>Misha Frolov - Framework for evaluating design hires. Describes &quot;stage mismatch&quot; as the right designer at the wrong company stage.</li>
+        <li>BCG - Research on design maturity. Identifies eight elements that influence design maturity: strategy, culture, measurement, methods, tools, governance, people, and training.</li>
+        <li>Xperience Wave - Direct observation from mentorship and corporate training engagements with design teams and individual designers navigating maturity mismatches.</li>
+      </ul>
+
+      <h2 id="related-reading" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Related Reading
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li><Link href="/resources/blogs/senior-ux-designer-delivery-person" className="text-accent hover:underline font-medium">A Senior UX Designer Is Not a Delivery Person</Link> - the fundamental misconception about what senior designers are hired to do</li>
+        <li><Link href="/resources/blogs/design-team-plateau-10-people" className="text-accent hover:underline font-medium">Why Most Design Teams Plateau After 10 People</Link> - organisational scaling challenges that create maturity gaps</li>
+        <li><Link href="/resources/blogs/design-team-systems-problem" className="text-accent hover:underline font-medium">Your Design Team Doesn&apos;t Have a Skills Problem - They Have a Systems Problem</Link> - when the failure is structural, not individual</li>
+        <li><Link href="/resources/blogs/hidden-cost-promoting-ic-designer-manager" className="text-accent hover:underline font-medium">The Hidden Cost of Promoting Your Best IC Designer to Manager</Link> - a related mismatch: wrong role, right person</li>
+        <li><Link href="/resources/blogs/conversations-senior-designers-have" className="text-accent hover:underline font-medium">The Conversations Senior Designers Have That Others Don&apos;t</Link> - what senior designers need from their environment to operate at their level</li>
+        <li><Link href="/resources/blogs/grow-as-solo-designer" className="text-accent hover:underline font-medium">How to Grow as a Solo Designer</Link> - surviving and thriving when you are the only designer</li>
+      </ul>
+
+      <h2 id="about-author" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        About the Author
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Murad is Co-founder and Head of Product &amp; Design at Xperience Wave, a UX design career development company based in Bangalore. He has 13+ years of experience across enterprise product design, design leadership, and organisational consulting. The patterns described in this article are drawn from his own career and from direct work with designers and design leaders navigating maturity mismatches at companies ranging from early-stage startups to large enterprises.
+      </p>
+
+      <p className="text-base md:text-lg text-g500 italic mt-6">
+       - Murad, Co-founder &amp; Head of Product &amp; Design, Xperience Wave
+      </p>
+
+      <FreeTrainingCTA text="If you are a senior designer stuck in a maturity mismatch, the free training shows how we help designers operate at their level regardless of organisational stage" />
+    </>
+  ),
   'ux-research-never-makes-it-into-roadmap': (
     <>
       <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
@@ -7244,6 +7518,16 @@ const blogContent: Record<string, React.ReactNode> = {
 
 // Table of contents for each blog post
 const blogTableOfContents: Record<string, { id: string; title: string }[]> = {
+  'hiring-senior-designers-immature-design-org': [
+    { id: 'not-rare-problem', title: 'This Is Not a Rare Problem' },
+    { id: 'why-orgs-mistake', title: 'Why Organisations Make This Mistake' },
+    { id: 'five-things-wrong', title: 'The Five Things That Go Wrong' },
+    { id: 'what-leaders-should-do', title: 'What Leaders Should Do Instead' },
+    { id: 'what-designers-should-do', title: 'What Designers Should Do' },
+    { id: 'cost-is-real', title: 'The Cost Is Real - For Both Sides' },
+    { id: 'sources-references', title: 'Sources & References' },
+    { id: 'related-reading', title: 'Related Reading' },
+  ],
   'ux-research-never-makes-it-into-roadmap': [
     { id: 'core-problem', title: 'The Core Problem: Process vs Purpose' },
     { id: 'isolation-trap', title: 'Why This Keeps Happening: The Isolation Trap' },
@@ -7548,6 +7832,11 @@ const authorData: Record<string, { role: string; bio: string; image: string }> =
 
 // Blog-specific metadata for SEO
 const blogMetadata: Record<string, { title: string; description: string; keywords: string[] }> = {
+  'hiring-senior-designers-immature-design-org': {
+    title: 'What Happens When You Hire Senior Designers Into an Immature Design Org | Xperience Wave',
+    description: 'A company decides it needs better design and hires a senior designer - but the org has no design function to elevate. The mismatch damages both sides. Here is what leaders and designers should do instead.',
+    keywords: ['hiring senior designers immature org', 'design maturity hiring', 'senior UX designer mismatch', 'building design teams', 'design org readiness', 'senior designer wrong company', 'design maturity', 'design leadership', 'UX org maturity', 'design team building', 'design hiring mistakes', 'design culture', 'design infrastructure'],
+  },
   'ux-research-never-makes-it-into-roadmap': {
     title: 'Why Your UX Research Never Makes It Into the Roadmap | Xperience Wave',
     description: 'Your research is not getting ignored because the organisation is immature. It is getting ignored because you positioned it as a design activity instead of a business input. The 5-Step Research Integration Blueprint that changes that.',

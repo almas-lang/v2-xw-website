@@ -54,7 +54,7 @@ export function FreeTrainingPromo({ variant, source }: FreeTrainingPromoProps) {
                 Land a senior UX role in 90 days.
               </h3>
               <p className="text-[13px] text-g600 leading-snug mt-1.5">
-                Free training by Shaik Murad — 13 yrs in design, VP in 3.
+                Training by Shaik Murad — 13 yrs in design, VP in 3.
               </p>
             </div>
           </div>
@@ -69,7 +69,7 @@ export function FreeTrainingPromo({ variant, source }: FreeTrainingPromoProps) {
           </div>
 
           <div className="mt-4 flex items-center justify-center h-11 rounded-lg bg-ft-purple-cta text-white font-semibold text-[14px] whitespace-nowrap group-hover:opacity-90">
-            Watch free training →
+            Watch the training →
           </div>
           <p className="mt-2.5 text-[12px] text-g500 text-center">{TRUST}</p>
         </div>
@@ -95,7 +95,7 @@ export function FreeTrainingPromo({ variant, source }: FreeTrainingPromoProps) {
               Land a senior UX role in 90 days.
             </h3>
             <p className="text-[15px] text-g600 mb-3">
-              Free training by Shaik Murad (13 yrs in design, VP in 3).
+              Training by Shaik Murad (13 yrs in design, VP in 3).
             </p>
             <div className="flex flex-wrap gap-2 mb-4">
               <span className="text-[12px] font-semibold px-2.5 py-1 rounded-full bg-white text-ft-purple-cta">
@@ -107,7 +107,7 @@ export function FreeTrainingPromo({ variant, source }: FreeTrainingPromoProps) {
             </div>
             <div className="flex items-center gap-3 flex-wrap">
               <span className="inline-flex items-center justify-center h-10 px-5 rounded-lg bg-ft-purple-cta text-white font-semibold text-[14px] whitespace-nowrap group-hover:opacity-90">
-                Watch free training →
+                Watch the training →
               </span>
               <span className="text-[12px] text-g500">{TRUST}</span>
             </div>
@@ -130,14 +130,14 @@ export function FreeTrainingPromo({ variant, source }: FreeTrainingPromoProps) {
         />
         <div className="flex-1 min-w-0">
           <h3 className="font-heading text-[16px] md:text-[18px] font-bold text-ft-dark-surface leading-snug">
-            Not ready to commit? Start with the free training.
+            Not ready to commit? Start with the training.
           </h3>
           <p className="text-[13px] md:text-[14px] text-g600 mt-1 line-clamp-2">
             28-minute walkthrough of the exact roadmap 830+ designers used to land senior UX roles.
           </p>
           <div className="mt-2.5 flex items-center gap-3 flex-wrap">
             <span className="inline-flex items-center h-8 px-3.5 rounded-full bg-ft-purple-cta text-white font-semibold text-[13px] group-hover:opacity-90">
-              Watch free training →
+              Watch the training →
             </span>
             <span className="text-[12px] text-g500">{TRUST}</span>
           </div>

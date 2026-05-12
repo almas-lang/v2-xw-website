@@ -934,7 +934,7 @@ const blogContent: Record<string, React.ReactNode> = {
         That is the shift. From the person who makes the screens to the person who shapes the decisions. And it does not start with a better Figma file. It starts with a 15-minute conversation before you open Figma at all.
       </p>
 
-      <FreeTrainingCTA text="Stakeholder management is one of the core skills we build. Watch the free training to see how" />
+      <FreeTrainingCTA text="Stakeholder management is one of the core skills we build. Watch the training to see how" />
 
       <p className="text-base md:text-lg text-g600 leading-relaxed mt-8 mb-6">
         At Xperience Wave, stakeholder communication is one of the core skills we build in our 1:1 mentorship and our short course on stakeholder management for designers. It is not about making you more &quot;political.&quot; It is about making sure your work sees the light of day - and drives the impact it deserves. If your design work keeps getting ignored, overruled, or diluted, <a href="https://app.xperiencewave.com/book/dc-strategy-call" className="text-accent hover:underline font-medium" target="_blank" rel="noopener noreferrer">book a free strategy call</a> and let us dig into what is actually going on.
@@ -1641,7 +1641,7 @@ const blogContent: Record<string, React.ReactNode> = {
         - Murad, Co-founder &amp; Head of Design, Xperience Wave
       </p>
 
-      <FreeTrainingCTA text="AI changes the game, but only if you're playing the right one. Watch the free training" />
+      <FreeTrainingCTA text="AI changes the game, but only if you're playing the right one. Watch the training" />
     </>
   ),
   'why-courses-dont-work': (
@@ -6775,7 +6775,7 @@ const blogContent: Record<string, React.ReactNode> = {
         - Murad, Co-founder &amp; Head of Design, Xperience Wave
       </p>
 
-      <FreeTrainingCTA text="Before you negotiate, make sure you're positioned for the right role. Watch the free training" />
+      <FreeTrainingCTA text="Before you negotiate, make sure you're positioned for the right role. Watch the training" />
     </>
   ),
 

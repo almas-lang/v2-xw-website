@@ -2,118 +2,35 @@
 
 import { Suspense, useCallback, useEffect, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import Image from "next/image";
-import Link from "next/link";
-import { trackPageView, trackSubmitApplication, trackGA4 } from "@/lib/freetraining/track";
+import {
+  trackPageView,
+  trackSubmitApplication,
+  trackGA4,
+  trackCongratsVideoStart,
+  trackCongratsVideoProgress,
+  trackCongratsVideoComplete,
+} from "@/lib/freetraining/track";
 import { getStorageJSON } from "@/lib/freetraining/storage";
 import { ftContent } from "@/lib/freetraining/content";
 import { BunnyPlayer } from "@/components/freetraining/BunnyPlayer";
+import FAQ from "@/components/shared/FAQ";
 
 const CONGRATS_VIDEO_ID = process.env.NEXT_PUBLIC_CONGRATS_BUNNY_VIDEO_ID || '';
 const BUNNY_LIBRARY_ID = process.env.NEXT_PUBLIC_FT_BUNNY_LIBRARY_ID || '';
 
-/* ─── SVG Icon Components ─── */
-
-function CheckCircleIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-    </svg>
-  );
-}
-
-function CalendarIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
-    </svg>
-  );
-}
-
-function ClockIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-    </svg>
-  );
-}
-
-function VideoCameraIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="m15.75 10.5 4.72-4.72a.75.75 0 0 1 1.28.53v11.38a.75.75 0 0 1-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25h-9A2.25 2.25 0 0 0 2.25 7.5v9a2.25 2.25 0 0 0 2.25 2.25Z" />
-    </svg>
-  );
-}
-
-function PlayIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M8 5v14l11-7z" />
-    </svg>
-  );
-}
-
-function UploadIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
-    </svg>
-  );
-}
-
-function CheckIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-    </svg>
-  );
-}
-
-function QuoteIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311C9.591 11.68 11 13.166 11 15c0 1.933-1.567 3.5-3.5 3.5-1.289 0-2.449-.637-2.917-1.179zM14.583 17.321C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311C19.591 11.68 21 13.166 21 15c0 1.933-1.567 3.5-3.5 3.5-1.289 0-2.449-.637-2.917-1.179z" />
-    </svg>
-  );
-}
-
-/* ─── FAQ Accordion Item ─── */
-
-function FaqItem({ question, answer }: { question: string; answer: string }) {
-  const [open, setOpen] = useState(false);
-
-  return (
-    <div className="bg-white">
-      <button
-        type="button"
-        onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between gap-4 px-4 md:px-5 py-4 text-left cursor-pointer hover:bg-gray-50 transition-colors duration-150"
-        aria-expanded={open}
-      >
-        <span className="text-[16px] md:text-[17px] font-semibold text-ft-dark-surface">{question}</span>
-        <svg
-          className={`w-4 h-4 text-gray-400 flex-shrink-0 transition-transform duration-200 ${open ? 'rotate-180' : ''}`}
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          aria-hidden="true"
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-        </svg>
-      </button>
-      <div
-        className={`grid transition-all duration-200 ease-in-out ${open ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
-      >
-        <div className="overflow-hidden">
-          <p className="px-4 md:px-5 pb-4 text-[16px] md:text-[17px] text-gray-500 leading-relaxed">{answer}</p>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-/* ─── Main Component ─── */
+const splitName = (fullName: string): { first: string; last: string } => {
+  const tokens = fullName.trim().split(/\s+/).filter(Boolean);
+  if (tokens.length === 0) return { first: "", last: "" };
+  if (tokens.length === 1) return { first: tokens[0], last: "" };
+  const isInitial = /^[A-Za-z]{1,2}\.?$/.test(tokens[0]);
+  if (isInitial && tokens.length >= 3) {
+    return { first: `${tokens[0]} ${tokens[1]}`, last: tokens.slice(2).join(" ") };
+  }
+  if (isInitial && tokens.length === 2) {
+    return { first: `${tokens[0]} ${tokens[1]}`, last: "" };
+  }
+  return { first: tokens[0], last: tokens.slice(1).join(" ") };
+};
 
 function CongratulationsContent() {
   const searchParams = useSearchParams();
@@ -122,12 +39,14 @@ function CongratulationsContent() {
   const [resumeError, setResumeError] = useState("");
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'submitting' | 'done' | 'error'>('idle');
   const [submitError, setSubmitError] = useState("");
+  const [firstName, setFirstName] = useState<string>("");
 
   const bookingDate = searchParams.get("date") || "";
   const bookingTime = searchParams.get("time") || "";
   const durationMinutes = searchParams.get("duration") || "";
   const meetLink = searchParams.get("meet_link") || searchParams.get("meetLink") || "";
   const emailFromParams = searchParams.get("email") || "";
+  const firstNameParam = searchParams.get("first_name") || "";
 
   const formattedDate = bookingDate
     ? new Date(bookingDate + "T00:00:00").toLocaleDateString("en-IN", {
@@ -148,6 +67,12 @@ function CongratulationsContent() {
 
   const leadEmail = emailFromParams || getStorageJSON<{ email: string }>("lead_data")?.email || "";
 
+  useEffect(() => {
+    const storedName = getStorageJSON<{ name: string }>("lead_form_data")?.name || "";
+    const resolved = firstNameParam || (storedName ? splitName(storedName).first : "");
+    setFirstName(resolved);
+  }, [firstNameParam]);
+
   const hasFiredConversionRef = useRef(false);
   useEffect(() => {
     if (hasFiredConversionRef.current) return;
@@ -165,6 +90,31 @@ function CongratulationsContent() {
       appointment_type: "strategy_call",
       booking_date: bookingDate,
     });
+  }, [leadEmail, bookingDate]);
+
+  // ── Congrats-page video tracking ──────────────────────────────
+  const congratsPlayTrackedRef = useRef(false);
+  const congratsMilestonesRef = useRef(new Set<number>());
+
+  const handleCongratsPlay = useCallback(() => {
+    if (congratsPlayTrackedRef.current) return;
+    congratsPlayTrackedRef.current = true;
+    trackCongratsVideoStart(CONGRATS_VIDEO_ID);
+  }, []);
+
+  const handleCongratsTimeUpdate = useCallback((currentTime: number, duration: number) => {
+    if (duration <= 0) return;
+    const percent = (currentTime / duration) * 100;
+    for (const milestone of [10, 25, 50, 75, 90, 100]) {
+      if (percent >= milestone && !congratsMilestonesRef.current.has(milestone)) {
+        congratsMilestonesRef.current.add(milestone);
+        trackCongratsVideoProgress(CONGRATS_VIDEO_ID, milestone);
+      }
+    }
+  }, []);
+
+  const handleCongratsEnded = useCallback(() => {
+    trackCongratsVideoComplete(CONGRATS_VIDEO_ID);
   }, []);
 
   const handleResumeSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -237,8 +187,8 @@ function CongratulationsContent() {
     if (!bookingDate || !bookingTime) return "#";
     const title = "Design Career Strategy Call - Xperience Wave";
     const details = meetLink
-      ? `Google Meet: ${meetLink}\n\nPrepare:\n1. Your #1 career goal for the next 90 days\n2. Have LinkedIn profile open`
-      : "Prepare:\n1. Your #1 career goal for the next 90 days\n2. Have LinkedIn profile open";
+      ? `Google Meet: ${meetLink}\n\nPrepare:\n1. Your #1 outcome (role, timeline, salary)\n2. Have LinkedIn profile open`
+      : "Prepare:\n1. Your #1 outcome (role, timeline, salary)\n2. Have LinkedIn profile open";
     const location = "Google Meet";
     const startDate = bookingDate.replace(/-/g, '') + 'T' + (bookingTime.replace(/:/g, '') || '110000');
     const dur = parseInt(durationMinutes) || 45;
@@ -258,7 +208,7 @@ function CongratulationsContent() {
       `DTSTART;TZID=Asia/Kolkata:${start}`,
       `SUMMARY:${title}`,
       meetLink ? `LOCATION:${meetLink}` : '',
-      `DESCRIPTION:Prepare: 1. Your #1 career goal 2. LinkedIn profile open`,
+      `DESCRIPTION:Prepare: 1. Your #1 outcome 2. LinkedIn profile open`,
       `DURATION:PT${parseInt(durationMinutes) || 45}M`,
       'END:VEVENT',
       'END:VCALENDAR',
@@ -273,332 +223,257 @@ function CongratulationsContent() {
     URL.revokeObjectURL(url);
   };
 
+  const greetingName = firstName ? ` ${firstName}` : '';
+
+  // Single-line confirmation detail: "Tuesday, 12 May 2026 · 10:00 AM IST with Murad or Almas · 45 minutes · Google Meet"
+  const confirmationParts: string[] = [];
+  if (formattedDate) confirmationParts.push(formattedDate);
+  if (formattedTime) confirmationParts.push(`${formattedTime} IST with Murad or Almas`);
+  else confirmationParts.push('with Murad or Almas');
+  confirmationParts.push(`${parseInt(durationMinutes) || 45} minutes`);
+  confirmationParts.push('Google Meet');
+  const confirmationLine = confirmationParts.join(' · ');
+
   return (
-    <div className="min-h-screen bg-gradient-to-b from-green-50/40 via-white to-white">
-      <div className="max-w-[700px] lg:max-w-[1000px] mx-auto px-5 py-8 md:py-14 lg:py-20">
+    <div className="min-h-screen bg-white">
+      <div className="max-w-[820px] mx-auto px-5 py-10 md:py-14">
 
-        {/* ── Section 1: Booking Confirmation ── */}
-        <section className="mb-8 md:mb-12">
-          <div className="bg-white rounded-2xl border border-green-200 shadow-sm p-6 md:p-8 text-center">
-            <div className="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <CheckCircleIcon className="w-8 h-8 text-green-600" />
-            </div>
-
-            <h1 className="text-[25px] md:text-[33px] font-bold text-ft-dark-surface mb-1 tracking-tight">
-              You&apos;re booked!
+        {/* ============ SECTION 1: BOOKING CONFIRMATION ============ */}
+        <section className="mb-12 md:mb-16">
+          <div className="bg-ft-section-bg rounded-2xl p-6 md:p-10">
+            <h1 className="text-[20px] md:text-[24px] font-heading font-bold text-ft-dark-surface mb-6">
+              You&apos;re on{greetingName}
             </h1>
-            {bookingDate ? (
-              <>
-                <p className="text-[16px] md:text-[17px] text-gray-500 mb-5">Your strategy call is confirmed for:</p>
-                <div className="bg-gray-50 rounded-xl p-4 md:p-5 mb-5 max-w-[420px] mx-auto">
-                  <div className="flex items-center justify-center gap-1.5 text-[17px] md:text-[18px] font-semibold text-ft-dark-surface mb-1">
-                    <CalendarIcon className="w-4.5 h-4.5 text-ft-purple-cta" />
-                    {formattedDate}
-                  </div>
-                  {formattedTime && (
-                    <div className="flex items-center justify-center gap-1.5 text-[17px] md:text-[18px] font-semibold text-ft-dark-surface mb-1">
-                      <ClockIcon className="w-4.5 h-4.5 text-ft-purple-cta" />
-                      {formattedTime} IST
-                      {durationMinutes && (
-                        <span className="text-[15px] font-normal text-gray-400 ml-1">({durationMinutes} min)</span>
-                      )}
-                    </div>
-                  )}
-                  <div className="flex items-center justify-center gap-1.5 text-[16px] md:text-[17px] text-gray-500 mt-2 mb-1">
-                    <VideoCameraIcon className="w-4 h-4 text-gray-400" />
-                    <span>Google Meet</span>
-                  </div>
-                  {meetLink && (
-                    <a
-                      href={meetLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-[16px] md:text-[17px] text-ft-purple-cta hover:underline break-all cursor-pointer transition-colors duration-200"
-                    >
-                      {meetLink}
-                    </a>
-                  )}
-                </div>
-              </>
-            ) : (
-              <p className="text-[16px] md:text-[17px] text-gray-500 mb-5">
-                Your strategy call is confirmed. Check your email and WhatsApp for the date, time, and meeting link.
+
+            <div className="border-l-[3px] border-accent pl-5 md:pl-7 py-2 mb-7">
+              <p className="text-[12px] md:text-[13px] font-bold tracking-wider uppercase text-accent mb-2">
+                {ftContent.congratulations.confirmedLabel}
               </p>
-            )}
-
-            <p className="text-[15px] text-gray-400 mb-5">
-              Save this — you&apos;ll also receive it via email and WhatsApp
-            </p>
-
-            {bookingDate && (
-              <div className="flex items-center justify-center gap-3">
-                <a
-                  href={getGoogleCalendarUrl()}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => trackGA4("calendar_added_google")}
-                  className="inline-flex items-center gap-2 text-[15px] font-semibold text-ft-purple-cta bg-ft-purple-cta/5 border border-ft-purple-cta/20 rounded-lg px-4 py-2.5 hover:bg-ft-purple-cta/10 active:scale-[0.98] transition-all duration-200 cursor-pointer"
-                >
-                  <CalendarIcon className="w-4 h-4" />
-                  Google Calendar
-                </a>
-                <button
-                  onClick={() => {
-                    trackGA4("calendar_added_apple");
-                    downloadICS();
-                  }}
-                  className="inline-flex items-center gap-2 text-[15px] font-semibold text-ft-purple-cta bg-ft-purple-cta/5 border border-ft-purple-cta/20 rounded-lg px-4 py-2.5 hover:bg-ft-purple-cta/10 active:scale-[0.98] transition-all duration-200 cursor-pointer"
-                >
-                  <CalendarIcon className="w-4 h-4" />
-                  Apple Calendar
-                </button>
-              </div>
-            )}
-          </div>
-        </section>
-
-        {/* ── Section 2: Murad's Video ── */}
-        <section className="mb-8 md:mb-12">
-          {CONGRATS_VIDEO_ID && BUNNY_LIBRARY_ID ? (
-            <div className="max-w-full sm:max-w-[340px] mx-auto">
-              <BunnyPlayer videoId={CONGRATS_VIDEO_ID} libraryId={BUNNY_LIBRARY_ID} aspectRatio="9/16" />
-            </div>
-          ) : (
-            <div className="relative w-full rounded-2xl overflow-hidden shadow-lg" style={{ paddingBottom: '56.25%' }}>
-              <Image
-                src="/images/Murad.png"
-                alt="Shaik Murad - Personal message"
-                fill
-                className="object-cover"
-                priority
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-16 h-16 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center mx-auto mb-3 shadow-lg transition-transform duration-200 hover:scale-105">
-                    <PlayIcon className="w-7 h-7 text-ft-purple-cta ml-0.5" />
-                  </div>
-                  <p className="text-[16px] md:text-[17px] text-white/90 font-medium drop-shadow-md">Personal message from Shaik Murad</p>
-                </div>
-              </div>
-            </div>
-          )}
-        </section>
-
-        {/* ── Section 3: Homework ── */}
-        <section className="mb-8 md:mb-12">
-          <h2 className="text-[21px] md:text-[25px] font-bold text-ft-dark-surface mb-4 md:mb-5">Before your call, do these 2 things:</h2>
-          <div className="space-y-3 md:space-y-4">
-            {ftContent.congratulations.homework.map((task, i) => (
-              <div key={i} className="bg-white rounded-xl border border-gray-100 p-4 md:p-5 shadow-sm">
-                <div className="flex items-start gap-3 md:gap-4">
-                  <span className="flex-shrink-0 w-7 h-7 md:w-8 md:h-8 rounded-full bg-ft-purple-cta/10 text-ft-purple-cta text-[15px] font-bold flex items-center justify-center mt-0.5">
-                    {i + 1}
-                  </span>
-                  <div className="min-w-0">
-                    <p className="text-[16px] md:text-[17px] font-semibold text-ft-dark-surface mb-1 leading-snug">
-                      {task.title}
-                    </p>
-                    <p className="text-[16px] md:text-[17px] text-gray-500 leading-relaxed">{task.description}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* ── Section 4: Help Us Prepare ── */}
-        <section className="mb-8 md:mb-12">
-          <div className="bg-gradient-to-br from-white via-white to-ft-purple-cta/[0.04] rounded-2xl border border-ft-purple-cta/20 p-5 md:p-7 shadow-[0_4px_24px_-4px_rgba(107,92,255,0.12)] ring-1 ring-ft-purple-cta/[0.08]">
-            <div className="mb-4">
-              <h2 className="text-[21px] md:text-[25px] font-bold text-ft-dark-surface">Help us prepare for YOUR call</h2>
-              <p className="text-[15px] text-gray-400 mt-0.5">Optional but recommended</p>
-            </div>
-            <p className="text-[16px] md:text-[17px] text-gray-500 mb-5 leading-relaxed">
-              Your LinkedIn is already shared — we&apos;ll review it before the call.
-            </p>
-
-            <div className="space-y-4 md:space-y-5">
-              {/* Portfolio URL */}
-              <div>
-                <label htmlFor="portfolio-url" className="block text-[16px] md:text-[17px] font-medium text-gray-700 mb-1.5">
-                  Got a portfolio? Share the link:
-                </label>
-                <input
-                  id="portfolio-url"
-                  type="url"
-                  value={portfolioUrl}
-                  onChange={(e) => { setPortfolioUrl(e.target.value); setSubmitStatus('idle'); }}
-                  placeholder="https://your-portfolio.com"
-                  className="w-full px-3 py-2.5 md:py-3 text-[15px] text-gray-900 rounded-lg border border-gray-200 bg-gray-50 focus:bg-white focus:border-ft-purple-cta focus:ring-2 focus:ring-ft-purple-cta/20 focus:outline-none transition-all duration-200"
-                />
-              </div>
-
-              {/* Resume select */}
-              <div>
-                <label className="block text-[16px] md:text-[17px] font-medium text-gray-700 mb-1.5">Got an updated resume?</label>
-                {resumeFile ? (
-                  <div className="inline-flex items-center gap-2 px-4 py-3 bg-ft-purple-cta/5 border border-ft-purple-cta/20 rounded-lg">
-                    <CheckIcon className="w-4 h-4 text-ft-purple-cta" />
-                    <span className="text-[15px] text-gray-700 font-medium truncate max-w-[200px]">{resumeFile.name}</span>
-                    <button
-                      type="button"
-                      onClick={() => { setResumeFile(null); setSubmitStatus('idle'); }}
-                      className="ml-1 p-0.5 rounded-full hover:bg-gray-200 transition-colors cursor-pointer"
-                      aria-label="Remove file"
-                    >
-                      <svg className="w-3.5 h-3.5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
-                    </button>
-                  </div>
-                ) : (
-                  <label className="inline-flex items-center gap-2.5 px-4 py-3 border border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-ft-purple-cta/40 hover:bg-ft-purple-cta/[0.02] active:scale-[0.99] transition-all duration-200">
-                    <UploadIcon className="w-4.5 h-4.5 text-gray-400" />
-                    <span className="text-[15px] text-gray-500">Upload PDF or DOCX (max 10MB)</span>
-                    <input
-                      type="file"
-                      accept=".pdf,.docx"
-                      className="hidden"
-                      onChange={handleResumeSelect}
-                      aria-label="Upload resume file"
-                    />
-                  </label>
-                )}
-                {resumeError && (
-                  <p className="text-[14px] text-red-500 mt-1">{resumeError}</p>
-                )}
-              </div>
-
-              {/* Submit button */}
-              {submitStatus === 'done' ? (
-                <div className="inline-flex items-center gap-2 px-4 py-3 bg-green-50 border border-green-200 rounded-lg">
-                  <CheckCircleIcon className="w-5 h-5 text-green-600" />
-                  <span className="text-[15px] text-green-700 font-medium">Submitted successfully</span>
-                </div>
+              {bookingDate ? (
+                <p className="text-[18px] md:text-[24px] lg:text-[28px] font-heading font-bold text-ft-dark-surface leading-tight max-w-[700px]">
+                  {confirmationLine}
+                </p>
               ) : (
-                <>
-                  <button
-                    onClick={handleSubmit}
-                    disabled={(!portfolioUrl && !resumeFile) || submitStatus === 'submitting'}
-                    className="w-full py-3 bg-ft-purple-cta text-white text-[16px] font-semibold rounded-lg hover:bg-[#5B53E6] active:scale-[0.98] transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer flex items-center justify-center gap-2"
-                  >
-                    {submitStatus === 'submitting' ? (
-                      <>
-                        <div className="animate-spin rounded-full h-4 w-4 border-2 border-white/30 border-t-white" />
-                        Submitting...
-                      </>
-                    ) : submitStatus === 'error' ? (
-                      'Try again'
-                    ) : (
-                      'Submit'
-                    )}
-                  </button>
-                  {submitStatus === 'error' && submitError && (
-                    <p className="text-[14px] text-red-500 mt-1">{submitError}</p>
-                  )}
-                </>
+                <p className="text-[18px] md:text-[22px] font-heading font-bold text-ft-dark-surface leading-tight max-w-[640px]">
+                  {ftContent.congratulations.confirmDetailFallback}
+                </p>
               )}
             </div>
 
-            <p className="text-[15px] text-gray-400 mt-4 leading-relaxed">
-              The more we know about you beforehand, the faster we get to actionable advice.
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 mb-5">
+              <a
+                href={bookingDate ? getGoogleCalendarUrl() : '#'}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => {
+                  if (!bookingDate) e.preventDefault();
+                  trackGA4("calendar_added_google");
+                }}
+                aria-disabled={!bookingDate}
+                className={`inline-flex items-center justify-center gap-2 text-[14px] md:text-[15px] font-semibold text-ft-dark-surface bg-white border border-gray-300 rounded-md px-5 py-2.5 transition-all duration-150 ${bookingDate ? 'hover:bg-gray-50 active:scale-[0.99] cursor-pointer' : 'opacity-50 cursor-not-allowed'}`}
+              >
+                Add to Google Calendar
+              </a>
+              <button
+                onClick={() => {
+                  if (!bookingDate) return;
+                  trackGA4("calendar_added_apple");
+                  downloadICS();
+                }}
+                disabled={!bookingDate}
+                className={`inline-flex items-center justify-center gap-2 text-[14px] md:text-[15px] font-semibold text-ft-dark-surface bg-white border border-gray-300 rounded-md px-5 py-2.5 transition-all duration-150 ${bookingDate ? 'hover:bg-gray-50 active:scale-[0.99] cursor-pointer' : 'opacity-50 cursor-not-allowed'}`}
+              >
+                Add to iCal
+              </button>
+            </div>
+
+            <p className="text-[13px] md:text-[14px] text-gray-500 leading-relaxed">
+              {ftContent.congratulations.confirmFootnote}
             </p>
           </div>
         </section>
 
-        {/* ── Section 5: Call Structure ── */}
-        <section className="mb-8 md:mb-12">
-          <h2 className="text-[21px] md:text-[25px] font-bold text-ft-dark-surface mb-4 md:mb-5">What happens on the call:</h2>
-          <div className="space-y-1">
-            {ftContent.congratulations.callBreakdown.map((step, i) => (
-              <div key={step.time} className="flex items-start gap-4 py-3 md:py-4">
-                <div className="flex flex-col items-center flex-shrink-0 w-[72px] md:w-[84px]">
-                  <span className="text-[13px] md:text-[14px] font-bold text-ft-purple-cta uppercase tracking-wide leading-tight text-right w-full">
-                    {step.time}
-                  </span>
-                </div>
-                <div className="flex flex-col items-center pt-1 flex-shrink-0">
-                  <div className="w-2 h-2 rounded-full bg-ft-purple-cta" />
-                  {i < ftContent.congratulations.callBreakdown.length - 1 && (
-                    <div className="w-px flex-1 bg-ft-purple-cta/20 mt-1 min-h-[28px]" />
+        {/* ============ SECTION 2: WATCH VIDEO ============ */}
+        <section className="mb-12 md:mb-16">
+          <h2 className="text-center text-[18px] md:text-[22px] font-heading font-bold text-ft-dark-surface mb-6">
+            {ftContent.congratulations.videoTitle}
+          </h2>
+          <div className="max-w-[340px] mx-auto">
+            {CONGRATS_VIDEO_ID && BUNNY_LIBRARY_ID ? (
+              <BunnyPlayer
+                videoId={CONGRATS_VIDEO_ID}
+                libraryId={BUNNY_LIBRARY_ID}
+                aspectRatio="9/16"
+                onPlay={handleCongratsPlay}
+                onTimeUpdate={handleCongratsTimeUpdate}
+                onEnded={handleCongratsEnded}
+              />
+            ) : (
+              <div className="aspect-[9/16] rounded-xl bg-gray-100 border border-gray-200" />
+            )}
+          </div>
+          <p className="text-center text-[13px] md:text-[14px] text-gray-500 mt-4">
+            {ftContent.congratulations.videoNote}
+          </p>
+        </section>
+
+        {/* ============ SECTION 3: TWO THINGS TO PREPARE ============ */}
+        <section>
+          <h2 className="text-[24px] md:text-[34px] font-heading font-bold text-ft-dark-surface mb-10 md:mb-14">
+            {ftContent.congratulations.prepare.title}
+          </h2>
+          <div className="divide-y divide-gray-200">
+            {ftContent.congratulations.prepare.items.map((item) => (
+              <div
+                key={item.number}
+                className="grid grid-cols-[64px_1fr] md:grid-cols-[140px_1fr] lg:grid-cols-[180px_1fr] gap-5 md:gap-10 lg:gap-14 py-10 md:py-14"
+              >
+                <p className="text-[44px] md:text-[72px] lg:text-[88px] font-heading font-bold text-accent leading-none tracking-tight">
+                  {item.number}
+                </p>
+                <div>
+                  <h3 className="text-[20px] md:text-[24px] font-heading font-bold text-ft-dark-surface mb-3 leading-tight">
+                    {item.title}
+                  </h3>
+                  <p className="text-[15px] md:text-[16px] text-[#4D4D57] leading-[180%] max-w-[640px]">
+                    {item.body}
+                  </p>
+                  {item.quote && (
+                    <div className="mt-5 border-l-[3px] border-accent pl-4 md:pl-5 py-1 max-w-[640px]">
+                      <p className="text-[14px] md:text-[15px] text-[#3A3A42] italic leading-[180%]">
+                        {item.quote}
+                      </p>
+                    </div>
                   )}
                 </div>
-                <div className="pb-1">
-                  <p className="text-[16px] md:text-[17px] font-semibold text-ft-dark-surface leading-snug">{step.label}</p>
-                  <p className="text-[16px] md:text-[17px] text-gray-500 leading-relaxed">{step.detail}</p>
-                </div>
               </div>
             ))}
           </div>
-        </section>
 
-        {/* ── Section 6: What We Offer ── */}
-        <section className="mb-8 md:mb-12">
-          <div className="bg-ft-purple-cta/[0.03] rounded-2xl border border-ft-purple-cta/10 p-5 md:p-7">
-            <h2 className="text-[21px] md:text-[25px] font-bold text-ft-dark-surface mb-2">What we offer:</h2>
-            <p className="text-[16px] md:text-[17px] text-gray-600 leading-relaxed mb-4">
-              Xperience Wave runs 1:1 mentorship programs (not courses) tailored to your career stage. On the strategy call, if we think we can help, we&apos;ll walk you through which program fits your situation and what the investment looks like.
+          {/* Optional file/portfolio block */}
+          <div className="mt-10 bg-ft-section-bg rounded-2xl p-6 md:p-8">
+            <p className="text-[15px] md:text-[16px] font-bold text-ft-dark-surface mb-3">
+              {ftContent.congratulations.prepare.optionalLabel}
             </p>
-            <Link
-              href="/programs"
-              target="_blank"
-              rel="noopener"
-              className="inline-flex items-center gap-1 text-[16px] md:text-[17px] font-semibold text-ft-purple-cta hover:underline cursor-pointer transition-colors duration-200"
-            >
-              Explore our programs
-              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </Link>
-          </div>
-        </section>
 
-        {/* ── Section 7: Call Testimonials ── */}
-        <section className="mb-8 md:mb-12">
-          <div className="space-y-3 md:space-y-4">
-            {ftContent.congratulations.callTestimonials.map((t) => (
-              <div key={t.name} className="bg-white rounded-xl border border-gray-100 p-5 md:p-6 shadow-sm">
-                <QuoteIcon className="w-6 h-6 text-ft-purple-cta/20 mb-2" />
-                <p className="text-[16px] md:text-[17px] text-gray-700 leading-relaxed mb-3">
-                  {t.quote}
-                </p>
-                <div className="flex items-center gap-2">
-                  <div className="w-1 h-4 rounded-full bg-ft-purple-cta/30" />
-                  <p className="text-[15px] font-semibold text-ft-dark-surface">{t.name}, <span className="font-normal text-gray-500">{t.role}</span></p>
+            {submitStatus === 'done' ? (
+              <div className="rounded-md border border-emerald-200 bg-emerald-50 px-4 py-3 text-[14px] text-emerald-700 font-medium">
+                Thanks — we&apos;ve got it. We&apos;ll review it before the call.
+              </div>
+            ) : (
+              <div className="rounded-md border border-gray-300 bg-white">
+                <input
+                  type="url"
+                  value={portfolioUrl}
+                  onChange={(e) => { setPortfolioUrl(e.target.value); setSubmitStatus('idle'); }}
+                  placeholder={ftContent.congratulations.prepare.optionalPlaceholder}
+                  className="w-full px-4 py-3 text-[14px] md:text-[15px] text-gray-900 bg-transparent placeholder-gray-400 border-0 rounded-t-md focus:outline-none"
+                />
+                <div className="flex items-center justify-between border-t border-gray-200 px-4 py-2">
+                  {resumeFile ? (
+                    <div className="flex items-center gap-2 text-[13px] md:text-[14px] text-gray-700">
+                      <svg className="w-4 h-4 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" /></svg>
+                      <span className="truncate max-w-[200px]">{resumeFile.name}</span>
+                      <button type="button" onClick={() => { setResumeFile(null); setSubmitStatus('idle'); }} className="ml-1 text-gray-400 hover:text-gray-600 cursor-pointer" aria-label="Remove file">
+                        <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+                      </button>
+                    </div>
+                  ) : (
+                    <label className="inline-flex items-center gap-1 text-[13px] md:text-[14px] font-medium text-ft-dark-surface hover:text-black cursor-pointer">
+                      <span>+ Add files</span>
+                      <input type="file" accept=".pdf,.docx" className="hidden" onChange={handleResumeSelect} aria-label="Upload resume file" />
+                    </label>
+                  )}
+                  <button onClick={handleSubmit} disabled={(!portfolioUrl && !resumeFile) || submitStatus === 'submitting'} className="text-[13px] md:text-[14px] font-semibold text-blue-600 hover:underline underline disabled:text-gray-400 disabled:no-underline disabled:cursor-not-allowed cursor-pointer">
+                    {submitStatus === 'submitting' ? 'Submitting…' : submitStatus === 'error' ? 'Try again' : 'Submit'}
+                  </button>
                 </div>
               </div>
-            ))}
+            )}
+            {resumeError && <p className="text-[13px] text-red-500 mt-2">{resumeError}</p>}
+            {submitStatus === 'error' && submitError && <p className="text-[13px] text-red-500 mt-2">{submitError}</p>}
+            <p className="text-[13px] md:text-[14px] text-gray-500 mt-4 leading-relaxed">
+              {ftContent.congratulations.prepare.optionalFootnote}
+            </p>
           </div>
-        </section>
 
-        {/* ── Section 8: FAQ ── */}
-        <section className="mb-8 md:mb-12">
-          <h2 className="text-[21px] md:text-[25px] font-bold text-ft-dark-surface mb-1">Have questions before the call?</h2>
-          <p className="text-[16px] md:text-[17px] text-gray-500 mb-5">
-            <a
-              href="https://wa.me/919380506841"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-ft-purple-cta hover:underline font-medium cursor-pointer transition-colors duration-200"
-            >
-              <svg className="inline w-4 h-4 mr-1 -mt-0.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.611l4.458-1.495A11.96 11.96 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.37 0-4.567-.818-6.297-2.187a.5.5 0 00-.42-.084l-3.162 1.06 1.06-3.162a.5.5 0 00-.083-.42A9.956 9.956 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
-              WhatsApp us at +91 93805 06841
-            </a>
-            {' '}— we typically respond within 2 hours.
+          {/* Reschedule note (inline) */}
+          <p className="mt-10 text-[13px] md:text-[14px] text-gray-500 italic leading-[180%] max-w-[700px]">
+            <span className="font-semibold text-ft-dark-surface not-italic">Need to reschedule or cancel?</span>{' '}
+            {ftContent.congratulations.reschedule.body}
           </p>
-          <div className="divide-y divide-gray-100 border border-gray-100 rounded-xl overflow-hidden">
-            {ftContent.congratulations.callFaqs.map((faq) => (
-              <FaqItem key={faq.q} question={faq.q} answer={faq.a} />
-            ))}
-          </div>
         </section>
 
       </div>
+
+      {/* ============ SECTION 5: FAQS (full-width) ============ */}
+      <FAQ
+        title="Frequently Asked Questions (FAQs)"
+        faqs={ftContent.congratulations.faqs.map((f) => ({ question: f.q, answer: f.a }))}
+        showCTA={false}
+      />
+
+      {/* ============ SECTION 6: MENTEE WINS (full-width) ============ */}
+      <section className="bg-white py-14 md:py-20 px-5">
+        <div className="max-w-[1100px] mx-auto">
+          <h2 className="text-center text-[20px] md:text-[24px] font-heading font-bold text-ft-dark-surface mb-8 md:mb-10">
+            {ftContent.congratulations.menteesTitle}
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+            {ftContent.results.cards.map((card) => (
+              <div key={card.name} className="bg-white border border-[#E5E5EA] rounded-xl p-4 md:p-5 flex flex-col items-center text-center">
+                <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden bg-gray-100 mb-3 flex-shrink-0 ring-2 ring-gray-100">
+                  {card.image ? (
+                    <img src={card.image} alt={card.name} className="w-full h-full object-cover" />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center text-gray-400 text-xl font-bold">
+                      {card.name.charAt(0)}
+                    </div>
+                  )}
+                </div>
+                <p className="text-[15px] md:text-[17px] font-bold text-ft-dark-surface leading-tight">{card.name}</p>
+                <p className="text-[13px] md:text-[14px] text-gray-500 leading-snug mt-1">{card.role}</p>
+                <span className="inline-flex items-center gap-1 mt-3 px-3 py-1 rounded-full bg-red-50 text-red-500 text-[12px] md:text-[13px] font-semibold">
+                  <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" /></svg>
+                  {card.timeline}
+                </span>
+                {card.linkedin && (
+                  <a
+                    href={card.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-2 text-[#0A66C2] hover:text-[#004182] transition-colors"
+                    aria-label={`${card.name} on LinkedIn`}
+                  >
+                    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                  </a>
+                )}
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-8 md:mt-10">
+            <a
+              href={ftContent.results.seeAllUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[15px] font-semibold text-blue-600 hover:underline underline"
+            >
+              {ftContent.results.seeAllText}
+            </a>
+            <p className="mt-3 text-[14px] md:text-[15px] text-[#4D4D57]">
+              {ftContent.results.seeAllSubtext}
+            </p>
+          </div>
+        </div>
+      </section>
+
     </div>
   );
 }
 
 export default function CongratulationsPage() {
   return (
-    <Suspense fallback={<div className="min-h-screen bg-gradient-to-b from-green-50/40 via-white to-white" />}>
+    <Suspense fallback={<div className="min-h-screen bg-white" />}>
       <CongratulationsContent />
     </Suspense>
   );

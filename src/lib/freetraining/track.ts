@@ -90,11 +90,30 @@ export const trackFormSubmitted = (data?: TrackingData) => {
 
 // Video progress tracking
 export const trackVideoProgress = (videoId: string, percent: number) => {
-  trackGA4(`video_progress_${percent}`, { video_id: videoId });
+  trackGA4(`video_progress_${percent}`, { video_id: videoId, percent });
 };
 
 export const trackVideoPaused = (videoId: string, currentTime: number) => {
   trackGA4("video_paused", { video_id: videoId, current_time: currentTime });
+};
+
+// Congratulations-page video — kept separate from the main VSL so the funnel
+// can distinguish "watched the VSL" from "watched the post-booking prep video".
+export const trackCongratsVideoStart = (videoId: string) => {
+  trackGA4("congrats_video_start", { video_id: videoId });
+};
+
+export const trackCongratsVideoProgress = (videoId: string, percent: number) => {
+  trackGA4(`congrats_video_progress_${percent}`, { video_id: videoId, percent });
+};
+
+export const trackCongratsVideoComplete = (videoId: string) => {
+  trackGA4("congrats_video_complete", { video_id: videoId });
+};
+
+// Scroll-depth milestones — fired once per threshold per page load.
+export const trackScrollDepth = (percent: number, pagePath: string) => {
+  trackGA4(`scroll_depth_${percent}`, { percent, page_path: pagePath });
 };
 
 export const trackConversionAPI = async (

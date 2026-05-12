@@ -206,9 +206,11 @@ export function LeadForm({ onSuccess, onError, variant = 'default' }: LeadFormPr
             </>
           )}
         </button>
-        <p className="mt-3 text-[13px] text-center text-white/40">
-          {isPurple ? ftContent.finalCta.trustText : ftContent.form.trustText}
-        </p>
+        {(isPurple ? ftContent.finalCta.trustText : ftContent.form.trustText) && (
+          <p className="mt-3 text-[13px] text-center text-white/40">
+            {isPurple ? ftContent.finalCta.trustText : ftContent.form.trustText}
+          </p>
+        )}
       </div>
     </form>
   );

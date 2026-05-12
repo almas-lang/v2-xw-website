@@ -66,27 +66,26 @@ This lets you see conversion counts/rates in standard reports and use them in Go
 4. In the *Tab Settings* column (middle), find **Steps** → click the **pencil icon** to open the step editor.
 5. Add steps one at a time. For each: click **+ Add step**, name it, then add a condition (the events listed below). When done, click **Apply** at the bottom.
 
-**The steps** (name → condition):
+> **⚠️ GA4 hard limit: a Funnel exploration allows at most 10 steps.** The original 17-step wishlist doesn't fit, so the table below is the consolidated 10-step funnel. The granularity we drop here (per-field form drop-off, video deciles, per-question booking drop-off, post-booking congrats steps) is covered by the separate explorations in **Part G** (booking question drop-off) and **Part H** (video retention curve) — build those too and you've lost nothing. If you ever want a dedicated post-booking funnel, make a *second* Funnel exploration starting at `booking_confirmed`.
+
+**The 10 steps** (name → condition):
 
 | # | Step name | Condition |
 |---|---|---|
-| 1 | Landed on /freetraining | Event `page_view` **AND** "Page location" *contains* `/freetraining` *(use "Page path and screen class" *contains* `/freetraining` if you prefer; either works)* |
+| 1 | Landed on /freetraining | Event `page_view` **AND** parameter "Page location" *contains* `/freetraining` *(in the step editor: pick `page_view`, then click "+ Add parameter" → `page_location` → contains → `/freetraining`)* |
 | 2 | Saw the form | Event `form_viewed` |
-| 3 | Started filling the form | Event `form_field_focused` |
-| 4 | Submitted — became a lead | Event `form_submitted` |
-| 5 | Reached the watch page | Event `page_view` **AND** "Page location" *contains* `/freetraining/watch` |
-| 6 | Played the video | Event `video_start` |
-| 7 | Watched ≥ 50% | Event `video_progress_50` |
-| 8 | Watched ≥ 90% | Event `video_progress_90` |
-| 9 | Clicked "Book a call" | Event `book_strategy_call` |
-| 10 | Opened the booking page | Event `booking_page_viewed` |
-| 11 | Picked a date | Event `booking_date_selected` |
-| 12 | Picked a time slot | Event `booking_slot_selected` |
-| 13 | Reached the questions | Event `booking_question_viewed` |
-| 14 | Confirmed the booking | Event `booking_confirmed` |
-| 15 | Landed on /congratulations | Event `schedule_appointment` *(or `page_view` AND "Page location" contains `/freetraining/congratulations`)* |
-| 16 | Watched the prep video | Event `congrats_video_start` |
-| 17 | Submitted portfolio / resume | Event `portfolio_shared` **OR** `resume_uploaded` *(in the step editor, add the first condition, then click "Or" to add the second)* |
+| 3 | Submitted — became a lead | Event `form_submitted` |
+| 4 | Reached the watch page | Event `page_view` **AND** parameter "Page location" *contains* `/freetraining/watch` |
+| 5 | Played the video | Event `video_start` |
+| 6 | Watched ≥ 50% | Event `video_progress_50` |
+| 7 | Clicked "Book a call" | Event `book_strategy_call` |
+| 8 | Opened the booking page | Event `booking_page_viewed` |
+| 9 | Picked a time slot | Event `booking_slot_selected` |
+| 10 | Confirmed the booking | Event `booking_confirmed` |
+
+> Brand-new / rarely-fired events (`book_strategy_call`, all `booking_*`, `video_progress_90`, etc.) won't appear in the step editor's event dropdown until they've fired at least once in the last 28 days. **Type the exact event name** and select the "use this" option — GA4 accepts it and it starts matching once data flows. If GA4 refuses an event it has truly never seen, use `booking_page_viewed` as the last step for now and swap in the deeper steps after a real booking has gone through.
+
+*(Dropped from the original list, by design — find them in Parts G/H instead: `form_field_focused`, `video_progress_90`, `booking_date_selected`, `booking_question_viewed`, `schedule_appointment` / `/congratulations`, `congrats_video_start`, `portfolio_shared` / `resume_uploaded`.)*
 
 6. **Funnel type:** at the top of the *Tab Settings*, leave **"Make open funnel"** toggled **OFF** for the first read. (Closed funnel = users must hit the steps in order — this is what reveals the single biggest leak. Later, flip it ON to see "how many ever reached step N by any path".)
 7. **Visualization:** *Tab Settings* → **Visualization** → choose **Standard funnel** (the horizontal bars). "Trended funnel" is the same data over time — switch to it once you have a few weeks.
@@ -109,8 +108,10 @@ You now have the funnel. Each bar shows users at that step, the % of the previou
 
 ## Part F — Add a comparison (this period vs last)
 
-1. In the *Variables* column, top, find **Comparisons** → click **+** → "Create comparison" → leave it as the default (it'll compare to the previous period of the same length). Or set the date range, then use the second date selector for "compare to".
-2. Now every bar shows current vs prior — so you can see "form→submit dropped from 28% to 19% after we changed the form" type movements.
+> **UI note:** newer GA4 has *no* "Comparisons" section in the Variables column. Period-over-period comparison lives **inside the date picker**; segment-vs-segment comparison is the **"Segment comparisons"** slot in the Settings column.
+
+1. **Period vs last (do this):** click the **date-range box** at the top of the *Variables* column → in the calendar, turn ON the **"Compare"** toggle → pick **"Previous period (match day of week)"** → **Apply**. Every funnel bar now shows current value, prior-period value, and the % change — so you can see "form→submit dropped from 28% to 19% after we changed the form" type movements. *(If one period had almost no traffic the % change will be huge/meaningless — that just means the funnel ramped up recently; it settles once you have two full comparable periods.)*
+2. **(Optional) segment comparison:** in the Settings column, **SEGMENT COMPARISONS → "Drop or select segment"** → drop in a segment like `Paid traffic` (and/or `Direct traffic`) → the funnel renders one set of bars per segment. Mostly redundant with the channel-group Breakdown from Part E, but handy occasionally.
 
 ---
 
@@ -134,11 +135,12 @@ This one is a **Free-form** table, not a funnel, because `question_index` repeat
 
 ## Part H — The video-retention curve (30-second report)
 
-1. **Explore** → **Free form** → rename **"VSL Retention Curve"**.
-2. *Tab Settings*: **Rows** = **Event name**; **Values** = **Total users**; **Filter**: Event name *matches regex* `video_progress_\d+|video_start|video_complete`.
-3. You'll get a list: `video_start`, `video_progress_10`, `video_progress_20`, … `video_progress_100`, `video_complete` with user counts — that's your retention curve. The decile where it drops sharply is the spot in the VSL to re-edit.
-4. Same idea for the congrats prep video: filter regex `congrats_video_progress_\d+|congrats_video_start|congrats_video_complete`.
-5. To see it as an actual line chart, change **Visualization** to **Line chart** (works once Event name is a categorical ordering — or just eyeball the numbers; the table is honestly fine).
+1. **Explore** → **Blank** → set **Technique = Free form** → rename **"VSL Retention Curve"**. Date range: last 28 days (turn the Compare toggle OFF if it carried over).
+2. *Variables*: import dimension **Event name** and metric **Total users**. *Settings*: **Rows** = `Event name`; **Values** = `Total users`; **Filters** → `Event name` *matches regex* `video_start|video_progress_\d+|video_complete`.
+3. You'll get a list like `video_start` → `video_progress_25` → `video_progress_50` → … → `video_complete` with user counts — that's your retention curve. **The milestone where the count drops sharpest = the spot in the VSL to re-edit.** Two drops to watch: a big early drop (`start → first milestone` — your hook isn't holding; re-cut the opening) and a late drop (`75 → 100` — the close drags or the pitch loses people). Also note the absolute finish rate (`video_complete ÷ video_start`).
+   - *If the list only shows coarse milestones (25/50/75/100) and not fine deciles (10/20/30…), the watch-page video may not be firing the finer-grained `video_progress_*` events yet — worth verifying; finer deciles let you pinpoint where inside the first quarter the bleed happens.*
+4. **Congrats prep video — add a second tab** (don't overwrite the VSL one): click the **`+`** next to the tab name at the top of the canvas → on the new tab set Technique = Free form, Rows = `Event name`, Values = `Total users`, Filter `Event name` *matches regex* `congrats_video_start|congrats_video_progress_\d+|congrats_video_complete`. Double-click each tab name to label them ("VSL Retention" / "Congrats Video Retention"). Lower priority — congrats-video viewers have already booked.
+5. **Line chart? Don't bother.** *Settings → Visualization → Line chart* renders the x-axis in the dimension's sort order, and `Event name` sorts alphabetically (`…_100` before `…_25` before `…_50` before `…_start`) → a meaningless zig-zag, not a descending curve. There's no clean fix in Free-form. Leave it as the **table with the in-cell bar chart** (Cell type = Bar chart) — that already shows the shape. A proper visual retention curve is a Looker Studio job (Part I).
 
 ---
 
@@ -154,16 +156,18 @@ This one is a **Free-form** table, not a funnel, because `question_index` repeat
 
 Look at the funnel and find the **single biggest % drop between two consecutive steps**. That's where to spend effort. Rough playbook:
 
+(Step numbers below refer to the 10-step funnel in Part D.)
+
 | Biggest drop is between… | Likely cause | Where to look / what to change |
 |---|---|---|
 | 1 → 2 (landed → saw form) | Page above the form is weak, or slow load | Clarity scroll heatmap on `/freetraining`; `scroll_depth_*` numbers; check page speed |
-| 2 → 3 → 4 (saw form → submitted) | Form too long / wrong ask / a field is scary | `form_field_completed_*` per field — find which field they quit on (usually WhatsApp); Clarity recordings of form_viewed-but-not-submitted |
-| 4 → 5 (lead → watch page) | Redirect bug | Test the post-submit redirect; should be near-zero drop |
-| 5 → 6 (on watch page → played) | Thumbnail/headline not pulling them in | Rework the area around the video; test a different first frame |
-| video_progress_X falls off a cliff | That moment in the VSL is boring/confusing | Re-edit that section of the video |
-| 6/8 → 9 (watched → clicked book) | The offer/CTA on the watch page isn't landing, or video convinced but the ask feels heavy | Rework the booking section copy; test a softer CTA |
-| 9 → 10 (clicked book → opened booking page) | Slow redirect / broken booking page on some devices | Check the booking page loads fast; mobile test |
-| 10 → 12 (opened → picked a slot) | Not enough slots / times look inconvenient / calendar UX confusing | Open more availability; simplify the slot picker |
-| 13 → 14 (questions → confirmed) | A specific question is too nosy/long | The Part G report tells you the exact question — cut it, make it optional, or move it post-booking |
-| `booking_abandoned` with `had_slot = true` is high | People are *one click* from booking and leaving | Reduce friction on the final confirm screen; add reassurance copy there |
-| 14 → 12-congrats spread, or low 16/17 | Congrats-page asks are optional — low priority | Light nudge at most; don't over-invest here |
+| 2 → 3 (saw form → submitted) | Form too long / wrong ask / a field is scary | `form_field_completed_*` per field — find which field they quit on (usually WhatsApp); Clarity recordings of form_viewed-but-not-submitted |
+| 3 → 4 (lead → watch page) | Redirect bug | Test the post-submit redirect; should be near-zero drop |
+| 4 → 5 (on watch page → played) | Thumbnail/headline not pulling them in | Rework the area around the video; test a different first frame |
+| 5 → 6 (played → watched ≥50%) or `video_progress_X` falls off a cliff in the Part H curve | That moment in the VSL is boring/confusing | Re-edit that section of the video |
+| 6 → 7 (watched → clicked book) | The offer/CTA on the watch page isn't landing, or video convinced but the ask feels heavy | Rework the booking section copy; test a softer CTA |
+| 7 → 8 (clicked book → opened booking page) | Slow redirect / broken booking page on some devices | Check the booking page loads fast; mobile test |
+| 8 → 9 (opened → picked a slot) | Not enough slots / times look inconvenient / calendar UX confusing | Open more availability; simplify the slot picker |
+| 9 → 10 (slot → confirmed) | A booking question is too nosy/long, or the final confirm screen has friction | The Part G report tells you the exact question — cut it, make it optional, or move it post-booking |
+| `booking_abandoned` with `had_slot = true` is high (Part G bonus table) | People are *one click* from booking and leaving | Reduce friction on the final confirm screen; add reassurance copy there |
+| Post-booking (`schedule_appointment`, `congrats_video_start`, `portfolio_shared`/`resume_uploaded`) numbers are low — check via the Events report or a second funnel | Congrats-page asks are optional — low priority | Light nudge at most; don't over-invest here |

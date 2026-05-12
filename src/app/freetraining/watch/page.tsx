@@ -143,6 +143,14 @@ function WatchContent() {
           <p className="text-center text-[13px] md:text-[14px] text-gray-500 mt-4">
             {ftContent.watch.videoNote}
           </p>
+          <div className="text-center mt-7 md:mt-8">
+            <button
+              onClick={handleBookClick}
+              className="inline-flex items-center justify-center gap-2 w-full max-w-[420px] h-[52px] bg-accent hover:bg-accent-hover text-white font-semibold text-[16px] md:text-[17px] rounded-md transition-colors cursor-pointer shadow-[0_0_30px_rgba(255,0,35,0.2)]"
+            >
+              {ftContent.watch.bookCall.cta} <span aria-hidden>→</span>
+            </button>
+          </div>
         </div>
       </section>
 

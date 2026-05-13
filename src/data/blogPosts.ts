@@ -51,6 +51,17 @@ export const getCategoryLabel = (category: string): string => {
 // Sample blog posts with Unsplash images
 export const blogPosts: BlogPost[] = [
   {
+    id: '39',
+    slug: 'evaluating-ai-tools-design-leaders-framework',
+    title: 'A Design Leader\'s Framework for Evaluating AI Tools (Without Losing What Makes Design Work)',
+    excerpt: 'The default evaluation criteria most teams use - time saved, output quality, ease of integration - miss the most important question. They measure whether the tool produces the deliverable faster, not whether it preserves the purpose of the activity.',
+    category: 'industry' as const,
+    image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=800&q=80',
+    author: { name: 'Shaik Murad' },
+    publishedAt: '2026-05-13',
+    readTime: '22 min',
+  },
+  {
     id: '38',
     slug: 'hiring-senior-designers-immature-design-org',
     title: 'What Happens When You Hire Senior Designers Into an Immature Design Org',

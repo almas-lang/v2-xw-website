@@ -31,8 +31,8 @@ const blogContent: Record<string, React.ReactNode> = {
       {/* Inline image 1 */}
       <div className="relative aspect-[16/9] rounded-xl overflow-hidden my-10">
         <Image
-          src="https://images.unsplash.com/photo-1531746790095-e9e4c9a33a41?w=800&q=80"
-          alt="A design leader reviewing multiple screens and tools on a desk, representing the complexity of evaluating AI tool adoption"
+          src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&q=80"
+          alt="A design leader reviewing dashboards and analytics on multiple screens, representing the complexity of evaluating AI tool adoption"
           fill
           className="object-cover"
           sizes="(max-width: 768px) 100vw, 720px"
@@ -78,7 +78,7 @@ const blogContent: Record<string, React.ReactNode> = {
       {/* Inline image 2 */}
       <div className="relative aspect-[16/9] rounded-xl overflow-hidden my-10">
         <Image
-          src="https://images.unsplash.com/photo-1552581234-26160f608093?w=800&q=80"
+          src="https://images.unsplash.com/photo-1531538606174-0f90ff5dce83?w=800&q=80"
           alt="A team collaborating on a whiteboard with sticky notes, representing the human judgment required in strategy and research activities"
           fill
           className="object-cover"
@@ -115,7 +115,7 @@ const blogContent: Record<string, React.ReactNode> = {
       {/* Inline image 3 */}
       <div className="relative aspect-[16/9] rounded-xl overflow-hidden my-10">
         <Image
-          src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=800&q=80"
+          src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&q=80"
           alt="A designer working on UI components and layout variations on screen, representing the intersection of AI tools and design craft"
           fill
           className="object-cover"
@@ -187,7 +187,7 @@ const blogContent: Record<string, React.ReactNode> = {
       {/* Inline image 4 */}
       <div className="relative aspect-[16/9] rounded-xl overflow-hidden my-10">
         <Image
-          src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&q=80"
+          src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80"
           alt="A team evaluating tools and frameworks on a large screen with charts and data, representing the structured evaluation process for AI tools"
           fill
           className="object-cover"

@@ -13,6 +13,245 @@ import { FreeTrainingCTA } from '@/components/blog/FreeTrainingCTA';
 
 // Blog content with internal links for SEO
 const blogContent: Record<string, React.ReactNode> = {
+  'what-should-design-team-look-like-2026': (
+    <>
+      <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
+        Every design leader I know is stuck on the same question right now, and most are too uncomfortable to say it plainly: should I restructure my team?
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The pressure is real. AI tools can generate layouts, write copy, produce prototypes, and synthesise research faster than they could two years ago. Budgets are under scrutiny. Leadership wants more from fewer people. And the uncomfortable noise in the background - from LinkedIn posts, from vendor pitches, from conference talks - keeps saying the same thing: the future is leaner, faster, AI-native. Adapt or get replaced.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Some of that is true. A lot of it is oversimplified. And almost all of it makes the mistake of treating AI as the only lens through which to evaluate a design team&apos;s future. It is not. Some teams&apos; biggest problems have nothing to do with AI - they are struggling with stakeholder alignment, research maturity, basic design infrastructure, or the systemic issues that cause teams to plateau regardless of what tools they use. Layering AI on top of a broken operating model does not fix the operating model. It just makes the broken parts move faster. Before you restructure anything, you need to understand what your team actually needs to do - not what the industry is telling you teams should look like.
+      </p>
+
+      {/* Inline image 1 */}
+      <div className="relative aspect-[16/9] rounded-xl overflow-hidden my-10">
+        <Image
+          src="https://images.unsplash.com/photo-1552960394-c81add8de6b8?w=800&q=80"
+          alt="Abstract futuristic concept representing AI and automation reshaping how design teams work and are structured"
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 720px"
+        />
+      </div>
+
+      <h2 id="question-nobody-asking" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Question Nobody Is Asking Honestly
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        When AI enables a designer to finish a task in two hours instead of eight, what happens to the other six hours?
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The honest answer is that most organisations have not decided. And in the absence of a deliberate decision, the default takes over: the designer gets three more tasks. Output goes up. Throughput increases. Leadership sees more artifacts being produced and concludes the team is more productive. Nobody asks whether the artifacts are better, whether the decisions behind them are stronger, or whether the team is actually learning anything from the work they are doing at speed.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is not a choice anyone makes consciously. Nobody walks into a meeting and says &quot;I want my team to prioritise quantity over quality.&quot; It happens through incentive structures, through how performance is measured, through what gets celebrated in stand-ups and what gets ignored. When a designer ships 40 screens in a week, it looks impressive. When a designer spends that same week on one insight that prevents the team from building the wrong thing for three months, it looks like they did nothing. The system rewards visible output, so visible output is what gets produced - and AI accelerates that dynamic because it makes the visible output easier and faster to create.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The risk is not theoretical. More decisions per day means more opportunities for mistakes - especially when the thinking time that used to be embedded in the production process has been automated away. A designer who spent four hours building a prototype was, often without realising it, using that time to think through edge cases, reconsider assumptions, and notice problems. A designer who generates a prototype in twenty minutes has a functional artifact but has not had the same cognitive processing time. The artifact exists. The thinking behind it may not.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Design leaders need to confront this question before they touch the org chart: does your organisation want AI to increase the volume of design work or the quality of design decisions? Both are legitimate directions, but they require fundamentally different team structures, different evaluation criteria, and different investments. And if you do not answer this question deliberately, the organisation will default to volume - because volume is visible, measurable, and easy to report upward.
+      </p>
+
+      <h2 id="not-everything-about-ai" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Not Everything Is About AI
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Before we go further into team structure, a necessary correction: the conversation about design teams in 2026 has become almost entirely about AI, and that is a distortion.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        AI is one force reshaping design teams. It is not the only force. Design teams are also being shaped by budget pressure that predates AI, by the ongoing challenge of proving design&apos;s value to leadership, by the maturity gap that exists in most organisations, by the difficulty of hiring and retaining senior talent, and by the fundamental question of whether the organisation treats design as a strategic function or a production service. These forces interact with AI but they are not caused by AI, and they will not be solved by AI.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        A design team that cannot get research into the roadmap will not fix that problem by adopting AI research tools. A design team whose stakeholders see them as delivery people rather than strategic partners will not change that perception by producing more artifacts faster. A design team that has never figured out how to operate at scale will not solve its coordination problems with better tooling. These are human problems - culture, leadership, influence, trust - and they require human solutions.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        The point is not that AI does not matter. It does. But evaluating your team structure purely through the AI lens produces distorted conclusions. You end up cutting roles that the team desperately needs because those roles do not seem &quot;AI-relevant,&quot; or you invest heavily in AI tooling while the foundational capabilities that make the tools useful remain undeveloped. The best design teams in 2026 will use AI extensively. They will also be clear-eyed about what AI does not fix.
+      </p>
+
+      <h2 id="four-functions" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Four Functions Every Design Team Needs
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The traditional design team was structured around roles: UX designer, UI designer, researcher, visual designer, interaction designer, content designer. Each role had a lane. AI is collapsing those lanes - a single designer with the right tools can now do work that used to require multiple specialists. But this does not mean you need fewer people. It means you need to restructure around functions rather than roles.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        There are four functions that every design team needs to perform, regardless of size, regardless of AI adoption level, regardless of industry.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        1. Orchestrators &mdash; the people who get the work done
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Orchestrators are not workflow managers sitting above the work. They are the people with their hands in it - the designers who figure out the best combination of human effort, AI tools, and collaborative input to actually produce the work. They are the ones who know when to prompt an AI agent, when to sketch by hand, when to pull in a specialist, and when to slow down and do the work manually because the thinking matters more than the speed.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        In a pre-AI team, every designer was essentially an orchestrator of their own work. In a 2026 team, orchestration becomes more complex and more consequential because the options are wider. Should this exploration be done in Figma AI or as a manual sketching session with the PM? Should the research synthesis be run through an AI tool first or built collaboratively in a workshop? Should the prototype be generated from a prompt or built component by component because the design system requires precision the AI cannot reliably deliver? These are judgment calls, and the quality of these calls determines whether AI accelerates the team or creates a mess of disconnected artifacts that look professional but do not hold together as a coherent experience.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Whether orchestration is agentic - meaning AI agents autonomously handle parts of the workflow - or entirely human-driven depends on the organisation&apos;s maturity and risk tolerance. Most teams will use a hybrid: AI agents handle routine decisions (generating responsive variants, running accessibility scans, suggesting component matches) while humans handle the judgment calls (which research method to use, whether the design direction is strategically sound, when to push back on a brief that is solving the wrong problem). The orchestrator is the person who makes those boundary decisions - and making them well requires having done the manual work enough times to know what is lost when it is automated.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        2. Strategists &mdash; the people who decide what to build and why
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Strategists connect design decisions to business outcomes. They are in the room when product direction is set, when roadmaps are built, when leadership decides where to invest. They do not just design solutions - they frame the right problems, identify opportunities that product and engineering cannot see on their own, and translate user insight into the language of business metrics and competitive positioning.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        This function has always existed in senior design roles, but in 2026 it becomes the primary differentiator between a design team that influences decisions and one that decorates them. As AI handles more execution, the value of design shifts toward the strategic layer - the judgment about what to build, for whom, and why. A team without strategists produces beautiful, fast, well-crafted solutions to problems nobody prioritised. Strategists need deep business fluency - not just design principles but an understanding of the unit economics, the competitive dynamics, and the <Link href="/resources/blogs/conversations-senior-designers-have" className="text-accent hover:underline font-medium">conversations that happen at the leadership level</Link> where priorities are actually set. They also need the research capability to connect qualitative insight to quantitative validation so their recommendations land with evidence, not just opinion.
+      </p>
+
+      {/* Inline image 2 */}
+      <div className="relative aspect-[16/9] rounded-xl overflow-hidden my-10">
+        <Image
+          src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=80"
+          alt="A diverse team collaborating in a modern meeting room, representing the strategic and governance functions of a design team"
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 720px"
+        />
+      </div>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        3. Governors &mdash; the people who maintain quality and standards
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Governors ensure consistency, quality, and standards across everything the team produces - whether created by a human, an AI, or a combination. They own the design system, the brand standards, the accessibility requirements, the research protocols, and the criteria by which all design output is evaluated.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This function becomes critical in an AI-augmented team because AI produces volume, and volume without governance is chaos. When multiple designers use different AI tools to generate components, and each tool interprets the design system slightly differently, and nobody checks whether the outputs meet accessibility standards or brand guidelines - the product ends up looking assembled rather than designed. Governors prevent this by maintaining the standards and ensuring the team has clear criteria for what &quot;good enough&quot; means versus what requires manual refinement.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Governors also play an essential role in capability preservation. They determine when AI output must be reviewed manually, when the team should work without AI assistance to maintain craft skills, and how new team members are trained to recognise quality before being allowed to use AI as a shortcut. Without this function, the team&apos;s collective judgment erodes as more work is delegated to tools that produce acceptable output but lack the contextual understanding that distinguishes adequate design from excellent design.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        4. Practitioners &mdash; the people who design
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is the function most restructuring conversations forget to account for. Orchestrators, strategists, and governors are coordination and leadership functions. Someone still has to do the actual design work - the research, the exploration, the interaction design, the visual refinement, the prototyping, the testing. The production layer has not disappeared. It has been augmented by AI, which means practitioners work differently than they did two years ago, but the work itself still requires human judgment, taste, and craft.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Practitioners in 2026 are AI-augmented generalists who can operate across the design process - research, design, testing - rather than being confined to a single specialism. They use AI tools fluently but they also know when to set the tools aside and work manually, because they understand that the purpose of some design activities is the thinking, not the deliverable. The best practitioners are not the fastest producers. They are the ones who consistently make good decisions under ambiguity - and that skill comes from experience, not from tooling.
+      </p>
+
+      <h2 id="specialist-question" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Specialist Question: Who Is Actually at Risk?
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The industry narrative says specialists are at risk. The data says something more nuanced.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        NNGroup&apos;s State of UX 2026 report says generalist roles are recovering faster than specialist ones, and that successful practitioners will be &quot;adaptable generalists who treat UX as strategic problem solving.&quot; But the UX Design Institute&apos;s 2026 report says the opposite - that demand is growing for specialists in UX research, accessibility, AI experience design, and content design. And salary data from IxDF and KORE1 shows that specialists with domain expertise in regulated industries (healthcare, fintech, data security) command significant premiums over generalists - sometimes $25,000 to $40,000 more - because the domain knowledge takes years to acquire and is not interchangeable.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The resolution of this apparent contradiction is straightforward once you stop thinking in terms of &quot;specialist vs generalist&quot; and start thinking in terms of what the specialisation is built around.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Specialists who built their identity around a method or a tool are at risk. &quot;I am a wireframing specialist&quot; is at risk because AI generates wireframes from prompts. &quot;I am a usability testing specialist who runs tests and writes reports&quot; is at risk because AI can moderate interviews, transcribe sessions, and generate thematic analyses. These designers defined themselves by the deliverable they produce, and the deliverable has been commoditised.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Specialists who built their expertise around a domain, a context, or a type of thinking are more valuable than ever. &quot;I am a fintech UX specialist who understands how regulatory constraints shape user flows&quot; is not at risk - AI cannot replicate that domain judgment. &quot;I am an accessibility specialist who understands how assistive technologies interact with design patterns&quot; is not at risk - that expertise requires deep knowledge that no AI tool currently provides. &quot;I am a UX strategist who can align research findings with business objectives and present them to executives&quot; is not at risk - that is a strategic and relational skill.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        The distinction is between specialists who prematurely created boundaries around narrow skill sets without understanding the broader context those skills serve, and specialists who developed deep expertise in a domain or capability that requires human judgment. The first group is being commoditised. The second group is being promoted.
+      </p>
+
+      <h2 id="team-size-structure" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What This Means for Team Size and Structure
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The answer to &quot;how many designers do I need?&quot; depends on which of the four functions your team is currently missing. Not how many heads you have - which functions are covered and which are not.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        A startup with 2-3 designers needs each person to cover multiple functions. One designer who can orchestrate AI-augmented workflows, think strategically about what to build, and maintain basic quality standards. This is the solo designer challenge amplified by the AI layer.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        A mid-size team with 5-8 designers should have at least one person whose primary responsibility includes orchestration and one who focuses on governance, with the remaining designers operating as practitioner-strategists - people who do hands-on design work informed by strategic thinking. The biggest risk at this scale is under-investing in governance because it feels like overhead.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        An enterprise team with 15+ designers needs dedicated people in each function, possibly with small teams under each. Orchestration becomes a design ops role. Strategy becomes a principal designer or design director responsibility. Governance becomes a design system lead plus research standards lead. The biggest risk at this scale is over-investing in governance and creating bureaucracy that slows the team without improving quality.
+      </p>
+
+      {/* Inline image 3 */}
+      <div className="relative aspect-[16/9] rounded-xl overflow-hidden my-10">
+        <Image
+          src="https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?w=800&q=80"
+          alt="Abstract architectural structure representing the systematic framework and organisational design needed for modern design teams"
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 720px"
+        />
+      </div>
+
+      <h2 id="three-mistakes" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Three Mistakes Leaders Are Making Right Now
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Cutting juniors entirely and going senior-only.</strong> The logic seems sound - AI handles entry-level work. But this creates a pipeline problem that will cripple the team in two to three years. Senior designers develop through years of practice, mentorship, and increasing responsibility. If the industry stops hiring juniors, there will be nobody to hire at senior level in 2028. Jakob Nielsen predicts entry-level hiring will become &quot;more apprenticeship-like&quot; - fewer generalist juniors, more trainees attached to specific domains like accessibility, content, design systems, and research ops. The role changes. The function remains essential.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Restructuring around AI tools instead of around functions.</strong> Some leaders are designing teams around the AI tools they have adopted. This is the equivalent of building a team around &quot;the person who uses Excel.&quot; Tools change. Vendors get acquired. If your team structure depends on a specific tool, a vendor decision you do not control can break your operating model. Structure around the four functions. Let people choose the tools that serve those functions.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        <strong>Treating restructuring as a one-time event.</strong> AI capabilities change quarterly. The leaders who restructured in early 2025 based on the capabilities available then have already had to restructure again. The teams that perform best build continuous adaptation into their operating model - regular reviews of which work is human-only, human-plus-AI, and AI-only, with the expectation that those boundaries shift constantly.
+      </p>
+
+      <h2 id="team-that-survives" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Team That Survives Is the Team That Adapts
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The design teams that will thrive are not the smallest or the largest. They are the ones that understood the shift from roles to functions, from headcount to capability, and from output speed to decision quality. They will use AI extensively - but they will also know where their team&apos;s real value lies, and they will protect that value even when the pressure to cut, automate, and accelerate is intense.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        The shape of a design team in 2026 is not a smaller version of the 2022 team. It is a fundamentally different structure - built around orchestration, strategy, governance, and practice, with AI handling the mechanical production that used to require most of the headcount. But the human capabilities that remain - judgment, empathy, stakeholder influence, strategic thinking, quality standards - are more important now than they have ever been. Because when the mechanical work is cheap, the strategic work becomes the scarce resource. And scarce resources are what organisations pay a premium for.
+      </p>
+
+      <FreeTrainingCTA text="If you are restructuring your design team or building one from scratch, the free training shows how we help leaders build teams around functions, not just roles" />
+
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6 mt-8">
+        At Xperience Wave, we help design leaders navigate this transition through <Link href="/for-business/training-for-teams" className="text-accent hover:underline font-medium">team training programmes</Link> that build capability across all four functions, and design services that model what a modern design function looks like in practice. If you are restructuring your team and unsure where to start, <a href="https://app.xperiencewave.com/book/dc-strategy-call" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">book a strategy call</a> - we will audit your current team against the four functions and help you build a transition plan.
+      </p>
+
+      <h2 id="sources-references" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Sources &amp; References
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li>NNGroup &mdash; &quot;State of UX 2026.&quot; Generalist roles recovering faster than specialist; successful practitioners will be &quot;adaptable generalists who treat UX as strategic problem solving.&quot;</li>
+        <li>UX Design Institute &mdash; &quot;2026 UX Design Report.&quot; Growing demand for specialists in UX research, accessibility, AI experience design, and content design.</li>
+        <li>IxDF &amp; KORE1 &mdash; 2026 salary data. Domain specialists in regulated industries (healthcare, fintech, data security) command $25,000&ndash;$40,000 premiums over generalists.</li>
+        <li>Lyssna &mdash; &quot;2026 UX Research Trends.&quot; 48% of researchers see synthetic users as impactful, but limitations in emotional nuance and contextual behaviour are clear.</li>
+        <li>Jakob Nielsen &mdash; Prediction that entry-level design hiring will become &quot;more apprenticeship-like&quot; with trainees attached to specific domains.</li>
+        <li>Xperience Wave &mdash; Direct observation from corporate training engagements and team audits with design teams at product companies across India.</li>
+      </ul>
+
+      <h2 id="about-author" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        About the Author
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Murad is Co-founder and Head of Product &amp; Design at Xperience Wave, a UX design career development company based in Bangalore. He has 13+ years of design leadership experience across fintech, healthtech, and industrial technology. The team structure patterns in this blog come from direct work with design teams at product companies across India through XW&apos;s mentorship and corporate training programmes.
+      </p>
+
+      <h2 id="related-reading" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Related Reading
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li><Link href="/resources/blogs/hiring-senior-designers-immature-design-org" className="text-accent hover:underline font-medium">What Happens When You Hire Senior Designers Into an Immature Design Org</Link> &mdash; the mismatch problem that restructuring without maturity creates</li>
+        <li><Link href="/resources/blogs/evaluating-ai-tools-design-leaders-framework" className="text-accent hover:underline font-medium">A Design Leader&apos;s Framework for Evaluating AI Tools</Link> &mdash; how to decide which AI tools your team should adopt and which to avoid</li>
+        <li><Link href="/resources/blogs/design-team-plateau-10-people" className="text-accent hover:underline font-medium">Why Most Design Teams Plateau After 10 People</Link> &mdash; structural challenges that become visible at scale</li>
+        <li><Link href="/resources/blogs/design-team-systems-problem" className="text-accent hover:underline font-medium">Your Design Team Doesn&apos;t Have a Skills Problem &mdash; They Have a Systems Problem</Link> &mdash; when the issue is infrastructure, not talent</li>
+        <li><Link href="/resources/blogs/ai-job-designer-type" className="text-accent hover:underline font-medium">Which Type of Designer Will AI Replace?</Link> &mdash; an honest assessment of where AI displaces and where it does not</li>
+        <li><Link href="/resources/blogs/hidden-cost-promoting-ic-designer-manager" className="text-accent hover:underline font-medium">The Hidden Cost of Promoting Your Best IC Designer to Manager</Link> &mdash; role transitions that restructuring often triggers</li>
+      </ul>
+
+      <p className="text-base md:text-lg text-g500 italic mt-6">
+       - Murad, Co-founder &amp; Head of Product &amp; Design, Xperience Wave
+      </p>
+    </>
+  ),
   'evaluating-ai-tools-design-leaders-framework': (
     <>
       <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
@@ -7813,6 +8052,17 @@ const blogContent: Record<string, React.ReactNode> = {
 
 // Table of contents for each blog post
 const blogTableOfContents: Record<string, { id: string; title: string }[]> = {
+  'what-should-design-team-look-like-2026': [
+    { id: 'question-nobody-asking', title: 'The Question Nobody Is Asking Honestly' },
+    { id: 'not-everything-about-ai', title: 'Not Everything Is About AI' },
+    { id: 'four-functions', title: 'The Four Functions Every Design Team Needs' },
+    { id: 'specialist-question', title: 'The Specialist Question: Who Is at Risk?' },
+    { id: 'team-size-structure', title: 'Team Size and Structure' },
+    { id: 'three-mistakes', title: 'Three Mistakes Leaders Are Making' },
+    { id: 'team-that-survives', title: 'The Team That Survives' },
+    { id: 'sources-references', title: 'Sources & References' },
+    { id: 'related-reading', title: 'Related Reading' },
+  ],
   'evaluating-ai-tools-design-leaders-framework': [
     { id: 'speed-first-problem', title: 'The Problem With Speed-First Evaluation' },
     { id: 'purpose-first-framework', title: 'The Purpose-First Framework' },
@@ -8137,6 +8387,11 @@ const authorData: Record<string, { role: string; bio: string; image: string }> =
 
 // Blog-specific metadata for SEO
 const blogMetadata: Record<string, { title: string; description: string; keywords: string[] }> = {
+  'what-should-design-team-look-like-2026': {
+    title: 'What Should a Design Team Look Like in 2026? | Xperience Wave',
+    description: 'AI is collapsing the lanes between design roles. The answer is not fewer people - it is a fundamentally different structure built around four functions: orchestration, strategy, governance, and practice.',
+    keywords: ['design team structure 2026', 'AI impact design teams', 'design team headcount', 'design leadership AI', 'design team roles 2026', 'restructuring design teams', 'design team functions', 'design org structure', 'design maturity', 'AI workforce', 'design operations', 'design team functions'],
+  },
   'evaluating-ai-tools-design-leaders-framework': {
     title: 'A Design Leader\'s Framework for Evaluating AI Tools (Without Losing What Makes Design Work) | Xperience Wave',
     description: 'The default evaluation criteria for AI tools miss the most important question. A purpose-first framework for design leaders to evaluate AI adoption without undermining team capability.',

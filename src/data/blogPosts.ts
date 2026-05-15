@@ -51,6 +51,17 @@ export const getCategoryLabel = (category: string): string => {
 // Sample blog posts with Unsplash images
 export const blogPosts: BlogPost[] = [
   {
+    id: '40',
+    slug: 'what-should-design-team-look-like-2026',
+    title: 'What Should a Design Team Look Like in 2026?',
+    excerpt: 'AI is collapsing the lanes between design roles. But the answer is not fewer people - it is a fundamentally different structure built around orchestration, strategy, governance, and practice.',
+    category: 'industry' as const,
+    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80',
+    author: { name: 'Shaik Murad' },
+    publishedAt: '2026-05-15',
+    readTime: '20 min',
+  },
+  {
     id: '39',
     slug: 'evaluating-ai-tools-design-leaders-framework',
     title: 'A Design Leader\'s Framework for Evaluating AI Tools (Without Losing What Makes Design Work)',

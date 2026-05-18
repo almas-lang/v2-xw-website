@@ -56,7 +56,7 @@ export const blogPosts: BlogPost[] = [
     title: 'How to Build Your Personal AI Workflow as a Designer (Without Losing What Makes You Good)',
     excerpt: 'Your AI usage is still chaotic. You reach for AI when you remember it exists, not because it is integrated into how you work. This blog gives you a filter for deciding where AI belongs in your specific work and where it does not.',
     category: 'design-skills' as const,
-    image: 'https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1684369176170-463e84248b70?w=800&q=80',
     author: { name: 'Shaik Murad' },
     publishedAt: '2026-05-18',
     readTime: '18 min',

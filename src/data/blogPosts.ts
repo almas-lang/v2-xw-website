@@ -51,6 +51,17 @@ export const getCategoryLabel = (category: string): string => {
 // Sample blog posts with Unsplash images
 export const blogPosts: BlogPost[] = [
   {
+    id: '41',
+    slug: 'personal-ai-workflow-designer',
+    title: 'How to Build Your Personal AI Workflow as a Designer (Without Losing What Makes You Good)',
+    excerpt: 'Your AI usage is still chaotic. You reach for AI when you remember it exists, not because it is integrated into how you work. This blog gives you a filter for deciding where AI belongs in your specific work and where it does not.',
+    category: 'design-skills' as const,
+    image: 'https://images.unsplash.com/photo-1618477388954-7852f32655ec?w=800&q=80',
+    author: { name: 'Shaik Murad' },
+    publishedAt: '2026-05-18',
+    readTime: '18 min',
+  },
+  {
     id: '40',
     slug: 'what-should-design-team-look-like-2026',
     title: 'What Should a Design Team Look Like in 2026?',

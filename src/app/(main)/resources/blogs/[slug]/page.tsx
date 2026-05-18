@@ -16,13 +16,13 @@ const blogContent: Record<string, React.ReactNode> = {
   'personal-ai-workflow-designer': (
     <>
       <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
-        You have probably tried at least a dozen AI tools in the last year. You have generated layouts from prompts, used ChatGPT to draft research questions, let an AI transcribe your user interviews, maybe even experimented with synthetic users or AI-moderated sessions. Some of it felt useful. Most of it felt like extra work &mdash; learning a new tool, figuring out the right prompts, evaluating whether the output was actually good or just fast.
+        You have probably tried at least a dozen AI tools in the last year. You have generated layouts from prompts, used ChatGPT to draft research questions, let an AI transcribe your user interviews, maybe even experimented with synthetic users or AI-moderated sessions. Some of it felt useful. Most of it felt like extra work  -  learning a new tool, figuring out the right prompts, evaluating whether the output was actually good or just fast.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        And if you are being honest, your AI usage is still chaotic. You reach for AI when you remember it exists, not because it is integrated into how you work. You use it for random tasks &mdash; summarising a document here, generating copy there &mdash; without a clear system for when it helps and when it gets in the way. You do not have a workflow. You have a collection of experiments.
+        And if you are being honest, your AI usage is still chaotic. You reach for AI when you remember it exists, not because it is integrated into how you work. You use it for random tasks  -  summarising a document here, generating copy there  -  without a clear system for when it helps and when it gets in the way. You do not have a workflow. You have a collection of experiments.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        That is normal. Most designers are in the same place. The problem is not a lack of tools &mdash; the landscape is overwhelming and gets bigger every month. The problem is that nobody has given you a filter for deciding where AI belongs in your specific work and where it does not. This blog gives you that filter, along with a practical approach to building a personal AI workflow that actually sticks.
+        That is normal. Most designers are in the same place. The problem is not a lack of tools  -  the landscape is overwhelming and gets bigger every month. The problem is that nobody has given you a filter for deciding where AI belongs in your specific work and where it does not. This blog gives you that filter, along with a practical approach to building a personal AI workflow that actually sticks.
       </p>
 
       {/* Inline image 1 */}
@@ -40,42 +40,42 @@ const blogContent: Record<string, React.ReactNode> = {
         The Filter: Deliverable vs Outcome
       </h2>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        Every design activity produces something. A research session produces a transcript. A synthesis workshop produces an affinity diagram. A design exploration produces screens. A stakeholder meeting produces alignment &mdash; or at least it should.
+        Every design activity produces something. A research session produces a transcript. A synthesis workshop produces an affinity diagram. A design exploration produces screens. A stakeholder meeting produces alignment  -  or at least it should.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        But not all of these outputs serve the same purpose. Some are <strong>deliverables</strong> &mdash; artifacts you hand to someone else or reference later. Others are <strong>outcomes</strong> &mdash; changes in your own understanding, your team&apos;s alignment, or your stakeholders&apos; confidence that happened through the process of doing the work.
+        But not all of these outputs serve the same purpose. Some are <strong>deliverables</strong>  -  artifacts you hand to someone else or reference later. Others are <strong>outcomes</strong>  -  changes in your own understanding, your team&apos;s alignment, or your stakeholders&apos; confidence that happened through the process of doing the work.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        This distinction is the filter. When the goal of an activity is primarily a deliverable &mdash; something tangible that another person needs &mdash; AI can often produce it faster without meaningful loss. When the goal is primarily an outcome &mdash; something that changes how you or your team thinks, understands, or relates to the problem &mdash; AI can produce the artifact but strip out the learning that was the actual point.
+        This distinction is the filter. When the goal of an activity is primarily a deliverable  -  something tangible that another person needs  -  AI can often produce it faster without meaningful loss. When the goal is primarily an outcome  -  something that changes how you or your team thinks, understands, or relates to the problem  -  AI can produce the artifact but strip out the learning that was the actual point.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        A transcript is a deliverable. Empathy with the user you interviewed is an outcome. AI can produce the first. It cannot produce the second. A competitive analysis document is a deliverable. Your internalised understanding of the competitive landscape &mdash; the kind that lets you make judgment calls in real time during a stakeholder conversation &mdash; is an outcome. AI can produce the document. The understanding only comes from engaging with the material yourself.
+        A transcript is a deliverable. Empathy with the user you interviewed is an outcome. AI can produce the first. It cannot produce the second. A competitive analysis document is a deliverable. Your internalised understanding of the competitive landscape  -  the kind that lets you make judgment calls in real time during a stakeholder conversation  -  is an outcome. AI can produce the document. The understanding only comes from engaging with the material yourself.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        This does not mean you should never use AI for outcome-oriented activities. It means you should use it differently. For deliverable-oriented work, AI can replace the effort. For outcome-oriented work, AI should augment the effort &mdash; handling the mechanical parts while preserving the thinking, the exposure, and the interpretation that create the outcome.
+        This does not mean you should never use AI for outcome-oriented activities. It means you should use it differently. For deliverable-oriented work, AI can replace the effort. For outcome-oriented work, AI should augment the effort  -  handling the mechanical parts while preserving the thinking, the exposure, and the interpretation that create the outcome.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
-        Most designers&apos; AI usage is chaotic because they have not made this distinction. They use AI the same way for everything &mdash; generate, review, ship &mdash; regardless of whether the activity&apos;s value lies in the artifact or in the process of creating it. Once you internalise the filter, the chaos resolves into a system.
+        Most designers&apos; AI usage is chaotic because they have not made this distinction. They use AI the same way for everything  -  generate, review, ship  -  regardless of whether the activity&apos;s value lies in the artifact or in the process of creating it. Once you internalise the filter, the chaos resolves into a system.
       </p>
 
       <h2 id="building-the-workflow" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
         Building the Workflow: Activity by Activity
       </h2>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
-        The right AI workflow is not one clean process that applies to every day. Your work shifts &mdash; some days you are deep in research, some days you are designing, some days you are in back-to-back stakeholder meetings, some days you are reviewing engineering implementations. The workflow has to be modular, adapting to whatever mode you are operating in. Here is how to think about AI integration across the major modes of design work, using the deliverable-vs-outcome filter.
+        The right AI workflow is not one clean process that applies to every day. Your work shifts  -  some days you are deep in research, some days you are designing, some days you are in back-to-back stakeholder meetings, some days you are reviewing engineering implementations. The workflow has to be modular, adapting to whatever mode you are operating in. Here is how to think about AI integration across the major modes of design work, using the deliverable-vs-outcome filter.
       </p>
 
       <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
         When You Are Researching
       </h3>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        <strong>Where AI genuinely helps:</strong> Transcription is the most obvious win &mdash; every minute of manual transcription you eliminate is a minute you can spend on interpretation. AI transcription tools (Otter, Fathom, Grain) have crossed the threshold of reliability for most interview contexts. Let AI handle the mechanical capture so you can be fully present during the conversation. Similarly, AI can accelerate desk research &mdash; scanning competitor products, summarising industry reports, pulling relevant data from multiple sources. These are information-gathering tasks where speed helps without undermining understanding, as long as you are reading and evaluating what the AI surfaces, not just accepting the summary as truth.
+        <strong>Where AI genuinely helps:</strong> Transcription is the most obvious win  -  every minute of manual transcription you eliminate is a minute you can spend on interpretation. AI transcription tools (Otter, Fathom, Grain) have crossed the threshold of reliability for most interview contexts. Let AI handle the mechanical capture so you can be fully present during the conversation. Similarly, AI can accelerate desk research  -  scanning competitor products, summarising industry reports, pulling relevant data from multiple sources. These are information-gathering tasks where speed helps without undermining understanding, as long as you are reading and evaluating what the AI surfaces, not just accepting the summary as truth.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        <strong>Where to pull back:</strong> The interview itself. The moment you outsource the conversation to an AI moderator, you lose the ability to follow unexpected threads, to notice the hesitation in someone&apos;s voice that signals a deeper issue, to ask the follow-up question that nobody scripted because nobody anticipated the response. AI-moderated interviews have a place &mdash; for scaling validation studies or running quick concept checks &mdash; but they should supplement live interviews, not replace them. The outcome of research is not a transcript or a report. It is the researcher&apos;s internalised understanding of the user. That understanding builds through direct exposure to real people, and no AI summary can replicate the experience of sitting across from a user who says something that reframes everything you assumed about the problem.
+        <strong>Where to pull back:</strong> The interview itself. The moment you outsource the conversation to an AI moderator, you lose the ability to follow unexpected threads, to notice the hesitation in someone&apos;s voice that signals a deeper issue, to ask the follow-up question that nobody scripted because nobody anticipated the response. AI-moderated interviews have a place  -  for scaling validation studies or running quick concept checks  -  but they should supplement live interviews, not replace them. The outcome of research is not a transcript or a report. It is the researcher&apos;s internalised understanding of the user. That understanding builds through direct exposure to real people, and no AI summary can replicate the experience of sitting across from a user who says something that reframes everything you assumed about the problem.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
-        <strong>Practical system:</strong> Use AI for capture and initial processing (transcription, highlight tagging, pattern flagging). Do the interpretation yourself. Read the transcripts even after AI has summarised them &mdash; not because the summary is wrong, but because the details the summary left out are often where the most important insights live.
+        <strong>Practical system:</strong> Use AI for capture and initial processing (transcription, highlight tagging, pattern flagging). Do the interpretation yourself. Read the transcripts even after AI has summarised them  -  not because the summary is wrong, but because the details the summary left out are often where the most important insights live.
       </p>
 
       {/* Inline image 2 */}
@@ -93,10 +93,10 @@ const blogContent: Record<string, React.ReactNode> = {
         When You Are Synthesising
       </h3>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        <strong>Where AI genuinely helps:</strong> Processing volume. If you have 20 interview transcripts, AI can surface frequency-based patterns, cluster related quotes, and identify themes faster than manual affinity diagramming. Use it as a first pass &mdash; let AI propose the clusters, then evaluate whether those clusters actually represent the patterns that matter or whether the AI has grouped things by surface-level keyword similarity rather than meaningful conceptual connection. AI is also strong at cross-referencing &mdash; connecting patterns from interviews with patterns from analytics data or support tickets. This kind of multi-source synthesis is genuinely tedious to do manually, and AI handles it well enough to be a useful starting point.
+        <strong>Where AI genuinely helps:</strong> Processing volume. If you have 20 interview transcripts, AI can surface frequency-based patterns, cluster related quotes, and identify themes faster than manual affinity diagramming. Use it as a first pass  -  let AI propose the clusters, then evaluate whether those clusters actually represent the patterns that matter or whether the AI has grouped things by surface-level keyword similarity rather than meaningful conceptual connection. AI is also strong at cross-referencing  -  connecting patterns from interviews with patterns from analytics data or support tickets. This kind of multi-source synthesis is genuinely tedious to do manually, and AI handles it well enough to be a useful starting point.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        <strong>Where to pull back:</strong> The debate about what the data means. Synthesis is not just pattern identification &mdash; it is interpretation. It is the conversation where your team argues about whether a pattern is significant or coincidental, whether a finding confirms the hypothesis or contradicts it, whether the data supports the direction the team wants to go or points somewhere uncomfortable. That conversation is where shared understanding gets built, and it cannot be outsourced to a tool. Steve Portigal, author of <em>Interviewing Users</em>, warns about &quot;premature convergence&quot; &mdash; AI clustering themes too neatly and missing the messy, contradictory insights that often lead to breakthroughs. The mess is the point. If synthesis feels clean and easy, something important was probably lost.
+        <strong>Where to pull back:</strong> The debate about what the data means. Synthesis is not just pattern identification  -  it is interpretation. It is the conversation where your team argues about whether a pattern is significant or coincidental, whether a finding confirms the hypothesis or contradicts it, whether the data supports the direction the team wants to go or points somewhere uncomfortable. That conversation is where shared understanding gets built, and it cannot be outsourced to a tool. Steve Portigal, author of <em>Interviewing Users</em>, warns about &quot;premature convergence&quot;  -  AI clustering themes too neatly and missing the messy, contradictory insights that often lead to breakthroughs. The mess is the point. If synthesis feels clean and easy, something important was probably lost.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
         <strong>Practical system:</strong> Let AI do the first pass on clustering and pattern identification. Then sit with the output as a team and challenge it. What did the AI miss? What did it over-weight? Where are the contradictions that the AI resolved too neatly? Use the AI output as a starting point for discussion, not as a finished analysis.
@@ -106,13 +106,13 @@ const blogContent: Record<string, React.ReactNode> = {
         When You Are Designing
       </h3>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        <strong>Where AI genuinely helps:</strong> This is where AI has made the most legitimate progress. Layout generation, component suggestion, responsive adaptation, design-to-code translation, asset creation &mdash; all mechanical tasks where AI saves meaningful time without replacing your judgment. You are still deciding what to build and why. The tool is accelerating the execution of those decisions. Figma AI for layer management and content rewriting, v0 or Lovable for quick functional prototypes, Midjourney or Firefly for visual exploration &mdash; these tools genuinely reduce the friction between idea and artifact, which means you can explore more directions in less time.
+        <strong>Where AI genuinely helps:</strong> This is where AI has made the most legitimate progress. Layout generation, component suggestion, responsive adaptation, design-to-code translation, asset creation  -  all mechanical tasks where AI saves meaningful time without replacing your judgment. You are still deciding what to build and why. The tool is accelerating the execution of those decisions. Figma AI for layer management and content rewriting, v0 or Lovable for quick functional prototypes, Midjourney or Firefly for visual exploration  -  these tools genuinely reduce the friction between idea and artifact, which means you can explore more directions in less time.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        <strong>Where to pull back:</strong> Using AI-generated layouts as final designs without evaluation. A generated layout is a starting point, not a solution. It does not account for the specific user flows your research identified, the edge cases your engineering team flagged, the accessibility requirements your product must meet, or the strategic choices that should differentiate your product from competitors using the same AI tools to generate the same generic patterns. The risk is not that the output is bad. The risk is that it is adequate &mdash; good enough to ship but lacking the intentionality that comes from a designer who understood the problem deeply and made deliberate choices about how to solve it.
+        <strong>Where to pull back:</strong> Using AI-generated layouts as final designs without evaluation. A generated layout is a starting point, not a solution. It does not account for the specific user flows your research identified, the edge cases your engineering team flagged, the accessibility requirements your product must meet, or the strategic choices that should differentiate your product from competitors using the same AI tools to generate the same generic patterns. The risk is not that the output is bad. The risk is that it is adequate  -  good enough to ship but lacking the intentionality that comes from a designer who understood the problem deeply and made deliberate choices about how to solve it.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
-        <strong>Practical system:</strong> Use AI for the first 20 percent of exploration &mdash; generating rough directions, creating variations, producing responsive layouts. Then take the most promising direction and develop it manually, applying your understanding of the user, the business context, and the constraints. The AI gets you to the starting line faster. You run the race.
+        <strong>Practical system:</strong> Use AI for the first 20 percent of exploration  -  generating rough directions, creating variations, producing responsive layouts. Then take the most promising direction and develop it manually, applying your understanding of the user, the business context, and the constraints. The AI gets you to the starting line faster. You run the race.
       </p>
 
       {/* Inline image 3 */}
@@ -130,23 +130,23 @@ const blogContent: Record<string, React.ReactNode> = {
         When You Are Communicating with Stakeholders
       </h3>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        <strong>Where AI genuinely helps:</strong> Drafting. Status updates, meeting summaries, presentation outlines, research report structures &mdash; AI can produce serviceable first drafts of all of these in minutes, which you then refine with context and tone. This is production work that takes longer than it should, and AI handles it well. Similarly, AI can help you prepare for stakeholder conversations &mdash; generating talking points, anticipating objections, structuring your argument &mdash; without replacing the conversation itself.
+        <strong>Where AI genuinely helps:</strong> Drafting. Status updates, meeting summaries, presentation outlines, research report structures  -  AI can produce serviceable first drafts of all of these in minutes, which you then refine with context and tone. This is production work that takes longer than it should, and AI handles it well. Similarly, AI can help you prepare for stakeholder conversations  -  generating talking points, anticipating objections, structuring your argument  -  without replacing the conversation itself.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
         <strong>Where to pull back:</strong> The relationship. <Link href="/resources/blogs/stakeholder-management-for-designers" className="text-accent hover:underline font-medium">Stakeholder management</Link> is a human-trust activity. It depends on showing up consistently, reading organisational dynamics, understanding individual motivations, and building credibility through actions over time. No AI tool fixes a broken stakeholder relationship. A polished AI-generated deck presented to a stakeholder who does not trust you will not change their mind. The deck is the deliverable. Trust is the outcome. AI helps with the first. Only you can build the second.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
-        <strong>Practical system:</strong> Use AI for production drafts of written communication. Review everything for tone, context, and political sensitivity before sending &mdash; AI does not understand the internal dynamics of your organisation. For verbal communication, use AI to prepare but never to replace your presence in the room.
+        <strong>Practical system:</strong> Use AI for production drafts of written communication. Review everything for tone, context, and political sensitivity before sending  -  AI does not understand the internal dynamics of your organisation. For verbal communication, use AI to prepare but never to replace your presence in the room.
       </p>
 
       <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
         When You Are Testing and Validating
       </h3>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        <strong>Where AI genuinely helps:</strong> Automated heuristic evaluation and accessibility audits. Tools like Baymard&apos;s UX-Ray and Stark can catch known-pattern violations with documented accuracy that matches or exceeds manual review. Use them as an early filter &mdash; catch the obvious problems before investing in user testing. AI can also accelerate analysis of session recordings by flagging moments of friction, hesitation, or confusion.
+        <strong>Where AI genuinely helps:</strong> Automated heuristic evaluation and accessibility audits. Tools like Baymard&apos;s UX-Ray and Stark can catch known-pattern violations with documented accuracy that matches or exceeds manual review. Use them as an early filter  -  catch the obvious problems before investing in user testing. AI can also accelerate analysis of session recordings by flagging moments of friction, hesitation, or confusion.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        <strong>Where to pull back:</strong> Replacing user testing with automated evaluation. Heuristic tools catch violations of known patterns. They do not catch the user who misunderstands your mental model, the task flow that works in testing but fails in real-world context, or the emotional response that makes someone abandon your product despite being technically able to complete the task. The outcome of testing is not a usability report. It is the team&apos;s understanding of how real people experience the product &mdash; and that understanding comes from watching, not from reading a machine-generated analysis.
+        <strong>Where to pull back:</strong> Replacing user testing with automated evaluation. Heuristic tools catch violations of known patterns. They do not catch the user who misunderstands your mental model, the task flow that works in testing but fails in real-world context, or the emotional response that makes someone abandon your product despite being technically able to complete the task. The outcome of testing is not a usability report. It is the team&apos;s understanding of how real people experience the product  -  and that understanding comes from watching, not from reading a machine-generated analysis.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
         <strong>Practical system:</strong> Run automated checks first. Then test with real users. Use AI to process the test data (transcription, pattern flagging) but do the interpretation yourself. The findings that matter most are almost always the ones nobody expected.
@@ -163,14 +163,14 @@ const blogContent: Record<string, React.ReactNode> = {
         Principle 1: Start with Friction, Not with Tools
       </h3>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
-        Do not browse Product Hunt looking for AI tools and then try to fit them into your workflow. Instead, identify the tasks that create the most friction in your week &mdash; the ones that take disproportionate time relative to their value, the ones you procrastinate on, the ones that feel mechanical and repetitive. Those are your integration points. Find tools that address those specific friction points and ignore everything else. A senior product designer shared a version of this insight that resonates: the tools that survived in his workflow were not the most impressive ones &mdash; they were the ones that solved friction he had been working around for months. Everything else got uninstalled within a week.
+        Do not browse Product Hunt looking for AI tools and then try to fit them into your workflow. Instead, identify the tasks that create the most friction in your week  -  the ones that take disproportionate time relative to their value, the ones you procrastinate on, the ones that feel mechanical and repetitive. Those are your integration points. Find tools that address those specific friction points and ignore everything else. A senior product designer shared a version of this insight that resonates: the tools that survived in his workflow were not the most impressive ones  -  they were the ones that solved friction he had been working around for months. Everything else got uninstalled within a week.
       </p>
 
       <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
         Principle 2: Maintain Your Fundamentals Deliberately
       </h3>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
-        The risk of a mature AI workflow is capability erosion &mdash; your skills weaken because you stopped practising them. A designer who has not manually coded a transcript in a year cannot tell when an AI summary missed something important. A designer who has not built a layout from scratch in months cannot evaluate whether a generated layout is good or just acceptable. Deliberately do some work without AI, regularly, not because it is efficient but because it keeps your judgment sharp. The goal is to use AI from a position of expertise, not from a position of dependency.
+        The risk of a mature AI workflow is capability erosion  -  your skills weaken because you stopped practising them. A designer who has not manually coded a transcript in a year cannot tell when an AI summary missed something important. A designer who has not built a layout from scratch in months cannot evaluate whether a generated layout is good or just acceptable. Deliberately do some work without AI, regularly, not because it is efficient but because it keeps your judgment sharp. The goal is to use AI from a position of expertise, not from a position of dependency.
       </p>
 
       <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
@@ -195,22 +195,22 @@ const blogContent: Record<string, React.ReactNode> = {
         What a Realistic Week Looks Like
       </h2>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
-        This is not a prescriptive schedule &mdash; it is an illustration of how the filter plays out across a typical week for a mid-to-senior designer working on a product team.
+        This is not a prescriptive schedule  -  it is an illustration of how the filter plays out across a typical week for a mid-to-senior designer working on a product team.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        <strong>Monday:</strong> Stakeholder kickoff for a new feature. You used AI to draft the meeting agenda and prepare talking points over the weekend. In the meeting, you are fully present &mdash; reading the room, asking clarifying questions, building alignment. After the meeting, you use AI to generate a summary and action items, then review and send. AI handled the production. You handled the relationship.
+        <strong>Monday:</strong> Stakeholder kickoff for a new feature. You used AI to draft the meeting agenda and prepare talking points over the weekend. In the meeting, you are fully present  -  reading the room, asking clarifying questions, building alignment. After the meeting, you use AI to generate a summary and action items, then review and send. AI handled the production. You handled the relationship.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        <strong>Tuesday&ndash;Wednesday:</strong> Research sprint. You conduct live interviews &mdash; no AI moderation, because the outcome you need is not a transcript but a deep understanding of how users think about this problem. AI transcribes in real time. Between sessions, you use AI to flag emerging patterns across the first three transcripts. You notice the AI clustered two themes together that you think are actually distinct &mdash; you make a note to explore that in the remaining interviews.
+        <strong>Tuesday-Wednesday:</strong> Research sprint. You conduct live interviews  -  no AI moderation, because the outcome you need is not a transcript but a deep understanding of how users think about this problem. AI transcribes in real time. Between sessions, you use AI to flag emerging patterns across the first three transcripts. You notice the AI clustered two themes together that you think are actually distinct  -  you make a note to explore that in the remaining interviews.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        <strong>Thursday:</strong> Synthesis and exploration. You spend the morning in a collaborative synthesis session with your PM &mdash; whiteboarding, debating, arguing about what the research means. AI is not involved in this conversation because the outcome is alignment, not an artifact. In the afternoon, you use AI to generate three layout directions based on the problem framing you arrived at in the morning. You evaluate them, pick the most promising direction, and start developing it manually.
+        <strong>Thursday:</strong> Synthesis and exploration. You spend the morning in a collaborative synthesis session with your PM  -  whiteboarding, debating, arguing about what the research means. AI is not involved in this conversation because the outcome is alignment, not an artifact. In the afternoon, you use AI to generate three layout directions based on the problem framing you arrived at in the morning. You evaluate them, pick the most promising direction, and start developing it manually.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        <strong>Friday:</strong> Design review and async communication. You present rough work to stakeholders &mdash; early, before it is polished, while there is still room to change direction. After the review, you use AI to draft the follow-up email summarising feedback and next steps. You review the draft for tone and political sensitivity, adjust two sentences, and send.
+        <strong>Friday:</strong> Design review and async communication. You present rough work to stakeholders  -  early, before it is polished, while there is still room to change direction. After the review, you use AI to draft the follow-up email summarising feedback and next steps. You review the draft for tone and political sensitivity, adjust two sentences, and send.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
-        Across the week, AI was used extensively &mdash; for transcription, pattern flagging, layout generation, meeting prep, and written communication. It was deliberately excluded from the activities where the outcome depended on human judgment, direct experience, or relationship-building: the interviews themselves, the synthesis debate, and the stakeholder conversations. That is a workflow. Not a tool list. Not a collection of random experiments. A system with a clear filter for what gets automated and what stays human.
+        Across the week, AI was used extensively  -  for transcription, pattern flagging, layout generation, meeting prep, and written communication. It was deliberately excluded from the activities where the outcome depended on human judgment, direct experience, or relationship-building: the interviews themselves, the synthesis debate, and the stakeholder conversations. That is a workflow. Not a tool list. Not a collection of random experiments. A system with a clear filter for what gets automated and what stays human.
       </p>
 
       <h2 id="start-here" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
@@ -220,7 +220,7 @@ const blogContent: Record<string, React.ReactNode> = {
         If you are reading this and your AI usage is still chaotic, here is the simplest way to start building a system:
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        This week, write down every task you do. At the end of each task, mark it <strong>D</strong> (deliverable &mdash; the value is the artifact) or <strong>O</strong> (outcome &mdash; the value is the thinking or relationship that happened while doing it). At the end of the week, look at your D list. That is where AI should live. Look at your O list. That is where you should be deliberate about how much AI you introduce &mdash; and whether you introduce it at all.
+        This week, write down every task you do. At the end of each task, mark it <strong>D</strong> (deliverable  -  the value is the artifact) or <strong>O</strong> (outcome  -  the value is the thinking or relationship that happened while doing it). At the end of the week, look at your D list. That is where AI should live. Look at your O list. That is where you should be deliberate about how much AI you introduce  -  and whether you introduce it at all.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
         That single exercise will give you more clarity than any tool recommendation list. Because the question was never &quot;which AI tools should I use?&quot; The question was always &quot;which parts of my work are about producing things and which parts are about becoming a better designer?&quot; AI is exceptional at the first. The second is still yours.
@@ -236,30 +236,30 @@ const blogContent: Record<string, React.ReactNode> = {
         Sources &amp; References
       </h2>
       <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
-        <li>Steve Portigal &mdash; <em>Interviewing Users: How to Uncover Compelling Insights</em>. On premature convergence and the value of messy, contradictory qualitative data during synthesis.</li>
-        <li>Baymard Institute &mdash; UX-Ray automated heuristic evaluation tool. Documented accuracy benchmarks for pattern-violation detection in e-commerce UX audits.</li>
-        <li>Lyssna &mdash; &quot;2026 UX Research Trends.&quot; 48% of researchers see synthetic users as impactful, but emotional nuance and contextual behaviour remain limitations.</li>
-        <li>NNGroup &mdash; &quot;State of UX 2026.&quot; On the evolution of generalist roles and the importance of strategic problem-solving over tool proficiency.</li>
-        <li>Xperience Wave &mdash; Direct observation from 140+ mentorship engagements and corporate training programmes with designers integrating AI workflows across research, design, and stakeholder communication.</li>
+        <li>Steve Portigal  -  <em>Interviewing Users: How to Uncover Compelling Insights</em>. On premature convergence and the value of messy, contradictory qualitative data during synthesis.</li>
+        <li>Baymard Institute  -  UX-Ray automated heuristic evaluation tool. Documented accuracy benchmarks for pattern-violation detection in e-commerce UX audits.</li>
+        <li>Lyssna  -  &quot;2026 UX Research Trends.&quot; 48% of researchers see synthetic users as impactful, but emotional nuance and contextual behaviour remain limitations.</li>
+        <li>NNGroup  -  &quot;State of UX 2026.&quot; On the evolution of generalist roles and the importance of strategic problem-solving over tool proficiency.</li>
+        <li>Xperience Wave  -  Direct observation from 140+ mentorship engagements and corporate training programmes with designers integrating AI workflows across research, design, and stakeholder communication.</li>
       </ul>
 
       <h2 id="about-author" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
         About the Author
       </h2>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
-        Murad is Co-founder and Head of Product &amp; Design at Xperience Wave, a UX design career development company based in Bangalore. He has 13+ years of design leadership experience across fintech, healthtech, and industrial technology. The AI workflow patterns in this blog come from direct observation of how designers at product companies across India are integrating AI into their daily practice &mdash; and where they are struggling to make it stick.
+        Murad is Co-founder and Head of Product &amp; Design at Xperience Wave, a UX design career development company based in Bangalore. He has 13+ years of design leadership experience across fintech, healthtech, and industrial technology. The AI workflow patterns in this blog come from direct observation of how designers at product companies across India are integrating AI into their daily practice  -  and where they are struggling to make it stick.
       </p>
 
       <h2 id="related-reading" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
         Related Reading
       </h2>
       <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
-        <li><Link href="/resources/blogs/ai-first-design-senior-ux" className="text-accent hover:underline font-medium">AI-First Design: What Senior UX Designers Need to Know in 2026</Link> &mdash; the broader landscape of AI fluency for senior designers</li>
-        <li><Link href="/resources/blogs/evaluating-ai-tools-design-leaders-framework" className="text-accent hover:underline font-medium">A Design Leader&apos;s Framework for Evaluating AI Tools</Link> &mdash; the team-level version of this decision framework, plus a downloadable directory of 60+ tools</li>
-        <li><Link href="/resources/blogs/ai-predicts-so-do-you-difference" className="text-accent hover:underline font-medium">AI Predicts. So Do You. Here&apos;s the Difference</Link> &mdash; what human design judgment does that AI cannot replicate</li>
-        <li><Link href="/resources/blogs/ai-job-designer-type" className="text-accent hover:underline font-medium">Which Type of Designer Will AI Replace?</Link> &mdash; an honest assessment of where AI displaces and where it does not</li>
-        <li><Link href="/resources/blogs/design-thinking-vs-design-strategy" className="text-accent hover:underline font-medium">Design Thinking Was Never For Designers. Design Strategy Is.</Link> &mdash; the strategic judgment layer that determines whether AI makes you better or just faster</li>
-        <li><Link href="/resources/blogs/mixed-methods-ux-research-guide" className="text-accent hover:underline font-medium">Mixed-Methods UX Research: A Complete Guide</Link> &mdash; the research fundamentals that AI augments but cannot replace</li>
+        <li><Link href="/resources/blogs/ai-first-design-senior-ux" className="text-accent hover:underline font-medium">AI-First Design: What Senior UX Designers Need to Know in 2026</Link>  -  the broader landscape of AI fluency for senior designers</li>
+        <li><Link href="/resources/blogs/evaluating-ai-tools-design-leaders-framework" className="text-accent hover:underline font-medium">A Design Leader&apos;s Framework for Evaluating AI Tools</Link>  -  the team-level version of this decision framework, plus a downloadable directory of 60+ tools</li>
+        <li><Link href="/resources/blogs/ai-predicts-so-do-you-difference" className="text-accent hover:underline font-medium">AI Predicts. So Do You. Here&apos;s the Difference</Link>  -  what human design judgment does that AI cannot replicate</li>
+        <li><Link href="/resources/blogs/ai-job-designer-type" className="text-accent hover:underline font-medium">Which Type of Designer Will AI Replace?</Link>  -  an honest assessment of where AI displaces and where it does not</li>
+        <li><Link href="/resources/blogs/design-thinking-vs-design-strategy" className="text-accent hover:underline font-medium">Design Thinking Was Never For Designers. Design Strategy Is.</Link>  -  the strategic judgment layer that determines whether AI makes you better or just faster</li>
+        <li><Link href="/resources/blogs/mixed-methods-ux-research-guide" className="text-accent hover:underline font-medium">Mixed-Methods UX Research: A Complete Guide</Link>  -  the research fundamentals that AI augments but cannot replace</li>
       </ul>
 
       <p className="text-base md:text-lg text-g500 italic mt-6">

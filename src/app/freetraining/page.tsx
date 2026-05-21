@@ -97,9 +97,9 @@ function FreeTrainingHomeContent() {
             </h3>
             <ul className="space-y-4">
               {[
-                'Designers with 2+ years exp earning ₹8–₹25 LPA',
-                'People who are seriously considering investing in 1:1 mentorship to accelerate this transition',
-                'UX, UI, and Product designers in product or design teams',
+                'UX, UI, and Product designers with 2+ years of experience',
+                'Working at startups, growth-stage companies, or large product organizations',
+                'Earning ₹8 LPA+ and aiming for senior, lead, principal, or design leadership roles in the next 6–12 months',
               ].map((item) => (
                 <li key={item} className="flex gap-3.5 text-[14px] md:text-[15px] text-ft-dark-surface leading-[170%]">
                   <span className="mt-0.5 shrink-0 w-5 h-5 rounded-full bg-accent flex items-center justify-center">

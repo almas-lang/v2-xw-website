@@ -128,6 +128,7 @@ interface FAQProps {
   theme?: ThemeType;
   mode?: 'light' | 'dark';
   illustration?: string;
+  className?: string;
 }
 
 export default function FAQ({
@@ -142,6 +143,7 @@ export default function FAQ({
   theme = 'default',
   mode = 'light',
   illustration,
+  className = '',
 }: FAQProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const [openIndex, setOpenIndex] = useState<number>(0);
@@ -175,7 +177,7 @@ export default function FAQ({
       ref={sectionRef}
       className={`relative py-16 md:py-24 lg:py-28 overflow-hidden opacity-0 translate-y-8 transition-all duration-700 ease-out [&.animate-in]:opacity-100 [&.animate-in]:translate-y-0 ${
         isDark ? 'bg-[#0a0a0a]' : 'bg-[#f5f5f5]'
-      }`}
+      } ${className}`}
     >
       {/* Subtle background pattern */}
       <div className={`absolute inset-0 ${isDark ? 'opacity-100' : 'opacity-[0.02]'}`}>

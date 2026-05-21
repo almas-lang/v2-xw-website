@@ -143,6 +143,12 @@ export function LeadForm({ onSuccess, onError, variant = 'default' }: LeadFormPr
 
       {/* Delivery group: email + WhatsApp share one caption */}
       <div className="space-y-4">
+        {/* Shared caption for both delivery channels */}
+        <p className="flex items-center gap-1.5 text-[13px] text-white/40">
+          <svg className="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 6l-10 7L2 6" /><rect x="2" y="4" width="20" height="16" rx="2" /></svg>
+          {ftContent.form.fields.whatsapp.helperText}
+        </p>
+
         {/* Email */}
         <div>
           <input
@@ -184,12 +190,6 @@ export function LeadForm({ onSuccess, onError, variant = 'default' }: LeadFormPr
             />
           </div>
           {errors.whatsapp && <p className="mt-1 text-[13px] text-red-400 text-left flex items-center gap-1"><svg className="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="12" /><line x1="12" y1="16" x2="12.01" y2="16" /></svg>{errors.whatsapp.message}</p>}
-
-          {/* Shared caption for both delivery channels */}
-          <p className="mt-2 flex items-center gap-1.5 text-[13px] text-white/40">
-            <svg className="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 6l-10 7L2 6" /><rect x="2" y="4" width="20" height="16" rx="2" /></svg>
-            {ftContent.form.fields.whatsapp.helperText}
-          </p>
         </div>
       </div>
 

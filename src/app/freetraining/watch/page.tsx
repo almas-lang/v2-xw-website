@@ -300,6 +300,7 @@ function WatchContent() {
         title="Frequently Asked Questions (FAQs)"
         faqs={ftContent.watch.faqs.map((f) => ({ question: f.q, answer: f.a }))}
         showCTA={false}
+        className="!pb-6 md:!pb-8"
       />
 
       {/* ============ SECTION 8: FINAL CTA ============ */}

@@ -471,6 +471,7 @@ function CongratulationsContent() {
         title="Frequently Asked Questions (FAQs)"
         faqs={ftContent.congratulations.faqs.map((f) => ({ question: f.q, answer: f.a }))}
         showCTA={false}
+        className="!pb-6 md:!pb-8"
       />
 
       {/* ============ SECTION 8: SIGN-OFF ============ */}

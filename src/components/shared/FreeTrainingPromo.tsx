@@ -10,7 +10,7 @@ interface FreeTrainingPromoProps {
 const buildHref = (source: string) =>
   `/freetraining?utm_source=organic&utm_medium=inline_promo&utm_campaign=${encodeURIComponent(source)}`;
 
-const TRUST = "Free · 28 min · 830+ designers trained";
+const TRUST = "Free · 20 min · 830+ designers trained";
 
 export function FreeTrainingPromo({ variant, source }: FreeTrainingPromoProps) {
   const href = buildHref(source);
@@ -19,7 +19,7 @@ export function FreeTrainingPromo({ variant, source }: FreeTrainingPromoProps) {
     return (
       <div className="font-body border-l-4 border-ft-purple-cta bg-transparent pl-4 py-3 my-6">
         <p className="font-heading text-[16px] md:text-[17px] font-semibold text-ft-dark-surface leading-snug">
-          Free 28-min training: the roadmap to a senior UX role{" "}
+          Free 20-min training: the roadmap to a senior UX role{" "}
           <Link
             href={href}
             className="text-ft-purple-cta underline underline-offset-2 hover:text-ft-purple whitespace-nowrap"
@@ -133,7 +133,7 @@ export function FreeTrainingPromo({ variant, source }: FreeTrainingPromoProps) {
             Not ready to commit? Start with the training.
           </h3>
           <p className="text-[13px] md:text-[14px] text-g600 mt-1 line-clamp-2">
-            28-minute walkthrough of the exact roadmap 830+ designers used to land senior UX roles.
+            20-minute walkthrough of the exact roadmap 830+ designers used to land senior UX roles.
           </p>
           <div className="mt-2.5 flex items-center gap-3 flex-wrap">
             <span className="inline-flex items-center h-8 px-3.5 rounded-full bg-ft-purple-cta text-white font-semibold text-[13px] group-hover:opacity-90">

@@ -32,6 +32,8 @@ const splitName = (fullName: string): { first: string; last: string } => {
   return { first: tokens[0], last: tokens.slice(1).join(" ") };
 };
 
+const capitalize = (s: string): string => (s ? s.charAt(0).toUpperCase() + s.slice(1) : s);
+
 function CongratulationsContent() {
   const searchParams = useSearchParams();
   const [portfolioUrl, setPortfolioUrl] = useState("");
@@ -187,10 +189,11 @@ function CongratulationsContent() {
     if (!bookingDate || !bookingTime) return "#";
     const title = "Design Career Strategy Call - Xperience Wave";
     const details = meetLink
-      ? `Google Meet: ${meetLink}\n\nPrepare:\n1. Your #1 outcome (role, timeline, salary)\n2. Have LinkedIn profile open`
-      : "Prepare:\n1. Your #1 outcome (role, timeline, salary)\n2. Have LinkedIn profile open";
-    const location = "Google Meet";
-    const startDate = bookingDate.replace(/-/g, '') + 'T' + (bookingTime.replace(/:/g, '') || '110000');
+      ? `Google Meet: ${meetLink}\n\nPrepare:\n1. Where you feel stuck\n2. Have your LinkedIn profile open`
+      : "Prepare:\n1. Where you feel stuck\n2. Have your LinkedIn profile open";
+    const location = meetLink || "Google Meet";
+    const startTime = (bookingTime ? bookingTime.replace(/:/g, '') : '110000').padEnd(6, '0');
+    const startDate = bookingDate.replace(/-/g, '') + 'T' + startTime;
     const dur = parseInt(durationMinutes) || 45;
     const endHour = bookingTime ? parseInt(bookingTime.split(':')[0]) : 11;
     const endMin = bookingTime ? parseInt(bookingTime.split(':')[1] || '0') + dur : dur;
@@ -200,15 +203,19 @@ function CongratulationsContent() {
 
   const downloadICS = () => {
     const title = "Design Career Strategy Call - Xperience Wave";
-    const start = bookingDate ? bookingDate.replace(/-/g, '') + 'T' + (bookingTime?.replace(/:/g, '') || '1100') + '00' : '';
+    const start = bookingDate ? bookingDate.replace(/-/g, '') + 'T' + (bookingTime ? bookingTime.replace(/:/g, '') : '1100').padEnd(6, '0') : '';
+    const dtstamp = new Date().toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
     const ics = [
       'BEGIN:VCALENDAR',
       'VERSION:2.0',
+      'PRODID:-//Xperience Wave//Strategy Call//EN',
       'BEGIN:VEVENT',
+      `UID:${start || Date.now()}-strategy-call@xperiencewave.com`,
+      `DTSTAMP:${dtstamp}`,
       `DTSTART;TZID=Asia/Kolkata:${start}`,
       `SUMMARY:${title}`,
       meetLink ? `LOCATION:${meetLink}` : '',
-      `DESCRIPTION:Prepare: 1. Your #1 outcome 2. LinkedIn profile open`,
+      `DESCRIPTION:Prepare: 1. Where you feel stuck 2. Have your LinkedIn profile open`,
       `DURATION:PT${parseInt(durationMinutes) || 45}M`,
       'END:VEVENT',
       'END:VCALENDAR',
@@ -223,28 +230,32 @@ function CongratulationsContent() {
     URL.revokeObjectURL(url);
   };
 
-  const greetingName = firstName ? ` ${firstName}` : '';
+  const displayName = firstName ? capitalize(firstName) : 'there';
+  const greetingName = `, ${displayName}`;
+  const weekday = bookingDate
+    ? new Date(bookingDate + "T00:00:00").toLocaleDateString("en-IN", { weekday: "long" })
+    : '';
+  const host = searchParams.get("host") || "Murad or Almas";
 
-  // Confirmation detail across 3 lines:
-  //   Wednesday, 13 May 2026 · 1:00 PM IST
-  //   with Murad or Almas · 45 minutes
-  //   Google Meet
-  const durationLabel = `${parseInt(durationMinutes) || 45} minutes`;
-  const confirmationLines: string[] = [
-    [formattedDate, formattedTime ? `${formattedTime} IST` : ''].filter(Boolean).join(' · '),
-    `with Murad or Almas · ${durationLabel}`,
-    'Google Meet',
-  ].filter(Boolean);
+  // Compact confirmation line: "Tuesday, 26 May 2026 · 4:30 PM IST · with Murad or Almas"
+  const confirmationLine = [
+    formattedDate,
+    formattedTime ? `${formattedTime} IST` : '',
+    `with ${host}`,
+  ].filter(Boolean).join(' · ');
+
+  const videoNote = weekday ? `60 seconds. Worth watching before ${weekday}.` : '60 seconds.';
+  const signoffLine = weekday ? `See you ${weekday}${greetingName}.` : `See you soon${greetingName}.`;
 
   return (
     <div className="min-h-screen bg-white">
-      <div className="max-w-[820px] mx-auto px-5 py-10 md:py-14">
 
-        {/* ============ SECTION 1: BOOKING CONFIRMATION ============ */}
-        <section className="mb-12 md:mb-16">
+      {/* ============ SECTION 1: CONFIRMATION BLOCK ============ */}
+      <div className="max-w-[820px] mx-auto px-5 pt-10 md:pt-14">
+        <section>
           <div className="bg-ft-section-bg rounded-2xl p-6 md:p-10">
-            <h1 className="text-[20px] md:text-[24px] font-heading font-bold text-ft-dark-surface mb-6">
-              You&apos;re on{greetingName}
+            <h1 className="text-[22px] md:text-[28px] font-heading font-bold text-ft-dark-surface mb-6">
+              You&apos;re booked{greetingName}.
             </h1>
 
             <div className="border-l-[3px] border-accent pl-5 md:pl-7 py-2 mb-7">
@@ -252,10 +263,8 @@ function CongratulationsContent() {
                 {ftContent.congratulations.confirmedLabel}
               </p>
               {bookingDate ? (
-                <p className="text-[18px] md:text-[24px] lg:text-[28px] font-heading font-bold text-ft-dark-surface leading-tight max-w-[700px]">
-                  {confirmationLines.map((line) => (
-                    <span key={line} className="block">{line}</span>
-                  ))}
+                <p className="text-[18px] md:text-[24px] lg:text-[26px] font-heading font-bold text-ft-dark-surface leading-tight max-w-[700px]">
+                  {confirmationLine}
                 </p>
               ) : (
                 <p className="text-[18px] md:text-[22px] font-heading font-bold text-ft-dark-surface leading-tight max-w-[640px]">
@@ -294,133 +303,14 @@ function CongratulationsContent() {
             </div>
 
             <p className="text-[13px] md:text-[14px] text-gray-500 leading-relaxed">
-              {ftContent.congratulations.confirmFootnote}
+              {ftContent.congratulations.confirmMicrocopy}
             </p>
           </div>
         </section>
-
-        {/* ============ SECTION 2: WATCH VIDEO ============ */}
-        <section className="mb-12 md:mb-16">
-          <h2 className="text-center text-[18px] md:text-[22px] font-heading font-bold text-ft-dark-surface mb-6">
-            {ftContent.congratulations.videoTitle}
-          </h2>
-          <div className="max-w-[340px] mx-auto">
-            {CONGRATS_VIDEO_ID && BUNNY_LIBRARY_ID ? (
-              <BunnyPlayer
-                videoId={CONGRATS_VIDEO_ID}
-                libraryId={BUNNY_LIBRARY_ID}
-                aspectRatio="9/16"
-                onPlay={handleCongratsPlay}
-                onTimeUpdate={handleCongratsTimeUpdate}
-                onEnded={handleCongratsEnded}
-              />
-            ) : (
-              <div className="aspect-[9/16] rounded-xl bg-gray-100 border border-gray-200" />
-            )}
-          </div>
-          <p className="text-center text-[13px] md:text-[14px] text-gray-500 mt-4">
-            {ftContent.congratulations.videoNote}
-          </p>
-        </section>
-
-        {/* ============ SECTION 3: TWO THINGS TO PREPARE ============ */}
-        <section>
-          <h2 className="text-[24px] md:text-[34px] font-heading font-bold text-ft-dark-surface mb-10 md:mb-14">
-            {ftContent.congratulations.prepare.title}
-          </h2>
-          <div className="divide-y divide-gray-200">
-            {ftContent.congratulations.prepare.items.map((item) => (
-              <div
-                key={item.number}
-                className="grid grid-cols-[64px_1fr] md:grid-cols-[140px_1fr] lg:grid-cols-[180px_1fr] gap-5 md:gap-10 lg:gap-14 py-10 md:py-14"
-              >
-                <p className="text-[44px] md:text-[72px] lg:text-[88px] font-heading font-bold text-accent leading-none tracking-tight">
-                  {item.number}
-                </p>
-                <div>
-                  <h3 className="text-[20px] md:text-[24px] font-heading font-bold text-ft-dark-surface mb-3 leading-tight">
-                    {item.title}
-                  </h3>
-                  <p className="text-[15px] md:text-[16px] text-[#4D4D57] leading-[180%] max-w-[640px]">
-                    {item.body}
-                  </p>
-                  {item.quote && (
-                    <div className="mt-5 border-l-[3px] border-accent pl-4 md:pl-5 py-1 max-w-[640px]">
-                      <p className="text-[14px] md:text-[15px] text-[#3A3A42] italic leading-[180%]">
-                        {item.quote}
-                      </p>
-                    </div>
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Optional file/portfolio block */}
-          <div className="mt-10 bg-ft-section-bg rounded-2xl p-6 md:p-8">
-            <p className="text-[15px] md:text-[16px] font-bold text-ft-dark-surface mb-3">
-              {ftContent.congratulations.prepare.optionalLabel}
-            </p>
-
-            {submitStatus === 'done' ? (
-              <div className="rounded-md border border-emerald-200 bg-emerald-50 px-4 py-3 text-[14px] text-emerald-700 font-medium">
-                Thanks — we&apos;ve got it. We&apos;ll review it before the call.
-              </div>
-            ) : (
-              <div className="rounded-md border border-gray-300 bg-white">
-                <input
-                  type="url"
-                  value={portfolioUrl}
-                  onChange={(e) => { setPortfolioUrl(e.target.value); setSubmitStatus('idle'); }}
-                  placeholder={ftContent.congratulations.prepare.optionalPlaceholder}
-                  className="w-full px-4 py-3 text-[14px] md:text-[15px] text-gray-900 bg-transparent placeholder-gray-400 border-0 rounded-t-md focus:outline-none"
-                />
-                <div className="flex items-center justify-between border-t border-gray-200 px-4 py-2">
-                  {resumeFile ? (
-                    <div className="flex items-center gap-2 text-[13px] md:text-[14px] text-gray-700">
-                      <svg className="w-4 h-4 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" /></svg>
-                      <span className="truncate max-w-[200px]">{resumeFile.name}</span>
-                      <button type="button" onClick={() => { setResumeFile(null); setSubmitStatus('idle'); }} className="ml-1 text-gray-400 hover:text-gray-600 cursor-pointer" aria-label="Remove file">
-                        <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
-                      </button>
-                    </div>
-                  ) : (
-                    <label className="inline-flex items-center gap-1 text-[13px] md:text-[14px] font-medium text-ft-dark-surface hover:text-black cursor-pointer">
-                      <span>+ Add files</span>
-                      <input type="file" accept=".pdf,.docx" className="hidden" onChange={handleResumeSelect} aria-label="Upload resume file" />
-                    </label>
-                  )}
-                  <button onClick={handleSubmit} disabled={(!portfolioUrl && !resumeFile) || submitStatus === 'submitting'} className="text-[13px] md:text-[14px] font-semibold text-blue-600 hover:underline underline disabled:text-gray-400 disabled:no-underline disabled:cursor-not-allowed cursor-pointer">
-                    {submitStatus === 'submitting' ? 'Submitting…' : submitStatus === 'error' ? 'Try again' : 'Submit'}
-                  </button>
-                </div>
-              </div>
-            )}
-            {resumeError && <p className="text-[13px] text-red-500 mt-2">{resumeError}</p>}
-            {submitStatus === 'error' && submitError && <p className="text-[13px] text-red-500 mt-2">{submitError}</p>}
-            <p className="text-[13px] md:text-[14px] text-gray-500 mt-4 leading-relaxed">
-              {ftContent.congratulations.prepare.optionalFootnote}
-            </p>
-          </div>
-
-          {/* Reschedule note (inline) */}
-          <p className="mt-10 text-[13px] md:text-[14px] text-gray-500 italic leading-[180%] max-w-[700px]">
-            <span className="font-semibold text-ft-dark-surface not-italic">Need to reschedule or cancel?</span>{' '}
-            {ftContent.congratulations.reschedule.body}
-          </p>
-        </section>
-
       </div>
 
-      {/* ============ SECTION 5: FAQS (full-width) ============ */}
-      <FAQ
-        title="Frequently Asked Questions (FAQs)"
-        faqs={ftContent.congratulations.faqs.map((f) => ({ question: f.q, answer: f.a }))}
-        showCTA={false}
-      />
-
-      {/* ============ SECTION 6: MENTEE WINS (full-width) ============ */}
-      <section className="bg-white py-14 md:py-20 px-5">
+      {/* ============ SECTION 2: TESTIMONIALS (moved up) ============ */}
+      <section className="bg-white py-14 md:py-16 px-5">
         <div className="max-w-[1100px] mx-auto">
           <h2 className="text-center text-[20px] md:text-[24px] font-heading font-bold text-ft-dark-surface mb-8 md:mb-10">
             {ftContent.congratulations.menteesTitle}
@@ -464,12 +354,134 @@ function CongratulationsContent() {
               rel="noopener noreferrer"
               className="text-[15px] font-semibold text-blue-600 hover:underline underline"
             >
-              {ftContent.results.seeAllText}
+              {ftContent.congratulations.menteesSeeAll}
             </a>
-            <p className="mt-3 text-[14px] md:text-[15px] text-[#4D4D57]">
-              {ftContent.results.seeAllSubtext}
-            </p>
           </div>
+        </div>
+      </section>
+
+      <div className="max-w-[820px] mx-auto px-5 pb-4">
+
+        {/* ============ SECTION 3: PRE-CALL VIDEO ============ */}
+        <section className="mb-14 md:mb-16">
+          <h2 className="text-center text-[18px] md:text-[22px] font-heading font-bold text-ft-dark-surface mb-6 leading-snug max-w-[560px] mx-auto">
+            {ftContent.congratulations.videoTitle}
+          </h2>
+          <div className="max-w-[340px] mx-auto">
+            {CONGRATS_VIDEO_ID && BUNNY_LIBRARY_ID ? (
+              <BunnyPlayer
+                videoId={CONGRATS_VIDEO_ID}
+                libraryId={BUNNY_LIBRARY_ID}
+                aspectRatio="9/16"
+                onPlay={handleCongratsPlay}
+                onTimeUpdate={handleCongratsTimeUpdate}
+                onEnded={handleCongratsEnded}
+              />
+            ) : (
+              <div className="aspect-[9/16] rounded-xl bg-gray-100 border border-gray-200" />
+            )}
+          </div>
+          <p className="text-center text-[13px] md:text-[14px] text-gray-500 mt-4">
+            {videoNote}
+          </p>
+        </section>
+
+        {/* ============ SECTION 4: TWO THINGS TO PREPARE ============ */}
+        <section className="mb-14 md:mb-16">
+          <h2 className="text-[22px] md:text-[28px] font-heading font-bold text-ft-dark-surface mb-8">
+            {ftContent.congratulations.prepare.title}
+          </h2>
+          <div className="space-y-8">
+            {ftContent.congratulations.prepare.items.map((item) => (
+              <div key={item.number}>
+                <h3 className="text-[16px] md:text-[18px] font-heading font-bold text-ft-dark-surface mb-2 leading-tight">
+                  <span className="text-accent">{item.number}</span>
+                  <span className="text-gray-300 mx-2">·</span>
+                  {item.title}
+                </h3>
+                <p className="text-[15px] md:text-[16px] text-[#4D4D57] leading-[180%] max-w-[640px]">
+                  {item.body}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* ============ SECTION 5: OPTIONAL UPLOADS ============ */}
+        <section className="mb-14 md:mb-16">
+          <h2 className="text-[18px] md:text-[20px] font-heading font-bold text-ft-dark-surface mb-1">
+            {ftContent.congratulations.optional.title}
+          </h2>
+          <p className="text-[14px] md:text-[15px] italic text-gray-500 mb-4">
+            {ftContent.congratulations.optional.subtext}
+          </p>
+
+          {submitStatus === 'done' ? (
+            <div className="rounded-md border border-emerald-200 bg-emerald-50 px-4 py-3 text-[14px] text-emerald-700 font-medium">
+              Thanks — we&apos;ve got it. We&apos;ll review it before the call.
+            </div>
+          ) : (
+            <div className="rounded-md border border-gray-300 bg-white">
+              <input
+                type="url"
+                value={portfolioUrl}
+                onChange={(e) => { setPortfolioUrl(e.target.value); setSubmitStatus('idle'); }}
+                placeholder={ftContent.congratulations.optional.placeholder}
+                className="w-full px-4 py-3 text-[14px] md:text-[15px] text-gray-900 bg-transparent placeholder-gray-400 border-0 rounded-t-md focus:outline-none"
+              />
+              <div className="flex items-center justify-between border-t border-gray-200 px-4 py-2">
+                {resumeFile ? (
+                  <div className="flex items-center gap-2 text-[13px] md:text-[14px] text-gray-700">
+                    <svg className="w-4 h-4 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" /></svg>
+                    <span className="truncate max-w-[200px]">{resumeFile.name}</span>
+                    <button type="button" onClick={() => { setResumeFile(null); setSubmitStatus('idle'); }} className="ml-1 text-gray-400 hover:text-gray-600 cursor-pointer" aria-label="Remove file">
+                      <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+                    </button>
+                  </div>
+                ) : (
+                  <label className="inline-flex items-center gap-1 text-[13px] md:text-[14px] font-medium text-ft-dark-surface hover:text-black cursor-pointer">
+                    <span>+ Add files</span>
+                    <input type="file" accept=".pdf,.docx" className="hidden" onChange={handleResumeSelect} aria-label="Upload resume file" />
+                  </label>
+                )}
+                <button onClick={handleSubmit} disabled={(!portfolioUrl && !resumeFile) || submitStatus === 'submitting'} className="text-[13px] md:text-[14px] font-semibold text-blue-600 hover:underline underline disabled:text-gray-400 disabled:no-underline disabled:cursor-not-allowed cursor-pointer">
+                  {submitStatus === 'submitting' ? 'Submitting…' : submitStatus === 'error' ? 'Try again' : 'Submit'}
+                </button>
+              </div>
+            </div>
+          )}
+          {resumeError && <p className="text-[13px] text-red-500 mt-2">{resumeError}</p>}
+          {submitStatus === 'error' && submitError && <p className="text-[13px] text-red-500 mt-2">{submitError}</p>}
+        </section>
+
+        {/* ============ SECTION 6: RESCHEDULE ============ */}
+        <section className="mb-4">
+          <h2 className="text-[18px] md:text-[20px] font-heading font-bold text-ft-dark-surface mb-2">
+            {ftContent.congratulations.reschedule.title}
+          </h2>
+          <p className="text-[14px] md:text-[15px] text-[#4D4D57] leading-[180%] max-w-[700px]">
+            {ftContent.congratulations.reschedule.body}
+          </p>
+        </section>
+
+      </div>
+
+      {/* ============ SECTION 7: FAQS (full-width) ============ */}
+      <FAQ
+        title="Frequently Asked Questions (FAQs)"
+        faqs={ftContent.congratulations.faqs.map((f) => ({ question: f.q, answer: f.a }))}
+        showCTA={false}
+      />
+
+      {/* ============ SECTION 8: SIGN-OFF ============ */}
+      <section className="bg-white px-5 pt-2 pb-16 md:pb-20">
+        <div className="max-w-[820px] mx-auto">
+          <p className="text-[15px] md:text-[16px] italic text-ft-dark-surface leading-[180%]">
+            {signoffLine}
+          </p>
+          <p className="text-[15px] md:text-[16px] italic text-gray-500 mt-1">
+            {ftContent.congratulations.signoffFrom}
+          </p>
         </div>
       </section>
 

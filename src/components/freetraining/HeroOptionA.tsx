@@ -45,9 +45,9 @@ export function HeroOptionA({ onCtaClick }: { onCtaClick: () => void }) {
 
           {/* Headline */}
           <h1 className="font-heading text-[29px] sm:text-[39px] md:text-[48px] lg:text-[54px] font-bold text-white leading-[1.1] tracking-tight mb-6 md:mb-8">
-            Still doing senior-level work
+            Stuck while less-talented designers
             <br className="hidden md:inline" />{' '}
-            without <span className="text-accent">senior-level pay or title</span>?
+            move into <span className="text-accent">senior and leadership roles</span>?
           </h1>
 
           {/* Sub-headline */}

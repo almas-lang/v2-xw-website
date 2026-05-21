@@ -85,7 +85,7 @@ function FreeTrainingHomeContent() {
 
       {/* ============ SECTION 1.5: WHO IT'S FOR / NOT FOR ============ */}
       <section className="bg-ft-section-bg py-14 md:py-20 px-5">
-        <div className="max-w-[1100px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 items-stretch">
+        <div className="max-w-[640px] mx-auto">
           {/* For — lifted white card */}
           <div className="relative bg-white rounded-2xl p-7 md:p-9 border border-gray-200 shadow-[0_12px_40px_-12px_rgba(15,15,20,0.12)]">
             <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-accent/10 text-accent text-[11px] font-bold tracking-wider uppercase mb-4">
@@ -105,33 +105,6 @@ function FreeTrainingHomeContent() {
                   <span className="mt-0.5 shrink-0 w-5 h-5 rounded-full bg-accent flex items-center justify-center">
                     <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                    </svg>
-                  </span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Not for — receded but warmer, sits flush with section bg */}
-          <div className="relative rounded-2xl p-7 md:p-9 border border-gray-300/70 bg-white/40">
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-accent/[0.08] text-accent/80 text-[11px] font-bold tracking-wider uppercase mb-4">
-              Not a fit
-            </span>
-            <h3 className="text-[20px] md:text-[24px] font-heading font-bold text-ft-dark-surface/70 mb-6 leading-tight">
-              This training is not for
-            </h3>
-            <ul className="space-y-4">
-              {[
-                'Students or freshers',
-                'Designers looking for free portfolio reviews',
-                'Career changers without a design background yet',
-                'Anyone hoping a 32-min video alone will fix this',
-              ].map((item) => (
-                <li key={item} className="flex gap-3.5 text-[14px] md:text-[15px] text-[#5C5C66] leading-[170%]">
-                  <span className="mt-0.5 shrink-0 w-5 h-5 rounded-full bg-accent/10 border border-accent/20 flex items-center justify-center">
-                    <svg className="w-2.5 h-2.5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M6 18L18 6M6 6l12 12" />
                     </svg>
                   </span>
                   <span>{item}</span>
@@ -262,12 +235,12 @@ function FreeTrainingHomeContent() {
               <img
                 src="/images/Murad.png"
                 alt="Shaik Murad"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-[center_top] scale-x-[-1]"
               />
             </div>
           </div>
 
-          {/* Right column: name, role, story */}
+          {/* Right column: name, role, bio */}
           <div>
             {/* Name & role */}
             <p className="text-[20px] md:text-[24px] font-heading font-bold text-ft-dark-surface leading-tight">
@@ -277,12 +250,9 @@ function FreeTrainingHomeContent() {
               {ftContent.aboutMurad.role}
             </p>
 
-            {/* What he does */}
-            <h3 className="text-[15px] md:text-[16px] font-bold text-ft-dark-surface mb-3 uppercase tracking-wider">
-              {ftContent.aboutMurad.whatHeDoesTitle}
-            </h3>
+            {/* Bio */}
             <p className="text-[15px] md:text-[16px] text-[#4D4D57] leading-[180%] mb-10 md:mb-12">
-              {ftContent.aboutMurad.whatHeDoes}
+              {ftContent.aboutMurad.bio}
             </p>
 
             {/* Pull-quote anchor: stats as oversized callout */}
@@ -291,17 +261,9 @@ function FreeTrainingHomeContent() {
                 3,000+
               </p>
               <p className="text-[14px] md:text-[15px] text-[#4D4D57] mt-2 max-w-[420px]">
-                career conversations with designers · 830+ mentored · 13 years in design
+                career conversations with designers · 830+ mentored · 15 years in design
               </p>
             </div>
-
-            {/* What he believes */}
-            <h3 className="text-[15px] md:text-[16px] font-bold text-ft-dark-surface mb-3 uppercase tracking-wider">
-              {ftContent.aboutMurad.whatHeBelievesTitle}
-            </h3>
-            <p className="text-[15px] md:text-[16px] text-[#4D4D57] leading-[180%] mb-10">
-              {ftContent.aboutMurad.whatHeBelieves}
-            </p>
 
             {/* Related reads */}
             <p className="text-[13px] md:text-[14px] font-bold text-ft-dark-surface uppercase tracking-wider mb-3">Related reads</p>
@@ -320,40 +282,6 @@ function FreeTrainingHomeContent() {
         </div>
       </section>
 
-      {/* ============ SECTION 7: HOW THIS WORKS ============ */}
-      <section className="bg-white py-14 md:py-20 px-5">
-        <div className="max-w-[900px] mx-auto">
-          <h2 className="text-[24px] md:text-[34px] font-heading font-bold text-ft-dark-surface mb-10 md:mb-14">
-            {ftContent.howItWorks.title}
-          </h2>
-          <div className="divide-y divide-gray-200">
-            {ftContent.howItWorks.steps.map((step) => (
-              <div
-                key={step.label}
-                className="grid grid-cols-[64px_1fr] md:grid-cols-[140px_1fr] lg:grid-cols-[180px_1fr] gap-5 md:gap-10 lg:gap-14 py-10 md:py-14"
-              >
-                <div className="flex md:block items-start">
-                  <p className="text-[44px] md:text-[72px] lg:text-[88px] font-heading font-bold text-accent leading-none tracking-tight">
-                    {step.label}
-                  </p>
-                </div>
-                <div>
-                  <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-gray-100 text-gray-600 text-[11px] md:text-[12px] font-bold tracking-wider uppercase mb-4">
-                    {step.duration}
-                  </span>
-                  <h3 className="text-[20px] md:text-[24px] font-heading font-bold text-ft-dark-surface mb-3 leading-tight">
-                    {step.title}
-                  </h3>
-                  <p className="text-[15px] md:text-[16px] text-[#4D4D57] leading-[180%] max-w-[640px]">
-                    {step.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ============ SECTION 8: FAQ ============ */}
       <FAQ
         title="Frequently Asked Questions (FAQs)"
@@ -364,12 +292,14 @@ function FreeTrainingHomeContent() {
       {/* ============ SECTION 9: FINAL CTA ============ */}
       <section className="bg-ft-dark-surface py-16 md:py-24 px-5">
         <div className="max-w-[760px] mx-auto text-center">
-          <h2 className="text-[24px] md:text-[34px] font-bold text-white mb-3 leading-tight">
+          <h2 className="text-[20px] md:text-[26px] font-bold text-white mb-8 leading-snug">
             {ftContent.finalCta.headline}
           </h2>
-          <p className="text-[15px] md:text-[16px] text-gray-300 mb-8">
-            {ftContent.finalCta.subline}
-          </p>
+          {ftContent.finalCta.subline && (
+            <p className="text-[15px] md:text-[16px] text-gray-300 mb-8">
+              {ftContent.finalCta.subline}
+            </p>
+          )}
           <button
             onClick={scrollToForm}
             className="inline-flex items-center gap-3 px-8 py-4 bg-accent hover:bg-accent-hover text-white font-semibold text-[16px] md:text-[17px] rounded-md transition-colors cursor-pointer mb-8 shadow-[0_0_40px_rgba(255,0,35,0.25)]"

@@ -2047,7 +2047,7 @@ const blogContent: Record<string, React.ReactNode> = {
         Murad is Co-founder and Head of Design at Xperience Wave, a UX mentorship and education company based in Bangalore. He has 13+ years of design leadership experience across India, Japan, Singapore, Dubai, Australia, and the US, and has worked directly with 3,000+ designers across the country. He holds a Masters in Industrial Psychology.
       </p>
 
-      <FreeTrainingCTA text="Want a personalized plan to move up the ladder? Watch our free 28-min training" />
+      <FreeTrainingCTA text="Want a personalized plan to move up the ladder? Watch our free 20-min training" />
     </>
   ),
   'ai-first-design-senior-ux': (

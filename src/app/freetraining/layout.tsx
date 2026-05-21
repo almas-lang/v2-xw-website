@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     template: "%s | Xperience Wave",
   },
   description:
-    "Watch Shaik Murad's free 28-min training on why skilled UX, UI, and Product designers stay stuck at mid-level - and how 830+ designers landed senior & leadership roles paying ₹18-28 LPA in under 90 days.",
+    "Watch Shaik Murad's free 20-min training on why skilled UX, UI, and Product designers stay stuck at mid-level - and how 830+ designers landed senior & leadership roles paying ₹18-28 LPA in under 90 days.",
   openGraph: {
     title: "Free Training: Break Into Senior UX Roles in 90 Days",
     description:

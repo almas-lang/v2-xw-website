@@ -141,50 +141,56 @@ export function LeadForm({ onSuccess, onError, variant = 'default' }: LeadFormPr
         {errors.name && <p className="mt-1 text-[13px] text-red-400 text-left flex items-center gap-1"><svg className="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="12" /><line x1="12" y1="16" x2="12.01" y2="16" /></svg>{errors.name.message}</p>}
       </div>
 
-      {/* Email */}
-      <div>
-        <input
-          {...register("email")}
-          type="email"
-          placeholder={ftContent.form.fields.email.placeholder}
-          className={`${inputClasses} ${errors.email ? errorClasses : ''}`}
-          aria-invalid={errors.email ? "true" : "false"}
-          onFocus={() => trackFormFieldFocused('email')}
-          onBlur={(e) => { if (e.target.value) trackFormFieldCompleted('email'); }}
-        />
-        {errors.email && <p className="mt-1 text-[13px] text-red-400 text-left flex items-center gap-1"><svg className="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="12" /><line x1="12" y1="16" x2="12.01" y2="16" /></svg>{errors.email.message}</p>}
-      </div>
-
-      {/* WhatsApp */}
-      <div>
-        <div className="flex gap-2">
-          <div className="flex items-center px-3 py-3 bg-white/5 border border-white/10 rounded-xl shrink-0">
-            <svg className="w-4 h-4 mr-1.5 text-green-500" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
-              <path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.955 9.955 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z" fillRule="evenodd" />
-            </svg>
-            <span className="text-[15px] text-white/70 font-medium">+91</span>
-          </div>
+      {/* Delivery group: email + WhatsApp share one caption */}
+      <div className="space-y-4">
+        {/* Email */}
+        <div>
           <input
-            {...register("whatsapp")}
-            type="tel"
-            maxLength={10}
-            placeholder={ftContent.form.fields.whatsapp.placeholder}
-            className={`flex-1 ${inputClasses} ${errors.whatsapp ? errorClasses : ''}`}
-            aria-invalid={errors.whatsapp ? "true" : "false"}
-            onFocus={() => trackFormFieldFocused('whatsapp')}
-            onBlur={(e) => { if (e.target.value) trackFormFieldCompleted('whatsapp'); }}
-            onKeyDown={(e) => {
-              if (!/[0-9]/.test(e.key) && !['Backspace', 'Delete', 'Tab', 'ArrowLeft', 'ArrowRight'].includes(e.key)) {
-                e.preventDefault();
-              }
-            }}
+            {...register("email")}
+            type="email"
+            placeholder={ftContent.form.fields.email.placeholder}
+            className={`${inputClasses} ${errors.email ? errorClasses : ''}`}
+            aria-invalid={errors.email ? "true" : "false"}
+            onFocus={() => trackFormFieldFocused('email')}
+            onBlur={(e) => { if (e.target.value) trackFormFieldCompleted('email'); }}
           />
+          {errors.email && <p className="mt-1 text-[13px] text-red-400 text-left flex items-center gap-1"><svg className="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="12" /><line x1="12" y1="16" x2="12.01" y2="16" /></svg>{errors.email.message}</p>}
         </div>
-        <p className="mt-1 text-[13px] text-white/40">
-          {ftContent.form.fields.whatsapp.helperText}
-        </p>
-        {errors.whatsapp && <p className="mt-1 text-[13px] text-red-400 text-left flex items-center gap-1"><svg className="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="12" /><line x1="12" y1="16" x2="12.01" y2="16" /></svg>{errors.whatsapp.message}</p>}
+
+        {/* WhatsApp */}
+        <div>
+          <div className="flex gap-2">
+            <div className="flex items-center px-3 py-3 bg-white/5 border border-white/10 rounded-xl shrink-0">
+              <svg className="w-4 h-4 mr-1.5 text-green-500" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                <path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.955 9.955 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z" fillRule="evenodd" />
+              </svg>
+              <span className="text-[15px] text-white/70 font-medium">+91</span>
+            </div>
+            <input
+              {...register("whatsapp")}
+              type="tel"
+              maxLength={10}
+              placeholder={ftContent.form.fields.whatsapp.placeholder}
+              className={`flex-1 ${inputClasses} ${errors.whatsapp ? errorClasses : ''}`}
+              aria-invalid={errors.whatsapp ? "true" : "false"}
+              onFocus={() => trackFormFieldFocused('whatsapp')}
+              onBlur={(e) => { if (e.target.value) trackFormFieldCompleted('whatsapp'); }}
+              onKeyDown={(e) => {
+                if (!/[0-9]/.test(e.key) && !['Backspace', 'Delete', 'Tab', 'ArrowLeft', 'ArrowRight'].includes(e.key)) {
+                  e.preventDefault();
+                }
+              }}
+            />
+          </div>
+          {errors.whatsapp && <p className="mt-1 text-[13px] text-red-400 text-left flex items-center gap-1"><svg className="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="12" /><line x1="12" y1="16" x2="12.01" y2="16" /></svg>{errors.whatsapp.message}</p>}
+
+          {/* Shared caption for both delivery channels */}
+          <p className="mt-2 flex items-center gap-1.5 text-[13px] text-white/40">
+            <svg className="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 6l-10 7L2 6" /><rect x="2" y="4" width="20" height="16" rx="2" /></svg>
+            {ftContent.form.fields.whatsapp.helperText}
+          </p>
+        </div>
       </div>
 
       {/* Submit */}

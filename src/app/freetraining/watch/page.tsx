@@ -34,6 +34,8 @@ const splitName = (fullName: string): { first: string; last: string } => {
   return { first: tokens[0], last: tokens.slice(1).join(" ") };
 };
 
+const capitalize = (s: string): string => (s ? s.charAt(0).toUpperCase() + s.slice(1) : s);
+
 function WatchContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -118,18 +120,26 @@ function WatchContent() {
     window.location.href = buildBookingUrl();
   };
 
-  const greeting = firstName
-    ? `${ftContent.watch.greetingPrefix} ${firstName}${ftContent.watch.greetingSuffix}`
-    : `${ftContent.watch.greetingPrefix}${ftContent.watch.greetingSuffix.replace(/^,\s*/, ', ')}`;
+  const displayName = firstName ? capitalize(firstName) : 'there';
+  const greeting = `${ftContent.watch.greetingPrefix} ${displayName}${ftContent.watch.greetingSuffix}`;
 
   return (
     <div className="min-h-screen flex flex-col bg-white font-body">
-      {/* ============ SECTION 1: VIDEO ============ */}
+      {/* ============ SECTION 1: GREETING ============ */}
       <section className="bg-white">
-        <div className="max-w-[900px] mx-auto px-5 pt-8 md:pt-12 pb-10 md:pb-14">
-          <p className="text-center text-[15px] md:text-[16px] text-ft-dark-surface font-semibold mb-5 md:mb-6">
+        <div className="max-w-[760px] mx-auto px-5 pt-8 md:pt-12 text-center">
+          <h1 className="text-[22px] md:text-[28px] font-heading font-bold text-ft-dark-surface mb-3 leading-snug">
             {greeting}
+          </h1>
+          <p className="text-[15px] md:text-[16px] italic text-[#3A3A42] leading-[170%] max-w-[600px] mx-auto">
+            {ftContent.watch.greetingSubhead}
           </p>
+        </div>
+      </section>
+
+      {/* ============ SECTION 2: VIDEO PLAYER ============ */}
+      <section className="bg-white">
+        <div className="max-w-[900px] mx-auto px-5 pt-6 md:pt-8">
           <div className="rounded-lg overflow-hidden shadow-sm border border-g200">
             <BunnyPlayer
               videoId={BUNNY_VIDEO_ID}
@@ -143,52 +153,33 @@ function WatchContent() {
           <p className="text-center text-[13px] md:text-[14px] text-gray-500 mt-4">
             {ftContent.watch.videoNote}
           </p>
-          <div className="text-center mt-7 md:mt-8">
-            <button
-              onClick={handleBookClick}
-              className="inline-flex items-center justify-center gap-2 w-full max-w-[420px] h-[52px] bg-accent hover:bg-accent-hover text-white font-semibold text-[16px] md:text-[17px] rounded-md transition-colors cursor-pointer shadow-[0_0_30px_rgba(255,0,35,0.2)]"
-            >
-              {ftContent.watch.bookCall.cta} <span aria-hidden>→</span>
-            </button>
-          </div>
         </div>
       </section>
 
-      {/* ============ SECTION 2: BOOK A CALL ============ */}
+      {/* ============ SECTION 3: SOFT SCROLL CUE ============ */}
+      <section className="bg-white">
+        <div className="max-w-[900px] mx-auto px-5 py-8 md:py-10 flex flex-col items-center gap-2 text-gray-400">
+          <span className="text-[14px] md:text-[15px]">{ftContent.watch.scrollCue}</span>
+          <svg className="w-5 h-5 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden>
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          </svg>
+        </div>
+      </section>
+
+      {/* ============ SECTION 4: BRIDGE + SECTION 5: BUTTON ============ */}
       <section className="bg-ft-section-bg py-12 md:py-16 px-5">
-        <div className="max-w-[860px] mx-auto">
-          <h2 className="text-[20px] md:text-[24px] font-heading font-bold text-ft-dark-surface mb-4">
-            {ftContent.watch.bookCall.headline}
+        <div className="max-w-[760px] mx-auto text-center">
+          <h2 className="text-[20px] md:text-[26px] font-heading font-bold text-ft-dark-surface mb-5 leading-snug">
+            {ftContent.watch.bridge.heading}
           </h2>
-          <p className="text-[15px] md:text-[16px] text-[#3A3A42] leading-[180%] mb-10 max-w-[700px]">
-            {ftContent.watch.bookCall.intro}
-          </p>
-
-          {/* 45 min stat anchor */}
-          <div className="border-l-[3px] border-accent pl-5 md:pl-7 py-1 mb-10">
-            <p className="text-[40px] md:text-[56px] font-heading font-bold text-accent leading-none tracking-tight">
-              45 min
+          {ftContent.watch.bridge.body.map((para) => (
+            <p key={para} className="text-[15px] md:text-[16px] text-[#3A3A42] leading-[180%] mb-4 last:mb-0 max-w-[640px] mx-auto">
+              {para}
             </p>
-            <p className="text-[13px] md:text-[14px] font-bold tracking-wider uppercase text-ft-dark-surface mt-2">
-              {ftContent.watch.bookCall.whatLooksLikeTitle}
-            </p>
-            <p className="text-[14px] md:text-[15px] text-[#3A3A42] leading-[180%] mt-2 max-w-[600px]">
-              {ftContent.watch.bookCall.whatLooksLikeBody}
-            </p>
-          </div>
+          ))}
 
-          <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 mb-10">
-            {ftContent.watch.bookCall.bullets.map((bullet) => (
-              <li key={bullet} className="flex gap-3 text-[14px] md:text-[15px] text-[#3A3A42] leading-[170%]">
-                <svg className="w-4 h-4 mt-1 shrink-0 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                </svg>
-                <span>{bullet}</span>
-              </li>
-            ))}
-          </ul>
-
-          <div className="text-center">
+          {/* Button between bridge and testimonials */}
+          <div className="mt-9 md:mt-10">
             <button
               onClick={handleBookClick}
               className="inline-flex items-center justify-center gap-2 w-full max-w-[420px] h-[52px] bg-accent hover:bg-accent-hover text-white font-semibold text-[16px] md:text-[17px] rounded-md transition-colors cursor-pointer shadow-[0_0_30px_rgba(255,0,35,0.2)]"
@@ -196,7 +187,7 @@ function WatchContent() {
               {ftContent.watch.bookCall.cta} <span aria-hidden>→</span>
             </button>
             <p className="mt-4 text-[13px] md:text-[14px] text-gray-500">
-              {ftContent.watch.bookCall.footnote}
+              {ftContent.watch.bookCall.microcopy}
             </p>
           </div>
         </div>
@@ -250,13 +241,20 @@ function WatchContent() {
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6 max-w-[1100px] mx-auto mb-10 md:mb-12">
             {[
-              { img: 'sunitha-bisoyi.jpeg', name: 'Sunitha', outcome: 'Lead Experience Designer @ Thoughtworks' },
-              { img: 'akash.png', name: 'Akash', outcome: '+32% hike, Sr. Product Designer' },
-              { img: 'maitreyee.png', name: 'Maitreyee', outcome: 'UI/UX Designer @ Montran' },
-              { img: 'kritika2.png', name: 'Kritika', outcome: 'Founding Designer @ German AI startup' },
+              { img: 'sunitha-bisoyi.jpeg', name: 'Sunitha', outcome: 'Lead Experience Designer @ Thoughtworks', linkedin: 'https://www.linkedin.com/in/bisoyi-sunitha/' },
+              { img: 'akash.png', name: 'Akash', outcome: '+32% hike, Sr. Product Designer', linkedin: 'https://www.linkedin.com/in/akuxdesigner/' },
+              { img: 'maitreyee.png', name: 'Maitreyee', outcome: 'UI/UX Designer @ Montran', linkedin: 'https://www.linkedin.com/in/maitreyeekane/' },
+              { img: 'kritika2.png', name: 'Kritika', outcome: 'Founding Designer @ German AI startup', linkedin: 'https://www.linkedin.com/in/kritikasinghchauhan/' },
             ].map((mentee) => (
-              <div key={mentee.img} className="flex flex-col">
-                <div className="relative aspect-[9/19] rounded-xl overflow-hidden bg-[#0b141a]">
+              <a
+                key={mentee.img}
+                href={mentee.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex flex-col"
+                aria-label={`${mentee.name} on LinkedIn`}
+              >
+                <div className="relative aspect-[9/19] rounded-xl overflow-hidden bg-[#0b141a] ring-1 ring-transparent group-hover:ring-accent/30 transition">
                   <img
                     src={`/freetraining/testimonials/${mentee.img}`}
                     alt={`WhatsApp message from ${mentee.name}`}
@@ -265,10 +263,15 @@ function WatchContent() {
                   />
                 </div>
                 <div className="mt-3 px-1">
-                  <p className="text-[14px] md:text-[15px] font-bold text-ft-dark-surface">{mentee.name}</p>
-                  <p className="text-[12px] md:text-[13px] text-accent font-semibold mt-0.5">→ {mentee.outcome}</p>
+                  <p className="flex items-center gap-1.5 text-[14px] md:text-[15px] font-semibold text-ft-dark-surface group-hover:text-accent transition-colors">
+                    {mentee.name}
+                    <svg className="w-3.5 h-3.5 text-gray-400 group-hover:text-accent transition-colors" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+                      <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z" />
+                    </svg>
+                  </p>
+                  <p className="text-[12px] md:text-[13px] text-gray-500 mt-0.5 leading-snug">{mentee.outcome}</p>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
           <div className="text-center">
@@ -292,12 +295,30 @@ function WatchContent() {
         `}</style>
       </section>
 
-      {/* ============ SECTION 4: FAQS ============ */}
+      {/* ============ SECTION 7: FAQS ============ */}
       <FAQ
         title="Frequently Asked Questions (FAQs)"
         faqs={ftContent.watch.faqs.map((f) => ({ question: f.q, answer: f.a }))}
         showCTA={false}
       />
+
+      {/* ============ SECTION 8: FINAL CTA ============ */}
+      <section className="bg-ft-section-bg py-12 md:py-16 px-5">
+        <div className="max-w-[760px] mx-auto text-center">
+          <p className="text-[15px] md:text-[16px] italic text-[#3A3A42] leading-[170%] mb-6 max-w-[600px] mx-auto">
+            {ftContent.watch.finalCtaLine}
+          </p>
+          <button
+            onClick={handleBookClick}
+            className="inline-flex items-center justify-center gap-2 w-full max-w-[420px] h-[52px] bg-accent hover:bg-accent-hover text-white font-semibold text-[16px] md:text-[17px] rounded-md transition-colors cursor-pointer shadow-[0_0_30px_rgba(255,0,35,0.2)]"
+          >
+            {ftContent.watch.bookCall.cta} <span aria-hidden>→</span>
+          </button>
+          <p className="mt-4 text-[13px] md:text-[14px] text-gray-500">
+            {ftContent.watch.bookCall.microcopy}
+          </p>
+        </div>
+      </section>
 
       <Toast
         message={toast.message}

@@ -149,9 +149,17 @@ export const ftContent = {
       ],
     },
     bookCall: {
+      headline: 'Want to take this further?',
       cta: 'Talk to Murad and Almas',
       microcopy: 'A 45-min conversation. No cost.',
       ctaUrl: 'https://app.xperiencewave.com/book/design-career-strategy-call',
+      bullets: [
+        'Where you are now - your role, your recent moves, the friction you keep running into',
+        "Where you're trying to get to - specific role, specific timeline",
+        'The 2-3 specific gaps between those two - diagnosed honestly',
+        'What working together could look like, if it makes sense for both of us',
+      ],
+      footnote: 'Slots fill on a first-come basis. Reschedules need 12 hours notice.',
     },
     finalCtaLine: "Still figuring it out? Take your time. The link will be here when you're ready.",
     faqs: [

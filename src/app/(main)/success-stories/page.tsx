@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import Button from '@/components/ui/Button';
 import TestimonialCarousel from '@/components/shared/TestimonialCarousel';
 import WhatsAppWall, { WhatsAppScreenshot } from '@/components/success-stories/WhatsAppWall';
@@ -299,12 +300,13 @@ function Avatar({ name, image }: { name: string; image: string }) {
     );
   }
   return (
-    <img
+    <Image
       src={image}
       alt={name}
-      loading="lazy"
+      fill
+      sizes="(max-width: 768px) 50vw, 200px"
+      className="object-cover"
       onError={() => setImgError(true)}
-      className="absolute inset-0 w-full h-full object-cover"
     />
   );
 }
@@ -366,7 +368,7 @@ export default function SuccessStoriesPage() {
                   className="w-10 h-10 sm:w-11 sm:h-11 rounded-full overflow-hidden ring-2 ring-carbon shadow-lg"
                   style={{ zIndex: 10 - i }}
                 >
-                  <img src={src} alt="" className="w-full h-full object-cover" />
+                  <Image src={src} alt="" fill sizes="44px" className="object-cover" />
                 </div>
               ))}
               <div
@@ -610,10 +612,12 @@ export default function SuccessStoriesPage() {
                         </>
                       ) : (
                         <>
-                          <img
+                          <Image
                             src={`https://img.youtube.com/vi/${story.youtubeId}/maxresdefault.jpg`}
                             alt={story.name}
-                            className="absolute inset-0 w-full h-full object-cover"
+                            fill
+                            sizes="(max-width: 768px) 100vw, 400px"
+                            className="object-cover"
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
                           <div className="absolute inset-0 flex items-center justify-center">
@@ -689,7 +693,7 @@ export default function SuccessStoriesPage() {
                   <div className="flex items-center justify-between mt-auto">
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 rounded-full overflow-hidden bg-gradient-to-br from-g200 to-g300 ring-2 ring-g200 flex-shrink-0">
-                        <img src={win.image} alt={win.name} className="w-full h-full object-cover" />
+                        <Image src={win.image} alt={win.name} fill sizes="40px" className="object-cover" />
                       </div>
                       <span className="font-body text-sm text-g600">{win.name}</span>
                     </div>

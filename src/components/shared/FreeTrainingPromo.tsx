@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 type Variant = "card" | "strip" | "split";
@@ -42,7 +43,7 @@ export function FreeTrainingPromo({ variant, source }: FreeTrainingPromoProps) {
         <div className="md:hidden p-5">
           <div className="flex items-center gap-4">
             <div className="relative shrink-0 w-[76px] h-[76px] rounded-xl overflow-hidden bg-ft-dark">
-              <img src="/images/Murad.png" alt="Shaik Murad" className="w-full h-full object-cover scale-x-[-1]" />
+              <Image src="/images/Murad.png" alt="Shaik Murad" width={76} height={76} className="w-full h-full object-cover scale-x-[-1]" />
               <div className="absolute bottom-1 right-1 w-6 h-6 rounded-full bg-ft-purple-cta flex items-center justify-center shadow-md">
                 <svg className="w-3 h-3 text-white ml-[1px]" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M8 5v14l11-7z" />
@@ -77,9 +78,11 @@ export function FreeTrainingPromo({ variant, source }: FreeTrainingPromoProps) {
         {/* Desktop layout */}
         <div className="hidden md:flex">
           <div className="relative w-2/5 bg-ft-dark">
-            <img
+            <Image
               src="/images/Murad.png"
               alt="Shaik Murad — host of the free training"
+              width={300}
+              height={300}
               className="w-full h-full object-cover scale-x-[-1]"
             />
             <div className="absolute inset-0 flex items-center justify-center">
@@ -123,9 +126,11 @@ export function FreeTrainingPromo({ variant, source }: FreeTrainingPromoProps) {
       className="font-body group block my-6 rounded-xl bg-ft-card-bg p-4 md:p-5 shadow-sm hover:shadow-md transition-shadow"
     >
       <div className="flex items-center gap-4">
-        <img
+        <Image
           src="/images/Murad.png"
           alt="Shaik Murad"
+          width={72}
+          height={72}
           className="w-[64px] h-[64px] md:w-[72px] md:h-[72px] rounded-full object-cover shrink-0 scale-x-[-1]"
         />
         <div className="flex-1 min-w-0">

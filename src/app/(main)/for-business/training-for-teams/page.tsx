@@ -1044,14 +1044,13 @@ export default function TrainingForTeamsPage() {
                   {/* Person with LinkedIn */}
                   <div className="flex items-center justify-between mt-auto">
                     <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-g700 to-g800 ring-2 ring-white/10 overflow-hidden flex-shrink-0">
-                        <img
+                      <div className="relative w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-g700 to-g800 ring-2 ring-white/10 overflow-hidden flex-shrink-0">
+                        <Image
                           src={win.image}
                           alt={win.name}
-                          className="w-full h-full object-cover"
-                          onError={(e) => {
-                            e.currentTarget.style.display = 'none';
-                          }}
+                          fill
+                          sizes="40px"
+                          className="object-cover"
                         />
                       </div>
                       <span className="font-body text-sm text-g400">{win.name}</span>
@@ -1111,10 +1110,12 @@ export default function TrainingForTeamsPage() {
                         </>
                       ) : (
                         <>
-                          <img
+                          <Image
                             src={`https://img.youtube.com/vi/${video.youtubeId}/maxresdefault.jpg`}
                             alt={video.name}
-                            className="absolute inset-0 w-full h-full object-cover"
+                            fill
+                            sizes="(max-width: 768px) 100vw, 400px"
+                            className="object-cover"
                           />
 
                           {/* Gradient overlay */}

@@ -129,6 +129,7 @@ export default function WhyCoursesFailed() {
                     src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&q=80"
                     alt="Why courses don't work"
                     fill
+                    sizes="(max-width: 1024px) 100vw, 480px"
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
 

@@ -13,6 +13,213 @@ import { FreeTrainingCTA } from '@/components/blog/FreeTrainingCTA';
 
 // Blog content with internal links for SEO
 const blogContent: Record<string, React.ReactNode> = {
+  'ai-replace-designers-wrong-question': (
+    <>
+      <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
+        The design community has split into two camps, and both of them are wrong.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Camp one says nothing has changed. AI is just a tool, like Figma was just a tool, like Sketch was just a tool, like Photoshop was just a tool. Learn the new software, keep doing what you have always done, and stop worrying. These designers are still operating in a deterministic model of design - the process is the process, the deliverables are the deliverables, the role is the role. AI makes some things faster, but fundamentally, being a designer in 2026 is the same as being a designer in 2020. Just with more plugins.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Camp two says everything has changed. AI will replace most designers within five years. The only survivors will be a handful of creative directors and AI prompt engineers. Start learning to code, pivot to product management, or accept that the profession is over. These designers have absorbed so much hype and anxiety that they have lost the ability to distinguish between what AI can do right now and what it might theoretically do someday. They are making career decisions based on science fiction rather than the current state of the technology.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Both camps are reacting to the question &quot;will AI replace designers?&quot; - and the problem is that the question itself is useless. It invites binary thinking about a situation that is not binary. The useful question - the one that actually helps you make career decisions, build skills, and position yourself - is different. It is: what can AI actually do right now, what can it not do, and what does that mean for the kind of designer I need to become?
+      </p>
+
+      <h2 id="accuracy-problem" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Accuracy Problem: Most Designers Do Not Know What AI Can Actually Do
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is the core issue that nobody is addressing directly. Most designers have either an inflated or a deflated understanding of AI&apos;s current capabilities, and both lead to bad decisions.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The inflated view leads to paralysis. If you believe AI can do everything a designer does - research, strategy, design, testing, stakeholder management - then there is no point investing in your skills because the machine will be better at all of it within two years. This view is wrong. AI cannot do all of these things, and for several of them, it is not even close. But if you believe it, you stop developing, you stop investing in your career, and you become exactly the kind of designer who does get displaced - not because AI replaced you, but because you stopped growing while everyone around you was adapting. The irony is painful: the fear of being replaced becomes the cause of being replaceable.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The deflated view leads to complacency. If you believe AI is just autocomplete for Figma - a fancy assistant that saves time on production work but does not fundamentally change anything - then you will not build the AI fluency that is rapidly becoming a baseline expectation. Figma&apos;s 2026 survey of over 900 designers found that 91 percent say AI tools improve the quality of their designs and 89 percent say they work faster. Designers who use AI report 25 percent higher job satisfaction than those who do not. The gap between AI-fluent designers and AI-resistant designers is already wide and widening. If you are in this camp, you are not wrong that AI is a tool - but you are dangerously underestimating how much the tool changes what is expected of you and how quickly those expectations are shifting.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        What both camps share is a refusal to engage with specifics. Camp one reads headlines about AI replacing creative jobs and extrapolates to &quot;my career is over.&quot; Camp two tries the tools, finds them imperfect, and concludes &quot;this is overhyped.&quot; Neither group has done the work of understanding exactly which design activities AI handles well, which it handles poorly, and which it cannot do at all - because that understanding requires nuance, and nuance is harder than a position.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        What designers need is not optimism or pessimism. They need an accurate mental model - a realistic understanding of what AI can and cannot do right now, updated regularly as the technology evolves, and applied practically to their own skill development and career positioning.
+      </p>
+
+      {/* Inline image 1 */}
+      <div className="relative aspect-[16/9] rounded-xl overflow-hidden my-10">
+        <Image
+          src="https://images.unsplash.com/photo-1558655146-d09347e92766?w=800&q=80"
+          alt="Abstract digital design workspace representing the intersection of human creativity and AI-powered tools"
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 720px"
+        />
+      </div>
+
+      <h2 id="what-ai-can-do" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What AI Can Actually Do Right Now (Honestly)
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Let me be specific, because specificity is what is missing from most of this conversation.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        AI can generate visual assets from text descriptions. Layouts, illustrations, icons, UI components, responsive variants, marketing graphics. The quality ranges from impressive to indistinguishable from human-created work, depending on the tool and the prompt. This is real, and it is not going away. If the core of your value proposition as a designer is &quot;I can make things look clean,&quot; you are now competing with tools that do this in minutes at near-zero marginal cost.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        AI can transcribe, summarise, and find patterns in qualitative data. Interview transcripts, survey responses, support tickets, session recordings - AI processes these faster than any human and surfaces patterns that would take hours to identify manually. The mechanical portion of research analysis has been genuinely automated.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        AI can generate functional prototypes from descriptions. Tools like v0 and Lovable produce working React components and full-stack applications from natural language prompts. The gap between &quot;design concept&quot; and &quot;testable prototype&quot; has collapsed from days to minutes for many common patterns.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        AI can evaluate interfaces against established heuristics. Accessibility audits, contrast checks, WCAG compliance, pattern-violation detection - automated evaluation tools match or exceed human accuracy for known issues. Baymard&apos;s UX-Ray reports 95 percent accuracy against documented usability guidelines.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        AI can draft, structure, and polish written communication. Stakeholder updates, research reports, presentation outlines, meeting summaries, UX copy - AI produces serviceable first drafts that humans refine for context and tone. All of this is real. All of it changes how designers work. And none of it should be dismissed.
+      </p>
+
+      <h2 id="what-ai-cannot-do" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What AI Cannot Do Right Now (Also Honestly)
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        AI cannot identify the right problem to solve. It responds to prompts. It does not look at a business context, a competitive landscape, a set of stakeholder dynamics, and a body of user data, and decide which problem matters most. Problem framing is a strategic, contextual, relational skill - and it is one of the most valuable things a designer does. Every AI-generated output starts with a human deciding what to generate. If that decision is wrong, everything that follows is waste, no matter how fast or polished it is.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        AI cannot build relationships or navigate organisational politics. Stakeholder management, cross-functional influence, trust-building - these are human activities that depend on reading interpersonal dynamics, understanding individual motivations, and showing up consistently over time. No tool fixes a broken stakeholder relationship. No tool earns you a seat at the strategy table. These things are built through human interaction, and they are the primary reason some designers influence product direction while others just produce what they are told.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        AI cannot exercise judgment about what matters. It can generate twenty layout options in five minutes. It cannot tell you which one is right for this user, this business context, this set of constraints. That judgment - the ability to evaluate options against a complex set of competing priorities and make a defensible decision - is what separates a designer from a production tool. Jenny Wen, head of design for Claude at Anthropic, makes a subtle but important point here: AI will get better at taste and judgment, and designers may be holding onto that as a moat too tightly. But she draws a clear line - someone still has to decide what actually gets built and what actually matters. Someone still needs to be accountable for the decision. Taste without accountability is decoration. Taste with accountability is leadership.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        AI cannot replicate the experience of direct user exposure. It can synthesise transcripts. It cannot replicate what happens in your brain when you sit across from a user who says something that reframes everything you assumed about the problem. That experience - the surprise, the discomfort, the empathy that comes from direct exposure to real people - is the foundation on which good design judgment is built. Personas generated in two minutes produce a deliverable. They do not produce empathy. The designer who has never sat with a real user cannot evaluate whether an AI-generated insight is meaningful or trivial, because they have no experiential reference point for what real user behaviour looks like.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        AI cannot understand cultural context, emotional nuance, or the things people do not say. It processes what is explicit. It misses what is implicit - the hesitation in someone&apos;s voice, the workaround they invented because the product failed them, the social pressure that shapes their behaviour in ways they would never articulate in a survey. These are the signals that change product direction, and they are only accessible through human observation and interpretation.
+      </p>
+
+      <h2 id="what-means-career" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What This Actually Means for Your Career
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The data on designer employment is more encouraging than the discourse suggests - for anyone willing to look at it honestly. The Autodesk 2025 AI Jobs Report found that &quot;design&quot; has overtaken technical expertise as the most in-demand skill in AI-related job postings - ahead of programming, cloud infrastructure, and data science. Over 3 million job listings were analysed to reach that conclusion. Clutch&apos;s 2026 research found that while 88 percent of companies use AI design tools, only 18 percent said AI reduced their need for designers. Design skills with AI premiums attached are commanding substantially higher salaries - workers with AI skills earning 56 percent more than peers in the same roles without them.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The market is sending a clear signal: AI proficiency is not replacing design expertise. It is multiplying its value. But - and this is the critical distinction - it is multiplying the value of a specific kind of design expertise. The strategic, interpretive, relational kind. The kind that involves understanding a business problem, framing a research question, interpreting ambiguous data, navigating stakeholder politics, and making judgment calls under uncertainty. It is not multiplying the value of pure production capability, because production is exactly the layer that AI handles well, and production value that AI can replicate is production value that the market will stop paying a premium for.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        This is where the two-camp problem becomes genuinely dangerous for individual careers. Camp one (nothing has changed) will miss the opportunity to multiply their value by developing AI fluency. They will be slower, more expensive, and less versatile than peers who have integrated AI into their workflow - and hiring managers are already noticing the difference. Camp two (everything is over) will abandon a field that is actively growing in value for the people who stay and adapt. They will leave behind opportunities that their former peers are picking up, at higher salaries and with more influence than designers have historically had. Both camps lose. The designers who win are the ones who develop an accurate, continuously updated understanding of what AI can do, integrate it into their workflow for the work it handles well, and invest their freed-up capacity into the capabilities that AI cannot replicate: strategic thinking, research judgment, stakeholder influence, business fluency, and the kind of design quality that comes from deep understanding rather than prompt engineering. This is not a comfortable position - it requires constant recalibration and a willingness to be proven wrong about what you thought you knew. But it is the only position that the evidence supports.
+      </p>
+
+      {/* Inline image 2 */}
+      <div className="relative aspect-[16/9] rounded-xl overflow-hidden my-10">
+        <Image
+          src="https://images.unsplash.com/photo-1573164713988-8665fc963095?w=800&q=80"
+          alt="Professional woman working at a modern desk with multiple screens, representing the evolving designer skillset in the AI era"
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 720px"
+        />
+      </div>
+
+      <h2 id="right-question" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Right Question, and How to Answer It
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        &quot;Will AI replace designers?&quot; is a question that invites you to predict the future and then panic about your prediction. It is unanswerable, unfalsifiable, and unproductive.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The right question is: &quot;Given what AI can actually do right now, what should I be spending my time getting better at?&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The answer, based on the current evidence, is straightforward:
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Get fluent with AI tools for the work they handle well.</strong> Transcription, pattern flagging, layout generation, prototyping, accessibility auditing, draft writing. This is the baseline. If you are not using AI for these tasks, you are slower than your peers and working harder for the same output. Do not be in camp one.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Invest heavily in the capabilities AI cannot replicate.</strong> Strategic problem framing. Research interpretation and synthesis. Stakeholder management and the conversations that happen at the leadership level. Business fluency - understanding the metrics your stakeholders track and framing your design work in terms of those metrics. These are the capabilities that separate the 12 LPA designer from the 30 LPA designer, and AI has only widened that gap.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Build your judgment through practice, not through outsourcing.</strong> Use AI to go faster, but do not let it replace the activities that build your design judgment. Conduct live interviews, not just AI-moderated ones. Do manual synthesis before using AI clustering. Build layouts from scratch periodically, even when AI could generate them. The goal is to use AI from a position of expertise - where you can evaluate its output because you know what good looks like from having done the work yourself, repeatedly, in varied contexts. Without that foundation, you are not directing AI. You are being directed by it.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        <strong>Update your mental model regularly.</strong> What AI can do today is not what it could do a year ago, and it is not what it will be able to do a year from now. The designers who navigate this transition successfully are the ones who stay calibrated - neither dismissive nor panicked, but accurately informed and continuously adapting. Read the research. Try the tools. Talk to designers who use them differently than you do. The moment your understanding of AI becomes fixed, it becomes wrong.
+      </p>
+
+      <h2 id="dimension-nobody-talking" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Dimension Nobody Is Talking About
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Everything above - and nearly everything written about AI and design - focuses on AI as a tool for the designer&apos;s process. How AI helps you research faster, design faster, test faster. That is the process side of AI in design, and it is important.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        But there is a second dimension that is arguably more consequential for your career, and almost nobody in the design community is discussing it: AI as a material you design with, not just a tool you design in.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Consider a simple example. A traditional form asks a user to select from 10 dropdowns to capture structured data - country, state, category, subcategory, date range, and so on. A designer who understands what AI can do right now could replace that entire interaction with a single text field where the user describes what they need in natural language, and AI extracts the structured data from their input. Same data captured. Fundamentally different experience. But you cannot design that experience if you do not know that capability exists.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Or consider a support flow. The traditional design is a help centre with articles, a chatbot with decision trees, and an escalation path to a human agent. A designer who knows what ElevenLabs and similar platforms can do right now could design an autonomous voice agent that handles the entire pre-discovery call - understanding context, asking clarifying questions, resolving simple issues, and routing complex ones to humans with full context already captured. That is not a future possibility. That is a current capability. But if the designer on the project has never explored what AI voice agents can do, they will design the same chatbot-plus-help-centre pattern they have been designing for five years. The design is not wrong. It is just uninformed - limited by the designer&apos;s understanding of what is technically possible rather than by the user&apos;s actual needs.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        This is the dimension that separates designers who use AI to work faster from designers who use AI to design fundamentally better experiences. And it requires a different kind of knowledge - not prompt engineering, not tool fluency, but a working understanding of AI&apos;s capabilities that informs what is now designable that was not designable before. We will go deep on this in a separate piece, because it deserves its own treatment. But if you take one thing from this blog, let it be this: the question is not just &quot;how do I use AI in my process?&quot; It is also &quot;how does knowing what AI can do change what I design?&quot;
+      </p>
+
+      <h2 id="neither-panic-nor-complacency" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Neither Panic Nor Complacency
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The design profession is not ending. It is changing - and the change is significant enough to demand attention, but not so catastrophic as to demand despair. The designers who will struggle are not the ones who lack talent. They are the ones who lack an accurate understanding of what is happening and what it requires of them. Whether that inaccuracy takes the form of &quot;nothing has changed&quot; or &quot;everything is over,&quot; the result is the same: a failure to adapt to a situation that rewards adaptation.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        The right posture is neither panic nor complacency. It is a clear-eyed, continuously updated understanding of what AI does well, what it does not, and how to position yourself on the side of the line where human capability is not just valuable but increasingly scarce. That is the question worth answering. And the answer changes every quarter - which means the work of answering it is never finished.
+      </p>
+
+      <FreeTrainingCTA text="At Xperience Wave, we build the strategic, research, and stakeholder capabilities that AI cannot replicate - alongside the AI fluency the market increasingly demands" />
+
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6 mt-8">
+        At <Link href="/" className="text-accent hover:underline font-medium">Xperience Wave</Link>, we help designers navigate this transition practically - not with hype about AI replacing everything, and not with false reassurance that nothing has changed. Through our programmes, we build the strategic, research, and stakeholder capabilities that AI cannot replicate, alongside the AI fluency that the market increasingly demands. If you are trying to figure out where you stand and what to invest in next, <Link href="https://calendly.com/xperiencewave/xw-strategy-call" className="text-accent hover:underline font-medium">book a free strategy call</Link> - we will help you build a plan based on where the evidence actually points.
+      </p>
+
+      <h2 id="sources-references" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Sources &amp; References
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li>Figma - 2026 State of Design Survey. 900+ designers surveyed. 91% say AI improves design quality, 89% say they work faster, 25% higher job satisfaction among AI users.</li>
+        <li>Autodesk - 2025 AI Jobs Report. Analysis of 3M+ job listings. &quot;Design&quot; overtook technical expertise as most in-demand skill in AI-related postings.</li>
+        <li>Clutch - 2026 AI in Design Report. 88% of companies use AI design tools, only 18% said AI reduced their need for designers.</li>
+        <li>Baymard Institute - UX-Ray automated usability evaluation. 95% accuracy against documented usability guidelines.</li>
+        <li>Jenny Wen, Head of Design for Claude at Anthropic - on the distinction between taste and accountability in AI-augmented design decision-making.</li>
+        <li>Steve Portigal - <em>Interviewing Users</em>. On premature convergence and the risks of AI clustering in qualitative research synthesis.</li>
+        <li>Xperience Wave - direct observation from mentorship and corporate training engagements with design teams across India.</li>
+      </ul>
+
+      <h2 id="about-author" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        About the Author
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Murad is Co-founder and Head of Product &amp; Design at Xperience Wave, a UX design career development company based in Bangalore. He has 13+ years of design leadership experience across fintech, healthtech, and industrial technology. He writes about the intersection of AI and design careers because he believes designers deserve accurate information, not hype - and because the decisions designers make right now about their skills and positioning will shape the profession for years to come.
+      </p>
+
+      <h2 id="related-reading" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Related Reading
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li>On the practical AI fluency designers need now: <Link href="/resources/blogs/ai-first-design-senior-ux" className="text-accent hover:underline font-medium">AI-First Design: What Senior UX Designers Need to Know in 2026.</Link></li>
+        <li>On which specific design roles face the most risk: <Link href="/resources/blogs/ai-job-designer-type" className="text-accent hover:underline font-medium">Which Type of Designer Will AI Replace?</Link></li>
+        <li>On what human design judgment does that AI cannot: <Link href="/resources/blogs/ai-predicts-so-do-you-difference" className="text-accent hover:underline font-medium">AI Predicts. So Do You. Here&apos;s the Difference.</Link></li>
+        <li>On the team-level framework for AI adoption decisions: <Link href="/resources/blogs/evaluating-ai-tools-design-leaders-framework" className="text-accent hover:underline font-medium">A Design Leader&apos;s Framework for Evaluating AI Tools.</Link></li>
+        <li>On why the capabilities AI cannot replicate command higher compensation: <Link href="/resources/blogs/12l-vs-30l-ux-designer-difference" className="text-accent hover:underline font-medium">The 12L vs 30L UX Designer: What&apos;s the Difference?</Link></li>
+        <li>On the shift from production to strategy that AI is accelerating: <Link href="/resources/blogs/senior-ux-designer-delivery-person" className="text-accent hover:underline font-medium">A Senior UX Designer Is Not a Delivery Person.</Link></li>
+      </ul>
+
+      <p className="text-base md:text-lg text-g500 italic mt-6">
+        - Murad, Co-founder &amp; Head of Product &amp; Design, Xperience Wave
+      </p>
+    </>
+  ),
   'personal-ai-workflow-designer': (
     <>
       <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
@@ -8306,6 +8513,17 @@ const blogContent: Record<string, React.ReactNode> = {
 
 // Table of contents for each blog post
 const blogTableOfContents: Record<string, { id: string; title: string }[]> = {
+  'ai-replace-designers-wrong-question': [
+    { id: 'accuracy-problem', title: 'The Accuracy Problem' },
+    { id: 'what-ai-can-do', title: 'What AI Can Actually Do Right Now' },
+    { id: 'what-ai-cannot-do', title: 'What AI Cannot Do Right Now' },
+    { id: 'what-means-career', title: 'What This Means for Your Career' },
+    { id: 'right-question', title: 'The Right Question' },
+    { id: 'dimension-nobody-talking', title: 'The Dimension Nobody Is Talking About' },
+    { id: 'neither-panic-nor-complacency', title: 'Neither Panic Nor Complacency' },
+    { id: 'sources-references', title: 'Sources & References' },
+    { id: 'related-reading', title: 'Related Reading' },
+  ],
   'personal-ai-workflow-designer': [
     { id: 'deliverable-vs-outcome', title: 'The Filter: Deliverable vs Outcome' },
     { id: 'building-the-workflow', title: 'Building the Workflow: Activity by Activity' },
@@ -8650,6 +8868,11 @@ const authorData: Record<string, { role: string; bio: string; image: string }> =
 
 // Blog-specific metadata for SEO
 const blogMetadata: Record<string, { title: string; description: string; keywords: string[] }> = {
+  'ai-replace-designers-wrong-question': {
+    title: 'Why "AI Will Replace Designers" Is the Wrong Question | Xperience Wave',
+    description: 'The design community has split into two camps - panic and complacency - and both are wrong. What you need is an accurate mental model of what AI can and cannot do right now, applied practically to your career decisions and skill development.',
+    keywords: ['AI replace designers', 'will AI replace UX designers 2026', 'AI design career', 'designer AI skills', 'future of design profession', 'AI-native design', 'design career strategy', 'AI capabilities design', 'AI design future', 'designer career 2026', 'AI design tools', 'design profession future'],
+  },
   'personal-ai-workflow-designer': {
     title: 'How to Build Your Personal AI Workflow as a Designer | Xperience Wave',
     description: 'Your AI usage is chaotic. Most designers use AI the same way for everything without a system. The deliverable-vs-outcome filter gives you clarity on where AI belongs in your design work and where it does not.',

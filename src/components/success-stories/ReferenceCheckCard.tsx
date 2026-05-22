@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 
 interface ReferenceCheckCardProps {
   part1: string;
@@ -109,10 +110,12 @@ export default function ReferenceCheckCard({ part1, part2 }: ReferenceCheckCardP
             <div className="flex items-center gap-4 sm:gap-5">
               <div className="relative flex-shrink-0">
                 <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden ring-2 ring-indigo-500 ring-offset-2 ring-offset-white">
-                  <img
+                  <Image
                     src="/images/Gopicca B R.jpeg"
                     alt="Gopicca B R"
-                    className="w-full h-full object-cover"
+                    fill
+                    sizes="64px"
+                    className="object-cover"
                   />
                 </div>
                 <div className="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-indigo-600 border-2 border-white flex items-center justify-center">

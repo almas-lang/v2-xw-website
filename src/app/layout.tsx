@@ -6,12 +6,14 @@ const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-heading",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
+  display: "swap",
 });
 
 const inter = Inter({
   variable: "--font-body",
   subsets: ["latin"],
   weight: ["400", "500", "600"],
+  display: "swap",
 });
 
 export const viewport: Viewport = {

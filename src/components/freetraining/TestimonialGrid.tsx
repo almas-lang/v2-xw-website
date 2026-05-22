@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export function TestimonialGrid() {
 
   return (
@@ -6,17 +8,17 @@ export function TestimonialGrid() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8 justify-items-center">
           <div className="w-full max-w-sm">
             <div className="bg-black rounded-2xl overflow-hidden shadow-lg">
-              <img src="/freetraining/testimonials/akash.png" alt="Akash Kale testimonial - Got 32% hike" className="w-full h-auto" style={{ aspectRatio: '9/16', objectFit: 'cover' }} />
+              <Image src="/freetraining/testimonials/akash.png" alt="Akash Kale testimonial - Got 32% hike" width={384} height={682} className="w-full h-auto" />
             </div>
           </div>
           <div className="w-full max-w-sm">
             <div className="bg-black rounded-2xl overflow-hidden shadow-lg">
-              <img src="/freetraining/testimonials/maitreyee.png" alt="Maitreyee testimonial - UI/UX Designer at Montran" className="w-full h-auto" style={{ aspectRatio: '9/16', objectFit: 'cover' }} />
+              <Image src="/freetraining/testimonials/maitreyee.png" alt="Maitreyee testimonial - UI/UX Designer at Montran" width={384} height={682} className="w-full h-auto" />
             </div>
           </div>
           <div className="w-full max-w-sm">
             <div className="bg-black rounded-2xl overflow-hidden shadow-lg">
-              <img src="/freetraining/testimonials/shreekanth.png" alt="Shreekanth testimonial" className="w-full h-auto" style={{ aspectRatio: '9/16', objectFit: 'cover' }} />
+              <Image src="/freetraining/testimonials/shreekanth.png" alt="Shreekanth testimonial" width={384} height={682} className="w-full h-auto" />
             </div>
           </div>
         </div>
@@ -29,7 +31,7 @@ export function TestimonialGrid() {
           ].map((t) => (
             <div key={t.name} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
               <div className="relative h-48 md:h-64 bg-gray-100">
-                <img src={t.image} alt={`${t.name} LinkedIn profile`} className="w-full h-full object-cover" />
+                <Image src={t.image} alt={`${t.name} LinkedIn profile`} fill sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover" />
               </div>
               <div className="p-4 md:p-6 text-center">
                 <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-1 md:mb-2">{t.name}</h3>

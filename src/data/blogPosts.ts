@@ -51,6 +51,17 @@ export const getCategoryLabel = (category: string): string => {
 // Sample blog posts with Unsplash images
 export const blogPosts: BlogPost[] = [
   {
+    id: '42',
+    slug: 'ai-replace-designers-wrong-question',
+    title: 'Why "AI Will Replace Designers" Is the Wrong Question',
+    excerpt: 'The design community has split into two camps - and both are wrong. Neither panic nor complacency serves you. What you need is an accurate mental model of what AI can and cannot do, updated regularly, and applied practically to your career.',
+    category: 'industry' as const,
+    image: 'https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=800&q=80',
+    author: { name: 'Shaik Murad' },
+    publishedAt: '2026-05-23',
+    readTime: '20 min',
+  },
+  {
     id: '41',
     slug: 'personal-ai-workflow-designer',
     title: 'How to Build Your Personal AI Workflow as a Designer (Without Losing What Makes You Good)',

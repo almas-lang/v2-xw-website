@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 
 // ============================================
@@ -252,10 +253,12 @@ const Avatar = ({
     return (
       <div className="absolute inset-0 bg-gradient-to-br from-g700 to-carbon overflow-hidden">
         {image && !imgError ? (
-          <img
+          <Image
             src={image}
             alt={name}
-            className="w-full h-full object-cover"
+            fill
+            sizes="(max-width: 768px) 100vw, 400px"
+            className="object-cover"
             onError={() => setImgError(true)}
           />
         ) : (
@@ -268,16 +271,18 @@ const Avatar = ({
   }
 
   return (
-    <div className={`${sizeClasses[size]} rounded-full flex items-center justify-center flex-shrink-0 overflow-hidden ring-2 ${
+    <div className={`relative ${sizeClasses[size]} rounded-full flex items-center justify-center flex-shrink-0 overflow-hidden ring-2 ${
       isDark
         ? 'bg-gradient-to-br from-g700 to-g800 ring-white/10'
         : 'bg-gradient-to-br from-g200 to-g300 ring-g200'
     }`}>
       {image && !imgError ? (
-        <img
+        <Image
           src={image}
           alt={name}
-          className="w-full h-full object-cover"
+          fill
+          sizes={size === 'medium' ? '48px' : '32px'}
+          className="object-cover"
           onError={() => setImgError(true)}
         />
       ) : (
@@ -557,10 +562,12 @@ export default function SuccessStories({
                         playsInline
                       />
                     ) : story.youtubeId ? (
-                      <img
+                      <Image
                         src={`https://img.youtube.com/vi/${story.youtubeId}/maxresdefault.jpg`}
                         alt={story.name}
-                        className="absolute inset-0 w-full h-full object-cover"
+                        fill
+                        sizes="(max-width: 768px) 100vw, 400px"
+                        className="object-cover"
                       />
                     ) : (
                       <Avatar name={story.name} image={story.image} size="large" />

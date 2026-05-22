@@ -626,6 +626,7 @@ export default function Header() {
             alt="Xperience Wave"
             width={32}
             height={32}
+            sizes="36px"
             className="h-9 w-auto lg:hidden transition-all duration-300"
             priority
           />
@@ -635,6 +636,7 @@ export default function Header() {
             alt="Xperience Wave"
             width={130}
             height={36}
+            sizes="130px"
             className="h-8 w-auto hidden lg:block transition-all duration-300"
             priority
           />

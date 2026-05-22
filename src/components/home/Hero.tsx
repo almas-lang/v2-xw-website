@@ -1,24 +1,16 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Button from '@/components/ui/Button';
 
 export default function Hero() {
-  const [isVisible, setIsVisible] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const heroRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
-
-  // Parallax effect on mouse move
+  // Parallax effect on mouse move (desktop-only progressive enhancement)
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      if (!heroRef.current) return;
-      const rect = heroRef.current.getBoundingClientRect();
-      const x = (e.clientX - rect.left - rect.width / 2) / rect.width;
-      const y = (e.clientY - rect.top - rect.height / 2) / rect.height;
+      const x = (e.clientX - window.innerWidth / 2) / window.innerWidth;
+      const y = (e.clientY - window.innerHeight / 2) / window.innerHeight;
       setMousePosition({ x: x * 20, y: y * 20 });
     };
 
@@ -27,7 +19,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section ref={heroRef} className="relative min-h-screen overflow-hidden">
+    <section className="relative min-h-screen overflow-hidden">
       {/* Layered background */}
       <div className="absolute inset-0">
         {/* Base gradient */}
@@ -95,19 +87,18 @@ export default function Hero() {
 
         {/* Floating geometric shapes */}
         <div
-          className="absolute top-32 left-[15%] w-3 h-3 bg-accent/40 rounded-full"
+          className="absolute top-32 left-[15%] w-3 h-3 bg-accent/40 rounded-full animate-hero-pulse"
           style={{
             transform: `translate(${mousePosition.x * 1.5}px, ${mousePosition.y * 1.5}px)`,
             transition: 'transform 0.4s ease-out',
-            animation: 'pulse 3s ease-in-out infinite',
           }}
         />
         <div
-          className="absolute top-[40%] left-[8%] w-2 h-2 bg-alice/30 rounded-full hidden md:block"
+          className="absolute top-[40%] left-[8%] w-2 h-2 bg-alice/30 rounded-full hidden md:block animate-hero-pulse"
           style={{
             transform: `translate(${mousePosition.x * 2}px, ${mousePosition.y * 2}px)`,
             transition: 'transform 0.4s ease-out',
-            animation: 'pulse 4s ease-in-out infinite 1s',
+            animationDelay: '1s',
           }}
         />
         <div
@@ -130,14 +121,7 @@ export default function Hero() {
             {/* Left column - Main content */}
             <div className="lg:col-span-7 xl:col-span-6">
               {/* Eyebrow badge */}
-              <div
-                className="mb-5 sm:mb-6 md:mb-8"
-                style={{
-                  opacity: isVisible ? 1 : 0,
-                  transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-                  transition: 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
-                }}
-              >
+              <div className="mb-5 sm:mb-6 md:mb-8 animate-hero-fade-in">
                 <span className="inline-flex items-center gap-2 sm:gap-2.5 px-3 sm:px-4 py-1.5 sm:py-2 bg-white/[0.04] border border-white/10 backdrop-blur-sm rounded-full">
                   <span className="relative flex h-2 w-2 sm:h-2.5 sm:w-2.5">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75" />
@@ -148,14 +132,7 @@ export default function Hero() {
               </div>
 
               {/* Main headline - Editorial style */}
-              <div
-                className="mb-6 md:mb-8"
-                style={{
-                  opacity: isVisible ? 1 : 0,
-                  transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
-                  transition: 'all 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.1s',
-                }}
-              >
+              <div className="mb-6 md:mb-8 animate-hero-fade-in [animation-delay:100ms]">
                 <h1 className="font-heading font-bold text-white leading-[1.08] tracking-tight text-4xl sm:text-5xl lg:text-6xl">
                   <span className="block">
                     Why Aren&apos;t You Getting
@@ -187,55 +164,28 @@ export default function Hero() {
               </div>
 
               {/* Subheadline */}
-              <div
-                className="mb-4 sm:mb-5 md:mb-6"
-                style={{
-                  opacity: isVisible ? 1 : 0,
-                  transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
-                  transition: 'all 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.2s',
-                }}
-              >
+              <div className="mb-4 sm:mb-5 md:mb-6 animate-hero-fade-in [animation-delay:200ms]">
                 <p className="text-lg md:text-xl text-white/70 leading-relaxed">
                   1:1 Mentorship That Fixes <span className="font-semibold">YOUR</span> Gaps, Not Generic Courses That Leave You Stuck
                 </p>
               </div>
 
               {/* Target audience */}
-              <div
-                className="mb-6 sm:mb-8 md:mb-10"
-                style={{
-                  opacity: isVisible ? 1 : 0,
-                  transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
-                  transition: 'all 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.25s',
-                }}
-              >
+              <div className="mb-6 sm:mb-8 md:mb-10 animate-hero-fade-in [animation-delay:250ms]">
                 <p className="text-lg md:text-xl text-white font-medium">
                   For UX/UI/Product designers with 2+ years experience who are ready to grow but keep getting stuck at the same level
                 </p>
               </div>
 
               {/* CTA */}
-              <div
-                className="mb-8 sm:mb-10 md:mb-12"
-                style={{
-                  opacity: isVisible ? 1 : 0,
-                  transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
-                  transition: 'all 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.35s',
-                }}
-              >
+              <div className="mb-8 sm:mb-10 md:mb-12 animate-hero-fade-in [animation-delay:350ms]">
                 <Button href="https://app.xperiencewave.com/book/dc-strategy-call" size="lg" showArrow>
                   Book strategy call
                 </Button>
               </div>
 
               {/* Social proof strip */}
-              <div
-                style={{
-                  opacity: isVisible ? 1 : 0,
-                  transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-                  transition: 'all 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.4s',
-                }}
-              >
+              <div className="animate-hero-fade-in [animation-delay:400ms]">
                 <div className="flex flex-wrap sm:flex-nowrap items-center gap-2 sm:gap-3 md:gap-4">
                   {/* Overlapping avatars */}
                   <div className="flex -space-x-2">
@@ -273,14 +223,7 @@ export default function Hero() {
               </div>
 
               {/* Mobile Stats Cards */}
-              <div
-                className="lg:hidden mt-10 flex flex-col gap-4 overflow-hidden"
-                style={{
-                  opacity: isVisible ? 1 : 0,
-                  transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-                  transition: 'all 0.6s ease-out 0.4s',
-                }}
-              >
+              <div className="lg:hidden mt-10 flex flex-col gap-4 overflow-hidden animate-hero-fade-in [animation-delay:400ms]">
                 <div className="grid grid-cols-2 gap-3">
                   {/* Card 1 - 38% salary hike */}
                   <div className="p-4 bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-xl">
@@ -321,14 +264,7 @@ export default function Hero() {
 
             {/* Right column - Visual element */}
             <div className="lg:col-span-5 xl:col-span-6 hidden lg:block">
-              <div
-                className="relative"
-                style={{
-                  opacity: isVisible ? 1 : 0,
-                  transform: isVisible ? 'translateX(0) scale(1)' : 'translateX(40px) scale(0.95)',
-                  transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.3s',
-                }}
-              >
+              <div className="relative animate-hero-slide-in [animation-delay:300ms]">
                 {/* Floating stats cards */}
                 <div className="relative h-[500px] xl:h-[560px]">
                   {/* Card 1 - Top right */}
@@ -397,14 +333,6 @@ export default function Hero() {
 
       {/* Bottom gradient fade */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-carbon to-transparent pointer-events-none" />
-
-      {/* Keyframe animations */}
-      <style jsx>{`
-        @keyframes pulse {
-          0%, 100% { opacity: 0.4; transform: scale(1); }
-          50% { opacity: 0.8; transform: scale(1.2); }
-        }
-      `}</style>
     </section>
   );
 }

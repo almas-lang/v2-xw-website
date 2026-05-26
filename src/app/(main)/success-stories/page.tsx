@@ -365,7 +365,7 @@ export default function SuccessStoriesPage() {
               ].map((src, i) => (
                 <div
                   key={src}
-                  className="w-10 h-10 sm:w-11 sm:h-11 rounded-full overflow-hidden ring-2 ring-carbon shadow-lg"
+                  className="relative w-10 h-10 sm:w-11 sm:h-11 rounded-full overflow-hidden ring-2 ring-carbon shadow-lg"
                   style={{ zIndex: 10 - i }}
                 >
                   <Image src={src} alt="" fill sizes="44px" className="object-cover" />
@@ -692,7 +692,7 @@ export default function SuccessStoriesPage() {
                   </h4>
                   <div className="flex items-center justify-between mt-auto">
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-full overflow-hidden bg-gradient-to-br from-g200 to-g300 ring-2 ring-g200 flex-shrink-0">
+                      <div className="relative w-10 h-10 rounded-full overflow-hidden bg-gradient-to-br from-g200 to-g300 ring-2 ring-g200 flex-shrink-0">
                         <Image src={win.image} alt={win.name} fill sizes="40px" className="object-cover" />
                       </div>
                       <span className="font-body text-sm text-g600">{win.name}</span>

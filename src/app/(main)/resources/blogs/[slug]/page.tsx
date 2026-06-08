@@ -13,6 +13,322 @@ import { FreeTrainingCTA } from '@/components/blog/FreeTrainingCTA';
 
 // Blog content with internal links for SEO
 const blogContent: Record<string, React.ReactNode> = {
+  'ai-as-design-material': (
+    <>
+      <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
+        Every conversation about AI and design is about the same thing: how AI changes the designer&apos;s process. Faster research. Faster prototyping. Faster production. The tools are evolving, the workflows are adapting, and designers are learning to integrate AI into how they work.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        None of that is what this blog is about.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This blog is about something almost nobody in the design community is discussing, despite it being - in my view - significantly more important: <strong>how knowing what AI is capable of changes what you design.</strong> Not your workflow. Your output. Not how you use Figma. What you put in the product.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The distinction matters because it represents two fundamentally different types of AI literacy. The first - process AI - makes you a faster designer. The second - product AI - makes you a designer who can conceive experiences that were not possible two years ago. The first is about efficiency. The second is about imagination informed by technical awareness. And right now, the industry is almost entirely focused on the first while largely ignoring the second.
+      </p>
+
+      <h2 id="the-gap" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Gap: Designers Don&apos;t Know What&apos;s Possible
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        A designer is working on a data entry flow. The product needs to capture structured information - location, category, date range, preferences. The designer does what designers have always done: they design dropdowns. Ten of them. Neatly labelled, logically grouped, sensible defaults, clear validation. Good design by every traditional standard.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        But it is also uninformed design. A large language model can extract all ten structured fields from a single sentence of natural language input. The user types &quot;marketing agencies in Bangalore that work with SaaS startups, with case studies from the last two years&quot; - and AI parses location, category, industry, evidence type, and time range. Same data captured. Fundamentally different experience. But the designer who built the dropdowns did not know this was possible. And because they did not know, they could not consider it.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This gap - between what AI can do and what designers know AI can do - exists across nearly every product category right now. It constrains design not by user needs, not by business requirements, not by technology, but by the designer&apos;s mental model of what technology is capable of. The result is products that are well-designed for 2020&apos;s possibilities while ignoring 2026&apos;s realities.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        What follows is a comprehensive taxonomy of AI capabilities that change what designers can design - not a list of tools, but a map of what is now possible that was not possible before. Every capability described here exists today, works at production quality, and is available through APIs or platforms. The question is not whether these are real. The question is whether the designer on your team knows they exist.
+      </p>
+
+      {/* Inline image 1 */}
+      <div className="relative aspect-[16/9] rounded-xl overflow-hidden my-10">
+        <Image
+          src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&q=80"
+          alt="A humanoid robot hand reaching out, representing AI capabilities that designers can now design with as material"
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 720px"
+        />
+      </div>
+
+      <h2 id="ten-capabilities" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Ten Capabilities: A Taxonomy of What AI Makes Designable
+      </h2>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        1. Understanding - AI Comprehends Unstructured Input
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        AI can now interpret natural language, voice, images, and even combinations of these - extracting structured meaning from messy, human input. This is arguably the most transformative capability for product design because it eliminates the need for rigid input structures that exist to serve the system rather than the user.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Natural language to structured data.</strong> Any form that asks users to select from predefined options is a candidate for replacement with a text field where users describe what they need in their own words. The AI extracts the structured fields, confirms with the user, and proceeds. This works for simple queries and for complex multi-variable requests. Incomplete or ambiguous inputs can be handled through natural follow-up questions rather than validation errors.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Voice to intent and action.</strong> Platforms like ElevenLabs, Vapi, and Retell make it possible to build voice agents that conduct genuine back-and-forth dialogue - understanding context, asking relevant follow-ups, and handling ambiguity. A support flow that currently routes through a chatbot decision tree can become a voice conversation that feels human.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Image and camera to data.</strong> Vision models can extract text from documents (including handwriting), identify objects, read receipts, scan ID documents, and interpret visual information. A designer working on an expense tracker who knows this can design a flow where the user photographs a receipt and the app extracts vendor, amount, date, category, and tax automatically - replacing a manual entry form with a camera tap and a confirmation screen.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Multimodal understanding.</strong> Modern AI systems can accept text, voice, images, and video within the same interaction and process them through unified understanding. A customer support platform can receive a text complaint, a screenshot showing the problem, and a voice note explaining the context - all processed together rather than through separate tracks requiring the user to repeat themselves.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        <strong>What this means for designers:</strong> Every rigid input pattern in your product - dropdowns, wizards, decision trees, multi-step forms - should be re-evaluated through the lens of: could the user simply tell us what they need? Not every interaction should become free-form. Sometimes structured input helps users think through their choices. But the option should always be on the table, and it can only be on the table if you know the capability exists.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        2. Generating - AI Creates Contextual Content on the Fly
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        AI can produce text, images, video, audio, and code in context - not from templates, but generated specifically for the moment, the user, and the situation. This dissolves the boundary between content and interface, turning static screens into dynamic experiences that respond to what is happening right now.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Intelligent naming and suggestion.</strong> When a user creates a new project and describes what it does, the system can suggest a name that reflects the content. When a user writes a message, the system can suggest a subject line. When a user uploads a file, the system can propose tags and metadata. These are small moments individually, but collectively they create an experience that feels like the product understands you rather than demanding that you understand it.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Contextual explainers and celebrations.</strong> A user completes a milestone? The product can generate a short video recap of their journey. A user encounters a complex feature? The product can generate a contextual walkthrough specific to their use case rather than directing them to a generic help article that might not match their situation.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        <strong>What this means for designers:</strong> Content is no longer something a copywriter produces and a designer lays out. It is something the system generates in response to context. Designing for this means thinking about triggers (when should content appear?), quality controls (how do you maintain brand voice in generated content?), and graceful fallbacks (what happens when the generation fails or misses the mark?).
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        3. Translating - AI Bridges Languages, Formats, and Levels of Complexity
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Modern translation and transformation models handle nuance, idiom, and context at a level that fundamentally changes how products can serve diverse audiences and present complex information.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Real-time language translation.</strong> A customer support chat where the agent writes in English and the user reads in Tamil - in real time, with contextual accuracy. A collaborative document where team members write in their preferred language and everyone reads in their own. Translation is no longer a localisation project that happens after launch. It is a design decision that shapes the product architecture from the beginning.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Summarisation and distillation.</strong> Instead of making users read through a long chat thread to find what matters, AI can summarise key decisions, highlight unresolved questions, and surface risks - presenting a three-sentence overview of a 200-message conversation. The designer&apos;s job shifts from designing containers for content to designing levels of abstraction that let users choose how deep they want to go.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        <strong>What this means for designers:</strong> Any product that serves users across languages, literacy levels, or information density preferences should be designed with AI-powered translation and summarisation as a core architectural element, not a bolt-on feature. The question is not &quot;should we localise?&quot; but &quot;what would this product be like if every user experienced it in their language, at their preferred level of detail, automatically?&quot;
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        4. Predicting - AI Anticipates What Will Happen Next
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        AI can analyse patterns in historical and real-time data to surface predictions, warnings, and recommendations that users would not identify on their own. This shifts product design from presenting data to presenting intelligence.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Risk and anomaly highlighting.</strong> In a project management tool, AI can flag that a project is likely to miss its deadline based on velocity patterns - before anyone on the team has noticed. In a financial product, AI can highlight unusual transaction patterns that suggest fraud. The designer&apos;s job is no longer to build dashboards that display everything and let the user figure out what matters. It is to design experiences that proactively surface what is important and explain why.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Contextual recommendations.</strong> AI can suggest the next action based on what the user has done so far, what similar users typically do, and what the data suggests would be most valuable. This goes beyond product recommendations to workflow recommendations: &quot;based on your research so far, the next step that usually works well is a competitive audit.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        <strong>What this means for designers:</strong> The design paradigm shifts from information display to intelligence presentation. Instead of designing dashboards that show metrics, you are designing systems that tell stories about what the metrics mean. This requires a different information architecture - one that prioritises relevance over completeness - and a trust model that earns the user&apos;s confidence in the predictions through demonstrated accuracy.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        5. Personalising - AI Adapts the Experience Per User
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        AI can tailor virtually every aspect of the product experience to the individual user - not through pre-built segments, but through continuous learning from individual behaviour patterns.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Dynamic interface adaptation.</strong> The interface itself can rearrange based on usage patterns - surfacing frequently used features, hiding unused ones, adjusting the layout complexity based on the user&apos;s demonstrated proficiency. A power user sees a dense, feature-rich interface. A new user sees a simplified version that gradually reveals capabilities as they demonstrate readiness. This is not progressive disclosure designed by a designer for an imagined user - it is progressive disclosure driven by the actual behaviour of this specific person.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Adaptive complexity and pacing.</strong> The product can adjust its complexity and pace based on the user&apos;s demonstrated capability. A learning platform that speeds up when the learner demonstrates mastery and slows down when they struggle. A financial tool that shows simplified views for routine transactions and detailed views for unusual ones.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        <strong>What this means for designers:</strong> Personalisation at this level means you are no longer designing one experience that all users share. You are designing a system that generates different experiences for different users - which means designing the rules, the constraints, and the boundaries of personalisation, not the final output. The design challenge shifts from &quot;what should this screen look like&quot; to &quot;what should this screen look like for this type of user in this context, and how do we ensure the personalised version maintains coherence and brand consistency?&quot;
+      </p>
+
+      {/* Inline image 2 */}
+      <div className="relative aspect-[16/9] rounded-xl overflow-hidden my-10">
+        <Image
+          src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80"
+          alt="Abstract AI neural network visualization representing the interconnected capabilities that designers can leverage as design material"
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 720px"
+        />
+      </div>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        6. Automating Decisions - AI Handles Routine Judgment Calls Autonomously
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        AI can make and execute routine decisions that previously required human judgment - not just mechanical tasks, but genuine judgment calls that follow patterns sophisticated enough to handle most cases correctly while escalating edge cases to humans.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Smart routing and classification.</strong> Support tickets routed to the right agent based on content analysis, not category selection. Tasks assigned to the right team member based on skill match and workload. Documents classified and filed based on content. Each of these removes a manual decision point from the user&apos;s workflow.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Agentic workflow execution.</strong> AI agents can check a CRM for past interactions, initiate a product return, schedule an appointment with a human representative, draft a follow-up email, and update the ticket status - all from a single user request. The designer&apos;s role shifts from designing each step of the workflow to designing the delegation model: what does the agent handle autonomously, where does it check with the user, and how does it hand off when it reaches the limits of its capability?
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        <strong>What this means for designers:</strong> When routine decisions are automated, the user&apos;s relationship with the product changes. They stop being operators who make every decision and start being supervisors who review and override AI decisions when needed. Designing for this means building trust interfaces - showing the user what the AI decided, why, and making it easy to correct when the AI gets it wrong. The correction experience matters as much as the automation itself, because user trust is built on how well the system handles its own mistakes.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        7. Sensing - AI Detects States and Emotions
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        AI can detect user states - emotional, attentional, behavioural - that were previously invisible to digital products. This allows products to respond to how the user is feeling, not just what they are doing.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Sentiment detection in text and voice.</strong> AI can detect frustration, confusion, satisfaction, urgency, and other emotional states from the tone and content of user communications. A support system that detects escalating frustration in a customer&apos;s messages can automatically prioritise the ticket, adjust the tone of automated responses, and route to a senior agent - before the customer asks to speak to a manager.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Behavioural friction detection.</strong> AI can analyse session data to identify moments of hesitation, confusion, rapid back-and-forth navigation, or abandonment patterns - not just at the aggregate level but at the individual session level, in real time. A product that detects a user struggling with a specific step can proactively offer help for that step, in that moment.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        <strong>What this means for designers:</strong> Products can now respond to emotional and attentional context, not just task context. This opens up a design space that barely existed before - empathetic interfaces that adjust their behaviour based on the user&apos;s state. But it also requires careful ethical consideration: sensing capabilities must be transparent, the user must understand what is being detected and why, and the product must respect boundaries around emotional data that users may consider private.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        8. Reasoning - AI Explains, Connects, and Infers
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        AI can explain its outputs, connect information across disparate sources, and make inferences that go beyond simple pattern matching. This allows products to be transparent about their intelligence and to serve as genuine thinking partners rather than black boxes.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Explainable recommendations.</strong> Instead of &quot;recommended for you&quot; with no context, AI can explain why: &quot;recommended because you spent 40 minutes on a similar topic last week and your team has a deadline related to this on Friday.&quot; This transparency builds trust and helps users evaluate whether the recommendation is relevant to their actual needs or just a statistical correlation.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Causal analysis.</strong> Beyond telling users what happened, AI can suggest why it happened - distinguishing correlation from likely causation based on the data patterns. &quot;Conversion dropped 15% this week, likely because the checkout flow change on Monday increased the number of steps for mobile users.&quot; This shifts reporting from descriptive to diagnostic.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        <strong>What this means for designers:</strong> Explainability and reasoning transform AI from a feature that produces outputs into a collaborator that shows its work. Designing for reasoning means building interfaces that present AI&apos;s logic in accessible ways - not just the answer, but the path to the answer - so users can evaluate, challenge, and learn from the AI&apos;s perspective.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        9. Remembering - AI Maintains Context Over Time
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        AI systems can now maintain meaningful context across sessions, conversations, and time periods - creating continuity that makes products feel less like tools and more like partners that know your history.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Long-term conversational memory.</strong> A support agent that remembers your last three interactions and does not ask you to re-explain your issue. A design tool that remembers your preferences, your recent projects, and the decisions you made last week. A coaching app that remembers what you struggled with last month and adjusts its guidance accordingly. This is not stored preferences - it is contextual understanding that evolves with the relationship.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Contextual handoff between channels.</strong> AI can carry context from one interaction channel to another - a conversation that started in chat, continued by email, and is now happening in a phone call, with full context available at every transition. The user never has to repeat themselves.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        <strong>What this means for designers:</strong> Memory changes the relationship model between user and product. Instead of designing for stateless interactions where each session starts from zero, you are designing for ongoing relationships where the product accumulates understanding over time. This requires designing for trust (the user needs to know what is remembered and have control over it), for graceful ageing (some context becomes irrelevant and should fade), and for the uncanny valley (a product that remembers too much can feel invasive rather than helpful).
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        10. Orchestrating - AI Coordinates Multi-Step Workflows End to End
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        AI can take a high-level instruction and autonomously execute a multi-step workflow - coordinating across systems, making intermediate decisions, and delivering a complete outcome rather than requiring the user to manage each step.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>End-to-end task completion.</strong> A user says &quot;book me a flight to Bali next Friday, aisle seat, under ₹40,000.&quot; The AI checks multiple airlines, compares options against the constraints, selects the best match, books the ticket, and sends the confirmation - all from a single instruction. The user&apos;s interaction shifts from navigating a booking flow to stating an intent and reviewing a result.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Process automation with human-in-the-loop.</strong> The most mature orchestration pattern keeps humans in the loop for critical decisions while AI handles everything else. The agent executes routine steps autonomously, pauses for human input at predefined decision points, incorporates the human decision, and continues. This is not full automation - it is intelligent collaboration where each party handles what they do best.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        <strong>What this means for designers:</strong> Orchestration is the capability that changes product architecture most fundamentally. When AI can handle multi-step workflows from a single instruction, the traditional step-by-step flow becomes optional rather than necessary. The design challenge shifts from &quot;how do we guide the user through each step&quot; to &quot;how do we help the user express their intent clearly, review the AI&apos;s plan, and intervene when needed.&quot; This requires designing for transparency, for control, and for recovery (what happens when the agent makes a mistake three steps into a five-step workflow).
+      </p>
+
+      <h2 id="process-vs-product-ai" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Process AI vs Product AI: Why the Second One Matters More
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Every capability described above is available right now. Every one of them changes what a designer can put in a product. And almost none of them are part of the typical &quot;AI for designers&quot; conversation, which remains focused on how to use Claude for research synthesis and Figma AI for layer management.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Process AI makes you faster at the job you already know how to do. Product AI changes the job itself.</strong> A designer who only develops process AI literacy will be competing with other designers who also use the same tools - the acceleration becomes table stakes, and differentiation disappears because everyone has access to the same capabilities.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        A designer who develops product AI literacy operates at a different level. They walk into a product review and say &quot;we do not need this 10-step form - here is how we capture the same data from a single text input.&quot; They look at a support flow and say &quot;this chatbot tree can be replaced with a voice agent that handles the first three minutes of every call.&quot; They review a dashboard and say &quot;instead of showing 50 metrics, let us build a system that tells the user which three metrics matter right now and why.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        These are not incremental improvements. They are fundamental reimaginations of the experience - and they are only possible if the designer knows what the technology can do. This is the competency that separates designers who influence product direction from designers who execute someone else&apos;s specifications.
+      </p>
+
+      <h2 id="how-to-build" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        How to Build Product AI Literacy
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is not something you learn from a single blog post. It is something you build through ongoing exposure and structured exploration. Here is how to start:
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Explore capabilities, not tools.</strong> Do not start with a tool list. Start with the ten capability categories above and explore each one. What can AI understand? What can it generate? What can it predict? What can it sense? Each question opens a different design space. The tools that deliver these capabilities will change every quarter. The capabilities themselves are durable.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Apply it to your current project.</strong> Take whatever you are working on right now and walk through the ten categories. Is there a flow where understanding could replace structured input? A place where prediction could replace manual monitoring? A handoff where memory could eliminate repetition? A workflow where orchestration could compress ten steps into one? You will not find something in every category for every project. But you will almost certainly find at least two or three opportunities you had not considered.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Talk to engineers about feasibility, not implementation.</strong> Product AI literacy is not about knowing how to build the technology. It is about knowing what it can do. The fastest way to develop that knowledge is regular conversations with your engineering team: &quot;is it feasible for a model to extract these fields from natural language?&quot; &quot;Could we build a voice agent for this support flow?&quot; These conversations take minutes and can reshape entire features.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Build a reference library.</strong> When you encounter a product that uses AI in a way that genuinely changes the interaction - not just adds a chatbot - save it. Screenshot it. Note which of the ten capabilities it uses and what design problem it solves. Over time, this library becomes your competitive advantage.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        <strong>Stay current, but focus on your domain.</strong> You do not need to track every AI announcement. Focus on the capabilities most relevant to your product space. If you build e-commerce, prioritise personalisation, recommendation, and orchestration. If you build B2B SaaS, prioritise understanding, reasoning, and automation. If you build consumer apps, prioritise sensing, memory, and generation.
+      </p>
+
+      <h2 id="designers-next-decade" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Designers Who Will Define the Next Decade
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The products that will define the next decade will not be the ones with the best interfaces. They will be the ones that reimagined what an interface should do - because the designers behind them understood what AI made possible and had the design judgment to know where to apply it and where to restrain it.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Those designers will not be the fastest at generating screens. They will be the ones who looked at a 10-dropdown form and saw a single text field. Who looked at a chatbot tree and saw a voice conversation. Who looked at a static dashboard and saw a proactive intelligence layer. Who looked at a step-by-step wizard and saw a single instruction that an agent executes end to end.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        That vision does not come from prompting skills or tool proficiency. It comes from a deep, continuously updated understanding of what AI can do - structured through the ten capabilities in this blog - applied with the design strategy to know where each capability adds genuine value and where it creates complexity without benefit. The question was never &quot;will AI replace designers?&quot; The question was always &quot;what can designers create now that they could not create before?&quot; The answer is more than most designers realise. And the gap between those who know and those who do not is the defining career differentiator of this decade.
+      </p>
+
+      <FreeTrainingCTA text="At Xperience Wave, product AI literacy is embedded in how we think about design - not as a separate AI module, but as a lens through which every design problem should be evaluated" />
+
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6 mt-8">
+        At <Link href="/" className="text-accent hover:underline font-medium">Xperience Wave</Link>, product AI literacy is embedded in how we think about design - not as a separate AI module, but as a lens through which every design problem should be evaluated. Through our programmes and our work with product teams, we help designers and leaders see what AI makes possible and design for it with judgment. If you want to build this capability for yourself or your team, <Link href="https://calendly.com/xperiencewave/xw-strategy-call" className="text-accent hover:underline font-medium">book a strategy call</Link> and let us talk about where the opportunities are in your current work.
+      </p>
+
+      <h2 id="sources-references" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Sources &amp; References
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li>ElevenLabs, Vapi, Retell - voice agent platforms enabling conversational AI interactions with real-time dialogue, context retention, and handoff to human agents.</li>
+        <li>OpenAI Vision, Google Gemini, Claude - multimodal AI models capable of processing text, images, and audio within unified interactions.</li>
+        <li>Netflix - thumbnail personalisation study. Personalising not just content recommendations but visual presentation per user based on engagement prediction models.</li>
+        <li>Baymard Institute - UX-Ray automated usability evaluation. 95% accuracy against documented usability guidelines, demonstrating production-quality AI evaluation capability.</li>
+        <li>Figma - 2026 State of Design Survey. 91% of designers say AI improves design quality, 89% say they work faster.</li>
+        <li>Xperience Wave - direct observation from mentorship and corporate training engagements with product design teams across India on the gap between process AI and product AI literacy.</li>
+      </ul>
+
+      <h2 id="about-author" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        About the Author
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Murad is Co-founder and Head of Product &amp; Design at Xperience Wave, a UX design career development company based in Bangalore. He has 13+ years of design leadership experience across fintech, healthtech, and industrial technology. He writes about AI and design because he believes the most important AI conversation for designers is not about tools or workflows - it is about understanding what AI makes possible and having the design judgment to know where to apply it.
+      </p>
+
+      <h2 id="related-reading" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Related Reading
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li>On the process AI side of this conversation: <Link href="/resources/blogs/ai-replace-designers-wrong-question" className="text-accent hover:underline font-medium">Why &quot;AI Will Replace Designers&quot; Is the Wrong Question.</Link></li>
+        <li>On building AI fluency as an individual designer: <Link href="/resources/blogs/ai-first-design-senior-ux" className="text-accent hover:underline font-medium">AI-First Design: What Senior UX Designers Need to Know in 2026.</Link></li>
+        <li>On how to evaluate AI tools with a framework: <Link href="/resources/blogs/evaluating-ai-tools-design-leaders-framework" className="text-accent hover:underline font-medium">A Design Leader&apos;s Framework for Evaluating AI Tools.</Link></li>
+        <li>On what human design judgment adds on top of AI capability: <Link href="/resources/blogs/ai-predicts-so-do-you-difference" className="text-accent hover:underline font-medium">AI Predicts. So Do You. Here&apos;s the Difference.</Link></li>
+        <li>On why product AI literacy is the fastest path to strategic influence: <Link href="/resources/blogs/ux-designer-product-strategy-table" className="text-accent hover:underline font-medium">How to Get a Seat at the Product Strategy Table.</Link></li>
+        <li>On the strategic conversations where product AI literacy changes the outcome: <Link href="/resources/blogs/conversations-senior-designers-have" className="text-accent hover:underline font-medium">The Conversations Senior Designers Have That Others Don&apos;t.</Link></li>
+      </ul>
+
+      <p className="text-base md:text-lg text-g500 italic mt-6">
+        - Murad, Co-founder &amp; Head of Product &amp; Design, Xperience Wave
+      </p>
+    </>
+  ),
   'ai-replace-designers-wrong-question': (
     <>
       <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
@@ -8513,6 +8829,15 @@ const blogContent: Record<string, React.ReactNode> = {
 
 // Table of contents for each blog post
 const blogTableOfContents: Record<string, { id: string; title: string }[]> = {
+  'ai-as-design-material': [
+    { id: 'the-gap', title: 'The Gap: Designers Don\'t Know What\'s Possible' },
+    { id: 'ten-capabilities', title: 'The Ten Capabilities Taxonomy' },
+    { id: 'process-vs-product-ai', title: 'Process AI vs Product AI' },
+    { id: 'how-to-build', title: 'How to Build Product AI Literacy' },
+    { id: 'designers-next-decade', title: 'The Designers Who Will Define the Next Decade' },
+    { id: 'sources-references', title: 'Sources & References' },
+    { id: 'related-reading', title: 'Related Reading' },
+  ],
   'ai-replace-designers-wrong-question': [
     { id: 'accuracy-problem', title: 'The Accuracy Problem' },
     { id: 'what-ai-can-do', title: 'What AI Can Actually Do Right Now' },
@@ -8868,6 +9193,11 @@ const authorData: Record<string, { role: string; bio: string; image: string }> =
 
 // Blog-specific metadata for SEO
 const blogMetadata: Record<string, { title: string; description: string; keywords: string[] }> = {
+  'ai-as-design-material': {
+    title: 'AI as Design Material: How Knowing What AI Can Do Changes What You Design | Xperience Wave',
+    description: 'The most important AI conversation for designers is not about process - it is about product. A taxonomy of ten AI capabilities that make new experiences designable, and why product AI literacy is the defining career differentiator of this decade.',
+    keywords: ['AI design material', 'product AI', 'AI capabilities design', 'AI UX patterns', 'AI product design', 'natural language UI', 'voice agents UX', 'AI-native design', 'design innovation', 'product design AI', 'AI taxonomy designers', 'AI-powered UX patterns', 'designing with AI capabilities', 'AI-native product design', 'AI design taxonomy'],
+  },
   'ai-replace-designers-wrong-question': {
     title: 'Why "AI Will Replace Designers" Is the Wrong Question | Xperience Wave',
     description: 'The design community has split into two camps - panic and complacency - and both are wrong. What you need is an accurate mental model of what AI can and cannot do right now, applied practically to your career decisions and skill development.',

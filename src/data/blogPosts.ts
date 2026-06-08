@@ -51,6 +51,17 @@ export const getCategoryLabel = (category: string): string => {
 // Sample blog posts with Unsplash images
 export const blogPosts: BlogPost[] = [
   {
+    id: '43',
+    slug: 'ai-as-design-material',
+    title: 'AI as Design Material: How Knowing What AI Can Do Changes What You Design',
+    excerpt: 'Every conversation about AI and design is about process - faster research, faster prototyping. This blog is about something more important: how knowing what AI is capable of changes what you put in the product. A taxonomy of ten capabilities that make new experiences designable.',
+    category: 'industry' as const,
+    image: 'https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?w=800&q=80',
+    author: { name: 'Shaik Murad' },
+    publishedAt: '2026-06-08',
+    readTime: '25 min',
+  },
+  {
     id: '42',
     slug: 'ai-replace-designers-wrong-question',
     title: 'Why "AI Will Replace Designers" Is the Wrong Question',

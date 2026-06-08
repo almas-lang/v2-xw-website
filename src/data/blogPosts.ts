@@ -51,6 +51,17 @@ export const getCategoryLabel = (category: string): string => {
 // Sample blog posts with Unsplash images
 export const blogPosts: BlogPost[] = [
   {
+    id: '44',
+    slug: '7-second-portfolio-test',
+    title: 'The 7-Second Portfolio Test: What Happens When a Hiring Manager Opens Your Portfolio',
+    excerpt: 'A hiring manager opens your portfolio. They have 40 more to review this week. In seven seconds, three things happen - and by the time those seconds are over, your portfolio has either earned a deeper look or been closed. Here is what actually happens and how to fix it.',
+    category: 'career-growth' as const,
+    image: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=800&q=80',
+    author: { name: 'Shaik Murad' },
+    publishedAt: '2026-06-08',
+    readTime: '22 min',
+  },
+  {
     id: '43',
     slug: 'ai-as-design-material',
     title: 'AI as Design Material: How Knowing What AI Can Do Changes What You Design',

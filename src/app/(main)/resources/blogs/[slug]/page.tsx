@@ -13,6 +13,246 @@ import { FreeTrainingCTA } from '@/components/blog/FreeTrainingCTA';
 
 // Blog content with internal links for SEO
 const blogContent: Record<string, React.ReactNode> = {
+  '7-second-portfolio-test': (
+    <>
+      <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
+        A hiring manager opens your portfolio. They have 40 more to review this week. They are between meetings. Their coffee is getting cold. They are not sitting down to thoughtfully evaluate your life&apos;s work. They are scanning.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        In the first seven seconds, three things happen - and by the time those seven seconds are over, your portfolio has either earned a deeper look or been closed. Not because the hiring manager is lazy or unfair, but because this is how human attention works when processing volume. The data on this is consistent across multiple studies: InterviewPal&apos;s 2025 analysis of over 4,200 resume reviews found an average initial scan time of 11.2 seconds. ResumeGo&apos;s 2024 survey of 418 hiring professionals found that 81 percent spend less than a minute on initial screening, with 78 percent rating skim-ability as highly important. For portfolios specifically - which involve more visual processing than a resume - Muzli&apos;s 2026 research estimates that a recruiter reviewing 40 portfolios in a session gives each homepage roughly 10 to 15 seconds of genuine attention. UX Playbook breaks it down even more granularly: in the first 0 to 3 seconds, the hiring manager scans the opening case study title and the first visual - and if it does not immediately signal business impact, they are already mentally moving to the next candidate.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Seven seconds is not arbitrary. It is the window between the initial scan and the decision to keep reading or close the tab. If you are a designer who has applied to dozens of roles and heard nothing back, the problem might not be your work. It might be that your portfolio fails the seven-second test - and nobody ever gets to see the work at all.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        This blog explains what actually happens during those seven seconds, gives you a framework to evaluate where your portfolio stands, and shows you how to fix it if it is failing. The concept extends directly from the 5-second usability test that UX researchers use to evaluate first impressions of interfaces - the same principle applied to the most consequential interface of your career.
+      </p>
+
+      <h2 id="what-hiring-manager-does" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What the Hiring Manager Is Actually Doing in Those Seven Seconds
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The seven-second scan is not a casual browse. It is a rapid, mostly unconscious evaluation that answers three questions simultaneously. Research from UX Planet&apos;s portfolio analysis and from hiring managers who have publicly documented their review process confirms that these three filters operate almost identically across reviewers - because hiring managers, regardless of company or industry, face the same constraint: too many portfolios, too little time, and a binary decision to make.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        Question 1: Can This Person Think, or Do They Just Execute?
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is the first and most important filter. The hiring manager is looking for signals of strategic thinking - evidence that the designer understands problems, makes decisions, and drives outcomes. Not just evidence that they can operate Figma. A senior UX leader who has reviewed hundreds of portfolios described it plainly: &quot;most case studies fail not because the work is bad, but because the story is unclear - what stands out is judgment, clarity of thinking, and impact.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The signals they are scanning for: case study titles that name the problem or the impact rather than the deliverable (&quot;Reducing checkout abandonment by 28%&quot; versus &quot;E-commerce redesign&quot;). A homepage introduction that positions the designer as a problem-solver rather than a tool operator. Any hint of business context, user insight, or decision-making in the first visible content.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If the first thing the hiring manager sees is a gallery of polished screens with no context, they have answered question one: this person executes. They might execute beautifully. But the portfolio does not signal thinking - and at senior levels, thinking is what gets hired.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        Question 2: Is the Work Relevant to What I Am Hiring For?
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The hiring manager wrote a job description. They know what they need. In the seven-second scan, they are pattern-matching your work against their requirements. If they are hiring for a fintech product designer and your homepage shows a food delivery app, a fitness tracker, and a portfolio website - none of which signal fintech experience - they move on. Not because you could not do the work, but because nothing in the first scan told them you could. The relevance filter is brutal and it operates on what is visible, not on what is true. You might have deep fintech experience buried in your third case study. But if it is not visible in the first scan, it does not exist in the hiring manager&apos;s evaluation.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        Question 3: Is This Person at the Right Level?
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Seniority is inferred, not stated. A title on your homepage that says &quot;Senior UX Designer&quot; is noted but not trusted - the hiring manager has seen too many people with senior titles who operate at a mid-level. What they trust are signals embedded in the work itself: the complexity of the problems described, the sophistication of the thinking shown, the presence of stakeholder navigation and strategic decision-making, and the scale of the outcomes referenced. A case study that describes &quot;redesigning a settings page&quot; signals junior work. A case study that describes &quot;redefining the configuration experience for enterprise clients managing 500+ team members&quot; signals senior work - even if the actual design changes were similar. The framing determines the perceived level.
+      </p>
+
+      {/* Inline image 1 */}
+      <div className="relative aspect-[16/9] rounded-xl overflow-hidden my-10">
+        <Image
+          src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&q=80"
+          alt="A hiring manager reviewing candidate materials on a laptop screen, representing the rapid portfolio evaluation process"
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 720px"
+        />
+      </div>
+
+      <h2 id="four-archetypes" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The 2×2: Four Portfolio Archetypes
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Not every portfolio fails the same way. And not every portfolio that passes the seven-second scan survives the deeper review. There are four archetypes based on two dimensions: how the portfolio performs in the initial scan and how it holds up under detailed evaluation.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        Archetype 1: Passes the Scan. Passes the Detail. → Gets Interviews.
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is the portfolio that does everything right. The homepage immediately communicates who the designer is, what level they operate at, and what kind of problems they solve. The case study titles signal thinking and impact. The visual presentation is clean and professional without being overwrought. When the hiring manager clicks into a case study, they find structured, evidence-based reasoning: the problem was identified, the approach was deliberate, trade-offs were made and explained, and the outcome was measured.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        These portfolios are rare - not because the designers behind them lack talent, but because building a portfolio this way requires a different skill set from doing the design work itself. It requires understanding what the other side of the table is looking for and structuring your work to address those specific questions.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        Archetype 2: Fails the Scan. Passes the Detail. → Gets Overlooked Despite Being Good.
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is the most frustrating archetype - and the most common among talented designers. The actual work is excellent. The case studies are thoughtful, well-reasoned, and demonstrate genuine strategic capability. But the homepage buries it. The introduction is generic (&quot;I am a passionate UX designer who loves solving problems&quot;). The case study titles are descriptive rather than compelling (&quot;Mobile banking app redesign&quot;). The thumbnails show finished screens without context. The overall impression in seven seconds is: this is a competent mid-level designer who makes things look nice.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The hiring manager closes the tab. They never see the brilliant research synthesis in case study two or the stakeholder negotiation described in case study three. The work was good enough to get an interview. The packaging was not good enough to earn the click.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is the archetype we see most often when working with designers at Xperience Wave. The fix is not about doing better work - the work is already strong. The fix is about restructuring how the work is presented so that the first seven seconds communicate the depth that currently only appears on page four of the case study. We have written about this specific problem before - <Link href="/resources/blogs/why-courses-dont-get-leadership-roles" className="text-accent hover:underline font-medium">why courses and bootcamps do not get you leadership roles</Link> - because the same gap exists there: the designer has the skills but cannot communicate them in a way that earns the opportunity to demonstrate them.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>What needs to change:</strong> Rewrite the introduction to position around problems solved, not tools used. Change case study titles from deliverable-based to impact-based. Add a one-line summary above each case study thumbnail that signals the strategic thinking inside. Move the strongest, most relevant work to the first position.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        Archetype 3: Passes the Scan. Fails the Detail. → Gets Interviews but Not Offers.
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is the portfolio with great packaging and thin content. The homepage is polished, the introduction is sharp, the case study titles promise strategic depth. The hiring manager is impressed enough to click through. And then they find a process timeline masquerading as a case study: &quot;first we did research, then we ideated, then we designed, then we tested.&quot; No evidence of decision-making. No trade-offs. No outcomes. No indication of what the designer actually contributed versus what the team did. The case study reads like a recipe, not like a demonstration of judgment.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        These designers get interviews - because the packaging earned the click - but they struggle in the interview itself, where the hiring manager asks follow-up questions and discovers that the depth promised by the homepage does not exist in the work.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>What needs to change:</strong> The packaging is fine. The content needs to be rebuilt around a case study structure that reveals how you think, not just what you did.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        Archetype 4: Fails the Scan. Fails the Detail. → Gets Nothing.
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        This portfolio has neither packaging nor substance. The homepage is unfocused, the work is shallow, and the case studies lack both structure and depth. The fix here is more fundamental: it starts with doing work worth showing (or reframing existing work to reveal the thinking that was present but not documented), building case studies with the right structure, and only then working on the homepage presentation. Content first, packaging second. Doing it in reverse creates Archetype 3.
+      </p>
+
+      <h2 id="case-study-structure" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Case Study Structure That Passes Both Tests
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Most portfolio advice tells you to &quot;show your process.&quot; This is incomplete advice that leads to Archetype 3 - process documentation disguised as a case study. User Interviews&apos; research on UX portfolios found that 54.5 percent of hiring respondents said the most important element in a case study is the research process - but crucially, they mean the reasoning and decision-making within the process, not a chronological timeline of steps taken. UX Tools, drawing from years of portfolio reviews, puts it differently: headings like &quot;Research&quot; and &quot;Wireframes&quot; tell the hiring manager that you did the same thing any other designer would do - use that space to give context instead.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The structure below is what consistently works - not because it follows a formula, but because it reveals the thinking, the judgment, and the impact at every stage:
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Problem identification</strong> - Not &quot;the client asked us to redesign the checkout flow.&quot; Instead: what was actually wrong? What was the evidence? How did you determine this was the right problem to solve? This is where strategic thinking is demonstrated. A designer who accepted the brief at face value signals a different level of judgment than one who investigated, reframed, or challenged the brief.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Strategy and process setup</strong> - What approach did you choose and why? Not just &quot;we did user interviews&quot; but why interviews and not analytics? Why five participants and not fifteen? Every methodological decision is an opportunity to demonstrate judgment - but only if you explain the reasoning, not just the choice.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Collaboration and goal clarity</strong> - Who else was involved? How did you align with stakeholders? Were there conflicting priorities? How did you navigate them? A case study that mentions no stakeholders, no PM, no engineering constraints reads like a solo exercise - which is either untrue or concerning.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Research and insights</strong> - What did you learn? Not a laundry list of findings, but the insight that changed the direction. The moment where the data told you something you did not expect.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Information architecture and flow</strong> - How did you structure the experience? What logic drove the flow? Where did you prioritise and what did you deprioritise? This shows systems thinking - the ability to see the product as a connected whole rather than a collection of screens.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Ideation and wireframes</strong> - What directions did you explore? Why these and not others? Showing multiple explorations demonstrates that the final design was a deliberate choice, not the only thing you could think of.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Decision-making and trade-offs</strong> - This is the section most portfolios are missing entirely, and it is the section that hiring managers at senior level care about most. What did you give up? What were the competing options? Why did you choose this direction over the alternatives? A designer who can articulate trade-offs demonstrates a level of judgment that a designer who presents only the final solution does not.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Stakeholder communication</strong> - How did you present and defend your work? Did stakeholders push back? How did you handle it? This section demonstrates professional maturity - the ability to operate in an organisational context, not just a design context.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        <strong>Impact and outcomes</strong> - What changed because of your work? Not &quot;we shipped it&quot; - that is an output, not an outcome. What metric moved? What user behaviour changed? What business result can you connect to the design decisions you made? If you do not have hard metrics, describe qualitative outcomes: reduced support tickets, positive user feedback in testing, adoption by internal teams. Something must have changed. If nothing changed, the case study does not demonstrate impact - and in 2026, impact is what gets hired.
+      </p>
+
+      {/* Inline image 2 */}
+      <div className="relative aspect-[16/9] rounded-xl overflow-hidden my-10">
+        <Image
+          src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80"
+          alt="Professionals collaborating at a table reviewing design work, representing the structured approach to portfolio case studies"
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 720px"
+        />
+      </div>
+
+      <h2 id="run-the-test" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        How to Run the Seven-Second Test on Your Own Portfolio
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        You cannot objectively evaluate your own portfolio because you know what is inside every case study. The depth is visible to you because you created it. The hiring manager does not have that context. Here is how to test it honestly:
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Step 1:</strong> Find three people who are not designers and who have never seen your portfolio. Do not choose close friends who will be polite. Choose people who will give you honest reactions.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Step 2:</strong> Tell them: &quot;I am going to show you a website for seven seconds. Then I will close it and ask you some questions.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Step 3:</strong> Open your portfolio homepage. Count seven seconds. Close the laptop.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Step 4:</strong> Ask three questions: What does this person do? How experienced are they? Would you hire them for a senior design role?
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Step 5:</strong> Write down their exact responses. Do not prompt, clarify, or help.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        If all three people give confident, accurate answers that match how you want to be perceived, your homepage passes the scan. If they are vague, confused, or describe you differently from how you see yourself, the homepage needs work. Then repeat the exercise with your strongest case study - but give them two minutes instead of seven seconds. Ask: &quot;What problem was this person solving? What did they actually do? What was the result?&quot; If they cannot answer all three, the case study structure needs work.
+      </p>
+
+      <h2 id="portfolio-is-product" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Portfolio Is a Product. The Hiring Manager Is the User.
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The irony of portfolio design is that it is a UX problem - and most designers solve it badly. They treat their portfolio as a gallery rather than a product. They optimise for their own preferences rather than their user&apos;s needs. They build for completeness rather than for the constraint they are actually designing for: a person with limited time, specific needs, and a binary decision to make.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Design your portfolio the way you would design any product: understand the user (hiring managers with specific job requirements and limited time), identify their tasks (answer three questions in seven seconds, then evaluate case study depth in two minutes), and optimise for those tasks with the same rigour you would bring to any professional design challenge. If you do that - if you treat your portfolio as your most important design project - the work you have already done will start getting the attention it deserves. Because the problem was never the quality of your work. It was the seven seconds before anyone got to see it.
+      </p>
+
+      <FreeTrainingCTA text="At Xperience Wave, portfolio restructuring is one of the first things we work on in our programmes - because nothing else matters if nobody sees your work" />
+
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6 mt-8">
+        At <Link href="/" className="text-accent hover:underline font-medium">Xperience Wave</Link>, portfolio restructuring is one of the first things we work on in our programmes - because nothing else matters if nobody sees your work. We help designers rebuild their case studies around the full structure (problem → strategy → research → decisions → trade-offs → impact) and redesign their homepage to pass the seven-second scan. If your portfolio is not generating interviews and you cannot figure out why, <Link href="https://calendly.com/xperiencewave/xw-strategy-call" className="text-accent hover:underline font-medium">book a free strategy call</Link> and we will run the test together.
+      </p>
+
+      <h2 id="sources-references" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Sources &amp; References
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li>InterviewPal - 2025 analysis of 4,200+ resume reviews. Average initial scan time of 11.2 seconds across hiring managers and recruiters.</li>
+        <li>ResumeGo - 2024 survey of 418 hiring professionals. 81% spend less than a minute on initial screening; 78% rate skim-ability as highly important.</li>
+        <li>Muzli - 2026 UX portfolio research. Recruiters reviewing 40 portfolios per session give each homepage roughly 10-15 seconds of genuine attention.</li>
+        <li>UX Playbook - portfolio scan breakdown. First 0-3 seconds: opening case study title and first visual scanned for business impact signals.</li>
+        <li>UX Planet - portfolio red flag research. If decisions are implicit in a case study and reasoning is not visible, judgment cannot be evaluated.</li>
+        <li>User Interviews - UX portfolio hiring research. 54.5% of hiring respondents said the most important case study element is the research process (reasoning, not timeline).</li>
+        <li>UX Tools - portfolio review findings. Headings like &quot;Research&quot; and &quot;Wireframes&quot; signal generic process; context-driven headings signal judgment.</li>
+        <li>Xperience Wave - direct observation from mentorship and portfolio review sessions with designers across India.</li>
+      </ul>
+
+      <h2 id="about-author" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        About the Author
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Murad is Co-founder and Head of Product &amp; Design at Xperience Wave, a UX design career development company based in Bangalore. He has 13+ years of design leadership experience across fintech, healthtech, and industrial technology. He has reviewed hundreds of designer portfolios through XW&apos;s mentorship programmes and writes about the gap between design capability and how that capability is communicated - because the gap is where most career stalls happen.
+      </p>
+
+      <h2 id="related-reading" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Related Reading
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li>On the approach to case studies that hiring managers actually want to see: <Link href="/resources/blogs/business-driven-ux-portfolio" className="text-accent hover:underline font-medium">How to Build a Business-Driven UX Portfolio.</Link></li>
+        <li>On the other side of the table: <Link href="/resources/blogs/what-design-managers-look-for-senior-ux-hiring" className="text-accent hover:underline font-medium">What Design Managers Look For When Hiring Senior UX Designers.</Link></li>
+        <li>On the full picture of what might be going wrong: <Link href="/resources/blogs/why-no-ux-interview-calls" className="text-accent hover:underline font-medium">Why You&apos;re Not Getting UX Interview Calls.</Link></li>
+        <li>On when the portfolio passes but the interview does not: <Link href="/resources/blogs/ghosted-after-round-2-ux-interview" className="text-accent hover:underline font-medium">Ghosted After Round 2? Here&apos;s What Happened.</Link></li>
+        <li>On handling confidential work in your case studies: <Link href="/resources/blogs/nda-work-ux-portfolio" className="text-accent hover:underline font-medium">NDA Work in Your UX Portfolio: What You Can and Cannot Show.</Link></li>
+        <li>On how portfolio quality directly maps to compensation level: <Link href="/resources/blogs/12l-vs-30l-ux-designer-difference" className="text-accent hover:underline font-medium">The 12L vs 30L UX Designer: What&apos;s the Difference?</Link></li>
+      </ul>
+
+      <p className="text-base md:text-lg text-g500 italic mt-6">
+        - Murad, Co-founder &amp; Head of Product &amp; Design, Xperience Wave
+      </p>
+    </>
+  ),
   'ai-as-design-material': (
     <>
       <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
@@ -8829,6 +9069,15 @@ const blogContent: Record<string, React.ReactNode> = {
 
 // Table of contents for each blog post
 const blogTableOfContents: Record<string, { id: string; title: string }[]> = {
+  '7-second-portfolio-test': [
+    { id: 'what-hiring-manager-does', title: 'What Happens in Those Seven Seconds' },
+    { id: 'four-archetypes', title: 'The 2×2: Four Portfolio Archetypes' },
+    { id: 'case-study-structure', title: 'The Case Study Structure That Works' },
+    { id: 'run-the-test', title: 'How to Run the Test' },
+    { id: 'portfolio-is-product', title: 'The Portfolio Is a Product' },
+    { id: 'sources-references', title: 'Sources & References' },
+    { id: 'related-reading', title: 'Related Reading' },
+  ],
   'ai-as-design-material': [
     { id: 'the-gap', title: 'The Gap: Designers Don\'t Know What\'s Possible' },
     { id: 'ten-capabilities', title: 'The Ten Capabilities Taxonomy' },
@@ -9193,6 +9442,11 @@ const authorData: Record<string, { role: string; bio: string; image: string }> =
 
 // Blog-specific metadata for SEO
 const blogMetadata: Record<string, { title: string; description: string; keywords: string[] }> = {
+  '7-second-portfolio-test': {
+    title: 'The 7-Second Portfolio Test: What Happens When a Hiring Manager Opens Your Portfolio | Xperience Wave',
+    description: 'A hiring manager gives your portfolio seven seconds. Three questions are answered in that window - and they determine whether you get a deeper look or get closed. The four portfolio archetypes, the case study structure that works, and how to test your own.',
+    keywords: ['7 second portfolio test', 'UX portfolio hiring manager', 'portfolio first impression', 'UX case study structure', 'portfolio review what hiring managers look for', 'portfolio tips 2026', 'UX portfolio', 'portfolio scan', 'design career', 'portfolio structure', 'UX case study', 'portfolio review'],
+  },
   'ai-as-design-material': {
     title: 'AI as Design Material: How Knowing What AI Can Do Changes What You Design | Xperience Wave',
     description: 'The most important AI conversation for designers is not about process - it is about product. A taxonomy of ten AI capabilities that make new experiences designable, and why product AI literacy is the defining career differentiator of this decade.',

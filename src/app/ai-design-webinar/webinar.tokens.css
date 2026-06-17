@@ -1,0 +1,106 @@
+/* ============================================================
+   Konfom Design System v0.2 — tokens, SCOPED to /ai-design-webinar
+   ------------------------------------------------------------
+   The handoff shipped these on :root + global body/html. To avoid
+   colliding with the main site's Tailwind theme, everything is
+   scoped under the .konfom wrapper (see layout.tsx). Nothing here
+   leaks into the rest of xperiencewave.com.
+   ============================================================ */
+
+.konfom {
+  /* Cool slate neutrals */
+  --neutral-50:  #FAFBFC;
+  --neutral-100: #F1F5F9;
+  --neutral-200: #E2E8F0;
+  --neutral-300: #CBD5E1;
+  --neutral-400: #94A3B8;
+  --neutral-500: #64748B;
+  --neutral-600: #475569;
+  --neutral-700: #334155;
+  --neutral-800: #1E293B;
+  --neutral-900: #0F172A;
+
+  /* Konfom Blue — "action you take" */
+  --blue-50:  #EEF1FE;
+  --blue-100: #D6DEFC;
+  --blue-200: #ADBCF7;
+  --blue-300: #7B91F0;
+  --blue-400: #4566EC;
+  --blue-500: #1E47E6;
+  --blue-600: #1A3CC8;
+  --blue-700: #1733A8;
+  --blue-800: #132885;
+  --blue-900: #0E1C66;
+
+  /* Ochre — "state you're in" */
+  --ochre-50:  #FAF1DD;
+  --ochre-100: #F0DAA8;
+  --ochre-500: #B68830;
+  --ochre-600: #A07825;
+  --ochre-700: #8B6418;
+  --ochre-900: #5C4110;
+
+  /* Error (form validation only) */
+  --error-500: #DC2626;
+
+  /* Brand-only (marketing surfaces — never product body text) */
+  --brand-ink:   #15161A;
+  --brand-paper: #FFFFFF;
+
+  /* Semantic */
+  --color-text-primary:           var(--neutral-900);
+  --color-text-secondary:         var(--neutral-600);
+  --color-text-secondary-strong:  var(--neutral-700);
+  --color-text-secondary-light:   var(--neutral-500);
+  --color-text-tertiary:          var(--neutral-400);
+  --color-border-subtle:          var(--neutral-200);
+  --color-border-default:         var(--neutral-300);
+
+  /* Fonts — variables provided by next/font in layout.tsx */
+  --font-ui:      var(--font-inter), system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-reading: var(--font-source-serif), 'Iowan Old Style', Georgia, serif;
+  --font-brand:   var(--font-geist), system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* Radius */
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-lg:   12px;
+  --radius-xl:   16px;
+  --radius-full: 999px;
+
+  /* Elevation — borders do most of the work */
+  --elevation-1: 0 1px 2px rgba(15, 23, 42, 0.04);
+  --elevation-3: 0 12px 24px rgba(15, 23, 42, 0.08);
+
+  /* Motion */
+  --motion-fast: 150ms;
+  --motion-ease: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Base surface — override the site's body background (#F9F9F9) */
+  background: var(--brand-paper);
+  color: var(--color-text-primary);
+  font-family: var(--font-ui);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+}
+
+.konfom a { color: inherit; }
+
+/* Focus — 2px Konfom Blue ring, 1px offset (scoped) */
+.konfom :focus-visible {
+  outline: 2px solid var(--blue-500);
+  outline-offset: 1px;
+}
+
+/* The site's globals.css forces autofilled input text to white for its
+   dark forms. This page's form sits on white, so re-assert dark text +
+   white fill for autofill within the webinar scope. */
+.konfom input:-webkit-autofill,
+.konfom input:-webkit-autofill:hover,
+.konfom input:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--neutral-900);
+  -webkit-box-shadow: 0 0 0 1000px #fff inset;
+  caret-color: var(--neutral-900);
+  transition: background-color 5000s ease-in-out 0s;
+}

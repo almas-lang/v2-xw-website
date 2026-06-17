@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { IconArrowRight, IconCircleCheck, IconBrandWhatsapp } from '@tabler/icons-react';
 import { WEBINAR } from './config';
 import styles from './webinar.module.css';
@@ -55,6 +55,15 @@ export default function RegistrationForm() {
   const [fields, setFields] = useState<Fields>({ firstName: '', email: '', whatsapp: '', role: '' });
   const [errors, setErrors] = useState<Partial<Record<keyof Fields, string>>>({});
   const [submitted, setSubmitted] = useState(false);
+  const successRef = useRef<HTMLDivElement>(null);
+
+  // Bring the confirmation into view once it renders, so the success card
+  // lands where the user is looking instead of staying mid-page.
+  useEffect(() => {
+    if (submitted) {
+      successRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }, [submitted]);
 
   const set = (key: keyof Fields) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) =>
     setFields((f) => ({ ...f, [key]: e.target.value }));
@@ -70,7 +79,7 @@ export default function RegistrationForm() {
 
   if (submitted) {
     return (
-      <div className={styles.formCard}>
+      <div className={styles.formCard} ref={successRef}>
         <div className={styles.formSuccess}>
           <IconCircleCheck size={44} stroke={2} className={styles.formSuccessIcon} aria-hidden />
           <h3 className={styles.formSuccessTitle}>Your seat is saved</h3>

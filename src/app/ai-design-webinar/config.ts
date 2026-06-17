@@ -20,4 +20,7 @@ export const WEBINAR = {
   url: 'https://xperiencewave.com/ai-design-webinar',
   ogImage: '/og/ai-design-webinar.png', // TODO: supply branded 1200×630 card
   whatsapp: '+91 93805 06841',
+  /** WhatsApp group invite link (chat.whatsapp.com/…) for webinar updates.
+   *  Leave empty to fall back to a 1:1 wa.me chat with the number above. */
+  whatsappGroupUrl: '',
 } as const;

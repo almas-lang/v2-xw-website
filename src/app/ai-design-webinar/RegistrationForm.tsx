@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { IconArrowRight, IconCircleCheck } from '@tabler/icons-react';
+import { IconArrowRight, IconCircleCheck, IconBrandWhatsapp } from '@tabler/icons-react';
 import { WEBINAR } from './config';
 import styles from './webinar.module.css';
 
@@ -78,6 +78,15 @@ export default function RegistrationForm() {
             Check your email for confirmation. We&rsquo;ll send your join link and reminders on WhatsApp as{' '}
             {WEBINAR.dateLabel} gets closer.
           </p>
+          <a
+            className={styles.formWhatsapp}
+            href={WEBINAR.whatsappGroupUrl || `https://wa.me/${WEBINAR.whatsapp.replace(/\D/g, '')}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <IconBrandWhatsapp size={20} stroke={2} aria-hidden />
+            Join the WhatsApp group for webinar updates
+          </a>
         </div>
       </div>
     );

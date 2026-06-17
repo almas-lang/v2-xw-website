@@ -23,12 +23,32 @@ function validate(f: Fields) {
 }
 
 /**
- * TODO: wire this to your backend / CRM / WhatsApp automation.
- * Suggested: POST to a route handler (app/api/register/route.ts) that
- * stores the lead and triggers the WhatsApp-group invite + confirmation.
+ * Forwards the registration to SalesHub via the server route
+ * (src/app/ai-design-webinar/api/register/route.ts), which keeps the
+ * webhook secret server-side and tags the lead with source "ai-webinar".
  */
 async function submitRegistration(fields: Fields): Promise<void> {
-  console.log('register', fields);
+  // UTMs from the ad URL (?utm_source=…&utm_campaign=… etc.)
+  const q = new URLSearchParams(typeof window !== 'undefined' ? window.location.search : '');
+  const raw = fields.whatsapp.trim();
+  const phone = raw.startsWith('+') ? raw : '+91' + raw.replace(/\D/g, '');
+
+  const res = await fetch('/ai-design-webinar/api/register', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      name: fields.firstName,
+      email: fields.email,
+      phone,
+      current_role: fields.role || '',
+      utm_source: q.get('utm_source') || '',
+      utm_medium: q.get('utm_medium') || '',
+      utm_campaign: q.get('utm_campaign') || q.get('hsa_cam') || '',
+      utm_content: q.get('utm_content') || q.get('hsa_ad') || '',
+      utm_term: q.get('utm_term') || q.get('hsa_grp') || '',
+    }),
+  });
+  if (!res.ok) throw new Error('Registration failed');
 }
 
 export default function RegistrationForm() {

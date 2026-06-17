@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/konfom-design-system-019e267f-8155-7c75-8195-e00cb0e6546e/colors_and_type.css">
+<style>
+  *{box-sizing:border-box;}
+  html,body{margin:0;background:#FFFFFF;}
+  a{color:inherit;}
+  .lp-wrap{--maxw:1120px;}
+  .container{max-width:var(--maxw);margin:0 auto;padding:0 32px;}
+  @media(max-width:860px){.container{padding:0 20px;} .hero-a-grid{grid-template-columns:1fr !important;} .heroA-media{order:-1;}}
+  .lift{transition:border-color 150ms cubic-bezier(.4,0,.2,1), box-shadow 150ms cubic-bezier(.4,0,.2,1);}
+  details>summary{list-style:none;cursor:pointer;}
+  details>summary::-webkit-details-marker{display:none;}
+  details[open] .faq-chev{transform:rotate(180deg);}
+</style>
+</helmet>
+
+<div class="lp-wrap" style="font-family:var(--font-ui);color:var(--color-text-primary);background:#FFFFFF;-webkit-font-smoothing:antialiased;">
+
+  <!-- ANNOUNCEMENT BAR -->
+  <div style="position:sticky;top:0;z-index:60;background:#15161A;color:rgba(255,255,255,.92);border-bottom:0.5px solid rgba(255,255,255,.08);">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-top:9px;padding-bottom:9px;">
+      <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-size:13px;font-weight:500;letter-spacing:.01em;">
+        <span style="display:inline-flex;align-items:center;gap:6px;background:var(--ochre-500);color:#1a1205;font-weight:600;font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:4px 9px;border-radius:var(--radius-full);white-space:nowrap;"><span style="width:6px;height:6px;border-radius:50%;background:#1a1205;display:inline-block;"></span>Live &amp; free</span>
+        <span style="color:rgba(255,255,255,.78);">Saturday, 20 Jun · 11:00 AM IST</span>
+        <span style="color:rgba(255,255,255,.28);">·</span>
+        <span style="color:rgba(255,255,255,.78);">Only 50 seats — <span style="color:#FF6B6B;font-weight:600;">9 left</span>. Register today.</span>
+      </div>
+      <div class="tabular" style="display:flex;align-items:center;gap:6px;font-variant-numeric:tabular-nums;">
+        <span style="display:flex;flex-direction:column;align-items:center;gap:2px;background:rgba(255,255,255,.06);border:0.5px solid rgba(255,255,255,.1);border-radius:6px;padding:5px 8px;min-width:42px;"><b style="font-size:15px;font-weight:600;">03</b><i style="font-style:normal;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.5);">days</i></span>
+        <span style="display:flex;flex-direction:column;align-items:center;gap:2px;background:rgba(255,255,255,.06);border:0.5px solid rgba(255,255,255,.1);border-radius:6px;padding:5px 8px;min-width:42px;"><b style="font-size:15px;font-weight:600;">14</b><i style="font-style:normal;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.5);">hrs</i></span>
+        <span style="display:flex;flex-direction:column;align-items:center;gap:2px;background:rgba(255,255,255,.06);border:0.5px solid rgba(255,255,255,.1);border-radius:6px;padding:5px 8px;min-width:42px;"><b style="font-size:15px;font-weight:600;">22</b><i style="font-style:normal;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.5);">min</i></span>
+        <span style="display:flex;flex-direction:column;align-items:center;gap:2px;background:rgba(255,255,255,.06);border:0.5px solid rgba(255,255,255,.1);border-radius:6px;padding:5px 8px;min-width:42px;"><b style="font-size:15px;font-weight:600;">09</b><i style="font-style:normal;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.5);">sec</i></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <div style="background:#FFFFFF;border-bottom:0.5px solid var(--color-border-subtle);">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;height:68px;">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <span style="width:26px;height:26px;border-radius:7px;background:var(--blue-500);display:inline-flex;align-items:center;justify-content:center;"><i class="ti ti-wave-sine" style="color:#fff;font-size:16px;"></i></span>
+        <span style="font-family:var(--font-brand);font-weight:600;font-size:20px;letter-spacing:-0.02em;color:#15161A;">Xperience Wave</span>
+      </div>
+      <a href="#register" style="display:inline-flex;align-items:center;gap:8px;background:var(--blue-500);color:#fff;font-weight:600;font-size:14px;padding:11px 20px;border-radius:var(--radius-sm);text-decoration:none;" class="lift" style-hover="background:var(--blue-600);">Enroll in the webinar <i class="ti ti-arrow-right" style="font-size:16px;"></i></a>
+    </div>
+  </div>
+
+  <!-- HERO DIRECTION A — calm editorial split -->
+  <sc-if value="{{ showA }}" hint-placeholder-val="{{ true }}">
+  <section style="padding:84px 0 92px;background:#FFFFFF;">
+    <div class="container hero-a-grid" style="display:grid;grid-template-columns:1.08fr 0.92fr;gap:64px;align-items:center;">
+      <div>
+        <span style="display:inline-block;font-size:12px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--blue-600);margin-bottom:22px;">Free live workshop for UX, UI &amp; product designers</span>
+        <h1 style="font-family:var(--font-brand);font-weight:600;font-size:clamp(38px,4.6vw,56px);line-height:1.04;letter-spacing:-0.025em;color:var(--neutral-900);margin:0 0 24px;text-wrap:balance;">Every month you use AI the wrong way, <span style="color:var(--blue-600);">another designer gets the promotion you wanted.</span></h1>
+        <p style="font-family:var(--font-reading);font-size:19px;line-height:1.62;color:var(--color-text-secondary-strong);margin:0 0 32px;max-width:560px;text-wrap:pretty;">There are two faces of AI in design. One makes you faster — and easier to replace. The other makes you senior — and impossible to ignore. In this free live session, I'll show you the second face, and the exact shift from stuck-at-mid-level to in-the-room-where-decisions-get-made — before the rest of the field catches on.</p>
+        <div style="display:flex;align-items:center;gap:18px;flex-wrap:wrap;">
+          <a href="#register" class="lift" style="display:inline-flex;align-items:center;gap:10px;background:var(--blue-500);color:#fff;font-weight:600;font-size:16px;padding:16px 26px;border-radius:var(--radius-sm);text-decoration:none;box-shadow:var(--elevation-1);" style-hover="background:var(--blue-600);">Enroll in the webinar <i class="ti ti-arrow-right" style="font-size:18px;"></i></a>
+        </div>
+        <p style="font-size:13px;color:var(--color-text-secondary-light);margin:14px 0 28px;letter-spacing:.01em;">Free · Live · No recording shared · 50 seats only</p>
+        <div style="display:flex;flex-wrap:wrap;gap:10px 22px;padding-top:24px;border-top:0.5px solid var(--color-border-subtle);">
+          <span style="display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--color-text-secondary);"><span style="width:7px;height:7px;border-radius:50%;background:var(--ochre-500);"></span>830+ designers moved into senior &amp; leadership roles</span>
+          <span style="display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--color-text-secondary);"><span style="width:7px;height:7px;border-radius:50%;background:var(--ochre-500);"></span>₹18–28 LPA outcomes</span>
+          <span style="display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--color-text-secondary);"><span style="width:7px;height:7px;border-radius:50%;background:var(--ochre-500);"></span>Many in under 90 days</span>
+          <span style="display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--color-text-secondary);"><span style="width:7px;height:7px;border-radius:50%;background:var(--ochre-500);"></span>Hosted by Shaik Murad</span>
+        </div>
+      </div>
+      <div class="heroA-media">
+        <div class="lift" style="position:relative;aspect-ratio:4/3;background:var(--neutral-100);border:0.5px solid var(--color-border-subtle);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--elevation-1);">
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
+            <span style="width:72px;height:72px;border-radius:50%;background:var(--blue-500);display:inline-flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(30,71,230,.32);"><i class="ti ti-player-play-filled" style="color:#fff;font-size:30px;margin-left:3px;"></i></span>
+          </div>
+          <div style="position:absolute;left:0;right:0;bottom:0;padding:18px 18px 16px;background:linear-gradient(to top,rgba(21,22,26,.62),rgba(21,22,26,0));">
+            <div style="display:flex;align-items:center;gap:8px;color:#fff;">
+              <span style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.16);font-weight:600;font-size:12px;border:0.5px solid rgba(255,255,255,.25);">SM</span>
+              <div style="line-height:1.3;">
+                <div style="font-size:13px;font-weight:600;">Shaik Murad · 52 sec</div>
+                <div style="font-size:12px;color:rgba(255,255,255,.78);">“The one thing I'll show you on Saturday.”</div>
+              </div>
+            </div>
+          </div>
+          <span style="position:absolute;top:14px;left:14px;font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--color-text-tertiary);background:rgba(255,255,255,.86);padding:4px 8px;border-radius:var(--radius-full);">Host video</span>
+        </div>
+        <p style="font-size:12px;color:var(--color-text-tertiary);margin:12px 2px 0;text-align:center;">45–60 sec · framed half-body talking head</p>
+      </div>
+    </div>
+  </section>
+  </sc-if>
+
+  <!-- HERO DIRECTION B — bold centered stage -->
+  <sc-if value="{{ showB }}" hint-placeholder-val="{{ false }}">
+  <section style="padding:80px 0 96px;background:#FFFFFF;">
+    <div class="container" style="text-align:center;max-width:980px;">
+      <span style="display:inline-block;font-size:12px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--blue-600);margin-bottom:24px;">Free live workshop for UX, UI &amp; product designers</span>
+      <h1 style="font-family:var(--font-brand);font-weight:600;font-size:clamp(42px,5.6vw,68px);line-height:1.0;letter-spacing:-0.03em;color:var(--neutral-900);margin:0 auto 26px;max-width:14ch;text-wrap:balance;">Every month you use AI the wrong way, another designer gets the promotion you wanted.</h1>
+      <p style="font-family:var(--font-reading);font-size:20px;line-height:1.6;color:var(--color-text-secondary-strong);margin:0 auto 34px;max-width:720px;text-wrap:pretty;">There are two faces of AI in design. One makes you faster — and easier to replace. The other makes you senior — and impossible to ignore. In this free live session, I'll show you the second face — and the exact shift before the rest of the field catches on.</p>
+      <a href="#register" class="lift" style="display:inline-flex;align-items:center;gap:10px;background:var(--blue-500);color:#fff;font-weight:600;font-size:17px;padding:17px 30px;border-radius:var(--radius-sm);text-decoration:none;box-shadow:var(--elevation-1);" style-hover="background:var(--blue-600);">Enroll in the webinar <i class="ti ti-arrow-right" style="font-size:18px;"></i></a>
+      <p style="font-size:13px;color:var(--color-text-secondary-light);margin:14px 0 0;letter-spacing:.01em;">Free · Live · No recording shared · 50 seats only</p>
+
+      <div style="position:relative;margin:48px auto 0;max-width:880px;padding:28px;background:var(--blue-50);border:0.5px solid var(--blue-100);border-radius:var(--radius-xl);">
+        <i class="ti ti-plus" style="position:absolute;top:14px;left:14px;font-size:14px;color:var(--neutral-400);opacity:.5;"></i>
+        <i class="ti ti-plus" style="position:absolute;top:14px;right:14px;font-size:14px;color:var(--neutral-400);opacity:.5;"></i>
+        <i class="ti ti-plus" style="position:absolute;bottom:14px;left:14px;font-size:14px;color:var(--neutral-400);opacity:.5;"></i>
+        <i class="ti ti-plus" style="position:absolute;bottom:14px;right:14px;font-size:14px;color:var(--neutral-400);opacity:.5;"></i>
+        <div style="position:relative;aspect-ratio:16/9;background:var(--neutral-900);border-radius:var(--radius-lg);overflow:hidden;">
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
+            <span style="width:84px;height:84px;border-radius:50%;background:var(--blue-500);display:inline-flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(30,71,230,.4);"><i class="ti ti-player-play-filled" style="color:#fff;font-size:36px;margin-left:4px;"></i></span>
+          </div>
+          <div style="position:absolute;left:0;right:0;bottom:0;padding:20px;background:linear-gradient(to top,rgba(0,0,0,.55),rgba(0,0,0,0));display:flex;align-items:center;gap:10px;color:#fff;">
+            <span style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.16);font-weight:600;font-size:12px;border:0.5px solid rgba(255,255,255,.25);">SM</span>
+            <span style="font-size:13px;font-weight:500;">Shaik Murad · 52 sec — “The one thing I'll show you on Saturday.”</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:28px;">
+        <span style="display:inline-flex;align-items:center;gap:7px;font-size:13px;color:var(--color-text-secondary-strong);background:var(--neutral-50);border:0.5px solid var(--color-border-subtle);padding:8px 14px;border-radius:var(--radius-full);"><span style="width:7px;height:7px;border-radius:50%;background:var(--ochre-500);"></span>830+ into senior &amp; leadership roles</span>
+        <span style="display:inline-flex;align-items:center;gap:7px;font-size:13px;color:var(--color-text-secondary-strong);background:var(--neutral-50);border:0.5px solid var(--color-border-subtle);padding:8px 14px;border-radius:var(--radius-full);"><span style="width:7px;height:7px;border-radius:50%;background:var(--ochre-500);"></span>₹18–28 LPA outcomes</span>
+        <span style="display:inline-flex;align-items:center;gap:7px;font-size:13px;color:var(--color-text-secondary-strong);background:var(--neutral-50);border:0.5px solid var(--color-border-subtle);padding:8px 14px;border-radius:var(--radius-full);"><span style="width:7px;height:7px;border-radius:50%;background:var(--ochre-500);"></span>Many in under 90 days</span>
+        <span style="display:inline-flex;align-items:center;gap:7px;font-size:13px;color:var(--color-text-secondary-strong);background:var(--neutral-50);border:0.5px solid var(--color-border-subtle);padding:8px 14px;border-radius:var(--radius-full);"><span style="width:7px;height:7px;border-radius:50%;background:var(--ochre-500);"></span>Hosted by Shaik Murad</span>
+      </div>
+    </div>
+  </section>
+  </sc-if>
+
+  <!-- SECTION 2 — THE GAP -->
+  <section style="padding:96px 0;background:var(--neutral-50);border-top:0.5px solid var(--color-border-subtle);">
+    <div class="container" style="max-width:1000px;">
+      <div style="text-align:center;margin-bottom:48px;">
+        <span style="display:inline-block;font-size:12px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--ochre-600);margin-bottom:16px;">The widening gap</span>
+        <h2 style="font-family:var(--font-brand);font-weight:600;font-size:clamp(30px,3.6vw,44px);line-height:1.08;letter-spacing:-0.025em;color:var(--neutral-900);margin:0;text-wrap:balance;">The AI gap is widening every week. Which side are you on?</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:48px;">
+        <div style="background:#FFFFFF;border:0.5px solid var(--color-border-subtle);border-radius:var(--radius-lg);padding:28px;">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+            <span style="width:36px;height:36px;border-radius:var(--radius-sm);background:var(--neutral-100);display:inline-flex;align-items:center;justify-content:center;"><i class="ti ti-bolt" style="color:var(--neutral-500);font-size:20px;"></i></span>
+            <span style="font-size:15px;font-weight:600;color:var(--color-text-secondary-strong);">The faster half</span>
+          </div>
+          <p style="font-family:var(--font-reading);font-size:17px;line-height:1.6;color:var(--color-text-secondary);margin:0;text-wrap:pretty;">Most designers are pouring their energy into the wrong half of AI. They're getting faster at making the same deliverables — and quietly turning themselves into the most replaceable person on the team.</p>
+        </div>
+        <div style="background:var(--blue-50);border:1px solid var(--blue-500);border-radius:var(--radius-lg);padding:28px;">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+            <span style="width:36px;height:36px;border-radius:var(--radius-sm);background:var(--blue-500);display:inline-flex;align-items:center;justify-content:center;"><i class="ti ti-arrow-up-right" style="color:#fff;font-size:20px;"></i></span>
+            <span style="font-size:15px;font-weight:600;color:var(--blue-900);">The senior half</span>
+          </div>
+          <p style="font-family:var(--font-reading);font-size:17px;line-height:1.6;color:var(--blue-900);margin:0;text-wrap:pretty;">Meanwhile, a smaller group of designers figured out the other half. They're using AI to design experiences that weren't even possible two years ago. They're the ones getting pulled into strategy rooms, handed the senior title, and paid like it.</p>
+        </div>
+      </div>
+      <div style="max-width:660px;margin:0 auto;text-align:center;">
+        <p style="font-family:var(--font-reading);font-size:18px;line-height:1.65;color:var(--color-text-secondary-strong);margin:0 0 20px;text-wrap:pretty;">The gap between these two groups isn't talent. It isn't years of experience. It's one shift in how you see AI — and it compounds. Every month you wait, the designers who made the shift pull further ahead, and the climb back gets steeper.</p>
+        <p style="font-family:var(--font-brand);font-weight:600;font-size:22px;line-height:1.4;letter-spacing:-0.01em;color:var(--neutral-900);margin:0;text-wrap:balance;">This session is where you cross to the right side of that gap. In 90 minutes. For free. Once.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3 — THREE PROMISES -->
+  <section style="padding:96px 0;background:#FFFFFF;">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:52px;">
+        <span style="display:inline-block;font-size:12px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--blue-600);margin-bottom:16px;">What you'll walk away with</span>
+        <h2 style="font-family:var(--font-brand);font-weight:600;font-size:clamp(30px,3.6vw,44px);line-height:1.08;letter-spacing:-0.025em;color:var(--neutral-900);margin:0;text-wrap:balance;">Leave this session with three things you don't have right now</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+        <div style="background:#FFFFFF;border:0.5px solid var(--color-border-subtle);border-radius:var(--radius-lg);padding:32px 28px;">
+          <div class="tabular" style="font-family:var(--font-brand);font-weight:600;font-size:40px;color:var(--blue-500);letter-spacing:-0.02em;margin-bottom:18px;font-variant-numeric:tabular-nums;">01</div>
+          <p style="font-size:16px;line-height:1.62;color:var(--color-text-secondary-strong);margin:0;text-wrap:pretty;">You will walk away with <b style="color:var(--neutral-900);font-weight:600;">zero doubt about where you stand with AI.</b> No more quiet panic, no more pretending it doesn't matter. You'll know exactly what's real, what's hype, and what your very next move is.</p>
+        </div>
+        <div style="background:#FFFFFF;border:0.5px solid var(--color-border-subtle);border-radius:var(--radius-lg);padding:32px 28px;">
+          <div class="tabular" style="font-family:var(--font-brand);font-weight:600;font-size:40px;color:var(--blue-500);letter-spacing:-0.02em;margin-bottom:18px;font-variant-numeric:tabular-nums;">02</div>
+          <p style="font-size:16px;line-height:1.62;color:var(--color-text-secondary-strong);margin:0;text-wrap:pretty;">You will see <b style="color:var(--neutral-900);font-weight:600;">how AI changed what you can actually design.</b> Not how fast you work — what you're able to create. Once you see AI as a design material instead of a shortcut, your own work never looks the same again.</p>
+        </div>
+        <div style="background:#FFFFFF;border:0.5px solid var(--color-border-subtle);border-radius:var(--radius-lg);padding:32px 28px;">
+          <div class="tabular" style="font-family:var(--font-brand);font-weight:600;font-size:40px;color:var(--blue-500);letter-spacing:-0.02em;margin-bottom:18px;font-variant-numeric:tabular-nums;">03</div>
+          <p style="font-size:16px;line-height:1.62;color:var(--color-text-secondary-strong);margin:0;text-wrap:pretty;">You will know <b style="color:var(--neutral-900);font-weight:600;">which designers AI is about to pay more</b> — and how to become one. There's a clear line between the designers AI makes more valuable and the ones it quietly retires. You'll know exactly which side you're on, and the shift that moves you up.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4 — INSIDE THE 90 MINUTES -->
+  <section style="padding:96px 0;background:var(--neutral-50);border-top:0.5px solid var(--color-border-subtle);">
+    <div class="container" style="max-width:860px;">
+      <div style="text-align:center;margin-bottom:48px;">
+        <span style="display:inline-block;font-size:12px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--blue-600);margin-bottom:16px;">The agenda</span>
+        <h2 style="font-family:var(--font-brand);font-weight:600;font-size:clamp(30px,3.6vw,44px);line-height:1.08;letter-spacing:-0.025em;color:var(--neutral-900);margin:0;text-wrap:balance;">Inside the 90 minutes</h2>
+      </div>
+      <div style="background:#FFFFFF;border:0.5px solid var(--color-border-subtle);border-radius:var(--radius-lg);padding:8px 28px;">
+        <div style="display:flex;gap:18px;padding:22px 0;border-bottom:0.5px solid var(--color-border-subtle);">
+          <span class="tabular" style="flex-shrink:0;font-family:var(--font-brand);font-weight:600;font-size:15px;color:var(--blue-500);width:24px;font-variant-numeric:tabular-nums;">01</span>
+          <p style="margin:0;font-size:16px;line-height:1.55;color:var(--color-text-secondary);text-wrap:pretty;"><b style="color:var(--neutral-900);font-weight:600;">The two faces of AI in design</b> — the single distinction that decides whether AI makes you faster or makes you senior.</p>
+        </div>
+        <div style="display:flex;gap:18px;padding:22px 0;border-bottom:0.5px solid var(--color-border-subtle);">
+          <span class="tabular" style="flex-shrink:0;font-family:var(--font-brand);font-weight:600;font-size:15px;color:var(--blue-500);width:24px;font-variant-numeric:tabular-nums;">02</span>
+          <p style="margin:0;font-size:16px;line-height:1.55;color:var(--color-text-secondary);text-wrap:pretty;"><b style="color:var(--neutral-900);font-weight:600;">AI as a design material</b> — how the best designers are creating experiences that were impossible two years ago (with real before/after examples).</p>
+        </div>
+        <div style="display:flex;gap:18px;padding:22px 0;border-bottom:0.5px solid var(--color-border-subtle);">
+          <span class="tabular" style="flex-shrink:0;font-family:var(--font-brand);font-weight:600;font-size:15px;color:var(--blue-500);width:24px;font-variant-numeric:tabular-nums;">03</span>
+          <p style="margin:0;font-size:16px;line-height:1.55;color:var(--color-text-secondary);text-wrap:pretty;"><b style="color:var(--neutral-900);font-weight:600;">The honest map</b> — what AI can actually do for designers right now, so you stop guessing and start deciding.</p>
+        </div>
+        <div style="display:flex;gap:18px;padding:22px 0;border-bottom:0.5px solid var(--color-border-subtle);">
+          <span class="tabular" style="flex-shrink:0;font-family:var(--font-brand);font-weight:600;font-size:15px;color:var(--blue-500);width:24px;font-variant-numeric:tabular-nums;">04</span>
+          <p style="margin:0;font-size:16px;line-height:1.55;color:var(--color-text-secondary);text-wrap:pretty;"><b style="color:var(--neutral-900);font-weight:600;">Who AI pays more</b> — the specialists rising in value, the ones falling, and how to position yourself on the right side.</p>
+        </div>
+        <div style="display:flex;gap:18px;padding:22px 0;border-bottom:0.5px solid var(--color-border-subtle);">
+          <span class="tabular" style="flex-shrink:0;font-family:var(--font-brand);font-weight:600;font-size:15px;color:var(--blue-500);width:24px;font-variant-numeric:tabular-nums;">05</span>
+          <p style="margin:0;font-size:16px;line-height:1.55;color:var(--color-text-secondary);text-wrap:pretty;"><b style="color:var(--neutral-900);font-weight:600;">Your next 90 days</b> — the path from where you are now to senior/lead, and the first move you make on Monday.</p>
+        </div>
+        <div style="display:flex;gap:18px;padding:22px 0;">
+          <span style="flex-shrink:0;width:24px;display:flex;justify-content:center;"><i class="ti ti-messages" style="color:var(--ochre-600);font-size:18px;"></i></span>
+          <p style="margin:0;font-size:16px;line-height:1.55;color:var(--color-text-secondary);text-wrap:pretty;"><b style="color:var(--neutral-900);font-weight:600;">Live Q&amp;A</b> — bring your situation; I'll answer as many as I can.</p>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px;margin-top:20px;background:var(--blue-50);border:0.5px solid var(--blue-100);border-radius:var(--radius-md);padding:14px 18px;">
+        <i class="ti ti-pencil" style="color:var(--blue-500);font-size:20px;flex-shrink:0;"></i>
+        <p style="margin:0;font-size:14px;line-height:1.5;color:var(--blue-900);">This is a working session, not a lecture. Cameras on. Pen and paper ready.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5 — WHO THIS IS FOR -->
+  <section style="padding:96px 0;background:#FFFFFF;">
+    <div class="container" style="max-width:1000px;">
+      <div style="text-align:center;margin-bottom:48px;">
+        <span style="display:inline-block;font-size:12px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--blue-600);margin-bottom:16px;">Who it's for</span>
+        <h2 style="font-family:var(--font-brand);font-weight:600;font-size:clamp(30px,3.6vw,44px);line-height:1.08;letter-spacing:-0.025em;color:var(--neutral-900);margin:0;text-wrap:balance;">This session is built for you if…</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+        <div style="background:var(--blue-50);border:0.5px solid var(--blue-100);border-radius:var(--radius-lg);padding:30px;">
+          <div style="font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--blue-700);margin-bottom:20px;">It's for you if</div>
+          <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:16px;">
+            <li style="display:flex;gap:12px;font-size:15px;line-height:1.55;color:var(--blue-900);"><i class="ti ti-circle-check-filled" style="color:var(--blue-500);font-size:20px;flex-shrink:0;margin-top:1px;"></i>You're a UX, UI, product, visual, or graphic designer with 2+ years of experience.</li>
+            <li style="display:flex;gap:12px;font-size:15px;line-height:1.55;color:var(--blue-900);"><i class="ti ti-circle-check-filled" style="color:var(--blue-500);font-size:20px;flex-shrink:0;margin-top:1px;"></i>You're good at your craft but feel stuck at mid-level while less-skilled peers move up.</li>
+            <li style="display:flex;gap:12px;font-size:15px;line-height:1.55;color:var(--blue-900);"><i class="ti ti-circle-check-filled" style="color:var(--blue-500);font-size:20px;flex-shrink:0;margin-top:1px;"></i>You're anxious about AI and tired of not knowing where you really stand.</li>
+            <li style="display:flex;gap:12px;font-size:15px;line-height:1.55;color:var(--blue-900);"><i class="ti ti-circle-check-filled" style="color:var(--blue-500);font-size:20px;flex-shrink:0;margin-top:1px;"></i>You want to reach senior or lead — and be paid like it — in the near future, not “someday.”</li>
+          </ul>
+        </div>
+        <div style="background:#FFFFFF;border:0.5px solid var(--color-border-subtle);border-radius:var(--radius-lg);padding:30px;">
+          <div style="font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--color-text-tertiary);margin-bottom:20px;">It's not for you if</div>
+          <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:16px;">
+            <li style="display:flex;gap:12px;font-size:15px;line-height:1.55;color:var(--color-text-secondary);"><i class="ti ti-circle-x" style="color:var(--neutral-400);font-size:20px;flex-shrink:0;margin-top:1px;"></i>You're looking for a list of AI tools to try this weekend.</li>
+            <li style="display:flex;gap:12px;font-size:15px;line-height:1.55;color:var(--color-text-secondary);"><i class="ti ti-circle-x" style="color:var(--neutral-400);font-size:20px;flex-shrink:0;margin-top:1px;"></i>You want a magic shortcut without doing the work.</li>
+            <li style="display:flex;gap:12px;font-size:15px;line-height:1.55;color:var(--color-text-secondary);"><i class="ti ti-circle-x" style="color:var(--neutral-400);font-size:20px;flex-shrink:0;margin-top:1px;"></i>You're not seriously planning to grow your career this year.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6 — ABOUT THE HOST -->
+  <section style="padding:96px 0;background:var(--neutral-50);border-top:0.5px solid var(--color-border-subtle);">
+    <div class="container" style="max-width:1000px;">
+      <div style="display:grid;grid-template-columns:360px 1fr;gap:56px;align-items:start;">
+        <div>
+          <div style="position:relative;aspect-ratio:4/5;background:var(--blue-50);border:0.5px solid var(--blue-100);border-radius:var(--radius-lg);overflow:hidden;display:flex;align-items:center;justify-content:center;">
+            <span style="font-family:var(--font-brand);font-weight:600;font-size:96px;color:var(--blue-300);letter-spacing:-0.02em;">SM</span>
+            <span style="position:absolute;left:16px;bottom:16px;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--blue-700);background:rgba(255,255,255,.86);padding:5px 10px;border-radius:var(--radius-full);">Host · Shaik Murad</span>
+          </div>
+        </div>
+        <div>
+          <span style="display:inline-block;font-size:12px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--blue-600);margin-bottom:14px;">Who's running this</span>
+          <h2 style="font-family:var(--font-brand);font-weight:600;font-size:clamp(28px,3.2vw,40px);line-height:1.1;letter-spacing:-0.02em;color:var(--neutral-900);margin:0 0 6px;">Shaik Murad</h2>
+          <p style="font-size:15px;color:var(--color-text-secondary-light);margin:0 0 24px;">13 years in design</p>
+          <ul style="list-style:none;margin:0 0 28px;padding:0;display:flex;flex-direction:column;gap:14px;">
+            <li style="display:flex;gap:12px;font-size:15px;line-height:1.55;color:var(--color-text-secondary-strong);"><i class="ti ti-point-filled" style="color:var(--ochre-500);font-size:16px;flex-shrink:0;margin-top:3px;"></i>Heads product &amp; design at India's only private design-education company.</li>
+            <li style="display:flex;gap:12px;font-size:15px;line-height:1.55;color:var(--color-text-secondary-strong);"><i class="ti ti-point-filled" style="color:var(--ochre-500);font-size:16px;flex-shrink:0;margin-top:3px;"></i>Has recruited 1,000+ designers and mentored 10,000+ more — so he's sat in the exact seat that decides who counts as “senior.”</li>
+            <li style="display:flex;gap:12px;font-size:15px;line-height:1.55;color:var(--color-text-secondary-strong);"><i class="ti ti-point-filled" style="color:var(--ochre-500);font-size:16px;flex-shrink:0;margin-top:3px;"></i>Managed 100+ direct reports across industrial automation, healthcare, fintech and edtech.</li>
+            <li style="display:flex;gap:12px;font-size:15px;line-height:1.55;color:var(--color-text-secondary-strong);"><i class="ti ti-point-filled" style="color:var(--ochre-500);font-size:16px;flex-shrink:0;margin-top:3px;"></i>Psychologist and technologist by training; author of the weighted design process; co-founder of two AI startups (Skaeyl, Konfom).</li>
+          </ul>
+          <blockquote style="margin:0;padding:0 0 0 20px;border-left:2px solid var(--blue-500);font-family:var(--font-reading);font-size:19px;line-height:1.6;color:var(--neutral-900);font-style:italic;text-wrap:pretty;">“I've watched, from both the recruiter's chair and the founder's chair, exactly what moves designers up in the AI era. It's not what the internet is selling you. That's what I'm going to show you.”</blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7 — PROOF & SUCCESS STORIES -->
+  <section style="padding:96px 0;background:#FFFFFF;">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:44px;">
+        <span style="display:inline-block;font-size:12px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--blue-600);margin-bottom:16px;">Proof</span>
+        <h2 style="font-family:var(--font-brand);font-weight:600;font-size:clamp(30px,3.6vw,44px);line-height:1.08;letter-spacing:-0.025em;color:var(--neutral-900);margin:0;text-wrap:balance;">830+ designers have already made this shift</h2>
+      </div>
+      <div style="background:#15161A;border-radius:var(--radius-xl);padding:44px 32px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:44px;">
+        <div style="text-align:center;border-right:0.5px solid rgba(255,255,255,.1);">
+          <div class="tabular" style="font-family:var(--font-brand);font-weight:600;font-size:48px;color:#fff;letter-spacing:-0.02em;line-height:1;font-variant-numeric:tabular-nums;">830+</div>
+          <div style="font-size:13px;color:rgba(255,255,255,.6);margin-top:10px;line-height:1.4;">designers moved into senior &amp; leadership roles</div>
+        </div>
+        <div style="text-align:center;border-right:0.5px solid rgba(255,255,255,.1);">
+          <div class="tabular" style="font-family:var(--font-brand);font-weight:600;font-size:48px;color:#fff;letter-spacing:-0.02em;line-height:1;font-variant-numeric:tabular-nums;">₹18–28<span style="font-size:24px;"> LPA</span></div>
+          <div style="font-size:13px;color:rgba(255,255,255,.6);margin-top:10px;line-height:1.4;">typical outcome range</div>
+        </div>
+        <div style="text-align:center;">
+          <div class="tabular" style="font-family:var(--font-brand);font-weight:600;font-size:48px;color:#fff;letter-spacing:-0.02em;line-height:1;font-variant-numeric:tabular-nums;">&lt;90<span style="font-size:24px;"> days</span></div>
+          <div style="font-size:13px;color:rgba(255,255,255,.6);margin-top:10px;line-height:1.4;">many made the move in under</div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+        <div style="background:#FFFFFF;border:0.5px solid var(--color-border-subtle);border-radius:var(--radius-lg);padding:28px;display:flex;flex-direction:column;">
+          <span style="align-self:flex-start;font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ochre-700);background:var(--ochre-50);border:0.5px solid var(--ochre-100);padding:3px 8px;border-radius:var(--radius-full);margin-bottom:18px;">Example</span>
+          <p style="font-family:var(--font-reading);font-size:16px;line-height:1.6;color:var(--neutral-900);margin:0 0 22px;flex:1;text-wrap:pretty;">“Six weeks after the workshop I stopped redoing the same screens faster and started bringing AI-built prototypes into roadmap reviews. I got the senior title I'd been circling for two years.”</p>
+          <div style="display:flex;align-items:center;gap:12px;">
+            <span style="width:40px;height:40px;border-radius:50%;background:var(--blue-100);color:var(--blue-700);display:inline-flex;align-items:center;justify-content:center;font-weight:600;font-size:14px;">AR</span>
+            <div style="line-height:1.35;"><div style="font-size:14px;font-weight:600;color:var(--neutral-900);">Aishwarya R.</div><div style="font-size:12px;color:var(--color-text-secondary-light);">Senior Product Designer, fintech</div></div>
+          </div>
+        </div>
+        <div style="background:#FFFFFF;border:0.5px solid var(--color-border-subtle);border-radius:var(--radius-lg);padding:28px;display:flex;flex-direction:column;">
+          <span style="align-self:flex-start;font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ochre-700);background:var(--ochre-50);border:0.5px solid var(--ochre-100);padding:3px 8px;border-radius:var(--radius-full);margin-bottom:18px;">Example</span>
+          <p style="font-family:var(--font-reading);font-size:16px;line-height:1.6;color:var(--neutral-900);margin:0 0 22px;flex:1;text-wrap:pretty;">“I went in AI-anxious and came out with a plan. My next offer nearly doubled my pay — same craft, completely different positioning.”</p>
+          <div style="display:flex;align-items:center;gap:12px;">
+            <span style="width:40px;height:40px;border-radius:50%;background:var(--blue-100);color:var(--blue-700);display:inline-flex;align-items:center;justify-content:center;font-weight:600;font-size:14px;">RM</span>
+            <div style="line-height:1.35;"><div style="font-size:14px;font-weight:600;color:var(--neutral-900);">Rohit M.</div><div style="font-size:12px;color:var(--color-text-secondary-light);">Lead UX Designer, healthtech</div></div>
+          </div>
+        </div>
+        <div style="background:#FFFFFF;border:0.5px solid var(--color-border-subtle);border-radius:var(--radius-lg);padding:28px;display:flex;flex-direction:column;">
+          <span style="align-self:flex-start;font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ochre-700);background:var(--ochre-50);border:0.5px solid var(--ochre-100);padding:3px 8px;border-radius:var(--radius-full);margin-bottom:18px;">Example</span>
+          <p style="font-family:var(--font-reading);font-size:16px;line-height:1.6;color:var(--neutral-900);margin:0 0 22px;flex:1;text-wrap:pretty;">“I'd been quietly panicking about being replaced. Now I'm the person my team asks how AI fits the work — and I'm leading a squad.”</p>
+          <div style="display:flex;align-items:center;gap:12px;">
+            <span style="width:40px;height:40px;border-radius:50%;background:var(--blue-100);color:var(--blue-700);display:inline-flex;align-items:center;justify-content:center;font-weight:600;font-size:14px;">NS</span>
+            <div style="line-height:1.35;"><div style="font-size:14px;font-weight:600;color:var(--neutral-900);">Neha S.</div><div style="font-size:12px;color:var(--color-text-secondary-light);">Design Lead, SaaS</div></div>
+          </div>
+        </div>
+      </div>
+      <p style="text-align:center;font-size:12px;color:var(--color-text-tertiary);margin:24px 0 0;">Sample stories shown as examples — replace with real VSL testimonials (photos + LinkedIn links lift trust most).</p>
+    </div>
+  </section>
+
+  <!-- SECTION 8 — WHAT MAKES THIS DIFFERENT -->
+  <section style="padding:96px 0;background:var(--neutral-50);border-top:0.5px solid var(--color-border-subtle);">
+    <div class="container" style="max-width:720px;text-align:center;">
+      <span style="display:inline-block;font-size:12px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--ochre-600);margin-bottom:16px;">Why this is different</span>
+      <h2 style="font-family:var(--font-brand);font-weight:600;font-size:clamp(28px,3.4vw,42px);line-height:1.1;letter-spacing:-0.025em;color:var(--neutral-900);margin:0 0 28px;text-wrap:balance;">Why this isn't another “AI for designers” webinar</h2>
+      <p style="font-family:var(--font-reading);font-size:19px;line-height:1.66;color:var(--color-text-secondary-strong);margin:0;text-wrap:pretty;">Most AI webinars teach you prompts and tools — the faster half. You leave with a list and the same career. This session is about the half that changes your <b style="color:var(--neutral-900);font-weight:600;">position</b>, not just your speed: how AI reshapes what you design, and how that single shift is what actually gets designers promoted. You won't find this framing in the usual courses — because almost no one is teaching it yet.</p>
+    </div>
+  </section>
+
+  <!-- SECTION 9 — LIVE BONUS -->
+  <section style="padding:96px 0;background:#FFFFFF;">
+    <div class="container" style="max-width:880px;">
+      <div style="background:var(--blue-50);border:1px solid var(--blue-200);border-radius:var(--radius-xl);padding:44px;display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:start;">
+        <span style="width:60px;height:60px;border-radius:var(--radius-md);background:var(--blue-500);display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="ti ti-map-2" style="color:#fff;font-size:30px;"></i></span>
+        <div>
+          <span style="display:inline-block;font-size:12px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--blue-700);margin-bottom:12px;">Show up live and you'll also get…</span>
+          <h2 style="font-family:var(--font-brand);font-weight:600;font-size:clamp(24px,2.8vw,32px);line-height:1.15;letter-spacing:-0.02em;color:var(--neutral-900);margin:0 0 14px;text-wrap:balance;">The AI Design Capability Map + 60-tool scorecard</h2>
+          <p style="font-size:16px;line-height:1.6;color:var(--blue-900);margin:0 0 14px;text-wrap:pretty;">The same reference our mentees use to decide where AI belongs in their workflow. Shared only with people in the room, live. Not sent to no-shows.</p>
+          <p style="font-size:13px;color:var(--color-text-secondary-light);margin:0;">Swap for whatever asset you prefer.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 10 — FAQ -->
+  <section style="padding:96px 0;background:var(--neutral-50);border-top:0.5px solid var(--color-border-subtle);">
+    <div class="container" style="max-width:780px;">
+      <div style="text-align:center;margin-bottom:44px;">
+        <span style="display:inline-block;font-size:12px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--blue-600);margin-bottom:16px;">Questions</span>
+        <h2 style="font-family:var(--font-brand);font-weight:600;font-size:clamp(30px,3.6vw,44px);line-height:1.08;letter-spacing:-0.025em;color:var(--neutral-900);margin:0;">Frequently asked</h2>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <details open style="background:#FFFFFF;border:0.5px solid var(--color-border-subtle);border-radius:var(--radius-md);padding:4px 22px;">
+          <summary style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 0;font-size:16px;font-weight:600;color:var(--neutral-900);">Is it really free?<i class="ti ti-chevron-down faq-chev" style="color:var(--color-text-tertiary);font-size:18px;transition:transform 150ms;"></i></summary>
+          <p style="margin:0;padding:0 0 18px;font-family:var(--font-reading);font-size:16px;line-height:1.6;color:var(--color-text-secondary-strong);">Yes — the session is completely free. There's an optional next step we'll mention at the end, but you'll walk away with real value whether or not you take it.</p>
+        </details>
+        <details style="background:#FFFFFF;border:0.5px solid var(--color-border-subtle);border-radius:var(--radius-md);padding:4px 22px;">
+          <summary style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 0;font-size:16px;font-weight:600;color:var(--neutral-900);">When is it and how long?<i class="ti ti-chevron-down faq-chev" style="color:var(--color-text-tertiary);font-size:18px;transition:transform 150ms;"></i></summary>
+          <p style="margin:0;padding:0 0 18px;font-family:var(--font-reading);font-size:16px;line-height:1.6;color:var(--color-text-secondary-strong);">Saturday, 20 Jun at 11:00 AM IST, live online. Plan for 90–120 minutes including Q&amp;A.</p>
+        </details>
+        <details style="background:#FFFFFF;border:0.5px solid var(--color-border-subtle);border-radius:var(--radius-md);padding:4px 22px;">
+          <summary style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 0;font-size:16px;font-weight:600;color:var(--neutral-900);">Will I get a recording?<i class="ti ti-chevron-down faq-chev" style="color:var(--color-text-tertiary);font-size:18px;transition:transform 150ms;"></i></summary>
+          <p style="margin:0;padding:0 0 18px;font-family:var(--font-reading);font-size:16px;line-height:1.6;color:var(--color-text-secondary-strong);">No. This runs once, live, and the recording isn't shared. What you get, you get by being in the room — which is also why seats are limited.</p>
+        </details>
+        <details style="background:#FFFFFF;border:0.5px solid var(--color-border-subtle);border-radius:var(--radius-md);padding:4px 22px;">
+          <summary style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 0;font-size:16px;font-weight:600;color:var(--neutral-900);">Do I need to already know AI tools?<i class="ti ti-chevron-down faq-chev" style="color:var(--color-text-tertiary);font-size:18px;transition:transform 150ms;"></i></summary>
+          <p style="margin:0;padding:0 0 18px;font-family:var(--font-reading);font-size:16px;line-height:1.6;color:var(--color-text-secondary-strong);">No. Come as you are. This is about how to think about AI as a designer — the part tools can't teach you.</p>
+        </details>
+        <details style="background:#FFFFFF;border:0.5px solid var(--color-border-subtle);border-radius:var(--radius-md);padding:4px 22px;">
+          <summary style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 0;font-size:16px;font-weight:600;color:var(--neutral-900);">Is this for my experience level?<i class="ti ti-chevron-down faq-chev" style="color:var(--color-text-tertiary);font-size:18px;transition:transform 150ms;"></i></summary>
+          <p style="margin:0;padding:0 0 18px;font-family:var(--font-reading);font-size:16px;line-height:1.6;color:var(--color-text-secondary-strong);">It's built for designers with 2+ years who want to reach senior or lead. If that's you, you're in the right place.</p>
+        </details>
+        <details style="background:#FFFFFF;border:0.5px solid var(--color-border-subtle);border-radius:var(--radius-md);padding:4px 22px;">
+          <summary style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 0;font-size:16px;font-weight:600;color:var(--neutral-900);">Is this just a sales pitch?<i class="ti ti-chevron-down faq-chev" style="color:var(--color-text-tertiary);font-size:18px;transition:transform 150ms;"></i></summary>
+          <p style="margin:0;padding:0 0 18px;font-family:var(--font-reading);font-size:16px;line-height:1.6;color:var(--color-text-secondary-strong);">No. It's a real working session. We'll point to a way to go deeper if you want it, but the 90 minutes stand on their own.</p>
+        </details>
+        <details style="background:#FFFFFF;border:0.5px solid var(--color-border-subtle);border-radius:var(--radius-md);padding:4px 22px;">
+          <summary style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 0;font-size:16px;font-weight:600;color:var(--neutral-900);">What happens after I register?<i class="ti ti-chevron-down faq-chev" style="color:var(--color-text-tertiary);font-size:18px;transition:transform 150ms;"></i></summary>
+          <p style="margin:0;padding:0 0 18px;font-family:var(--font-reading);font-size:16px;line-height:1.6;color:var(--color-text-secondary-strong);">You'll get a confirmation, an invite to our WhatsApp group, and reminders with your join link as the date gets closer.</p>
+        </details>
+        <details style="background:#FFFFFF;border:0.5px solid var(--color-border-subtle);border-radius:var(--radius-md);padding:4px 22px;">
+          <summary style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 0;font-size:16px;font-weight:600;color:var(--neutral-900);">How many people are you taking?<i class="ti ti-chevron-down faq-chev" style="color:var(--color-text-tertiary);font-size:18px;transition:transform 150ms;"></i></summary>
+          <p style="margin:0;padding:0 0 18px;font-family:var(--font-reading);font-size:16px;line-height:1.6;color:var(--color-text-secondary-strong);">A maximum of 50 designers, so the room stays useful and the Q&amp;A actually reaches you. Once it's full, registration closes.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 11 — FINAL CTA + FORM -->
+  <section id="register" style="padding:100px 0;background:#FFFFFF;border-top:0.5px solid var(--color-border-subtle);">
+    <div class="container" style="max-width:620px;">
+      <div style="text-align:center;margin-bottom:36px;">
+        <h2 style="font-family:var(--font-brand);font-weight:600;font-size:clamp(32px,4vw,50px);line-height:1.05;letter-spacing:-0.03em;color:var(--neutral-900);margin:0 0 18px;text-wrap:balance;">50 seats. Once. Live. Save yours now.</h2>
+        <p style="font-size:17px;line-height:1.6;color:var(--color-text-secondary-strong);margin:0;text-wrap:pretty;">Every cohort fills, and the next one is weeks away. If you've read this far, you already know which side of the AI gap you want to be on. The only thing between you and the room is this form.</p>
+      </div>
+      <div style="position:relative;background:var(--neutral-50);border:0.5px solid var(--color-border-subtle);border-radius:var(--radius-lg);padding:32px;">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
+          <div>
+            <label style="display:block;font-size:13px;font-weight:500;color:var(--color-text-secondary-strong);margin-bottom:7px;">First name</label>
+            <input type="text" placeholder="Your first name" class="lift" style="width:100%;height:44px;padding:0 14px;border:1px solid var(--color-border-default);border-radius:var(--radius-sm);font-family:var(--font-ui);font-size:14px;color:var(--neutral-900);background:#fff;outline:none;" style-focus="border-color:var(--blue-500);box-shadow:0 0 0 2px var(--blue-100);">
+          </div>
+          <div>
+            <label style="display:block;font-size:13px;font-weight:500;color:var(--color-text-secondary-strong);margin-bottom:7px;">Email</label>
+            <input type="email" placeholder="you@email.com" class="lift" style="width:100%;height:44px;padding:0 14px;border:1px solid var(--color-border-default);border-radius:var(--radius-sm);font-family:var(--font-ui);font-size:14px;color:var(--neutral-900);background:#fff;outline:none;" style-focus="border-color:var(--blue-500);box-shadow:0 0 0 2px var(--blue-100);">
+          </div>
+        </div>
+        <div style="margin-bottom:16px;">
+          <label style="display:block;font-size:13px;font-weight:500;color:var(--color-text-secondary-strong);margin-bottom:7px;">WhatsApp number <span style="color:var(--color-text-tertiary);font-weight:400;">— so we can send your join link + reminders</span></label>
+          <input type="tel" placeholder="+91 00000 00000" class="lift" style="width:100%;height:44px;padding:0 14px;border:1px solid var(--color-border-default);border-radius:var(--radius-sm);font-family:var(--font-ui);font-size:14px;color:var(--neutral-900);background:#fff;outline:none;" style-focus="border-color:var(--blue-500);box-shadow:0 0 0 2px var(--blue-100);">
+        </div>
+        <div style="margin-bottom:24px;">
+          <label style="display:block;font-size:13px;font-weight:500;color:var(--color-text-secondary-strong);margin-bottom:7px;">Current role <span style="color:var(--color-text-tertiary);font-weight:400;">— optional</span></label>
+          <select class="lift" style="width:100%;height:44px;padding:0 12px;border:1px solid var(--color-border-default);border-radius:var(--radius-sm);font-family:var(--font-ui);font-size:14px;color:var(--color-text-secondary);background:#fff;outline:none;" style-focus="border-color:var(--blue-500);box-shadow:0 0 0 2px var(--blue-100);">
+            <option>Select your role</option>
+            <option>UX designer</option>
+            <option>UI designer</option>
+            <option>Product designer</option>
+            <option>Visual designer</option>
+            <option>Graphic designer</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <button type="button" class="lift" style="width:100%;display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--blue-500);color:#fff;font-weight:600;font-size:16px;padding:16px;border:none;border-radius:var(--radius-sm);cursor:pointer;box-shadow:var(--elevation-1);" style-hover="background:var(--blue-600);">Enroll in the webinar <i class="ti ti-arrow-right" style="font-size:18px;"></i></button>
+        <p style="text-align:center;font-size:13px;color:var(--color-text-secondary-light);margin:16px 0 0;line-height:1.5;">Free · Live · Saturday, 20 Jun · 11 AM IST · 50 seats only · No recording shared</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 12 — FOOTER -->
+  <footer style="background:#15161A;color:rgba(255,255,255,.7);padding:48px 0;">
+    <div class="container" style="display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center;">
+      <span style="font-family:var(--font-brand);font-weight:600;font-size:20px;letter-spacing:-0.02em;color:#fff;">Xperience Wave</span>
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px 16px;font-size:13px;color:rgba(255,255,255,.6);">
+        <span>Expwave Pvt. Ltd.</span>
+        <span style="color:rgba(255,255,255,.2);">·</span>
+        <a href="#" style="color:rgba(255,255,255,.6);text-decoration:none;">WhatsApp: +91 93805 06841</a>
+        <span style="color:rgba(255,255,255,.2);">·</span>
+        <a href="#" style="color:rgba(255,255,255,.6);text-decoration:none;">Privacy</a>
+        <span style="color:rgba(255,255,255,.2);">·</span>
+        <a href="#" style="color:rgba(255,255,255,.6);text-decoration:none;">Terms</a>
+      </div>
+      <p style="font-size:12px;color:rgba(255,255,255,.4);margin:0;max-width:560px;line-height:1.5;">This is an independent design-career workshop. Results vary by individual effort.</p>
+    </div>
+  </footer>
+
+  <!--PAGE-END-->
+</div>
+
+<!-- DESIGN-REVIEW SWITCHER -->
+<div style="position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:90;display:flex;align-items:center;gap:8px;background:#FFFFFF;border:0.5px solid var(--color-border-default);border-radius:var(--radius-full);padding:6px 6px 6px 14px;box-shadow:var(--elevation-3);">
+  <span style="font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--color-text-tertiary);">Hero</span>
+  <button onClick="{{ setA }}" style="{{ aBtnStyle }}">A · Editorial</button>
+  <button onClick="{{ setB }}" style="{{ bBtnStyle }}">B · Centered</button>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1180,&quot;height&quot;:1500}}">
+class Component extends DCLogic {
+  state = { dir: 'A' };
+  renderVals() {
+    const dir = this.state.dir;
+    const on = {
+      background: 'var(--blue-500)', color: '#fff', border: 'none',
+      fontFamily: 'var(--font-ui)', fontWeight: 600, fontSize: '12px',
+      padding: '8px 14px', borderRadius: '999px', cursor: 'pointer'
+    };
+    const off = {
+      background: 'transparent', color: 'var(--color-text-secondary)', border: 'none',
+      fontFamily: 'var(--font-ui)', fontWeight: 500, fontSize: '12px',
+      padding: '8px 14px', borderRadius: '999px', cursor: 'pointer'
+    };
+    return {
+      showA: dir === 'A',
+      showB: dir === 'B',
+      aBtnStyle: dir === 'A' ? on : off,
+      bBtnStyle: dir === 'B' ? on : off,
+      setA: () => this.setState({ dir: 'A' }),
+      setB: () => this.setState({ dir: 'B' })
+    };
+  }
+}
+</script>
+</body>
+</html>

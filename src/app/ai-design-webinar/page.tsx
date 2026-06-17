@@ -13,6 +13,7 @@ import { HERO_VARIANT, WEBINAR } from './config';
 import { HeroCentered, HeroEditorial, HeroSplitface } from './Heroes';
 import CountdownBar from './CountdownBar';
 import RegistrationForm from './RegistrationForm';
+import ScrollTop from './ScrollTop';
 import styles from './webinar.module.css';
 
 /* ============================================================
@@ -193,6 +194,8 @@ export default function AiDesignWebinarPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(eventSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+
+      <ScrollTop />
 
       <CountdownBar />
 

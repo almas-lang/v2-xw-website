@@ -22,5 +22,5 @@ export const WEBINAR = {
   whatsapp: '+91 93805 06841',
   /** WhatsApp group invite link (chat.whatsapp.com/…) for webinar updates.
    *  Leave empty to fall back to a 1:1 wa.me chat with the number above. */
-  whatsappGroupUrl: '',
+  whatsappGroupUrl: 'https://chat.whatsapp.com/FA3CiGTDiFB7togfQNEm9z',
 } as const;

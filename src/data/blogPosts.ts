@@ -51,6 +51,17 @@ export const getCategoryLabel = (category: string): string => {
 // Sample blog posts with Unsplash images
 export const blogPosts: BlogPost[] = [
   {
+    id: '45',
+    slug: '5-things-senior-designers-ai',
+    title: '5 Things Senior Designers Should Be Doing With AI - None of Them Involve Figma Plugins',
+    excerpt: 'The conversation around AI in design has been reduced to tools. The designers who are actually getting ahead aren\'t the ones who\'ve mastered the most plugins - they\'re the ones who\'ve fundamentally changed how they think about design in an AI-capable world.',
+    category: 'industry' as const,
+    image: 'https://images.unsplash.com/photo-1639322537228-f710d846310a?w=800&q=80',
+    author: { name: 'Shaik Murad' },
+    publishedAt: '2026-06-30',
+    readTime: '12 min',
+  },
+  {
     id: '44',
     slug: '7-second-portfolio-test',
     title: 'The 7-Second Portfolio Test: What Happens When a Hiring Manager Opens Your Portfolio',

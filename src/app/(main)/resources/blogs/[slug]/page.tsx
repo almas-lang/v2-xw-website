@@ -13,6 +13,247 @@ import { FreeTrainingCTA } from '@/components/blog/FreeTrainingCTA';
 
 // Blog content with internal links for SEO
 const blogContent: Record<string, React.ReactNode> = {
+  '5-things-senior-designers-ai': (
+    <>
+      <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
+        Every week, someone asks me which AI tool they should learn. Which Figma plugin. Which prompt template. Which course on &quot;AI for designers.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        And every week, I give the same answer: you&apos;re asking the wrong question.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The conversation around AI in design has been reduced to tools. Which one generates screens faster. Which one writes copy. Which one removes backgrounds. And while tools matter, the designers who are actually getting ahead with AI in 2026 aren&apos;t the ones who&apos;ve mastered the most plugins. They&apos;re the ones who&apos;ve fundamentally changed how they think about design in an AI-capable world.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        That&apos;s a different skill entirely. And it&apos;s the one nobody&apos;s teaching.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Here&apos;s why this matters urgently: a 2026 study published through the World Economic Forum found that candidates with AI skills were 8&ndash;15% more likely to receive interview callbacks - across roles including graphic design, software development, and administration [1]. PwC&apos;s 2025 Global AI Jobs Barometer found that workers with advanced AI skills earn up to 56% more than peers in the same roles [2]. US job postings requiring AI skills grew 144% year-over-year as of April 2026 [3].
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        The five things I&apos;m about to describe aren&apos;t about learning tools. They&apos;re about developing the kind of AI fluency that changes how you&apos;re evaluated, how you lead, and what you&apos;re worth.
+      </p>
+
+      <h2 id="ai-evaluation" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        1. Understand That AI Is Now Part of How You&apos;re Evaluated
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This isn&apos;t theoretical. It&apos;s already happening in hiring pipelines, portfolio reviews, and performance conversations - and most designers don&apos;t realise it.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        When a hiring manager at a design-mature company reviews your portfolio in 2026, they&apos;re not just looking at your case studies, your visual craft, and your process documentation. They&apos;re looking for signals that you understand the world you&apos;re designing for. And that world now runs on AI.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The WEF study didn&apos;t just find that AI skills improve callback rates. It found that AI proficiency offset traditional hiring disadvantages - older candidates and those without advanced degrees saw their prospects improve substantially when AI skills were present on their r&eacute;sum&eacute;s. When supported by a recognised credential, the effect was even stronger [1]. In other words, <strong>AI fluency is beginning to function as a credibility multiplier</strong> - it doesn&apos;t replace design skill, but it amplifies how that skill is perceived.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        What does this look like in practice? It means your portfolio should demonstrate that you&apos;ve thought about AI - not as a novelty, but as a design material. Have you designed an experience where AI played a role? Have you made a deliberate decision about where AI should or shouldn&apos;t be used in a product? Can you articulate the trade-offs? Even one project that shows this kind of thinking signals something that a portfolio full of screens cannot.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        It also means your interview answers need to reflect AI literacy. When a product lead asks &quot;how would you approach this problem?&quot; and the problem has an obvious AI dimension - personalisation, recommendation, content generation, automation - and you don&apos;t address it, that&apos;s a gap. Not because every solution needs AI, but because a senior designer should be able to evaluate whether it does. We explored this shift in <Link href="/resources/blogs/ai-as-design-material" className="text-accent hover:underline font-medium">AI as Design Material</Link> - knowing what AI can do fundamentally changes what you&apos;re capable of designing. If you don&apos;t know the material, your work will reflect that. And increasingly, so will your callback rate.
+      </p>
+
+      {/* Inline image 1 */}
+      <div className="relative aspect-[16/9] rounded-xl overflow-hidden my-10">
+        <Image
+          src="https://images.unsplash.com/photo-1655720828018-edd2daec9349?w=800&q=80"
+          alt="Designer working at a modern desk with AI interfaces on screen, representing the shift in how design skills are evaluated in 2026"
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 720px"
+        />
+      </div>
+
+      <h2 id="judgment-when-to-resist" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        2. Build the Judgment for When to Use AI - and When to Deliberately Resist It
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Everyone is talking about where to use AI. Almost nobody is talking about where not to use it. And that second question is where the real design skill lives.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Consider two scenarios.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Scenario one.</strong> A user is signing a legal contract. The full text is twelve pages. AI could summarise it in thirty seconds. Should it?
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Think carefully. The entire purpose of that document is that the user understands what they&apos;re agreeing to. Summarisation doesn&apos;t serve the user here - it serves the user&apos;s impatience. And impatience in a legal context is precisely the problem good design should address, not accelerate. A well-designed experience might use AI to highlight key obligations or flag unusual clauses - but it should never replace the act of reading and comprehending the agreement. The design decision isn&apos;t &quot;can AI do this?&quot; It&apos;s &quot;does AI doing this serve the user&apos;s genuine interest, or just their path of least resistance?&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Scenario two.</strong> A patient is asked whether they consent to a life-threatening surgical procedure. The decision involves weighing survival rates, quality-of-life outcomes, family considerations, personal values. Should AI make this decision? Obviously not. Should AI present the relevant data in a way that helps the patient and their family make an informed choice? Absolutely. The design judgment here is about where in the workflow AI adds clarity versus where it removes agency.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This kind of contextual, ethical reasoning is what separates a designer who uses AI from a designer who understands AI. And it&apos;s not being developed by playing with tools - it&apos;s being developed by thinking deeply about human stakes.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        The EU AI Act, which began enforcement in 2025, formalises this by classifying AI applications into risk tiers - with uses in healthcare, hiring, and safety-critical operations requiring transparency and human oversight [4]. Emotion recognition in the workplace has been banned outright. As a designer, you should be making these same risk assessments instinctively, whether or not regulation requires it. We explored why &quot;AI will replace designers&quot; is the wrong question in <Link href="/resources/blogs/ai-replace-designers-wrong-question" className="text-accent hover:underline font-medium">a previous piece</Link>. The right question is: can you exercise the judgment that determines when AI should be prominent, when it should be invisible, and when it shouldn&apos;t be there at all? That judgment is becoming one of the most valuable things a senior designer brings to a product team.
+      </p>
+
+      <h2 id="try-building" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        3. Don&apos;t Just Use AI Tools - Try Building Something With AI
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is the point that separates designers who talk about AI from designers who understand it.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        I&apos;m not suggesting you become a machine learning engineer. I&apos;m suggesting you attempt to build a small AI-powered experience - even if it fails. Even if it&apos;s rough. Even if it never ships.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Why? Because the gap between using AI tools and understanding the complexity behind them is enormous. And that gap is where bad product decisions live.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        When you try to build an AI-powered feature - even something modest, like a tool that categorises user feedback into themes, or a prototype that generates design recommendations based on input parameters - you discover things you&apos;d never learn as a user:
+      </p>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li>AI outputs are inconsistent. The same prompt produces different results on different days.</li>
+        <li>Edge cases are unpredictable and often bizarre.</li>
+        <li>The distance between a working demo and a reliable product is far wider than most people - including most product managers - assume.</li>
+        <li>Latency, cost, accuracy, and hallucination rates are real constraints that reshape what&apos;s possible.</li>
+        <li>And the &quot;magical&quot; experience you imagined in the brainstorm often breaks down the moment real users interact with it.</li>
+      </ul>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This knowledge makes you a dramatically more effective designer. You stop designing AI features as if they&apos;re deterministic systems with guaranteed outputs. You start designing for uncertainty - for fallbacks, for confidence indicators, for graceful degradation when the AI gets it wrong. You push back on product roadmaps that promise AI-powered features without acknowledging the complexity. And when you push back, you do it with the credibility of someone who&apos;s actually tried.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        The tools to do this are more accessible than ever. You can prototype AI experiences using Claude&apos;s API with basic scripting. No-code platforms integrate AI models directly. You can build simple AI workflows in an afternoon using tools you already know. The point isn&apos;t to produce something production-ready. The point is to understand the material from the inside - because that understanding changes everything about how you design with it.
+      </p>
+
+      {/* Inline image 2 */}
+      <div className="relative aspect-[16/9] rounded-xl overflow-hidden my-10">
+        <Image
+          src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&q=80"
+          alt="Matrix-style code flowing on screen representing the complexity behind AI systems that designers should understand by building"
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 720px"
+        />
+      </div>
+
+      <h2 id="ai-changes-leadership" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        4. AI Changes How You Lead - or Whether You Get to Lead at All
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is the point that nobody in the &quot;AI for designers&quot; conversation is making, and it&apos;s the one that matters most for your career trajectory.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If you&apos;re a senior designer aspiring to lead - or already in a lead role - your AI literacy isn&apos;t just a personal skill. It&apos;s what determines whether you shape your team&apos;s direction or react to someone else&apos;s.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Here&apos;s what&apos;s happening in product organisations right now. Engineering teams are building AI-powered features. Product managers are prioritising AI-driven roadmaps. Business leaders are asking &quot;where can we use AI?&quot; in every strategy review. And if the design leader in the room can&apos;t participate substantively in those conversations - can&apos;t evaluate which AI applications genuinely serve users, can&apos;t identify where AI introduces risk, can&apos;t push back on AI-for-the-sake-of-AI thinking with informed alternatives - the design function gets reduced to making AI features look nice after the decisions have been made.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Deloitte&apos;s 2026 Global Human Capital Trends report found that only 6% of leaders say they&apos;re making real progress designing how humans and AI should work together [5]. That&apos;s a staggering gap - and it means the leader who can bridge design thinking and AI capability is extraordinarily valuable right now. Not in three years. Right now.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        As a design leader, you need to be the person who can say: &quot;This AI feature will delight users in this scenario, but it will erode trust in this other scenario - and here&apos;s why.&quot; You need to be able to evaluate AI capabilities not just for what they can do, but for what they should do given your users&apos; context. We wrote about this evaluation skill in <Link href="/resources/blogs/evaluating-ai-tools-design-leaders-framework" className="text-accent hover:underline font-medium">A Design Leader&apos;s Framework for Evaluating AI Tools</Link>.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        And this extends beyond product decisions. The structure of design teams is changing. NNGroup and Figma&apos;s recent research both show that design teams are getting smaller and broader - designers are expected to operate across more of the product lifecycle. AI is what makes this possible without quality collapsing. A designer with strong AI fluency can contribute meaningfully to research synthesis, content strategy, accessibility evaluation, and prototype validation in ways that weren&apos;t feasible five years ago. We explored what this restructuring looks like in <Link href="/resources/blogs/what-should-design-team-look-like-2026" className="text-accent hover:underline font-medium">What Should a Design Team Look Like in 2026?</Link>. If you&apos;re not leading the AI conversation on your team, someone else will. And that someone else will shape the product direction you&apos;re expected to design within.
+      </p>
+
+      <h2 id="career-compensation" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        5. AI Is Now a Career Positioning and Compensation Lever - Treat It Like One
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Let&apos;s talk about money.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        PwC&apos;s data is unambiguous: workers with advanced AI skills earn up to 56% more than peers in the same roles [2]. That&apos;s not a marginal advantage. That&apos;s a different compensation tier for doing what is ostensibly the same job.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        But the premium isn&apos;t just about salary. An analysis of US job postings from 2018 to 2024 shows that AI-related roles are significantly more likely to offer generous parental leave, flexible work arrangements, and remote or hybrid options. AI roles are roughly twice as likely to include parental leave benefits and around three times as likely to offer remote work [6]. Companies competing for AI-fluent talent are competing on total package, not just base pay.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        What does this mean for a senior designer?
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Your AI fluency is a negotiation asset.</strong> When you interview for a role and can demonstrate that you understand AI at a strategic level - not just as a tool user, but as someone who can evaluate AI applications, design for probabilistic systems, and lead AI-informed product discussions - you&apos;re positioned differently. You&apos;re not competing for &quot;senior UX designer.&quot; You&apos;re competing for &quot;senior designer who can operate in an AI-native product environment.&quot; That&apos;s a smaller talent pool with higher demand.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Your portfolio should reflect this.</strong> If you&apos;ve designed an AI-powered experience, led a team through an AI product decision, or even just developed a thoughtful personal AI workflow - document it. Make it visible. The designers I&apos;ve mentored who&apos;ve added an AI-informed case study or written about their approach to AI in design have consistently reported stronger interview outcomes and better offer terms.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        <strong>Your career path depends on it.</strong> The WEF projects that 39% of core skills will change by 2030, with AI and big data topping the list of fastest-growing skill requirements [7]. 94% of leaders already face AI-critical skill shortages [8]. If you position yourself on the right side of that gap now - not in two years, now - you&apos;re not just future-proofing your career. You&apos;re accessing opportunities that most designers in your cohort don&apos;t even see yet. This isn&apos;t about becoming an AI specialist. It&apos;s about being a senior designer whose AI fluency makes them more valuable in every room they walk into - product reviews, portfolio presentations, salary negotiations, leadership conversations. If you&apos;d like a practical starting point, we wrote a detailed guide on <Link href="/resources/blogs/personal-ai-workflow-designer" className="text-accent hover:underline font-medium">building your personal AI workflow as a designer</Link>.
+      </p>
+
+      {/* Inline image 3 */}
+      <div className="relative aspect-[16/9] rounded-xl overflow-hidden my-10">
+        <Image
+          src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80"
+          alt="Team collaborating in a modern office environment representing how AI fluency changes design leadership and career positioning"
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 720px"
+        />
+      </div>
+
+      <h2 id="think-probabilistically" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        One More Thing: Start Thinking Probabilistically
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If there&apos;s a single cognitive shift that separates designers who thrive with AI from those who struggle, it&apos;s this: learning to think in probabilities instead of certainties.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Traditional design is largely deterministic. You design a button. The user clicks it. A predictable thing happens. The same input produces the same output, every time. Most of your design training - and most design systems - are built on this assumption.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        AI doesn&apos;t work this way. AI is probabilistic. The same input can produce different outputs. Confidence levels vary. Accuracy is a spectrum, not a binary. An AI recommendation that&apos;s right 85% of the time is still wrong 15% of the time - and your design needs to account for both scenarios.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This isn&apos;t just a technical consideration. It&apos;s a thinking skill.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Can you design for uncertainty? Can you create experiences where the system is transparent about its own confidence? Can you build graceful degradation paths for when the AI is wrong? Can you design trust frameworks that help users calibrate their relationship with AI-generated outputs? Can you communicate outcomes to stakeholders as likelihoods rather than guarantees?
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Probabilistic thinking applies far beyond AI interfaces. It changes how you approach research - thinking in confidence intervals, not absolute answers. It changes how you evaluate designs - considering a range of user responses, not just the happy path. It changes how you frame impact - &quot;we expect this to improve retention by 8&ndash;12%&quot; versus &quot;this will fix the problem.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        This is the thinking muscle that most designers haven&apos;t developed yet - because the tools and methodologies we&apos;ve used for decades didn&apos;t require it. AI does. And the designers who build this muscle now will operate at a fundamentally different level than those who don&apos;t.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        It&apos;s one of the things we deliberately develop in our mentorship programs at Xperience Wave. Not AI tool training - that&apos;s the easy part. The harder, more valuable work is reshaping how designers think about systems, uncertainty, and impact in a world where the materials we design with are no longer fully predictable. If that&apos;s a gap you recognise in yourself, <Link href="https://calendly.com/xperiencewave/xw-strategy-call" className="text-accent hover:underline font-medium">let&apos;s talk about it</Link>.
+      </p>
+
+      <FreeTrainingCTA text="At Xperience Wave, we help senior designers develop the AI fluency that changes how they lead, how they&apos;re evaluated, and what they&apos;re worth - not through tool training, but through the strategic thinking that makes AI a career multiplier" />
+
+      <h2 id="sources-references" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Sources &amp; References
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li>[1] Stephany, F. et al. (2026). &quot;AI Skills Improve Job Prospects: Causal Evidence from a Hiring Experiment.&quot; Published via the World Economic Forum. https://www.weforum.org/stories/2026/02/ai-improving-wages-job-quality/</li>
+        <li>[2] PwC. (2025). &quot;2025 Global AI Jobs Barometer.&quot; https://www.pwc.com/gx/en/services/ai/ai-jobs-barometer.html</li>
+        <li>[3] Bipartisan Policy Center / Lightcast. (2026). &quot;AI Skills Dashboard.&quot; Referenced via Gloat AI Workforce Trends Q2 2026. https://gloat.com/blog/ai-workforce-trends/</li>
+        <li>[4] European Union. (2025). &quot;EU AI Act: Regulation on Artificial Intelligence.&quot; https://artificialintelligenceact.eu/</li>
+        <li>[5] Deloitte. (2026). &quot;2026 Global Human Capital Trends Report.&quot; Referenced via Gloat AI Workforce Trends Q2 2026. https://gloat.com/blog/ai-workforce-trends/</li>
+        <li>[6] Mira et al. (2025). &quot;Beyond Pay: AI Skills Reward More Job Benefits.&quot; Referenced via the World Economic Forum. https://www.weforum.org/stories/2026/02/ai-improving-wages-job-quality/</li>
+        <li>[7] World Economic Forum. (2025). &quot;Future of Jobs Report 2025.&quot; https://www.weforum.org/publications/the-future-of-jobs-report-2025/</li>
+        <li>[8] Cognizant / World Economic Forum. (2025). &quot;AI-Critical Skill Shortages.&quot; Referenced via WEF Top Labour Market Stories 2025. https://www.weforum.org/stories/2026/01/top-jobs-and-labour-market-stories-2025/</li>
+      </ul>
+
+      <h2 id="further-reading" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Further Reading on Xperience Wave
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li><Link href="/resources/blogs/ai-as-design-material" className="text-accent hover:underline font-medium">AI as Design Material: How Knowing What AI Can Do Changes What You Design</Link></li>
+        <li><Link href="/resources/blogs/ai-replace-designers-wrong-question" className="text-accent hover:underline font-medium">Why &quot;AI Will Replace Designers&quot; Is the Wrong Question</Link></li>
+        <li><Link href="/resources/blogs/personal-ai-workflow-designer" className="text-accent hover:underline font-medium">How to Build Your Personal AI Workflow as a Designer (Without Losing What Makes You Good)</Link></li>
+        <li><Link href="/resources/blogs/evaluating-ai-tools-design-leaders-framework" className="text-accent hover:underline font-medium">A Design Leader&apos;s Framework for Evaluating AI Tools (Without Losing What Makes Design Work)</Link></li>
+        <li><Link href="/resources/blogs/what-should-design-team-look-like-2026" className="text-accent hover:underline font-medium">What Should a Design Team Look Like in 2026?</Link></li>
+      </ul>
+
+      <h2 id="about-author" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        About the Author
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Shaik Murad is Co-founder and Head of Product &amp; Design at <Link href="/" className="text-accent hover:underline font-medium">Xperience Wave</Link>, a UX design studio based in Bangalore, working across designer mentorship, UX services for businesses, and a design community of 1,000+ designers.
+      </p>
+
+      <p className="text-base md:text-lg text-g500 italic mt-6">
+        - Murad, Co-founder &amp; Head of Product &amp; Design, Xperience Wave
+      </p>
+    </>
+  ),
   '7-second-portfolio-test': (
     <>
       <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
@@ -9069,6 +9310,16 @@ const blogContent: Record<string, React.ReactNode> = {
 
 // Table of contents for each blog post
 const blogTableOfContents: Record<string, { id: string; title: string }[]> = {
+  '5-things-senior-designers-ai': [
+    { id: 'ai-evaluation', title: '1. AI Is Part of How You\'re Evaluated' },
+    { id: 'judgment-when-to-resist', title: '2. When to Use AI - and When to Resist' },
+    { id: 'try-building', title: '3. Try Building Something With AI' },
+    { id: 'ai-changes-leadership', title: '4. AI Changes How You Lead' },
+    { id: 'career-compensation', title: '5. Career Positioning & Compensation' },
+    { id: 'think-probabilistically', title: 'Start Thinking Probabilistically' },
+    { id: 'sources-references', title: 'Sources & References' },
+    { id: 'further-reading', title: 'Further Reading' },
+  ],
   '7-second-portfolio-test': [
     { id: 'what-hiring-manager-does', title: 'What Happens in Those Seven Seconds' },
     { id: 'four-archetypes', title: 'The 2×2: Four Portfolio Archetypes' },
@@ -9442,6 +9693,11 @@ const authorData: Record<string, { role: string; bio: string; image: string }> =
 
 // Blog-specific metadata for SEO
 const blogMetadata: Record<string, { title: string; description: string; keywords: string[] }> = {
+  '5-things-senior-designers-ai': {
+    title: '5 Things Senior Designers Should Be Doing With AI - None of Them Involve Figma Plugins | Xperience Wave',
+    description: 'The designers getting ahead with AI in 2026 aren\'t mastering plugins - they\'re changing how they think. Five strategic shifts that change how you\'re evaluated, how you lead, and what you\'re worth.',
+    keywords: ['AI for senior designers', 'AI design skills 2026', 'designer AI fluency', 'AI career positioning design', 'AI design leadership', 'probabilistic design thinking', 'AI salary premium designers', 'AI evaluation design hiring', 'senior designer AI strategy', 'design AI judgment'],
+  },
   '7-second-portfolio-test': {
     title: 'The 7-Second Portfolio Test: What Happens When a Hiring Manager Opens Your Portfolio | Xperience Wave',
     description: 'A hiring manager gives your portfolio seven seconds. Three questions are answered in that window - and they determine whether you get a deeper look or get closed. The four portfolio archetypes, the case study structure that works, and how to test your own.',

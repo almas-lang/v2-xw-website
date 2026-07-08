@@ -51,6 +51,17 @@ export const getCategoryLabel = (category: string): string => {
 // Sample blog posts with Unsplash images
 export const blogPosts: BlogPost[] = [
   {
+    id: '46',
+    slug: 'ai-will-change-everything-except-what-matters',
+    title: 'AI Will Change Everything About Design. Except the Part That Actually Matters.',
+    excerpt: 'AI can produce deliverables faster than ever. But the layer of design skill that AI cannot reach - tacit knowledge, stakeholder influence, contextual judgment - is where design quality lives. If you let that layer atrophy, you\'ll discover the loss at the worst possible moment.',
+    category: 'industry' as const,
+    image: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&q=80',
+    author: { name: 'Shaik Murad' },
+    publishedAt: '2026-07-07',
+    readTime: '14 min',
+  },
+  {
     id: '45',
     slug: '5-things-senior-designers-ai',
     title: '5 Things Senior Designers Should Be Doing With AI - None of Them Involve Figma Plugins',

@@ -9306,10 +9306,340 @@ const blogContent: Record<string, React.ReactNode> = {
       </p>
     </>
   ),
+  'ai-will-change-everything-except-what-matters': (
+    <>
+      <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
+        I watched a senior designer close a six-month project last year with a decision that nobody on the team could explain afterwards. Not because it was wrong - it worked beautifully. But because the reasoning behind it was so soft, so rooted in accumulated instinct, that when someone asked &quot;how did you know to go that direction?&quot; the honest answer was &quot;I just knew.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        He&apos;d spent weeks sitting with the research. Not reading summaries - sitting with it. He&apos;d had three difficult conversations with stakeholders that changed his understanding of what the business actually needed, as opposed to what they&apos;d written in the brief. He&apos;d observed users doing something with the product that nobody had anticipated and that no interview would have surfaced. And somewhere in the middle of all that - in a way he couldn&apos;t fully articulate - a direction emerged.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        AI cannot do this.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        AI can produce deliverables. It can structure a competitive analysis in minutes, generate a research synthesis that reads well, build out a complete information architecture from a set of requirements. It can create - with or without deep context, it can produce. But can it push the work forward the way that designer did? Can it - for better or worse - at least say with conviction &quot;this direction is right, and here&apos;s why I believe that&quot;?
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        No. What you get instead is a confident-sounding output that shifts direction the moment you question it. A changed approach every time you push back. A deliverable that exists, looks professional, can be presented in a review meeting - but the understanding that&apos;s supposed to live underneath it was never built.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        And that&apos;s the distinction this blog is about. Not whether AI is useful - it is. Not whether designers should adopt it - they should, and we&apos;ve written about <Link href="/resources/blogs/personal-ai-workflow-designer" className="text-accent hover:underline font-medium">how to do that well</Link>. But there is a layer of design skill that AI cannot reach, and if you let that layer atrophy because the deliverables are coming faster than ever, you&apos;ll discover the loss at the worst possible moment - when a project demands judgment and all you have is output.
+      </p>
+
+      {/* Inline image 1 - Designer working deeply with research materials */}
+      <div className="relative aspect-[16/9] rounded-xl overflow-hidden my-10">
+        <Image
+          src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80"
+          alt="Team of designers deeply engaged in collaborative work, representing the human judgment and tacit knowledge that AI cannot replicate"
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 720px"
+        />
+      </div>
+
+      <h2 id="what-core-skills-means" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What &quot;Core Skills&quot; Actually Means
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        When I say core skills, I don&apos;t mean &quot;knowing Figma&quot; or &quot;being able to run a usability test.&quot; I mean something deeper - and harder to teach.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Core skills means gaining genuine context of your work, your domain, and your users, and using that context to drive a solution that fits into customers&apos; lives. Not a solution that looks good. Not a solution that passes a review. A solution that works - in the real world, under real constraints, for real people.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        That definition hides a lot behind it. Let me unpack what it actually involves:
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        You have to set a direction first - not just accept one from a product manager. You have to identify the relevant goals and milestones for your work. You have to find users to talk to - real ones, not synthetic proxies. You have to conduct those conversations and figure out what people actually mean when they say something, because what they say and what they mean are rarely the same thing. You have to generate insights and recommendations from that data - not summaries, insights. You have to ideate solutions, test those solutions, develop them to a point where they work, put them into the field, and check whether they actually deliver on the promise.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        When I lay it out like that, it sounds like a process. A sequence. A workflow that could theoretically be automated.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        But here&apos;s what actually happens: a human designer stands at the centre of all of this and weaves each stage to the next. They skip some stages. They add others. They loop back when something doesn&apos;t feel right. They make calls based on experience, intuition, and a reading of the room that no model can replicate.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        And sometimes - this is the part that&apos;s hardest to explain - the direction a senior designer takes is so soft in nature that you can&apos;t even articulate why they went that way. They read something in the research that wasn&apos;t in the data. They sensed a stakeholder concern that wasn&apos;t spoken. They made a design choice that seemed counterintuitive but resolved three downstream problems no one had identified yet.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        And that choice concluded the project positively.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is tacit knowledge - and it&apos;s the most valuable thing a designer develops over a career. Research from CHI 2024 found that tacit knowledge in design &quot;relies heavily on intuition and experiential knowledge, making it difficult to articulate, codify, or share&quot; [1]. The California Management Review published a piece in March 2026 titled &quot;Tacit Knowledge Is Your Next Competitive Moat,&quot; arguing that &quot;the real differentiator is not the data or even the models, but the tacit knowledge embedded in the judgment of their people&quot; [2].
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        AI doesn&apos;t have tacit knowledge. It has statistical patterns. And the gap between those two things is where design quality lives.
+      </p>
+
+      <h2 id="the-ford-lesson" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Ford Lesson
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If you think this argument is theoretical, consider what happened at Ford Motor Company.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        In June 2026, Ford launched a campaign to rehire veteran engineers - the so-called &quot;grey beards&quot; - who had been pushed out through early retirement packages and layoffs, replaced by software developers and AI-powered simulation systems. The promise had been seductive: faster development cycles, lower costs, elimination of physical prototypes through digital twins and generative AI [3].
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        It didn&apos;t work.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The algorithms couldn&apos;t predict how a specific metal alloy would react to extreme temperatures after five years of use. They couldn&apos;t sense the subtle vibrations that signal a future transmission failure. They operated in what engineers called a &quot;sterile data environment&quot; - technically accurate but experientially hollow.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Ford had to bring back the people whose intuition was built from decades of hands-on work. The AI could model. It couldn&apos;t know.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        This is the exact same dynamic playing out in design teams right now. AI can generate a persona. It can&apos;t know your user. AI can produce a journey map. It can&apos;t feel where the experience breaks.
+      </p>
+
+      {/* Inline image 2 - Industrial/engineering context */}
+      <div className="relative aspect-[16/9] rounded-xl overflow-hidden my-10">
+        <Image
+          src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&q=80"
+          alt="Engineers collaborating in a technical environment, representing the irreplaceable value of hands-on expertise and tacit knowledge"
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 720px"
+        />
+      </div>
+
+      <h2 id="hammer-and-nail" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Hammer and Nail Problem
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Now, when you read all of this, you might think I&apos;m saying AI is useless throughout the product lifecycle. I&apos;m not. We&apos;ve written extensively about <Link href="/resources/blogs/ai-as-design-material" className="text-accent hover:underline font-medium">how AI changes what you design</Link>, <Link href="/resources/blogs/ai-replace-designers-wrong-question" className="text-accent hover:underline font-medium">why the &quot;replacement&quot; framing is wrong</Link>, and <Link href="/resources/blogs/personal-ai-workflow-designer" className="text-accent hover:underline font-medium">how to build a personal AI workflow</Link> that actually makes your practice stronger.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        What I am saying is: you don&apos;t have to use a hammer on everything by treating every problem as a nail. You need to figure out what actually needs a hit.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Here&apos;s the distinction:
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Use AI when deliverables need to be structured from things you&apos;ve already learned.</strong> You&apos;ve spent two weeks in research. You have raw data, notes, observations. Using AI to help structure that into a coherent synthesis document? That&apos;s leveraging a tool for what it&apos;s good at - organising volume. The insight came from you. The structure comes from AI. That works.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Use AI when you need to collect and process data - but not to drive final insights from it.</strong> AI can scrape competitor reviews, aggregate support tickets, transcribe interviews, and surface preliminary patterns. Excellent. But the moment that says &quot;users are frustrated with onboarding&quot; - that&apos;s a summary, not an insight. The insight is why they&apos;re frustrated, what that frustration connects to in the broader experience, and what it means for your design direction. That&apos;s yours.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Use AI when you have a concept vision and need a tangible expression of it.</strong> You know the direction. You can see it in your head. Using AI to rapidly generate visual explorations of that direction, to produce variations you can react to, to accelerate the translation from concept to screen? That&apos;s smart use. The vision came from you. The execution speed comes from AI.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Use AI when you need to evaluate at scale.</strong> You have a heuristic evaluation framework. AI can apply it across dozens of screens and flag potential issues. You can then review that evaluation report with human judgment - confirming, dismissing, or investigating further.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        In all of these cases, the process remains in your control. AI is a tool within your workflow, not a replacement for your judgment.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        But if you&apos;re using AI in stages you don&apos;t completely understand yourself, you will end up only convincing yourself and your team. And that usually hurts more than it can help.
+      </p>
+
+      <h2 id="the-story" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Story That Illustrates Everything
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Let me give you a real example.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        A designer I spoke with needed to recruit participants for usability testing on a B2C product. They decided to run recruitment ads on Meta - Instagram specifically. They used Claude with Meta&apos;s MCP integration to set up the campaign.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The first problem: Meta&apos;s objective as a platform is to make you spend as much as possible. Claude&apos;s natural tendency is to be helpful and say &quot;yes, we can do this.&quot; Neither of these incentives are aligned with the designer&apos;s actual goal - finding five qualified participants for &#8377;2,000.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        They launched the campaign. The first cycle generated leads, but they were unqualified - wrong demographic, wrong behaviour profile, people clicking because the ad was interesting rather than because they matched the research criteria.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        They went back to Claude. &quot;This is common, I understand,&quot; it said. &quot;You targeted too broadly. Let&apos;s tighten the audience, adjust the budget, change the creative.&quot; Confident. Reassuring. Plausible.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Second cycle: zero leads. The audience was now too narrow. Budget too low for the restricted reach.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        They iterated again. And again. Each time, Claude offered a new explanation and a new adjustment - each one internally logical, each one failing to produce results.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        After several futile cycles, the designer realised the core problem: they needed someone who had actually run successful participant recruitment on Meta. Not someone who could theorise about it. Not a model that could generate plausible-sounding advice. Someone who had done it, failed, learned what the documentation doesn&apos;t tell you, and developed the tacit knowledge of what actually works.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Claude can help. But it can&apos;t direct. And in stages where you don&apos;t have the expertise to evaluate whether its help is good, you end up in a confident-sounding loop that goes nowhere.
+      </p>
+
+      {/* Inline image 3 - Frustration/iteration */}
+      <div className="relative aspect-[16/9] rounded-xl overflow-hidden my-10">
+        <Image
+          src="https://images.unsplash.com/photo-1553028826-f4804a6dba3b?w=800&q=80"
+          alt="A person working through complex problems at a desk, representing the iterative struggle of relying on AI without domain expertise"
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 720px"
+        />
+      </div>
+
+      <h2 id="automation-fantasy" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Automation Fantasy
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This brings me to a pattern I&apos;m seeing with alarming frequency.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        A product manager - usually someone without deep design experience - decides that the design workflow should be automated with AI. End to end. Research to delivery. They&apos;ve seen the demos. They&apos;ve read the case studies. They believe that what used to take a designer two weeks can now take an AI thirty minutes.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        They&apos;re inviting a mess.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Not because AI can&apos;t participate in the design process. It can, and it should - as we discussed in our piece on <Link href="/resources/blogs/evaluating-ai-tools-design-leaders-framework" className="text-accent hover:underline font-medium">evaluating AI tools for design teams</Link>. But because the process of building core design understanding requires things that shouldn&apos;t be automated, even if it feels like you can.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Automating research means the designer never builds empathy. Automating synthesis means the designer never develops judgment. Automating ideation means the designer never learns to navigate ambiguity. Automating evaluation means the designer never calibrates their own quality bar.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        MIT economist Daron Acemoglu&apos;s 2026 research on AI and knowledge systems warns that &quot;automating entry-level tasks can negatively affect long-term growth because it hampers the intergenerational transmission of tacit knowledge&quot; [4]. When you automate the learning stages, you don&apos;t just speed up the work - you eliminate the conditions under which expertise is developed.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        A design team that automates its core workflow doesn&apos;t become faster. It becomes shallower. And shallow teams produce shallow work - work that looks professional but doesn&apos;t hold up when it meets real users, real constraints, and real business pressure.
+      </p>
+
+      <h2 id="core-skills-ai-cant-touch" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Core Skills AI Can&apos;t Touch
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        So let me be specific. Here are the design skills that remain fundamentally human - the ones that AI can assist with but cannot perform, and the ones that will define your value for the foreseeable future:
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Problem isolation.</strong> Being able to sit in a room with stakeholders - each with their own agenda, their own understanding of the problem, their own definition of success - and guide that group toward a shared, specific problem to solve. AI can provide supporting data to help you find a good problem. But it cannot navigate the politics, the egos, and the competing priorities to get five people to agree on one problem worth solving. You and the team do that.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Contextual research judgment.</strong> Reading your organisation&apos;s culture and your project&apos;s real constraints - not the stated ones - and determining which research methods to propose. Knowing that a diary study is the right approach but that your timeline doesn&apos;t support it, so proposing a contextual inquiry instead. Knowing that your stakeholder will dismiss survey data but will be moved by watching a user struggle on camera. This is organisational intelligence layered on methodological knowledge, and AI has neither.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Direct user observation.</strong> Going and watching your users struggle through things you have already delivered. Sitting in their environment. Noticing the workaround they&apos;ve developed that they&apos;d never mention in an interview because to them it&apos;s just &quot;how they do it.&quot; The insight that changes your direction often comes from something you see, not something you&apos;re told. AI cannot observe. It can only process what&apos;s been captured and described.
+      </p>
+
+      {/* Inline image 4 - Stakeholder/meeting context */}
+      <div className="relative aspect-[16/9] rounded-xl overflow-hidden my-10">
+        <Image
+          src="https://images.unsplash.com/photo-1542626991-cbc4e32524cc?w=800&q=80"
+          alt="A design leader presenting to stakeholders in a meeting room, representing the embodied skill of stakeholder influence and strategic direction-setting"
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 720px"
+        />
+      </div>
+
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Stakeholder influence.</strong> Presenting a design direction to a sceptical VP and reading, in real time, whether they&apos;re tracking with you or losing patience. Adjusting your language mid-sentence. Knowing when to show data and when to tell a story. Knowing when to push and when to concede gracefully. This is a performative, embodied skill that AI cannot replicate because it requires reading a room - not just the words being spoken, but the body language, the tone, the unspoken hierarchy.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Strategic direction-setting.</strong> Looking at incomplete information - partial research, ambiguous business goals, conflicting stakeholder input - and committing to a direction anyway. Not because you&apos;re certain. Because you&apos;ve synthesised enough signals to make an informed bet, and you have the experience to know that moving forward with 70% confidence is better than waiting for 100%.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Ethical and contextual judgment.</strong> Deciding that a feature shouldn&apos;t exist even though it&apos;s technically possible and commercially attractive. Recognising that a dark pattern will increase conversion but erode trust. Understanding that a different culture uses your product differently and that your Western-centric persona doesn&apos;t account for that. These are moral and contextual decisions that require human values, not statistical patterns.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Cross-functional weaving.</strong> Moving between research, design, engineering, and business conversations - translating between each group&apos;s language, priorities, and constraints - and maintaining coherence across all of them. This isn&apos;t a single skill. It&apos;s a continuously improvised performance that shifts based on who&apos;s in the room, what&apos;s at stake, and what happened in the last meeting.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Adaptive process design.</strong> Knowing which parts of the design process to follow, which to skip, which to extend, and which to invent - based on the specific project, team, timeline, and organisational context. No two projects should follow the same process, and the designer who recognises this produces better work than the one who follows a fixed methodology, whether that methodology is human-designed or AI-suggested.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        As one UX writer quoted in Figma&apos;s State of the Designer 2026 put it: &quot;AI does not recognise nuance, cultural references, perspective, or depth. Those are human capabilities that cannot be replicated&quot; [5].
+      </p>
+
+      <h2 id="what-this-means" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What This Means for You
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If you&apos;re a designer reading this and feeling somewhat defensive - &quot;but I use AI well, I&apos;m not over-relying on it&quot; - good. You&apos;re probably fine.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        But ask yourself this: in the last month, have you sat with a user in person? Have you facilitated a stakeholder alignment session without a template or AI-generated agenda? Have you made a design decision based on something you felt rather than something you could point to in a report? Have you navigated an ambiguous situation where there was no clear data and you had to commit to a direction anyway?
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If the answer to most of these is no, your core skills are atrophying. And they atrophy quietly - you don&apos;t notice until the moment you need them and they&apos;re not there.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Strengthen your core.</strong> Use AI for what it&apos;s good at - we&apos;ve written a detailed guide on <Link href="/resources/blogs/personal-ai-workflow-designer" className="text-accent hover:underline font-medium">building your personal AI workflow</Link> that gets this balance right. But protect the stages where understanding is built. Those stages are slow, messy, and uncomfortable. They&apos;re also irreplaceable.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Be honest about what you don&apos;t know.</strong> If you&apos;re using AI in a domain you don&apos;t have expertise in - like the Meta ads example - recognise the limits early. AI will make you feel competent. Feeling competent and being competent are not the same thing.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        <strong>Resist the automation pressure.</strong> When a PM or a leader suggests automating the design workflow end-to-end, push back - with evidence, not emotion. The work that builds lasting product quality is the work that AI can assist with but cannot own. We explored <Link href="/resources/blogs/what-should-design-team-look-like-2026" className="text-accent hover:underline font-medium">what design teams should look like in 2026</Link> and the answer isn&apos;t &quot;fewer designers doing more with AI.&quot; It&apos;s &quot;designers who are stronger at the things AI can&apos;t do.&quot;
+      </p>
+
+      {/* Inline image 5 - Designer growth/depth */}
+      <div className="relative aspect-[16/9] rounded-xl overflow-hidden my-10">
+        <Image
+          src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&q=80"
+          alt="Designers collaborating deeply around a whiteboard, representing the irreplaceable human skills of strategic thinking and cross-functional weaving"
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 720px"
+        />
+      </div>
+
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The designers who will define the next decade of this profession aren&apos;t the ones who mastered the most tools. They&apos;re the ones who built the deepest understanding - of users, of businesses, of human complexity - and learned to use AI as an amplifier for that understanding, not a substitute for it.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        That&apos;s what we develop at <Link href="/" className="text-accent hover:underline font-medium">Xperience Wave</Link>. Not tool training. Not workflow automation. The core skills - research judgment, stakeholder influence, strategic direction, business fluency - that make you irreplaceable in any market condition. If you want to know where your core is strong and where it&apos;s thinning, <Link href="https://calendly.com/xperiencewave/xw-strategy-call" className="text-accent hover:underline font-medium">talk to us</Link>.
+      </p>
+
+      <FreeTrainingCTA text="At Xperience Wave, we develop the core design skills that AI cannot replicate - research judgment, stakeholder influence, strategic direction - so you remain irreplaceable in any market condition" />
+
+      <h2 id="sources-references" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Sources &amp; References
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li>[1] Son, K. et al. (2024). &quot;Demystifying Tacit Knowledge in Graphic Design: Characteristics, Instances, Approaches, and Guidelines.&quot; CHI Conference on Human Factors in Computing Systems 2024. <a href="https://dl.acm.org/doi/10.1145/3746058.3758467" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">https://dl.acm.org/doi/10.1145/3746058.3758467</a></li>
+        <li>[2] California Management Review. (2026). &quot;Tacit Knowledge Is Your Next Competitive Moat.&quot; March 2026. <a href="https://cmr.berkeley.edu/2026/03/tacit-knowledge-is-your-next-competitive-moat/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">https://cmr.berkeley.edu/2026/03/tacit-knowledge-is-your-next-competitive-moat/</a></li>
+        <li>[3] The AI Chronicle. (2026). &quot;Ford Rehires Veteran Engineers After AI Failures.&quot; June 2026. <a href="https://theaicronicle.com/en/news/companies/ford-rehires-gray-beard-engineers-ai-shortfalls" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">https://theaicronicle.com/en/news/companies/ford-rehires-gray-beard-engineers-ai-shortfalls</a></li>
+        <li>[4] Acemoglu, D. &amp; Kong, D. (2026). &quot;AI, Human Cognition and Knowledge Collapse.&quot; MIT Economics Working Paper, February 2026. <a href="https://economics.mit.edu/sites/default/files/2026-02/AI,%20Human%20Cognition%20and%20Knowledge%20Collapse%2002-20-26.pdf" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">https://economics.mit.edu/sites/default/files/2026-02/AI,%20Human%20Cognition%20and%20Knowledge%20Collapse%2002-20-26.pdf</a></li>
+        <li>[5] Figma. (2026). &quot;State of the Designer 2026.&quot; <a href="https://www.figma.com/blog/state-of-the-designer-2026/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">https://www.figma.com/blog/state-of-the-designer-2026/</a></li>
+      </ul>
+
+      <h2 id="further-reading" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Further Reading on Xperience Wave
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li><Link href="/resources/blogs/ai-as-design-material" className="text-accent hover:underline font-medium">AI as Design Material: How Knowing What AI Can Do Changes What You Design</Link></li>
+        <li><Link href="/resources/blogs/ai-replace-designers-wrong-question" className="text-accent hover:underline font-medium">Why &quot;AI Will Replace Designers&quot; Is the Wrong Question</Link></li>
+        <li><Link href="/resources/blogs/personal-ai-workflow-designer" className="text-accent hover:underline font-medium">How to Build Your Personal AI Workflow as a Designer</Link></li>
+        <li><Link href="/resources/blogs/evaluating-ai-tools-design-leaders-framework" className="text-accent hover:underline font-medium">A Design Leader&apos;s Framework for Evaluating AI Tools</Link></li>
+        <li><Link href="/resources/blogs/what-should-design-team-look-like-2026" className="text-accent hover:underline font-medium">What Should a Design Team Look Like in 2026?</Link></li>
+      </ul>
+
+      <h2 id="about-author" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        About the Author
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Shaik Murad is Co-founder and Head of Product &amp; Design at <Link href="/" className="text-accent hover:underline font-medium">Xperience Wave</Link>, a UX design studio based in Bangalore, working across designer mentorship, UX services for businesses, and a design community of 1,000+ designers.
+      </p>
+
+      <p className="text-base md:text-lg text-g500 italic mt-6">
+        - Murad, Co-founder &amp; Head of Product &amp; Design, Xperience Wave
+      </p>
+    </>
+  ),
 };
 
 // Table of contents for each blog post
 const blogTableOfContents: Record<string, { id: string; title: string }[]> = {
+  'ai-will-change-everything-except-what-matters': [
+    { id: 'what-core-skills-means', title: 'What "Core Skills" Actually Means' },
+    { id: 'the-ford-lesson', title: 'The Ford Lesson' },
+    { id: 'hammer-and-nail', title: 'The Hammer and Nail Problem' },
+    { id: 'the-story', title: 'The Story That Illustrates Everything' },
+    { id: 'automation-fantasy', title: 'The Automation Fantasy' },
+    { id: 'core-skills-ai-cant-touch', title: 'The Core Skills AI Can\'t Touch' },
+    { id: 'what-this-means', title: 'What This Means for You' },
+    { id: 'sources-references', title: 'Sources & References' },
+    { id: 'further-reading', title: 'Further Reading' },
+  ],
   '5-things-senior-designers-ai': [
     { id: 'ai-evaluation', title: '1. AI Is Part of How You\'re Evaluated' },
     { id: 'judgment-when-to-resist', title: '2. When to Use AI - and When to Resist' },

@@ -51,6 +51,17 @@ export const getCategoryLabel = (category: string): string => {
 // Sample blog posts with Unsplash images
 export const blogPosts: BlogPost[] = [
   {
+    id: '47',
+    slug: 'design-leadership-in-turmoil',
+    title: 'Design Leadership Is in Turmoil. And No One\'s Talking About It.',
+    excerpt: 'The market is revealing who was always leading and who was just holding a title. Design managers whose primary contribution was managing people have no structural justification in this environment. The question is whether you\'re going to be one of the leaders who makes it through.',
+    category: 'industry' as const,
+    image: 'https://images.unsplash.com/photo-1573167243872-43c6433b9d40?w=800&q=80',
+    author: { name: 'Almas Tasneem' },
+    publishedAt: '2026-07-24',
+    readTime: '12 min',
+  },
+  {
     id: '46',
     slug: 'ai-will-change-everything-except-what-matters',
     title: 'AI Will Change Everything About Design. Except the Part That Actually Matters.',

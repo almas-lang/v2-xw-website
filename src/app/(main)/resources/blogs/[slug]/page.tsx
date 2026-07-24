@@ -13,6 +13,251 @@ import { FreeTrainingCTA } from '@/components/blog/FreeTrainingCTA';
 
 // Blog content with internal links for SEO
 const blogContent: Record<string, React.ReactNode> = {
+  'design-leadership-in-turmoil': (
+    <>
+      <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
+        Every industry has two kinds of people pushing it forward.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The first kind are fighters. They&apos;re the ones ruthlessly upgrading their practice, taking it to the edge, getting wounded in the process, and coming back with new wins for the profession. They&apos;re not comfortable. They&apos;re not settled. They&apos;re in a constant state of productive discomfort - because they understand that the moment you stop pushing, you start getting pushed.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The second kind are skimmers. They pick the easy parts. The fun parts. The parts that look good on LinkedIn. They talk about design thinking in keynotes but haven&apos;t touched a research session in years. They post about &quot;the power of design&quot; but couldn&apos;t tell you which business metric their team&apos;s work moved last quarter. They skim the surface of the profession and present that surface as its entirety.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        This isn&apos;t unique to design. Every profession has fighters and skimmers. But in design - specifically in design leadership - the ratio has tipped dangerously toward the skimmers. And the consequences are becoming visible.
+      </p>
+
+      <h2 id="leadership-problem" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Leadership Problem Nobody Wants to Name
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Here&apos;s what I&apos;ve observed in the last two months alone, across conversations with designers who have at least eight years of experience.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        A staggering number of them are still thinking about design as something that waits to be called upon. They position design as a service - a need that will be requested when the time comes. They wait for work to come to them instead of going out and finding it, framing it, and connecting it to the problems the business is actually bleeding money on.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        They&apos;ve made the job entirely about artefacts. They spend their time crafting screens, or building personas, or drawing journey maps - and then they present these artefacts as evidence of design&apos;s value. But where is the selling of it? Where is the marketing for it? Where is the part where you walk into a leadership meeting and make the case that this work directly reduced churn by 4%, or shortened onboarding time by 30%, or eliminated three weeks from the development cycle?
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        That part doesn&apos;t exist for most design leaders. Because most design leaders never learned to do it. And now, in a market that&apos;s cutting costs with surgical precision, the profession is paying the price.
+      </p>
+
+      {/* Inline image 1 - Leadership/corporate context */}
+      <div className="relative aspect-[16/9] rounded-xl overflow-hidden my-10">
+        <Image
+          src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&q=80"
+          alt="A corporate boardroom representing the leadership meetings where design leaders need to articulate business value"
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 720px"
+        />
+      </div>
+
+      <h2 id="numbers-tell-story" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Numbers Tell the Story
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This isn&apos;t anecdotal frustration. The data is unambiguous.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Gartner predicted that through 2026, 20% of organisations would use AI to flatten their structures, eliminating over half of current middle management positions [1]. Middle management isn&apos;t being trimmed. It&apos;s being structurally removed.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Korn Ferry&apos;s 2025 Workforce Survey found that 41% of employees globally - and 44% in the US - say their company has eliminated managerial layers in the past year [2]. An analysis by Live Data Technologies for Bloomberg found that middle management positions accounted for nearly one-third of all layoffs in 2023, up from 20% in 2018 [3]. The middle is no longer the safest place in the organisation. It&apos;s the most exposed.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Gallup found that the average number of people reporting to a single manager rose from 10.9 in 2024 to 12.1 in 2025 - part of a nearly 50% increase in team sizes since Gallup began measuring in 2013. Projections put the average span of control at roughly 25 by 2028 [4]. Managers who only managed - who coordinated, relayed information, approved leave, and attended stand-ups - are being absorbed into the structure above and below them.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        And Zuckerberg, in a statement that has since become a reference point for the industry, said directly: &quot;Projects that used to require big teams can now be accomplished by a single very talented person&quot; [5]. Meta has replaced traditional management titles with &quot;AI builder,&quot; &quot;AI pod lead,&quot; and &quot;AI org lead.&quot; The work middle managers used to perform - synthesising information, coordinating across teams, drafting communications - is being automated.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Now apply all of this to design. Design managers whose primary contribution was managing people - allocating projects, reviewing leave requests, sitting in on reviews, passing feedback from above to below - have no structural justification in this environment. If your entire job can be described as &quot;I manage a team of designers,&quot; you are, in the language of this market, overhead.
+      </p>
+
+      <h2 id="title-trap" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Title Trap
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Have you seen this pattern? A designer adds some years to their resume. They collect titles along the way - Senior, Lead, Manager, maybe Director. And one day they wake up and decide: I&apos;m a leader now. Not because they&apos;ve led anything to a meaningful outcome. Not because they&apos;ve changed the trajectory of a product or built the case for design&apos;s presence at the strategic table. But because they have enough years of experience to feel entitled to the label.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        These people exist in every profession. But in design, they&apos;re particularly dangerous - because they occupy the positions that should be held by actual leaders. They take up the seats. They set the tone. And in doing so, they quietly erode the real presence of design inside organisations.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        I&apos;ve met design managers at respected Indian companies - people with impressive titles - whose actual day-to-day consists of one thing: relaying instructions from above to the team below, and relaying status updates back up. They&apos;re not shaping strategy. They&apos;re not selling design&apos;s value to the business. They&apos;re not building the culture, the capability, or the credibility of their practice. They&apos;re middlemen with Figma accounts.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        And the really damaging part? When organisations eventually decide to cut that layer - which they&apos;re doing now, at scale - the conclusion isn&apos;t &quot;we had the wrong leaders.&quot; The conclusion is &quot;design leadership doesn&apos;t add value.&quot; The skimmers don&apos;t just fail individually. They damage the profession&apos;s credibility for everyone who comes after them.
+      </p>
+
+      {/* Inline image 2 - Team/collaboration context */}
+      <div className="relative aspect-[16/9] rounded-xl overflow-hidden my-10">
+        <Image
+          src="https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?w=800&q=80"
+          alt="A design team in a collaborative workspace, representing the gap between real design leadership and title-holding"
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 720px"
+        />
+      </div>
+
+      <h2 id="real-leadership" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What Real Design Leadership Looks Like (And Why It&apos;s So Rare)
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Let me describe what the fighters do - the ones who are not just surviving this market but are indispensable to their organisations.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        They treat design as a business function, not a creative service. They don&apos;t wait for briefs. They go looking for the business problems that design can solve - revenue problems, retention problems, efficiency problems - and they frame design&apos;s contribution in the language the business speaks. They&apos;re in revenue meetings, not just design reviews. They know the P&amp;L, not just the persona.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        They sell design internally, constantly. They understand that design&apos;s position in an organisation is never secure. It has to be earned, defended, and re-earned every quarter. They build relationships with product leaders, engineering directors, and business heads - not to be liked, but to ensure that when budget decisions happen, design is seen as an investment, not a cost.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        They staff strategically. They don&apos;t just fill seats. They think about which designers are right for which projects, what skills the team needs next quarter, and how to create growth paths that retain their best people. They treat team composition as a design problem in itself.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        They maintain momentum. This is the hardest part. Even when projects are delayed, even when stakeholders are difficult, even when the organisation is hostile to design - and many Indian organisations are - they keep the practice moving forward. They find the small wins that build credibility. They document impact so it&apos;s visible. They create a culture inside the team that&apos;s worth being part of, even when the culture outside the team is chaotic.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        They don&apos;t hide behind their title. They contribute alongside their team when needed. They present to clients and stakeholders directly. They&apos;re in the work enough to have informed opinions, and removed enough to see the bigger picture. They understand that leadership isn&apos;t a position - it&apos;s a set of behaviours that compound over time.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        The designers I&apos;ve seen who operate at this level aren&apos;t just design leaders. They&apos;re business leaders who happen to lead through design. And there are painfully few of them. We explored what this looks like structurally in <Link href="/resources/blogs/what-should-design-team-look-like-2026" className="text-accent hover:underline font-medium">What Should a Design Team Look Like in 2026?</Link> - the answer isn&apos;t fewer leaders, it&apos;s fundamentally different leadership.
+      </p>
+
+      <h2 id="hostile-environment" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Hostile Environment Argument
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        I know the pushback. &quot;But my organisation doesn&apos;t respect design.&quot; &quot;But my VP only cares about shipping fast.&quot; &quot;But the business never gives us a seat at the table.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Fair. Indian workplaces, in particular, can be hostile to design&apos;s strategic ambitions. Organisations bend you. They need more from you than they give back. They compress your role into &quot;make it look good&quot; and call it a day.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        But here&apos;s the hard truth that most design leaders don&apos;t want to hear: the hostile environment is the test, not the excuse.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        In every hostile environment I&apos;ve seen - and I&apos;ve worked with teams across India, Japan, Singapore, Dubai, Australia, and the US - a fighter eventually emerges. Someone who uses the constraints to their advantage. Who takes the &quot;make it look good&quot; brief and turns it into a conversation about why the problem is defined wrong. Who builds credibility with one small win, then another, then another, until the organisation can&apos;t have a product conversation without them in the room.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If you&apos;re a design leader sitting in a hostile environment and your response is &quot;this is a bad project&quot; or &quot;this is a bad customer&quot; or &quot;they don&apos;t get design&quot; - you&apos;re not leading. You&apos;re narrating your own irrelevance.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        The fighters don&apos;t complain about the terrain. They build roads through it. We wrote about exactly this dynamic in <Link href="/resources/blogs/senior-ux-designer-delivery-person" className="text-accent hover:underline font-medium">You&apos;re a Senior Designer in Title. You&apos;re Still Being Treated Like a Delivery Person</Link> - the PIE Model shows how to move from execution to influence, even in hostile organisations.
+      </p>
+
+      {/* Inline image 3 - Strategic decision-making */}
+      <div className="relative aspect-[16/9] rounded-xl overflow-hidden my-10">
+        <Image
+          src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80"
+          alt="A professional reviewing strategic documents and data, representing the business acumen that real design leaders must develop"
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 720px"
+        />
+      </div>
+
+      <h2 id="who-should-stay" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Who Should Stay. Who Should Be Replaced.
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Let me be direct, because this is a conversation the industry needs to have.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Design managers who have only been managing people - who have not actively contributed to winning projects for design, who have not staffed strategically, who have not built and defended the culture, who have not maintained momentum through difficult periods - should be replaced. I would actively encourage organisations to make that call. These managers are not protecting the profession. They&apos;re occupying space that could be held by someone who actually moves the practice forward.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        But - and this is equally important - design leaders who have done the work deserve preservation. The ones who fought for design&apos;s seat. Who adapted when the organisation changed. Who showed up not as a designer but as a leader who could make real money - for the team, for the organisation. Who upped the culture inside and outside. Who kept the momentum going across all the projects that were actually bringing in revenue.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If your organisation has a leader like that and chooses to cut them - that organisation doesn&apos;t deserve them. Or the path has simply changed, and it&apos;s time to move.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        But let&apos;s be honest: there are only a handful of design leaders, in India and globally, who are truly leaders beyond being designers. The rest have titles. And titles, in this market, are worth exactly what they&apos;re printed on. The <Link href="/resources/blogs/ic-to-manager-trap-designers" className="text-accent hover:underline font-medium">IC-to-Manager Trap</Link> we wrote about earlier explains why - 82% of new managers were never trained for the role. They were promoted because they were great ICs, not because they were ready to lead.
+      </p>
+
+      <h2 id="what-to-do" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What to Do If You&apos;re in This Situation
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>If you&apos;re a design leader whose value is being questioned:</strong>
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Stop defending your position and start demonstrating it. Document the business impact of every project your team has shipped in the last six months. Not &quot;we designed a new checkout flow.&quot; Instead: &quot;we redesigned the checkout flow, reducing abandonment by 14%, which recovered approximately &#8377;X in quarterly revenue.&quot; If you can&apos;t make that statement for a single project, that&apos;s the gap - and it needs to close this week, not next quarter.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Build one relationship outside the design team that you don&apos;t currently have. With the VP of Product. With the engineering director. With the head of business development. Design leaders who survive restructuring are the ones who have advocates outside their own function - people who would push back if design leadership were cut because they&apos;ve seen the value firsthand. We covered the mechanics of this in <Link href="/resources/blogs/stakeholder-management-for-designers" className="text-accent hover:underline font-medium">Stakeholder Management for Designers</Link>.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>If you&apos;re a designer watching this happen to your leaders:</strong>
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Pay attention. The managers who are being cut are the ones who couldn&apos;t articulate their value beyond &quot;I manage a team.&quot; The ones who are surviving - and thriving - are the ones who tied their contribution to business outcomes. Learn from both examples, because the same evaluation will apply to you within a few years. Understanding <Link href="/resources/blogs/conversations-senior-designers-have" className="text-accent hover:underline font-medium">the five conversations senior designers have</Link> that mid-level designers don&apos;t is a good place to start.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>If you&apos;re an organisation making these decisions:</strong>
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Be careful about what you&apos;re cutting. Removing the middlemen - the relay stations, the leave-approvers, the seat-warmers - is the right call. But removing the fighters - the ones who actually built your design practice into something that contributes to the bottom line - is a mistake you&apos;ll feel for years. And you won&apos;t be able to hire them back, because they&apos;ll have moved to organisations that know what they&apos;re worth. We explored this from the hiring side in <Link href="/resources/blogs/hiring-senior-designers-immature-design-org" className="text-accent hover:underline font-medium">What Happens When You Hire Senior Designers Into an Immature Design Org</Link>.
+      </p>
+
+      <h2 id="real-question" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Real Question
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Design leadership isn&apos;t dying. But it&apos;s being exposed. The market is revealing who was always leading and who was just holding a title. The AI-driven flattening, the team restructuring, the budget scrutiny - these aren&apos;t threats to real design leaders. They&apos;re threats to the people who were pretending.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The question isn&apos;t whether design leadership matters. It does - now more than ever, as products become more complex, as AI introduces new design challenges, as user expectations keep rising. Figma&apos;s State of the Designer 2026 found that 82% of organisations say their need for designers has increased or held steady [6]. The demand for design hasn&apos;t disappeared. The demand for design leaders who can connect their work to business outcomes has intensified.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        The question is whether you&apos;re going to be one of the leaders who makes it through - or one of the ones the market quietly replaces.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        If you&apos;re a design leader who recognises the gap between where you are and where you need to be - in how you articulate value, how you influence stakeholders, how you lead through uncertainty - that&apos;s exactly what Tide was built for. Not design skills training. Leadership capability development for designers who understand that the title isn&apos;t enough. <Link href="https://calendly.com/xperiencewave/xw-strategy-call" className="text-accent hover:underline font-medium">Talk to us</Link>.
+      </p>
+
+      <FreeTrainingCTA text="At Xperience Wave, we develop design leaders who can articulate business value, influence stakeholders, and lead through uncertainty - not just manage teams" />
+
+      <h2 id="sources-references" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Sources &amp; References
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li>[1] Gartner. &quot;Through 2026, 20% of Organizations Will Use AI to Flatten Their Organizational Structures.&quot; Referenced via Fortune, September 2025. <a href="https://fortune.com/2025/09/19/surviving-great-flattening-coming-extinction-of-middle-manager-layoffs/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">https://fortune.com/2025/09/19/surviving-great-flattening-coming-extinction-of-middle-manager-layoffs/</a></li>
+        <li>[2] Korn Ferry. &quot;Workforce 2025: Power Shifts.&quot; Survey of 15,000 professionals across 10 countries. <a href="https://www.heypinnacle.com/blog/end-of-middle-managers-2026" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">https://www.heypinnacle.com/blog/end-of-middle-managers-2026</a></li>
+        <li>[3] Live Data Technologies / Bloomberg. &quot;Middle Management Layoff Analysis 2018&ndash;2023.&quot; Referenced via Metaintro, 2026. <a href="https://www.metaintro.com/blog/why-companies-are-cutting-middle-managers-and-what-it-means-for-your-career" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">https://www.metaintro.com/blog/why-companies-are-cutting-middle-managers-and-what-it-means-for-your-career</a></li>
+        <li>[4] Gallup. &quot;Manager Span of Control 2013&ndash;2025.&quot; Referenced via Forbes, May 2026. <a href="https://www.forbes.com/sites/joemckendrick/2026/05/21/ai-flattening-organizations-is-the-latest-chapter-in-a-continuing-story/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">https://www.forbes.com/sites/joemckendrick/2026/05/21/ai-flattening-organizations-is-the-latest-chapter-in-a-continuing-story/</a></li>
+        <li>[5] Meta / Mark Zuckerberg. Public statements 2025&ndash;2026 on AI-driven restructuring. Referenced via Pinnacle, May 2026. <a href="https://www.heypinnacle.com/blog/end-of-middle-managers-2026" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">https://www.heypinnacle.com/blog/end-of-middle-managers-2026</a></li>
+        <li>[6] Figma. &quot;State of the Designer 2026.&quot; <a href="https://www.figma.com/blog/state-of-the-designer-2026/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">https://www.figma.com/blog/state-of-the-designer-2026/</a></li>
+        <li>[7] WhiteTruffle / Crunchbase / TrueUp. &quot;Tech Layoffs Tracker 2022&ndash;2026.&quot; <a href="https://www.trueup.io/layoffs" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">https://www.trueup.io/layoffs</a></li>
+      </ul>
+
+      <h2 id="further-reading" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Further Reading on Xperience Wave
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li><Link href="/resources/blogs/what-should-design-team-look-like-2026" className="text-accent hover:underline font-medium">What Should a Design Team Look Like in 2026?</Link></li>
+        <li><Link href="/resources/blogs/hiring-senior-designers-immature-design-org" className="text-accent hover:underline font-medium">What Happens When You Hire Senior Designers Into an Immature Design Org</Link></li>
+        <li><Link href="/resources/blogs/evaluating-ai-tools-design-leaders-framework" className="text-accent hover:underline font-medium">A Design Leader&apos;s Framework for Evaluating AI Tools</Link></li>
+      </ul>
+
+      <h2 id="about-author" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        About the Author
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Almas Tasneem is Co-founder and Head of Product &amp; Design at <Link href="/" className="text-accent hover:underline font-medium">Xperience Wave</Link>, a UX design studio based in Bangalore, working across designer mentorship, UX services for businesses, and a design community of 1,000+ designers.
+      </p>
+
+      <p className="text-base md:text-lg text-g500 italic mt-6">
+        - Almas, Co-founder &amp; Head of Product &amp; Design, Xperience Wave
+      </p>
+    </>
+  ),
   '5-things-senior-designers-ai': (
     <>
       <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
@@ -9629,6 +9874,18 @@ const blogContent: Record<string, React.ReactNode> = {
 
 // Table of contents for each blog post
 const blogTableOfContents: Record<string, { id: string; title: string }[]> = {
+  'design-leadership-in-turmoil': [
+    { id: 'leadership-problem', title: 'The Leadership Problem Nobody Wants to Name' },
+    { id: 'numbers-tell-story', title: 'The Numbers Tell the Story' },
+    { id: 'title-trap', title: 'The Title Trap' },
+    { id: 'real-leadership', title: 'What Real Design Leadership Looks Like' },
+    { id: 'hostile-environment', title: 'The Hostile Environment Argument' },
+    { id: 'who-should-stay', title: 'Who Should Stay. Who Should Be Replaced.' },
+    { id: 'what-to-do', title: 'What to Do If You\'re in This Situation' },
+    { id: 'real-question', title: 'The Real Question' },
+    { id: 'sources-references', title: 'Sources & References' },
+    { id: 'further-reading', title: 'Further Reading' },
+  ],
   'ai-will-change-everything-except-what-matters': [
     { id: 'what-core-skills-means', title: 'What "Core Skills" Actually Means' },
     { id: 'the-ford-lesson', title: 'The Ford Lesson' },
@@ -10023,6 +10280,11 @@ const authorData: Record<string, { role: string; bio: string; image: string }> =
 
 // Blog-specific metadata for SEO
 const blogMetadata: Record<string, { title: string; description: string; keywords: string[] }> = {
+  'design-leadership-in-turmoil': {
+    title: 'Design Leadership Is in Turmoil. And No One\'s Talking About It. | Xperience Wave',
+    description: 'The market is exposing who was always leading and who was just holding a title. With AI flattening orgs, middle management being cut, and budgets under scrutiny, design leaders who can\'t articulate business value are being replaced. Here\'s what real design leadership looks like.',
+    keywords: ['design leadership crisis', 'design manager layoffs', 'design leadership business value', 'middle management design', 'AI flattening organisations', 'design leader vs design manager', 'design leadership India', 'design team restructuring', 'design leadership skills', 'design org leadership 2026'],
+  },
   '5-things-senior-designers-ai': {
     title: '5 Things Senior Designers Should Be Doing With AI - None of Them Involve Figma Plugins | Xperience Wave',
     description: 'The designers getting ahead with AI in 2026 aren\'t mastering plugins - they\'re changing how they think. Five strategic shifts that change how you\'re evaluated, how you lead, and what you\'re worth.',

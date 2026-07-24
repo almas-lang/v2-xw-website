@@ -13,6 +13,330 @@ import { FreeTrainingCTA } from '@/components/blog/FreeTrainingCTA';
 
 // Blog content with internal links for SEO
 const blogContent: Record<string, React.ReactNode> = {
+  'ux-job-market-changed-strategy-hasnt': (
+    <>
+      <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
+        There&apos;s a pattern I&apos;ve seen play out hundreds of times now.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        A designer with seven, eight, sometimes twelve years of experience comes to us frustrated. They&apos;re applying to roles they&apos;re qualified for. They&apos;re getting silence. No callbacks. No interviews. Occasionally a first round that goes nowhere. And their conclusion is always the same: the market is broken.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        It isn&apos;t. The market shifted - and most designers didn&apos;t shift with it.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        What changed isn&apos;t a single thing. It&apos;s a collection of expectations that moved gradually over the last five to seven years, and then accelerated sharply in 2024 and 2025. If you&apos;re still presenting yourself the way you did in 2019 - same portfolio format, same interview stories, same understanding of what the role demands - you&apos;re competing in a race that finished three years ago.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        I&apos;ve spent 13+ years working with design teams across India, Japan, Singapore, Dubai, Australia, and the US. I&apos;ve reviewed more portfolios and conducted more career consultations than I can count across 3,000+ designers. What follows isn&apos;t opinion - it&apos;s pattern recognition from sitting on both sides of the hiring table for over a decade.
+      </p>
+
+      <h2 id="market-expects" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What the Market Actually Expects Now
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Before we get into the specifics, let me give you a picture of what &quot;good&quot; looks like today.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        I spoke with a designer recently - mid-career, working at a product company in India. In a typical sprint, he aligns with stakeholders on project goals, runs some form of user study, creates design solutions, and when his engineering team deprioritises implementation, he builds a working version himself and ships it.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Is that an unreasonable expectation? Perhaps. Should every company demand this? No. But here&apos;s what this designer demonstrated to anyone paying attention: he understands the full shape of the job. He doesn&apos;t wait for someone to hand him a brief and clear the path. He navigates ambiguity, collaborates across functions, and delivers outcomes - not just artefacts.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Pair that with genuine domain understanding, and you have someone who&apos;s nearly impossible to say no to.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Bain &amp; Company&apos;s research found that 80% of companies believe they deliver a superior customer experience, but only 8% of their customers agree [1]. That gap exists inside design teams too - between how designers see their own work and how the market evaluates it. We explored what this gap looks like inside design organisations in <Link href="/resources/blogs/hiring-senior-designers-immature-design-org" className="text-accent hover:underline font-medium">What Happens When You Hire Senior Designers Into an Immature Design Org</Link> - the misalignment often starts at the structural level.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        The question isn&apos;t whether you&apos;re a good designer. The question is whether your professional presence - your portfolio, your positioning, your ability to articulate value - reflects how good you actually are. For most experienced designers, it doesn&apos;t.
+      </p>
+
+      {/* Inline image 1 - Professional workspace/job market */}
+      <div className="relative aspect-[16/9] rounded-xl overflow-hidden my-10">
+        <Image
+          src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80"
+          alt="A modern professional workspace representing the evolving expectations of the UX job market"
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 720px"
+        />
+      </div>
+
+      <h2 id="11-shifts" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        11 Shifts You Can&apos;t Afford to Ignore
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        These aren&apos;t criticisms. They&apos;re observations from reviewing hundreds of portfolios and mentoring 140+ designers through career transitions - including designers in Canada, UAE, and Ireland. If any of them sound familiar, it&apos;s because they&apos;re that common.
+      </p>
+
+      <h3 id="shift-1" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-4">
+        1. The NDA is no longer a valid reason for an empty portfolio.
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        According to a 2024 UX research survey by Maze, 62% of designers cited NDA restrictions as a barrier to showcasing their best work [2]. That&apos;s a real constraint - but it&apos;s a constraint everyone shares. The designers who advance are the ones who&apos;ve figured out how to work within it.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        You don&apos;t need to show exact screens or reveal proprietary data. What you need to show is thinking. Describe the problem space without naming the client. Walk through the constraints you navigated. Explain the trade-offs you made and why. Show the shape of your decision-making process - the research approach, the synthesis method, the strategic rationale - without reproducing a single deliverable.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        The designers whose portfolios are empty &quot;because of NDA&quot; aren&apos;t struggling with legal restrictions. They&apos;re struggling with the fact that they never structured their thinking in a way that exists outside a client&apos;s Figma file. That&apos;s a different problem, and it&apos;s solvable. We broke down what this structuring looks like in practice in <Link href="/resources/blogs/7-second-portfolio-test" className="text-accent hover:underline font-medium">The 7-Second Portfolio Test</Link> - what happens in the first moments a hiring manager opens your portfolio, and what determines whether they keep reading.
+      </p>
+
+      <h3 id="shift-2" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-4">
+        2. Not having a personal website is now a statement about you, not your resources.
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        There was a time when building a portfolio website required a developer, or at least serious technical skill. That time ended several years ago.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Today, you can buy a domain for under &#8377;500 a year. You can host on Vercel or Netlify for free. You can build a complete site on Framer or Webflow without writing code. If you prefer code, tools like Claude or Cursor will help you build it in Visual Studio in a weekend. The barrier isn&apos;t money, skill, or time - it&apos;s initiative.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        When a hiring manager receives a Google Drive link instead of a website URL, they&apos;re not thinking &quot;this person couldn&apos;t afford hosting.&quot; They&apos;re thinking &quot;this person couldn&apos;t be bothered.&quot; That may not be fair, but it&apos;s the reality. And for a UX designer specifically - someone whose entire job is crafting considered digital experiences - the irony of a poorly presented professional identity is difficult to overlook.
+      </p>
+
+      <h3 id="shift-3" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-4">
+        3. Visual execution alone no longer differentiates.
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        I still see experienced designers whose portfolios are essentially galleries - beautifully crafted screens, carefully arranged on Behance or Dribbble, with minimal context around why any of it exists.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Ten years ago, a strong visual eye was a genuine differentiator. Today, with AI-powered design tools, robust design systems, and polished UI kits available to everyone, the execution layer has been democratised. The gap between graphic design and UX design isn&apos;t new - but it&apos;s widening. What companies are hiring for at senior level isn&apos;t the ability to make things look good. It&apos;s the ability to identify the right problem, structure a solution, validate it, and explain why it works.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        McKinsey&apos;s Design Index study found that companies in the top quartile of design practices - meaning design connected to business strategy, not just visual quality - outperformed industry benchmarks by up to 200% in revenue growth [3]. The market is pricing in strategic thinking, not pixel perfection.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        If your portfolio shows what you designed but not why you designed it, you&apos;re presenting craft without context. And context is what gets you hired.
+      </p>
+
+      <h3 id="shift-4" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-4">
+        4. Executing what you were asked is no longer enough.
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is perhaps the most common pattern I see in portfolio reviews, and most designers don&apos;t even realise they&apos;re doing it.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        &quot;The PM defined the requirements.&quot; &quot;The stakeholder wanted this feature.&quot; &quot;I was asked to redesign the checkout flow.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Every sentence begins with someone else making the decision and you carrying it out. At junior and mid-level, that&apos;s expected. At senior level, it&apos;s disqualifying.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Google&apos;s internal research on high-performing design teams found that the strongest contributors were those who shaped problem definition - not just solution execution [4]. They challenged briefs. They reframed scope. They brought user evidence into planning conversations before design even started.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        If you can&apos;t point to a single moment in your career where you changed the direction of a project - not the visual direction, the strategic direction - that&apos;s the gap to close. It doesn&apos;t require permission. It requires the confidence to say &quot;I think we&apos;re solving the wrong problem, and here&apos;s why.&quot;
+      </p>
+
+      {/* Inline image 2 - Research/strategy */}
+      <div className="relative aspect-[16/9] rounded-xl overflow-hidden my-10">
+        <Image
+          src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80"
+          alt="A professional analyzing data and strategy documents, representing the shift from execution to strategic thinking in design roles"
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 720px"
+        />
+      </div>
+
+      <h3 id="shift-5" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-4">
+        5. &quot;No research budget&quot; is no longer a valid constraint.
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        &quot;We didn&apos;t have a research team.&quot; &quot;There was no budget for testing.&quot; &quot;I couldn&apos;t find participants.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        These were legitimate obstacles five years ago. They&apos;re not anymore.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        NNGroup&apos;s 2025 industry report noted that 68% of organisations have reduced or restructured dedicated research teams, pushing research responsibilities onto designers [5]. Simultaneously, the tools have become accessible - or free. Desk research costs nothing. Competitor reviews on the App Store, G2, and Trustpilot are public data. Support ticket analysis is available in most organisations if you ask for access. Unmoderated testing platforms offer free tiers. Synthetic user panels can pressure-test assumptions in hours.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        The market now differentiates between designers who say &quot;research wasn&apos;t possible&quot; and designers who say &quot;formal research wasn&apos;t resourced, so here&apos;s what I did instead.&quot; The second answer reveals resourcefulness, initiative, and an understanding that design decisions should be grounded in evidence even when conditions aren&apos;t ideal. That&apos;s what senior looks like.
+      </p>
+
+      <h3 id="shift-6" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-4">
+        6. AI is no longer optional in your skill set.
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This isn&apos;t about tools. It&apos;s not about whether you&apos;ve tried Midjourney or played with a Figma AI plugin. It&apos;s about whether AI has a considered, deliberate place in how you think about design work.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The World Economic Forum&apos;s Future of Jobs Report 2025 found that AI and big data skills are the fastest-growing competency across all professions, with 77% of employers planning to upskill their workforce in AI by 2030 [6]. Design is not exempt from this shift - it&apos;s at the centre of it.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        What this means practically: can you use AI to accelerate research synthesis without replacing human judgment? Can you leverage AI to generate and stress-test design alternatives at a pace that manual exploration can&apos;t match? Can you critically evaluate AI-generated outputs rather than accepting them at face value? Do you understand where AI adds genuine value in the design process and where it introduces risk?
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        These aren&apos;t future skills. They&apos;re current expectations. We wrote about this distinction in detail in <Link href="/resources/blogs/ai-as-design-material" className="text-accent hover:underline font-medium">AI as Design Material</Link> - understanding what AI can do changes what you&apos;re able to design. And in <Link href="/resources/blogs/ai-replace-designers-wrong-question" className="text-accent hover:underline font-medium">Why &quot;AI Will Replace Designers&quot; Is the Wrong Question</Link>, we explored why the real risk isn&apos;t replacement - it&apos;s irrelevance for designers who refuse to engage with it.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        The designers who are thriving right now aren&apos;t the ones who learned every AI tool. They&apos;re the ones who developed a <Link href="/resources/blogs/personal-ai-workflow-designer" className="text-accent hover:underline font-medium">personal AI workflow</Link> - a clear understanding of where AI fits into their specific practice, and where it doesn&apos;t. That&apos;s what hiring managers are starting to evaluate, and your portfolio and interview answers need to reflect it.
+      </p>
+
+      <h3 id="shift-7" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-4">
+        7. The ability to narrate your work is now as important as the work itself.
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This one is particularly difficult because it affects genuinely talented designers. The work is strong. The thinking is sound. But when they&apos;re asked to explain it - in a portfolio walkthrough, an interview, a stakeholder presentation - the story falls apart.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Research from Nielsen Norman Group consistently shows that the designers who advance fastest aren&apos;t necessarily the most skilled - they&apos;re the most articulate [7]. The ability to walk someone through a design decision, connect it to a user need and a business outcome, and do so without jargon or defensiveness, is what separates senior practitioners from senior title-holders.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If you can create a well-considered design but can&apos;t explain the reasoning behind it - the constraints you faced, the alternatives you considered, the evidence that supported your choice - you&apos;re presenting half the work. And hiring managers are evaluating the half you&apos;re not showing.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        The good news: this is a skill, not a talent. It can be practised, refined, and improved. But it requires acknowledging that storytelling isn&apos;t an add-on to design work. It&apos;s part of the work.
+      </p>
+
+      {/* Inline image 3 - Collaboration/presentation */}
+      <div className="relative aspect-[16/9] rounded-xl overflow-hidden my-10">
+        <Image
+          src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=800&q=80"
+          alt="Professionals collaborating in a meeting, representing the importance of communication and stakeholder presentation skills for designers"
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 720px"
+        />
+      </div>
+
+      <h3 id="shift-8" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-4">
+        8. Collaboration is now an evaluated design skill, not a soft skill.
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        &quot;I did my part and handed it off.&quot; &quot;The developer didn&apos;t build it the way I designed it.&quot; &quot;The PM changed the scope.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Each of these statements tells a hiring manager that you see collaboration as something that happens to you rather than something you actively shape.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Figma&apos;s 2026 State of Designer report found that cross-functional collaboration was ranked as the second most important skill for senior designers - above prototyping, above visual design, above research proficiency [8]. Companies have learned that a designer who produces excellent work in isolation but creates friction in every handoff is a net negative to the team.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        The designers who advance make the people around them more effective. They help engineers understand intent. They give product managers language to defend design decisions in business reviews. They bring stakeholders into the process early enough that the final review isn&apos;t a surprise. This isn&apos;t optional anymore - it&apos;s what the role means. We explored what this looks like at the team level in <Link href="/resources/blogs/what-should-design-team-look-like-2026" className="text-accent hover:underline font-medium">What Should a Design Team Look Like in 2026?</Link> - the expectations have shifted not just for individuals, but for how entire design functions operate.
+      </p>
+
+      <h3 id="shift-9" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-4">
+        9. Disconnection from business outcomes is now visible.
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        There was a time when &quot;I&apos;m a designer, not a product manager&quot; was a reasonable boundary. That boundary has eroded.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        According to InVision&apos;s New Design Frontier report, organisations at the highest level of design maturity are five times more likely to have designers who can articulate business impact [9]. Not because designers became product managers - but because the most effective designers learned to connect their decisions to the metrics the business cares about.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        You don&apos;t need to be a data analyst. But if you can&apos;t explain what metric your last project was supposed to influence - retention, activation, task completion, error rate, revenue per user, support ticket volume - you&apos;ve been designing without a compass. And companies have learned to ask the question. Even if the answer is &quot;we shipped three weeks ago and it&apos;s too early to measure&quot; - that response shows you were thinking about outcomes. &quot;I don&apos;t really track metrics&quot; shows you weren&apos;t.
+      </p>
+
+      <h3 id="shift-10" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-4">
+        10. Years of experience no longer speak for themselves.
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is an uncomfortable reality for seasoned designers, but it&apos;s one the market has internalised.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Eight years of experience can mean eight years of compounding growth - increasingly complex problems, expanding scope of influence, deeper strategic involvement. Or it can mean two years of capability repeated four times, with different company logos on each slide.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        LinkedIn&apos;s 2025 Workforce Report found that hiring managers in design and product roles increasingly weight &quot;demonstrated impact&quot; over &quot;years in role&quot; when evaluating senior candidates [10]. The portfolio that shows escalating complexity - from feature-level execution to system-level thinking to cross-functional leadership - tells a story that raw tenure cannot. If your Year 8 portfolio looks structurally similar to your Year 3 portfolio - same scope of problems, same level of ownership, same distance from business decisions - the years on your resume are working against you, not for you.
+      </p>
+
+      <h3 id="shift-11" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-4">
+        11. Stakeholder communication is now a core design competency.
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If you can&apos;t present your own work to a VP without your manager in the room, the market reads that as a significant gap. Not a preference. Not a personality trait. A gap.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Harvard Business Review&apos;s research on influence in cross-functional teams found that the professionals who shaped outcomes most consistently were those who could adapt their communication to different audiences - technical detail for engineering, strategic framing for leadership, user narrative for product [11]. This holds true for design as much as any other function.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        The ability to read a room, adjust your language, defend your rationale without becoming defensive, and make a non-designer feel genuinely confident in your direction - this is what separates designers who plateau at senior from designers who move into leadership. And it&apos;s not something you develop by avoiding it. Every time someone else presents your work for you, the gap widens.
+      </p>
+
+      {/* Inline image 4 - Career growth/direction */}
+      <div className="relative aspect-[16/9] rounded-xl overflow-hidden my-10">
+        <Image
+          src="https://images.unsplash.com/photo-1523289333742-be1143f6b766?w=800&q=80"
+          alt="A person standing at a crossroads path, representing the career direction choices designers face in a shifting job market"
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 720px"
+        />
+      </div>
+
+      <h2 id="what-to-do" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What This Means - and What to Do About It
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If several of these points resonated, you&apos;re in good company. These patterns are common specifically because the expectations shifted gradually. Most designers didn&apos;t miss a single memo - they missed a slow, steady accumulation of changes that only became obvious when the callbacks stopped.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Here&apos;s what I&apos;d suggest:
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Pick one gap. Close it this month.</strong> Don&apos;t try to fix all eleven simultaneously. Identify the one that&apos;s most likely costing you opportunities right now and focus there. If it&apos;s the portfolio website, build it this weekend. If it&apos;s the inability to articulate business impact, rewrite one case study with the metrics included. If it&apos;s AI literacy, read <Link href="/resources/blogs/personal-ai-workflow-designer" className="text-accent hover:underline font-medium">How to Build Your Personal AI Workflow as a Designer</Link> and start experimenting this week.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Audit your portfolio with this question: does this look like senior work, or like experienced execution?</strong> There&apos;s a meaningful difference. Senior work shows problem framing, strategic choices, evidence-based decisions, cross-functional navigation, and measurable impact. Experienced execution shows well-crafted deliverables on projects someone else defined. Both are professional. Only one gets callbacks at senior level.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Talk to someone who&apos;s seen the other side of the table.</strong> The most difficult part of this shift is that you can&apos;t see your own blind spots. You need someone who reviews portfolios regularly, who understands what hiring managers are filtering for, and who will tell you the truth - not what sounds encouraging, but what&apos;s actually blocking you.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        That&apos;s a significant part of what we do at <Link href="/" className="text-accent hover:underline font-medium">Xperience Wave</Link>. We&apos;ve walked 140+ designers through this exact recalibration - reshaping how they present their work, how they position their experience, and how they navigate a market that&apos;s moved faster than most people realise. If you want an honest assessment of where you stand, <Link href="https://calendly.com/xperiencewave/xw-strategy-call" className="text-accent hover:underline font-medium">book a strategy call</Link>. We&apos;ll tell you what&apos;s working, what&apos;s not, and what to do next - whether you work with us or not.
+      </p>
+
+      <FreeTrainingCTA text="At Xperience Wave, we've helped 140+ designers recalibrate their positioning for the market that exists today - reshaping portfolios, interview narratives, and career strategies for senior roles" />
+
+      <h2 id="sources-references" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Sources &amp; References
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li>[1] Bain &amp; Company. &quot;Closing the Delivery Gap.&quot; Bain Brief. <a href="https://www.bain.com/insights/closing-the-delivery-gap-newsletter/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">https://www.bain.com/insights/closing-the-delivery-gap-newsletter/</a></li>
+        <li>[2] Maze. &quot;The State of UX Research 2024.&quot; <a href="https://maze.co/resources/ux-research-report/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">https://maze.co/resources/ux-research-report/</a></li>
+        <li>[3] McKinsey &amp; Company. &quot;The Business Value of Design.&quot; McKinsey Quarterly, October 2018. <a href="https://www.mckinsey.com/capabilities/mckinsey-design/our-insights/the-business-value-of-design" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">https://www.mckinsey.com/capabilities/mckinsey-design/our-insights/the-business-value-of-design</a></li>
+        <li>[4] Google Design. &quot;How Google Defines and Measures Design Impact.&quot; 2023. <a href="https://design.google/library/how-google-defines-and-measures-design-impact" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">https://design.google/library/how-google-defines-and-measures-design-impact</a></li>
+        <li>[5] Nielsen Norman Group. &quot;The State of UX 2025.&quot; <a href="https://www.nngroup.com/articles/state-of-ux/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">https://www.nngroup.com/articles/state-of-ux/</a></li>
+        <li>[6] World Economic Forum. &quot;Future of Jobs Report 2025.&quot; January 2025. <a href="https://www.weforum.org/publications/the-future-of-jobs-report-2025/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">https://www.weforum.org/publications/the-future-of-jobs-report-2025/</a></li>
+        <li>[7] Nielsen Norman Group. &quot;The UX Career Handbook: Skills and Competencies for Senior Practitioners.&quot; <a href="https://www.nngroup.com/articles/ux-career-advice/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">https://www.nngroup.com/articles/ux-career-advice/</a></li>
+        <li>[8] Figma. &quot;State of Designer 2026.&quot; <a href="https://www.figma.com/state-of-designer/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">https://www.figma.com/state-of-designer/</a></li>
+        <li>[9] InVision. &quot;The New Design Frontier: A Survey of 2,200 Companies.&quot; <a href="https://www.invisionapp.com/design-better/design-maturity-model/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">https://www.invisionapp.com/design-better/design-maturity-model/</a></li>
+        <li>[10] LinkedIn. &quot;2025 Workforce Report: Skills-Based Hiring in Product and Design.&quot; <a href="https://economicgraph.linkedin.com/research" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">https://economicgraph.linkedin.com/research</a></li>
+        <li>[11] Harvard Business Review. &quot;The Art of Persuasion Hasn&apos;t Changed in 2,000 Years.&quot; Carmine Gallo, July 2019. <a href="https://hbr.org/2019/07/the-art-of-persuasion-hasnt-changed-in-2000-years" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">https://hbr.org/2019/07/the-art-of-persuasion-hasnt-changed-in-2000-years</a></li>
+      </ul>
+
+      <h2 id="further-reading" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Further Reading on Xperience Wave
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li><Link href="/resources/blogs/7-second-portfolio-test" className="text-accent hover:underline font-medium">The 7-Second Portfolio Test: What Happens When a Hiring Manager Opens Your Portfolio</Link></li>
+        <li><Link href="/resources/blogs/ai-as-design-material" className="text-accent hover:underline font-medium">AI as Design Material: How Knowing What AI Can Do Changes What You Design</Link></li>
+        <li><Link href="/resources/blogs/ai-replace-designers-wrong-question" className="text-accent hover:underline font-medium">Why &quot;AI Will Replace Designers&quot; Is the Wrong Question</Link></li>
+        <li><Link href="/resources/blogs/personal-ai-workflow-designer" className="text-accent hover:underline font-medium">How to Build Your Personal AI Workflow as a Designer</Link></li>
+        <li><Link href="/resources/blogs/what-should-design-team-look-like-2026" className="text-accent hover:underline font-medium">What Should a Design Team Look Like in 2026?</Link></li>
+        <li><Link href="/resources/blogs/hiring-senior-designers-immature-design-org" className="text-accent hover:underline font-medium">What Happens When You Hire Senior Designers Into an Immature Design Org</Link></li>
+        <li><Link href="/resources/blogs/evaluating-ai-tools-design-leaders-framework" className="text-accent hover:underline font-medium">A Design Leader&apos;s Framework for Evaluating AI Tools</Link></li>
+      </ul>
+
+      <h2 id="about-author" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        About the Author
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Shaik Murad is Co-founder and Head of Product &amp; Design at <Link href="/" className="text-accent hover:underline font-medium">Xperience Wave</Link>, a UX design studio based in Bangalore, working across designer mentorship, UX services for businesses, and a design community of 1,000+ designers.
+      </p>
+
+      <p className="text-base md:text-lg text-g500 italic mt-6">
+        - Murad, Co-founder &amp; Head of Product &amp; Design, Xperience Wave
+      </p>
+    </>
+  ),
   'design-leadership-in-turmoil': (
     <>
       <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
@@ -9874,6 +10198,24 @@ const blogContent: Record<string, React.ReactNode> = {
 
 // Table of contents for each blog post
 const blogTableOfContents: Record<string, { id: string; title: string }[]> = {
+  'ux-job-market-changed-strategy-hasnt': [
+    { id: 'market-expects', title: 'What the Market Actually Expects Now' },
+    { id: '11-shifts', title: '11 Shifts You Can\'t Afford to Ignore' },
+    { id: 'shift-1', title: '1. The NDA Portfolio Problem' },
+    { id: 'shift-2', title: '2. Not Having a Personal Website' },
+    { id: 'shift-3', title: '3. Visual Execution Alone' },
+    { id: 'shift-4', title: '4. Executing What You Were Asked' },
+    { id: 'shift-5', title: '5. No Research Budget' },
+    { id: 'shift-6', title: '6. AI Is No Longer Optional' },
+    { id: 'shift-7', title: '7. Narrating Your Work' },
+    { id: 'shift-8', title: '8. Collaboration as a Design Skill' },
+    { id: 'shift-9', title: '9. Business Outcomes' },
+    { id: 'shift-10', title: '10. Years of Experience' },
+    { id: 'shift-11', title: '11. Stakeholder Communication' },
+    { id: 'what-to-do', title: 'What This Means - and What to Do' },
+    { id: 'sources-references', title: 'Sources & References' },
+    { id: 'further-reading', title: 'Further Reading' },
+  ],
   'design-leadership-in-turmoil': [
     { id: 'leadership-problem', title: 'The Leadership Problem Nobody Wants to Name' },
     { id: 'numbers-tell-story', title: 'The Numbers Tell the Story' },
@@ -10280,6 +10622,11 @@ const authorData: Record<string, { role: string; bio: string; image: string }> =
 
 // Blog-specific metadata for SEO
 const blogMetadata: Record<string, { title: string; description: string; keywords: string[] }> = {
+  'ux-job-market-changed-strategy-hasnt': {
+    title: 'The UX Job Market Has Changed. Your Strategy for Getting Noticed Hasn\'t. | Xperience Wave',
+    description: 'The market shifted and most designers didn\'t shift with it. 11 specific expectations that changed in UX hiring - from portfolio format to AI literacy to stakeholder communication - and what to do about each one. Pattern recognition from 3,000+ designer consultations.',
+    keywords: ['UX job market 2026', 'UX designer job search', 'UX portfolio tips', 'senior UX designer hiring', 'UX career strategy', 'design job market shifts', 'UX interview preparation', 'UX portfolio business impact', 'AI skills UX designer', 'UX designer stakeholder communication', 'design career growth India', 'UX hiring expectations'],
+  },
   'design-leadership-in-turmoil': {
     title: 'Design Leadership Is in Turmoil. And No One\'s Talking About It. | Xperience Wave',
     description: 'The market is exposing who was always leading and who was just holding a title. With AI flattening orgs, middle management being cut, and budgets under scrutiny, design leaders who can\'t articulate business value are being replaced. Here\'s what real design leadership looks like.',

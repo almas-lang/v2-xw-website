@@ -51,6 +51,17 @@ export const getCategoryLabel = (category: string): string => {
 // Sample blog posts with Unsplash images
 export const blogPosts: BlogPost[] = [
   {
+    id: '48',
+    slug: 'ux-job-market-changed-strategy-hasnt',
+    title: 'The UX Job Market Has Changed. Your Strategy for Getting Noticed Hasn\'t.',
+    excerpt: 'The market shifted - and most designers didn\'t shift with it. If you\'re still presenting yourself the way you did in 2019, you\'re competing in a race that finished three years ago. 11 shifts you can\'t afford to ignore.',
+    category: 'career-growth' as const,
+    image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800&q=80',
+    author: { name: 'Shaik Murad' },
+    publishedAt: '2026-07-24',
+    readTime: '14 min',
+  },
+  {
     id: '47',
     slug: 'design-leadership-in-turmoil',
     title: 'Design Leadership Is in Turmoil. And No One\'s Talking About It.',

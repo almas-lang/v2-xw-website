@@ -53,7 +53,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: '49',
     slug: 'slicing-psds-to-shipping-code-design-handoffs-evolved',
-    title: 'From Slicing PSDs to Shipping Front-End Code: How Design Handoffs Evolved — And What Must Never Change',
+    title: 'From Slicing PSDs to Shipping Front-End Code: How Design Handoffs Evolved - And What Must Never Change',
     excerpt: 'The wall is gone. The zip file is gone. The hundred-page PDF is gone. But despite what you\'d expect, 92% of designers still say the handoff process needs improvement. The tools got dramatically better. The friction didn\'t. That should tell you something about where the real problem lives.',
     category: 'design-skills' as const,
     image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80',

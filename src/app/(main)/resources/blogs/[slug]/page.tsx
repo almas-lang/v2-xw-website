@@ -84,7 +84,7 @@ const blogContent: Record<string, React.ReactNode> = {
       </div>
 
       <h2 id="handoff-is-dead" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
-        &quot;The Handoff Is Dead&quot; — And Why That&apos;s Only Half Right
+        &quot;The Handoff Is Dead&quot; - And Why That&apos;s Only Half Right
       </h2>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
         Before I defend the principles that endure, let me acknowledge the strongest version of the opposing argument.
@@ -109,7 +109,7 @@ const blogContent: Record<string, React.ReactNode> = {
       </p>
 
       <h2 id="what-remained" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
-        What Remained — And Must Never Change
+        What Remained - And Must Never Change
       </h2>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
         These principles were true when we were slicing PSDs. They&apos;re true now that we&apos;re shipping AI-generated components. If you abandon them because the tools feel magical, you&apos;ll discover - painfully, during a production incident or a stakeholder review - that no tool compensates for missing fundamentals.
@@ -190,7 +190,7 @@ const blogContent: Record<string, React.ReactNode> = {
       </p>
 
       <h2 id="what-changed" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
-        What Changed — And Why It Matters
+        What Changed - And Why It Matters
       </h2>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
         Now let&apos;s look at what&apos;s genuinely new. Not just &quot;better tools&quot; - but structural shifts in how design reaches production.

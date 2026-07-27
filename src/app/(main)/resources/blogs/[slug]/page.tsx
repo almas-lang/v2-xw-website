@@ -13,6 +13,286 @@ import { FreeTrainingCTA } from '@/components/blog/FreeTrainingCTA';
 
 // Blog content with internal links for SEO
 const blogContent: Record<string, React.ReactNode> = {
+  'visual-graphic-motion-designer-switch-to-ux': (
+    <>
+      <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
+        Let me guess the motivation.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        You want to earn more. That&apos;s the most common reason, and there&apos;s no shame in it. UI/UX designers in India earn 30-35% more than graphic designers at equivalent experience levels [1]. The average graphic designer salary in India sits around &#8377;5.5-7.5 LPA. The average UX designer salary is &#8377;8 LPA, with seniors reaching &#8377;14-25 LPA [2]. The numbers are clear. If you&apos;ve been a visual, graphic, or motion designer for two or more years, you&apos;ve probably noticed that your UX counterparts are making more - sometimes significantly more - for what appears to be a similar amount of effort.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The other reasons show up less often but matter just as much: wanting more ownership over the outcome, not just the output. Wanting to drive decisions rather than receive them. Wanting a growth path that goes beyond &quot;Senior Graphic Designer&quot; into something that feels like genuine career progression.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Whatever the reason - and it&apos;s probably a mix of all of the above - the question is always the same: how do I make this switch without starting over? Without going back to square one? Without calling myself a fresher and taking a pay cut and a title demotion as if the last two, three, five years never happened?
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        That question has a good answer. But it requires you to understand something about yourself that most career-switch guides completely ignore.
+      </p>
+
+      <h2 id="who-this-is-for" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Who This Is For - And Who It Isn&apos;t
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Let me be direct about the scope of this blog.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This will work if you&apos;ve been working as a designer - visual, graphic, motion, branding, communication design - in any professional capacity for more than two years. You&apos;ve worked with clients or stakeholders. You&apos;ve delivered projects. You&apos;ve collaborated with other people to produce work that went into the world.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        This will not work if you&apos;re freshly out of college and looking for your first job, particularly if you studied something unrelated to design - engineering, architecture, or another discipline - and you&apos;re trying to enter the design industry from scratch. That&apos;s a valid path, but it&apos;s a different path. The Ripple program at Xperience Wave is built specifically for that transition. The difference comes down to one concept: shifting skills. And when you haven&apos;t understood this concept well - when you don&apos;t see what&apos;s transferable in your experience - you end up undervaluing yourself. Not by a little. By orders of magnitude.
+      </p>
+
+      <h2 id="not-starting-from-zero" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        You&apos;re Not Starting From Zero. Stop Acting Like It.
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Here&apos;s something that might surprise you: a significant proportion of working UX designers today started from a non-UX, non-design background entirely. Engineers, QA specialists, developers, product owners, architects, interior designers - people who decided they didn&apos;t enjoy what they were doing, made the switch, and have since become experts in usability and experience design. Some of them hold senior positions. Some lead teams.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        They didn&apos;t start from scratch. They repositioned.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Now look at your own trajectory. You&apos;re not coming from engineering or QA. You&apos;re coming from <em>design</em>. You already speak the language. You already think visually. You already understand what it means to deliver creative work under constraints. The gap between where you are and where you need to be is smaller than you think - but only if you learn to see what you&apos;re already carrying.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        When you were working as a graphic designer, did you build a process for identifying what a project actually needed? Did you develop approaches for moodboarding and ideation? Did you learn to understand what your stakeholders wanted - not just what they said, but what they meant? Did you negotiate on timelines and scope? Did you work alongside peers, manage feedback, and iterate based on critique?
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        You did all of that. You&apos;ve been doing it for years. And now you want to call yourself a fresher? Take a pay cut? Lower your designation? Why have you turned so desperate that you&apos;ve forgotten to position what you already have?
+      </p>
+
+      {/* Inline image 1 - Design skills transfer */}
+      <div className="relative aspect-[16/9] rounded-xl overflow-hidden my-10">
+        <Image
+          src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&q=80"
+          alt="A designer working across multiple screens with both visual design and UX wireframes, representing the transferable skills between graphic design and UX"
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 720px"
+        />
+      </div>
+
+      <h2 id="ux-mapped-to-you" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What UX Designers Actually Do - Mapped Against What You Already Know
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Let me lay out the core responsibilities of a UX designer, and then let&apos;s honestly assess which ones you&apos;re already doing - even if you&apos;ve been calling them something else.
+      </p>
+
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Understanding how to make a business work by solving customer problems.</strong> This is the foundational purpose. Everything else flows from it. As a graphic or visual designer, you&apos;ve been solving communication problems - how to make a brand recognisable, how to convey a message clearly, how to make someone feel something through visual language. The shift is from communication problems to experience problems. The thinking muscle is the same.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Building design strategies.</strong> Before you start a branding project, don&apos;t you build a strategy? A visual direction? An approach that guides all the decisions that follow? UX strategy is the same discipline applied to a broader scope - product direction, user journey architecture, interaction frameworks. You&apos;re not learning something new. You&apos;re expanding the canvas.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Performing culture-sensitive research.</strong> As a graphic designer, you build themes, archetypes, and creative directions based on your understanding of who the customer is and what they respond to. You study trends, analyse competitors, look at what&apos;s working in the market. That&apos;s research - maybe not structured in the formal UX sense, but the instinct is there. The shift is from intuition-driven research to evidence-driven research. The curiosity is the same.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Collecting data and building comprehension models.</strong> UX designers use data to construct models that represent how users think, behave, and move through a product - journey maps, mental models, service blueprints. As a motion designer, you already think in sequences. As a graphic designer, you already think in information hierarchy. The shift is from arranging visual information to arranging experiential information. The spatial thinking transfers directly.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Ideating solutions.</strong> You don&apos;t jump to the first solution that comes to your head, right? You explore directions. You sketch alternatives. You present options and evaluate trade-offs. Every designer does this. In UX, the solutions are interactions and flows instead of layouts and compositions - but the ideation process is identical.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Building UI designs.</strong> This is the part of UX that&apos;s closest to what you already do. If you&apos;re a visual designer, you understand colour theory, typography, spacing, hierarchy, and visual systems. UI design is all of that, applied to interactive screens. This isn&apos;t a skill you need to learn. It&apos;s a skill you need to redirect.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Evaluating and testing usability.</strong> This is genuinely new for most visual designers. Formal usability testing - watching real users interact with a product and measuring whether it works - is a skill you&apos;ll need to develop. But even here, your experience isn&apos;t empty. Every time you presented a design to a stakeholder and watched their face for a reaction, every time you iterated based on feedback, every time you tested whether a layout communicated what you intended - that&apos;s informal evaluation. The shift is from informal to structured.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        <strong>Delivering and measuring impact.</strong> Does the solution actually solve the customer&apos;s problem? Are customers engaging more, converting more, struggling less? This is the business outcome layer of UX, and it&apos;s the one that justifies the higher salary. As a graphic designer, you may not have measured impact quantitatively - but you&apos;ve certainly measured it qualitatively. The shift is toward connecting your work to metrics.
+      </p>
+
+      <h2 id="actual-gaps" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Actual Gaps You Need to Close
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        I&apos;ve been showing you what transfers. Let me now be honest about what doesn&apos;t.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Structured user research.</strong> You need to learn how to plan and conduct user interviews, surveys, contextual inquiries, and usability tests. Not because you&apos;ve never talked to a customer - you probably have - but because formal research requires a methodology that reduces bias and produces reliable insights. This is learnable. It&apos;s a skill, not a talent.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Data comprehension modelling.</strong> Journey maps, service blueprints, empathy maps, mental models - these are the artefacts that UX designers use to synthesise research data into actionable understanding. You need to learn these frameworks. The good news: your visual thinking ability makes you better at constructing these models than most people who come from non-design backgrounds.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Interaction design and systems thinking.</strong> Designing how someone moves through a product - the flows, the states, the transitions, the error handling, the edge cases - is different from designing a static composition. This requires you to think in systems, not in pages. It&apos;s the biggest conceptual shift for visual designers, and it takes deliberate practice.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Business impact articulation.</strong> As we explored in <Link href="/resources/blogs/ux-job-market-changed-strategy-hasnt" className="text-accent hover:underline font-medium">The UX Job Market Has Changed</Link>, the market now expects designers to connect their work to business metrics. This isn&apos;t something most graphic or motion designers are trained to do. But it&apos;s learnable - and it&apos;s what separates UX designers who earn &#8377;8 LPA from those who earn &#8377;20 LPA.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        <strong>Stakeholder influence at product level.</strong> In graphic design, your stakeholder relationship is typically about the creative output - does the design meet the brief? In UX, stakeholder management extends to product direction - what should we build, what should we cut, why does this approach serve the business better than the alternative? This is the leadership dimension we address in <Link href="/resources/blogs/ux-career-ladder-levels-india" className="text-accent hover:underline font-medium">the career ladder breakdown</Link>.
+      </p>
+
+      <h2 id="title-only-trap" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Trap Nobody Warns You About: The Title-Only Switch
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Before I get to the practical steps, I need to tell you about the thing that goes wrong most often - because I&apos;ve seen it happen dozens of times, and it&apos;s worse than not making the switch at all.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        A visual designer decides to move into UX. They update their LinkedIn. They apply to UX roles. They get hired - sometimes because the organisation genuinely wants a UX designer, sometimes because they want someone who&apos;ll make their product look good and the &quot;UX&quot; title helps justify the headcount.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Day one looks promising. New title. New salary. New Slack channels.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        But six months in, nothing has actually changed. The designer is doing what they&apos;ve always done - creating visually polished screens - except now those screens are called &quot;user interfaces&quot; instead of &quot;creatives.&quot; They&apos;re not conducting research. They&apos;re not mapping user flows before jumping to layouts. They&apos;re not testing usability. They&apos;re not connecting their work to business outcomes. They&apos;re producing the same output with a different label on it.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        And here&apos;s the painful part: it&apos;s not always the organisation&apos;s fault.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Yes, some companies hire &quot;UX designers&quot; and then ask them to just make things look good. That&apos;s a real problem, and we&apos;ve written about <Link href="/resources/blogs/hiring-senior-designers-immature-design-org" className="text-accent hover:underline font-medium">what happens when senior designers end up in immature design orgs</Link>. But just as often, the designer themselves never actually changed how they think. They learned the vocabulary - user flows, heuristic evaluation, information architecture - but their instinct when they sit down to work is still the same: open Figma, start designing screens, make it beautiful.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        That&apos;s not a UX process. That&apos;s a graphic design process with a UX veneer.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>The real switch isn&apos;t in your title or your tools. It&apos;s in the sequence of your thinking.</strong>
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        A graphic designer&apos;s default sequence: receive brief &#8594; explore visual directions &#8594; refine &#8594; deliver.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        A UX designer&apos;s required sequence: understand the problem &#8594; research the user &#8594; define the direction &#8594; explore solutions &#8594; build and test &#8594; measure impact.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Notice what&apos;s different. The UX sequence starts before any screen is designed. The first three steps - understand, research, define - happen entirely without Figma. If you skip those steps and jump to screens, you&apos;re not doing UX. You&apos;re doing UI with extra steps.
+      </p>
+
+      {/* Inline image 2 - Career growth / upward trajectory */}
+      <div className="relative aspect-[16/9] rounded-xl overflow-hidden my-10">
+        <Image
+          src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&q=80"
+          alt="A professional reviewing a user experience workflow on a whiteboard, representing the shift from visual design thinking to UX systems thinking"
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 720px"
+        />
+      </div>
+
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is the catch that loops back on people. You get the position. You get the salary. But because your thought process didn&apos;t genuinely change, you find yourself stuck within a year. You can&apos;t grow into Senior UX Designer because your work doesn&apos;t demonstrate the thinking that senior requires. You can&apos;t lead a project end-to-end because your process still starts at the screen, not at the problem. You&apos;re in the room, but you&apos;re not speaking the language - and everyone can tell.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        I&apos;ve met designers who made this switch three or four years ago and are still essentially doing what they did before. They have &quot;UX Designer&quot; on their resume and &quot;graphic designer&quot; in their instincts. They&apos;ve plateaued - not because they lack capability, but because they repositioned their title without restructuring their practice.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The organisations contribute to this too. Many Indian companies - especially IT services firms and mid-size product companies - don&apos;t have a mature understanding of what UX is supposed to look like. They hire a &quot;UX designer&quot; because the client asked for one, or because the job market says they should. But internally, the expectations haven&apos;t changed: make the interface look good, deliver screens on time, don&apos;t ask too many questions about strategy. In that environment, even a designer who genuinely wants to practise UX gets pulled back into visual execution because that&apos;s all the organisation rewards.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        So before you make the switch, ask yourself honestly:
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Am I willing to change how I think, not just what I call myself?</strong> Are you prepared to spend the first hours of a project in research - talking to users, reading data, defining the problem - before you touch a design tool? Are you willing to present a direction that isn&apos;t visually polished but is strategically sound, and defend it on the strength of the thinking alone?
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Am I willing to be uncomfortable?</strong> The early months of a genuine UX transition feel like regression. You&apos;re slower. You&apos;re less confident. The thing you were best at - making things visually excellent - is no longer the primary measure of your value. The new measure - whether your design solves the right problem for the right user - is harder to demonstrate and takes longer to develop.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        <strong>Am I choosing an organisation that will let me practise actual UX?</strong> Not every &quot;UX Designer&quot; job posting is a UX role. Some are UI roles with a trendy title. Before you accept, ask: will I have access to users? Will I participate in research? Is there a design process that starts before screens? If the answer to all three is no, you&apos;ll end up exactly where I described - a title without a practice.
+      </p>
+
+      <h2 id="how-to-position" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        How to Position Yourself - Starting Now
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Here&apos;s the practical part. How do you actually make this switch without starting like a fresher?
+      </p>
+
+      <h3 id="reframe-experience" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-4">
+        Reframe your experience, don&apos;t erase it.
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Your resume and portfolio should not say &quot;Graphic Designer transitioning to UX.&quot; They should say &quot;Designer with 3 years of experience in visual communication, brand strategy, and user-centred design - now expanding into product and experience design.&quot; The narrative isn&apos;t &quot;I&apos;m leaving one thing for another.&quot; It&apos;s &quot;I&apos;m building on a foundation.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Every project in your portfolio should be reframed around the UX skills it demonstrated - even if you weren&apos;t calling them UX at the time. That branding project? You conducted stakeholder interviews, defined a visual strategy based on target audience research, iterated based on feedback, and delivered a system that needed to work across multiple touchpoints. That&apos;s UX language for work you already did.
+      </p>
+
+      <h3 id="build-case-study" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-4">
+        Build one UX case study from scratch.
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        You need at least one project in your portfolio that demonstrates the full UX process: research, synthesis, ideation, design, testing, iteration. It doesn&apos;t need to be a paid client project. It can be a redesign of an existing product, a personal project, or a volunteer project for a nonprofit. What matters is that it shows you can think in flows, systems, and user needs - not just visual compositions. We broke down exactly what hiring managers look for in that first portfolio impression in <Link href="/resources/blogs/7-second-portfolio-test" className="text-accent hover:underline font-medium">The 7-Second Portfolio Test</Link>.
+      </p>
+
+      <h3 id="learn-research" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-4">
+        Learn the research fundamentals.
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Take the time to learn how to conduct a proper user interview, how to build a discussion guide, how to synthesise qualitative data, and how to run a usability test. This is the single biggest skill gap for visual designers moving into UX, and closing it is what makes the difference between a credible transition and a cosmetic one.
+      </p>
+
+      <h3 id="dont-take-pay-cut" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-4">
+        Don&apos;t take a pay cut.
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        I cannot stress this enough. If you have three or more years of design experience and you&apos;re applying for UX roles, do not accept a junior UX salary. Your visual design skills have direct value in UX - especially in UI-heavy roles, design system work, and brand-integrated product design. You&apos;re not starting over. You&apos;re redirecting. Price yourself accordingly.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        If an employer wants to pay you a fresher salary because &quot;you don&apos;t have UX experience,&quot; that employer doesn&apos;t understand what UX experience is - or they&apos;re trying to get your visual skills at a discount. Either way, that&apos;s not the right fit.
+      </p>
+
+      <h3 id="find-mentor" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-4">
+        Find a mentor who&apos;s made the transition.
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        The fastest way to close the gap between visual design and UX is to work with someone who&apos;s already done it - who understands what transfers, what doesn&apos;t, and how to position the shift credibly. Not a bootcamp that treats you like a beginner. A mentor who respects what you bring and shows you how to build on it.
+      </p>
+
+      <h2 id="bigger-truth" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Bigger Truth
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The intention of making more money is not just valid - it&apos;s smart. UX and product designers get paid more because the scope of their work is broader and its impact on business outcomes is more direct. That&apos;s the market speaking, and it&apos;s speaking clearly.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        But the salary difference isn&apos;t free money. It reflects a genuine expansion in what&apos;s expected of you: more ownership, more cross-functional collaboration, more business awareness, more accountability for outcomes. If you&apos;re willing to develop those capabilities - and you already have a stronger foundation for them than you realise - the transition is not only possible. It&apos;s natural. We explored what this expanded set of expectations looks like across every career level in <Link href="/resources/blogs/ai-will-change-everything-except-what-matters" className="text-accent hover:underline font-medium">AI Will Change Everything About Design. Except the Part That Actually Matters</Link>.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        We work with designers making exactly this shift through our Ripple program - built specifically for experienced designers from visual, graphic, motion, and communication design backgrounds who want to move into UX without losing the value of the years they&apos;ve already invested. If you&apos;re considering the switch and want to understand how your specific experience maps to the UX landscape, <Link href="https://calendly.com/xperiencewave/xw-strategy-call" className="text-accent hover:underline font-medium">book a strategy call</Link>. We&apos;ll tell you where you stand, what&apos;s transferable, and what to build next.
+      </p>
+
+      <FreeTrainingCTA text="At Xperience Wave, we've helped 140+ designers reposition their careers - including visual, graphic, and motion designers transitioning into UX without starting over. Our Ripple program is built specifically for this shift" />
+
+      <h2 id="sources-references" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Sources &amp; References
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li>[1] IDeA World College / Industry salary analysis. (2026). &quot;UI/UX vs Graphic Designer Salary: UI/UX earns 30-35% higher.&quot; <a href="https://idea-worldwide.com/blog/graphic-designer-salary-india/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">https://idea-worldwide.com/blog/graphic-designer-salary-india/</a></li>
+        <li>[2] AND Academy / AmbitionBox data. (2026). &quot;UI UX Designer Salary Guide for 2026.&quot; Average UX designer salary in India: &#8377;8,00,000/year. Average graphic designer salary: &#8377;5.5-7.5 LPA. <a href="https://www.andacademy.com/resources/blog/ui-ux-design/ui-ux-designer-salary-guide/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">https://www.andacademy.com/resources/blog/ui-ux-design/ui-ux-designer-salary-guide/</a></li>
+        <li>[3] IIAD / Careers 360. (2025). &quot;Average Salary of a Graphic Designer in India.&quot; Graphic designers specialising in UI/UX command higher salaries than conventional roles. <a href="https://www.iiad.edu.in/the-circle/graphic-designer-salary-in-india-2025/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">https://www.iiad.edu.in/the-circle/graphic-designer-salary-in-india-2025/</a></li>
+      </ul>
+
+      <h2 id="further-reading" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Further Reading on Xperience Wave
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li><Link href="/resources/blogs/ux-job-market-changed-strategy-hasnt" className="text-accent hover:underline font-medium">The UX Job Market Has Changed. Your Strategy for Getting Noticed Hasn&apos;t</Link></li>
+        <li><Link href="/resources/blogs/ux-career-ladder-levels-india" className="text-accent hover:underline font-medium">The UX Career Ladder Is Broken in India. Here&apos;s the Path That Actually Works</Link></li>
+        <li><Link href="/resources/blogs/ux-career-ladder-levels-india" className="text-accent hover:underline font-medium">What Each Level of the UX Career Ladder Actually Looks Like in India</Link></li>
+        <li><Link href="/resources/blogs/7-second-portfolio-test" className="text-accent hover:underline font-medium">The 7-Second Portfolio Test</Link></li>
+        <li><Link href="/resources/blogs/ai-will-change-everything-except-what-matters" className="text-accent hover:underline font-medium">AI Will Change Everything About Design. Except the Part That Actually Matters</Link></li>
+      </ul>
+
+      <h2 id="about-author" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        About the Author
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Shaik Murad is Co-founder and Head of Product &amp; Design at <Link href="/" className="text-accent hover:underline font-medium">Xperience Wave</Link>, a UX design studio based in Bangalore, working across designer mentorship, UX services for businesses, and a design community of 1,000+ designers.
+      </p>
+
+      <p className="text-base md:text-lg text-g500 italic mt-6">
+        - Murad, Co-founder &amp; Head of Product &amp; Design, Xperience Wave
+      </p>
+    </>
+  ),
   'designer-to-product-manager-transition': (
     <>
       <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
@@ -11194,6 +11474,11 @@ const authorData: Record<string, { role: string; bio: string; image: string }> =
 
 // Blog-specific metadata for SEO
 const blogMetadata: Record<string, { title: string; description: string; keywords: string[] }> = {
+  'visual-graphic-motion-designer-switch-to-ux': {
+    title: 'How to Switch From Graphic / Visual / Motion Design to UX Without Starting Over | Xperience Wave',
+    description: 'UI/UX designers earn 30-35% more than graphic designers in India. But switching doesn\'t mean starting like a fresher. Here\'s what transfers, what doesn\'t, the title-only trap to avoid, and how to position your experience for a credible UX career transition.',
+    keywords: ['graphic designer to UX', 'visual designer UX transition', 'motion designer to UX', 'switch to UX design India', 'graphic design to UX career', 'UX designer salary India', 'design career switch', 'UX transition without starting over', 'graphic designer career growth', 'visual designer to product designer', 'UX skills for graphic designers', 'design career transition India'],
+  },
   'designer-to-product-manager-transition': {
     title: 'Can a Designer Turn Into a Product Manager? What Does the Preparation Actually Involve? | Xperience Wave',
     description: 'Nearly half the designers we speak to want to move into product management. But is it the right move - or a symptom of a design career that feels stuck? What the transition actually requires, what most guides won\'t tell you, and how to decide.',

@@ -51,6 +51,17 @@ export const getCategoryLabel = (category: string): string => {
 // Sample blog posts with Unsplash images
 export const blogPosts: BlogPost[] = [
   {
+    id: '51',
+    slug: 'visual-graphic-motion-designer-switch-to-ux',
+    title: 'I\'ve Been a Visual / Graphic / Motion Designer for 2+ Years - How Do I Switch to UX Without Starting Like a Fresher?',
+    excerpt: 'UI/UX designers in India earn 30-35% more than graphic designers at equivalent experience levels. The numbers are clear. But the transition doesn\'t require starting over - it requires understanding what you\'re already carrying and learning to position it.',
+    category: 'career-growth' as const,
+    image: 'https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&q=80',
+    author: { name: 'Shaik Murad' },
+    publishedAt: '2026-07-27',
+    readTime: '12 min',
+  },
+  {
     id: '50',
     slug: 'designer-to-product-manager-transition',
     title: 'Can a Designer Turn Into a Product Manager? What Does the Preparation Actually Involve?',

@@ -56,7 +56,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Can a Designer Turn Into a Product Manager? What Does the Preparation Actually Involve?',
     excerpt: 'Nearly half the designers we speak to are thinking about moving into product management. But before we get to the how, there\'s a question almost nobody asks: why? The answer reveals whether PM is the right move - or whether what you\'re really looking for is a design career that\'s finally operating at the level it should be.',
     category: 'career-growth' as const,
-    image: 'https://images.unsplash.com/photo-1531538606174-e5e04f32e5b3?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1552664688-cf412ec27db2?w=800&q=80',
     author: { name: 'Shaik Murad' },
     publishedAt: '2026-07-27',
     readTime: '14 min',

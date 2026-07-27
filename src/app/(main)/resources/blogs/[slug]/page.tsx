@@ -13,6 +13,247 @@ import { FreeTrainingCTA } from '@/components/blog/FreeTrainingCTA';
 
 // Blog content with internal links for SEO
 const blogContent: Record<string, React.ReactNode> = {
+  'designer-to-product-manager-transition': (
+    <>
+      <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
+        We hear this question far more often than you&apos;d think.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        From our conversations with over 3,000 designers in India - across Bangalore, Mumbai, Pune, Hyderabad, Chennai, and remotely from Canada, UAE, and Ireland - we estimate that at least 40% vocally express interest in moving toward product management at some point in their career. That&apos;s not a small number. Nearly half the designers we speak to are, at some level, thinking about this transition.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        And why wouldn&apos;t they? It seems like a natural ladder. &quot;Over the next five years, I want to be a product owner.&quot; &quot;I want more decision-making power.&quot; &quot;I want end-to-end ownership of the products I&apos;m designing and building.&quot; These are things we hear constantly.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The Interaction Design Foundation calls UX-to-PM &quot;a resounding yes&quot; for a career move [2]. UX Planet describes it as &quot;a natural step if you want more influence over product decisions&quot; [3]. The internet is full of playbooks for making the switch.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        But before we get to the how, I want to spend some time on a question that almost nobody asks: <em>why?</em>
+      </p>
+
+      <h2 id="labels-straight" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        First - Let&apos;s Get the Labels Straight
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Before anything else, let&apos;s clear up something that causes a surprising amount of confusion - even among experienced professionals.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        When people say &quot;I want to become a product manager,&quot; they often mean different things. There are three roles that get conflated constantly, and understanding the distinction matters because each requires a fundamentally different skill set [4][5].
+      </p>
+
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Product Manager.</strong> This is a strategic role. A PM owns the product vision, the roadmap, the prioritisation of what gets built and what gets cut. They don&apos;t manage people - they manage the direction of the product. They sit at the intersection of business, technology, and user experience, making decisions about what the product should become and why. Their job is to ensure that what the team builds delivers value to the customer and the business.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Product Owner.</strong> This is a tactical role, most common in Agile/Scrum environments. A PO manages the product backlog - the prioritised list of user stories and features that the development team works on sprint by sprint. They represent the voice of the customer within the development cycle. Where the PM thinks in quarters and years, the PO thinks in sprints and releases.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Project Manager.</strong> This is an execution role. A Project Manager coordinates timelines, resources, dependencies, and deliverables. They make sure the work gets done on time and within scope. They manage the <em>how</em> and <em>when</em>, not the <em>what</em> and <em>why</em>.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Here&apos;s the critical detail most people miss: the word &quot;manager&quot; in Product Manager doesn&apos;t carry people management power. Unlike a Design Manager or Engineering Manager, a PM typically has no one reporting to them. They don&apos;t control performance reviews, promotions, or team allocation. Their authority comes from influence, not hierarchy - which, ironically, is both the role&apos;s greatest appeal and its greatest frustration.
+      </p>
+
+      <h2 id="what-pm-does" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What a Product Manager Actually Does
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Let me strip away the job descriptions and tell you what the day-to-day actually looks like.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        A product manager manages the things that the overall product is supposed to deliver. They&apos;re not the business owner - they don&apos;t set the company strategy. They&apos;re not the technology expert - they don&apos;t write code or architect systems. They&apos;re the person who connects these worlds. Roadmaps, versioning, what gets delivered this quarter, what gets deferred to next, what customers are asking for and how those requests get prioritised against business goals.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        To many cross-functional teams, this looks like a middleman role. And honestly, in poorly run organisations, that&apos;s exactly what it becomes - a relay station between business leadership and delivery teams. But when done well, the PM role is far more than that.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Consider four core capabilities of any organisation: operations, business, engineering, and design. A product manager can move through each of these with more ease than most specialists. They don&apos;t go deep - they go across. They understand enough about each domain to ask the right questions, identify the right trade-offs, and make informed decisions about priority.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        But here&apos;s the nuance: nobody is born a deep generalist. You grow from one specialism to many, from depth to breadth. That&apos;s why you&apos;ll notice that some product managers are more business-oriented - because their origin was in business. Others lean technical - because they came from engineering. And others are more customer-centric and experience-driven - because they came from design.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        When you look at it from that standpoint, almost anyone can become a product manager. The question isn&apos;t whether you <em>can</em>. It&apos;s whether you <em>should</em>.
+      </p>
+
+      {/* Inline image 1 - Career crossroads / decision making */}
+      <div className="relative aspect-[16/9] rounded-xl overflow-hidden my-10">
+        <Image
+          src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80"
+          alt="A professional at a crossroads representing the career decision between design leadership and product management"
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 720px"
+        />
+      </div>
+
+      <h2 id="question-nobody-asks" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Question Nobody Asks: Why?
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is where I want to be direct, even if it&apos;s uncomfortable.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        When a designer tells me they want to become a product manager, I always ask the same question: <em>why?</em>
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The answers tend to follow a pattern. And most of them reveal that the desire isn&apos;t about product management at all - it&apos;s about something the designer feels is missing from their current role.
+      </p>
+
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>&quot;I want more decision-making power.&quot;</strong> Design has decision-making power. Design managers, heads of design, chief design officers, chief experience officers - these are real positions with real strategic authority. The problem isn&apos;t that design doesn&apos;t have a leadership ladder. The problem is that at many Indian companies, that ladder is underdeveloped or invisible. We explored this reality in detail in <Link href="/resources/blogs/ux-career-ladder-levels-india" className="text-accent hover:underline font-medium">The UX Career Ladder Is Broken in India</Link> - the ladder exists, but navigating it requires a different strategy than most designers expect.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>&quot;I want more ownership.&quot;</strong> You can have ownership in design. The question is whether your organisation gives it to you - and whether you&apos;ve positioned yourself to demand it. Often, product managers struggle with ownership too. They have shallow knowledge across every function they work with, which means no one fully trusts their judgment in any single domain. They have positional authority but lack the depth to back it up. And they frequently find themselves fighting to justify their seat at the table - just like designers do.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>&quot;I want to work more closely with the business.&quot;</strong> That&apos;s what head designers, pre-sales designers, and design managers are supposed to do. If you&apos;re not doing it in your current role, the solution might be to redefine your role, not abandon your discipline.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>&quot;I want more influence over what gets built.&quot;</strong> Neither do most product managers - especially the ones who don&apos;t understand how technology actually works. Influence comes from credibility, not from a title.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        I&apos;m not saying these aren&apos;t real frustrations. They are. And for some designers, the frustration is genuine enough that product management is the right move. But for many - more than will admit it - the pull toward PM is really a pull away from a design career that feels stuck. And if the root cause is that your design career lacks growth, switching disciplines doesn&apos;t fix the root cause. It just relocates the symptom.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Let me be blunt about one more thing. The salary difference is real. PM roles in India often pay 20-30% more than equivalent design roles at the same level. That&apos;s not a gimmick - it&apos;s a market reality. But if money is the primary motivation, know what you&apos;re trading for it: you&apos;ll spend less time doing the work you trained for, more time in stakeholder management and alignment meetings, and your impact will be measured in roadmap delivery and business metrics rather than in the quality of the experience you built. For some designers, that trade-off is worth it. For many, it isn&apos;t - they just don&apos;t know that yet.
+      </p>
+
+      <h2 id="how-to-prepare" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        For the Right Reasons - Here&apos;s How to Actually Prepare
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Now, for everyone who&apos;s genuinely thought this through - who understands what they&apos;re giving up, what they&apos;re gaining, and why product management is the right path for them - the preparation is both simpler and harder than you think.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Simpler because you already have half the skill set. As a designer, you understand users. You know how to research, synthesise, and translate insights into direction. You&apos;ve worked cross-functionally. You&apos;ve navigated ambiguity. These aren&apos;t small things - they&apos;re foundational PM skills. Harder because the other half - the half that makes or breaks a PM career - requires a genuine shift in how you think.
+      </p>
+
+      <h3 id="show-ownership" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-4">
+        Show ownership beyond design delivery.
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is the single most important signal you can send. Before you ever apply for a PM role, demonstrate to your current leadership that you&apos;re willing to own not just the design delivery but the end-to-end delivery of a business requirement turned into a product need.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        What does this look like? You stop waiting for the PM to define the problem and start bringing problems to the table - with supporting data, a proposed scope, and a recommended approach. You don&apos;t just hand off designs; you follow through to implementation, launch, and post-launch measurement. You start asking &quot;did this work?&quot; instead of &quot;does this look right?&quot; This isn&apos;t a small shift. It changes how your team sees you, how your leadership sees you, and how you see yourself.
+      </p>
+
+      <h3 id="grow-vision" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-4">
+        Grow your vision from design consistency to business roadmap.
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        As a designer, your scope of vision is often the product experience - consistency, usability, delight. As a PM, your scope expands to the entire roadmap: what gets built this quarter, what gets deferred, what gets killed, and why. Start practising this now. Can you articulate your product&apos;s roadmap - not just the design portion, but the full picture? Do you know what the engineering team is prioritising and why? Do you know what the business team&apos;s revenue targets are for the next two quarters? If you don&apos;t, you&apos;re not ready for a PM role. Not because you lack the capability, but because you haven&apos;t yet developed the habit of thinking at roadmap level.
+      </p>
+
+      {/* Inline image 2 - Cross-functional collaboration / strategy */}
+      <div className="relative aspect-[16/9] rounded-xl overflow-hidden my-10">
+        <Image
+          src="https://images.unsplash.com/photo-1542626991-cbc4e32524cc?w=800&q=80"
+          alt="A team collaborating around a whiteboard with sticky notes and roadmap planning, representing the cross-functional thinking required for product management"
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 720px"
+        />
+      </div>
+
+      <h3 id="cross-functional" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-4">
+        Build cross-functional knowledge - real knowledge, not surface awareness.
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This goes beyond &quot;I collaborate well with engineers.&quot; You need to understand, concretely:
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        What technology your engineering team uses and what its limitations are. What compliance requirements your product must adhere to - GDPR, RBI guidelines, industry-specific regulations. What&apos;s happening in your industry that affects product strategy - competitive moves, regulatory changes, market shifts. What your sales funnel looks like - how leads become customers, where they drop off, what the support team hears most often. How your marketing team positions the product and where that positioning diverges from the actual experience.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        A survey of product professionals found that 57% of participants believe their PM is &quot;still too tactical and not strategic enough&quot; [1]. The PMs who avoid that trap are the ones who&apos;ve built genuine depth across these domains - not just familiarity, but working knowledge.
+      </p>
+
+      <h3 id="influence-decisions" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-4">
+        Start influencing decisions with more than research findings.
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        As a designer, you typically influence through user research - &quot;here&apos;s what users told us, here&apos;s what we observed, here&apos;s what we recommend.&quot; That&apos;s powerful, but it&apos;s one lens.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        As a PM, you influence through a synthesis of user needs, business constraints, technical feasibility, and operational capacity. Start practising this now. When you present a recommendation, don&apos;t just ground it in what you learned from users. Ground it in what you know about your organisation&apos;s current operational capabilities, its engineering bandwidth, its revenue model, and its competitive position. This is the shift from &quot;here&apos;s what&apos;s right for the user&quot; to &quot;here&apos;s what&apos;s right for the product given everything we know.&quot; That second statement is what product management sounds like.
+      </p>
+
+      <h2 id="watch-out" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Watch Out for These Catches
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>This is a long-term transition.</strong> You will have to demonstrate end-to-end ownership over months, possibly years, before anyone considers you for a PM role - especially if you don&apos;t have a PM title on your resume. That&apos;s uncomfortable for designers who are used to being valued for visible, tangible output. The ownership work is less visible and slower to compound.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Many PMs still don&apos;t understand what they&apos;re supposed to do.</strong> Almost 50% of product management teams fail to have a consistent or well-defined process [1]. You might transition into a role where the expectations are unclear, the organisation hasn&apos;t figured out what it wants from product management, and you end up doing what your boss wants rather than what the product needs. Be honest about whether you&apos;d be walking into a PM-shaped hole or a PM-shaped opportunity.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>The grass isn&apos;t as green as it looks.</strong> PMs spend enormous amounts of time in alignment meetings, stakeholder management, and priority negotiations. If what you loved about design was the craft - the research, the synthesis, the act of creating something - you will do significantly less of that as a PM. Some designers make the switch, realise they miss the work, and come back. There&apos;s no shame in that - but it&apos;s better to know it before you switch.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        <strong>The title alone doesn&apos;t give you what you&apos;re looking for.</strong> If you want decision-making power, the title &quot;Product Manager&quot; doesn&apos;t automatically grant it. Just as &quot;Design Manager&quot; doesn&apos;t automatically grant strategic authority - as we explored in <Link href="/resources/blogs/design-leadership-in-turmoil" className="text-accent hover:underline font-medium">Design Leadership Is in Turmoil</Link> - the PM title faces the same inflation. There are PMs who shape strategy and PMs who take orders. The difference isn&apos;t the title. It&apos;s the person, the organisation, and the culture.
+      </p>
+
+      <h2 id="stay-in-design" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Or - Stay in Design and Build the Same Capabilities
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Here&apos;s what I want to leave you with, and it&apos;s something that most UX-to-PM guides won&apos;t tell you.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Everything a good product manager does - cross-functional influence, business understanding, strategic thinking, roadmap awareness, stakeholder management - is available to you within design. You don&apos;t have to change disciplines to build these skills. You have to change how you operate within your discipline.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The best design leaders I&apos;ve worked with - the ones at VP, Head of Design, CDO level - have all of these capabilities. They understand the business as well as any PM. They influence roadmaps. They speak the language of revenue, retention, and operational efficiency. They just do it while also maintaining the deep craft and user understanding that makes design irreplaceable.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The path isn&apos;t PM or bust. The path is: become the kind of designer who operates at a level where the PM distinction becomes irrelevant - because your influence, your ownership, and your strategic contribution already transcend the boundaries of your title. This is what the best senior designers are doing right now - we explored exactly what that looks like in <Link href="/resources/blogs/ux-job-market-changed-strategy-hasnt" className="text-accent hover:underline font-medium">The UX Job Market Has Changed. Your Strategy for Getting Noticed Hasn&apos;t</Link>.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        That&apos;s the path we help designers build at <Link href="/" className="text-accent hover:underline font-medium">Xperience Wave</Link>. Whether you ultimately move into product management or grow into design leadership, the preparation is the same: develop the ownership, the cross-functional fluency, and the business acumen that makes you indispensable - regardless of what your title says.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        We&apos;re already en route with a couple of designers on exactly this journey. If you&apos;re considering it, talk to us. We&apos;ll help you figure out whether PM is actually the right move - or whether what you&apos;re really looking for is a design career that&apos;s finally operating at the level it should be. <Link href="https://calendly.com/xperiencewave/xw-strategy-call" className="text-accent hover:underline font-medium">Book a strategy call</Link> and let&apos;s have the conversation.
+      </p>
+
+      <FreeTrainingCTA text="At Xperience Wave, we've helped 140+ designers build the ownership, cross-functional fluency, and business acumen that makes them indispensable - whether the path leads to design leadership or product management" />
+
+      <h2 id="sources-references" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Sources &amp; References
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li>[1] WebinarCare / Product Management Statistics 2024. Survey of product management professionals. Findings include: 50% of PM teams lack consistent process; 57% of participants say PM is &quot;still too tactical and not strategic enough&quot;; organisations waste 12% of resources due to ineffective product management. <a href="https://webinarcare.com/best-product-management-software/product-management-statistics/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">https://webinarcare.com/best-product-management-software/product-management-statistics/</a></li>
+        <li>[2] Interaction Design Foundation. (2026). &quot;What Is Product Management?&quot; Confirms UX-to-PM transition as viable, emphasising need for strategic thinking and business acumen. <a href="https://ixdf.org/literature/topics/product-management" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">https://ixdf.org/literature/topics/product-management</a></li>
+        <li>[3] UX Planet. (2025). &quot;How to Transition from UX to Product Management in 2025.&quot; Describes UX-to-PM as &quot;a natural step&quot; for designers wanting more influence. <a href="https://uxplanet.org/ux-to-product-management-transition-2025-ec436aa9f635" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">https://uxplanet.org/ux-to-product-management-transition-2025-ec436aa9f635</a></li>
+        <li>[4] Asana. (2025). &quot;Product Manager vs Project Manager: Key Differences.&quot; Clear delineation of PM (strategic, what/why) vs Project Manager (execution, how/when). <a href="https://asana.com/resources/product-manager-vs-project-manager" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">https://asana.com/resources/product-manager-vs-project-manager</a></li>
+        <li>[5] Contentsquare. (2026). &quot;Product Owner vs Product Manager: What&apos;s the Difference in 2026?&quot; PM as strategic, PO as tactical - distinct but complementary roles. <a href="https://contentsquare.com/guides/product-management/product-owner-vs-product-manager/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">https://contentsquare.com/guides/product-management/product-owner-vs-product-manager/</a></li>
+      </ul>
+
+      <h2 id="further-reading" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Further Reading on Xperience Wave
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li><Link href="/resources/blogs/ux-career-ladder-levels-india" className="text-accent hover:underline font-medium">The UX Career Ladder Is Broken in India. Here&apos;s the Path That Actually Works</Link></li>
+        <li><Link href="/resources/blogs/ux-career-ladder-levels-india" className="text-accent hover:underline font-medium">What Each Level of the UX Career Ladder Actually Looks Like in India</Link></li>
+        <li><Link href="/resources/blogs/design-leadership-in-turmoil" className="text-accent hover:underline font-medium">Design Leadership Is in Turmoil. And No One&apos;s Talking About It</Link></li>
+        <li><Link href="/resources/blogs/ux-job-market-changed-strategy-hasnt" className="text-accent hover:underline font-medium">The UX Job Market Has Changed. Your Strategy for Getting Noticed Hasn&apos;t</Link></li>
+        <li><Link href="/resources/blogs/5-things-senior-designers-ai" className="text-accent hover:underline font-medium">5 Things Senior Designers Should Be Doing With AI - None of Them Involve Figma Plugins</Link></li>
+      </ul>
+
+      <h2 id="about-author" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        About the Author
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Shaik Murad is Co-founder and Head of Product &amp; Design at <Link href="/" className="text-accent hover:underline font-medium">Xperience Wave</Link>, a UX design studio based in Bangalore, working across designer mentorship, UX services for businesses, and a design community of 1,000+ designers.
+      </p>
+
+      <p className="text-base md:text-lg text-g500 italic mt-6">
+        - Murad, Co-founder &amp; Head of Product &amp; Design, Xperience Wave
+      </p>
+    </>
+  ),
   'slicing-psds-to-shipping-code-design-handoffs-evolved': (
     <>
       <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
@@ -10953,6 +11194,11 @@ const authorData: Record<string, { role: string; bio: string; image: string }> =
 
 // Blog-specific metadata for SEO
 const blogMetadata: Record<string, { title: string; description: string; keywords: string[] }> = {
+  'designer-to-product-manager-transition': {
+    title: 'Can a Designer Turn Into a Product Manager? What Does the Preparation Actually Involve? | Xperience Wave',
+    description: 'Nearly half the designers we speak to want to move into product management. But is it the right move - or a symptom of a design career that feels stuck? What the transition actually requires, what most guides won\'t tell you, and how to decide.',
+    keywords: ['UX designer to product manager', 'designer PM transition', 'UX to product management', 'product manager career switch', 'designer career growth', 'product manager vs design manager', 'PM skills for designers', 'UX career transition India', 'product management preparation', 'design leadership vs product management', 'product owner vs product manager', 'UX designer career path'],
+  },
   'slicing-psds-to-shipping-code-design-handoffs-evolved': {
     title: 'From Slicing PSDs to Shipping Front-End Code: How Design Handoffs Evolved | Xperience Wave',
     description: 'From slicing PSDs to AI-generated components via MCP - design handoffs have transformed. But 92% of designers say the process still needs improvement. The tools changed. The principles that make handoffs good didn\'t. Here\'s what must never change.',

@@ -51,6 +51,17 @@ export const getCategoryLabel = (category: string): string => {
 // Sample blog posts with Unsplash images
 export const blogPosts: BlogPost[] = [
   {
+    id: '49',
+    slug: 'slicing-psds-to-shipping-code-design-handoffs-evolved',
+    title: 'From Slicing PSDs to Shipping Front-End Code: How Design Handoffs Evolved — And What Must Never Change',
+    excerpt: 'The wall is gone. The zip file is gone. The hundred-page PDF is gone. But despite what you\'d expect, 92% of designers still say the handoff process needs improvement. The tools got dramatically better. The friction didn\'t. That should tell you something about where the real problem lives.',
+    category: 'design-skills' as const,
+    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80',
+    author: { name: 'Shaik Murad' },
+    publishedAt: '2026-07-27',
+    readTime: '16 min',
+  },
+  {
     id: '48',
     slug: 'ux-job-market-changed-strategy-hasnt',
     title: 'The UX Job Market Has Changed. Your Strategy for Getting Noticed Hasn\'t.',

@@ -13,6 +13,337 @@ import { FreeTrainingCTA } from '@/components/blog/FreeTrainingCTA';
 
 // Blog content with internal links for SEO
 const blogContent: Record<string, React.ReactNode> = {
+  'slicing-psds-to-shipping-code-design-handoffs-evolved': (
+    <>
+      <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
+        Remember slicing PSDs?
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If you&apos;ve been in this industry long enough, you remember. You&apos;d design an entire page in Photoshop - every element, every state, every hover effect - as a flat image. Then you&apos;d slice it into pieces. Export those pieces as image assets in three sizes: small, medium, large. Maybe more if you were ambitious about form factors. Package them with a style guide document - a PDF, sometimes a hundred pages - that specified every font size, every hex code, every pixel of padding.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Then you&apos;d hand it all over to a developer. And pray.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        That was the handoff. One direction. One moment. Everything you&apos;d spent weeks on, compressed into a zip file and thrown over the wall.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If it sounds like that was decades ago, it&apos;s because the pace of change since then has been relentless. But it was really only about ten to twelve years ago. We went from that - from &quot;here are your image assets and a style guide, good luck&quot; - to a world where a designer builds in Figma, switches on Dev Mode, and a developer pulls production-ready code snippets in real time. Where AI editors like Cursor and Claude Code read the design file via MCP, generate a first-pass React component using the team&apos;s existing conventions, and a working prototype exists minutes after the design is finalised.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The wall is gone. The zip file is gone. The hundred-page PDF is gone.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        But here&apos;s what I want to talk about: in the rush to celebrate how far the tools have come, we&apos;ve stopped paying attention to what must never change. The principles underneath the tools - the things that made a handoff good in 2014 and still make it good in 2026, regardless of whether you&apos;re exporting assets or shipping code.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        And despite what you&apos;d expect, the problem hasn&apos;t gone away. Figma&apos;s 2025 Designer and Developer Trends report found that 92% of designers and 91% of developers say the handoff process still needs improvement [1]. The tools got dramatically better. The friction didn&apos;t. That should tell you something about where the real problem lives.
+      </p>
+
+      <h2 id="brief-history" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        A Brief History of Getting Designs to Developers
+      </h2>
+
+      <h3 id="era-1" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-4">
+        Era 1: The PSD and the Prayer (2008–2014)
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Photoshop was the tool. Designers created static compositions at specific screen sizes. Converting a design to code was called &quot;slicing a PSD&quot; - and it was the developer&apos;s responsibility, which was frustrating because developers didn&apos;t want to work with design tools [2]. The gap was filled with redline documents - annotated screenshots showing measurements, colours, and spacing - that were outdated the moment anything changed.
+      </p>
+
+      <h3 id="era-2" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-4">
+        Era 2: Inspect Tools and the Spec Layer (2014–2019)
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Sketch replaced Photoshop. Zeplin, InVision Inspect, and Avocode let developers inspect design files directly for the first time - pulling measurements and CSS without reading a PDF. Revolutionary at the time. But the model was still fundamentally sequential: design happens, then development happens. Zeplin made the one-time handoff cleaner. It didn&apos;t change the underlying dynamic.
+      </p>
+
+      <h3 id="era-3" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-4">
+        Era 3: Real-Time Collaboration and Dev Mode (2019–2024)
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Figma changed the game through its collaboration model. Designers and developers worked in the same file. When Dev Mode launched in 2023, the handoff became a toggle, not a ceremony. But a new problem emerged: the same real-time access that eliminated the wall also eliminated the clarity of &quot;this is final.&quot; The question of &quot;what&apos;s done?&quot; became harder to answer than ever.
+      </p>
+
+      <h3 id="era-4" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-4">
+        Era 4: AI-Mediated Continuous Delivery (2025–Present)
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Two shifts broke the old model entirely. Code Connect mapped design components directly to production code - the gap between design and code stopped being a translation problem and started being a routing problem. Then AI editors integrated with design files via MCP, letting agents read Figma files, generate first-pass components using the team&apos;s existing conventions, and write back to the canvas using the actual design system [3]. The handoff isn&apos;t a moment anymore. It&apos;s a continuous stream.
+      </p>
+
+      {/* Inline image 1 - Design evolution timeline */}
+      <div className="relative aspect-[16/9] rounded-xl overflow-hidden my-10">
+        <Image
+          src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=80"
+          alt="Code on a laptop screen representing the evolution from static design files to production code as a design deliverable"
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 720px"
+        />
+      </div>
+
+      <h2 id="handoff-is-dead" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        &quot;The Handoff Is Dead&quot; — And Why That&apos;s Only Half Right
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Before I defend the principles that endure, let me acknowledge the strongest version of the opposing argument.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        There&apos;s a serious conversation happening right now about whether the handoff - and the principles attached to it - has become obsolete. Jonathan Ezell argued in March 2026 that MCP and Claude Code have eliminated the thirty-year translation problem between designers and developers overnight [4]. MindStudio went further, claiming that tools like Claude Design and Google Stitch make the mockup itself obsolete - the prototype becomes the product [5]. And Thamizh Elango made perhaps the most provocative case: that developers with AI tools are now shipping production-grade interfaces faster than designers can open Figma [6].
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        These arguments are not wrong about the execution layer. AI genuinely can translate a well-structured Figma file into production code faster and more accurately than a manual handoff. The translation problem - pixels to code - is being solved.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        But they&apos;re conflating the translation with the thinking.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Luke Wroblewski documented this precisely in 2026: an AI-assisted project achieved 85% fidelity after the first code pass, but 5 out of 30–40 pull requests still needed a human to catch them [7]. That 15% isn&apos;t a rounding error. It&apos;s the difference between a product that works and one that looks like it works. As one observer noted: &quot;The quality gate function still exists. It just needs to move upstream. Not &apos;review before ship&apos; - that window is gone. The new window is before anyone opens a tool&quot; [7].
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The handoff-is-dead crowd is right that the ceremony is dying. They&apos;re wrong that the principles are dying with it. The principles don&apos;t disappear - they migrate upstream. They move from &quot;how we document after design&quot; to &quot;how we think during design.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        NNGroup&apos;s State of UX 2026 was direct about this: &quot;If you&apos;re just slapping together components from a design system, you&apos;re already replaceable by AI.&quot; The principles I&apos;m about to describe are what make you irreplaceable.
+      </p>
+
+      <h2 id="what-remained" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What Remained — And Must Never Change
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        These principles were true when we were slicing PSDs. They&apos;re true now that we&apos;re shipping AI-generated components. If you abandon them because the tools feel magical, you&apos;ll discover - painfully, during a production incident or a stakeholder review - that no tool compensates for missing fundamentals.
+      </p>
+
+      <h3 id="principle-1" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-4">
+        The thinking behind the design must be communicated, not just the design itself.
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Whether you&apos;re handing off through a prototype, a flowchart, an annotated Figma file, or a data comprehension model - the person receiving your work needs to understand your reasoning about interactions, content decisions, and state changes. Not just what the screen looks like, but why it looks that way. What happens when the API fails. What the empty state communicates. What the loading state should feel like.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Figma&apos;s survey found that the top handoff challenges are differences in assumptions (52% of developers) and differences in priorities (63% of designers) [1]. Both are failures of communicated intent, not failures of tooling. Auto-layout and Dev Mode give developers the <em>what</em> with unprecedented accuracy. But the <em>why</em> - the intention behind the design - still requires a human designer to articulate it. If you don&apos;t, the developer makes assumptions. And assumptions are where quality dies.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        This is one of those core design skills that AI can&apos;t replace - the ability to not just produce a design, but to explain the thinking underneath it in a way that survives the translation into code. We explored what this kind of irreplaceable judgment looks like in <Link href="/resources/blogs/ai-will-change-everything-except-what-matters" className="text-accent hover:underline font-medium">AI Will Change Everything About Design. Except the Part That Actually Matters</Link>.
+      </p>
+
+      <h3 id="principle-2" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-4">
+        Standardisation must be versioned, verified, and intentional.
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Every component pulled from a design system, every token applied, every pattern reused - these need to be versioned and verified before they enter the delivery stream. Not generated on the fly. Not &quot;whatever the latest version is.&quot; Explicitly checked, explicitly documented, explicitly marked as ready.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        And verification matters more in an AI-mediated workflow, not less. If your Figma file has sloppy auto-layout, missing variables, and no Code Connect mappings, the AI will faithfully reproduce that sloppiness in production code - at scale, in minutes. The speed of AI-mediated handoffs makes errors propagate faster, which means the discipline of verification must be even more rigorous than it was in the Zeplin era.
+      </p>
+
+      <h3 id="principle-3" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-4">
+        Brand, theme, and vision must be coherent across every artefact.
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        When handoffs were slow and ceremonial, there was a natural checkpoint: someone reviewed the full set of deliverables before they crossed the wall. Now that delivery is continuous, coherence becomes something you must actively protect.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        The colour system, the typography hierarchy, the interaction patterns, the voice and tone - these need to be documented and distributed so that every contributor can access and verify against them. Not as a static PDF that nobody reads, but as a living system referenced at the point of creation. We explored what this living system should look like for modern design teams in <Link href="/resources/blogs/what-should-design-team-look-like-2026" className="text-accent hover:underline font-medium">What Should a Design Team Look Like in 2026?</Link> - the coherence challenge is structural, not individual.
+      </p>
+
+      {/* Inline image 2 - Design system / collaboration */}
+      <div className="relative aspect-[16/9] rounded-xl overflow-hidden my-10">
+        <Image
+          src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=800&q=80"
+          alt="A designer working on a structured design system with components and tokens, representing the discipline of versioned, verified standardisation"
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 720px"
+        />
+      </div>
+
+      <h3 id="principle-4" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-4">
+        Master layouts must be rigorously evaluated.
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Before a layout ships - before it enters the continuous delivery stream - it should pass a critical evaluation. Can it accommodate the realistic range of content variations? Does it degrade gracefully at different breakpoints? Has it been tested for usability, not just visual consistency?
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Auto-layout makes responsive design feel effortless. And that effortlessness is dangerous - because &quot;it adapts to different screen sizes&quot; is not the same as &quot;it works well at different screen sizes.&quot; The former is a technical capability. The latter is a design judgment that requires human evaluation. Dev Mode shows the design at whatever breakpoint is active in the file - if you only designed at 1440px, that&apos;s all the developer gets [8]. The tool doesn&apos;t compensate for missing design decisions.
+      </p>
+
+      <h3 id="principle-5" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-4">
+        Naming, taxonomy, and discoverability must be deliberate.
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Every asset, component, page, and token that leaves the design environment must be named so that anyone - not just the designer who created it - can find, understand, and use it six months from now. Designers, developers, product managers, QA engineers, content writers.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        A component called &quot;Card_v3_Final_FINAL&quot; is not a handoff. It&apos;s a liability. Taxonomy is design work. And in an AI-mediated environment, it&apos;s even more critical - because AI agents parse your naming conventions to make routing decisions. Poor taxonomy doesn&apos;t just confuse humans anymore. It confuses the machine that&apos;s generating production code from your file.
+      </p>
+
+      <h3 id="principle-6" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-4">
+        Evaluation frameworks must travel with the design.
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The principles you used to evaluate usability. The criteria for structural and detailed design decisions. The standards for accessibility. The testing protocols. These don&apos;t live in the designer&apos;s head - they need to be explicit, documented, and handed off alongside the design itself.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        When a developer asks &quot;is this right?&quot; they should be able to check against the same framework the designer used to make the decision. When QA tests the implementation, they should test against criteria defined during design, not invented during testing. Tools like Dev Mode surface visual specs but don&apos;t verify whether the build meets the evaluation criteria the designer intended. That gap is yours to close.
+      </p>
+
+      <h2 id="what-changed" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What Changed — And Why It Matters
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Now let&apos;s look at what&apos;s genuinely new. Not just &quot;better tools&quot; - but structural shifts in how design reaches production.
+      </p>
+
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Responsive design is now automated, not manually produced.</strong> Auto-layout means you design once and the system adapts. No more exporting three versions at different breakpoints. But the rules you set are the rules the developer inherits - sloppy constraints produce sloppy responsive behaviour at every breakpoint simultaneously.
+      </p>
+
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Code is part of the design deliverable.</strong> Your Figma file is now a production input, not just a communication artefact. When the AI-generated code doesn&apos;t match your intent, the question is no longer just &quot;did the developer build it wrong?&quot; It&apos;s also &quot;did the designer set up the file in a way that generates correct code?&quot;
+      </p>
+
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Concept-to-deliverable timelines have compressed to near-zero.</strong> AI generates concept explorations, layout variations, and functional prototypes in minutes. Evaluation - not ideation - has become the primary mode of working. You spend less time creating options and more time judging which option is right. The risk: if you evaluate options you didn&apos;t create, you may lack the understanding to judge them well. This is exactly the dynamic we explored in <Link href="/resources/blogs/ai-will-change-everything-except-what-matters" className="text-accent hover:underline font-medium">AI Will Change Everything About Design. Except the Part That Actually Matters</Link>.
+      </p>
+
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Motion design has become parallel work.</strong> Animation is no longer a post-production afterthought constrained by what developers already built. With Figma prototype animations, Rive, and AI-generated motion specs, motion is designed and delivered alongside the static UI - a first-class deliverable in the handoff stream.
+      </p>
+
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Content and writing standards travel with the design.</strong> Content strategy - writing style guides, architecture decision records, standard copy patterns for existing and anticipated workflows - is increasingly part of the design deliverable rather than a separate workstream. AI accelerates the structure. The editorial judgment - voice, precision, sensitivity to context - remains human work.
+      </p>
+
+      {/* Inline image 3 - Accessibility and inclusive design */}
+      <div className="relative aspect-[16/9] rounded-xl overflow-hidden my-10">
+        <Image
+          src="https://images.unsplash.com/photo-1573496130141-209d200cebd8?w=800&q=80"
+          alt="A team reviewing design specifications together on a large screen, representing the shift toward integrated accessibility and collaborative delivery"
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 720px"
+        />
+      </div>
+
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Accessibility has shifted from afterthought to integrated practice.</strong> Accessibility evaluation reports, WCAG compliance checks, and accessibility considerations are now part of the design deliverable - not a separate audit after development. This is one of the most positive shifts in handoff evolution. If you&apos;re building AI into your personal design workflow, accessibility evaluation is one of the highest-value applications - it catches issues before a single line of production code is written. We covered how to integrate AI effectively into your design practice in <Link href="/resources/blogs/personal-ai-workflow-designer" className="text-accent hover:underline font-medium">How to Build Your Personal AI Workflow as a Designer</Link>.
+      </p>
+
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Design scope has expanded beyond screens.</strong> Handoffs now include omnichannel considerations, service design layers, and persuasive design approaches. The deliverable isn&apos;t just &quot;here&apos;s the app screen.&quot; It&apos;s &quot;here&apos;s how this screen connects to the email sequence, the push notification, the customer support workflow, and the in-store experience.&quot;
+      </p>
+
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        <strong>Analytics and tracking are designed into the delivery.</strong> What tags fire, what events are tracked, what data is collected - these are specified during design, not added by engineering after the fact. This closes the loop between &quot;we designed this&quot; and &quot;here&apos;s whether it worked.&quot; It&apos;s also what separates the designers who are getting noticed in the current job market from those who aren&apos;t - connecting design decisions to measurable outcomes is no longer optional. We broke down what this looks like in practice in <Link href="/resources/blogs/ux-job-market-changed-strategy-hasnt" className="text-accent hover:underline font-medium">The UX Job Market Has Changed. Your Strategy for Getting Noticed Hasn&apos;t</Link>.
+      </p>
+
+      <h2 id="starting-next-project" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Starting From Your Next Project
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Everything above is useless if it stays theoretical. Here&apos;s what to change - not eventually, not next quarter - starting from the next project that lands on your desk.
+      </p>
+
+      <h3 id="before-figma" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-4">
+        Before you open Figma
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Define what &quot;done&quot; means with your developer.</strong> Not what the screen looks like when it&apos;s done. What information they need from you to consider the handoff complete. Ask them directly: &quot;What did you wish the last designer had given you that they didn&apos;t?&quot; Every developer has an answer to this question. Most have never been asked.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Agree on a naming convention.</strong> Before a single component is created, establish how things will be named - pages, frames, components, variants, tokens. Write it down. Share it. This takes twenty minutes and saves weeks of confusion across the project lifecycle. If AI agents will be pulling from your file, this isn&apos;t just good practice - it&apos;s a production input.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        <strong>Document your evaluation criteria upfront.</strong> What usability principles are you designing against? What accessibility standards must be met? What constitutes &quot;good enough&quot; for this project&apos;s timeline and constraints? Write this down before you design anything. It becomes the framework against which the final build is verified - by you, by QA, by the developer, by anyone who touches the project after you.
+      </p>
+
+      <h3 id="while-designing" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-4">
+        While you&apos;re designing
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Annotate intent, not just interaction.</strong> Every major design decision should carry a note - not a novel, a sentence or two - explaining why. &quot;This flow uses progressive disclosure because user research showed that showing all options simultaneously increased task abandonment by 40%.&quot; That note survives personnel changes, sprint boundaries, and developer rotations. The screen alone does not.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Structure your file as if an AI agent will read it.</strong> Because it probably will. That means proper auto-layout with intentional constraints, not quick-fix absolute positioning. Variables and tokens instead of hard-coded values. Code Connect mappings where they exist. Components that are properly named and organised. Think of your Figma file as source code, not a canvas. The quality of what comes out of it depends entirely on what you put in.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Build your accessibility layer in parallel.</strong> Don&apos;t design the interface and then check accessibility. Design with accessibility criteria active - contrast ratios, keyboard navigation paths, label structures - from the first frame. By the time you&apos;re ready to hand off, accessibility isn&apos;t a checklist to run. It&apos;s already embedded in the deliverable.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        <strong>Specify your tracking plan alongside your flows.</strong> When you design a checkout flow, also define: what events fire at each step, what data is captured, what constitutes a successful completion. Hand this off with the design, not separately. This is what turns your design from a set of screens into a measurable system.
+      </p>
+
+      <h3 id="after-handoff" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-4">
+        After you hand off
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Pair with the developer for the first implementation pass.</strong> Not to hover. Not to review. To sit together for an hour and watch how they interpret your file. You&apos;ll learn more about the quality of your handoff in that hour than in a dozen retrospectives. Where do they get stuck? Where do they make assumptions? Where does your documentation fail?
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Review the build against your evaluation criteria, not against your Figma file.</strong> The question isn&apos;t &quot;does this look like my design?&quot; The question is &quot;does this meet the usability, accessibility, and interaction standards we defined at the start?&quot; Those are two different reviews, and the second one matters more.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        <strong>Document what broke and why.</strong> After every handoff cycle, spend fifteen minutes writing down what information was missing, what was misunderstood, and what would have prevented the rework. This isn&apos;t a retrospective exercise - it&apos;s your personal handoff quality system. Over three or four projects, you&apos;ll see patterns. Fix the patterns and your handoff quality compounds permanently.
+      </p>
+
+      <h2 id="bigger-picture" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Bigger Picture
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The tools will keep changing. In two years, MCP will look primitive compared to whatever replaces it. Figma itself may be disrupted. AI code generation will get better, faster, more accurate.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        None of that changes the fundamentals. The designer&apos;s job - in any era, with any tool - is to make sure the right thing gets built, not just that something gets built fast. That requires thinking, communicating, standardising, evaluating, and naming with a level of discipline that no tool automates.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The designers who understand this are the ones who remain valuable regardless of what the tooling landscape does. They&apos;re the ones whose handoffs produce fewer surprises, less rework, and better products. They&apos;re the ones who - in a market that&apos;s cutting design managers who can&apos;t demonstrate value - are indispensable. We explored what that market looks like in <Link href="/resources/blogs/design-leadership-in-turmoil" className="text-accent hover:underline font-medium">Design Leadership Is in Turmoil. And No One&apos;s Talking About It</Link>.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        If you&apos;re looking to build this kind of discipline into your practice - the kind where your technical skills, your communication, and your strategic thinking work together as a system rather than as isolated capabilities - that&apos;s what our mentorship programs are built for. Not tool training. Practice development. <Link href="https://calendly.com/xperiencewave/xw-strategy-call" className="text-accent hover:underline font-medium">Book a strategy call</Link> and let&apos;s talk about where your practice is strong and where the gaps are costing you.
+      </p>
+
+      <FreeTrainingCTA text="At Xperience Wave, we've helped 140+ designers build the kind of handoff discipline that produces fewer surprises, less rework, and better products - not through tool training, but through practice development" />
+
+      <h2 id="sources-references" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Sources &amp; References
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li>[1] Figma. (2025). &quot;State of the Designer 2025: Designer and Developer Trends.&quot; 943 respondents across US, Europe, and APAC. <a href="https://figmatoazure.com/reports" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">https://figmatoazure.com/reports</a></li>
+        <li>[2] SitePoint. (2024). &quot;The 5 Best Design Handoff Tools.&quot; <a href="https://www.sitepoint.com/best-design-handoff-tools/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">https://www.sitepoint.com/best-design-handoff-tools/</a></li>
+        <li>[3] The Crit. (2026). &quot;The New Design Handoff Is Not a Handoff.&quot; <a href="https://thecrit.co/resources/design-handoff-is-not-a-handoff" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">https://thecrit.co/resources/design-handoff-is-not-a-handoff</a></li>
+        <li>[4] Ezell, J. (2026). &quot;The Design-Dev Handoff Is Dead. Here&apos;s What Killed It.&quot; Medium. <a href="https://medium.com/@jonandrewezell/the-design-dev-handoff-is-dead-heres-what-killed-it-444a43c7be31" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">https://medium.com/@jonandrewezell/the-design-dev-handoff-is-dead-heres-what-killed-it-444a43c7be31</a></li>
+        <li>[5] MindStudio. (2026). &quot;The Death of the Mockup: How AI Is Collapsing the Design-to-Code Handoff.&quot; <a href="https://www.mindstudio.ai/blog/death-of-the-mockup-ai-design-to-code" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">https://www.mindstudio.ai/blog/death-of-the-mockup-ai-design-to-code</a></li>
+        <li>[6] Natarajan, T. (2026). &quot;Death of the Design Handoff: How AI Is Eliminating UX From the SDLC Forever.&quot; Medium. <a href="https://thamizhelango.medium.com/death-of-the-design-handoff-how-ai-is-eliminating-ux-from-the-sdlc-forever-a92590c980ba" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">https://thamizhelango.medium.com/death-of-the-design-handoff-how-ai-is-eliminating-ux-from-the-sdlc-forever-a92590c980ba</a></li>
+        <li>[7] Medov, N. (2026). &quot;AI Killed the Design Handoff. Here&apos;s the Cost Nobody Mentioned.&quot; Substack. Referencing Luke Wroblewski&apos;s project documentation. <a href="https://nurxmedov.substack.com/p/ai-killed-the-design-handoff-heres" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">https://nurxmedov.substack.com/p/ai-killed-the-design-handoff-heres</a></li>
+        <li>[8] Pickuma. (2026). &quot;Figma Dev Mode Review: Does Design-to-Developer Handoff Actually Work?&quot; <a href="https://pickuma.com/for-dev/figma-dev-mode-design-handoff-review/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">https://pickuma.com/for-dev/figma-dev-mode-design-handoff-review/</a></li>
+      </ul>
+
+      <h2 id="further-reading" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Further Reading on Xperience Wave
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li><Link href="/resources/blogs/ai-will-change-everything-except-what-matters" className="text-accent hover:underline font-medium">AI Will Change Everything About Design. Except the Part That Actually Matters</Link></li>
+        <li><Link href="/resources/blogs/what-should-design-team-look-like-2026" className="text-accent hover:underline font-medium">What Should a Design Team Look Like in 2026?</Link></li>
+        <li><Link href="/resources/blogs/personal-ai-workflow-designer" className="text-accent hover:underline font-medium">How to Build Your Personal AI Workflow as a Designer</Link></li>
+        <li><Link href="/resources/blogs/ux-job-market-changed-strategy-hasnt" className="text-accent hover:underline font-medium">The UX Job Market Has Changed. Your Strategy for Getting Noticed Hasn&apos;t</Link></li>
+        <li><Link href="/resources/blogs/design-leadership-in-turmoil" className="text-accent hover:underline font-medium">Design Leadership Is in Turmoil. And No One&apos;s Talking About It</Link></li>
+        <li><Link href="/resources/blogs/evaluating-ai-tools-design-leaders-framework" className="text-accent hover:underline font-medium">A Design Leader&apos;s Framework for Evaluating AI Tools</Link></li>
+      </ul>
+
+      <h2 id="about-author" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        About the Author
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Shaik Murad is Co-founder and Head of Product &amp; Design at <Link href="/" className="text-accent hover:underline font-medium">Xperience Wave</Link>, a UX design studio based in Bangalore, working across designer mentorship, UX services for businesses, and a design community of 1,000+ designers.
+      </p>
+
+      <p className="text-base md:text-lg text-g500 italic mt-6">
+        - Murad, Co-founder &amp; Head of Product &amp; Design, Xperience Wave
+      </p>
+    </>
+  ),
   'ux-job-market-changed-strategy-hasnt': (
     <>
       <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
@@ -10622,6 +10953,11 @@ const authorData: Record<string, { role: string; bio: string; image: string }> =
 
 // Blog-specific metadata for SEO
 const blogMetadata: Record<string, { title: string; description: string; keywords: string[] }> = {
+  'slicing-psds-to-shipping-code-design-handoffs-evolved': {
+    title: 'From Slicing PSDs to Shipping Front-End Code: How Design Handoffs Evolved | Xperience Wave',
+    description: 'From slicing PSDs to AI-generated components via MCP - design handoffs have transformed. But 92% of designers say the process still needs improvement. The tools changed. The principles that make handoffs good didn\'t. Here\'s what must never change.',
+    keywords: ['design handoff', 'design to developer handoff', 'Figma Dev Mode', 'design handoff best practices', 'PSD slicing history', 'design development collaboration', 'Code Connect Figma', 'AI design handoff', 'MCP design development', 'design system handoff', 'design handoff evolution', 'Figma developer workflow', 'design delivery pipeline'],
+  },
   'ux-job-market-changed-strategy-hasnt': {
     title: 'The UX Job Market Has Changed. Your Strategy for Getting Noticed Hasn\'t. | Xperience Wave',
     description: 'The market shifted and most designers didn\'t shift with it. 11 specific expectations that changed in UX hiring - from portfolio format to AI literacy to stakeholder communication - and what to do about each one. Pattern recognition from 3,000+ designer consultations.',

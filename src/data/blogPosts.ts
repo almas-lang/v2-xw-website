@@ -51,6 +51,17 @@ export const getCategoryLabel = (category: string): string => {
 // Sample blog posts with Unsplash images
 export const blogPosts: BlogPost[] = [
   {
+    id: '53',
+    slug: 'how-to-evaluate-usability-traditionally-and-using-ai',
+    title: 'How to Evaluate Usability - Traditionally and Using AI',
+    excerpt: 'If you\'re a UX designer and you\'re not evaluating usability, you\'re skipping the part of the job that proves the rest of it worked. What usability actually means, how to evaluate it rigorously, and where AI is genuinely useful versus where it will confidently mislead you.',
+    category: 'design-skills' as const,
+    image: 'https://images.unsplash.com/photo-1576153192396-180ecef2a715?w=800&q=80',
+    author: { name: 'Shaik Murad' },
+    publishedAt: '2026-08-01',
+    readTime: '14 min',
+  },
+  {
     id: '52',
     slug: 'which-industry-best-for-designers',
     title: 'Healthcare, Fintech, SaaS - Designers Keep Asking Which Industry Is Best. Here\'s Why That\'s the Wrong Question.',

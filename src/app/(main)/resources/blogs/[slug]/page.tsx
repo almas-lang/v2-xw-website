@@ -14,6 +14,371 @@ import OrgMaturityScorecardGate from '@/components/blog/OrgMaturityScorecardGate
 
 // Blog content with internal links for SEO
 const blogContent: Record<string, React.ReactNode> = {
+  'how-to-evaluate-usability-traditionally-and-using-ai': (
+    <>
+      <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
+        If you&apos;re a UX designer and you&apos;re not evaluating usability, you&apos;re skipping the part of the job that proves the rest of it worked.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        That sounds blunt. It&apos;s meant to. Because in the rush to ship, to iterate, to move fast and demonstrate impact - usability evaluation is the discipline that gets compressed first. Research gets a nod. Ideation gets a workshop. Visual design gets attention. But the question &quot;does this actually work for the people using it?&quot; gets answered with a shrug, a gut feel, and a prayer that nobody important notices the problems in production.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        This blog is about fixing that. What usability actually means - not the textbook version, the practical version. How to evaluate it rigorously using established methods. And how AI is changing what&apos;s possible in 2026 - including where it&apos;s genuinely useful and where it will confidently mislead you.
+      </p>
+
+      <h2 id="what-usability-is" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What Usability Actually Is
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Jakob Nielsen defined usability through five components in 1993, and three decades later, they remain the most practical framework we have [1]:
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Learnability.</strong> How easy it is for users to accomplish tasks the first time they encounter the interface. Can a new user figure out what to do without a tutorial, a tooltip, or a colleague looking over their shoulder?
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Efficiency.</strong> Once a user has learned the interface, how quickly can they perform tasks? A checkout flow that takes three minutes on first use but still takes two minutes on the twentieth use has an efficiency problem.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Memorability.</strong> When users return to the product after a period of not using it, how easily can they re-establish proficiency? If someone uses your product monthly - a tax filing tool, an insurance portal, a booking system - and has to relearn the interface every time, that&apos;s a memorability failure.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Errors.</strong> How many errors do users make, how severe are those errors, and how easily can they recover? A confirmation dialog that says &quot;Are you sure?&quot; without explaining what will happen if you click &quot;Yes&quot; isn&apos;t error prevention. It&apos;s anxiety generation.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Satisfaction.</strong> How pleasant is the experience of using the interface? This is the most subjective component - but it&apos;s measurable through post-task surveys, System Usability Scale (SUS) scores, and Net Promoter Score.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        These five components aren&apos;t a checklist. They&apos;re a lens. Every interface you build should be evaluable against all five - and the balance between them shifts depending on the product, the user, and the context.
+      </p>
+
+      <h2 id="usability-vs-experience-goals" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Usability Goals Are Not the Same as Experience Goals
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is a distinction that trips up a lot of designers - and your stakeholders even more.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Usability goals</strong> are measurable, task-oriented, and tied to whether the interface works:
+      </p>
+      <ul className="list-disc pl-6 space-y-2 text-base md:text-lg text-g600 mb-6">
+        <li>Task completion time and rate</li>
+        <li>Error frequency and recovery time</li>
+        <li>Navigation speed and path efficiency</li>
+        <li>First-time user success rate</li>
+        <li>Ease of relearning after absence</li>
+      </ul>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Experience goals</strong> are broader, more subjective, and tied to how the interaction feels:
+      </p>
+      <ul className="list-disc pl-6 space-y-2 text-base md:text-lg text-g600 mb-6">
+        <li>User trust and credibility</li>
+        <li>Aesthetic appeal and emotional response</li>
+        <li>Brand alignment across touchpoints</li>
+        <li>Persuasiveness and engagement</li>
+        <li>User enjoyment and delight</li>
+      </ul>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Both matter. But they&apos;re evaluated differently, and conflating them creates confusion. When a stakeholder says &quot;the usability is bad,&quot; they might mean the error rate is high (a usability problem) or they might mean the interface doesn&apos;t feel premium enough (an experience problem). Your response to each is fundamentally different.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Usability evaluation - what this blog focuses on - addresses the first category. It asks: does this work? Can people use it? Where do they fail? That&apos;s measurable, and it&apos;s where evaluation methods have the most rigour.
+      </p>
+
+      {/* Inline image 1 */}
+      <div className="relative aspect-[16/9] rounded-xl overflow-hidden my-10">
+        <Image
+          src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=800&q=80"
+          alt="A UX researcher observing user behaviour on a screen, representing structured usability evaluation in practice"
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 720px"
+        />
+      </div>
+
+      <h2 id="evaluation-is-not-testing" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Evaluation Is Not Testing
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Before we go further, let me make a distinction that most designers gloss over - and it matters.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Usability testing</strong> involves real participants performing real tasks while you observe. You&apos;re watching actual human behaviour. The data comes from what people do, say, and struggle with.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Usability evaluation</strong> (also called usability inspection) is performed by evaluators - experts, specialists, or systematic methods - who assess the interface against established principles, frameworks, or criteria. No participants required. The data comes from expert judgment applied through structured methodology.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Both are valuable. They serve different purposes at different stages. Testing tells you how real users behave. Evaluation tells you where the interface violates principles that predict user problems - often before a single user touches it.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        The reason this distinction matters is that many teams skip evaluation entirely and jump to testing - which is expensive, time-consuming, and often happens too late to influence the design meaningfully. Evaluation can happen earlier, faster, and cheaper. It doesn&apos;t replace testing. It reduces the number of problems that survive to the testing phase.
+      </p>
+
+      <h2 id="core-evaluation-methods" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Core Usability Evaluation Methods
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        These are the established, peer-reviewed methods that form the backbone of usability evaluation practice. They&apos;re uncontested in the literature and widely used across the industry.
+      </p>
+
+      <h3 id="heuristic-evaluation" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-4">
+        Heuristic Evaluation
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The most widely used method. Evaluators review an interface against a set of established principles - typically Nielsen&apos;s 10 usability heuristics - and identify where the design violates those principles [2].
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        There are two approaches to conducting a heuristic evaluation, and understanding the difference matters:
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Problem-first approach.</strong> You use the interface. You encounter something that feels wrong - a confusing label, a dead end, a missing confirmation. Then you identify which heuristic it violates. This approach is intuitive and fast, but it&apos;s biased toward problems that are visible on the surface. Subtle violations get missed.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Principle-first approach.</strong> You take one heuristic at a time - say, &quot;Visibility of System Status&quot; - and systematically walk through the entire interface asking: where does this principle apply? Where is it being followed? Where is it being violated? Then you move to the next heuristic and repeat. This is more thorough, slower, and tends to surface structural issues that the problem-first approach misses.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        The best evaluation uses both: a problem-first pass to catch the obvious issues, followed by a principle-first pass to catch the structural ones. NNGroup research suggests that three to five evaluators are typically sufficient to identify approximately 75% of usability problems in an interface [2].
+      </p>
+
+      <h3 id="cognitive-walkthrough" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-4">
+        Cognitive Walkthrough
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Where heuristic evaluation looks at the interface broadly, cognitive walkthroughs focus specifically on learnability - whether a first-time or infrequent user can figure out how to complete a task [3].
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Evaluators step through each action required to complete a task and ask four questions at each step:
+      </p>
+      <ol className="list-decimal pl-6 space-y-2 text-base md:text-lg text-g600 mb-6">
+        <li>Will the user try to achieve the right effect?</li>
+        <li>Will the user notice that the correct action is available?</li>
+        <li>Will the user associate the correct action with the effect they want?</li>
+        <li>If the user performs the correct action, will they see that progress is being made?</li>
+      </ol>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        This method is particularly powerful for onboarding flows, sign-up processes, and &quot;walk-up-and-use&quot; interfaces - anywhere the user doesn&apos;t get training before interacting with the product. It was originally designed for kiosks and public-use systems (Wharton et al., 1994) but has since been applied to everything from enterprise software to mobile apps [3].
+      </p>
+
+      <h3 id="pluralistic-walkthrough" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-4">
+        Pluralistic Walkthrough
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        A less common but valuable variation where multiple evaluators - typically a designer, a developer, and someone representing the user - walk through the interface together. Each person evaluates from their own perspective, and the group discusses disagreements in real time.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        The strength of this method is that it surfaces problems that no single evaluator would catch alone - the developer notices technical constraints, the designer notices interaction issues, and the user representative notices mental model mismatches. The weakness is that it requires coordinating multiple people, which makes it harder to schedule and slower to execute.
+      </p>
+
+      <h3 id="accessibility-evaluation" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-4">
+        Accessibility Evaluation
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        A structured assessment of the interface against accessibility standards - primarily WCAG 2.2 and Section 508. This includes both automated checks (contrast ratios, heading hierarchy, alt text coverage, keyboard navigation paths, focus management) and manual evaluation (screen reader compatibility, cognitive load assessment, touch target sizing).
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        A note on positioning: whether accessibility is &quot;part of usability&quot; or a separate discipline is actually debated in the field. ISO 9241-11 includes it under usability. ISO 9241-171 treats it separately. In practice, this debate matters less than the outcome - accessibility problems are usability problems for the people they affect, and evaluating accessibility should be integrated into your usability evaluation workflow regardless of how you categorise it.
+      </p>
+
+      <FreeTrainingCTA text="Want to build the evaluative judgment that separates senior designers from everyone else? Our free training shows you how" />
+
+      <h2 id="quantitative-methods" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Quantitative Usability Methods
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        These methods rely on data - either from controlled measurement or from analytics - rather than purely expert judgment. They require more infrastructure but produce measurable, comparable results.
+      </p>
+
+      <h3 id="benchmark-testing" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-4">
+        Benchmark Testing
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Measuring quantitative metrics against predefined targets: task completion time, number of steps to complete a task, error rates, time to recover from errors. Unlike heuristic evaluation, benchmark testing typically requires participants performing tasks - because you&apos;re measuring real performance, not predicting it.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Where this method shines is in comparison: version A vs version B, or current release vs previous release. By establishing a baseline and measuring against it, you can track whether your design is getting more usable over time - not just whether it &quot;looks better.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Benchmark testing is often confused with usability testing, but the distinction matters: benchmark testing is measuring specific metrics against targets. Usability testing is observing behaviour to understand why. Both are valuable, but they answer different questions.
+      </p>
+
+      <h3 id="analytics-based" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-4">
+        Analytics-Based Assessment
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Analysing real usage data - heatmaps, clickmaps, scroll depth, rage clicks, dead clicks, session recordings - to identify patterns that suggest usability problems.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is not a formal evaluation method in the traditional sense. It doesn&apos;t involve evaluators applying principles to an interface. But it surfaces real-world usability signals at a scale that expert evaluation can&apos;t match. A rage click pattern on a specific button tells you something no heuristic analysis would catch - because the heuristic might say the button follows all the principles, but users are still slamming on it in frustration.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        The limitation: analytics tells you <em>what</em> is happening. It doesn&apos;t tell you <em>why</em>. A high drop-off at step three of your checkout flow could be a usability problem, a pricing problem, or a trust problem. You need additional methods - qualitative research, heuristic analysis, or cognitive walkthrough - to diagnose the cause.
+      </p>
+
+      <h2 id="adjacent-evaluations" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Adjacent Evaluations
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        These methods complement usability evaluation but are not usability methods in the strict sense. They address dimensions of user experience that sit close to usability - and a mature evaluation practice includes them where relevant. But conflating them with usability evaluation weakens the rigour of both.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Content audits.</strong> Evaluating the clarity, consistency, readability, and completeness of interface content. Content problems often present as usability problems (&quot;I didn&apos;t understand what that meant&quot;), but the evaluation methodology and the expertise required are different. A content audit assesses whether the right information is presented in the right way at the right time - a content strategy discipline, not a usability one.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Trust and credibility assessment.</strong> Evaluating whether the interface communicates reliability, security, and transparency. Stanford&apos;s Web Credibility Research Project established a framework for this, and it&apos;s particularly relevant for financial products, healthcare platforms, and e-commerce. Trust affects whether users complete tasks - but it&apos;s an experience dimension, not a usability one.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Persuasion analysis.</strong> Assessing whether the interface effectively guides users toward intended actions - and whether it does so ethically. Rooted in BJ Fogg&apos;s persuasive technology research and Robert Cialdini&apos;s influence principles. Important for conversion-oriented products, but the evaluation framework is distinct from usability heuristics.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        <strong>Ergonomic and Human-Machine Interface (HMI) evaluation.</strong> Critical when interfaces bridge digital and physical - automotive dashboards, medical devices, industrial control panels, wearables. This is a specialised field (human factors engineering) that overlaps significantly with usability but operates with its own standards, certification requirements, and evaluation frameworks (ISO 6385, ISO 12100). If you&apos;re designing for contexts where physical interaction meets digital interface, HMI evaluation isn&apos;t optional - it&apos;s mandated.
+      </p>
+
+      {/* Inline image 2 */}
+      <div className="relative aspect-[16/9] rounded-xl overflow-hidden my-10">
+        <Image
+          src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&q=80"
+          alt="An AI-powered analytics dashboard displaying user behaviour patterns, representing the intersection of traditional evaluation and modern AI tools"
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 720px"
+        />
+      </div>
+
+      <h2 id="ai-changes-evaluation" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        How AI Changes Usability Evaluation in 2026
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        AI has made certain types of usability evaluation faster, more accessible, and more scalable. But the accuracy question is far from settled, and overreliance on AI evaluation introduces risks that most teams haven&apos;t accounted for.
+      </p>
+
+      <h3 id="ai-genuinely-useful" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-4">
+        Where AI Is Genuinely Useful
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Automated heuristic scanning.</strong> AI tools can analyse an interface screenshot or prototype and flag potential heuristic violations - missing labels, contrast failures, inconsistent patterns, navigation dead ends. Useful for catching surface-level issues quickly during active design.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Accessibility evaluation.</strong> Arguably AI&apos;s strongest contribution to usability evaluation right now. Automated tools can check WCAG compliance across an entire product in minutes. What used to take days of manual review can now happen continuously as part of the design and development pipeline.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Cognitive walkthrough simulation.</strong> Research from CHI 2026 shows that LLM-prompted cognitive walkthroughs achieve higher task completion rates than human participants and follow more optimal navigation paths [4]. Tools like DroidBot-GPT and SimUser simulate user sessions dynamically, and GPT-4 has been used to support structured cognitive walkthroughs without expert facilitation [5].
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Pattern analysis at scale.</strong> AI can process behavioural data - session recordings, click patterns, heatmaps - at volumes that human analysis can&apos;t match. It identifies rage clicks, abandoned flows, and repeated error patterns across thousands of sessions and surfaces them as prioritised usability issues.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        <strong>Severity ranking.</strong> Research published at FSE 2026 demonstrated that multimodal LLM-based severity ranking of usability issues aligned with expert assessments - meaning AI can help you prioritise which problems to fix first [6].
+      </p>
+
+      <h3 id="ai-falls-short" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-4">
+        Where AI Falls Short - and the Data Is Clear
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Baymard Institute published a landmark study in May 2026 testing AI accuracy rates for heuristic evaluation. Their finding: generic AI tools - including leading LLMs prompted with standard heuristic frameworks - achieved accuracy rates of only 50-75% [7]. Microsoft UX researchers found similar results in March 2025: individual AI tools scored 50%, 62%, 67%, and 75%, with the highest accuracy only achievable when the tool was configured to dramatically reduce the number of issues it could identify [7].
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Baymard&apos;s own system achieved 95% accuracy - but only through a RAG architecture backed by 170,000+ manually reviewed UX examples accumulated over 15 years. Their conclusion: any AI tool with an accuracy rate below 95% &quot;is simply not safe to apply to a commercial website&quot; [7].
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The CHI 2026 cognitive walkthrough study revealed a complementary limitation: while AI walkthroughs found more optimal navigation paths, they identified fewer potential failure points than human participants [4]. AI navigates interfaces too successfully. It doesn&apos;t get confused the way a real user does. It doesn&apos;t misread a label, misunderstand a metaphor, or bring the wrong mental model to the task.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        <strong>The False Confidence Problem.</strong> When a team runs an AI evaluation and it comes back clean, there&apos;s a strong temptation to skip human evaluation entirely. But AI didn&apos;t test trust. It didn&apos;t evaluate whether the error message makes the user feel stupid. It didn&apos;t assess whether the flow respects the mental model of someone who&apos;s never used this product category before. AI evaluates interfaces. Humans evaluate experiences. You need both.
+      </p>
+
+      <h2 id="setting-up-evaluation" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Setting Up Evaluation in Your Practice
+      </h2>
+
+      <h3 id="formative-evaluation" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-4">
+        Formative Evaluation (During Design)
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Automated heuristic checks on every design delivery.</strong> Whether produced by a human designer or generated by AI, every design artefact should pass through automated checks against your heuristic framework before moving forward. The report should be peer-reviewed by at least one other designer.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Embed usability principles in your AI design tools.</strong> If you&apos;re using AI to generate UI - as we explored in <Link href="/resources/blogs/5-things-senior-designers-ai" className="text-accent hover:underline font-medium">5 Things Senior Designers Should Be Doing With AI</Link> - embed your usability standards into the prompts and constraints. Don&apos;t generate screens and then evaluate them. Generate screens that already account for the principles.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        <strong>Build usability into your design system.</strong> Your system shouldn&apos;t just define components and tokens. It should encode usability decisions - minimum touch targets, maximum content density, required feedback patterns, error state templates. When usability is built into the system, it becomes the default, not an afterthought.
+      </p>
+
+      <h3 id="summative-evaluation" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-4">
+        Summative Evaluation (Before Release)
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Run both human and AI evaluation before every major release.</strong> AI catches the surface: contrast failures, missing labels, navigation inconsistencies. Humans catch the depth: confusing mental models, trust problems, cultural mismatches, emotional friction. Neither alone is sufficient.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Map findings to usability components.</strong> Don&apos;t just list problems. Map each finding to the usability component it affects - learnability, efficiency, memorability, errors, satisfaction. This gives your team a structured view of where the product is strong and where it&apos;s weak, and makes prioritisation far easier than an unsorted issue list.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        <strong>Compare against baseline.</strong> If you evaluated the previous version, compare. Are error rates improving? Is task completion time decreasing? Evaluation without comparison is a snapshot. Evaluation with comparison is a trajectory.
+      </p>
+
+      {/* Inline image 3 */}
+      <div className="relative aspect-[16/9] rounded-xl overflow-hidden my-10">
+        <Image
+          src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=800&q=80"
+          alt="Designers collaborating around wireframes and prototypes, representing the integration of evaluation into the design process"
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 720px"
+        />
+      </div>
+
+      <h2 id="what-to-do-next" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What to Do Starting From Your Next Project
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>This week:</strong> Pick one flow in your current project and run a heuristic evaluation using the principle-first approach. Walk through each of Nielsen&apos;s 10 heuristics against that single flow. Document what you find. This takes two to three hours.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>This month:</strong> Set up automated accessibility evaluation in your pipeline. Make it a gate - no design moves to development without passing.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>This quarter:</strong> Establish a formative evaluation rhythm. Every major delivery gets an automated check plus a peer review. Every release gets a summative evaluation. Document and track improvements over time.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        If you want to develop this evaluative judgment - the ability to assess usability with confidence, set evaluation frameworks for your team, and integrate AI evaluation without falling into the false confidence trap - that&apos;s part of what we build in our mentorship programs. Evaluation isn&apos;t taught well in most bootcamps or courses. It&apos;s developed through practice and structured feedback on your actual work. <a href="https://app.xperiencewave.com/book/dc-strategy-call" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Book a strategy call</a>.
+      </p>
+
+      <h2 id="sources-references" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Sources &amp; References
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li>[1] Nielsen, J. (2012). &quot;Usability 101: Introduction to Usability.&quot; Nielsen Norman Group. Original framework published 1993. <a href="https://www.nngroup.com/articles/usability-101-introduction-to-usability/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">https://www.nngroup.com/articles/usability-101-introduction-to-usability/</a></li>
+        <li>[2] Nielsen, J. (1994). &quot;How to Conduct a Heuristic Evaluation.&quot; Nielsen Norman Group. <a href="https://www.nngroup.com/articles/how-to-conduct-a-heuristic-evaluation/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">https://www.nngroup.com/articles/how-to-conduct-a-heuristic-evaluation/</a></li>
+        <li>[3] Parallel HQ. (2026). &quot;What Is a Cognitive Walkthrough? 2026 UX Guide.&quot; <a href="https://www.parallelhq.com/blog/what-cognitive-walkthrough" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">https://www.parallelhq.com/blog/what-cognitive-walkthrough</a></li>
+        <li>[4] Zhong, R. et al. (2026). &quot;Synthetic Cognitive Walkthrough.&quot; CHI 2026, Barcelona. <a href="https://arxiv.org/html/2512.03568" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">https://arxiv.org/html/2512.03568</a></li>
+        <li>[5] ACM SIGDOC. (2025). &quot;AI-Powered Automated and Remote UX Evaluation Methods: A Systematic Literature Review.&quot; <a href="https://dl.acm.org/doi/10.1145/3711670.3764614" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">https://dl.acm.org/doi/10.1145/3711670.3764614</a></li>
+        <li>[6] Lubos, S. et al. (2026). &quot;Recommending Usability Improvements with Multimodal Large Language Models.&quot; FSE 2026. <a href="https://arxiv.org/html/2604.25420v1" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">https://arxiv.org/html/2604.25420v1</a></li>
+        <li>[7] Baymard Institute. (2026). &quot;AI Heuristic UX Evaluations with a 95% Accuracy Rate.&quot; May 2026. <a href="https://baymard.com/blog/ai-heuristic-evaluations" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">https://baymard.com/blog/ai-heuristic-evaluations</a></li>
+      </ul>
+
+      <h2 id="further-reading" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Further Reading on Xperience Wave
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li><Link href="/resources/blogs/5-things-senior-designers-ai" className="text-accent hover:underline font-medium">5 Things Senior Designers Should Be Doing With AI - None of Them Involve Figma Plugins</Link></li>
+        <li><Link href="/resources/blogs/mixed-methods-ux-research-guide" className="text-accent hover:underline font-medium">Mixed-Methods UX Research: A Practical Guide to Combining Qual &amp; Quant</Link></li>
+        <li><Link href="/resources/blogs/ux-research-never-makes-it-into-roadmap" className="text-accent hover:underline font-medium">Why Your UX Research Never Makes It Into the Roadmap</Link></li>
+        <li><Link href="/resources/blogs/ai-as-design-material" className="text-accent hover:underline font-medium">AI as Design Material: How Knowing What AI Can Do Changes What You Design</Link></li>
+        <li><Link href="/resources/blogs/what-should-design-team-look-like-2026" className="text-accent hover:underline font-medium">What Should a Design Team Look Like in 2026?</Link></li>
+      </ul>
+
+      <h2 id="about-author" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        About the Author
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Shaik Murad is Co-founder and Head of Product &amp; Design at <Link href="/" className="text-accent hover:underline font-medium">Xperience Wave</Link>, a UX design studio based in Bangalore, working across designer mentorship, UX services for businesses, and a design community of 1,000+ designers.
+      </p>
+
+      <p className="text-base md:text-lg text-g500 italic mt-6">
+        - Murad, Co-founder &amp; Head of Product &amp; Design, Xperience Wave
+      </p>
+    </>
+  ),
   'which-industry-best-for-designers': (
     <>
       <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
@@ -11321,6 +11686,19 @@ const blogContent: Record<string, React.ReactNode> = {
 
 // Table of contents for each blog post
 const blogTableOfContents: Record<string, { id: string; title: string }[]> = {
+  'how-to-evaluate-usability-traditionally-and-using-ai': [
+    { id: 'what-usability-is', title: 'What Usability Actually Is' },
+    { id: 'usability-vs-experience-goals', title: 'Usability Goals vs Experience Goals' },
+    { id: 'evaluation-is-not-testing', title: 'Evaluation Is Not Testing' },
+    { id: 'core-evaluation-methods', title: 'Core Usability Evaluation Methods' },
+    { id: 'quantitative-methods', title: 'Quantitative Usability Methods' },
+    { id: 'adjacent-evaluations', title: 'Adjacent Evaluations' },
+    { id: 'ai-changes-evaluation', title: 'How AI Changes Evaluation in 2026' },
+    { id: 'setting-up-evaluation', title: 'Setting Up Evaluation in Your Practice' },
+    { id: 'what-to-do-next', title: 'What to Do Starting From Your Next Project' },
+    { id: 'sources-references', title: 'Sources & References' },
+    { id: 'further-reading', title: 'Further Reading' },
+  ],
   'which-industry-best-for-designers': [
     { id: 'regulation-trap', title: 'The Regulation Trap' },
     { id: 'what-predicts-maturity', title: 'What Actually Predicts Design Maturity' },
@@ -11757,6 +12135,11 @@ const authorData: Record<string, { role: string; bio: string; image: string }> =
 
 // Blog-specific metadata for SEO
 const blogMetadata: Record<string, { title: string; description: string; keywords: string[] }> = {
+  'how-to-evaluate-usability-traditionally-and-using-ai': {
+    title: 'How to Evaluate Usability - Traditionally and Using AI | Xperience Wave',
+    description: 'What usability actually means, how to evaluate it rigorously using heuristic evaluation, cognitive walkthroughs, and benchmark testing, and where AI is genuinely useful versus where it achieves only 50-75% accuracy. Practical methods for every stage of the design process.',
+    keywords: ['usability evaluation', 'heuristic evaluation', 'cognitive walkthrough', 'usability testing vs evaluation', 'AI usability evaluation', 'Nielsen usability heuristics', 'WCAG accessibility evaluation', 'UX evaluation methods', 'benchmark testing UX', 'usability inspection methods', 'AI UX tools 2026', 'Baymard AI accuracy', 'usability evaluation framework', 'formative summative evaluation'],
+  },
   'which-industry-best-for-designers': {
     title: 'Healthcare, Fintech, SaaS - Which Industry Is Best for Designers? Wrong Question. | Xperience Wave',
     description: 'The industry is one of the least reliable predictors of design maturity. From 13+ years and 3,000+ designer conversations: what actually predicts whether you\'ll get to practise design well, how to evaluate any organisation, and a free interactive scorecard to take the guesswork out of your next career move.',

@@ -5,6 +5,7 @@ import { useState } from 'react';
 export type LeadType =
   | 'mentorship-evaluator'
   | 'design-team-systems-audit'
+  | 'org-design-maturity-scorecard'
   | 'design-strategy-gpt'
   | 'research-synthesis-gpt'
   | 'microcopy-writer-gpt'
@@ -43,6 +44,15 @@ const leadConfigs: Record<LeadType, LeadConfig> = {
     buttonText: 'Get Free Access',
     badgeText: 'Free Tool',
     successMessage: 'Redirecting to the audit...',
+    isWaitlist: false,
+  },
+  // Org Maturity Scorecard
+  'org-design-maturity-scorecard': {
+    title: 'Access Organisation Design Maturity Scorecard',
+    description: 'Evaluate any organisation\'s design maturity across 10 dimensions. Get a maturity rating, flags, and personalised recommendations.',
+    buttonText: 'Get Free Access',
+    badgeText: 'Free Tool',
+    successMessage: 'Redirecting to the scorecard...',
     isWaitlist: false,
   },
   // GPT Tools - Available

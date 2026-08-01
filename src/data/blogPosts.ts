@@ -51,6 +51,17 @@ export const getCategoryLabel = (category: string): string => {
 // Sample blog posts with Unsplash images
 export const blogPosts: BlogPost[] = [
   {
+    id: '52',
+    slug: 'which-industry-best-for-designers',
+    title: 'Healthcare, Fintech, SaaS - Designers Keep Asking Which Industry Is Best. Here\'s Why That\'s the Wrong Question.',
+    excerpt: 'The industry is one of the least reliable predictors of whether you\'ll actually get to practise design well. The most design-mature team I\'ve seen was at a logistics company nobody\'s heard of. The worst was at a well-funded fintech that claimed to be "design-first" on every job posting.',
+    category: 'industry' as const,
+    image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&q=80',
+    author: { name: 'Shaik Murad' },
+    publishedAt: '2026-08-01',
+    readTime: '14 min',
+  },
+  {
     id: '51',
     slug: 'visual-graphic-motion-designer-switch-to-ux',
     title: 'I\'ve Been a Visual / Graphic / Motion Designer for 2+ Years - How Do I Switch to UX Without Starting Like a Fresher?',

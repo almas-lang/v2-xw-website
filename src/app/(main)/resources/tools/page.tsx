@@ -52,6 +52,22 @@ const tools: Tool[] = [
     available: true,
   },
   {
+    id: 'org-design-maturity-scorecard',
+    name: 'Organisation Design Maturity Scorecard',
+    tagline: 'Evaluate any org in 3 minutes',
+    description: 'Rate any organisation\'s design maturity across 10 dimensions during or after an interview. Get a maturity level, red/green flags, and personalised recommendations.',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-full h-full">
+        <path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0H5m14 0h2m-16 0H3" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M9 7h6M9 11h6M9 15h4" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+    color: 'accent',
+    leadType: 'org-design-maturity-scorecard' as LeadType,
+    available: true,
+    href: '/resources/tools/org-design-maturity-scorecard',
+  },
+  {
     id: 'research-synthesis',
     name: 'Research Synthesis GPT',
     tagline: 'From chaos to clarity',

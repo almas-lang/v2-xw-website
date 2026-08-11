@@ -14,6 +14,246 @@ import OrgMaturityScorecardGate from '@/components/blog/OrgMaturityScorecardGate
 
 // Blog content with internal links for SEO
 const blogContent: Record<string, React.ReactNode> = {
+  'solved-what-you-were-asked-thats-the-problem': (
+    <>
+      <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
+        When I&apos;m interviewing a UX designer - or anyone who claims to own product or design direction - there&apos;s one thing I&apos;m looking for above everything else.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        It&apos;s not their portfolio. It&apos;s not their tools. It&apos;s not how many years they&apos;ve spent in the industry.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        It&apos;s how they respond to a problem that arrives pre-packaged as a solution.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Because that&apos;s how most problems arrive. A stakeholder walks in with a feature request that&apos;s really a guess. A business head copies a competitor&apos;s approach and calls it strategy. A PM writes a brief that describes a solution - &quot;we need a chatbot,&quot; &quot;we need a loyalty programme,&quot; &quot;we need to redesign the settings page&quot; - without ever articulating the problem the solution is supposed to address.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        And then a designer takes that brief, opens Figma, and builds exactly what they were asked to build. Beautiful screens. Clean flows. Polished deliverables.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        And nobody questions whether the thing they just built was the right thing to build.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        That&apos;s the pattern I see most often. Not bad designers doing bad work. Good designers doing good work on the wrong problem. They solved exactly what they were asked to solve. And that&apos;s the problem.
+      </p>
+
+      <h2 id="need-vs-problem" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Difference Between a Need and a Problem
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This distinction is simple to explain and remarkably hard to practise.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        A user says: &quot;I need to be able to raise a support ticket.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The designer who treats this as a requirement builds a support ticket system. Delivered. Shipped. Done.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The designer who treats this as a symptom asks: why does the user need a support ticket? Because they reached a point in the product where they didn&apos;t know what to do. They were stuck. The system offered no guidance, no recovery path, no way forward. The support ticket isn&apos;t the need - it&apos;s the escape hatch for a failure that happened upstream in the experience.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        When you dig underneath any stated need, you almost always find a situational response to a deeper problem. &quot;I need to track my expenses&quot; is a response to the problem of financial uncertainty. &quot;I need a dashboard&quot; is a response to the problem of not understanding what&apos;s happening in the system. &quot;I need a home&quot; is a response to the problems of shelter, security, and belonging.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        There are rarely pure needs that aren&apos;t, at their root, responses to problems. The designer who accepts the need at face value builds the feature. The designer who finds the problem underneath redesigns the experience so the feature was never necessary.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Einstein reportedly said: &quot;If I had an hour to solve a problem, I&apos;d spend 55 minutes thinking about the problem and 5 minutes thinking about solutions&quot; [1]. Most design teams invert this ratio entirely. They spend five minutes understanding the brief and fifty-five minutes executing it. Then they wonder why the solution didn&apos;t move the metrics.
+      </p>
+
+      {/* Inline image 1 */}
+      <div className="relative aspect-[16/9] rounded-xl overflow-hidden my-10">
+        <Image
+          src="https://images.unsplash.com/photo-1606761568499-6d2451b23c66?w=800&q=80"
+          alt="A person looking at a complex whiteboard filled with sticky notes and diagrams, representing the process of digging deeper into problems before jumping to solutions"
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 720px"
+        />
+      </div>
+
+      <h2 id="whats-underneath" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The &quot;What&apos;s Underneath&quot; Practice
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Let me show you how this works with a real example.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        A stakeholder says: &quot;We need a chatbot.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Layer 1 - Why?</strong> &quot;Users can&apos;t get answers quickly.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Layer 2 - Why can&apos;t they?</strong> &quot;Our help documentation is disorganised and hard to search.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Layer 3 - Why is it disorganised?</strong> &quot;Nobody&apos;s updated it in eighteen months. It was written for V1 of the product and we&apos;re now on V3.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Layer 4 - Why hasn&apos;t anyone updated it?</strong> &quot;Nobody owns it. There&apos;s no content strategy. Support writes articles reactively when tickets spike, but there&apos;s no systematic approach.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong>Layer 5 - What&apos;s the actual problem?</strong> &quot;We have an eighteen-month information debt. Users are generating support tickets for questions that should be answerable through the product itself. The chatbot request is a band-aid for a content and information architecture problem that&apos;s been compounding for a year and a half.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The stakeholder asked for a chatbot. The real problem is an information gap that&apos;s been growing since V1 shipped. Solving the real problem might not require a chatbot at all - it might require a content strategy, an information architecture overhaul, and contextual help embedded in the product.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        The chatbot would have cost six months of development time and addressed the symptom. The real solution might cost two months and eliminate the cause. This is what problem-finding looks like. It&apos;s not a creative exercise. It&apos;s a disciplined act of not accepting the first problem definition you encounter.
+      </p>
+
+      <h2 id="problem-worth-solving" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What Makes a Problem Worth Solving
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Not every problem deserves your time. Resources are finite. Sprints are short. Stakeholder attention is shorter. A problem worth investing in meets four criteria - and the depth of evidence you need for each depends on the stakes.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        1. The Problem - The Gap
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        There must be a specific, articulable gap between the current state and the desired state. Not a topic. Not a direction. A problem.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        &quot;We need to improve settings&quot; is not a problem statement. It&apos;s a wish. &quot;First-time users take an average of 4.2 minutes to locate settings, with 23% abandoning the task entirely&quot; is a problem statement. The gap is measurable. The failure is specific. The scope is bounded. For a sprint-level decision, a single clear sentence is enough: &quot;Users can&apos;t find the settings page.&quot; For a strategic initiative, you need the problem framed, bounded, and distinguished from its symptoms - because at that scale, solving the wrong problem costs months.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        2. Who It Affects - The Population
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        A problem without a defined population is an abstraction. &quot;Users are confused&quot; helps nobody. Which users? How many? What segment? What&apos;s their context? &quot;New users in the first week&quot; is a start. &quot;35% of new enterprise customers - approximately 1,200 accounts per quarter - who onboard without a dedicated customer success manager&quot; is a problem you can act on. The more precisely you define who&apos;s affected, the more precisely you can design the solution.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        3. Evidence It&apos;s Real
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        A problem without evidence is an opinion. Opinions are starting points, not foundations.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        At minimum, a named hunch is acceptable if you&apos;re honest about its basis: &quot;Based on three support tickets and my observation of the last onboarding session, I believe this is a significant problem.&quot; That&apos;s honest. It&apos;s also the kind of statement that earns you the right to investigate further.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        At full depth, the evidence is triangulated - data, observation, and user voice working together. Support tickets show the pattern (data). Observed sessions show the behaviour (observation). User interviews confirm the experience (voice). Any one of these alone can mislead you. Together, they create confidence that the problem is real and worth solving.
+      </p>
+
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
+        4. Cost of Inaction - What&apos;s Lost If Unsolved
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is the component most designers skip - and it&apos;s the one that determines whether your problem gets prioritised or buried.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Every problem competes with every other problem for attention and resources. The cost of inaction is what wins that competition. &quot;If we don&apos;t fix this, users will continue to struggle&quot; is not a cost. It&apos;s a sentiment. &quot;The 23% task abandonment rate on settings correlates with a 15% higher churn rate in the first 30 days. At current acquisition costs of &#8377;12,000 per enterprise customer, this represents approximately &#8377;21.6 lakh in lost revenue per quarter&quot; is a cost. That number changes conversations. That number gets budget. When all four components are present - a specific gap, a defined population, triangulated evidence, and a quantified cost of inaction - you have a problem worth solving. When any of the four is missing, you&apos;re either solving the wrong problem, solving a non-problem, or unable to justify the investment.
+      </p>
+
+      {/* Inline image 2 */}
+      <div className="relative aspect-[16/9] rounded-xl overflow-hidden my-10">
+        <Image
+          src="https://images.unsplash.com/photo-1573497491208-6b1acb260507?w=800&q=80"
+          alt="A team in a meeting room having a challenging discussion, representing the discomfort of questioning assumptions and finding the right problems to solve"
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 720px"
+        />
+      </div>
+
+      <h2 id="getting-comfortable" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Getting Comfortable With Discomfort
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Here&apos;s the part nobody prepares you for: finding good problems requires making people uncomfortable.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        &quot;Why are we building this?&quot; makes a VP uncomfortable. &quot;What evidence do we have that users want this?&quot; makes a PM defensive. &quot;What happens if we don&apos;t do this at all?&quot; makes an entire roadmap feel shaky. &quot;Who decided this was the priority, and based on what?&quot; can silence a room.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        These are not confrontational questions. They&apos;re necessary questions. And the designers who find the best problems are the ones who ask them anyway - with genuine curiosity, not hostility - and sit in the resulting discomfort without backing down.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Because here&apos;s what happens when nobody asks: the team builds what was asked. The stakeholder is happy - not because the product improved, but because nobody questioned their judgment. The feature ships. The metrics don&apos;t move. Everyone wonders why.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        And the designer? The designer solved exactly what they were asked to solve. They did a beautiful job on the wrong problem. And in six months, the feature gets quietly deprecated and nobody talks about it again.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        The alternative is uncomfortable. The alternative requires asking questions that challenge people in positions of power - people who might be wrong but aren&apos;t used to being told so. The alternative requires a designer who sees their job not as executing briefs but as ensuring the right problem is being solved, even when the right problem isn&apos;t the one anybody wanted to hear about. We explored what this leadership posture demands - and what happens to design leaders who avoid it - in <Link href="/resources/blogs/design-leadership-in-turmoil" className="text-accent hover:underline font-medium">Design Leadership Is in Turmoil. And No One&apos;s Talking About It.</Link> The fighters are the ones who ask the hard questions. The skimmers are the ones who take the brief and deliver the screens.
+      </p>
+
+      <h2 id="wicked-problems" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Not All Problems Are Created Equal
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        One more thing worth understanding: some problems resist everything I&apos;ve described above.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        In 1973, Horst Rittel and Melvin Webber coined the term &quot;wicked problems&quot; - problems that have no definitive formulation, no clear stopping point, and no right or wrong solutions [2]. Wicked problems change shape as you work on them. Every attempt to solve them creates new problems. And they involve stakeholders with fundamentally different perspectives on what the problem even is.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Healthcare access in rural India is a wicked problem. Designing an equitable hiring platform is a wicked problem. Creating a financial product that serves both the digitally fluent and the digitally excluded is a wicked problem.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        The 4-component framework above still applies - you still need to define the gap, the population, the evidence, and the cost. But with wicked problems, you also need humility: the acceptance that your solution will be partial, iterative, and will likely create new problems of its own. The designer who approaches a wicked problem with the confidence of solving a checkout flow will fail. The designer who approaches it with the discipline of the framework and the humility of knowing it&apos;s unsolvable will make progress.
+      </p>
+
+      <FreeTrainingCTA text="Want to build the problem-finding instinct that separates senior designers from everyone else? Our free training shows you how" />
+
+      <h2 id="leaders-vs-executors" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Leaders Find Problems. Executors Wait for Briefs.
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        A good leader - in design, in product, in business - does not wait for needs to be dictated to them. They sense problems. They surface them. They frame them in ways that create action and urgency. They find the problems that are complex enough to matter, solvable enough to justify investment, and valuable enough that solving them makes real money.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        And there is a way to develop this capability. It&apos;s not innate. It&apos;s practised. It&apos;s built through deliberately asking &quot;what&apos;s underneath this?&quot; a thousand times until it becomes instinct. It&apos;s built through learning to frame problems in the language of business impact - not &quot;users are frustrated&quot; but &quot;frustration at this stage costs us &#8377;21 lakh per quarter.&quot; It&apos;s built through the courage to challenge comfortable assumptions and the credibility to be heard when you do.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        That&apos;s what our Tide program is built to develop - not just design skills, but the problem-finding instinct that separates designers who shape direction from designers who execute it.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        And for the mechanics of it - the structured process of setting direction, defining the right problem, and scoring whether your problem definition is solid enough to build on - that&apos;s what Konfom is launching this month. A confidence engine that assesses your problem framing across these same four dimensions and tells you whether your direction is strong enough to move forward or whether it needs more work. Not a tool that finds the problem for you. A tool that tells you whether you&apos;ve found one worth solving.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        If you&apos;re a designer who&apos;s been executing well but struggling to break into the level where you define what gets built - where you shape the problem, not just the solution - <a href="https://app.xperiencewave.com/book/dc-strategy-call" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">book a strategy call</a>. Problem-finding is learnable. And it&apos;s the skill that changes everything that comes after it.
+      </p>
+
+      <h2 id="sources-references" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Sources &amp; References
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li>[1] Einstein, A. (attributed). Widely cited in problem-solving and design thinking literature. Core insight: problem definition deserves the majority of time and effort, not solution execution.</li>
+        <li>[2] Rittel, H.W.J. &amp; Webber, M.M. (1973). &quot;Dilemmas in a General Theory of Planning.&quot; <em>Policy Sciences</em>, 4(2), 155-169. Introduced the concept of &quot;wicked problems.&quot;</li>
+        <li>[3] Toptal. (2026). &quot;How to Frame Design Problem Statements.&quot; <a href="https://www.toptal.com/designers/product-design/design-problem-statement" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">https://www.toptal.com/designers/product-design/design-problem-statement</a></li>
+        <li>[4] Interaction Design Foundation. (2026). &quot;What is a UX Problem Statement?&quot; <a href="https://ixdf.org/literature/topics/problem-statements" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">https://ixdf.org/literature/topics/problem-statements</a></li>
+      </ul>
+
+      <h2 id="further-reading" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Further Reading on Xperience Wave
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li><Link href="/resources/blogs/design-leadership-in-turmoil" className="text-accent hover:underline font-medium">Design Leadership Is in Turmoil. And No One&apos;s Talking About It.</Link></li>
+        <li><Link href="/resources/blogs/ux-career-ladder-india" className="text-accent hover:underline font-medium">The UX Career Ladder Is Broken in India. Here&apos;s the Path That Actually Works.</Link></li>
+        <li><Link href="/resources/blogs/ai-will-change-everything-except-what-matters" className="text-accent hover:underline font-medium">AI Will Change Everything About Design. Except the Part That Actually Matters.</Link></li>
+        <li><Link href="/resources/blogs/ux-job-market-changed-strategy-hasnt" className="text-accent hover:underline font-medium">The UX Job Market Has Changed. Your Strategy for Getting Noticed Hasn&apos;t.</Link></li>
+      </ul>
+
+      <h2 id="about-author" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        About the Author
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Shaik Murad is Co-founder and Head of Product &amp; Design at <Link href="/" className="text-accent hover:underline font-medium">Xperience Wave</Link>, a UX design studio based in Bangalore, working across designer mentorship, UX services for businesses, and a design community of 1,000+ designers.
+      </p>
+
+      <p className="text-base md:text-lg text-g500 italic mt-6">
+        - Murad, Co-founder &amp; Head of Product &amp; Design, Xperience Wave
+      </p>
+    </>
+  ),
   'synthetic-users-future-of-ux-research': (
     <>
       <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
@@ -11957,6 +12197,16 @@ const blogContent: Record<string, React.ReactNode> = {
 
 // Table of contents for each blog post
 const blogTableOfContents: Record<string, { id: string; title: string }[]> = {
+  'solved-what-you-were-asked-thats-the-problem': [
+    { id: 'need-vs-problem', title: 'The Difference Between a Need and a Problem' },
+    { id: 'whats-underneath', title: 'The "What\'s Underneath" Practice' },
+    { id: 'problem-worth-solving', title: 'What Makes a Problem Worth Solving' },
+    { id: 'getting-comfortable', title: 'Getting Comfortable With Discomfort' },
+    { id: 'wicked-problems', title: 'Not All Problems Are Created Equal' },
+    { id: 'leaders-vs-executors', title: 'Leaders Find Problems. Executors Wait for Briefs.' },
+    { id: 'sources-references', title: 'Sources & References' },
+    { id: 'further-reading', title: 'Further Reading' },
+  ],
   'synthetic-users-future-of-ux-research': [
     { id: 'what-synthetic-users-are', title: 'What Synthetic Users Actually Are' },
     { id: 'what-they-can-do', title: 'What They Can Actually Do' },
@@ -12417,6 +12667,11 @@ const authorData: Record<string, { role: string; bio: string; image: string }> =
 
 // Blog-specific metadata for SEO
 const blogMetadata: Record<string, { title: string; description: string; keywords: string[] }> = {
+  'solved-what-you-were-asked-thats-the-problem': {
+    title: 'You Solved Exactly What You Were Asked to Solve. That\'s the Problem. | Xperience Wave',
+    description: 'The pattern I see most often isn\'t bad designers doing bad work - it\'s good designers doing good work on the wrong problem. How to find the real problem underneath the brief, a 4-component framework for evaluating whether a problem is worth solving, and why problem-finding is the skill that changes everything.',
+    keywords: ['problem finding UX design', 'design problem framing', 'UX problem statement', 'wicked problems design', 'design leadership problem solving', 'needs vs problems UX', 'stakeholder management designers', 'design strategy', 'problem definition framework', 'UX design brief', 'design thinking problem framing', 'senior designer skills', 'design direction setting', 'product design strategy'],
+  },
   'synthetic-users-future-of-ux-research': {
     title: 'Synthetic Users Might Seem Like the Future of UX Research. It\'s More Complicated Than You Think. | Xperience Wave',
     description: 'Synthetic users can\'t replace real participants - but they can provide 20-40% of the signal at a fraction of the cost. Where they add genuine value, the five things they cannot do today, why custom data changes everything, and how to integrate them into your research process without losing what makes research valuable.',

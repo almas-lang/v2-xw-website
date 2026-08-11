@@ -51,6 +51,17 @@ export const getCategoryLabel = (category: string): string => {
 // Sample blog posts with Unsplash images
 export const blogPosts: BlogPost[] = [
   {
+    id: '55',
+    slug: 'solved-what-you-were-asked-thats-the-problem',
+    title: 'You Solved Exactly What You Were Asked to Solve. That\'s the Problem.',
+    excerpt: 'The pattern I see most often isn\'t bad designers doing bad work. It\'s good designers doing good work on the wrong problem. They solved exactly what they were asked to solve - beautiful screens, clean flows, polished deliverables - and nobody questioned whether the thing they built was the right thing to build.',
+    category: 'design-skills' as const,
+    image: 'https://images.unsplash.com/photo-1516383740770-fbcc5ccbece0?w=800&q=80',
+    author: { name: 'Shaik Murad' },
+    publishedAt: '2026-08-11',
+    readTime: '12 min',
+  },
+  {
     id: '54',
     slug: 'synthetic-users-future-of-ux-research',
     title: 'Synthetic Users Might Seem Like the Future of UX Research. It\'s More Complicated Than You Think.',

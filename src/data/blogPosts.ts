@@ -51,6 +51,17 @@ export const getCategoryLabel = (category: string): string => {
 // Sample blog posts with Unsplash images
 export const blogPosts: BlogPost[] = [
   {
+    id: '54',
+    slug: 'synthetic-users-future-of-ux-research',
+    title: 'Synthetic Users Might Seem Like the Future of UX Research. It\'s More Complicated Than You Think.',
+    excerpt: 'The question isn\'t whether synthetic users can replace real participants - they can\'t. The question is whether they can provide 20-40% of the signal at a fraction of the cost and time. The data says yes. And the designers who figure out how to use that signal well will outperform both the dismissers and the over-reliers.',
+    category: 'design-skills' as const,
+    image: 'https://images.unsplash.com/photo-1655720828018-edd2daec9349?w=800&q=80',
+    author: { name: 'Shaik Murad' },
+    publishedAt: '2026-08-11',
+    readTime: '14 min',
+  },
+  {
     id: '53',
     slug: 'how-to-evaluate-usability-traditionally-and-using-ai',
     title: 'How to Evaluate Usability - Traditionally and Using AI',

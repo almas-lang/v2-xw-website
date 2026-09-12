@@ -1,16 +1,18 @@
 'use client';
 
 import { useState, useEffect, useMemo } from 'react';
-import { blogCategories, getFeaturedPost, getPostsByCategory, getPublishedPosts } from '@/data/blogPosts';
+import { blogCategories, getFeaturedPost, getPostsByCategory, getPublishedPosts, searchPosts } from '@/data/blogPosts';
 import BlogHero from '@/components/resources/BlogHero';
 import BlogCard from '@/components/resources/BlogCard';
 import BlogFilters from '@/components/resources/BlogFilters';
+import BlogSearch from '@/components/resources/BlogSearch';
 import CTASection from '@/components/shared/CTASection';
 
 const POSTS_PER_PAGE = 6;
 
 export default function BlogsPage() {
   const [activeCategory, setActiveCategory] = useState('all');
+  const [searchQuery, setSearchQuery] = useState('');
   const [visiblePosts, setVisiblePosts] = useState(POSTS_PER_PAGE);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -21,15 +23,18 @@ export default function BlogsPage() {
   // Get featured post
   const featuredPost = getFeaturedPost();
 
-  // Get filtered posts (excluding featured)
-  const filteredPosts = useMemo(() => {
-    const posts = getPostsByCategory(activeCategory);
-    return posts.filter(post => post.id !== featuredPost?.id);
-  }, [activeCategory, featuredPost]);
+  const isSearching = searchQuery.trim().length > 0;
 
-  // Calculate post counts per category (published only)
+  // Get filtered posts. The featured post lives in the hero, so it's excluded from
+  // the grid unless the user is searching (so it can still be found).
+  const filteredPosts = useMemo(() => {
+    const posts = searchPosts(getPostsByCategory(activeCategory), searchQuery);
+    return isSearching ? posts : posts.filter(post => post.id !== featuredPost?.id);
+  }, [activeCategory, searchQuery, isSearching, featuredPost]);
+
+  // Calculate post counts per category (published only, narrowed by search)
   const postCounts = useMemo(() => {
-    const published = getPublishedPosts();
+    const published = searchPosts(getPublishedPosts(), searchQuery);
     const counts: Record<string, number> = {};
     blogCategories.forEach(cat => {
       if (cat.id === 'all') {
@@ -39,12 +44,18 @@ export default function BlogsPage() {
       }
     });
     return counts;
-  }, []);
+  }, [searchQuery]);
 
-  // Reset visible posts when category changes
-  useEffect(() => {
+  // Reset pagination whenever the category or search query changes
+  const handleCategoryChange = (category: string) => {
+    setActiveCategory(category);
     setVisiblePosts(POSTS_PER_PAGE);
-  }, [activeCategory]);
+  };
+
+  const handleSearchChange = (query: string) => {
+    setSearchQuery(query);
+    setVisiblePosts(POSTS_PER_PAGE);
+  };
 
   const displayedPosts = filteredPosts.slice(0, visiblePosts);
   const hasMorePosts = visiblePosts < filteredPosts.length;
@@ -61,6 +72,22 @@ export default function BlogsPage() {
       {/* Blog Grid Section */}
       <section className="py-12 md:py-16 lg:py-20 bg-snow">
         <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+          {/* Search */}
+          <div
+            className="mb-6 md:mb-8 transition-all duration-700"
+            style={{
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+              transitionDelay: '200ms',
+            }}
+          >
+            <BlogSearch
+              value={searchQuery}
+              onChange={handleSearchChange}
+              resultCount={isSearching ? filteredPosts.length : undefined}
+            />
+          </div>
+
           {/* Filters */}
           <div
             className="mb-10 md:mb-12 transition-all duration-700"
@@ -72,7 +99,7 @@ export default function BlogsPage() {
           >
             <BlogFilters
               activeCategory={activeCategory}
-              onCategoryChange={setActiveCategory}
+              onCategoryChange={handleCategoryChange}
               postCounts={postCounts}
             />
           </div>
@@ -125,11 +152,22 @@ export default function BlogsPage() {
                 </svg>
               </div>
               <h3 className="font-heading text-lg md:text-xl font-bold text-carbon mb-2">
-                No articles yet
+                {isSearching ? 'No articles found' : 'No articles yet'}
               </h3>
               <p className="font-body text-g500">
-                Check back soon for new content in this category.
+                {isSearching
+                  ? `Nothing matched "${searchQuery.trim()}"${activeCategory !== 'all' ? ' in this category' : ''}. Try a different keyword.`
+                  : 'Check back soon for new content in this category.'}
               </p>
+              {isSearching && (
+                <button
+                  onClick={() => { handleSearchChange(''); setActiveCategory('all'); }}
+                  className="mt-6 px-6 py-2.5 bg-white border border-g200 rounded-full font-heading font-semibold text-sm text-carbon
+                             hover:border-accent hover:text-accent transition-all duration-300"
+                >
+                  Clear search
+                </button>
+              )}
             </div>
           )}
         </div>

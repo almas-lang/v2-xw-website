@@ -710,3 +710,19 @@ export const formatDate = (dateString: string): string => {
     year: 'numeric',
   });
 };
+
+// Search posts by title, excerpt, category label, or author (case-insensitive, all words must match)
+export const searchPosts = (posts: BlogPost[], query: string): BlogPost[] => {
+  const terms = query.toLowerCase().trim().split(/\s+/).filter(Boolean);
+  if (terms.length === 0) return posts;
+  return posts.filter(post => {
+    const haystack = [
+      post.title,
+      post.excerpt,
+      getCategoryLabel(post.category),
+      post.category,
+      post.author.name,
+    ].join(' ').toLowerCase();
+    return terms.every(term => haystack.includes(term));
+  });
+};

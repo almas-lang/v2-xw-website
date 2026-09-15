@@ -1,9 +1,11 @@
 'use client';
 
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 export default function NewsletterForm() {
   const [email, setEmail] = useState('');
+  const [company, setCompany] = useState(''); // honeypot — real users never see this field
+  const mountedAt = useRef(Date.now());
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
 
@@ -35,7 +37,11 @@ export default function NewsletterForm() {
       const response = await fetch('/api/newsletter', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({
+          email,
+          company,
+          elapsedMs: Date.now() - mountedAt.current,
+        }),
       });
 
       const data = await response.json();
@@ -71,6 +77,18 @@ export default function NewsletterForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-3">
+      <div aria-hidden="true" className="absolute -left-[9999px] top-auto h-px w-px overflow-hidden">
+        <label htmlFor="newsletter-company">Company</label>
+        <input
+          id="newsletter-company"
+          name="company"
+          type="text"
+          value={company}
+          onChange={(e) => setCompany(e.target.value)}
+          tabIndex={-1}
+          autoComplete="off"
+        />
+      </div>
       <div className="flex gap-2">
         <div className="flex-1">
           <label htmlFor="newsletter-email" className="sr-only">

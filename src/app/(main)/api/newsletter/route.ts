@@ -44,9 +44,26 @@ async function sendNotificationEmail(subscriberEmail: string) {
   }
 }
 
+// Per-IP rate limit (in-memory; resets when the serverless instance recycles,
+// which is fine — it only needs to blunt bursts, not be a perfect ledger)
+const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000;
+const RATE_LIMIT_MAX = 3;
+const submissionsByIp = new Map<string, number[]>();
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const recent = (submissionsByIp.get(ip) || []).filter(
+    (t) => now - t < RATE_LIMIT_WINDOW_MS
+  );
+  recent.push(now);
+  submissionsByIp.set(ip, recent);
+  if (submissionsByIp.size > 5000) submissionsByIp.clear();
+  return recent.length > RATE_LIMIT_MAX;
+}
+
 export async function POST(request: NextRequest) {
   try {
-    const { email } = await request.json();
+    const { email, company, elapsedMs } = await request.json();
 
     // Validate email
     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
@@ -54,6 +71,23 @@ export async function POST(request: NextRequest) {
         { error: 'Please provide a valid email address' },
         { status: 400 }
       );
+    }
+
+    // Bot checks — return a fake success so bots don't retry or adapt.
+    // "company" is a hidden honeypot field humans never fill; humans also
+    // can't read the page and type an email in under 3 seconds.
+    const isBot =
+      (typeof company === 'string' && company.trim() !== '') ||
+      typeof elapsedMs !== 'number' ||
+      elapsedMs < 3000;
+    if (isBot) {
+      return NextResponse.json({ success: true });
+    }
+
+    const ip =
+      request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 'unknown';
+    if (isRateLimited(ip)) {
+      return NextResponse.json({ success: true });
     }
 
     // Add contact to Brevo

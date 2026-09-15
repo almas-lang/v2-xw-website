@@ -75,8 +75,22 @@ export async function POST(request: NextRequest) {
 
     // Bot checks — return a fake success so bots don't retry or adapt.
     // "company" is a hidden honeypot field humans never fill; humans also
-    // can't read the page and type an email in under 3 seconds.
+    // can't read the page and type an email in under 3 seconds. Browsers
+    // always send an Origin header on POST; scripts posting directly
+    // usually don't, or send someone else's.
+    let originHost = '';
+    try {
+      originHost = new URL(request.headers.get('origin') || '').hostname;
+    } catch {
+      originHost = '';
+    }
+    const allowedOrigin =
+      originHost === 'xperiencewave.com' ||
+      originHost.endsWith('.xperiencewave.com') ||
+      originHost.endsWith('.vercel.app') ||
+      originHost === 'localhost';
     const isBot =
+      !allowedOrigin ||
       (typeof company === 'string' && company.trim() !== '') ||
       typeof elapsedMs !== 'number' ||
       elapsedMs < 3000;

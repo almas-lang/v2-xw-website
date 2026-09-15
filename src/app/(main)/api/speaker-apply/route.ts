@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { checkBotId } from 'botid/server';
 
 const BREVO_API_KEY = process.env.BREVO_API_KEY;
 const SPEAKER_LIST_ID = 56;
@@ -159,6 +160,13 @@ async function sendTeamNotification(data: ApplicationData) {
 }
 
 export async function POST(request: NextRequest) {
+  // Vercel BotID: reject requests not verified as a real human browser
+  // session. Bots get a fake success so they don't retry or adapt.
+  const verification = await checkBotId();
+  if (verification.isBot) {
+    return NextResponse.json({ success: true });
+  }
+
   try {
     const data: ApplicationData = await request.json();
 

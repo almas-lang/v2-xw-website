@@ -1,9 +1,17 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { checkBotId } from 'botid/server';
 
 const SALESHUB_WEBHOOK_URL = process.env.SALESHUB_WEBHOOK_URL;
 const SALESHUB_WEBHOOK_SECRET = process.env.SALESHUB_WEBHOOK_SECRET;
 
 export async function POST(request: NextRequest) {
+  // Vercel BotID: reject requests not verified as a real human browser
+  // session. Bots get a fake success so they don't retry or adapt.
+  const verification = await checkBotId();
+  if (verification.isBot) {
+    return NextResponse.json({ success: true });
+  }
+
   if (!SALESHUB_WEBHOOK_URL || !SALESHUB_WEBHOOK_SECRET) {
     console.error('SalesHub webhook env vars not configured');
     return NextResponse.json({ success: false, error: 'Server configuration error' }, { status: 500 });

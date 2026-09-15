@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { checkBotId } from 'botid/server';
 
 const BREVO_API_KEY = process.env.BREVO_API_KEY;
 const BREVO_LIST_ID = 54;
@@ -66,6 +67,13 @@ function isRateLimited(ip: string): boolean {
 
 export async function POST(request: NextRequest) {
   try {
+    // Vercel BotID: classified in the visitor's browser before submission.
+    // Anything not verified as a real human browser session is rejected here.
+    const verification = await checkBotId();
+    if (verification.isBot) {
+      return NextResponse.json({ success: true });
+    }
+
     const { email, company, elapsedMs } = await request.json();
 
     // Validate email

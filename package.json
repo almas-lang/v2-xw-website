@@ -12,6 +12,7 @@
     "@hookform/resolvers": "^5.2.2",
     "@tabler/icons-react": "^3.44.0",
     "@vercel/blob": "^2.3.2",
+    "botid": "^1.5.11",
     "next": "^16.2.3",
     "react": "19.2.3",
     "react-dom": "19.2.3",

@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 
 const BREVO_API_KEY = process.env.BREVO_API_KEY;
 const BREVO_LIST_ID = 54;
+const DOI_TEMPLATE_ID = 86; // "Newsletter double opt-in confirmation" in Brevo
 const NOTIFICATION_EMAILS = [
   'team@xperiencewave.com',
   'shaikroc@gmail.com',
@@ -21,18 +22,20 @@ async function sendNotificationEmail(subscriberEmail: string) {
       body: JSON.stringify({
         sender: { name: 'Xperience Wave', email: 'team@xperiencewave.com' },
         to: NOTIFICATION_EMAILS.map(email => ({ email })),
-        subject: '🎉 New Newsletter Subscriber!',
+        subject: '📬 New Newsletter Signup (pending confirmation)',
         htmlContent: `
           <div style="font-family: Arial, sans-serif; padding: 20px; max-width: 500px;">
-            <h2 style="color: #1A1A1A; margin-bottom: 16px;">New Newsletter Subscriber</h2>
+            <h2 style="color: #1A1A1A; margin-bottom: 16px;">New Newsletter Signup</h2>
             <p style="color: #666; font-size: 16px; margin-bottom: 12px;">
-              Someone just subscribed to the Xperience Wave newsletter:
+              Someone just signed up for the Xperience Wave newsletter:
             </p>
             <div style="background: #f5f5f5; padding: 16px; border-radius: 8px; margin-bottom: 16px;">
               <strong style="color: #1A1A1A; font-size: 18px;">${subscriberEmail}</strong>
             </div>
             <p style="color: #999; font-size: 14px;">
-              This subscriber has been added to your Brevo contact list #${BREVO_LIST_ID}.
+              A confirmation email was sent (double opt-in). They will appear in
+              Brevo list #${BREVO_LIST_ID} only after clicking the confirm link,
+              so unconfirmed signups here may be bots and can be ignored.
             </p>
           </div>
         `,
@@ -104,20 +107,25 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ success: true });
     }
 
-    // Add contact to Brevo
-    const response = await fetch('https://api.brevo.com/v3/contacts', {
-      method: 'POST',
-      headers: {
-        'accept': 'application/json',
-        'content-type': 'application/json',
-        'api-key': BREVO_API_KEY || '',
-      },
-      body: JSON.stringify({
-        email: email,
-        listIds: [BREVO_LIST_ID],
-        updateEnabled: true, // Update if contact already exists
-      }),
-    });
+    // Double opt-in: Brevo emails a confirmation link (template 86); the
+    // contact only joins the list after clicking it, so bots never get on.
+    const response = await fetch(
+      'https://api.brevo.com/v3/contacts/doubleOptinConfirmation',
+      {
+        method: 'POST',
+        headers: {
+          'accept': 'application/json',
+          'content-type': 'application/json',
+          'api-key': BREVO_API_KEY || '',
+        },
+        body: JSON.stringify({
+          email: email,
+          includeListIds: [BREVO_LIST_ID],
+          templateId: DOI_TEMPLATE_ID,
+          redirectionUrl: 'https://www.xperiencewave.com/newsletter-confirmed',
+        }),
+      }
+    );
 
     if (response.status === 201 || response.status === 204) {
       // Send notification email to team

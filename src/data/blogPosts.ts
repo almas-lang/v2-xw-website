@@ -51,6 +51,17 @@ export const getCategoryLabel = (category: string): string => {
 // Sample blog posts with Unsplash images
 export const blogPosts: BlogPost[] = [
   {
+    id: '56',
+    slug: 'ux-job-market-india-sep-2026',
+    title: 'The UX Job Market in India (Sep 2026): What\'s Actually Hiring, What\'s Shrinking, and What\'s Winning',
+    excerpt: 'Job postings are down 71% from the 2022 peak. Yet 82% of design leaders say demand for designers grew. Both are true - the market didn\'t collapse, it restructured. What\'s shrinking, what\'s winning, India-specific salary data by city and sector, and what to do at every experience level.',
+    category: 'industry' as const,
+    image: 'https://images.unsplash.com/photo-1573164713988-8665fc963095?w=800&q=80',
+    author: { name: 'Shaik Murad' },
+    publishedAt: '2026-09-30',
+    readTime: '16 min',
+  },
+  {
     id: '55',
     slug: 'solved-what-you-were-asked-thats-the-problem',
     title: 'You Solved Exactly What You Were Asked to Solve. That\'s the Problem.',

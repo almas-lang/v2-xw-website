@@ -13,6 +13,7 @@ export type LeadType =
   | 'mentorship-evaluator'
   | 'design-team-systems-audit'
   | 'budget-prep-kit'
+  | 'ux-salary-data-sheet'
   | 'design-strategy-gpt'
   | 'research-synthesis-gpt'
   | 'microcopy-writer-gpt'
@@ -48,6 +49,13 @@ const leadConfigs: Record<LeadType, LeadConfig> = {
     notificationSubject: '📊 New Budget Prep Kit Download',
     notificationText: 'Someone requested the Budget Conversation Prep Kit',
     leadSource: 'Budget Conversation Prep Kit',
+  },
+  // India UX Salary & Hiring Data Sheet (email-only, no redirect)
+  'ux-salary-data-sheet': {
+    name: 'India UX Salary & Hiring Data Sheet',
+    notificationSubject: '📊 New Salary Data Sheet Download',
+    notificationText: 'Someone requested the India UX Salary & Hiring Data Sheet',
+    leadSource: 'India UX Salary Data Sheet',
   },
   // Design Team Systems Audit
   'design-team-systems-audit': {
@@ -310,6 +318,52 @@ export async function POST(request: NextRequest) {
         });
       } catch (error) {
         console.error('Failed to send budget prep kit confirmation email:', error);
+      }
+    }
+
+    // Send confirmation email with sheet link for the salary data sheet
+    if (leadType === 'ux-salary-data-sheet') {
+      try {
+        await fetch('https://api.brevo.com/v3/smtp/email', {
+          method: 'POST',
+          headers: {
+            'accept': 'application/json',
+            'content-type': 'application/json',
+            'api-key': BREVO_API_KEY || '',
+          },
+          body: JSON.stringify({
+            sender: { name: 'Xperience Wave', email: 'team@xperiencewave.com' },
+            to: [{ email }],
+            subject: 'Your India UX Salary & Hiring Data Sheet is Ready',
+            htmlContent: `
+              <style>@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&family=Playfair+Display:wght@700&display=swap');</style>
+              <div style="font-family: 'Plus Jakarta Sans', Arial, sans-serif; max-width: 560px; margin: 0 auto; background: #ffffff; padding: 40px 32px;">
+                <div style="text-align: center;">
+                  <img src="https://www.xperiencewave.com/images/xw-logo-mobile.png" alt="Xperience Wave" style="height: 36px; margin-bottom: 32px;" />
+                  <h1 style="font-family: 'Playfair Display', Georgia, serif; color: #1A1A1A; font-size: 24px; font-weight: 700; margin: 0 0 12px;">
+                    Your Data Sheet is Ready
+                  </h1>
+                  <p style="color: #666666; font-size: 15px; line-height: 1.6; margin: 0 0 28px;">
+                    India UX salary ranges by role, city, and sector. Sector hiring status. AI skill premiums. Interview questions to assess design maturity. Reflects September 2026 market conditions - updated quarterly.
+                  </p>
+                  <a href="https://docs.google.com/spreadsheets/d/1fxV4NkhZCgTL7CINjxhwdV0Zr8gsLiOXdKyCd5Yu5sI/edit" style="display: inline-block; padding: 14px 36px; background: #FF0023; color: #ffffff; text-decoration: none; font-weight: 600; border-radius: 8px; font-size: 16px;">
+                    Open the Data Sheet &rarr;
+                  </a>
+                </div>
+                <div style="padding-top: 28px; margin-top: 28px; border-top: 1px solid #eee;">
+                  <p style="color: #999999; font-size: 13px; line-height: 1.5; text-align: center; margin: 0 0 16px;">
+                    Want an honest assessment of where you stand in this market? <a href="https://app.xperiencewave.com/book/dc-strategy-call" style="color: #FF0023; text-decoration: none;">Book a free strategy call</a>
+                  </p>
+                  <p style="color: #bbbbbb; font-size: 11px; text-align: center; margin: 0;">
+                    Xperience Wave &middot; UX Mentorship &amp; Career Development &middot; Bangalore
+                  </p>
+                </div>
+              </div>
+            `,
+          }),
+        });
+      } catch (error) {
+        console.error('Failed to send salary data sheet confirmation email:', error);
       }
     }
 

@@ -11,9 +11,316 @@ import SystemsAuditGate from '@/components/blog/SystemsAuditGate';
 import BudgetPrepKitGate from '@/components/blog/BudgetPrepKitGate';
 import { FreeTrainingCTA } from '@/components/blog/FreeTrainingCTA';
 import OrgMaturityScorecardGate from '@/components/blog/OrgMaturityScorecardGate';
+import SalaryDataSheetGate from '@/components/blog/SalaryDataSheetGate';
 
 // Blog content with internal links for SEO
 const blogContent: Record<string, React.ReactNode> = {
+  'ux-job-market-india-sep-2026': (
+    <>
+      <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
+        &quot;Kya aapme AI skills hai?&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        That&apos;s the question sitting - sometimes explicitly, sometimes between the lines - in nearly every UX job description posted in India this year. Even when the organisations themselves are still trying to figure out what AI skills for a designer actually means. Even when the recruiter who wrote the JD couldn&apos;t tell you the difference between a prompt and a parameter. Even when the hiring manager&apos;s real need is &quot;someone who can ship screens faster&quot; dressed up in the language of artificial intelligence.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The need to find one person who does a team&apos;s job has always made organisations feel their ground shake a little. But in 2026, that shake has become a tremor that most designers I speak to can feel daily. Can you build a prototype using Claude Design? Can you deliver working prototypes with specific content and real data as HTML links? Can you tell us how you optimised your design process using AI at every touchpoint?
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        These questions are getting common. But what&apos;s more revealing than the questions themselves is what they signal: the market isn&apos;t just asking designers to learn new tools. It&apos;s asking them to become something different. And most designers - even talented, experienced ones - aren&apos;t sure what that &quot;something different&quot; is.
+      </p>
+
+      <h2 id="the-paradox" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Paradox Nobody Is Explaining
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Here&apos;s the number that scares people: UX designer job postings fell 71% from their 2022 peak in the US, with UX research postings down 73% [1]. One in three organisations cut UX staff in 2024, marking the worst year since Nielsen Norman Group began tracking [1].
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Here&apos;s the number that should make you pause before panicking: in the same period, 82% of design leaders said their organisation&apos;s need for designers has either increased or stayed the same, with many reporting 10-25% growth in demand [2].
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Both numbers are real. They&apos;re not contradicting each other. They&apos;re describing two different things:
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong className="text-carbon">The demand for design outcomes is growing.</strong> Companies need better products. Users expect better experiences. The complexity of digital products - AI integration, omnichannel delivery, accessibility requirements, regulatory compliance - is increasing. The work hasn&apos;t decreased. In many ways, it&apos;s expanded.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong className="text-carbon">The demand for designers as headcount is flat or declining.</strong> The same companies that need better design outcomes are hiring fewer people to produce them. They&apos;re expecting each designer to cover more ground - research, design, prototyping, testing, front-end handoff - aided by AI tools that make individual productivity dramatically higher.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is not a death spiral. It&apos;s winnowing. Fewer people. Higher capability. More output per person. Better pay for those who make the cut. And a genuinely difficult transition for those who don&apos;t.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Understanding which side of that transition you&apos;re on is the most important career question a designer in India can answer right now.
+      </p>
+
+      <h2 id="indian-market-sep-2026" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What the Indian Market Actually Looks Like in September 2026
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Let me give you the ground-level picture, because global trends only tell part of the story.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Glassdoor lists approximately 1,761 open UX designer positions in India as of August 2026 [3]. That&apos;s not a massive number for a country with India&apos;s tech sector, but it&apos;s not zero either. The positions exist. The question is what they&apos;re asking for and what they&apos;re paying.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The salary range is dramatic. The Indian market spans ₹3.5 LPA for freshers at agencies and IT services firms to ₹50 LPA for senior Product Designers and UX Leads at top consumer tech and fintech companies [4]. That&apos;s not a salary range - it&apos;s a different profession at each end.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The largest salary jump in design happens between years 2 and 5, typically when a designer moves from their first job to a product company with a stronger design culture [4]. If you&apos;re in that window right now and haven&apos;t made that move, the gap between what you&apos;re earning and what the market would pay you is likely wider than you think. We explored exactly what drives this gap in <Link href="/resources/blogs/12l-vs-30l-ux-designer-difference" className="text-accent hover:underline font-medium">The Difference Between a ₹12L and ₹30L UX Designer</Link> - the answer has nothing to do with years of experience and everything to do with how you position your value.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The second inflection point is at the senior-to-lead transition (years 7-10), where designers either step into design management or deepen into a recognised specialisation [4]. This is the fork we covered in detail in the <Link href="/resources/blogs/ux-career-ladder-india" className="text-accent hover:underline font-medium">career ladder breakdown</Link> - and in 2026, navigating that fork well matters more than ever.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Bangalore leads on UX/UI pay, driven by its density of product companies and funded startups. Delhi/NCR - particularly Gurgaon - is the second-strongest market, anchored by fintech and enterprise SaaS [4]. Design is one of the more remote-friendly roles in tech, and international clients and global product firms are increasingly hiring Indian designers remotely, which is quietly raising the salary floor for designers who position themselves well.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Fintech is the highest-paying sector for UX talent in India. Razorpay, PhonePe, CRED, Groww, and Zerodha regularly hire senior UX Designers at ₹20-38 LPA because design quality in financial products directly affects user trust, transaction completion rates, and regulatory compliance [4]. If you&apos;re a strong designer and you haven&apos;t considered fintech, the <Link href="/resources/blogs/which-industry-best-for-designers" className="text-accent hover:underline font-medium">industry evaluation framework</Link> we published can help you assess whether it&apos;s the right fit.
+      </p>
+
+      <h2 id="whats-shrinking" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What&apos;s Shrinking - and Why
+      </h2>
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-4">
+        Dedicated UX Research Teams
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is the most significant structural shift in the design industry right now, and it&apos;s hitting India hard.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Between 2024 and 2026, customer research stopped being a job title and started being a capability spread across product, customer success, and marketing teams [5]. Tech companies including Meta, Amazon, Microsoft, and Google cut user research roles harder than most other functions during the layoff waves that totalled roughly 152,922 tech employees in 2024 and 122,549 in 2025 [5].
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        In October 2025, Google laid off more than 100 design and UX research roles from its Cloud division alone. Across 5,521 analysed tech layoffs, UX roles made up 8.7% of the cuts, despite UX being a small part of total headcount. Research roles were disproportionately impacted [1].
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The pattern is clear: companies are keeping their senior and principal researchers - the strategic advisors who tie research to business outcomes - while cutting the execution-level roles that AI tools and research democratisation are beginning to absorb. In the 2025 State of User Research report, 71% of organisations reported having &quot;people who do research&quot; who aren&apos;t dedicated researchers, and roughly 84% allowed non-researchers to conduct studies with AI assistance [5].
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The work still requires people. But the title &quot;UX Researcher&quot; is becoming less common while the activity of research is becoming more distributed. If you&apos;re a researcher whose value proposition is &quot;I run interviews and synthesise findings,&quot; the market is telling you that proposition alone is no longer sufficient. If your value proposition is &quot;I design research strategies that directly inform product decisions and demonstrate measurable business impact,&quot; you&apos;re in a different category entirely.
+      </p>
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-4">
+        Pure Visual/UI Execution Roles
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If your job can be described as &quot;receives brief, creates screens, hands off to development,&quot; the market is compressing around you. Not because screens don&apos;t matter - they do. But because AI tools have dramatically reduced the time and skill required to produce them. The execution layer has been commoditised.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The designers who are being retained and hired are the ones who do something before the screen (define the problem, conduct research, set direction) and something after it (test usability, measure impact, iterate based on data). Pure execution - no matter how beautiful - is increasingly a machine&apos;s job.
+      </p>
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-4">
+        Design Managers Who Only Manage
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        We wrote about this in <Link href="/resources/blogs/design-leadership-in-turmoil" className="text-accent hover:underline font-medium">Design Leadership Is in Turmoil</Link>. The data has only gotten worse since. Gartner predicted that through 2026, 20% of organisations would use AI to flatten their structures, eliminating over half of current middle management positions. Design management is not exempt.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Design managers whose contribution is coordination - allocating projects, approving leave, relaying information between leadership and the team - have no structural justification in a market where teams are flatter, AI handles coordination tasks, and companies expect every person to demonstrate measurable contribution. The relay stations are being removed.
+      </p>
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-4">
+        Junior Roles at Scale
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is the most painful reality for early-career designers. Senior practitioners and generalist roles recovered faster than entry-level positions, which remain fiercely competitive [6]. Companies are hiring fewer juniors and expecting those they do hire to ramp faster, with AI fluency assumed from day one.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        India&apos;s employability rate stands at 56.35% according to the India Skills Report 2026 - meaning nearly half of graduates cannot get hired, not because jobs don&apos;t exist, but because the hiring process has changed underneath them [7]. If you&apos;re a designer considering the <Link href="/resources/blogs/career-switch-to-ux-india-timeline" className="text-accent hover:underline font-medium">switch to UX from another design discipline</Link>, this reality makes strategic positioning more important, not less.
+      </p>
+
+      <h2 id="whats-winning" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What&apos;s Winning - and Paying More
+      </h2>
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-4">
+        AI-Fluent Senior Generalists
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The UX job market in 2026 is prepared to respect what some call a &quot;unicorn designer&quot; - someone who can handle more than one specialisation. But it&apos;s gotten simpler than the label suggests.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Consider what AI has actually given you. The time you used to spend on cleaning up qualitative content, building codes and themes from interview data, generating initial layout explorations, writing specification documents - that time is now compressed. AI co-pilots handle the volume work. Which means you have more time to put into the things that AI can&apos;t do: strategic thinking, stakeholder influence, research judgment, and cross-functional leadership.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The deep generalist isn&apos;t someone who does everything themselves. It&apos;s someone who understands enough about research, design, prototyping, front-end implementation, and business strategy to operate across the full product lifecycle - using AI to extend their reach and human judgment to maintain quality.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The salary data backs this up. A Lightcast analysis of over one billion job postings found that roles listing at least two AI skills paid 43% more than comparable roles with none [8]. In India, that translates to ₹15-20 lakh additional per year depending on the role and city. AI fluency isn&apos;t a nice-to-have. It&apos;s a compensation tier.
+      </p>
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-4">
+        Product Designers Who Speak Business
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This has been true for years, but the market is now pricing it explicitly. Companies at the highest level of design maturity are five times more likely to have designers who can articulate business impact. The designers who can connect their work to revenue, retention, and operational efficiency are getting offers that designers who can only talk about user flows and visual systems are not.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        We published a detailed breakdown of <Link href="/resources/blogs/salary-negotiation-ux-designers-india" className="text-accent hover:underline font-medium">how salary negotiation works for UX designers in India</Link> - and the single biggest differentiator isn&apos;t years of experience or the company name on your resume. It&apos;s your ability to quantify the impact of your work in business terms.
+      </p>
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-4">
+        Design-to-Code Practitioners
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Designers who can prototype in code - or who can work with AI code editors to produce functional prototypes from their design files - are in a category that barely existed two years ago and is now actively sought. The handoff problem we discussed in <Link href="/resources/blogs/slicing-psds-to-shipping-code-design-handoffs-evolved" className="text-accent hover:underline font-medium">the design handoff evolution blog</Link> is being solved by designers who eliminate the handoff entirely by delivering working front-end code alongside their designs.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This doesn&apos;t mean every designer needs to become a developer. But designers who understand code well enough to use Claude Code, Cursor, or similar AI editors to generate working prototypes are operating at a speed and specificity that traditional designer-developer workflows can&apos;t match.
+      </p>
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-4">
+        Designers at Fintech, HealthTech, and Enterprise SaaS
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The highest-paying and most stable design roles in India are concentrated in three sectors: fintech (Razorpay, PhonePe, CRED, Groww - ₹20-38 LPA for seniors), healthtech (growing but still maturing), and enterprise SaaS (Atlassian, Zoho, Freshworks - mature design practices, consistent hiring).
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        These sectors pay more because design quality has a directly measurable cost when it&apos;s absent. A confusing checkout flow loses transactions. A poorly designed clinical interface creates patient safety risk. An unusable enterprise tool reduces workforce productivity across thousands of employees. The business case for good design is built into the revenue model.
+      </p>
+
+      <h2 id="identity-crisis" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Identity Crisis - And Why It&apos;s Actually a Good Sign
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Here&apos;s the part that I hear from designers more than anything else, and I want to address it directly.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        &quot;I don&apos;t know what I&apos;m becoming.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Front-end engineers want to learn UX and timeline management. Product managers are creating screens and coding. UX designers want to strategise, research, ideate, solve, code, and call themselves more and more generalist - leaving themselves with an eternal question: where do I let someone else do their job?
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The boundaries between roles are blurring. The designations might vanish. The title &quot;UX Designer&quot; itself may feel increasingly inadequate for what the job actually entails. And that ambiguity is genuinely uncomfortable.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        But here&apos;s what I&apos;d ask you to consider: this is beneficial.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Not because losing your identity is pleasant - it isn&apos;t. But because the rigidity of the old model (&quot;I&apos;m a UX designer, I do UX things, someone else does PM things, someone else does engineering things&quot;) was always artificial. Products don&apos;t care about your title. Users don&apos;t care about your org chart. The best products have always been built by people who could move across boundaries - who understood enough about adjacent disciplines to collaborate deeply and make better decisions.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        What AI has done is accelerate this. It&apos;s made it possible for a single designer to credibly operate across research, design, prototyping, content, front-end code, and analytics - not because they mastered six disciplines, but because AI handles the execution volume in each one, freeing the designer to apply judgment across all of them.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Your identity isn&apos;t dangling. It&apos;s expanding. And the designers who embrace that expansion - who stop trying to protect the boundaries of &quot;what a UX designer does&quot; and start asking &quot;what can I contribute to making this product succeed?&quot; - are the ones the market is rewarding.
+      </p>
+
+      <h2 id="execution-problem" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        This Is Not a Designer&apos;s Problem. It&apos;s an Execution Problem.
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        I want to reframe something that most market analysis gets wrong.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The anxiety designers feel right now - the sense that the ground is shifting, that their role is being compressed or eliminated - is not unique to design. It&apos;s happening to every execution-focused role across every function.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If you were a product manager whose entire contribution was managing timelines and writing tickets, you&apos;re being replaced. If you were a front-end engineer whose entire contribution was writing code from someone else&apos;s specifications, you&apos;re being replaced. If you were a designer whose entire contribution was making screens from someone else&apos;s brief, you&apos;re being replaced.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        What&apos;s being replaced isn&apos;t design. It&apos;s execution without judgment. The market is eliminating the relay stations - the people who take input from one side, process it mechanically, and pass it to the other side. Whether that relay station held the title &quot;Designer,&quot; &quot;Developer,&quot; or &quot;Project Manager&quot; is irrelevant.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        What&apos;s being rewarded is the opposite: people who bring judgment, strategic thinking, cross-functional influence, and the ability to make decisions under ambiguity. People who don&apos;t just execute - they direct.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        That&apos;s why the most experienced designers I work with - the ones with 15, 20 years - are simultaneously the most anxious and the most positioned to succeed. Anxious because the tools and processes they built their careers on are changing. Positioned because the judgment, the relationships, the domain knowledge, and the leadership instincts they&apos;ve accumulated over decades are exactly what can&apos;t be automated.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        If you&apos;re in that position - experienced, capable, but unsure how to translate your judgment into the language this market speaks - we wrote about the <Link href="/resources/blogs/career-switch-to-ux-india-timeline" className="text-accent hover:underline font-medium">career timeline for experienced designers pivoting into UX leadership</Link> and the <Link href="/resources/blogs/salary-negotiation-ux-designers-india" className="text-accent hover:underline font-medium">salary negotiation strategies</Link> that help you capture the value you&apos;ve already built.
+      </p>
+
+      <h2 id="what-to-do" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What to Do About All of This
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If you&apos;ve read this far and feel some combination of anxiety and clarity, that&apos;s the right response. The market is genuinely harder than it was three years ago. It&apos;s also genuinely better for designers who understand what&apos;s being selected for.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong className="text-carbon">If you&apos;re a designer with fewer than 3 years of experience:</strong> Your priority is building foundations fast. Research skills, systems thinking, interaction design, and AI fluency - all four, not just one. The junior roles that exist are looking for people who can ramp quickly and contribute across the product lifecycle, not specialists who need six months of hand-holding. The competition for these roles is intense, and the designers who stand out are the ones who can demonstrate breadth and learning velocity.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong className="text-carbon">If you&apos;re a designer with 3-7 years of experience:</strong> This is where the biggest opportunity lives. The market is paying a premium for designers in this range who can demonstrate business impact, AI fluency, and cross-functional capability. If you&apos;re still positioning yourself as &quot;I design good interfaces,&quot; you&apos;re leaving money and opportunities on the table. Reposition around the value you create for the business, not the artefacts you produce. The <Link href="/resources/blogs/12l-vs-30l-ux-designer-difference" className="text-accent hover:underline font-medium">12L vs 30L breakdown</Link> maps exactly what separates these two positioning levels.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong className="text-carbon">If you&apos;re a designer with 8+ years of experience:</strong> Your judgment is your asset. But judgment alone, without visibility and positioning, is invisible to the market. The designers at this level who are thriving are the ones who&apos;ve made their thinking public - through writing, speaking, mentoring, or leading visible projects. They&apos;ve built reputations that travel independently of their current employer. If you haven&apos;t started doing this, start this month. Not next quarter. This month.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong className="text-carbon">If you&apos;re a researcher whose role is being compressed:</strong> Pivot from execution to strategy. The market still needs people who can design research programmes, not just run interviews. The strategic researcher - the one who determines what questions to ask, which methods to use, how to connect findings to business decisions, and when synthetic research is appropriate versus when human research is essential - is in higher demand than ever. The execution researcher - the one who moderates sessions and produces reports - is being absorbed by AI tools and research democratisation.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        <strong className="text-carbon">Regardless of where you are:</strong> Build your AI workflow. Not tomorrow. This week. We published a guide on <Link href="/resources/blogs/personal-ai-workflow-designer" className="text-accent hover:underline font-medium">how to build your personal AI workflow as a designer</Link> - not which tools to learn, but how to integrate AI into your actual practice in a way that makes you faster without making you shallower. Designers with demonstrated AI fluency are commanding measurably higher compensation. The 43% premium is real. Every month you wait is a month of foregone value.
+      </p>
+
+      <h2 id="free-resource" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Free Resource: India UX Salary &amp; Hiring Data Sheet
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        We&apos;ve compiled the data referenced in this blog - and additional data we couldn&apos;t fit - into a downloadable sheet that gives you:
+      </p>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li>Current UX salary ranges by experience level, city, and sector in India</li>
+        <li>Which sectors are hiring, which are flat, which are contracting</li>
+        <li>AI skill requirements by role type and seniority</li>
+        <li>Salary premium data for AI-fluent designers</li>
+        <li>The research democratisation trend mapped to specific role changes</li>
+        <li>Questions to ask in your next interview to assess the real state of the design function</li>
+      </ul>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        It&apos;s gated behind email because this data is genuinely valuable and we update it quarterly. The version you&apos;ll download reflects September 2026 market conditions.
+      </p>
+      <SalaryDataSheetGate />
+
+      <h2 id="where-this-leaves-you" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Where This Leaves You
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The UX job market in India hasn&apos;t collapsed. It&apos;s restructured. The number of positions is lower. The capability bar is higher. The pay for those who clear the bar is better than it&apos;s ever been. And the gap between designers who are positioned well and designers who aren&apos;t is widening every quarter.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The designers who are winning right now aren&apos;t the ones with the most years, the best tools, or the most impressive company names. They&apos;re the ones who understood, early enough, that the market was selecting for a different profile - and repositioned accordingly.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        If you&apos;re not sure where you stand in this market - whether your positioning is current, whether your salary reflects your value, whether your next move should be a lateral shift or a leap - that&apos;s exactly the conversation we have in our free Design Career Strategy Call. Not a sales pitch. An honest assessment of where you are, what the market values right now, and what&apos;s actually blocking you from getting there. <a href="https://app.xperiencewave.com/book/dc-strategy-call" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Book one here</a>.
+      </p>
+
+      <h2 id="sources-references" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Sources &amp; References
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li>[1] Zoom In AI / MeasuringU / NNGroup. (2026). &quot;UX Designer Job Postings Are Down 71%.&quot; Analysing 5,521 tech layoffs, UX job posting trends, and NNGroup tracking data. <a href="https://medium.com/write-a-catalyst/ux-designer-job-postings-are-down-71-figma-filed-for-a-68b-ipo-both-happened-in-the-same-era-53049b4d8947" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">medium.com/write-a-catalyst</a></li>
+        <li>[2] Figma. (2026). &quot;State of the Designer 2026.&quot; 82% of design leaders report need for designers increased or stayed the same. <a href="https://www.figma.com/blog/state-of-the-designer-2026/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">figma.com/blog/state-of-the-designer-2026</a></li>
+        <li>[3] Glassdoor India. (2026). UX Designer job listings, August 2026. 1,761 open positions. <a href="https://www.glassdoor.co.in/Job/india-ux-designer-jobs-SRCH_IL.0,5_IN115_KO6,17.htm" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">glassdoor.co.in</a></li>
+        <li>[4] Recrew. (2026). &quot;UX/UI Designer Salary in India 2026.&quot; Market range ₹3.5 LPA to ₹50 LPA. Bangalore leads. Fintech highest-paying sector. <a href="https://www.recrew.ai/salary-guides/ux-ui-designer" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">recrew.ai/salary-guides/ux-ui-designer</a></li>
+        <li>[5] Perspective AI. (2026). &quot;The 2026 State of Customer Research Hiring.&quot; Tech firms cut dedicated UX research roles heavily, routing day-to-day studies to PMs and CSMs using AI tools. <a href="https://getperspective.ai/blog/the-2026-state-of-customer-research-hiring-why-teams-cut-researchers-and-bought-ai" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">getperspective.ai</a></li>
+        <li>[6] Great Question. (2026). &quot;Will AI Replace UX Researchers? What the Data Actually Says.&quot; Senior and generalist roles recovered faster than entry-level. <a href="https://greatquestion.co/blog/will-ai-replace-ux-researchers" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">greatquestion.co</a></li>
+        <li>[7] Shoolini University / India Skills Report 2026 / TeamLease EdTech. (2026). India employability rate at 56.35%. 82% of employers facing talent shortage. <a href="https://shooliniuniversity.com/blog/what-employers-want-in-2026-ai-skills-soft-skills-and-industry-experience/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">shooliniuniversity.com</a></li>
+        <li>[8] Lightcast / CuroMinds. (2026). &quot;15 High-Demand AI Skills Employers Are Paying 43% More For in 2026.&quot; Analysis of 1B+ job postings. <a href="https://www.curominds.com/blog/high-demand-ai-skills/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">curominds.com</a></li>
+      </ul>
+
+      <h2 id="further-reading" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Further Reading on Xperience Wave
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li><Link href="/resources/blogs/12l-vs-30l-ux-designer-difference" className="text-accent hover:underline font-medium">The Difference Between a ₹12L and ₹30L UX Designer (It&apos;s Not Skills)</Link></li>
+        <li><Link href="/resources/blogs/salary-negotiation-ux-designers-india" className="text-accent hover:underline font-medium">Salary Negotiation for UX Designers: Scripts, Data, and What Actually Works in India</Link></li>
+        <li><Link href="/resources/blogs/ux-career-ladder-india" className="text-accent hover:underline font-medium">The UX Career Ladder Is Broken in India. Here&apos;s the Path That Actually Works.</Link></li>
+        <li><Link href="/resources/blogs/career-switch-to-ux-india-timeline" className="text-accent hover:underline font-medium">The Honest Career Switcher Timeline: From Zero to UX Job Offer in India</Link></li>
+        <li><Link href="/resources/blogs/design-leadership-in-turmoil" className="text-accent hover:underline font-medium">Design Leadership Is in Turmoil. And No One&apos;s Talking About It.</Link></li>
+        <li><Link href="/resources/blogs/personal-ai-workflow-designer" className="text-accent hover:underline font-medium">How to Build Your Personal AI Workflow as a Designer (Without Losing What Makes You Good)</Link></li>
+        <li><Link href="/resources/blogs/which-industry-best-for-designers" className="text-accent hover:underline font-medium">Healthcare, Fintech, SaaS - Designers Keep Asking Which Industry Is Best. Here&apos;s Why That&apos;s the Wrong Question.</Link></li>
+      </ul>
+
+      <h2 id="about-author" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        About the Author
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Shaik Murad is Co-founder and Head of Product &amp; Design at <Link href="/" className="text-accent hover:underline font-medium">Xperience Wave</Link>, a UX design studio based in Bangalore, working across designer mentorship, UX services for businesses, and a design community of 1,000+ designers.
+      </p>
+
+      <p className="text-base md:text-lg text-g500 italic mt-6">
+        - Murad, Co-founder &amp; Head of Product &amp; Design, Xperience Wave
+      </p>
+    </>
+  ),
   'solved-what-you-were-asked-thats-the-problem': (
     <>
       <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
@@ -12197,6 +12504,19 @@ const blogContent: Record<string, React.ReactNode> = {
 
 // Table of contents for each blog post
 const blogTableOfContents: Record<string, { id: string; title: string }[]> = {
+  'ux-job-market-india-sep-2026': [
+    { id: 'the-paradox', title: 'The Paradox Nobody Is Explaining' },
+    { id: 'indian-market-sep-2026', title: 'What the Indian Market Actually Looks Like' },
+    { id: 'whats-shrinking', title: 'What\'s Shrinking - and Why' },
+    { id: 'whats-winning', title: 'What\'s Winning - and Paying More' },
+    { id: 'identity-crisis', title: 'The Identity Crisis - And Why It\'s a Good Sign' },
+    { id: 'execution-problem', title: 'It\'s Not a Designer\'s Problem. It\'s an Execution Problem.' },
+    { id: 'what-to-do', title: 'What to Do About All of This' },
+    { id: 'free-resource', title: 'Free Resource: India UX Salary & Hiring Data Sheet' },
+    { id: 'where-this-leaves-you', title: 'Where This Leaves You' },
+    { id: 'sources-references', title: 'Sources & References' },
+    { id: 'further-reading', title: 'Further Reading' },
+  ],
   'solved-what-you-were-asked-thats-the-problem': [
     { id: 'need-vs-problem', title: 'The Difference Between a Need and a Problem' },
     { id: 'whats-underneath', title: 'The "What\'s Underneath" Practice' },
@@ -12667,6 +12987,11 @@ const authorData: Record<string, { role: string; bio: string; image: string }> =
 
 // Blog-specific metadata for SEO
 const blogMetadata: Record<string, { title: string; description: string; keywords: string[] }> = {
+  'ux-job-market-india-sep-2026': {
+    title: 'The UX Job Market in India (Sep 2026): What\'s Actually Hiring, What\'s Shrinking, and What\'s Winning | Xperience Wave',
+    description: 'UX job postings are down 71% from the 2022 peak, yet 82% of design leaders say demand grew. The market didn\'t collapse - it restructured. India-specific salary data by city and sector, what\'s shrinking, what\'s winning, the 43% AI skill premium, and what to do at every experience level.',
+    keywords: ['UX job market India 2026', 'UX designer salary India', 'UX designer jobs India', 'UX hiring trends 2026', 'AI skills UX designer salary', 'fintech UX designer salary', 'UX researcher jobs India', 'design job market restructuring', 'UX career strategy India', 'Bangalore UX designer salary', 'senior UX designer India', 'design-to-code designer', 'UX research democratisation', 'UX designer career 2026'],
+  },
   'solved-what-you-were-asked-thats-the-problem': {
     title: 'You Solved Exactly What You Were Asked to Solve. That\'s the Problem. | Xperience Wave',
     description: 'The pattern I see most often isn\'t bad designers doing bad work - it\'s good designers doing good work on the wrong problem. How to find the real problem underneath the brief, a 4-component framework for evaluating whether a problem is worth solving, and why problem-finding is the skill that changes everything.',

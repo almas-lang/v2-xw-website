@@ -60,6 +60,13 @@ const resourceCategories = [
 
 const templates = [
   {
+    id: 'ux-salary-data',
+    title: 'India UX Salary & Hiring Data Sheet',
+    description: 'UX salary ranges by role, city & sector in India, sector hiring status, and AI skill premium data. Sep 2026 edition, updated quarterly.',
+    tag: 'Free',
+    href: '/resources/tools/ux-salary-data',
+  },
+  {
     id: 'case-study',
     title: 'UX Case Study Template',
     description: 'Build a portfolio case study in just hours. Easy to use framework with examples.',
@@ -461,7 +468,7 @@ function TemplatesSection() {
             Free UX Templates & Downloads
           </h2>
           <p className="font-body text-sm md:text-lg text-g500">
-            Practical resources to accelerate your UX design career — coming soon
+            Practical resources to accelerate your UX design career
           </p>
         </div>
 
@@ -477,8 +484,8 @@ function TemplatesSection() {
                 transition: `all 0.6s cubic-bezier(0.4, 0, 0.2, 1) ${0.2 + index * 0.1}s`,
               }}
             >
-              <span className="inline-block px-3 py-1 text-xs font-bold text-white bg-g400 rounded-full mb-3 md:mb-4">
-                Coming Soon
+              <span className={`inline-block px-3 py-1 text-xs font-bold text-white rounded-full mb-3 md:mb-4 ${template.href !== '#' ? 'bg-accent' : 'bg-g400'}`}>
+                {template.href !== '#' ? 'Free' : 'Coming Soon'}
               </span>
               <h3 className="font-heading text-lg md:text-xl font-bold text-carbon mb-2 md:mb-3">
                 {template.title}
@@ -486,12 +493,24 @@ function TemplatesSection() {
               <p className="font-body text-sm md:text-base text-g500 mb-5 md:mb-6 leading-relaxed">
                 {template.description}
               </p>
-              <span className="inline-flex items-center justify-center gap-2 w-full md:w-auto px-6 py-3 bg-g200 text-g500 font-heading font-semibold rounded-lg cursor-not-allowed min-h-[48px]">
-                Coming Soon
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </span>
+              {template.href !== '#' ? (
+                <Link
+                  href={template.href}
+                  className="inline-flex items-center justify-center gap-2 w-full md:w-auto px-6 py-3 bg-accent hover:bg-accent/90 text-white font-heading font-semibold rounded-lg transition-colors min-h-[48px]"
+                >
+                  Download Free
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </Link>
+              ) : (
+                <span className="inline-flex items-center justify-center gap-2 w-full md:w-auto px-6 py-3 bg-g200 text-g500 font-heading font-semibold rounded-lg cursor-not-allowed min-h-[48px]">
+                  Coming Soon
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </span>
+              )}
             </div>
           ))}
         </div>

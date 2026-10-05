@@ -9,6 +9,14 @@ const SHEETS_WEBHOOK_SECRET = process.env.SHEETS_WEBHOOK_SECRET;
  */
 export async function appendToSheet(tab: string, row: Record<string, string>) {
   if (!SHEETS_WEBHOOK_URL || !SHEETS_WEBHOOK_SECRET) return;
+  // A leading apostrophe makes Sheets store the value as literal text.
+  // Without it, values starting with + = - @ (e.g. "+91 98765...") are
+  // parsed as formulas and render as #ERROR!.
+  for (const key of Object.keys(row)) {
+    if (/^[=+\-@]/.test(row[key])) {
+      row[key] = `'${row[key]}`;
+    }
+  }
   try {
     const response = await fetch(SHEETS_WEBHOOK_URL, {
       method: 'POST',

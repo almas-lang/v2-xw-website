@@ -703,9 +703,12 @@ export const blogPosts: BlogPost[] = [
 ];
 
 // A post is live once its publishedAt time has passed, unless the manual
-// `upcoming` draft flag is set.
+// `upcoming` draft flag is set. In local dev the date check is skipped so
+// scheduled posts can be previewed before their publish date.
 export const isPostPublished = (post: BlogPost): boolean => {
-  return !post.upcoming && new Date(post.publishedAt).getTime() <= Date.now();
+  if (post.upcoming) return false;
+  if (process.env.NODE_ENV === 'development') return true;
+  return new Date(post.publishedAt).getTime() <= Date.now();
 };
 
 // Get published posts

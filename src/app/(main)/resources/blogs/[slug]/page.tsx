@@ -13,9 +13,437 @@ import { FreeTrainingCTA } from '@/components/blog/FreeTrainingCTA';
 import OrgMaturityScorecardGate from '@/components/blog/OrgMaturityScorecardGate';
 import SalaryDataSheetGate from '@/components/blog/SalaryDataSheetGate';
 import WorkshopCheatsheetGate from '@/components/blog/WorkshopCheatsheetGate';
+import AgenticUxPrinciplesGate from '@/components/blog/AgenticUxPrinciplesGate';
 
 // Blog content with internal links for SEO
 const blogContent: Record<string, React.ReactNode> = {
+  'agentic-ux-designers-guide': (
+    <>
+      <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
+        A product I reviewed recently described itself as &quot;agentic AI.&quot; The feature: Gmail integration that cleans up your draft and sends it at a scheduled time. A grammar check and a cron job. Sold as an &quot;AI agent&quot; in a webinar with 300 attendees.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The word &quot;agent&quot; is getting attached to anything that involves AI doing something automatically now. Scheduled email gets called an agent. Auto-generated summary gets called an agent. Chatbot with slightly better memory, also an agent apparently.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Designers are being pulled into these projects and asked to &quot;design the agentic experience&quot; without anyone in the room agreeing on what agentic actually means. The UX challenges of a real agentic system are different from traditional product design in ways that matter. Treating them the same way you treat a standard interface will produce something that either fails dangerously or fails quietly, and the quiet kind might be worse.
+      </p>
+
+      <h2 id="what-an-agent-is" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What an Agent Actually Is
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If you need a Dubai visa, you go to a travel agent. That agent talks to you, gathers your information, understands your requirements. Then they talk to the Dubai travel ministry on the other side, figure out the process, handle the paperwork, deal with the edge cases. They sit between you and a complex system, using their knowledge and judgment to get the job done. They know the timelines, the costs, the common problems.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        They don&apos;t relay messages between you and the ministry. They make decisions, take actions, and handle situations you couldn&apos;t handle yourself.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        An AI agent is supposed to do the same thing. A system that understands your goal, plans a sequence of steps to achieve it, uses multiple tools and data sources, makes decisions along the way, handles unexpected situations, and delivers an outcome. Not an output like a screen or a report. An outcome like a completed process, a resolved issue, an achieved goal.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Bandi et al. (2025) defined it as &quot;autonomous, goal-directed software systems capable of planning multi-step actions, perceiving their operational context, making decisions, and interacting with human counterparts in natural language&quot; [1].
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Five characteristics define a real agent: autonomy, goal-directedness, multi-step planning, context awareness, and decision-making. If the system you&apos;re working on doesn&apos;t have all five, it might be automated, it might be AI-assisted, but it isn&apos;t agentic.
+      </p>
+
+      <h2 id="automation-vs-agentic" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        How Automation and Agentic Systems Differ
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Before AI got this dominant, we had automation tools. Zapier. Pabbly. IFTTT. You could set up a workflow: when a new lead comes in, add them to the CRM, send a welcome email, wait three days, send a follow-up. If they reply, stop the sequence.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        That worked. Still works. But notice what it requires. YOU define every step. YOU write every email in advance. YOU set every condition. The automation executes your predefined plan. The best it does is swap in the person&apos;s first name. Same input, same output, every time. Deterministic.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Now imagine an agentic system for the same process. Five agents working together on lead management. One scrapes online sources continuously to identify potential customers. Another builds rich profiles of these prospects in your CRM, pulling data from LinkedIn, company websites, news mentions. A third generates personalised communication sequences specific to each prospect&apos;s industry, role, recent activity, and likely pain points. A fourth monitors analytics, tracks opens, clicks, replies, flags patterns. The fifth crafts follow-ups specific to each prospect&apos;s engagement behaviour.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        These agents communicate with each other. They sequence their actions based on what the other agents learned. They generate content dynamically instead of picking from templates. They make decisions about timing, messaging, and escalation based on context that changes with every interaction.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Automation follows your plan. Agents create their own plan to achieve your goal. That distinction determines how the entire experience around them needs to be designed.
+      </p>
+
+      <h2 id="why-conventional-ux-falls-short" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Why Conventional UX Practice Falls Short Here
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        A common reaction from designers when agentic projects show up: &quot;UX is UX. The principles are the same. We&apos;re just applying them to a different kind of system.&quot; At a foundational level, there&apos;s truth in that. Users still need clarity, control, feedback, and trust. Nielsen&apos;s heuristics still apply.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        But a 2026 arxiv paper from Bandi et al. states directly: &quot;Conventional UX practice was developed for non-agentic systems producing predictable, human-controlled outcomes, and proves insufficient to account for the complexity of UX introduced by autonomous, adaptive AI agents&quot; [1].
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Three things create genuinely new design challenges.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong className="text-carbon">The system takes actions you didn&apos;t explicitly approve.</strong> In a traditional interface, the user starts every action. Click a button, something happens. In an agentic system, the agent acts on its own judgment. The user&apos;s relationship with the system shifts from operating it to supervising it. The UX has to support that different relationship.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong className="text-carbon">The system changes its behaviour over time.</strong> Agentic systems learn from usage. The agent you tested last month may respond differently next month cos it adapted to patterns. A UX Raspberry piece on Medium puts it well: &quot;Without explicit design, the loop can drift&quot; [2]. Traditional UX assumes a stable system. Agentic UX has to account for a system that evolves.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        <strong className="text-carbon">The system works with other systems.</strong> Multi-agent architectures mean several AI systems coordinating, each with its own scope, each making decisions that affect the others. The user needs to see which agent did what, why, and how to intervene at any point in the chain. That visibility and control challenge doesn&apos;t exist in single-system UX.
+      </p>
+
+      <h2 id="three-levels" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Three Levels of Human Involvement
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Most people think about this as binary, either human-in-the-loop or human-out-of-the-loop. The industry actually uses three levels, and each one requires different UX patterns.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong className="text-carbon">Human-in-the-loop.</strong> The agent handles routine work but stops and asks before every significant decision. Like a junior team member who checks with you before acting on anything important. Every action is previewed, approved, then executed.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        From a UX standpoint, you need approval interfaces that are fast, clear, and low-friction. If the agent asks for permission fifty times a day, the user starts approving without reading. That defeats the purpose. The design question is how to make approval meaningful without making it exhausting.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong className="text-carbon">Human-on-the-loop.</strong> The agent operates continuously. The human monitors through dashboards and can step in when needed, but doesn&apos;t approve every action. Like a factory supervisor watching a production line.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The UX challenge here is building oversight dashboards that surface the right information at the right time. Not every action the agent takes. The exceptions, the anomalies, the low-confidence decisions. Smashing Magazine&apos;s 2026 guide describes this as &quot;ambient agents that notify only when critical&quot; [3].
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong className="text-carbon">Human-out-of-the-loop.</strong> Fully autonomous. The agent makes decisions and executes without human oversight. Like a self-driving car with no steering wheel.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This level is both the most dangerous and the most contested. Mitchell et al. (2025) argued that &quot;fully autonomous AI agents should not be developed&quot; [4]. The EU AI Act mandates human oversight for high-risk systems. Capgemini&apos;s 2025 research found that trust in fully autonomous AI agents dropped from 43% to 27% in twelve months once organisations gained real experience with them [5].
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        As a designer, your job isn&apos;t only to design the interface. You need to help the organisation determine which level of autonomy fits each task, each context, each risk level. That&apos;s a design decision that comes before any interface decision.
+      </p>
+
+      <h2 id="trust-problem" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Trust Problem
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The International AI Safety Report 2026 documented a persistent phenomenon: automation bias. Users follow incorrect advice from automated systems cos they perceive the system as better than their own judgment [6]. This pattern has been documented in aviation, medical diagnostics, and industrial monitoring for decades. Agentic AI amplifies it cos agents are more fluent, more confident-sounding, and more capable than previous automated systems.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Two failure modes show up consistently.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong className="text-carbon">Overtrust.</strong> Users rely on the agent beyond its actual capability. The agent sounds confident, it&apos;s been right before, so the user stops verifying. CHI 2025 research found that &quot;reducing cognitive effort too aggressively may increase overreliance on AI systems&quot; [7]. There&apos;s a real paradox here: the easier you make the agent to use, the less critically the user evaluates its output. A smoother experience can produce worse outcomes.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong className="text-carbon">Undertrust.</strong> Users reject useful automation despite the agent performing reliably. They don&apos;t delegate. They manually check everything. The agent&apos;s value drops to near zero cos the human does all the work anyway.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The goal is calibrated trust, trust that matches the agent&apos;s actual reliability. You achieve that through confidence signals that communicate certainty, reasoning transparency that shows the agent&apos;s logic, performance track records that build evidence over time, and controlled exposure that lets trust develop incrementally.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        There&apos;s a third failure mode the research calls &quot;supervisory collapse&quot; [7]. Automation pushes humans away from the work, which reduces their situation awareness and skill. The agent handles 95% of cases. The 5% that need human intervention are the hardest ones. And the human&apos;s ability to handle them has weakened cos the agent handled everything routine.
+      </p>
+
+      <h2 id="real-examples" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Real Examples With Numbers
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong className="text-carbon">Klarna</strong> built a customer service agent that handles the equivalent workload of 853 full-time employees, resolving issues in under 2 minutes across 35 languages. $60M saved per year. Standard cases resolved by the agent, complex ones escalated to humans [8].
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong className="text-carbon">JPMorgan</strong> runs 450+ production AI agents simultaneously every day across trading, risk, operations, and compliance [8].
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong className="text-carbon">Walmart&apos;s</strong> supply chain agent processes sales data from ~4,700 stores and makes autonomous reordering decisions without per-decision human approval. Routine reordering runs fully autonomous. New suppliers and strategy changes require human sign-off [9].
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong className="text-carbon">Toyota E-Care</strong> connects to a car&apos;s onboard electronics, contacts customers about servicing needs, and guides them through booking. The agent initiates contact based on vehicle data, not customer requests [10].
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong className="text-carbon">Danfoss</strong> deployed agents in industrial manufacturing to automate email-based order processing. Customer response time dropped from 42 hours to near real-time [10].
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Gartner projects that 40% of enterprise applications will include task-specific agents by end of 2026. That number was under 5% in 2025 [11].
+      </p>
+
+      <h2 id="what-changes-in-practice" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What Changes in Your Design Practice
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If an agentic AI project lands on your desk, some of your normal process applies and some of it breaks.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong className="text-carbon">You&apos;re designing for outcomes instead of interactions.</strong> Traditional UX: user clicks button, system responds. Agentic UX: user states a goal, system plans and executes a series of actions. The interface communicates what the agent is doing, why, how confident it is, and where the human can step in. Not interaction-by-interaction design. Supervision design.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong className="text-carbon">Agent-to-human handoff becomes a core design problem.</strong> When the agent reaches its limits, the transition to a human has to preserve full context. The human receiving the handoff can&apos;t be expected to re-investigate what the agent already processed. This is handoff design at a different scale from what we covered in <Link href="/resources/blogs/slicing-psds-to-shipping-code-design-handoffs-evolved" className="text-accent hover:underline font-medium">the design handoff evolution blog</Link>.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong className="text-carbon">Non-deterministic behaviour needs to be framed as adaptation.</strong> Same input might produce different outputs depending on the agent&apos;s context, confidence, and learning history. Users will encounter inconsistency. The UX has to communicate why the agent made a different decision this time instead of leaving the user confused.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong className="text-carbon">Failure messages need substance.</strong> &quot;Something went wrong&quot; doesn&apos;t work for a system that was operating on the user&apos;s behalf without supervision. The failure message has to say what the agent was trying to do, where it stopped, what it completed before the failure, and what the user needs to do next. Failure design is one of the <Link href="/resources/blogs/ai-will-change-everything-except-what-matters" className="text-accent hover:underline font-medium">core UX skills AI can&apos;t replace</Link>.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        <strong className="text-carbon">Autonomy level selection has to be a first-class control.</strong> Not a settings page buried three menus deep. A visible, adjustable control that moves from &quot;check with me before everything&quot; to &quot;handle it, show me a summary.&quot; Smashing Magazine calls this &quot;the autonomy dial&quot; [3]. The user adjusts it per task, per context, per risk level.
+      </p>
+
+      <h2 id="automation-boundary" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Automation Boundary Is a Design Decision
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Once you can automate more things than before, the temptation is to automate all of them.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Can you set up an agent to calculate payroll by reading timesheet data and transferring money automatically? Technically, probably. Should you? Not without a human reviewing every pay run. Edge cases, exceptions, adjustments, legal requirements, and context-dependent decisions make full autonomy unreliable for something this consequential.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The designer&apos;s job on an agentic project is to draw the line between what benefits from autonomy and what requires human judgment. Which tasks can the agent handle alone? Which ones need a human check? Where does the agent stop and ask? Where does it proceed? These are UX decisions, and they carry more weight than any interaction pattern you&apos;ll design on the project.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Getting the automation boundary wrong in a traditional interface means a button misbehaves. Getting it wrong in an agentic system means the agent does something irreversible with the user&apos;s money, data, or relationships.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        We&apos;re building the capability to design for these systems at <Link href="/" className="text-accent hover:underline font-medium">Xperience Wave</Link>. The <Link href="/resources/blogs/ai-will-change-everything-except-what-matters" className="text-accent hover:underline font-medium">core design skills</Link> we&apos;ve always focused on, judgment, stakeholder influence, ethical reasoning, systems thinking, apply here more than anywhere else in design right now. <a href="https://app.xperiencewave.com/book/dc-strategy-call" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Book a strategy call</a> if you want to talk about where agentic design fits in your career.
+      </p>
+
+      <h2 id="free-resource" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Free Resource: The 10 Principles of Agentic UX
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        A one-page reference covering all 10 principles with the specific design pattern for each: transparency of reasoning, confidence signaling, the autonomy dial, intent preview, interruptibility, action audit trails, handoff design, multi-agent visibility, adaptation visibility, and graceful degradation. Plus the three human involvement levels (in/on/out-of-loop) with when to use each.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Print it. Pin it to your desk. Pull it up before your next agentic design review.
+      </p>
+      <AgenticUxPrinciplesGate />
+
+      <h2 id="sources-references" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Sources &amp; References
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li>[1] Bandi et al. / arxiv. (2026). &quot;Human-AI Agent Interaction in a Business Context.&quot; Mixed-methods study developing UX principles for human-AI agent interactions. <a href="https://arxiv.org/pdf/2606.18716" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">arxiv.org</a></li>
+        <li>[2] UX Raspberry / Medium. (2026). &quot;The Agentic Interface: Principles and Patterns for Autonomous User Experiences.&quot; <a href="https://medium.com/@uxraspberry/the-agentic-interface-principles-and-patterns-for-autonomous-user-experiences-b0c1ecb8544f" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">medium.com</a></li>
+        <li>[3] Smashing Magazine. (2026). &quot;Designing For Agentic AI: Practical UX Patterns For Control, Consent, And Accountability.&quot; <a href="https://www.smashingmagazine.com/2026/02/designing-agentic-ai-practical-ux-patterns/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">smashingmagazine.com</a></li>
+        <li>[4] Mitchell, M. et al. (2025). &quot;Fully Autonomous AI Agents Should Not Be Developed.&quot; arxiv. <a href="https://arxiv.org/abs/2502.02649" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">arxiv.org</a></li>
+        <li>[5] Capgemini Research Institute. (2025). &quot;Rise of Agentic AI: How Trust Is the Key to Human-AI Collaboration.&quot; Trust in fully autonomous agents dropped from 43% to 27% in 12 months. <a href="https://www.capgemini.com/wp-content/uploads/2025/07/Final-Web-Version-Report-AI-Agents.pdf" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">capgemini.com</a></li>
+        <li>[6] International AI Safety Report. (2026). &quot;Automation Bias Persists With New AI Tools.&quot; <a href="https://arxiv.org/pdf/2602.21012" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">arxiv.org</a></li>
+        <li>[7] Designative. (2026). &quot;Trust Calibration in Agentic AI: Designing for Appropriate Reliance, Not Blind Trust.&quot; Referencing Bu&ccedil;inca et al. (CHI 2021), Parasuraman &amp; Riley (1997), Bainbridge (1983). <a href="https://www.designative.info/2026/05/21/trust-calibration-in-agentic-ai-designing-for-appropriate-reliance-not-blind-trust/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">designative.info</a></li>
+        <li>[8] Prabhakar, R. (2026). &quot;10 Real-World Agentic AI Examples That Are Actually Generating Revenue in 2026.&quot; <a href="https://www.rohitprabhakar.com/blog/agentic-ai-examples/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">rohitprabhakar.com</a></li>
+        <li>[9] LiqTeq. (2026). &quot;15 Real-World AI Agent Use Cases Across Industries.&quot; <a href="https://liqteq.com/blog/ai-agent-use-cases/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">liqteq.com</a></li>
+        <li>[10] AIMultiple. (2026). &quot;40+ Agentic AI Use Cases with Real-life Examples.&quot; <a href="https://aimultiple.com/agentic-ai" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">aimultiple.com</a></li>
+        <li>[11] AlphaBold / Gartner. (2026). &quot;Top Agentic AI Use Cases That Actually Pay Back in 2026.&quot; Gartner expects 40% of enterprise apps to include agents by end of 2026. <a href="https://www.alphabold.com/top-agentic-ai-use-cases/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">alphabold.com</a></li>
+        <li>[12] AufaitUX. (2026). &quot;Agentic AI Design Patterns: Enterprise Guide.&quot; 10 recurring patterns including Planning, Reflection, Tool Integration, Multi-Agent Collaboration, Trust Calibration. <a href="https://www.aufaitux.com/blog/agentic-ai-design-patterns-enterprise-guide/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">aufaitux.com</a></li>
+      </ul>
+
+      <h2 id="further-reading" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Further Reading on Xperience Wave
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li><Link href="/resources/blogs/ai-will-change-everything-except-what-matters" className="text-accent hover:underline font-medium">AI Will Change Everything About Design. Except the Part That Actually Matters.</Link></li>
+        <li><Link href="/resources/blogs/5-things-senior-designers-ai" className="text-accent hover:underline font-medium">5 Things Senior Designers Should Be Doing With AI - None of Them Involve Figma Plugins</Link></li>
+        <li><Link href="/resources/blogs/slicing-psds-to-shipping-code-design-handoffs-evolved" className="text-accent hover:underline font-medium">From Slicing PSDs to Shipping Front-End Code: How Design Handoffs Evolved - And What Must Never Change</Link></li>
+        <li><Link href="/resources/blogs/personal-ai-workflow-designer" className="text-accent hover:underline font-medium">How to Build Your Personal AI Workflow as a Designer (Without Losing What Makes You Good)</Link></li>
+      </ul>
+
+      <h2 id="about-author" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        About the Author
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Shaik Murad is Co-founder and Head of Product &amp; Design at <Link href="/" className="text-accent hover:underline font-medium">Xperience Wave</Link>, a UX design studio based in Bangalore, working across designer mentorship, UX services for businesses, and a design community of 1,000+ designers.
+      </p>
+
+      <p className="text-base md:text-lg text-g500 italic mt-6">
+        - Murad, Co-founder &amp; Head of Product &amp; Design, Xperience Wave
+      </p>
+    </>
+  ),
+  'evaluative-vs-exploratory-designer': (
+    <>
+      <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
+        Two designers on the same team, working on the same project with the same deadline.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The first one moves fast. She genuinely believes that the best path to quality runs through the market. Ship something, put it in front of real users, watch what breaks, fix it, ship again. Every cycle gets closer to right. She&apos;s experimenting, not guessing. Quality comes from iteration, not from getting it right on the first attempt.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The second one goes deep before anything gets built. He conducts research upfront, spends time understanding the users, the context, the constraints. Maps the problem thoroughly before proposing a solution. When he finally ships, there are fewer surprises and fewer rework cycles. The first version is closer to right cos he invested the time to understand before designing.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Both get to quality. Both care about the user. Both are right about their approach, given the right context. And both are deeply frustrated with each other.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        She thinks he&apos;s overthinking. &quot;We could have shipped three times by now and already know what works.&quot; He thinks she&apos;s skipping steps. &quot;You&apos;re going to rework everything once we actually talk to users properly.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        If you&apos;ve been on a design team with more than two people, you&apos;ve watched this happen. Maybe you&apos;ve been one of them. Maybe you&apos;ve been the manager trying to figure out how to keep both of them productive without one of them quitting.
+      </p>
+
+      <h2 id="two-philosophies" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Two Philosophies of Quality, Not Two Speeds
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This gets mislabelled constantly. &quot;She&apos;s fast, he&apos;s slow.&quot; People frame it as a speed problem when it&apos;s really a question of how quality gets achieved.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong className="text-carbon">The evaluative path.</strong> Quality comes through cycles of delivery and learning. Ship, measure, adjust. The product gets better with each iteration. Each individual release carries low risk cos it&apos;s designed to be tested, not to be permanent. The underlying belief: the market knows things your research can&apos;t tell you, so get in front of users faster and let reality correct your assumptions.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong className="text-carbon">The exploratory path.</strong> Quality comes through depth of understanding before delivery. Research first, synthesise, design, then ship. The product arrives closer to right on the first try cos the upfront investment in understanding reduces the distance between assumption and reality. The underlying belief: if you understand deeply enough, you need fewer cycles, and each skipped cycle saves time, money, and user trust.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Both paths lead to quality. Both consume time. The evaluative designer spends time after shipping, in iteration cycles. The exploratory designer spends time before shipping, in research and synthesis. The total elapsed time is often remarkably similar. How it feels to the team is completely different.
+      </p>
+
+      <h2 id="why-designers-default" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Why Designers Default to One Path
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Whether this is a personality trait or a flexible skill is a fair question. The honest answer is both, and that&apos;s what makes it complicated.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Most designers develop a default based on their work history. Three years at a fast-moving startup where shipping weekly was survival, and your instincts learn to favour the evaluative path. You&apos;ve seen it work. You&apos;ve been rewarded for it. Your habits were shaped by an environment that valued speed-to-market over upfront research.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Three years at a healthcare company or a financial institution where shipping something untested could cause real damage, and your default becomes exploratory. You&apos;ve seen the consequences of skipping depth. You&apos;ve been rewarded for thoroughness. Your instincts were shaped by an environment where a single mistake could cost lives, regulatory penalties, or irreversible trust damage.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Over time these defaults harden into working patterns that feel like identity. The evaluative designer genuinely believes that speed-to-learning IS quality. The exploratory designer genuinely believes that depth-of-understanding IS quality. Challenging either person&apos;s approach feels like challenging their professional identity, not their approach to this sprint.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        The friction between them runs deeper than process disagreement. It&apos;s a collision of values about what good work even means.
+      </p>
+
+      <h2 id="where-each-fails" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Where Each Path Fails
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong className="text-carbon">The evaluative path breaks</strong> when you ship fast, iterate fast, learn fast, and somewhere around the fourth cycle realise you&apos;ve been optimising in the wrong direction. The iterations improved the solution incrementally but the problem was wrong from the start. A beautifully refined answer to the wrong question. We covered this trap in <Link href="/resources/blogs/solved-what-you-were-asked-thats-the-problem" className="text-accent hover:underline font-medium">You Solved Exactly What You Were Asked to Solve</Link>. Speed to market doesn&apos;t help when the market didn&apos;t need what you shipped.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The evaluative path also breaks when the stakes are high. Industrial automation. Medical devices. Financial transactions. An &quot;iterate and learn&quot; approach to a factory control interface means learning from failures that cost equipment, money, or safety. Some contexts don&apos;t give you three cycles to get it right.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong className="text-carbon">The exploratory path breaks</strong> when you research deeply, understand thoroughly, design carefully, and by the time you ship, the market has moved. The competitor who shipped a rough version three months ago has already iterated twice and captured the users you were studying. Your first version might be better than their third. But they have three months of market data, user behaviour, and brand presence that you don&apos;t.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        The exploratory path also breaks when the problem space is genuinely unknowable upfront. Some problems only reveal themselves through interaction. No amount of research tells you how users will behave with a product category that doesn&apos;t exist yet. In those contexts, building something and putting it in front of people is the only way to learn.
+      </p>
+
+      <h2 id="ai-widening-gap" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        How AI Is Widening the Gap
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This tension existed long before AI. AI is making it sharper.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        AI tools make the evaluative path dramatically faster. A designer using Claude Design, Cursor, or Figma AI can generate, test, and iterate on solutions at a pace that would&apos;ve been impossible two years ago. The evaluative designer who used to ship weekly can now ship daily. Cycle time compresses, experiment volume increases, the surface area of learning expands.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        AI doesn&apos;t accelerate the exploratory path the same way. Genuine user empathy doesn&apos;t compress. Stakeholder alignment doesn&apos;t compress. The judgment required to define the right problem, choose the right research method, and synthesise findings into direction still takes time regardless of what tools you have. We explored this in <Link href="/resources/blogs/ai-will-change-everything-except-what-matters" className="text-accent hover:underline font-medium">AI Will Change Everything About Design. Except the Part That Actually Matters.</Link>
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        What&apos;s happening on teams right now: the evaluative designer is getting visibly faster while the exploratory designer appears to be getting relatively slower. Managers who measure output see one designer producing three iterations while the other is &quot;still researching.&quot; The optics favour the evaluative path even in contexts where the exploratory path would produce a better outcome.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        This creates a selection pressure that&apos;s bad for design quality. Organisations start hiring for speed, rewarding iteration volume, praising the designer who shipped twelve experiments this quarter, and quietly marginalising the designer who shipped two deeply researched, strategically grounded solutions that required zero rework.
+      </p>
+
+      <h2 id="what-good-teams-do" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What Good Teams Actually Do
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Building a team where both modes are valued and the culture supports switching between them takes deliberate effort.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong className="text-carbon">Match the mode to the stage.</strong> Early discovery should be exploratory. You&apos;re trying to understand the problem space, and going wide and fast here means building on assumptions that might be wrong. Late-stage iteration should be evaluative, cos the direction is set, the solution is roughed out, and now you need market feedback to refine. The stage of the project determines the mode, not the designer&apos;s default preference.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong className="text-carbon">Match the mode to the risk.</strong> High-stakes decisions (irreversible, expensive, safety-critical) demand exploratory depth. Low-stakes decisions (reversible, cheap, low-consequence) benefit from evaluative speed. A good team can identify which decisions need depth and which need speed, and adjust accordingly.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong className="text-carbon">Make the switch explicit.</strong> When the team moves from discovery to delivery, say it out loud. &quot;Discovery was exploratory. Now we&apos;re in evaluative mode for the next two sprints.&quot; When a high-risk decision emerges during a fast-moving sprint, name it. &quot;This decision affects payment processing. We&apos;re going exploratory on this one. Research before we build.&quot; Making the switch explicit prevents the tension that comes from two people operating in different modes without realising it.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong className="text-carbon">Respect the other path.</strong> The evaluative designer needs to understand that the exploratory designer&apos;s upfront research saves rework cycles later. The research was an investment that compounds. The exploratory designer needs to understand that the evaluative designer&apos;s rapid iterations generate market intelligence that no amount of upfront research can replicate. The shipping was learning, not recklessness.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        The team that combines both modes deliberately, per stage and per decision, outperforms teams locked into one.
+      </p>
+
+      <h2 id="developing-weaker-mode" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Developing the Mode You&apos;re Weaker In
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If you know which mode you default to, the question is whether you can operate in the other one when the situation calls for it.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong className="text-carbon">If you default to evaluative (ship and learn):</strong> Your blind spot is problem definition. You might iterate your way to a polished solution that doesn&apos;t address the right problem. Developing your exploratory mode means: before you open any design tool, write down the problem you&apos;re solving in one sentence. If you can&apos;t, you&apos;re not ready to ship. Spend one day on research per week, even when the deadline says you can&apos;t afford it. That one day often prevents a week of rework.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong className="text-carbon">If you default to exploratory (research and build):</strong> Your blind spot is market feedback. You might understand the problem perfectly but never learn how users actually behave with your solution until it&apos;s too late to adjust. Developing your evaluative mode means: set a deadline for when research ends and building begins, even if you feel like you don&apos;t know enough yet. Ship something at 70% confidence rather than waiting for 95%. That last 25% of confidence is disproportionately expensive and frequently changes after users touch it anyway.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        The senior-level skill is reading the project, the stage, and the risk, then switching modes deliberately based on what the situation requires. That&apos;s a clearer marker of the senior-to-lead transition than any single craft skill. We&apos;ve written about what each level of the UX career looks like in India in the <Link href="/resources/blogs/ux-career-ladder-levels-india" className="text-accent hover:underline font-medium">career ladder breakdown</Link>.
+      </p>
+
+      <h2 id="take-assessment" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Take the Assessment: Which Designer Are You?
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        We built a self-assessment with ten scenarios. For each one, pick the response closest to your instinct, not what you think the &quot;right&quot; answer is.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Your result shows which mode you default to, what your blind spots might be, and where to start developing the other mode.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <Link href="/resources/tools/designer-mode-assessment" className="inline-flex items-center gap-2 px-6 py-3.5 bg-accent hover:bg-accent/90 text-white font-semibold rounded-xl transition-colors no-underline">
+          Take the Evaluative vs Exploratory Designer Assessment
+          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          </svg>
+        </Link>
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Drop your result in the comments. We&apos;re curious whether the XW community leans evaluative or exploratory. If your team has both types, we want to hear how that&apos;s going.
+      </p>
+
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The frustration between these two approaches is a collision between two legitimate philosophies of how quality gets built. Both work in the right context. Both fail in the wrong one.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Good teams don&apos;t eliminate the tension. They use it. The exploratory designer pulls the team toward depth when the stakes are high. The evaluative designer pushes toward speed when the market demands it. The switching is deliberate, explicit, and respected.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        If you&apos;re a design manager building this kind of team, or a designer trying to develop the mode you&apos;re weaker in, that&apos;s the kind of growth we work on at <Link href="/" className="text-accent hover:underline font-medium">Xperience Wave</Link>. <a href="https://app.xperiencewave.com/book/dc-strategy-call" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Book a strategy call</a>.
+      </p>
+
+      <h2 id="sources-references" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Sources &amp; References
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li>[1] Moka, D. (2023). &quot;No Trade-off Between Quality and Speed.&quot; Referencing DORA research. <a href="https://craftbettersoftware.com/p/no-trade-off" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">craftbettersoftware.com</a></li>
+        <li>[2] Nabe, A. (2026). &quot;In 2026, Speed and Quality Are No Longer Tradeoffs in Software.&quot; <a href="https://medium.com/@abunabe/in-2026-speed-and-quality-are-no-longer-tradeoffs-in-software-911fc7ad1e03" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">medium.com</a></li>
+        <li>[3] DartAI. (2025). &quot;How to Balance Speed vs Quality in Projects.&quot; Industry playbooks by sector. <a href="https://www.dartai.com/blog/how-to-balance-speed-vs-quality-in-projects" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">dartai.com</a></li>
+      </ul>
+
+      <h2 id="further-reading" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Further Reading on Xperience Wave
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li><Link href="/resources/blogs/solved-what-you-were-asked-thats-the-problem" className="text-accent hover:underline font-medium">You Solved Exactly What You Were Asked to Solve. That&apos;s the Problem.</Link></li>
+        <li><Link href="/resources/blogs/ai-will-change-everything-except-what-matters" className="text-accent hover:underline font-medium">AI Will Change Everything About Design. Except the Part That Actually Matters.</Link></li>
+        <li><Link href="/resources/blogs/ux-career-ladder-levels-india" className="text-accent hover:underline font-medium">Junior to CXO: What Each Level of the UX Career Ladder Actually Demands in India</Link></li>
+        <li><Link href="/resources/blogs/design-leadership-in-turmoil" className="text-accent hover:underline font-medium">Design Leadership Is in Turmoil. And No One&apos;s Talking About It.</Link></li>
+      </ul>
+
+      <h2 id="about-author" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        About the Author
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Shaik Murad is Co-founder and Head of Product &amp; Design at <Link href="/" className="text-accent hover:underline font-medium">Xperience Wave</Link>, a UX design studio based in Bangalore, working across designer mentorship, UX services for businesses, and a design community of 1,000+ designers.
+      </p>
+
+      <p className="text-base md:text-lg text-g500 italic mt-6">
+        - Murad, Co-founder &amp; Head of Product &amp; Design, Xperience Wave
+      </p>
+    </>
+  ),
   'facilitate-workshop-everyone-knows-more': (
     <>
       <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
@@ -13051,6 +13479,30 @@ const blogContent: Record<string, React.ReactNode> = {
 
 // Table of contents for each blog post
 const blogTableOfContents: Record<string, { id: string; title: string }[]> = {
+  'agentic-ux-designers-guide': [
+    { id: 'what-an-agent-is', title: 'What an Agent Actually Is' },
+    { id: 'automation-vs-agentic', title: 'How Automation and Agentic Systems Differ' },
+    { id: 'why-conventional-ux-falls-short', title: 'Why Conventional UX Practice Falls Short Here' },
+    { id: 'three-levels', title: 'Three Levels of Human Involvement' },
+    { id: 'trust-problem', title: 'The Trust Problem' },
+    { id: 'real-examples', title: 'Real Examples With Numbers' },
+    { id: 'what-changes-in-practice', title: 'What Changes in Your Design Practice' },
+    { id: 'automation-boundary', title: 'The Automation Boundary Is a Design Decision' },
+    { id: 'free-resource', title: 'Free Resource: The 10 Principles of Agentic UX' },
+    { id: 'sources-references', title: 'Sources & References' },
+    { id: 'further-reading', title: 'Further Reading' },
+  ],
+  'evaluative-vs-exploratory-designer': [
+    { id: 'two-philosophies', title: 'Two Philosophies of Quality, Not Two Speeds' },
+    { id: 'why-designers-default', title: 'Why Designers Default to One Path' },
+    { id: 'where-each-fails', title: 'Where Each Path Fails' },
+    { id: 'ai-widening-gap', title: 'How AI Is Widening the Gap' },
+    { id: 'what-good-teams-do', title: 'What Good Teams Actually Do' },
+    { id: 'developing-weaker-mode', title: 'Developing the Mode You\'re Weaker In' },
+    { id: 'take-assessment', title: 'Take the Assessment: Which Designer Are You?' },
+    { id: 'sources-references', title: 'Sources & References' },
+    { id: 'further-reading', title: 'Further Reading' },
+  ],
   'facilitate-workshop-everyone-knows-more': [
     { id: 'the-spiral', title: 'The Spiral' },
     { id: 'why-this-happens', title: 'Why This Happens' },
@@ -13561,6 +14013,16 @@ const authorData: Record<string, { role: string; bio: string; image: string }> =
 
 // Blog-specific metadata for SEO
 const blogMetadata: Record<string, { title: string; description: string; keywords: string[] }> = {
+  'agentic-ux-designers-guide': {
+    title: 'The UX of AI Agents Is Nothing Like What You\'ve Been Designing. And That\'s the Problem. | Xperience Wave',
+    description: 'Real AI agents plan their own steps, make decisions you didn\'t approve, and change behaviour over time. What agents actually are versus what\'s mislabeled, why conventional UX falls short, the three levels of human involvement, the trust problem (overtrust, undertrust, supervisory collapse), real deployments with numbers, and what changes in your design practice.',
+    keywords: ['agentic UX', 'AI agent design', 'designing for AI agents', 'agentic AI UX patterns', 'human in the loop design', 'human on the loop', 'AI agent trust calibration', 'autonomy dial UX', 'agent handoff design', 'multi-agent UX', 'automation bias design', 'AI agent failure design', 'agentic AI examples', 'AI UX designer skills'],
+  },
+  'evaluative-vs-exploratory-designer': {
+    title: 'She Shipped Three Times While He Was Still Researching. They\'re Both Right. That\'s the Problem. | Xperience Wave',
+    description: 'One designer ships fast and iterates, the other researches deep and builds once. Two philosophies of quality, not two speeds. Why designers default to one path, where each fails, how AI is widening the gap between them, what good teams actually do, and a 10-question assessment to find out which mode you default to.',
+    keywords: ['evaluative vs exploratory designer', 'fast vs slow designer', 'design team friction', 'ship and iterate vs research first', 'designer working styles', 'design quality philosophy', 'design team dynamics', 'designer mode assessment', 'AI design speed gap', 'design manager team building', 'senior designer skills', 'when to research when to ship', 'design process debate', 'UX team collaboration'],
+  },
   'facilitate-workshop-everyone-knows-more': {
     title: 'How to Facilitate a Design Workshop When Everyone in the Room Knows More Than You | Xperience Wave',
     description: 'The developers built the system, the PM owns the roadmap, the domain expert spots your bad assumptions instantly - and you\'re supposed to run the workshop. Why designers spiral into churning screens, the director-not-expert reframe, and five practical moves for leading a room where you\'re outgunned on domain knowledge.',

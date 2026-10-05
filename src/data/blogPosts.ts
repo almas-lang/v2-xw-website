@@ -55,6 +55,28 @@ export const getCategoryLabel = (category: string): string => {
 // Sample blog posts with Unsplash images
 export const blogPosts: BlogPost[] = [
   {
+    id: '60',
+    slug: 'agentic-ux-designers-guide',
+    title: 'The UX of AI Agents Is Nothing Like What You\'ve Been Designing. And That\'s the Problem.',
+    excerpt: 'A grammar check and a cron job, sold as an "AI agent" in a webinar with 300 attendees. Real agents plan their own steps, make decisions you didn\'t approve, and change behaviour over time. What agents actually are, why conventional UX falls short, the trust problem nobody is designing for, and what changes in your practice.',
+    category: 'design-skills' as const,
+    image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80',
+    author: { name: 'Shaik Murad' },
+    publishedAt: '2026-10-15T09:00:00+05:30',
+    readTime: '14 min',
+  },
+  {
+    id: '59',
+    slug: 'evaluative-vs-exploratory-designer',
+    title: 'She Shipped Three Times While He Was Still Researching. They\'re Both Right. That\'s the Problem.',
+    excerpt: 'One designer ships fast and iterates. The other researches deep and builds once. Both get to quality, both care about users, and both are deeply frustrated with each other. Two philosophies of quality, where each fails, how AI is widening the gap, and the assessment that tells you which one you default to.',
+    category: 'design-skills' as const,
+    image: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&q=80',
+    author: { name: 'Shaik Murad' },
+    publishedAt: '2026-10-12T09:00:00+05:30',
+    readTime: '12 min',
+  },
+  {
     id: '58',
     slug: 'facilitate-workshop-everyone-knows-more',
     title: 'How to Facilitate a Design Workshop When Everyone in the Room Knows More Than You',

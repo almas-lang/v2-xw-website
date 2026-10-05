@@ -15,6 +15,8 @@ export type LeadType =
   | 'budget-prep-kit'
   | 'ux-salary-data-sheet'
   | 'workshop-facilitation-cheatsheet'
+  | 'designer-mode-assessment'
+  | 'agentic-ux-principles'
   | 'design-strategy-gpt'
   | 'research-synthesis-gpt'
   | 'microcopy-writer-gpt'
@@ -64,6 +66,20 @@ const leadConfigs: Record<LeadType, LeadConfig> = {
     notificationSubject: '📊 New Workshop Cheatsheet Download',
     notificationText: 'Someone requested the Workshop Facilitation Cheatsheet',
     leadSource: 'Workshop Facilitation Cheatsheet',
+  },
+  // Designer Mode Assessment (results shown on-screen in the tool)
+  'designer-mode-assessment': {
+    name: 'Designer Mode Assessment',
+    notificationSubject: '📊 New Designer Mode Assessment Start',
+    notificationText: 'Someone started the Designer Mode Assessment',
+    leadSource: 'Designer Mode Assessment',
+  },
+  // 10 Principles of Agentic UX reference (email-only, no redirect)
+  'agentic-ux-principles': {
+    name: 'The 10 Principles of Agentic UX',
+    notificationSubject: '📊 New Agentic UX Principles Download',
+    notificationText: 'Someone requested the 10 Principles of Agentic UX reference',
+    leadSource: 'Agentic UX Principles Reference',
   },
   // Design Team Systems Audit
   'design-team-systems-audit': {
@@ -196,7 +212,7 @@ export async function POST(request: NextRequest) {
   }
 
   try {
-    const { email, leadType } = await request.json();
+    const { email, leadType, name, experience } = await request.json();
 
     // Validate lead type
     if (!leadType || !leadConfigs[leadType as LeadType]) {
@@ -230,6 +246,8 @@ export async function POST(request: NextRequest) {
         updateEnabled: true,
         attributes: {
           LEAD_SOURCE: config.leadSource,
+          ...(typeof name === 'string' && name.trim() ? { FIRSTNAME: name.trim() } : {}),
+          ...(typeof experience === 'string' && experience ? { YEARS_EXPERIENCE: experience } : {}),
         },
       }),
     });
@@ -372,6 +390,52 @@ export async function POST(request: NextRequest) {
         });
       } catch (error) {
         console.error('Failed to send salary data sheet confirmation email:', error);
+      }
+    }
+
+    // Send confirmation email with download link for the agentic UX principles
+    if (leadType === 'agentic-ux-principles') {
+      try {
+        await fetch('https://api.brevo.com/v3/smtp/email', {
+          method: 'POST',
+          headers: {
+            'accept': 'application/json',
+            'content-type': 'application/json',
+            'api-key': BREVO_API_KEY || '',
+          },
+          body: JSON.stringify({
+            sender: { name: 'Xperience Wave', email: 'team@xperiencewave.com' },
+            to: [{ email }],
+            subject: 'Your 10 Principles of Agentic UX Reference is Ready',
+            htmlContent: `
+              <style>@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&family=Playfair+Display:wght@700&display=swap');</style>
+              <div style="font-family: 'Plus Jakarta Sans', Arial, sans-serif; max-width: 560px; margin: 0 auto; background: #ffffff; padding: 40px 32px;">
+                <div style="text-align: center;">
+                  <img src="https://www.xperiencewave.com/images/xw-logo-mobile.png" alt="Xperience Wave" style="height: 36px; margin-bottom: 32px;" />
+                  <h1 style="font-family: 'Playfair Display', Georgia, serif; color: #1A1A1A; font-size: 24px; font-weight: 700; margin: 0 0 12px;">
+                    Your Principles Reference is Ready
+                  </h1>
+                  <p style="color: #666666; font-size: 15px; line-height: 1.6; margin: 0 0 28px;">
+                    All 10 principles of agentic UX with the specific design pattern for each, plus the three human involvement levels and when to use each. Print it and pull it up before your next agentic design review.
+                  </p>
+                  <a href="https://drive.google.com/file/d/1nxUs1Cd0MbhWke4H7gE6fE2aiV4LBJ5b/view" style="display: inline-block; padding: 14px 36px; background: #FF0023; color: #ffffff; text-decoration: none; font-weight: 600; border-radius: 8px; font-size: 16px;">
+                    Open the Reference &rarr;
+                  </a>
+                </div>
+                <div style="padding-top: 28px; margin-top: 28px; border-top: 1px solid #eee;">
+                  <p style="color: #999999; font-size: 13px; line-height: 1.5; text-align: center; margin: 0 0 16px;">
+                    Working on an agentic project and want to talk through the UX approach? <a href="https://app.xperiencewave.com/book/dc-strategy-call" style="color: #FF0023; text-decoration: none;">Book a free strategy call</a>
+                  </p>
+                  <p style="color: #bbbbbb; font-size: 11px; text-align: center; margin: 0;">
+                    Xperience Wave &middot; UX Mentorship &amp; Career Development &middot; Bangalore
+                  </p>
+                </div>
+              </div>
+            `,
+          }),
+        });
+      } catch (error) {
+        console.error('Failed to send agentic UX principles confirmation email:', error);
       }
     }
 

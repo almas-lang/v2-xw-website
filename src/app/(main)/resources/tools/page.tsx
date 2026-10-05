@@ -83,6 +83,36 @@ const tools: Tool[] = [
     href: '/resources/tools/workshop-facilitation-cheatsheet',
   },
   {
+    id: 'designer-mode-assessment',
+    name: 'Designer Mode Assessment',
+    tagline: 'Evaluative or exploratory? Find out in 3 minutes',
+    description: 'Ten scenarios, no right answers. Find out whether you default to ship-and-learn or research-and-build, what your blind spots are, and how to develop the mode you\'re weaker in.',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-full h-full">
+        <path d="M3 6h18M3 12h18M3 18h18M8 6l-2 2 2 2M16 16l2 2-2 2" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+    color: 'accent',
+    leadType: 'designer-mode-assessment' as LeadType,
+    available: true,
+    href: '/resources/tools/designer-mode-assessment',
+  },
+  {
+    id: 'agentic-ux-principles',
+    name: 'The 10 Principles of Agentic UX',
+    tagline: 'Design for AI that acts on its own',
+    description: 'One printable page covering all 10 principles with the design pattern for each, plus the three human involvement levels and when to use each.',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-full h-full">
+        <path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+    color: 'accent',
+    leadType: 'agentic-ux-principles' as LeadType,
+    available: true,
+    href: '/resources/tools/agentic-ux-principles',
+  },
+  {
     id: 'research-synthesis',
     name: 'Research Synthesis GPT',
     tagline: 'From chaos to clarity',

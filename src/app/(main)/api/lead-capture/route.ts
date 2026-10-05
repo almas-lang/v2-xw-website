@@ -14,6 +14,7 @@ export type LeadType =
   | 'design-team-systems-audit'
   | 'budget-prep-kit'
   | 'ux-salary-data-sheet'
+  | 'workshop-facilitation-cheatsheet'
   | 'design-strategy-gpt'
   | 'research-synthesis-gpt'
   | 'microcopy-writer-gpt'
@@ -56,6 +57,13 @@ const leadConfigs: Record<LeadType, LeadConfig> = {
     notificationSubject: '📊 New Salary Data Sheet Download',
     notificationText: 'Someone requested the India UX Salary & Hiring Data Sheet',
     leadSource: 'India UX Salary Data Sheet',
+  },
+  // Workshop Facilitation Cheatsheet (email-only, no redirect)
+  'workshop-facilitation-cheatsheet': {
+    name: 'Workshop Facilitation Cheatsheet',
+    notificationSubject: '📊 New Workshop Cheatsheet Download',
+    notificationText: 'Someone requested the Workshop Facilitation Cheatsheet',
+    leadSource: 'Workshop Facilitation Cheatsheet',
   },
   // Design Team Systems Audit
   'design-team-systems-audit': {
@@ -364,6 +372,52 @@ export async function POST(request: NextRequest) {
         });
       } catch (error) {
         console.error('Failed to send salary data sheet confirmation email:', error);
+      }
+    }
+
+    // Send confirmation email with download link for the workshop cheatsheet
+    if (leadType === 'workshop-facilitation-cheatsheet') {
+      try {
+        await fetch('https://api.brevo.com/v3/smtp/email', {
+          method: 'POST',
+          headers: {
+            'accept': 'application/json',
+            'content-type': 'application/json',
+            'api-key': BREVO_API_KEY || '',
+          },
+          body: JSON.stringify({
+            sender: { name: 'Xperience Wave', email: 'team@xperiencewave.com' },
+            to: [{ email }],
+            subject: 'Your Workshop Facilitation Cheatsheet is Ready',
+            htmlContent: `
+              <style>@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&family=Playfair+Display:wght@700&display=swap');</style>
+              <div style="font-family: 'Plus Jakarta Sans', Arial, sans-serif; max-width: 560px; margin: 0 auto; background: #ffffff; padding: 40px 32px;">
+                <div style="text-align: center;">
+                  <img src="https://www.xperiencewave.com/images/xw-logo-mobile.png" alt="Xperience Wave" style="height: 36px; margin-bottom: 32px;" />
+                  <h1 style="font-family: 'Playfair Display', Georgia, serif; color: #1A1A1A; font-size: 24px; font-weight: 700; margin: 0 0 12px;">
+                    Your Cheatsheet is Ready
+                  </h1>
+                  <p style="color: #666666; font-size: 15px; line-height: 1.6; margin: 0 0 28px;">
+                    One page covering before, during, and after the workshop. The five moves, blocker-handling scripts, the summary template, and the three things you close with. Print it and keep it on your desk.
+                  </p>
+                  <a href="https://drive.google.com/file/d/1bvDER3xbyjh_NgLW1_2LZ94SPeLqN5Y_/view" style="display: inline-block; padding: 14px 36px; background: #FF0023; color: #ffffff; text-decoration: none; font-weight: 600; border-radius: 8px; font-size: 16px;">
+                    Open the Cheatsheet &rarr;
+                  </a>
+                </div>
+                <div style="padding-top: 28px; margin-top: 28px; border-top: 1px solid #eee;">
+                  <p style="color: #999999; font-size: 13px; line-height: 1.5; text-align: center; margin: 0 0 16px;">
+                    Want to build your facilitation and leadership skills with a mentor? <a href="https://app.xperiencewave.com/book/dc-strategy-call" style="color: #FF0023; text-decoration: none;">Book a free strategy call</a>
+                  </p>
+                  <p style="color: #bbbbbb; font-size: 11px; text-align: center; margin: 0;">
+                    Xperience Wave &middot; UX Mentorship &amp; Career Development &middot; Bangalore
+                  </p>
+                </div>
+              </div>
+            `,
+          }),
+        });
+      } catch (error) {
+        console.error('Failed to send workshop cheatsheet confirmation email:', error);
       }
     }
 

@@ -12,6 +12,7 @@ import BudgetPrepKitGate from '@/components/blog/BudgetPrepKitGate';
 import { FreeTrainingCTA } from '@/components/blog/FreeTrainingCTA';
 import OrgMaturityScorecardGate from '@/components/blog/OrgMaturityScorecardGate';
 import SalaryDataSheetGate from '@/components/blog/SalaryDataSheetGate';
+import WorkshopCheatsheetGate from '@/components/blog/WorkshopCheatsheetGate';
 
 // Blog content with internal links for SEO
 const blogContent: Record<string, React.ReactNode> = {
@@ -215,6 +216,14 @@ const blogContent: Record<string, React.ReactNode> = {
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
         If you want to develop this capability, whether as an individual designer in rooms that feel hostile to your contribution, or as a design leader building this skill in your team, that&apos;s what we work on at <Link href="/" className="text-accent hover:underline font-medium">Xperience Wave</Link>. Through <Link href="/programs" className="text-accent hover:underline font-medium">mentorship</Link> and through <Link href="/for-business" className="text-accent hover:underline font-medium">team workshops</Link>. <a href="https://app.xperiencewave.com/book/dc-strategy-call" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Book a strategy call</a> if you want to talk about where you stand.
       </p>
+
+      <h2 id="free-resource" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Free Resource: Workshop Facilitation Cheatsheet
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        A one-page cheatsheet covering before, during, and after. The five moves, blocker-handling scripts, the summary template, and the three things you close with. Print it and keep it on your desk.
+      </p>
+      <WorkshopCheatsheetGate />
 
       <h2 id="sources-references" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
         Sources &amp; References
@@ -13052,6 +13061,7 @@ const blogTableOfContents: Record<string, { id: string; title: string }[]> = {
     { id: 'after-the-workshop', title: 'After: Cement the Director Role' },
     { id: 'beyond-workshops', title: 'Beyond Workshops' },
     { id: 'identity-shift', title: 'The Identity Shift' },
+    { id: 'free-resource', title: 'Free Resource: Workshop Facilitation Cheatsheet' },
     { id: 'sources-references', title: 'Sources & References' },
     { id: 'further-reading', title: 'Further Reading' },
   ],

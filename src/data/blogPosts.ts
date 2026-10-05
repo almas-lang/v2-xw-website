@@ -51,6 +51,17 @@ export const getCategoryLabel = (category: string): string => {
 // Sample blog posts with Unsplash images
 export const blogPosts: BlogPost[] = [
   {
+    id: '57',
+    slug: 'pm-credit-design-work',
+    title: 'Why Product Managers Get Credit for Your Design Work (And What You Can Do About It)',
+    excerpt: 'The PM gets tagged in the congratulatory Slack. You don\'t. This isn\'t one PM being unfair - it\'s structural: proximity, narrative ownership, and organisational default. Why it happens, where design leadership failed, and five shifts that make your contribution impossible to misattribute.',
+    category: 'career-growth' as const,
+    image: 'https://images.unsplash.com/photo-1431540015161-0bf868a2d407?w=800&q=80',
+    author: { name: 'Shaik Murad' },
+    publishedAt: '2026-10-05',
+    readTime: '16 min',
+  },
+  {
     id: '56',
     slug: 'ux-job-market-india-sep-2026',
     title: 'The UX Job Market in India (Sep 2026): What\'s Actually Hiring, What\'s Shrinking, and What\'s Winning',

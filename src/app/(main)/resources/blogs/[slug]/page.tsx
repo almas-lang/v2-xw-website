@@ -15,6 +15,239 @@ import SalaryDataSheetGate from '@/components/blog/SalaryDataSheetGate';
 
 // Blog content with internal links for SEO
 const blogContent: Record<string, React.ReactNode> = {
+  'facilitate-workshop-everyone-knows-more': (
+    <>
+      <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
+        You&apos;re three weeks into a new project. Healthcare, logistics, insurance, whatever the domain is, you barely understand it. The developers built the system. The PM has been on this roadmap for a year. The operations lead can walk through the workflow with their eyes closed. The domain expert can spot your bad assumptions before you&apos;ve finished stating them.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        And you&apos;re supposed to run the design workshop.
+      </p>
+
+      <h2 id="the-spiral" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Spiral
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        You try. You set up the Miro board, prepare activities, open with something about exploring the problem space. Within ten minutes, the lead developer starts driving. He&apos;s built the backend. He knows what&apos;s feasible and what isn&apos;t. And feasibility becomes the only thing anyone talks about. &quot;That won&apos;t work.&quot; &quot;We&apos;ve tried that.&quot; &quot;You don&apos;t understand how the system is structured.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The PM backs him up. They&apos;ve been aligned for months. They&apos;ve already decided what the next quarter looks like. Your workshop is, in their heads, a formality before you start making screens.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        You push back once. Maybe twice. &quot;Can we explore the user&apos;s perspective before we jump to constraints?&quot; They look at you like you&apos;ve said something cute. The domain expert says something technical that you don&apos;t fully follow. You nod. You lose the thread.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        And then it happens. That quiet moment where you stop fighting. Not dramatically, not with a declaration. You just stop. You open Figma. You start making screens. You become the person who makes things presentable based on what the room decided without you.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        And then the blaming starts. &quot;This organisation doesn&apos;t value design.&quot; &quot;The PM is too controlling.&quot; &quot;They don&apos;t understand what I bring.&quot; The blaming feels righteous cos it&apos;s partially true. But it&apos;s also easy. Much easier than figuring out how to lead a room full of people who know more than you about the subject matter.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        I&apos;ve watched this spiral happen with designers at every level. Three years of experience, twelve years of experience. The pattern is the same cos the root cause is the same: identity.
+      </p>
+
+      <h2 id="why-this-happens" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Why This Happens
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Your entire career has trained you to be the expert, the person who finds insights others miss, whose value comes from knowing things that other people in the room don&apos;t.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Then you walk into a room where you know the least about everything. The domain, the technology, the business model, even the users, cos the support team has been talking to them daily for three years and you&apos;ve read five interview transcripts.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Your expert identity has nothing to grab onto. So you do one of two things. Fake expertise you don&apos;t have, which gets dismantled in about four minutes by people who actually have it. Or retreat into craft, the one thing you&apos;re confident about. Both responses turn you into a service provider in the room, someone who takes orders and makes them presentable rather than shaping what gets built.
+      </p>
+
+      <h2 id="director-not-lead-actor" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        You&apos;re the Director, Not the Lead Actor
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Think about a film director. They don&apos;t act, can&apos;t do the stunts, don&apos;t operate the camera, probably can&apos;t write dialogue as well as the screenwriter. Every person on that set is more skilled than the director at their specific job.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Nobody questions why the director is there though. Without the director you get a bunch of talented people producing disconnected work, not a film.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The director&apos;s value is in seeing how everything connects. Knowing when the actor needs another take, when the cinematographer&apos;s framing supports the story and when it fights it, holding the whole vision while everyone else holds their piece of it.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        That&apos;s your role in the workshop. You don&apos;t need to know healthcare compliance better than the domain expert or system architecture better than the developer. You&apos;re the person who connects what each of them knows into something none of them could produce alone. They&apos;re each looking through their own lens. You&apos;re the only one who can see the whole frame.
+      </p>
+
+      <h2 id="pms-job-objection" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        &quot;But That&apos;s the PM&apos;s Job&quot;
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Some people will push back on this. The pushback is worth addressing cos it&apos;s not entirely wrong.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        PM literature actively claims workshop facilitation as a PM competency. Emma Tucker, a product leader who&apos;s worked at Amazon and IBM, wrote that &quot;while Design Thinking has Design in the name, it cannot be counted among the list of things PMs are not accountable for&quot; [4]. LogRocket&apos;s PM guide states that &quot;the best PMs don&apos;t just facilitate workshops, they design transformation journeys&quot; [1].
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The product trio model, PM and designer and engineer framing problems together, suggests that workshop ownership isn&apos;t fixed to any one role. Jeff Zych documented this at LaunchDarkly: &quot;Both PMs and designers do user research, user scenarios, workshops and whiteboarding. Who owns these activities? The answer is both&quot; [2].
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        So the question worth asking isn&apos;t &quot;should the designer always run the workshop?&quot; The useful question is: when you&apos;re the one running it, and you know less about the domain than everyone else in the room, how do you do it without losing the room?
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        That&apos;s what this blog is about. A practical approach for when it&apos;s you, and you&apos;re outgunned on domain knowledge.
+      </p>
+
+      <h2 id="before-the-workshop" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Before the Workshop
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong className="text-carbon">Talk to the people who talk to users.</strong> Spend 30 minutes with customer support or the operations team before the workshop. Ask three questions: What do users complain about most? What workarounds have they developed? What question keeps coming up that the product should answer but doesn&apos;t?
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This gives you something nobody else in the workshop has: the user&apos;s actual frustration, stated by people who hear it every day. When you bring this into the room, you&apos;re grounding the conversation in real pain rather than guessing from five transcripts. We wrote about this kind of preparation in the context of <Link href="/resources/blogs/conversations-senior-designers-have" className="text-accent hover:underline font-medium">senior designer conversations</Link>, where the prep is about proximity to the user&apos;s reality rather than domain expertise.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong className="text-carbon">Map the people, not just the topic.</strong> Find out who&apos;s in the room and what each person optimises for. The developer cares about feasibility, the PM about roadmap alignment, the domain expert about correctness, the business sponsor about ROI. When you know what lens each person looks through, you can anticipate where they&apos;ll block and structure the session to use those tendencies instead of getting wrecked by them.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        <strong className="text-carbon">Prepare a structure with one clear question.</strong> The workshop needs to answer one question. The State of Facilitation 2026 report found that effective facilitation now happens in 60-90 minute focused sessions, not multi-day marathons [3]. Build toward one decision.
+      </p>
+
+      <h2 id="five-moves" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        During the Workshop: Five Moves
+      </h2>
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-4">
+        1. Say what you&apos;re there to do. Out loud.
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Open with something like: &quot;I&apos;m not the domain expert in this room. You are. My job is to make sure we use everyone&apos;s expertise to reach a decision we can all stand behind. The content comes from you. The structure comes from me.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This removes the pressure to perform expertise you don&apos;t have, gives experts permission to be experts, and establishes that you&apos;re directing the process rather than competing for knowledge.
+      </p>
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-4">
+        2. Make experts the heroes of their own knowledge.
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        When the domain expert explains something, don&apos;t just nod. Reflect it back. &quot;So the adjuster needs to see claim history before deciding because without it they&apos;re essentially guessing. Right?&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The expert feels valued, which makes them an ally instead of a blocker. And the room gets the insight translated into shared language that everyone can work with.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If the support team told you something relevant, let the expert validate it. &quot;Priya from support mentioned users call in most about claim status. Does that match what you see on the ops side?&quot; Now the expert is building on data that validates their own observation rather than reacting to your problem framing. They own the insight. You connected the dots.
+      </p>
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-4">
+        3. Redirect solutions back to questions.
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The moment someone says &quot;we should add a dashboard,&quot; redirect. &quot;Before we design the solution, what problem would the dashboard solve? What decision would a user make with it that they can&apos;t make today?&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Solutions proposed early in workshops anchor everything that follows. They usually come from the loudest or most senior person, based on one perspective rather than shared understanding. Redirecting to the question is quality control. We wrote about why this matters in <Link href="/resources/blogs/solved-what-you-were-asked-thats-the-problem" className="text-accent hover:underline font-medium">You Solved Exactly What You Were Asked to Solve. That&apos;s the Problem.</Link>
+      </p>
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-4">
+        4. Handle the blocker without fighting.
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        &quot;That&apos;s not feasible.&quot; You&apos;ll hear it. Don&apos;t argue with it.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        &quot;I hear that feasibility is a concern. Can we capture it as a constraint and keep exploring the user need for ten more minutes? Once we&apos;ve defined what users need, we can evaluate which parts are feasible and which need a different approach.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        You haven&apos;t dismissed them. You&apos;ve parked their concern visibly and given the room permission to keep thinking before one person&apos;s lens becomes the only lens.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        If they persist, try: &quot;You clearly know this system deeply. If feasibility weren&apos;t a constraint, what would the ideal experience look like?&quot; This reframes their expertise from a wall into a bridge. Most blockers soften when they&apos;re invited to contribute to the ideal instead of defending the current state.
+      </p>
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-4">
+        5. End with decisions, not stickies.
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The 2026 State of Facilitation report put it bluntly: facilitation gets credit for how people felt in the room, not for what changed after [3]. Most workshops produce nothing usable.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Close with three things documented. What we decided (specific decisions, not themes or insights). Who owns what next (name, action, date). What we explicitly did not decide (parked for a separate conversation). If you leave without these three, the workshop was a meeting with better snacks.
+      </p>
+
+      <h2 id="after-the-workshop" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        After: Cement the Director Role
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong className="text-carbon">Send the summary within 24 hours.</strong> One page covering decisions, owners, and parking lot. If you don&apos;t write this, the PM will, and the story will be told from their perspective.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong className="text-carbon">Follow up on the actions.</strong> The director makes sure the film keeps shooting after the first day on set. Check in with the people who took ownership. Keep the momentum your workshop created.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        <strong className="text-carbon">Credit people by name.</strong> &quot;The insight about claim status visibility came from Priya in support, validated by Ananya in operations.&quot; People who feel credited become repeat contributors. People whose ideas got absorbed without acknowledgment become your blockers next time.
+      </p>
+
+      <h2 id="beyond-workshops" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Beyond Workshops
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The director approach applies everywhere you&apos;re the least knowledgeable person in the room, which is basically every new project.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        During discovery, connect the domain experts, the support data, and the analytics into a shared understanding rather than trying to become the domain expert yourself. Your job is synthesis.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        During ideation, structure a process where the developer contributes technical possibilities, the domain expert adds contextual constraints, and the business sponsor brings commercial reality. You hold the frame while everyone contributes their expertise.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        During testing, involve the domain expert. They&apos;ll catch wrong terminology, unrealistic data, and workflow steps that don&apos;t match real practice. Things you&apos;d miss on your own.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        This is how you <Link href="/resources/blogs/grow-as-solo-designer" className="text-accent hover:underline font-medium">grow as a solo designer</Link> in organisations full of people who&apos;ve been there longer. You become the person who makes their knowledge productive rather than competing with it.
+      </p>
+
+      <h2 id="identity-shift" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Identity Shift
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The reason designers struggle with this is less about skill and more about identity.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        We&apos;ve been told our value is in knowing things. When we walk into a room where we know the least, that identity crumbles. We fight for it and lose, or abandon it and start churning screens, or blame the culture and nothing changes.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The designers who break through are the ones who let go of being the expert and embrace being the director. Sitting with not knowing, asking questions that expose your ignorance, watching someone else have the breakthrough insight and feeling genuinely glad about it cos you created the conditions for it to happen. That&apos;s leadership. The kind that&apos;s harder to perform but harder to replace.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        If you want to develop this capability, whether as an individual designer in rooms that feel hostile to your contribution, or as a design leader building this skill in your team, that&apos;s what we work on at <Link href="/" className="text-accent hover:underline font-medium">Xperience Wave</Link>. Through <Link href="/programs" className="text-accent hover:underline font-medium">mentorship</Link> and through <Link href="/for-business" className="text-accent hover:underline font-medium">team workshops</Link>. <a href="https://app.xperiencewave.com/book/dc-strategy-call" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Book a strategy call</a> if you want to talk about where you stand.
+      </p>
+
+      <h2 id="sources-references" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Sources &amp; References
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li>[1] LogRocket. (2025). &quot;A Guide to Designing Successful Product Management Workshops.&quot; <a href="https://blog.logrocket.com/product-management/guide-to-designing-successful-product-management-workshops/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">blog.logrocket.com</a></li>
+        <li>[2] Zych, J. (2020). &quot;Product Manager and Product Designer: Who Does What?&quot; <a href="https://jlzych.com/2020/12/12/product-manager-and-product-designer-who-does-what/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">jlzych.com</a></li>
+        <li>[3] The Designer&apos;s Field Guide. (2026). &quot;The Old Design Workshop Is Dead. Long Live Design Workshops.&quot; Referencing State of Facilitation 2025/2026. <a href="https://thedesignersfieldguide.substack.com/p/the-old-design-workshop-is-dead-long" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">thedesignersfieldguide.substack.com</a></li>
+        <li>[4] Tucker, E. (2019). &quot;7 Ways Product Managers Can Influence the Success of Design Thinking Workshops.&quot; LinkedIn. <a href="https://www.linkedin.com/pulse/7-ways-product-managers-can-influence-success-design-thinking-tucker" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">linkedin.com</a></li>
+      </ul>
+
+      <h2 id="further-reading" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Further Reading on Xperience Wave
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li><Link href="/resources/blogs/design-thinking-vs-design-strategy" className="text-accent hover:underline font-medium">Design Thinking Was Never For Designers. Design Strategy Is.</Link></li>
+        <li><Link href="/resources/blogs/grow-as-solo-designer" className="text-accent hover:underline font-medium">How To Grow When You&apos;re The Only Designer On The Team</Link></li>
+        <li><Link href="/resources/blogs/conversations-senior-designers-have" className="text-accent hover:underline font-medium">The 5 Conversations Senior Designers Have That Mid-Level Designers Don&apos;t</Link></li>
+        <li><Link href="/resources/blogs/solved-what-you-were-asked-thats-the-problem" className="text-accent hover:underline font-medium">You Solved Exactly What You Were Asked to Solve. That&apos;s the Problem.</Link></li>
+      </ul>
+
+      <h2 id="about-author" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        About the Author
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Almas Tasneem is Co-founder and CEO at <Link href="/" className="text-accent hover:underline font-medium">Xperience Wave</Link>, a UX design studio based in Bangalore, working across designer mentorship, UX services for businesses, and a design community of 1,000+ designers.
+      </p>
+
+      <p className="text-base md:text-lg text-g500 italic mt-6">
+        - Almas, Co-founder &amp; CEO, Xperience Wave
+      </p>
+    </>
+  ),
   'pm-credit-design-work': (
     <>
       <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
@@ -12809,6 +13042,19 @@ const blogContent: Record<string, React.ReactNode> = {
 
 // Table of contents for each blog post
 const blogTableOfContents: Record<string, { id: string; title: string }[]> = {
+  'facilitate-workshop-everyone-knows-more': [
+    { id: 'the-spiral', title: 'The Spiral' },
+    { id: 'why-this-happens', title: 'Why This Happens' },
+    { id: 'director-not-lead-actor', title: 'You\'re the Director, Not the Lead Actor' },
+    { id: 'pms-job-objection', title: '"But That\'s the PM\'s Job"' },
+    { id: 'before-the-workshop', title: 'Before the Workshop' },
+    { id: 'five-moves', title: 'During the Workshop: Five Moves' },
+    { id: 'after-the-workshop', title: 'After: Cement the Director Role' },
+    { id: 'beyond-workshops', title: 'Beyond Workshops' },
+    { id: 'identity-shift', title: 'The Identity Shift' },
+    { id: 'sources-references', title: 'Sources & References' },
+    { id: 'further-reading', title: 'Further Reading' },
+  ],
   'pm-credit-design-work': [
     { id: 'operating-system', title: 'This Isn\'t a Bug. It\'s the Operating System.' },
     { id: 'design-easy-perception', title: 'Why Is Design So Easy in Their Heads?' },
@@ -13305,6 +13551,11 @@ const authorData: Record<string, { role: string; bio: string; image: string }> =
 
 // Blog-specific metadata for SEO
 const blogMetadata: Record<string, { title: string; description: string; keywords: string[] }> = {
+  'facilitate-workshop-everyone-knows-more': {
+    title: 'How to Facilitate a Design Workshop When Everyone in the Room Knows More Than You | Xperience Wave',
+    description: 'The developers built the system, the PM owns the roadmap, the domain expert spots your bad assumptions instantly - and you\'re supposed to run the workshop. Why designers spiral into churning screens, the director-not-expert reframe, and five practical moves for leading a room where you\'re outgunned on domain knowledge.',
+    keywords: ['design workshop facilitation', 'facilitate workshop without domain knowledge', 'designer workshop facilitation skills', 'design workshop blockers', 'workshop facilitation techniques UX', 'designer vs PM workshop ownership', 'design sprint facilitation', 'stakeholder workshop designer', 'leading design workshops', 'workshop facilitation for designers', 'design leadership facilitation', 'handling difficult stakeholders workshop', 'design thinking workshop facilitation', 'UX facilitation skills'],
+  },
   'pm-credit-design-work': {
     title: 'Why Product Managers Get Credit for Your Design Work (And What You Can Do About It) | Xperience Wave',
     description: 'The PM gets tagged in the congratulatory Slack. You don\'t. It\'s not personal - it\'s structural: proximity to leadership, narrative ownership, and organisational default. Why PMs get credit for design work, where design leadership failed, how to push back when PMs overstep, and five shifts that make your contribution impossible to misattribute.',

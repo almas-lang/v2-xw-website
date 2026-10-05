@@ -55,6 +55,17 @@ export const getCategoryLabel = (category: string): string => {
 // Sample blog posts with Unsplash images
 export const blogPosts: BlogPost[] = [
   {
+    id: '58',
+    slug: 'facilitate-workshop-everyone-knows-more',
+    title: 'How to Facilitate a Design Workshop When Everyone in the Room Knows More Than You',
+    excerpt: 'The developers built the system. The PM has owned the roadmap for a year. The domain expert spots your bad assumptions before you finish stating them. And you\'re supposed to run the workshop. Why designers spiral into churning screens - and the five moves that let you lead the room as its director, not its expert.',
+    category: 'design-skills' as const,
+    image: 'https://images.unsplash.com/photo-1558403194-611308249627?w=800&q=80',
+    author: { name: 'Almas Tasneem' },
+    publishedAt: '2026-10-08T09:00:00+05:30',
+    readTime: '11 min',
+  },
+  {
     id: '57',
     slug: 'pm-credit-design-work',
     title: 'Why Product Managers Get Credit for Your Design Work (And What You Can Do About It)',

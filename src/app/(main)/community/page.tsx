@@ -56,19 +56,21 @@ export default function CommunityPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Event",
-            "name": "WaveMakers Connect Edition #4",
-            "description": "An in-person event for designers, engineers, and entrepreneurs in Bangalore",
-            "startDate": "2025-03-15T11:00:00+05:30",
-            "endDate": "2025-03-15T14:00:00+05:30",
+            "name": "WaveMakers Connect Edition #4 — The Designers We're Becoming",
+            "description": "A morning with Bangalore designers about speaking up with PMs and developers, telling your story well, and growing as AI changes the work.",
+            "startDate": "2026-10-24T10:00:00+05:30",
+            "endDate": "2026-10-24T13:00:00+05:30",
             "eventStatus": "https://schema.org/EventScheduled",
             "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
             "location": {
               "@type": "Place",
-              "name": "Its Brown and Roasted",
+              "name": "Soul Staje",
               "address": {
                 "@type": "PostalAddress",
-                "addressLocality": "Singasandra",
-                "addressRegion": "Bangalore",
+                "streetAddress": "2733, 16th Cross Rd, opposite NIFT College, PWD Quarters, 1st Sector, HSR Layout",
+                "addressLocality": "Bengaluru",
+                "addressRegion": "Karnataka",
+                "postalCode": "560102",
                 "addressCountry": "IN"
               }
             },

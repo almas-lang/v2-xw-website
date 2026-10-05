@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { checkBotId } from 'botid/server';
+import { VENUE_MAPS_URL, WHATSAPP_GROUP_URL } from '@/components/community/venue';
+import { appendToSheet, istTimestamp } from '@/lib/sheets';
 
 const BREVO_API_KEY = process.env.BREVO_API_KEY;
 const EVENT_LIST_ID = 55;
@@ -8,6 +10,21 @@ const NOTIFICATION_EMAILS = [
   'shaikroc@gmail.com',
   'murad@xperiencewave.com',
 ];
+
+function saveToSheet(data: RegistrationData) {
+  return appendToSheet('Registrations', {
+    'Timestamp (IST)': istTimestamp(),
+    'Edition': '#4',
+    'Name': data.name,
+    'Email': data.email,
+    'Phone': data.phone,
+    'LinkedIn': data.linkedin || '',
+    'Profession': data.profession,
+    'Company': data.company || '',
+    'Heard About': data.hearAbout || '',
+    'Joining For': (data.joiningFor || []).join(', '),
+  });
+}
 
 interface RegistrationData {
   name: string;
@@ -43,19 +60,19 @@ async function sendConfirmationEmail(data: RegistrationData) {
 
             <div style="background: rgba(99, 102, 241, 0.1); border: 1px solid rgba(99, 102, 241, 0.2); border-radius: 12px; padding: 24px; margin-bottom: 24px;">
               <p style="color: #e0e7ff; font-size: 14px; margin: 0 0 4px 0; text-transform: uppercase; letter-spacing: 1px;">Event Details</p>
-              <h2 style="color: #ffffff; font-size: 20px; margin: 0 0 16px 0;">AI Threatening Specialists</h2>
+              <h2 style="color: #ffffff; font-size: 20px; margin: 0 0 16px 0;">The Designers We're Becoming</h2>
               <table style="width: 100%; color: #c7d2fe;">
                 <tr>
                   <td style="padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">📅 Date</td>
-                  <td style="padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.1); text-align: right;">Sunday, Feb 15, 2025</td>
+                  <td style="padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.1); text-align: right;">Saturday, Oct 24, 2026</td>
                 </tr>
                 <tr>
                   <td style="padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">⏰ Time</td>
-                  <td style="padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.1); text-align: right;">11 AM onwards</td>
+                  <td style="padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.1); text-align: right;">10 AM – 1 PM</td>
                 </tr>
                 <tr>
                   <td style="padding: 8px 0;">📍 Venue</td>
-                  <td style="padding: 8px 0; text-align: right;">Its Brown and Roasted, Singasandra, Bangalore</td>
+                  <td style="padding: 8px 0; text-align: right;"><a href="${VENUE_MAPS_URL}" style="color: #a5b4fc; text-decoration: underline;">Soul Staje, HSR Layout (opp. NIFT College), Bengaluru</a></td>
                 </tr>
               </table>
             </div>
@@ -64,13 +81,17 @@ async function sendConfirmationEmail(data: RegistrationData) {
               <p style="color: #c7d2fe; font-size: 15px; line-height: 1.6;">
                 Hi ${data.name.split(' ')[0]},<br><br>
                 Thanks for registering! We're excited to have you join us.<br><br>
-                We'll add you to our WhatsApp community closer to the event date where we'll share updates, the exact venue location, and connect you with other attendees.
+                Join our WhatsApp community now. That's where we share event updates and connect you with other attendees before the day.
               </p>
             </div>
 
             <div style="text-align: center; margin-bottom: 24px;">
-              <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=WaveMakers%20Connect%20Edition%20%234&dates=20250215T053000Z/20250215T083000Z&details=Join%20us%20for%20WaveMakers%20Connect%20-%20a%20free%20design%20%26%20tech%20meetup%20in%20Bangalore.&location=Its%20Brown%20and%20Roasted%2C%20Singasandra%2C%20Bangalore"
-                 style="display: inline-block; background: #4f46e5; color: #ffffff; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 15px;">
+              <a href="${WHATSAPP_GROUP_URL}"
+                 style="display: inline-block; background: #25D366; color: #ffffff; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 15px; margin: 0 6px 12px 6px;">
+                Join WhatsApp Community
+              </a>
+              <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=WaveMakers%20Connect%20Edition%20%234&dates=20261024T043000Z/20261024T073000Z&details=Join%20us%20for%20WaveMakers%20Connect%20-%20a%20free%20design%20%26%20tech%20meetup%20in%20Bangalore.&location=Soul%20Staje%2C%20HSR%20Layout%2C%20Bengaluru"
+                 style="display: inline-block; background: #4f46e5; color: #ffffff; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 15px; margin: 0 6px 12px 6px;">
                 Add to Calendar
               </a>
             </div>
@@ -80,7 +101,7 @@ async function sendConfirmationEmail(data: RegistrationData) {
                 Questions? Reply to this email or reach out on Instagram <a href="https://instagram.com/xperience_wave" style="color: #818cf8;">@xperience_wave</a>
               </p>
               <p style="color: #4b5563; font-size: 12px; margin: 16px 0 0 0;">
-                © 2025 Xperience Wave. All rights reserved.
+                © 2026 Xperience Wave. All rights reserved.
               </p>
             </div>
           </div>
@@ -222,10 +243,11 @@ export async function POST(request: NextRequest) {
     console.log('Brevo response:', responseData);
 
     if (response.status === 201 || response.status === 204) {
-      // Send emails in parallel
+      // Send emails and log to the submissions sheet in parallel
       await Promise.all([
         sendConfirmationEmail(data),
         sendTeamNotification(data),
+        saveToSheet(data),
       ]);
       return NextResponse.json({ success: true });
     }
@@ -237,6 +259,7 @@ export async function POST(request: NextRequest) {
         await Promise.all([
           sendConfirmationEmail(data),
           sendTeamNotification(data),
+          saveToSheet(data),
         ]);
         return NextResponse.json({ success: true, message: 'Already registered' });
       }

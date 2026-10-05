@@ -2,15 +2,16 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { VENUE_MAPS_URL, WHATSAPP_GROUP_URL } from '@/components/community/venue';
 
 // Event details - can be moved to a config file later
 const eventDetails = {
   edition: '#4',
-  title: 'AI Threatening Specialists',
-  date: 'Sunday, Feb 15, 2025',
-  time: '11 AM onwards',
-  location: 'Bangalore',
-  venue: 'Its Brown and Roasted, Singasandra',
+  title: "The Designers We're Becoming",
+  date: 'Saturday, Oct 24, 2026',
+  time: '10 AM – 1 PM',
+  location: 'Bengaluru',
+  venue: 'Soul Staje, HSR Layout (opp. NIFT College)',
 };
 
 const professionOptions = [
@@ -159,8 +160,8 @@ export default function RegisterPage() {
   };
 
   const generateCalendarUrl = (type: 'google' | 'outlook' | 'apple') => {
-    const startDate = '20250215T053000Z'; // Feb 15, 2025 11:00 AM IST
-    const endDate = '20250215T083000Z';   // Feb 15, 2025 2:00 PM IST
+    const startDate = '20261024T043000Z'; // Oct 24, 2026 10:00 AM IST
+    const endDate = '20261024T073000Z';   // Oct 24, 2026 1:00 PM IST
     const title = encodeURIComponent(`WaveMakers Connect Edition ${eventDetails.edition}`);
     const details = encodeURIComponent(`Join us for WaveMakers Connect - a free design & tech meetup in Bangalore.\n\nVenue: ${eventDetails.venue}`);
     const location = encodeURIComponent(eventDetails.venue);
@@ -169,7 +170,7 @@ export default function RegisterPage() {
       return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${startDate}/${endDate}&details=${details}&location=${location}`;
     }
     if (type === 'outlook') {
-      return `https://outlook.live.com/calendar/0/deeplink/compose?subject=${title}&startdt=2025-02-15T11:00:00&enddt=2025-02-15T14:00:00&body=${details}&location=${location}`;
+      return `https://outlook.live.com/calendar/0/deeplink/compose?subject=${title}&startdt=2026-10-24T10:00:00&enddt=2026-10-24T13:00:00&body=${details}&location=${location}`;
     }
     // Apple Calendar - downloads .ics file
     return `data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ADTSTART:${startDate}%0ADTEND:${endDate}%0ASUMMARY:${title}%0ADESCRIPTION:${details}%0ALOCATION:${location}%0AEND:VEVENT%0AEND:VCALENDAR`;
@@ -249,11 +250,18 @@ export default function RegisterPage() {
                 <span className="text-white/30">|</span>
                 <span>{eventDetails.location}</span>
               </div>
-              <p className="text-white/50 text-sm mt-3">{eventDetails.venue}</p>
+              <a
+                href={VENUE_MAPS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block text-indigo-300 hover:text-indigo-200 text-sm mt-3 underline underline-offset-2 transition-colors"
+              >
+                📍 {eventDetails.venue}
+              </a>
             </div>
 
             <p className="font-body text-sm md:text-base text-white/60 mb-4 md:mb-6">
-              We&apos;ll send event details to your email and add you to our WhatsApp community closer to the date.
+              We&apos;ve sent the event details to your email. Join our WhatsApp community for updates and to connect with other attendees before the day.
             </p>
 
             {/* Add to Calendar */}
@@ -297,6 +305,17 @@ export default function RegisterPage() {
 
             {/* Action buttons */}
             <div className="space-y-3">
+              <a
+                href={WHATSAPP_GROUP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 w-full px-6 py-4 bg-[#25D366] hover:bg-[#1fba59] text-white font-heading font-semibold rounded-xl transition-all"
+              >
+                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+                Join WhatsApp Community
+              </a>
               <Link
                 href="/community"
                 className="inline-flex items-center justify-center gap-2 w-full px-6 py-4 bg-indigo-600 hover:bg-indigo-500 text-white font-heading font-semibold rounded-xl transition-all"
@@ -425,7 +444,9 @@ export default function RegisterPage() {
           <h1 className="font-heading text-3xl md:text-4xl font-bold text-white mb-3">
             Register for Edition {eventDetails.edition}
           </h1>
-          <p className="font-heading text-lg text-indigo-300 mb-2">{eventDetails.title}</p>
+          {eventDetails.title && (
+            <p className="font-heading text-lg text-indigo-300 mb-2">{eventDetails.title}</p>
+          )}
           <p className="text-white/60">
             {eventDetails.date} · {eventDetails.time} · {eventDetails.location}
           </p>

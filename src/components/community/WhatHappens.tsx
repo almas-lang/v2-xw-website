@@ -217,7 +217,7 @@ export default function WhatHappens() {
                 transition: 'all 0.5s ease-out 0.4s',
               }}
             >
-              Edition #4
+              Edition #3
             </div>
 
             {/* Corner decoration */}

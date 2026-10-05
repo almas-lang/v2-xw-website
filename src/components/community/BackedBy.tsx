@@ -3,10 +3,11 @@
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import SponsorModal from './SponsorModal';
+import { VENUE_MAPS_URL } from './venue';
 
 const sponsors = [
-  { type: 'Powered by', name: 'Xperience Wave', logo: '/images/logos/xw-logo-light.svg', color: '#6366f1' },
-  { type: 'F&B Partner', name: "It's Brown and Roasted", logo: '/images/itsbrownandroasted.jpg', color: '#92400e' },
+  { type: 'Powered by', name: 'Xperience Wave', logo: '/images/logos/xw-logo-light.svg', color: '#6366f1', tileBg: '#1a1a2e', logoClass: 'max-h-16 h-full w-auto', pad: 'p-4', href: '' },
+  { type: 'Venue Partner', name: 'Soul Staje', logo: '/images/soulstage-logo.png', color: '#7c3aed', tileBg: 'radial-gradient(circle at center, #2a1458 0%, #150a2e 70%)', logoClass: 'h-full w-auto', pad: 'p-2', href: VENUE_MAPS_URL },
 ];
 
 export default function BackedBy() {
@@ -177,13 +178,9 @@ export default function BackedBy() {
 
                   {/* Logo with gradient background */}
                   <div
-                    className="aspect-[2/1] rounded-xl flex items-center justify-center overflow-hidden transition-all duration-500 p-4"
+                    className={`aspect-[2/1] rounded-xl flex items-center justify-center overflow-hidden transition-all duration-500 ${sponsor.pad}`}
                     style={{
-                      background: index === 0
-                        ? '#1a1a2e'
-                        : hoveredIndex === index
-                          ? `linear-gradient(135deg, ${sponsor.color}08, ${sponsor.color}15)`
-                          : 'linear-gradient(135deg, #f5f5f5, #fafafa)',
+                      background: sponsor.tileBg,
                     }}
                   >
                     <Image
@@ -191,7 +188,7 @@ export default function BackedBy() {
                       alt={sponsor.name}
                       width={200}
                       height={80}
-                      className="w-auto h-full max-h-16 object-contain transition-transform duration-300 group-hover:scale-105"
+                      className={`object-contain transition-transform duration-300 group-hover:scale-105 ${sponsor.logoClass}`}
                     />
                   </div>
 
@@ -200,6 +197,24 @@ export default function BackedBy() {
                     className="absolute bottom-3 right-3 w-3 h-3 rounded-full opacity-0 group-hover:opacity-30 transition-opacity duration-500"
                     style={{ backgroundColor: sponsor.color }}
                   />
+
+                  {/* Stretched link: whole card opens Google Maps */}
+                  {sponsor.href && (
+                    <a
+                      href={sponsor.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Open ${sponsor.name} on Google Maps`}
+                      className="absolute inset-0 z-10 rounded-2xl"
+                    />
+                  )}
+
+                  {/* Hover hint for linked cards */}
+                  {sponsor.href && (
+                    <div className="absolute bottom-8 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-black/70 text-white text-xs font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                      View on Google Maps ↗
+                    </div>
+                  )}
                 </div>
               </div>
             ))}

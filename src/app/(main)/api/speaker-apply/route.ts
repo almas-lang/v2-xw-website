@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { checkBotId } from 'botid/server';
+import { appendToSheet, istTimestamp } from '@/lib/sheets';
 
 const BREVO_API_KEY = process.env.BREVO_API_KEY;
 const SPEAKER_LIST_ID = 56;
@@ -19,6 +20,21 @@ interface ApplicationData {
   topic: string;
   bio: string;
   hearAbout?: string;
+}
+
+function saveToSheet(data: ApplicationData) {
+  return appendToSheet('Speaker Applications', {
+    'Timestamp (IST)': istTimestamp(),
+    'Name': data.name,
+    'Email': data.email,
+    'Phone': data.phone,
+    'LinkedIn': data.linkedin,
+    'Profession': data.profession,
+    'Company': data.company || '',
+    'Heard About': data.hearAbout || '',
+    'Proposed Topic': data.topic,
+    'Bio': data.bio,
+  });
 }
 
 // Send confirmation email to applicant
@@ -210,10 +226,11 @@ export async function POST(request: NextRequest) {
     console.log('Brevo response:', responseData);
 
     if (response.status === 201 || response.status === 204) {
-      // Send emails in parallel
+      // Send emails and log to the submissions sheet in parallel
       await Promise.all([
         sendConfirmationEmail(data),
         sendTeamNotification(data),
+        saveToSheet(data),
       ]);
       return NextResponse.json({ success: true });
     }
@@ -225,6 +242,7 @@ export async function POST(request: NextRequest) {
         await Promise.all([
           sendConfirmationEmail(data),
           sendTeamNotification(data),
+          saveToSheet(data),
         ]);
         return NextResponse.json({ success: true, message: 'Already applied' });
       }

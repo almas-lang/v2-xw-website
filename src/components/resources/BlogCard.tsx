@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import type { BlogPost } from '@/data/blogPosts';
-import { getCategoryColor, getCategoryLabel } from '@/data/blogPosts';
+import { getCategoryColor, getCategoryLabel, isPostPublished } from '@/data/blogPosts';
 
 interface BlogCardProps {
   post: BlogPost;
@@ -14,7 +14,7 @@ interface BlogCardProps {
 export default function BlogCard({ post, index = 0, isVisible = true }: BlogCardProps) {
   const categoryColor = getCategoryColor(post.category);
   const categoryLabel = getCategoryLabel(post.category);
-  const isUpcoming = post.upcoming;
+  const isUpcoming = !isPostPublished(post);
 
   const cardContent = (
     <article

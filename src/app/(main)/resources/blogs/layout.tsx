@@ -1,5 +1,9 @@
 import type { Metadata } from 'next';
 
+// Re-render the listing at most hourly so scheduled posts appear in the
+// prerendered HTML (visitors' browsers already filter live on each load)
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: 'Blog - UX Design Insights & Career Tips',
   description:

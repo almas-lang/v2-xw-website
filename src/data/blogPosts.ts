@@ -15,8 +15,12 @@ export interface BlogPost {
     name: string;
     avatar?: string;
   };
+  // Post goes live automatically once this time passes. A bare date like
+  // '2026-10-05' means midnight UTC (5:30 AM IST); for a scheduled launch use a
+  // full IST timestamp like '2026-10-05T09:00:00+05:30' (9 AM IST).
   publishedAt: string;
   readTime: string;
+  // Manual draft flag: keeps a post hidden regardless of publishedAt.
   upcoming?: boolean;
 }
 
@@ -687,9 +691,15 @@ export const blogPosts: BlogPost[] = [
   },
 ];
 
-// Get published (non-upcoming) posts
+// A post is live once its publishedAt time has passed, unless the manual
+// `upcoming` draft flag is set.
+export const isPostPublished = (post: BlogPost): boolean => {
+  return !post.upcoming && new Date(post.publishedAt).getTime() <= Date.now();
+};
+
+// Get published posts
 export const getPublishedPosts = (): BlogPost[] => {
-  return blogPosts.filter(post => !post.upcoming);
+  return blogPosts.filter(isPostPublished);
 };
 
 // Get featured post (most recently published)
@@ -726,10 +736,12 @@ export const getHomepageBlogs = (): BlogPost[] => {
 // Format date
 export const formatDate = (dateString: string): string => {
   const date = new Date(dateString);
+  // Pin to IST so every visitor (and the server) sees the intended publish date
   return date.toLocaleDateString('en-US', {
     month: 'short',
     day: 'numeric',
     year: 'numeric',
+    timeZone: 'Asia/Kolkata',
   });
 };
 

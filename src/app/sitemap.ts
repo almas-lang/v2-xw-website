@@ -1,6 +1,9 @@
 import { MetadataRoute } from 'next';
 import { getPublishedPosts } from '@/data/blogPosts';
 
+// Regenerate at most hourly so scheduled posts get indexed without a redeploy
+export const revalidate = 3600;
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://xperiencewave.com';
 

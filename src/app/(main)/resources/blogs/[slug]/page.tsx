@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
-import { blogPosts, getPublishedPosts, getCategoryLabel, getCategoryColor, formatDate } from '@/data/blogPosts';
+import { blogPosts, getPublishedPosts, isPostPublished, getCategoryLabel, getCategoryColor, formatDate } from '@/data/blogPosts';
 import CTASection from '@/components/shared/CTASection';
 import MobileTOC from '@/components/blog/MobileTOC';
 import EvaluatorGate from '@/components/blog/EvaluatorGate';
@@ -13587,6 +13587,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
+// Re-check every 5 minutes so a scheduled post's direct URL is live well
+// before the 9:30 AM social posts link to it
+export const revalidate = 300;
+
 // Generate static params for published blog posts
 export async function generateStaticParams() {
   return getPublishedPosts().map((post) => ({
@@ -13598,7 +13602,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const { slug } = await params;
   const post = blogPosts.find(p => p.slug === slug);
 
-  if (!post || post.upcoming) {
+  if (!post || !isPostPublished(post)) {
     notFound();
   }
 
@@ -13612,9 +13616,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     image: '',
   };
 
-  // Get related posts (same category, excluding current and upcoming)
+  // Get related posts (same category, excluding current and unpublished)
   const relatedPosts = blogPosts
-    .filter(p => p.category === post.category && p.id !== post.id && !p.upcoming)
+    .filter(p => p.category === post.category && p.id !== post.id && isPostPublished(p))
     .slice(0, 3);
 
   // Article structured data for SEO

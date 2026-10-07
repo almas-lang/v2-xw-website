@@ -14,9 +14,219 @@ import OrgMaturityScorecardGate from '@/components/blog/OrgMaturityScorecardGate
 import SalaryDataSheetGate from '@/components/blog/SalaryDataSheetGate';
 import WorkshopCheatsheetGate from '@/components/blog/WorkshopCheatsheetGate';
 import AgenticUxPrinciplesGate from '@/components/blog/AgenticUxPrinciplesGate';
+import DesignStrategyGptGate from '@/components/blog/DesignStrategyGptGate';
 
 // Blog content with internal links for SEO
 const blogContent: Record<string, React.ReactNode> = {
+  'design-strategy-buzzword-until-you-build-one': (
+    <>
+      <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
+        I used the phrase &quot;design as a business tool&quot; in a workshop last year. A senior designer, maybe 15 years of experience, stood up and said his clients don&apos;t even want to hear about it. &quot;Once the project is done, they vanish,&quot; he said. &quot;They don&apos;t want strategy. They want screens delivered on time.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        He wasn&apos;t wrong about his experience. But he was diagnosing the wrong problem. His clients didn&apos;t reject design strategy. They rejected a relationship where the only value exchange was deliverables. The moment the deliverables stopped, the relationship ended cos nothing else held it together. That&apos;s a client relationship problem, a value positioning problem, a trust problem. Calling it a &quot;design strategy doesn&apos;t work&quot; problem is like saying your car doesn&apos;t work cos you&apos;ve been putting diesel in a petrol engine.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        I see the same reaction to the word &quot;strategy&quot; itself. People comment under posts saying &quot;strategy is vague&quot; or &quot;strategy doesn&apos;t mean anything.&quot; And honestly, for someone who&apos;s spent years executing someone else&apos;s plan without ever building their own, the word probably does feel empty. You can&apos;t see the value of something you&apos;ve never held.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        But the data says something different about whether strategy matters.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        McKinsey tracked the design practices of 300 publicly listed companies over five years. The ones with top-quartile design practices, which includes having a clear design strategy, saw 32% higher revenue growth and 56% higher total returns to shareholders than their counterparts [1]. DesignRush&apos;s analysis found that design-driven companies outperformed the S&amp;P 500 by 228% over a ten-year period [2]. These numbers aren&apos;t about prettier interfaces. They&apos;re about design operating as a strategic function connected to business outcomes.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        The question worth asking isn&apos;t whether strategy matters. It&apos;s what a design strategy actually is, practically, and how you build one when your organisation hasn&apos;t asked for it.
+      </p>
+
+      <h2 id="what-a-strategy-is" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What a Design Strategy Actually Is
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Let me clear out the things it gets confused with first.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        A design strategy is not a BRD. Not an SRS. Not a project plan with Gantt charts. Not a sprint retrospective. Not a business plan given a design-sounding name. If you&apos;ve seen a document called &quot;design strategy&quot; that was really just a timeline with milestones and a few persona slides, someone mislabelled their project plan.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        A design strategy is a plan that defines how design will help achieve business goals while meeting user needs. It&apos;s the decision-making structure that tells your design team what to prioritise, why those things matter, and how success will be measured [3].
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Tim Graf, writing the UX Strategy Blueprint in 2026, put it sharply: &quot;If your design work is entirely dictated by a product roadmap you had no hand in creating, you do not have a strategy&quot; [4]. That line should sting a little cos it describes most design teams in India. The PM creates the roadmap, the designers execute it, and everyone calls the output &quot;design.&quot; That&apos;s delivery. Delivery without direction is just labour.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Jaime Levy, who literally wrote the book on UX strategy, breaks it into four pillars: business strategy (what&apos;s the company trying to achieve), value innovation (how do we solve user problems in ways competitors don&apos;t), validated user research (proof that our assumptions are right), and killer UX design (execution that brings the strategy to life) [5].
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Notice how three of the four pillars have nothing to do with screens. Business understanding, competitive differentiation, research validation. The actual interface design is one quarter of the strategy. Most design teams spend 90% of their time on that one quarter and zero time on the other three.
+      </p>
+
+      <h2 id="what-finished-looks-like" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What a Finished Strategy Looks Like
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        A design strategy should be a document, not a deck buried in someone&apos;s laptop. Practically, it covers:
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong className="text-carbon">Business context.</strong> What is the business trying to achieve this quarter, this year, this cycle? Revenue targets, market expansion goals, partnership objectives, retention targets. You need to know this cos every design decision you make should connect back to it. If you can&apos;t draw a line from your design work to a business outcome, you&apos;re decorating.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong className="text-carbon">User understanding.</strong> Who are the users, what do they need, what evidence do you have that those needs are real? Not personas invented in a workshop. Actual research findings, support ticket patterns, behavioural data, interview insights. If you don&apos;t have this data, the strategy includes a plan for getting it.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong className="text-carbon">Current state assessment.</strong> Where is the product right now? What&apos;s working, what&apos;s broken, what&apos;s the gap between where you are and where the business needs to be? This includes design maturity assessment. How does the organisation currently treat design, and what needs to change for design to deliver its full value?
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong className="text-carbon">Design principles for this project.</strong> What rules will guide design decisions? These aren&apos;t generic (&quot;make it simple&quot;). They&apos;re specific to this context. &quot;In this product, speed of task completion matters more than visual polish cos our users are processing 200 orders per day.&quot; Specific principles prevent every review meeting from becoming a taste debate.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong className="text-carbon">Research plan.</strong> What do you still need to learn, what methods will you use, how deep do you need to go? This is where knowing the project&apos;s risk level matters. A regulatory compliance project needs deeper research than a minor UI refresh. Over-researching a low-risk feature wastes time. Under-researching a high-risk one costs more.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong className="text-carbon">Implementation plan.</strong> How will the design work get done, in what sequence, with what dependencies on engineering, content, and other teams? Timelines, collaboration touchpoints, review cadences.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong className="text-carbon">Success metrics.</strong> How will you know the design strategy worked? Specific, measurable outcomes tied to the business objectives from the first section. Retention improved by X%. Task completion time decreased by Y%. Support tickets for this flow dropped by Z%.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong className="text-carbon">Governance.</strong> Who reviews design decisions, at what cadence, and who has final say on direction changes? Without governance, the strategy drifts the moment a senior stakeholder has a new idea in the shower.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        That&apos;s a strategy. Compare it to what most design teams operate with, which is a Jira backlog of tickets created by the PM with &quot;design review&quot; checkboxes.
+      </p>
+
+      <h2 id="building-without-permission" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        &quot;My Organisation Would Never Let Me Build This&quot;
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Fair. And also, this is the part where I push back.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Tim Graf&apos;s research found that &quot;you cannot skip levels of UX maturity. If your organisation is at stage 1, writing a five-year strategic plan is a waste of energy&quot; [4]. He&apos;s right. If your organisation doesn&apos;t understand what design does, presenting a 15-page strategy document will confuse people, not convert them.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        But NNGroup&apos;s research found that the most common challenges for design teams were &quot;lack of UX vision and strategy, confusion about what UX strategy actually is, and too much focus on business needs at the expense of users&quot; [4]. The teams that struggle most are the ones that have no strategy at all.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        So the question becomes: how do you build one when nobody asked for it?
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Start small. You don&apos;t walk into a Monday standup and announce &quot;I&apos;ve created our design strategy.&quot; You build it in pieces, each piece proving its value before you introduce the next.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong className="text-carbon">First piece: connect one design decision to one business metric.</strong> The PM credit blog covered this through the <Link href="/resources/blogs/pm-credit-design-work" className="text-accent hover:underline font-medium">five shifts</Link>. Declare a target at kickoff. &quot;This redesign targets a 15% reduction in checkout abandonment.&quot; Measure the result. Report it publicly. That one connection, design decision to business metric, is the seed of strategic thinking. It&apos;s small enough that nobody needs to approve it. And once you&apos;ve done it three times, people start expecting it.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong className="text-carbon">Second piece: write a one-page problem statement before you open Figma.</strong> What&apos;s the business objective? Who&apos;s affected? What evidence exists? What&apos;s the cost of not solving it? This is the 4-component problem framework we published in <Link href="/resources/blogs/solved-what-you-were-asked-thats-the-problem" className="text-accent hover:underline font-medium">the problem-solving blog</Link>. A one-page problem statement, shared with the team before design begins, is strategy at its most fundamental level. It says: we know what we&apos;re solving and why.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong className="text-carbon">Third piece: propose a research plan proportional to the risk.</strong> Not every project needs two weeks of user research. Some need three days. Some need zero, the data already exists. The judgment of how much research this specific project needs, based on its risk, its novelty, and its stakes, is strategic thinking. It&apos;s also what separates a senior designer from a mid-level one. We wrote about reading risk in the context of <Link href="/resources/blogs/evaluative-vs-exploratory-designer" className="text-accent hover:underline font-medium">evaluative vs exploratory design approaches</Link> where matching depth to risk is the core skill.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong className="text-carbon">Fourth piece: present outcomes, not artefacts.</strong> When you share your work, don&apos;t present screens. Present: the problem you identified, the approach you took, the reasoning behind your decisions, and the outcome you&apos;re targeting or have measured. This is what <Link href="/resources/blogs/ux-career-ladder-levels-india" className="text-accent hover:underline font-medium">the career ladder breakdown</Link> describes as the difference between mid-level and senior presentation. Mid-level shows what they made. Senior shows why it matters.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Each piece is individually small. Nobody needs to approve a problem statement or a success metric. But after six months of consistently connecting design work to business outcomes, proposing research proportional to risk, and presenting outcomes instead of artefacts, you&apos;ve built the foundation of a design strategy without anyone giving you permission.
+      </p>
+
+      <h2 id="strategy-as-maturity-lever" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Strategy as a Maturity Lever
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        There&apos;s a metaphor I use with designers that&apos;s specific enough to land in India. You can put jaggery in milk, but if you don&apos;t stir it, the sweetness stays at the bottom and the top tastes the same as before. Having the right ingredients doesn&apos;t change anything without the work of integration.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Strategy in a low-maturity org works the same way. You can write the best strategy document in the world, and if the organisation doesn&apos;t have the governance, the culture, or the leadership to integrate it into how decisions get made, it sits in a Google Drive folder getting stale.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Building a strategy doesn&apos;t automatically increase design maturity. But the act of building it, the conversations it forces, the connections it creates between design and business, the visibility it generates, those things do increase maturity. Not the document. The process of creating it.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        When you sit with business stakeholders to understand their objectives, you build a relationship that didn&apos;t exist before. When you propose research based on project risk, you demonstrate judgment. When you report outcomes tied to business metrics, you build credibility. Each of these interactions raises design&apos;s visibility and influence in the organisation by one small increment. Over time, those increments compound.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        This is why design leaders who actually lead, the ones we wrote about in <Link href="/resources/blogs/design-leadership-in-turmoil" className="text-accent hover:underline font-medium">Design Leadership Is in Turmoil</Link>, are the ones who build strategy as a practice. They&apos;re not waiting for the org to mature. They&apos;re using strategy as the mechanism through which maturity happens.
+      </p>
+
+      <h2 id="strategy-meets-confidence" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        When Strategy Meets Confidence
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        One challenge that even experienced strategists face: how do you know if your strategy is good enough to act on?
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        You&apos;ve done the research, talked to stakeholders, mapped the business objectives, defined the principles. But that nagging question remains. Is this direction solid? Did you go deep enough? Did you talk to the right people? Is there a blind spot you can&apos;t see?
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        There&apos;s an upcoming tool called <a href="https://konfom.com" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Konfom</a> that&apos;s tackling this exact gap. It scores how much confidence a direction has earned before you build, based on the work actually done: whether the decision is clearly framed, whether the stakes are properly sized, whether evidence has been gathered proportional to the risk, and whether the right stakeholders have weighed in. Instead of a gut feeling about whether the strategy is ready, it gives a visible score that shows where the direction is strong and where it&apos;s still thin.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        The insight behind it is one I&apos;ve seen play out across hundreds of projects: the frameworks tell you what to do. They never tell you how much is enough for this specific project. That judgment gap is where most strategies either over-invest or under-prepare. Konfom is currently in early access, free for the first 100 members.
+      </p>
+
+      <h2 id="what-changes" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        What Changes When You Have a Strategy
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The difference between a designer with a strategy and a designer without one is visible in every meeting, every review, every stakeholder conversation.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Without strategy, you&apos;re reactive. The PM sets direction, you execute. Stakeholders give feedback, you incorporate. Leadership changes priorities, you pivot. Your value is measured in speed and output volume. You&apos;re a production function.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        With strategy, you&apos;re proactive. You defined the problem before the PM wrote the brief. You proposed the research plan. You set the success metric. You connected the design work to a business outcome that leadership cares about. When stakeholders give feedback, you have principles to evaluate it against. When priorities change, you can articulate what that change costs. Your value is measured in outcomes, not output.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        That shift, from production function to strategic contributor, is the same shift the <Link href="/resources/blogs/pm-credit-design-work" className="text-accent hover:underline font-medium">PM credit blog</Link> describes from the credit perspective and the <Link href="/resources/blogs/facilitate-workshop-everyone-knows-more" className="text-accent hover:underline font-medium">workshop facilitation blog</Link> describes from the leadership perspective. Strategy is the underlying capability that makes all of it work.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        If you want help building this capability, whether you&apos;re a designer trying to create your first strategy or a design leader trying to embed strategic practice across your team, that&apos;s what our <Link href="/programs" className="text-accent hover:underline font-medium">mentorship programs</Link> and <Link href="/for-business" className="text-accent hover:underline font-medium">team training</Link> are built around. <a href="https://app.xperiencewave.com/book/dc-strategy-call" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Book a strategy call</a>. The irony of using a strategy call to talk about building strategy isn&apos;t lost on me.
+      </p>
+
+      <h2 id="free-resource" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Free Resource: Design Strategy Planning Tool
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        We built an AI-powered tool that walks you through building a design strategy step by step, with prompts for each section, examples from real projects, and templates you can customise.
+      </p>
+      <DesignStrategyGptGate />
+
+      <h2 id="sources-references" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Sources &amp; References
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li>[1] McKinsey &amp; Company. (2018). &quot;The Business Value of Design.&quot; 300 companies tracked over 5 years. Top-quartile MDI scorers saw 32% higher revenue growth and 56% higher TRS. <a href="https://www.mckinsey.com/capabilities/mckinsey-design/our-insights/the-business-value-of-design" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">mckinsey.com</a></li>
+        <li>[2] DesignRush. (2025). &quot;Design-Driven Companies Outperform the S&amp;P 500 by 228%.&quot; Comprehensive analysis of design ROI data. <a href="https://www.designrush.com/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">designrush.com</a></li>
+        <li>[3] UXPin. (2026). &quot;Design Strategy: A Practical Framework for UX Leaders.&quot; <a href="https://www.uxpin.com/studio/blog/design-strategy/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">uxpin.com</a></li>
+        <li>[4] Graf, T. (2026). &quot;The UX Strategy Blueprint: A Practical Framework for Building, Communicating, and Executing Design Strategy That Drives Product Outcomes.&quot; Including NNGroup research on UX strategy challenges. <a href="https://timgraf.com/ux-design/the-ux-strategy-blueprint/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">timgraf.com</a></li>
+        <li>[5] Levy, J. (2015, updated). &quot;UX Strategy: Product Strategy Techniques for Devising Innovative Digital Solutions.&quot; O&apos;Reilly. Four pillars: business strategy, value innovation, validated user research, killer UX design.</li>
+        <li>[6] Monday.com. (2026). &quot;Design Strategy Explained: Essential Frameworks and Execution Tips for 2026.&quot; <a href="https://monday.com/blog/marketing/design-strategy/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">monday.com</a></li>
+      </ul>
+
+      <h2 id="further-reading" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Further Reading on Xperience Wave
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li><Link href="/resources/blogs/pm-credit-design-work" className="text-accent hover:underline font-medium">Why Product Managers Get Credit for Your Design Work (And What You Can Do About It)</Link></li>
+        <li><Link href="/resources/blogs/solved-what-you-were-asked-thats-the-problem" className="text-accent hover:underline font-medium">You Solved Exactly What You Were Asked to Solve. That&apos;s the Problem.</Link></li>
+        <li><Link href="/resources/blogs/evaluative-vs-exploratory-designer" className="text-accent hover:underline font-medium">She Shipped Three Times While He Was Still Researching. They&apos;re Both Right. That&apos;s the Problem.</Link></li>
+        <li><Link href="/resources/blogs/design-leadership-in-turmoil" className="text-accent hover:underline font-medium">Design Leadership Is in Turmoil. And No One&apos;s Talking About It.</Link></li>
+        <li><Link href="/resources/blogs/ux-career-ladder-levels-india" className="text-accent hover:underline font-medium">Junior to CXO: What Each Level of the UX Career Ladder Actually Demands in India</Link></li>
+        <li><Link href="/resources/blogs/facilitate-workshop-everyone-knows-more" className="text-accent hover:underline font-medium">How to Facilitate a Design Workshop When Everyone in the Room Knows More Than You</Link></li>
+      </ul>
+
+      <h2 id="about-author" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        About the Author
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Shaik Murad is Co-founder and Head of Product &amp; Design at <Link href="/" className="text-accent hover:underline font-medium">Xperience Wave</Link>, a UX design studio based in Bangalore, working across designer mentorship, UX services for businesses, and a design community of 1,000+ designers.
+      </p>
+
+      <p className="text-base md:text-lg text-g500 italic mt-6">
+        - Murad, Co-founder &amp; Head of Product &amp; Design, Xperience Wave
+      </p>
+    </>
+  ),
   'agentic-ux-designers-guide': (
     <>
       <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
@@ -13479,6 +13689,17 @@ const blogContent: Record<string, React.ReactNode> = {
 
 // Table of contents for each blog post
 const blogTableOfContents: Record<string, { id: string; title: string }[]> = {
+  'design-strategy-buzzword-until-you-build-one': [
+    { id: 'what-a-strategy-is', title: 'What a Design Strategy Actually Is' },
+    { id: 'what-finished-looks-like', title: 'What a Finished Strategy Looks Like' },
+    { id: 'building-without-permission', title: '"My Organisation Would Never Let Me Build This"' },
+    { id: 'strategy-as-maturity-lever', title: 'Strategy as a Maturity Lever' },
+    { id: 'strategy-meets-confidence', title: 'When Strategy Meets Confidence' },
+    { id: 'what-changes', title: 'What Changes When You Have a Strategy' },
+    { id: 'free-resource', title: 'Free Resource: Design Strategy Planning Tool' },
+    { id: 'sources-references', title: 'Sources & References' },
+    { id: 'further-reading', title: 'Further Reading' },
+  ],
   'agentic-ux-designers-guide': [
     { id: 'what-an-agent-is', title: 'What an Agent Actually Is' },
     { id: 'automation-vs-agentic', title: 'How Automation and Agentic Systems Differ' },
@@ -14013,6 +14234,11 @@ const authorData: Record<string, { role: string; bio: string; image: string }> =
 
 // Blog-specific metadata for SEO
 const blogMetadata: Record<string, { title: string; description: string; keywords: string[] }> = {
+  'design-strategy-buzzword-until-you-build-one': {
+    title: 'Design Strategy Sounds Like a Buzzword Until You Actually Build One | Xperience Wave',
+    description: 'What a design strategy actually is (not a BRD, not a project plan), what a finished one covers from business context to governance, how to build one in pieces when your organisation never asked for it, and why the process of building it raises design maturity more than the document itself. With McKinsey and NNGroup data.',
+    keywords: ['design strategy', 'UX strategy', 'how to build a design strategy', 'design strategy components', 'design strategy vs project plan', 'UX strategy framework', 'design maturity', 'design as business tool', 'design strategy without permission', 'design business value McKinsey', 'strategic designer skills', 'design leadership strategy', 'design strategy India', 'UX strategy blueprint'],
+  },
   'agentic-ux-designers-guide': {
     title: 'The UX of AI Agents Is Nothing Like What You\'ve Been Designing. And That\'s the Problem. | Xperience Wave',
     description: 'Real AI agents plan their own steps, make decisions you didn\'t approve, and change behaviour over time. What agents actually are versus what\'s mislabeled, why conventional UX falls short, the three levels of human involvement, the trust problem (overtrust, undertrust, supervisory collapse), real deployments with numbers, and what changes in your design practice.',

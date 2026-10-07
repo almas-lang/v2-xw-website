@@ -55,6 +55,17 @@ export const getCategoryLabel = (category: string): string => {
 // Sample blog posts with Unsplash images
 export const blogPosts: BlogPost[] = [
   {
+    id: '61',
+    slug: 'design-strategy-buzzword-until-you-build-one',
+    title: 'Design Strategy Sounds Like a Buzzword Until You Actually Build One',
+    excerpt: 'A 15-year veteran stood up in a workshop and said his clients don\'t want strategy, they want screens on time. He was diagnosing the wrong problem. What a design strategy actually is (and isn\'t), what a finished one covers, how to build it in pieces when nobody asked for it, and why the process matters more than the document.',
+    category: 'design-skills' as const,
+    image: 'https://images.unsplash.com/photo-1528819622765-d6bcf132f793?w=800&q=80',
+    author: { name: 'Shaik Murad' },
+    publishedAt: '2026-10-19T09:00:00+05:30',
+    readTime: '13 min',
+  },
+  {
     id: '60',
     slug: 'agentic-ux-designers-guide',
     title: 'The UX of AI Agents Is Nothing Like What You\'ve Been Designing. And That\'s the Problem.',

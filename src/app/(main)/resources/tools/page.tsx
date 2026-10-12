@@ -83,6 +83,21 @@ const tools: Tool[] = [
     href: '/resources/tools/workshop-facilitation-cheatsheet',
   },
   {
+    id: 'career-conversation-cheatsheet',
+    name: 'Career Conversation Cheatsheet',
+    tagline: 'Make your growth visible to a non-design manager',
+    description: 'Six moves with the exact sentences, goal translation examples from design language to business language, and a 1:1 agenda template for your next career conversation.',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-full h-full">
+        <path d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+    color: 'accent',
+    leadType: 'career-conversation-cheatsheet' as LeadType,
+    available: true,
+    href: '/resources/tools/career-conversation-cheatsheet',
+  },
+  {
     id: 'designer-mode-assessment',
     name: 'Designer Mode Assessment',
     tagline: 'Evaluative or exploratory? Find out in 3 minutes',

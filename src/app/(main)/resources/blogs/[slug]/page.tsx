@@ -15,9 +15,263 @@ import SalaryDataSheetGate from '@/components/blog/SalaryDataSheetGate';
 import WorkshopCheatsheetGate from '@/components/blog/WorkshopCheatsheetGate';
 import AgenticUxPrinciplesGate from '@/components/blog/AgenticUxPrinciplesGate';
 import DesignStrategyGptGate from '@/components/blog/DesignStrategyGptGate';
+import CareerConversationCheatsheetGate from '@/components/blog/CareerConversationCheatsheetGate';
 
 // Blog content with internal links for SEO
 const blogContent: Record<string, React.ReactNode> = {
+  'career-conversation-non-design-manager': (
+    <>
+      <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
+        I was working on a hot air balloon pilot booking app a few years ago. We&apos;d finished the research phase, built the flows, validated with users. The network data was clear: pilots in certain regions had three times the booking density during monsoon season cos tourists wanted the post-rain landscape shots. The entire booking flow, pricing model, and availability calendar needed to account for this seasonal pattern.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        I walked into a review with the CEO. Showed the data. Explained how the booking architecture needed to reflect regional demand patterns. His response: &quot;Just make it look clean and make sure the button works.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        That was it. Weeks of research, real behavioral data, a structural recommendation that would have affected revenue. Reduced to &quot;make the button work.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        If you&apos;ve reported to a non-design manager, you know this moment. You&apos;ve been in this room. You brought substance and got asked for surface.
+      </p>
+
+      <h2 id="reality-most-designers-live-in" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Reality Most Designers Live In
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        There&apos;s a popular idea that design teams should report to design leaders. Makes sense on paper. A design VP understands what research means, knows why a structural recommendation isn&apos;t the same as a color preference, can evaluate your growth based on the actual craft.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The reality looks different.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        InVision surveyed thousands of companies about design maturity. Only 5% reached the highest level, where design is integrated into business strategy and has genuine executive representation. 41% were still at the lowest tier, where design is treated as visual production [1]. Pave analysed compensation and reporting structures across 900+ companies and found that design leaders overwhelmingly report to non-design executives: Heads of Product, CTOs, CEOs. Almost none report to a dedicated design executive [2]. NNGroup surveyed 557 design practitioners and found no single best practice for where design sits in the org chart [3].
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The vast majority of designers report to someone who doesn&apos;t come from design. That&apos;s the baseline, not a dysfunction or an outlier in the data.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Which means the career conversation you&apos;re trying to have, the one about your growth, your trajectory, your next move, is happening with someone who may not understand what good looks like in your discipline. And that gap between how you think about your work and how they evaluate it is where careers stall.
+      </p>
+
+      <h2 id="why-conversations-break-down" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Why Career Conversations Break Down
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This isn&apos;t a bad-manager problem. Most non-design managers aren&apos;t hostile to design. They just don&apos;t have the vocabulary for it.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        A design manager watches you run a research synthesis and recognizes the strategic thinking behind how you framed the insights. A non-design manager sees that you &quot;talked to some users&quot; and wonders when the screens will be ready.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        A design manager understands that the decision to simplify a flow from seven steps to three involved information architecture, edge case analysis, and multiple rounds of validation. A non-design manager sees a simpler screen and assumes it was simpler to make.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The evaluation gap shows up in three places.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong className="text-carbon">Goals that don&apos;t map to design work.</strong> Your manager sets OKRs around feature delivery speed, ticket completion, or stakeholder satisfaction scores. None of these measure design quality, research depth, or the strategic impact of your decisions. You hit every goal and still feel like your actual contribution is invisible.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong className="text-carbon">Feedback based on likeability, not craft.</strong> Gallup tracked nearly 15,000 employees and found that only 16% said their last conversation with their manager was &quot;extremely meaningful&quot; [4]. When managers don&apos;t understand the work, feedback defaults to personality: &quot;great team player,&quot; &quot;easy to work with,&quot; &quot;always positive in meetings.&quot; That&apos;s not career development. That&apos;s a character reference.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        <strong className="text-carbon">Promotion criteria borrowed from other functions.</strong> Engineering has clear ladders: junior writes code under supervision, senior designs systems independently, staff shapes technical direction across teams. Product has them too. Design? Your manager might be using the engineering ladder cos that&apos;s what they know. So you get measured on output volume and technical complexity instead of research quality, systems thinking, or the business impact of your design decisions.
+      </p>
+
+      <h2 id="translation-problem" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Translation Problem
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The real issue isn&apos;t that your manager doesn&apos;t value design. The issue is that you&apos;re speaking different languages about the same work.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        You say: &quot;I conducted contextual inquiry across three user segments and identified a critical mental model mismatch in the onboarding flow.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        They hear: &quot;She talked to some people and thinks the onboarding needs changes.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        You say: &quot;The information architecture needs restructuring cos users are creating workarounds that increase support ticket volume.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        They hear: &quot;He wants to redesign something that&apos;s already shipped.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Neither person is wrong. But one person controls your performance review, your promotion timeline, and your project assignments. And that person is working with an incomplete picture of what you actually do.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        The fix isn&apos;t waiting for your manager to learn design. Some will, most won&apos;t have time to. The fix is translating your work into the language they already operate in: business outcomes, risk reduction, measurable impact.
+      </p>
+
+      <h2 id="six-moves" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Six Moves for a Career Conversation That Actually Lands
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        These aren&apos;t abstract tips. Each one comes with a sentence you can actually say.
+      </p>
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-4">
+        1. Set goals in their language, not yours
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Before your next goal-setting conversation, take every design goal and translate it into a business outcome your manager already cares about.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Don&apos;t say: &quot;I want to improve the research maturity of our team.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Say: &quot;I want to reduce the number of post-launch fixes we ship by running structured research before development starts. Last quarter we had 14 post-launch patches. I want to cut that by half.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Your manager understands fewer patches. They understand reduced engineering rework. They might not understand research maturity, and they don&apos;t need to. The outcome is the same.
+      </p>
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-4">
+        2. Make your decision-making visible
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Design decisions happen in your head, in your Figma files, in conversations with users. Your manager sees the output, not the 40 decisions that shaped it. So they assume the work was straightforward.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Before your 1:1, pick one decision from the past week and explain it in two sentences.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Say: &quot;The checkout flow has three steps instead of five. We tested both versions and the shorter flow reduced drop-off by 23%, but I kept the address confirmation as a separate step cos our support data showed 18% of delivery errors come from auto-filled addresses.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        You&apos;re not asking for praise. You&apos;re showing that design involves tradeoffs that affect business metrics. Over time, this changes how your manager categorizes your work.
+      </p>
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-4">
+        3. Bring a career roadmap they can evaluate
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Most designers walk into career conversations with vague aspirations: &quot;I want to grow into a senior role,&quot; &quot;I want to lead a team someday.&quot; Your manager can&apos;t do anything with that.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Build a one-page roadmap. Three columns: where you are now (with specific evidence), where you want to be in 12 months (with specific capabilities), and what you need to get there (projects, exposure, learning).
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Say: &quot;Right now I&apos;m handling execution on two product areas. In 12 months, I want to be leading the design direction for one full product vertical. To get there, I need to run at least two end-to-end projects where I own the research-to-ship pipeline, and I need exposure to the quarterly business review so I understand how leadership evaluates product success.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This gives your manager something concrete to support.
+      </p>
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-4">
+        4. Track your work in metrics they report on
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Find out what numbers your manager presents in their own reviews. Revenue? NPS? Feature adoption? Support tickets? Churn? Then start connecting your work to those numbers.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Keep a running doc. Every two weeks, add one line: what you did, what it affected, what moved. You don&apos;t need a full analytics setup. You need one connection between your work and a metric that matters upstream.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Say: &quot;The onboarding redesign went live three weeks ago. First-week activation is up 11% compared to last cohort. I want to talk about what I learned from this project and how it shapes what I take on next.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Your manager now has something to repeat when their boss asks what the design team accomplished this quarter.
+      </p>
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-4">
+        5. Train them (without calling it training)
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Your manager won&apos;t sign up for &quot;Design Thinking 101.&quot; But they&apos;ll absorb the principles if you share them as context for decisions.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        When you present work, spend 30 seconds on why you made a choice, not what the choice was. &quot;I tested this with five users cos research shows that five users surface 85% of usability issues. More than that has diminishing returns for this type of evaluative study.&quot; You&apos;re not lecturing. You&apos;re giving them a reason to trust the process, and over time, they start internalizing the reasoning.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        When they push back on something you know is wrong, don&apos;t say &quot;that&apos;s not how design works.&quot; Say: &quot;I hear you. I tested that approach in the first round and here&apos;s what happened.&quot; Evidence wins where authority can&apos;t.
+      </p>
+      <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-4">
+        6. Learn their language back
+      </h3>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        This is the part most designers skip. You want your manager to understand design. Fair. But have you tried to understand what keeps them up at night?
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Sit in on a product review. Read the quarterly business update. Ask your manager directly: &quot;What are the three things your boss is measuring you on this quarter?&quot; Then figure out how your work connects to those things.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Say: &quot;I know the team is being measured on time-to-market for the payments feature. I can cut two weeks off the design phase if I run a modified research sprint instead of the full discovery process. The tradeoff is we&apos;ll have less confidence on edge cases, but I&apos;ll flag those and we can patch in v2. Want me to scope that?&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        You&apos;re now speaking their language. And you&apos;re demonstrating the exact kind of strategic judgment that earns promotions.
+      </p>
+
+      <h2 id="two-way-model" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Two-Way Model
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Career conversations with a non-design manager work best when you accept two responsibilities at the same time.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong className="text-carbon">Teach them what design actually involves.</strong> Not through a formal workshop or a slide deck, but in small moments every week. Show them a before-and-after of a flow you simplified. Explain why you chose to research before designing. Share a user quote that changed the direction of a feature. Over months, their mental model of design shifts from &quot;makes things look nice&quot; to &quot;makes decisions that affect whether this product works.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        <strong className="text-carbon">Learn what they actually need from you.</strong> They&apos;re managing a team, reporting upward, balancing competing priorities. If you can understand their constraints, you can frame your growth in terms they can sponsor. &quot;I want to grow&quot; is an ask. &quot;I want to take ownership of the research phase for Project X, which will free up your bandwidth and give us better data before the dev sprint starts&quot; is a partnership.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        The designer who figures out how to do both, teach and learn simultaneously, stops being someone who needs to be managed and starts being someone who co-manages the relationship.
+      </p>
+
+      <h2 id="hot-air-balloon-revisited" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        The Hot Air Balloon Problem, Revisited
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        That CEO who told me to &quot;make the button work&quot;? I went back to him a week later with a different approach. Instead of showing the research data, I showed him revenue. &quot;Pilots in these three regions have 3x the booking density during post-monsoon season. If we build the availability calendar around seasonal demand instead of flat availability, the projected booking increase is 40% in Q3. The design work for this is a restructured booking flow that takes regional data into account.&quot;
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        He approved it in the meeting.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        The design work was identical. The research was the same. What changed was the language. I stopped explaining design and started explaining business impact. He didn&apos;t need to understand information architecture. He needed to understand that this recommendation would make the product more money.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Your career conversation works the same way. You&apos;re not dumbing down your work. You&apos;re translating it so the person who controls your trajectory can actually see it.
+      </p>
+
+      <h2 id="free-resource" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Free Resource: Career Conversation Cheatsheet
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        We built a one-page cheatsheet with all six moves, including the exact sentences, goal translation examples (design language to business language), and a 1:1 agenda template you can bring to your next career conversation.
+      </p>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
+        Print it and bring it to your next 1:1.
+      </p>
+      <CareerConversationCheatsheetGate />
+
+      <h2 id="sources-references" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Sources &amp; References
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li>[1] InVision. &quot;The New Design Frontier: Design Maturity Model.&quot; Survey of thousands of companies finding only 5% at highest design maturity level. <a href="https://www.invisionapp.com/design-better/design-maturity-model/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">invisionapp.com</a></li>
+        <li>[2] Pave. Compensation and reporting structure analysis across 900+ companies. Design leaders overwhelmingly report to non-design executives.</li>
+        <li>[3] Nielsen Norman Group. Survey of 557 design practitioners on reporting structures. Found no single best practice for where design sits in an org chart.</li>
+        <li>[4] Gallup. &quot;The #1 Great Manager Habit.&quot; Study of nearly 15,000 employees. Only 16% reported their last conversation with their manager was extremely meaningful. <a href="https://www.gallup.com/workplace/505370/great-manager-important-habit.aspx" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">gallup.com</a></li>
+      </ul>
+
+      <h2 id="further-reading" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        Further Reading on Xperience Wave
+      </h2>
+      <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-6">
+        <li><Link href="/resources/blogs/design-strategy-buzzword-until-you-build-one" className="text-accent hover:underline font-medium">Design Strategy Sounds Like a Buzzword Until You Actually Build One</Link></li>
+        <li><Link href="/resources/blogs/pm-credit-design-work" className="text-accent hover:underline font-medium">Why Product Managers Get Credit for Your Design Work (And What You Can Do About It)</Link></li>
+        <li><Link href="/resources/blogs/evaluative-vs-exploratory-designer" className="text-accent hover:underline font-medium">She Shipped Three Times While He Was Still Researching. They&apos;re Both Right. That&apos;s the Problem.</Link></li>
+        <li><Link href="/resources/blogs/ux-job-market-india-sep-2026" className="text-accent hover:underline font-medium">The UX Job Market in India (Sep 2026): What&apos;s Actually Hiring, What&apos;s Shrinking, and What&apos;s Winning</Link></li>
+      </ul>
+
+      <h2 id="about-author" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
+        About the Author
+      </h2>
+      <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
+        Shaik Murad is Co-founder and Head of Product &amp; Design at <Link href="/" className="text-accent hover:underline font-medium">Xperience Wave</Link>, a UX design studio based in Bangalore, working across designer mentorship, UX services for businesses, and a design community of 1,000+ designers.
+      </p>
+
+      <p className="text-base md:text-lg text-g500 italic mt-6">
+        - Murad, Co-founder &amp; Head of Product &amp; Design, Xperience Wave
+      </p>
+    </>
+  ),
   'design-strategy-buzzword-until-you-build-one': (
     <>
       <p className="text-lg md:text-xl text-g600 leading-relaxed mb-6">
@@ -13689,6 +13943,17 @@ const blogContent: Record<string, React.ReactNode> = {
 
 // Table of contents for each blog post
 const blogTableOfContents: Record<string, { id: string; title: string }[]> = {
+  'career-conversation-non-design-manager': [
+    { id: 'reality-most-designers-live-in', title: 'The Reality Most Designers Live In' },
+    { id: 'why-conversations-break-down', title: 'Why Career Conversations Break Down' },
+    { id: 'translation-problem', title: 'The Translation Problem' },
+    { id: 'six-moves', title: 'Six Moves for a Career Conversation That Actually Lands' },
+    { id: 'two-way-model', title: 'The Two-Way Model' },
+    { id: 'hot-air-balloon-revisited', title: 'The Hot Air Balloon Problem, Revisited' },
+    { id: 'free-resource', title: 'Free Resource: Career Conversation Cheatsheet' },
+    { id: 'sources-references', title: 'Sources & References' },
+    { id: 'further-reading', title: 'Further Reading' },
+  ],
   'design-strategy-buzzword-until-you-build-one': [
     { id: 'what-a-strategy-is', title: 'What a Design Strategy Actually Is' },
     { id: 'what-finished-looks-like', title: 'What a Finished Strategy Looks Like' },
@@ -14234,6 +14499,11 @@ const authorData: Record<string, { role: string; bio: string; image: string }> =
 
 // Blog-specific metadata for SEO
 const blogMetadata: Record<string, { title: string; description: string; keywords: string[] }> = {
+  'career-conversation-non-design-manager': {
+    title: 'How to Have a Career Growth Conversation When Your Manager Doesn\'t Understand Design | Xperience Wave',
+    description: 'Most designers report to someone who doesn\'t come from design, and that gap is where careers stall. Why career conversations break down (goals that don\'t map to design, likeability feedback, borrowed promotion criteria), the translation problem underneath it, and six moves with exact sentences that make your growth visible to a non-design manager.',
+    keywords: ['career conversation with non-design manager', 'designer career growth', 'design manager doesn\'t understand design', 'designer performance review', 'design career roadmap', 'translate design to business language', 'designer promotion', 'design career development India', 'reporting to non-design manager', 'designer 1:1 tips', 'design business impact metrics', 'UX career growth', 'designer visibility', 'design maturity organisation'],
+  },
   'design-strategy-buzzword-until-you-build-one': {
     title: 'Design Strategy Sounds Like a Buzzword Until You Actually Build One | Xperience Wave',
     description: 'What a design strategy actually is (not a BRD, not a project plan), what a finished one covers from business context to governance, how to build one in pieces when your organisation never asked for it, and why the process of building it raises design maturity more than the document itself. With McKinsey and NNGroup data.',

@@ -17,6 +17,7 @@ export type LeadType =
   | 'workshop-facilitation-cheatsheet'
   | 'designer-mode-assessment'
   | 'agentic-ux-principles'
+  | 'career-conversation-cheatsheet'
   | 'design-strategy-gpt'
   | 'research-synthesis-gpt'
   | 'microcopy-writer-gpt'
@@ -80,6 +81,13 @@ const leadConfigs: Record<LeadType, LeadConfig> = {
     notificationSubject: '📊 New Agentic UX Principles Download',
     notificationText: 'Someone requested the 10 Principles of Agentic UX reference',
     leadSource: 'Agentic UX Principles Reference',
+  },
+  // Career Conversation Cheatsheet (email-only, no redirect)
+  'career-conversation-cheatsheet': {
+    name: 'Career Conversation Cheatsheet',
+    notificationSubject: '📊 New Career Conversation Cheatsheet Download',
+    notificationText: 'Someone requested the Career Conversation Cheatsheet',
+    leadSource: 'Career Conversation Cheatsheet',
   },
   // Design Team Systems Audit
   'design-team-systems-audit': {
@@ -390,6 +398,52 @@ export async function POST(request: NextRequest) {
         });
       } catch (error) {
         console.error('Failed to send salary data sheet confirmation email:', error);
+      }
+    }
+
+    // Send confirmation email with download link for the career cheatsheet
+    if (leadType === 'career-conversation-cheatsheet') {
+      try {
+        await fetch('https://api.brevo.com/v3/smtp/email', {
+          method: 'POST',
+          headers: {
+            'accept': 'application/json',
+            'content-type': 'application/json',
+            'api-key': BREVO_API_KEY || '',
+          },
+          body: JSON.stringify({
+            sender: { name: 'Xperience Wave', email: 'team@xperiencewave.com' },
+            to: [{ email }],
+            subject: 'Your Career Conversation Cheatsheet is Ready',
+            htmlContent: `
+              <style>@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&family=Playfair+Display:wght@700&display=swap');</style>
+              <div style="font-family: 'Plus Jakarta Sans', Arial, sans-serif; max-width: 560px; margin: 0 auto; background: #ffffff; padding: 40px 32px;">
+                <div style="text-align: center;">
+                  <img src="https://www.xperiencewave.com/images/xw-logo-mobile.png" alt="Xperience Wave" style="height: 36px; margin-bottom: 32px;" />
+                  <h1 style="font-family: 'Playfair Display', Georgia, serif; color: #1A1A1A; font-size: 24px; font-weight: 700; margin: 0 0 12px;">
+                    Your Cheatsheet is Ready
+                  </h1>
+                  <p style="color: #666666; font-size: 15px; line-height: 1.6; margin: 0 0 28px;">
+                    All six moves with the exact sentences, goal translation examples from design language to business language, and a 1:1 agenda template. Print it and bring it to your next career conversation.
+                  </p>
+                  <a href="https://drive.google.com/file/d/111eD7VlQaTsx1Iwt17MwOgr9h8BiKmU4/view" style="display: inline-block; padding: 14px 36px; background: #FF0023; color: #ffffff; text-decoration: none; font-weight: 600; border-radius: 8px; font-size: 16px;">
+                    Open the Cheatsheet &rarr;
+                  </a>
+                </div>
+                <div style="padding-top: 28px; margin-top: 28px; border-top: 1px solid #eee;">
+                  <p style="color: #999999; font-size: 13px; line-height: 1.5; text-align: center; margin: 0 0 16px;">
+                    Want help preparing for the actual conversation? <a href="https://app.xperiencewave.com/book/dc-strategy-call" style="color: #FF0023; text-decoration: none;">Book a free strategy call</a>
+                  </p>
+                  <p style="color: #bbbbbb; font-size: 11px; text-align: center; margin: 0;">
+                    Xperience Wave &middot; UX Mentorship &amp; Career Development &middot; Bangalore
+                  </p>
+                </div>
+              </div>
+            `,
+          }),
+        });
+      } catch (error) {
+        console.error('Failed to send career cheatsheet confirmation email:', error);
       }
     }
 

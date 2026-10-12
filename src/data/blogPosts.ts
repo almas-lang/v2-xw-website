@@ -55,6 +55,17 @@ export const getCategoryLabel = (category: string): string => {
 // Sample blog posts with Unsplash images
 export const blogPosts: BlogPost[] = [
   {
+    id: '62',
+    slug: 'career-conversation-non-design-manager',
+    title: 'How to Have a Career Growth Conversation When Your Manager Doesn\'t Understand Design',
+    excerpt: 'You brought substance and got asked for surface. Most designers report to someone who doesn\'t come from design, and that gap is where careers stall. Why these conversations break down, the translation problem underneath it, and six moves (with the exact sentences) that make your growth visible to the person who controls your trajectory.',
+    category: 'career-growth' as const,
+    image: 'https://images.unsplash.com/photo-1543269865-cbf427effbad?w=800&q=80',
+    author: { name: 'Shaik Murad' },
+    publishedAt: '2026-10-22T09:00:00+05:30',
+    readTime: '12 min',
+  },
+  {
     id: '61',
     slug: 'design-strategy-buzzword-until-you-build-one',
     title: 'Design Strategy Sounds Like a Buzzword Until You Actually Build One',

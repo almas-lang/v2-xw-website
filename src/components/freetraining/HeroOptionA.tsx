@@ -1,13 +1,14 @@
 'use client';
 
 import { ftContent } from '@/lib/freetraining/content';
+import { scrollToLeadForm } from '@/components/freetraining/ScrollToFormButton';
 
 /**
  * OPTION A: "Social Proof Wall"
  * Centered hero with floating testimonial cards and trust metrics.
  * Social proof IS the design. Glassmorphism cards float around the headline.
  */
-export function HeroOptionA({ onCtaClick }: { onCtaClick: () => void }) {
+export function HeroOptionA({ onCtaClick = scrollToLeadForm }: { onCtaClick?: () => void }) {
   const { hero } = ftContent;
 
   return (

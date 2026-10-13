@@ -1,87 +1,37 @@
-'use client';
-
-import { Suspense, useEffect, useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
-import Script from "next/script";
-import { LeadForm } from "@/components/freetraining/LeadForm";
-import { Toast } from "@/components/freetraining/Toast";
 import { HeroOptionA } from "@/components/freetraining/HeroOptionA";
+import { LandingTracking } from "@/components/freetraining/LandingTracking";
+import { LeadCaptureSection } from "@/components/freetraining/LeadCaptureSection";
+import { ScrollToFormButton } from "@/components/freetraining/ScrollToFormButton";
 import FAQ from "@/components/shared/FAQ";
 import { ftContent } from "@/lib/freetraining/content";
-import { setStorageJSON } from "@/lib/freetraining/storage";
-import { ftPath } from "@/lib/freetraining/constants";
-import { trackPageView, trackScrollDepth } from "@/lib/freetraining/track";
+
+// Server component on purpose. Until Oct 2026 this page was a client component
+// wrapped in Suspense (for useSearchParams), so the HTML Google received was the
+// fallback: ~11 words and no H1, on the most-visited page of the site. All copy
+// now renders on the server; state and hooks live in the small client
+// components imported above. Metadata comes from the route layout.
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: ftContent.faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.a,
+    },
+  })),
+};
 
 export default function FreeTrainingHome() {
   return (
-    <Suspense fallback={<div className="min-h-screen bg-ft-dark" />}>
-      <FreeTrainingHomeContent />
-    </Suspense>
-  );
-}
-
-function FreeTrainingHomeContent() {
-  const router = useRouter();
-  const searchParams = useSearchParams();
-  const [toast, setToast] = useState({ isVisible: false, message: "", type: "info" as "success" | "error" | "info" });
-
-  useEffect(() => {
-    trackPageView("/freetraining", "Free Training Landing");
-
-    const metaCampaign = searchParams.get("hsa_cam") || "";
-    const metaAd = searchParams.get("hsa_ad") || "";
-    const metaAdSet = searchParams.get("hsa_grp") || "";
-
-    const utmParams = {
-      utm_source: searchParams.get("utm_source") || "",
-      utm_medium: searchParams.get("utm_medium") || "",
-      utm_campaign: searchParams.get("utm_campaign") || metaCampaign,
-      utm_content: searchParams.get("utm_content") || metaAd,
-      utm_term: searchParams.get("utm_term") || metaAdSet,
-    };
-
-    if (Object.values(utmParams).some((v) => v !== "")) {
-      setStorageJSON("utm_params", utmParams);
-    }
-  }, [searchParams]);
-
-  // Scroll-depth milestones on the landing page — fired once per threshold.
-  useEffect(() => {
-    const fired = new Set<number>();
-    const thresholds = [25, 50, 75, 100];
-    const onScroll = () => {
-      const doc = document.documentElement;
-      const scrollable = doc.scrollHeight - window.innerHeight;
-      if (scrollable <= 0) return;
-      const percent = (window.scrollY / scrollable) * 100;
-      for (const t of thresholds) {
-        if (percent >= t && !fired.has(t)) {
-          fired.add(t);
-          trackScrollDepth(t, "/freetraining");
-        }
-      }
-      if (fired.size === thresholds.length) window.removeEventListener("scroll", onScroll);
-    };
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  const scrollToForm = () => {
-    document.getElementById("get-access")?.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const handleLeadSuccess = (leadId: string) => {
-    setToast({ isVisible: true, message: "Registration successful! Redirecting to training...", type: "success" });
-    setTimeout(() => {
-      router.push(ftPath(`/watch?lead_id=${leadId}&new_lead=true`));
-    }, 1200);
-  };
-
-  return (
     <div className="flex flex-col">
+      <LandingTracking />
+
       {/* ============ SECTION 1: HERO ============ */}
-      <HeroOptionA onCtaClick={scrollToForm} />
+      <HeroOptionA />
 
       {/* ============ SECTION 1.5: WHO IT'S FOR / NOT FOR ============ */}
       <section className="bg-ft-section-bg py-14 md:py-20 px-5">
@@ -144,22 +94,7 @@ function FreeTrainingHomeContent() {
       </section>
 
       {/* ============ SECTION 3: LEAD CAPTURE FORM ============ */}
-      <section id="get-access" className="relative bg-ft-dark py-14 md:py-20 px-5 overflow-hidden">
-        <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse 50% 50% at 50% 50%, rgba(108,99,255,0.06) 0%, transparent 60%)' }} />
-        <div className="relative z-10 max-w-[480px] mx-auto">
-          <div className="text-center mb-8">
-            <h2 className="text-[23px] md:text-[29px] font-heading font-bold text-white">
-              {ftContent.form.title}
-            </h2>
-          </div>
-          <div className="bg-white/[0.04] border border-white/[0.08] backdrop-blur-sm rounded-2xl p-6 md:p-8">
-            <LeadForm
-              onSuccess={handleLeadSuccess}
-              onError={(msg) => setToast({ isVisible: true, message: msg, type: "error" })}
-            />
-          </div>
-        </div>
-      </section>
+      <LeadCaptureSection />
 
       {/* ============ SECTION 4: RESULTS ============ */}
       <section className="bg-white py-10 md:py-14 px-5">
@@ -179,6 +114,7 @@ function FreeTrainingHomeContent() {
                 {/* Photo */}
                 <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden bg-gray-100 mb-3 flex-shrink-0 ring-2 ring-gray-100">
                   {card.image ? (
+                    // eslint-disable-next-line @next/next/no-img-element
                     <img src={card.image} alt={card.name} className="w-full h-full object-cover" />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center text-gray-400 text-xl font-bold">
@@ -202,7 +138,6 @@ function FreeTrainingHomeContent() {
                     rel="noopener noreferrer"
                     className="mt-2 text-[#0A66C2] hover:text-[#004182] transition-colors"
                     aria-label={`${card.name} on LinkedIn`}
-                    onClick={(e) => e.stopPropagation()}
                   >
                     <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                   </a>
@@ -232,6 +167,7 @@ function FreeTrainingHomeContent() {
           {/* Left rail: avatar */}
           <div className="flex md:block">
             <div className="w-24 h-24 md:w-[140px] md:h-[140px] lg:w-[160px] lg:h-[160px] rounded-full overflow-hidden bg-gray-100 ring-1 ring-gray-200 shrink-0">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/images/Murad.png"
                 alt="Shaik Murad"
@@ -261,7 +197,7 @@ function FreeTrainingHomeContent() {
                 3,000+
               </p>
               <p className="text-[14px] md:text-[15px] text-[#4D4D57] mt-2 max-w-[420px]">
-                career conversations with designers · 830+ mentored · 15 years in design
+                designers trained · 830+ moved into senior roles · 15 years in design
               </p>
             </div>
 
@@ -300,46 +236,23 @@ function FreeTrainingHomeContent() {
               {ftContent.finalCta.subline}
             </p>
           )}
-          <button
-            onClick={scrollToForm}
+          <ScrollToFormButton
             className="inline-flex items-center gap-3 px-8 py-4 bg-accent hover:bg-accent-hover text-white font-semibold text-[16px] md:text-[17px] rounded-md transition-colors cursor-pointer mb-8 shadow-[0_0_40px_rgba(255,0,35,0.25)]"
           >
             {ftContent.finalCta.cta}
             <span aria-hidden>→</span>
-          </button>
+          </ScrollToFormButton>
           <p className="text-[13px] md:text-[14px] text-gray-400 leading-relaxed max-w-[640px] mx-auto">
             {ftContent.finalCta.trustText}
           </p>
         </div>
       </section>
 
-      {/* FAQPage Schema */}
-      <Script
-        id="faq-schema"
+      {/* FAQPage schema (kept: harmless, and the FAQ section is real content) */}
+      <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            mainEntity: ftContent.faqs.map((faq) => ({
-              "@type": "Question",
-              name: faq.q,
-              acceptedAnswer: {
-                "@type": "Answer",
-                text: faq.a,
-              },
-            })),
-          }),
-        }}
-      />
-
-      <Toast
-        message={toast.message}
-        type={toast.type}
-        isVisible={toast.isVisible}
-        onClose={() => setToast({ ...toast, isVisible: false })}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
     </div>
   );
 }
-

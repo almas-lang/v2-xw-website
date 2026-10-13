@@ -141,7 +141,7 @@ export default function MentorshipComparison() {
         >
           {/* Statement */}
           <p className="font-heading text-base md:text-lg font-semibold text-carbon">
-            This is why <span className="text-2xl md:text-3xl font-black text-accent">80%</span> of our mentees achieve their goals.
+            This is why <span className="text-2xl md:text-3xl font-black text-accent">83%</span> of our mentees achieve their goals.
           </p>
 
           {/* CTA */}

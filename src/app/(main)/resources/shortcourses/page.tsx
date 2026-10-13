@@ -411,9 +411,9 @@ export default function ShortCoursesPage() {
 
           {/* Trust points */}
           <div className="mt-8 flex flex-wrap justify-center items-center gap-x-2 gap-y-1 text-xs md:text-sm text-alice/50">
-            <span>140+ designers mentored</span>
+            <span>3,000+ designers trained</span>
             <span className="text-alice/30">·</span>
-            <span>80% achieved their goals</span>
+            <span>83% achieved their goals</span>
             <span className="text-alice/30">·</span>
             <span>38% avg salary hike</span>
           </div>

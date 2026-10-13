@@ -31,7 +31,7 @@ export const sharedIncludedItems = [
   { text: 'Expert-led online clinics (Core Design, Systemic Foundations, Personal Branding)' },
   { text: 'Online exam-based globally recognised certification' },
   { text: 'Access to WaveAcademy - videos, activities, tools, and quizzes' },
-  { text: 'WaveMakers Connect community access (2k+ members)' },
+  { text: 'WaveMakers Connect community access (1,370+ members)' },
 ];
 
 // Common tools used across all programs

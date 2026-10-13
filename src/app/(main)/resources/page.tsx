@@ -333,7 +333,7 @@ function HeroSection() {
               <p className="font-heading font-medium text-white text-sm md:text-base">
                 50+ resources
                 <span className="text-g500 mx-3">·</span>
-                Used by 3000+ designers
+                Used by 3,000+ designers
                 <span className="text-g500 mx-3">·</span>
                 Updated regularly
               </p>

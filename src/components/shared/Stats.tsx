@@ -16,9 +16,9 @@ interface StatsProps {
 
 const defaultStats: Stat[] = [
   {
-    value: '3000',
+    value: '3,000',
     suffix: '+',
-    label: 'designers consulted',
+    label: 'designers trained',
   },
   {
     value: '140',
@@ -26,7 +26,7 @@ const defaultStats: Stat[] = [
     label: 'mentored 1:1',
   },
   {
-    value: '80',
+    value: '83',
     suffix: '%',
     label: 'achieved their goals',
   },

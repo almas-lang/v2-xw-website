@@ -11,7 +11,7 @@ interface FreeTrainingPromoProps {
 const buildHref = (source: string) =>
   `/freetraining?utm_source=organic&utm_medium=inline_promo&utm_campaign=${encodeURIComponent(source)}`;
 
-const TRUST = "Free · 20 min · 830+ designers trained";
+const TRUST = "Free · 20 min · 3,000+ designers trained";
 
 export function FreeTrainingPromo({ variant, source }: FreeTrainingPromoProps) {
   const href = buildHref(source);
@@ -62,7 +62,7 @@ export function FreeTrainingPromo({ variant, source }: FreeTrainingPromoProps) {
 
           <div className="flex flex-wrap gap-2 mt-4">
             <span className="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-white text-ft-purple-cta">
-              830+ mentored
+              830+ landed senior roles
             </span>
             <span className="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-white text-ft-purple-cta">
               38% salary uplift
@@ -102,7 +102,7 @@ export function FreeTrainingPromo({ variant, source }: FreeTrainingPromoProps) {
             </p>
             <div className="flex flex-wrap gap-2 mb-4">
               <span className="text-[12px] font-semibold px-2.5 py-1 rounded-full bg-white text-ft-purple-cta">
-                830+ mentored
+                830+ landed senior roles
               </span>
               <span className="text-[12px] font-semibold px-2.5 py-1 rounded-full bg-white text-ft-purple-cta">
                 38% salary uplift

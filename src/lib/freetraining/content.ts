@@ -70,7 +70,7 @@ export const ftContent = {
   aboutMurad: {
     name: 'Shaik Murad',
     role: 'Founder, Xperience Wave · ex-Head of Design',
-    stats: '15 years in design  ·  830+ designers mentored  ·  3,000+ career conversations',
+    stats: '15 years in design  ·  830+ moved into senior roles  ·  3,000+ designers trained',
     bio: 'Murad has spent 15 years inside design teams - building, hiring, promoting, and watching designers stall. He\'s seen what separates the ones who break into senior and leadership roles from the ones who don\'t. The pattern is rarely talent.',
   },
   seoContent: {

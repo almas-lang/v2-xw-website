@@ -173,7 +173,7 @@ export default function OurPartners() {
             ))}
           </div>
           <p className="text-g400 text-sm">
-            <span className="font-semibold text-carbon">3000+</span> designers consulted across these organizations
+            <span className="font-semibold text-carbon">3,000+</span> designers trained across these organizations
           </p>
         </div>
       </div>

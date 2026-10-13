@@ -12,7 +12,7 @@ import GuideDownloadModal from '@/components/shared/GuideDownloadModal';
 // Note: Metadata moved to layout.tsx for this client component
 
 const stats = [
-  { value: '3000+', label: 'Designers Trained' },
+  { value: '3,000+', label: 'Designers Trained' },
   { value: '210+', label: 'Ready to Hire' },
   { value: '48-72 hrs', label: 'To Match Profiles' },
   { value: '<2 weeks', label: 'Avg. Time to Hire' },
@@ -23,7 +23,7 @@ const successStories = [
   { name: 'Shahrukh Jamal', role: 'Head of UX at Dot and Beyond', image: '/images/shah_rukh.jpeg' },
   { name: 'Pavan Muthyala', role: 'Head of Design at Bob', image: '/images/Pavan Mutyala.jpeg' },
   { name: 'Siva Karthik', role: 'Director at The Thinking Team', image: '/images/siva_karthik.jpeg' },
-  { name: 'Kritika Singh', role: 'Lead Product designer at a German startup', image: '/images/Kritika Singh.jpeg' },
+  { name: 'Kritika Singh', role: 'Lead Product designer at a German company', image: '/images/Kritika Singh.jpeg' },
   { name: 'Radhakrishna A', role: 'Principal Designer at Informatica', image: '/images/Radhakrishna Aekbote.jpeg' },
   { name: 'Sheetal P', role: 'Design Lead at CX100', image: '/images/sheetal.png' },
   { name: 'Jonah Immanuel', role: 'Sr. Lead Designer at Wongdoody', image: '/images/Jonah_Immanuel.png' },
@@ -199,7 +199,7 @@ export default function HireUXDesignersPage() {
                 className="text-lg md:text-xl text-g300 leading-relaxed mb-8"
                 style={getSectionStyle('hero-content', 150)}
               >
-                Hire from a pool of <strong className="text-white">3000+</strong> UX designers we trained ourselves. No resume roulette. No fake case studies. Just designers who can actually do the work.
+                Hire from a pool of <strong className="text-white">3,000+</strong> UX designers we trained ourselves. No resume roulette. No fake case studies. Just designers who can actually do the work.
               </p>
 
               {/* CTAs */}

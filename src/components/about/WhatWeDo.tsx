@@ -89,7 +89,7 @@ export default function WhatWeDo() {
               {/* Stat highlight */}
               <div className="bg-white/5 border border-white/10 p-4 mb-8" style={{ borderRadius: '12px' }}>
                 <p className="text-alice">
-                  <span className="font-heading text-2xl font-bold">95%</span>
+                  <span className="font-heading text-2xl font-bold">83%</span>
                   <span className="text-g400 ml-2">of our mentees achieve their goals.</span>
                 </p>
               </div>

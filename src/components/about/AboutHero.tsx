@@ -13,7 +13,7 @@ export default function AboutHero() {
   const stats = [
     '1Cr+ users impacted',
     '20+ products shipped (Million+ downloads, 4+ ratings)',
-    '3000+ designers consulted',
+    '3,000+ designers trained',
   ];
 
   return (

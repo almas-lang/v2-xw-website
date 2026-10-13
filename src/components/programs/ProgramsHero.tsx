@@ -18,9 +18,9 @@ import Button from '@/components/ui/Button';
 // ============================================
 
 const stats = [
-  { value: '3000', suffix: '+', label: 'designers consulted' },
-  { value: '140', suffix: '+', label: 'mentored' },
-  { value: '80', suffix: '%', label: 'achieved their goals' },
+  { value: '3,000', suffix: '+', label: 'designers trained' },
+  { value: '140', suffix: '+', label: 'mentored 1:1' },
+  { value: '83', suffix: '%', label: 'achieved their goals' },
 ];
 
 // ============================================

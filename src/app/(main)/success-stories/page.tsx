@@ -12,9 +12,9 @@ import ReferenceCheckCard from '@/components/success-stories/ReferenceCheckCard'
 // ============================================
 
 const stats = [
-  { value: '3000+', label: 'Designers Trained' },
-  { value: '210+', label: 'Hired Through Us' },
-  { value: '2x', label: 'Avg. Salary Hike' },
+  { value: '3,000+', label: 'Designers Trained' },
+  { value: '210+', label: 'Ready to Hire' },
+  { value: '38%', label: 'Avg. Salary Hike' },
   { value: '90 days', label: 'Avg. Transformation' },
 ];
 
@@ -48,7 +48,7 @@ const featuredStories: FeaturedStory[] = [
 
 const quickWins = [
   {
-    achievement: 'Lead Product designer at a German startup',
+    achievement: 'Lead Product designer at a German company',
     duration: 'In 3 months',
     name: 'Kritika Singh',
     image: '/images/Kritika Singh.jpeg',
@@ -138,7 +138,7 @@ const menteeWall = [
   { name: 'Shahrukh Jamal', role: 'Head of UX at Dot and Beyond', image: '/images/shah_rukh.jpeg' },
   { name: 'Pavan Muthyala', role: 'Head of Design at Bob', image: '/images/Pavan Mutyala.jpeg' },
   { name: 'Siva Karthik', role: 'Director at The Thinking Team', image: '/images/siva_karthik.jpeg' },
-  { name: 'Kritika Singh', role: 'Lead Product designer at a German startup', image: '/images/Kritika Singh.jpeg' },
+  { name: 'Kritika Singh', role: 'Lead Product designer at a German company', image: '/images/Kritika Singh.jpeg' },
   { name: 'Radhakrishna A', role: 'Principal Designer at Informatica', image: '/images/Radhakrishna Aekbote.jpeg' },
   { name: 'Sheetal P', role: 'Design Lead at CX100', image: '/images/sheetal.png' },
   { name: 'Jonah Immanuel', role: 'Sr. Lead Designer at Wongdoody', image: '/images/Jonah_Immanuel.png' },
@@ -746,7 +746,7 @@ export default function SuccessStoriesPage() {
                 </div>
               </div>
             ))}
-            {/* "250+ mentees" hero tile — fills trailing grid slots */}
+            {/* "3,000+ designers trained" hero tile — fills trailing grid slots */}
             <div
               className="col-span-3 sm:col-span-2 md:col-span-3 lg:col-span-3 rounded-lg overflow-hidden shadow-md relative"
               style={fadeIn('wall', 40 + menteeWall.length * 12)}
@@ -761,10 +761,10 @@ export default function SuccessStoriesPage() {
                 />
                 <div className="relative">
                   <div className="font-heading text-2xl sm:text-3xl md:text-4xl font-extrabold text-white leading-none mb-1">
-                    250+
+                    3,000+
                   </div>
                   <div className="font-body text-[11px] sm:text-xs md:text-sm text-white/90 font-medium leading-tight">
-                    1:1 mentees achieving success
+                    designers trained
                   </div>
                 </div>
               </div>

@@ -44,7 +44,7 @@ const featuredStories: FeaturedStory[] = [
 // Default Quick Wins data (used on main pages)
 const defaultQuickWins = [
   {
-    achievement: 'Lead Product designer at a German startup',
+    achievement: 'Lead Product designer at a German company',
     duration: 'In 3 months',
     name: 'Kritika Singh',
     image: '/images/Kritika Singh.jpeg',

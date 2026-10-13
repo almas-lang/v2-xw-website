@@ -183,8 +183,8 @@ export default function TrainingForTeamsPage() {
   ];
 
   const testimonialStats = [
-    { value: '830+', label: 'Designers Trained' },
-    { value: '140+', label: 'Moved to senior & lead roles' },
+    { value: '3,000+', label: 'Designers Trained' },
+    { value: '830+', label: 'Moved to senior & lead roles' },
     { value: '13+', label: 'Years experience' },
   ];
 
@@ -455,7 +455,7 @@ export default function TrainingForTeamsPage() {
               />
               <div className="mb-1">
                 <span className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white">
-                  830+
+                  3,000+
                 </span>
               </div>
               <span className="font-body text-xs md:text-sm tracking-wide uppercase text-g400">

@@ -27,7 +27,10 @@ const particles = Array.from({ length: 15 }, (_, i) => ({
 
 export default function CommunityStats() {
   const [isVisible, setIsVisible] = useState(false);
-  const [counts, setCounts] = useState(stats.map(() => 0));
+  // Start at the real values so the server HTML (and anyone without JS, Google
+  // included) reads "1370+ Members", not "0+ Members". The count-up animation
+  // below resets to 0 and climbs only once the block scrolls into view.
+  const [counts, setCounts] = useState(stats.map((stat) => stat.value ?? 0));
   const sectionRef = useRef<HTMLDivElement>(null);
   const hasAnimated = useRef(false);
 
@@ -52,6 +55,7 @@ export default function CommunityStats() {
     const interval = duration / steps;
 
     let step = 0;
+    setCounts(stats.map(() => 0));
     const timer = setInterval(() => {
       step++;
       const progress = step / steps;

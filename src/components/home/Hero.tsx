@@ -201,13 +201,13 @@ export default function Hero() {
 
                   <div className="text-xs sm:text-sm">
                     <span className="text-white font-semibold">140+</span>
-                    <span className="text-g500 ml-1">mentored</span>
+                    <span className="text-g500 ml-1">mentored 1:1</span>
                   </div>
 
                   <div className="w-px h-5 bg-white/10" />
 
                   <div className="flex items-center gap-1.5 text-xs sm:text-sm">
-                    <span className="text-accent font-bold">80%</span>
+                    <span className="text-accent font-bold">83%</span>
                     <span className="text-g500">achieved goals</span>
                   </div>
 

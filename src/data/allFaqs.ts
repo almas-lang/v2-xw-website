@@ -35,7 +35,7 @@ const homeFaqs: FAQItem[] = [
   {
     question: "Do you guarantee I'll get a job?",
     answer:
-      "No one can honestly guarantee jobs - market conditions, individual effort, and timing all play a role. What we guarantee is dedicated mentorship, honest feedback, and a structured path. 80% of our mentees have achieved their career goals.",
+      "No one can honestly guarantee jobs - market conditions, individual effort, and timing all play a role. What we guarantee is dedicated mentorship, honest feedback, and a structured path. 83% of our mentees have achieved their career goals.",
   },
   {
     question: "What if I don't achieve my goal in 90 days?",

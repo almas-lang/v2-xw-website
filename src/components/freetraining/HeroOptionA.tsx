@@ -81,8 +81,8 @@ export function HeroOptionA({ onCtaClick = scrollToLeadForm }: { onCtaClick?: ()
           {/* Trust line */}
           <p className="text-[13px] md:text-[14px] text-[#BFBFCC] mb-6 md:mb-8">
             <span className="text-amber-400">★</span>{' '}
-            <span className="font-bold text-white">{hero.rating.score}</span>
-            {' '}/ {hero.rating.count.toLocaleString()} ratings · {hero.trustLine}
+            <span className="font-bold text-white">{hero.rating.score}/5</span>
+            {' '}· {hero.rating.count} ratings · {hero.trustLine}
           </p>
 
           {/* CTA */}

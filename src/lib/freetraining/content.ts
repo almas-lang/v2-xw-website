@@ -13,9 +13,10 @@ export const ftContent = {
     withoutClause: '',
     trustLine: 'Trained at McKinsey, Wipro, Infosys, Informatica, CX100, Synduct',
     cta: 'Watch the training',
+    // Same figure as Success Stories: 4.9/5 from 500+ ratings. Change in one place.
     rating: {
-      score: 4.8,
-      count: 1843,
+      score: 4.9,
+      count: '500+',
     },
   },
   discover: {

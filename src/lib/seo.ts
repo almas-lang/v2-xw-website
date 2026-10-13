@@ -336,9 +336,14 @@ export const blogSeo: Record<string, { title: string; description: string }> = {
 };
 
 type PageMetadataOptions = {
-  /** Absolute or site-relative OG image. Omit when no 1200x630 asset exists. */
+  /** Override the generated OG image with a real 1200x630 asset (absolute or site-relative). */
   image?: string;
 };
+
+/** Generated 1200x630 OpenGraph image for a static page (src/app/api/og/route.tsx). */
+export function ogImageUrl(pagePath: string): string {
+  return `${SITE_URL}/api/og?path=${encodeURIComponent(pagePath)}`;
+}
 
 /**
  * Build the full Metadata object for a static route. Throws at build time if
@@ -350,7 +355,8 @@ export function pageMetadata(path: string, opts: PageMetadataOptions = {}): Meta
     throw new Error(`Missing SEO entry for ${path} in src/lib/seo.ts`);
   }
   const url = path === '/' ? `${SITE_URL}/` : `${SITE_URL}${path}`;
-  const images = opts.image ? [{ url: opts.image, width: 1200, height: 630, alt: entry.title }] : undefined;
+  const image = opts.image ?? ogImageUrl(path);
+  const images = [{ url: image, width: 1200, height: 630, alt: entry.title }];
 
   return {
     title: { absolute: entry.title },
@@ -370,7 +376,7 @@ export function pageMetadata(path: string, opts: PageMetadataOptions = {}): Meta
       card: 'summary_large_image',
       title: entry.title,
       description: entry.description,
-      images: opts.image ? [opts.image] : undefined,
+      images: [image],
     },
   };
 }

@@ -109,7 +109,7 @@ export default function ReferenceCheckCard({ part1, part2 }: ReferenceCheckCardP
           <div className="border-t border-indigo-500/20 px-5 sm:px-8 py-5 sm:py-6 bg-gradient-to-r from-indigo-50 via-white to-indigo-50/50">
             <div className="flex items-center gap-4 sm:gap-5">
               <div className="relative flex-shrink-0">
-                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden ring-2 ring-indigo-500 ring-offset-2 ring-offset-white">
+                <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden ring-2 ring-indigo-500 ring-offset-2 ring-offset-white">
                   <Image
                     src="/images/Gopicca B R.jpeg"
                     alt="Gopicca B R"

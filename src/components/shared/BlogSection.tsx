@@ -190,7 +190,7 @@ export default function BlogSection({
                           {blog.title}
                         </h3>
 
-                        <p className="font-body text-xs sm:text-sm text-g500 mb-3 line-clamp-2 leading-relaxed hidden sm:block">
+                        <p className="font-body text-xs sm:text-sm text-g500 mb-3 line-clamp-2 leading-relaxed max-sm:hidden">
                           {blog.excerpt}
                         </p>
 

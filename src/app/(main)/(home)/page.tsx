@@ -13,7 +13,7 @@ import JoinConversation from "@/components/shared/JoinConversation";
 import FAQ from "@/components/shared/FAQ";
 import BlogSection from "@/components/home/BlogSection";
 import CTASection from "@/components/shared/CTASection";
-import { FreeTrainingPromo } from "@/components/shared/FreeTrainingPromo";
+import { FreeTrainingBand } from "@/components/home/FreeTrainingBand";
 import SchemaOrg from "@/components/seo/SchemaOrg";
 
 export const metadata = pageMetadata('/');
@@ -62,11 +62,7 @@ export default function Home() {
       <MentorshipComparison />
       <MenteesWorkAt />
       <SuccessStories />
-      <section className="bg-white py-8 md:py-12 px-5">
-        <div className="max-w-3xl mx-auto">
-          <FreeTrainingPromo variant="card" source="homepage" />
-        </div>
-      </section>
+      <FreeTrainingBand source="homepage" />
       <Programs />
       <JoinConversation heading="Beyond Mentorship" />
       <FAQ faqs={homeFaqs} theme="default" />

@@ -93,7 +93,7 @@ export const blogPosts: BlogPost[] = [
     title: 'She Shipped Three Times While He Was Still Researching. They\'re Both Right. That\'s the Problem.',
     excerpt: 'One designer ships fast and iterates. The other researches deep and builds once. Both get to quality, both care about users, and both are deeply frustrated with each other. Two philosophies of quality, where each fails, how AI is widening the gap, and the assessment that tells you which one you default to.',
     category: 'design-skills' as const,
-    image: 'https://images.unsplash.com/photo-1530053969600-caed2596d242?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1542626991-cbc4e32524cc?w=800&q=80',
     author: { name: 'Shaik Murad' },
     publishedAt: '2026-10-12T09:00:00+05:30',
     readTime: '12 min',

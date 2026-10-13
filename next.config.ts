@@ -25,6 +25,12 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async headers() {
+    return [
+      // Search Console listed manifest.json under "Crawled, currently not indexed"
+      { source: '/manifest.json', headers: [{ key: 'X-Robots-Tag', value: 'noindex' }] },
+    ];
+  },
   async redirects() {
     return [
       // Old WordPress URLs to new URLs
@@ -36,6 +42,7 @@ const nextConfig: NextConfig = {
       { source: '/hire-designers', destination: '/for-business/hire-ux-designers', permanent: true },
       { source: '/xw-ux-workshop', destination: '/for-business/training-for-teams', permanent: true },
       { source: '/online-ux-design-course', destination: '/programs', permanent: true },
+      { source: '/online-ux-training', destination: '/programs', permanent: true },
       { source: '/advanced-ux-program-for-mid-level-designers', destination: '/programs/senior-ux-designer-mentorship', permanent: true },
 
       // Old blog posts → published blog pages or blog listing
@@ -77,6 +84,8 @@ const nextConfig: NextConfig = {
       // Renamed / removed blog slugs (SEO audit Oct 2026: both were soft 404s with ~370 impressions)
       { source: '/resources/blogs/mixed-methods-research-ux-design', destination: '/resources/blogs/mixed-methods-ux-research-guide', permanent: true },
       { source: '/resources/blogs/transitioning-designer-to-design-leader', destination: '/resources/blogs/ic-to-manager-trap-designers', permanent: true },
+      // Draft that was briefly live (crawled May 2026), now a 404 in Search Console
+      { source: '/resources/blogs/designer-to-design-leader', destination: '/resources/blogs/ic-to-manager-trap-designers', permanent: true },
 
       // Old landing-page subdomains. These only fire once the subdomain is added
       // to this Vercel project (DNS CNAME -> cname.vercel-dns.com, no domain-level

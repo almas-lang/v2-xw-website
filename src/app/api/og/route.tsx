@@ -57,7 +57,8 @@ export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const requested = searchParams.get('path') ?? '/';
   const entry = SEO[requested] ?? SEO['/'];
-  const title = stripBrand(entry.title);
+  // "About Xperience Wave | 1:1 UX Mentorship, Bangalore" -> title + eyebrow label
+  const [title, eyebrow] = stripBrand(entry.title).split(' | ');
   const description = entry.description;
 
   const [logo, fonts] = await Promise.all([getLogo(), getFonts()]);
@@ -84,6 +85,20 @@ export async function GET(request: Request) {
         <img src={logo} alt="" width={242} height={60} style={{ objectFit: 'contain' }} />
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 24, maxWidth: 1000 }}>
+          {eyebrow && (
+            <div
+              style={{
+                fontSize: 22,
+                fontWeight: 700,
+                letterSpacing: '0.12em',
+                textTransform: 'uppercase',
+                color: '#FF0023',
+                display: 'flex',
+              }}
+            >
+              {eyebrow}
+            </div>
+          )}
           <div
             style={{
               fontSize: titleSize,

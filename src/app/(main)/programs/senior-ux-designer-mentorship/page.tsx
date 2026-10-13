@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 import ProgramHero from '@/components/programs/ProgramHero';
 import ProgramStats from '@/components/programs/ProgramStats';
 import ProgramFitCheck from '@/components/programs/ProgramFitCheck';
@@ -16,41 +16,7 @@ import CTASection from '@/components/shared/CTASection';
 import PageSchema from '@/components/seo/PageSchema';
 import { sharedProgramSteps, sharedTools } from '@/data/programData';
 
-export const metadata: Metadata = {
-  title: 'Current - Senior UX Mentorship Program | 1:1 Mentorship for Mid-Level Designers | Xperience Wave',
-  description:
-    '1:1 mentorship program for mid-level UX/UI designers (2-5 years) stuck at the same level. Land senior & lead roles. AI-first design approach. Support until you succeed.',
-  keywords: [
-    'senior ux mentorship program',
-    'mid level ux designer mentorship',
-    'ux design career growth',
-    'land senior ux role',
-    'ux designer mentor',
-    'current program xperience wave',
-  ],
-  openGraph: {
-    title: 'Current - Senior UX Mentorship Program | 1:1 Mentorship for Mid-Level Designers',
-    description:
-      '1:1 mentorship program for mid-level UX/UI designers (2-5 years) stuck at the same level. Land senior & lead roles. AI-first design approach.',
-    url: 'https://xperiencewave.com/programs/senior-ux-designer-mentorship',
-    images: [
-      {
-        url: '/images/og-current.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Current Program - Senior UX Mentorship',
-      },
-    ],
-  },
-  twitter: {
-    title: 'Current - Senior UX Mentorship Program | 1:1 Mentorship for Mid-Level Designers',
-    description:
-      '1:1 mentorship program for mid-level UX/UI designers (2-5 years) stuck at the same level. Land senior & lead roles.',
-  },
-  alternates: {
-    canonical: '/programs/senior-ux-designer-mentorship',
-  },
-};
+export const metadata = pageMetadata('/programs/senior-ux-designer-mentorship');
 
 const currentFaqs = [
   {
@@ -164,7 +130,7 @@ const currentIncluded = [
   { text: 'Expert-led online clinics (Core Design, SVR Foundations, Personal Branding)' },
   { text: 'Online exam-based globally recognised certification' },
   { text: 'Access to WaveAcademy - videos, activities, tools, and quizzes' },
-  { text: 'WaveMakers Connect community access (2k+ members)' },
+  { text: 'WaveMakers Connect community access (1,370+ members)' },
 ];
 
 const currentInvestment = {
@@ -208,7 +174,14 @@ export default function CurrentProgramPage() {
   return (
     <>
       <PageSchema
-        type="Product"
+        type="Course"
+        course={{
+          name: 'Current: Senior UX Designer Mentorship',
+          description: '1:1 mentorship for mid-level UX designers (2-5 years) who want senior and lead roles. Positioning, portfolio, interviews and salary, with support until you get there.',
+          duration: 'P3M',
+          audience: 'UX, UI and Product designers with 2-5 years of experience',
+          teaches: ['Senior UX positioning', 'Business-driven portfolio', 'Interview preparation', 'Salary negotiation', 'AI-first design approach'],
+        }}
         pageUrl="/programs/senior-ux-designer-mentorship"
         pageName="Current - Senior UX Mentorship Program"
         pageDescription="1:1 mentorship program for mid-level UX/UI designers (2-5 years) stuck at the same level. Land senior & lead roles."

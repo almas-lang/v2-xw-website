@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     'design strategy components',
   ],
   alternates: {
-    canonical: 'https://www.xperiencewave.com/resources/tools/design-strategy-gpt',
+    canonical: 'https://xperiencewave.com/resources/tools/design-strategy-gpt',
   },
 };
 

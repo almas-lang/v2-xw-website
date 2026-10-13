@@ -1,45 +1,10 @@
-import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 
 // Re-render the listing at most hourly so scheduled posts appear in the
 // prerendered HTML (visitors' browsers already filter live on each load)
 export const revalidate = 3600;
 
-export const metadata: Metadata = {
-  title: 'Blog - UX Design Insights & Career Tips',
-  description:
-    'Expert insights on UX design, career growth, and industry trends. Learn from designers who have helped 140+ mentees land roles at top companies.',
-  keywords: [
-    'UX design blog',
-    'UX career tips',
-    'design industry insights',
-    'UX portfolio advice',
-    'design career growth',
-    'UX mentorship blog',
-  ],
-  // TODO: Create /public/images/og-blog.jpg (1200x630px)
-  openGraph: {
-    title: 'Blog - UX Design Insights & Career Tips | Xperience Wave',
-    description:
-      'Expert insights on UX design, career growth, and industry trends from designers who have been there.',
-    url: 'https://xperiencewave.com/resources/blogs',
-    images: [
-      {
-        url: '/images/og-blog.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Xperience Wave Blog',
-      },
-    ],
-  },
-  twitter: {
-    title: 'Blog - UX Design Insights & Career Tips | Xperience Wave',
-    description:
-      'Expert insights on UX design, career growth, and industry trends.',
-  },
-  alternates: {
-    canonical: '/resources/blogs',
-  },
-};
+export const metadata = pageMetadata('/resources/blogs');
 
 export default function BlogsLayout({
   children,

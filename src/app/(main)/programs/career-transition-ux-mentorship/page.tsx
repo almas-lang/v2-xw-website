@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 import ProgramHero from '@/components/programs/ProgramHero';
 import ProgramStats from '@/components/programs/ProgramStats';
 import ProgramFitCheck from '@/components/programs/ProgramFitCheck';
@@ -48,42 +48,7 @@ const rippleQuickWins: QuickWin[] = [
   },
 ];
 
-export const metadata: Metadata = {
-  title: 'Ripple - UX Design Career Transition Program | 1:1 Mentorship for Beginners | Xperience Wave',
-  description:
-    '1:1 UX mentorship for fresh graduates and career switchers. Land your first UX/UI design role in 3 months. AI-first approach. No prior experience needed. Support until you succeed.',
-  keywords: [
-    'ux mentorship program',
-    'career switch to ux design',
-    'ux design for beginners',
-    'ui ux mentorship',
-    'ux designer mentor',
-    'learn ux design',
-    'ux design career transition',
-  ],
-  openGraph: {
-    title: 'Ripple - UX Design Career Transition Program | 1:1 Mentorship for Beginners',
-    description:
-      '1:1 UX mentorship for fresh graduates and career switchers. Land your first UX/UI design role in 3 months. AI-first approach.',
-    url: 'https://xperiencewave.com/programs/career-transition-ux-mentorship',
-    images: [
-      {
-        url: '/images/og-ripple.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Ripple Program - UX Career Transition',
-      },
-    ],
-  },
-  twitter: {
-    title: 'Ripple - UX Design Career Transition Program | 1:1 Mentorship for Beginners',
-    description:
-      '1:1 UX mentorship for fresh graduates and career switchers. Land your first UX/UI design role in 3 months.',
-  },
-  alternates: {
-    canonical: '/programs/career-transition-ux-mentorship',
-  },
-};
+export const metadata = pageMetadata('/programs/career-transition-ux-mentorship');
 
 const rippleFaqs = [
   {
@@ -219,7 +184,14 @@ export default function RippleProgramPage() {
   return (
     <>
       <PageSchema
-        type="Product"
+        type="Course"
+        course={{
+          name: 'Ripple: UX Career Transition Mentorship',
+          description: '1:1 UX mentorship for fresh graduates and career switchers. Skills, portfolio and positioning to land a first UX/UI role in about 3 months.',
+          duration: 'P4M',
+          audience: 'Fresh graduates and career switchers with no prior UX experience',
+          teaches: ['UX design fundamentals', 'Portfolio building', 'Job-ready design skills', 'Interview preparation', 'AI-first design approach'],
+        }}
         pageUrl="/programs/career-transition-ux-mentorship"
         pageName="Ripple - UX Design Career Transition Program"
         pageDescription="1:1 UX mentorship for fresh graduates and career switchers. Land your first UX/UI design role in 3 months."

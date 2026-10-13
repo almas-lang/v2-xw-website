@@ -2,6 +2,7 @@ type SchemaType =
   | 'Article'
   | 'BlogPosting'
   | 'Product'
+  | 'Course'
   | 'Service'
   | 'FAQPage'
   | 'AboutPage'
@@ -56,6 +57,15 @@ interface ProductData {
   };
 }
 
+interface CourseData {
+  name: string;
+  description: string;
+  /** e.g. "P3M" */
+  duration?: string;
+  audience?: string;
+  teaches?: string[];
+}
+
 interface VideoData {
   name: string;
   description: string;
@@ -94,6 +104,7 @@ interface PageSchemaProps {
   reviews?: ReviewItem[];
   article?: ArticleData;
   product?: ProductData;
+  course?: CourseData;
   video?: VideoData;
   podcast?: PodcastData;
   person?: PersonData;
@@ -111,6 +122,7 @@ export default function PageSchema({
   reviews,
   article,
   product,
+  course,
   video,
   podcast,
   person,
@@ -231,6 +243,36 @@ export default function PageSchema({
     }
 
     schemas.push(productSchema);
+  }
+
+  // Course Schema (program pages only). No offers block until fees are approved for publishing.
+  if (type === 'Course' && course) {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'Course',
+      name: course.name,
+      description: course.description,
+      url: `${BASE_URL}${pageUrl}`,
+      provider: {
+        '@type': 'Organization',
+        name: 'Xperience Wave',
+        sameAs: BASE_URL,
+      },
+      educationalLevel: 'Professional',
+      audience: course.audience
+        ? { '@type': 'Audience', audienceType: course.audience }
+        : undefined,
+      teaches: course.teaches,
+      hasCourseInstance: {
+        '@type': 'CourseInstance',
+        courseMode: 'online',
+        courseWorkload: course.duration,
+        instructor: [
+          { '@type': 'Person', name: 'Shaik Murad' },
+          { '@type': 'Person', name: 'Almas Tasneem' },
+        ],
+      },
+    });
   }
 
   // Reviews Schema (can be added to any page)

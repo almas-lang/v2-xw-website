@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 import CommunityHero from '@/components/community/CommunityHero';
 import CommunityStats from '@/components/community/CommunityStats';
 import WhatHappens from '@/components/community/WhatHappens';
@@ -11,15 +11,7 @@ import BackedBy from '@/components/community/BackedBy';
 import SaveYourSpot from '@/components/community/SaveYourSpot';
 import PageSchema from '@/components/seo/PageSchema';
 
-export const metadata: Metadata = {
-  title: 'WaveMakers Connect | Free Design & Tech Events in Bangalore | Xperience Wave',
-  description: 'WaveMakers Connect is a free design meetup in Bangalore for designers, engineers, and founders. Real speakers, real conversations, no hype. Join 1370+ members.',
-  openGraph: {
-    title: 'WaveMakers Connect | Free Design & Tech Events in Bangalore',
-    description: 'WaveMakers Connect is a free design meetup in Bangalore for designers, engineers, and founders. Real speakers, real conversations, no hype.',
-    type: 'website',
-  },
-};
+export const metadata = pageMetadata('/community');
 
 export default function CommunityPage() {
   return (

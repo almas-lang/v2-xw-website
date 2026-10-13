@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     'UX salary negotiation data',
   ],
   alternates: {
-    canonical: 'https://www.xperiencewave.com/resources/tools/ux-salary-data',
+    canonical: 'https://xperiencewave.com/resources/tools/ux-salary-data',
   },
 };
 

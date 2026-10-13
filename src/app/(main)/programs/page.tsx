@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 import ProgramsHero from '@/components/programs/ProgramsHero';
 import ProgramFinder from '@/components/programs/ProgramFinder';
 import ProgramCards from '@/components/programs/ProgramCards';
@@ -12,46 +12,10 @@ import FAQ from '@/components/shared/FAQ';
 import CTASection from '@/components/shared/CTASection';
 import PageSchema from '@/components/seo/PageSchema';
 
-export const metadata: Metadata = {
-  title: '1:1 UX Mentorship Programs',
-  description:
-    'Find the right UX mentorship program for your career stage. Whether you\'re starting out, stuck at mid-level, or ready to lead - we have a success path built for where you are.',
-  keywords: [
-    'UX mentorship programs',
-    'UX design courses',
-    'senior UX program',
-    'design leadership training',
-    '1:1 mentorship',
-    'UX career coaching',
-    'product design mentorship',
-  ],
-  // TODO: Create /public/images/og-programs.jpg (1200x630px)
-  openGraph: {
-    title: '1:1 UX Mentorship Programs That Actually Get You There | Xperience Wave',
-    description:
-      'Find the right UX mentorship program for your career stage. 3000+ designers consulted, 140+ mentored 1:1, 80% achieved their goals.',
-    url: 'https://xperiencewave.com/programs',
-    images: [
-      {
-        url: '/images/og-programs.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Xperience Wave UX Mentorship Programs',
-      },
-    ],
-  },
-  twitter: {
-    title: '1:1 UX Mentorship Programs That Actually Get You There',
-    description:
-      'Find the right UX mentorship program for your career stage. 3000+ designers consulted, 80% achieved their goals.',
-  },
-  alternates: {
-    canonical: '/programs',
-  },
-};
+export const metadata = pageMetadata('/programs');
 
 const programStats = [
-  { value: '3000', suffix: '+', label: 'designers consulted' },
+  { value: '3,000', suffix: '+', label: 'designers trained' },
   { value: '38', suffix: '%', label: 'avg salary hike' },
   { value: '10-15', suffix: ' yrs', label: 'mentor experience' },
 ];

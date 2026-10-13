@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import { blogPosts, getPublishedPosts, isPostPublished, getCategoryLabel, getCategoryColor, formatDate } from '@/data/blogPosts';
+import { blogSeo, SITE_URL } from '@/lib/seo';
 import CTASection from '@/components/shared/CTASection';
 import MobileTOC from '@/components/blog/MobileTOC';
 import EvaluatorGate from '@/components/blog/EvaluatorGate';
@@ -264,7 +265,7 @@ const blogContent: Record<string, React.ReactNode> = {
         About the Author
       </h2>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
-        Shaik Murad is Co-founder and Head of Product &amp; Design at <Link href="/" className="text-accent hover:underline font-medium">Xperience Wave</Link>, a UX design studio based in Bangalore, working across designer mentorship, UX services for businesses, and a design community of 1,000+ designers.
+        Shaik Murad is Co-founder and Head of Product &amp; Design at <Link href="/" className="text-accent hover:underline font-medium">Xperience Wave</Link>, a UX design studio based in Bangalore, working across designer mentorship, UX services for businesses, and a design community of 1,370+ designers.
       </p>
 
       <p className="text-base md:text-lg text-g500 italic mt-6">
@@ -473,7 +474,7 @@ const blogContent: Record<string, React.ReactNode> = {
         About the Author
       </h2>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
-        Shaik Murad is Co-founder and Head of Product &amp; Design at <Link href="/" className="text-accent hover:underline font-medium">Xperience Wave</Link>, a UX design studio based in Bangalore, working across designer mentorship, UX services for businesses, and a design community of 1,000+ designers.
+        Shaik Murad is Co-founder and Head of Product &amp; Design at <Link href="/" className="text-accent hover:underline font-medium">Xperience Wave</Link>, a UX design studio based in Bangalore, working across designer mentorship, UX services for businesses, and a design community of 1,370+ designers.
       </p>
 
       <p className="text-base md:text-lg text-g500 italic mt-6">
@@ -709,7 +710,7 @@ const blogContent: Record<string, React.ReactNode> = {
         About the Author
       </h2>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
-        Shaik Murad is Co-founder and Head of Product &amp; Design at <Link href="/" className="text-accent hover:underline font-medium">Xperience Wave</Link>, a UX design studio based in Bangalore, working across designer mentorship, UX services for businesses, and a design community of 1,000+ designers.
+        Shaik Murad is Co-founder and Head of Product &amp; Design at <Link href="/" className="text-accent hover:underline font-medium">Xperience Wave</Link>, a UX design studio based in Bangalore, working across designer mentorship, UX services for businesses, and a design community of 1,370+ designers.
       </p>
 
       <p className="text-base md:text-lg text-g500 italic mt-6">
@@ -900,7 +901,7 @@ const blogContent: Record<string, React.ReactNode> = {
         About the Author
       </h2>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
-        Shaik Murad is Co-founder and Head of Product &amp; Design at <Link href="/" className="text-accent hover:underline font-medium">Xperience Wave</Link>, a UX design studio based in Bangalore, working across designer mentorship, UX services for businesses, and a design community of 1,000+ designers.
+        Shaik Murad is Co-founder and Head of Product &amp; Design at <Link href="/" className="text-accent hover:underline font-medium">Xperience Wave</Link>, a UX design studio based in Bangalore, working across designer mentorship, UX services for businesses, and a design community of 1,370+ designers.
       </p>
 
       <p className="text-base md:text-lg text-g500 italic mt-6">
@@ -1141,7 +1142,7 @@ const blogContent: Record<string, React.ReactNode> = {
         About the Author
       </h2>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
-        Almas Tasneem is Co-founder and CEO at <Link href="/" className="text-accent hover:underline font-medium">Xperience Wave</Link>, a UX design studio based in Bangalore, working across designer mentorship, UX services for businesses, and a design community of 1,000+ designers.
+        Almas Tasneem is Co-founder and CEO at <Link href="/" className="text-accent hover:underline font-medium">Xperience Wave</Link>, a UX design studio based in Bangalore, working across designer mentorship, UX services for businesses, and a design community of 1,370+ designers.
       </p>
 
       <p className="text-base md:text-lg text-g500 italic mt-6">
@@ -1446,7 +1447,7 @@ const blogContent: Record<string, React.ReactNode> = {
         About the Author
       </h2>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
-        Shaik Murad is Co-founder and Head of Product &amp; Design at <Link href="/" className="text-accent hover:underline font-medium">Xperience Wave</Link>, a UX design studio based in Bangalore, working across designer mentorship, UX services for businesses, and a design community of 1,000+ designers.
+        Shaik Murad is Co-founder and Head of Product &amp; Design at <Link href="/" className="text-accent hover:underline font-medium">Xperience Wave</Link>, a UX design studio based in Bangalore, working across designer mentorship, UX services for businesses, and a design community of 1,370+ designers.
       </p>
 
       <p className="text-base md:text-lg text-g500 italic mt-6">
@@ -1752,7 +1753,7 @@ const blogContent: Record<string, React.ReactNode> = {
         About the Author
       </h2>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
-        Shaik Murad is Co-founder and Head of Product &amp; Design at <Link href="/" className="text-accent hover:underline font-medium">Xperience Wave</Link>, a UX design studio based in Bangalore, working across designer mentorship, UX services for businesses, and a design community of 1,000+ designers.
+        Shaik Murad is Co-founder and Head of Product &amp; Design at <Link href="/" className="text-accent hover:underline font-medium">Xperience Wave</Link>, a UX design studio based in Bangalore, working across designer mentorship, UX services for businesses, and a design community of 1,370+ designers.
       </p>
 
       <p className="text-base md:text-lg text-g500 italic mt-6">
@@ -1992,7 +1993,7 @@ const blogContent: Record<string, React.ReactNode> = {
         About the Author
       </h2>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
-        Shaik Murad is Co-founder and Head of Product &amp; Design at <Link href="/" className="text-accent hover:underline font-medium">Xperience Wave</Link>, a UX design studio based in Bangalore, working across designer mentorship, UX services for businesses, and a design community of 1,000+ designers.
+        Shaik Murad is Co-founder and Head of Product &amp; Design at <Link href="/" className="text-accent hover:underline font-medium">Xperience Wave</Link>, a UX design studio based in Bangalore, working across designer mentorship, UX services for businesses, and a design community of 1,370+ designers.
       </p>
 
       <p className="text-base md:text-lg text-g500 italic mt-6">
@@ -2263,7 +2264,7 @@ const blogContent: Record<string, React.ReactNode> = {
         About the Author
       </h2>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
-        Shaik Murad is Co-founder and Head of Product &amp; Design at <Link href="/" className="text-accent hover:underline font-medium">Xperience Wave</Link>, a UX design studio based in Bangalore, working across designer mentorship, UX services for businesses, and a design community of 1,000+ designers.
+        Shaik Murad is Co-founder and Head of Product &amp; Design at <Link href="/" className="text-accent hover:underline font-medium">Xperience Wave</Link>, a UX design studio based in Bangalore, working across designer mentorship, UX services for businesses, and a design community of 1,370+ designers.
       </p>
 
       <p className="text-base md:text-lg text-g500 italic mt-6">
@@ -2628,7 +2629,7 @@ const blogContent: Record<string, React.ReactNode> = {
         About the Author
       </h2>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
-        Shaik Murad is Co-founder and Head of Product &amp; Design at <Link href="/" className="text-accent hover:underline font-medium">Xperience Wave</Link>, a UX design studio based in Bangalore, working across designer mentorship, UX services for businesses, and a design community of 1,000+ designers.
+        Shaik Murad is Co-founder and Head of Product &amp; Design at <Link href="/" className="text-accent hover:underline font-medium">Xperience Wave</Link>, a UX design studio based in Bangalore, working across designer mentorship, UX services for businesses, and a design community of 1,370+ designers.
       </p>
 
       <p className="text-base md:text-lg text-g500 italic mt-6">
@@ -2898,7 +2899,7 @@ const blogContent: Record<string, React.ReactNode> = {
         About the Author
       </h2>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
-        Shaik Murad is Co-founder and Head of Product &amp; Design at <Link href="/" className="text-accent hover:underline font-medium">Xperience Wave</Link>, a UX design studio based in Bangalore, working across designer mentorship, UX services for businesses, and a design community of 1,000+ designers.
+        Shaik Murad is Co-founder and Head of Product &amp; Design at <Link href="/" className="text-accent hover:underline font-medium">Xperience Wave</Link>, a UX design studio based in Bangalore, working across designer mentorship, UX services for businesses, and a design community of 1,370+ designers.
       </p>
 
       <p className="text-base md:text-lg text-g500 italic mt-6">
@@ -3152,7 +3153,7 @@ const blogContent: Record<string, React.ReactNode> = {
         We work with designers making exactly this shift through our Ripple program - built specifically for experienced designers from visual, graphic, motion, and communication design backgrounds who want to move into UX without losing the value of the years they&apos;ve already invested. If you&apos;re considering the switch and want to understand how your specific experience maps to the UX landscape, <Link href="https://calendly.com/xperiencewave/xw-strategy-call" className="text-accent hover:underline font-medium">book a strategy call</Link>. We&apos;ll tell you where you stand, what&apos;s transferable, and what to build next.
       </p>
 
-      <FreeTrainingCTA text="At Xperience Wave, we've helped 140+ designers reposition their careers - including visual, graphic, and motion designers transitioning into UX without starting over. Our Ripple program is built specifically for this shift" />
+      <FreeTrainingCTA text="At Xperience Wave, we've helped 3,000+ designers reposition their careers - including visual, graphic, and motion designers transitioning into UX without starting over. Our Ripple program is built specifically for this shift" />
 
       <h2 id="sources-references" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
         Sources &amp; References
@@ -3178,7 +3179,7 @@ const blogContent: Record<string, React.ReactNode> = {
         About the Author
       </h2>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
-        Shaik Murad is Co-founder and Head of Product &amp; Design at <Link href="/" className="text-accent hover:underline font-medium">Xperience Wave</Link>, a UX design studio based in Bangalore, working across designer mentorship, UX services for businesses, and a design community of 1,000+ designers.
+        Shaik Murad is Co-founder and Head of Product &amp; Design at <Link href="/" className="text-accent hover:underline font-medium">Xperience Wave</Link>, a UX design studio based in Bangalore, working across designer mentorship, UX services for businesses, and a design community of 1,370+ designers.
       </p>
 
       <p className="text-base md:text-lg text-g500 italic mt-6">
@@ -3391,7 +3392,7 @@ const blogContent: Record<string, React.ReactNode> = {
         We&apos;re already en route with a couple of designers on exactly this journey. If you&apos;re considering it, talk to us. We&apos;ll help you figure out whether PM is actually the right move - or whether what you&apos;re really looking for is a design career that&apos;s finally operating at the level it should be. <Link href="https://calendly.com/xperiencewave/xw-strategy-call" className="text-accent hover:underline font-medium">Book a strategy call</Link> and let&apos;s have the conversation.
       </p>
 
-      <FreeTrainingCTA text="At Xperience Wave, we've helped 140+ designers build the ownership, cross-functional fluency, and business acumen that makes them indispensable - whether the path leads to design leadership or product management" />
+      <FreeTrainingCTA text="At Xperience Wave, we've helped 3,000+ designers build the ownership, cross-functional fluency, and business acumen that makes them indispensable - whether the path leads to design leadership or product management" />
 
       <h2 id="sources-references" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
         Sources &amp; References
@@ -3419,7 +3420,7 @@ const blogContent: Record<string, React.ReactNode> = {
         About the Author
       </h2>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
-        Shaik Murad is Co-founder and Head of Product &amp; Design at <Link href="/" className="text-accent hover:underline font-medium">Xperience Wave</Link>, a UX design studio based in Bangalore, working across designer mentorship, UX services for businesses, and a design community of 1,000+ designers.
+        Shaik Murad is Co-founder and Head of Product &amp; Design at <Link href="/" className="text-accent hover:underline font-medium">Xperience Wave</Link>, a UX design studio based in Bangalore, working across designer mentorship, UX services for businesses, and a design community of 1,370+ designers.
       </p>
 
       <p className="text-base md:text-lg text-g500 italic mt-6">
@@ -3718,7 +3719,7 @@ const blogContent: Record<string, React.ReactNode> = {
         If you&apos;re looking to build this kind of discipline into your practice - the kind where your technical skills, your communication, and your strategic thinking work together as a system rather than as isolated capabilities - that&apos;s what our mentorship programs are built for. Not tool training. Practice development. <Link href="https://calendly.com/xperiencewave/xw-strategy-call" className="text-accent hover:underline font-medium">Book a strategy call</Link> and let&apos;s talk about where your practice is strong and where the gaps are costing you.
       </p>
 
-      <FreeTrainingCTA text="At Xperience Wave, we've helped 140+ designers build the kind of handoff discipline that produces fewer surprises, less rework, and better products - not through tool training, but through practice development" />
+      <FreeTrainingCTA text="At Xperience Wave, we've helped 3,000+ designers build the kind of handoff discipline that produces fewer surprises, less rework, and better products - not through tool training, but through practice development" />
 
       <h2 id="sources-references" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
         Sources &amp; References
@@ -3750,7 +3751,7 @@ const blogContent: Record<string, React.ReactNode> = {
         About the Author
       </h2>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
-        Shaik Murad is Co-founder and Head of Product &amp; Design at <Link href="/" className="text-accent hover:underline font-medium">Xperience Wave</Link>, a UX design studio based in Bangalore, working across designer mentorship, UX services for businesses, and a design community of 1,000+ designers.
+        Shaik Murad is Co-founder and Head of Product &amp; Design at <Link href="/" className="text-accent hover:underline font-medium">Xperience Wave</Link>, a UX design studio based in Bangalore, working across designer mentorship, UX services for businesses, and a design community of 1,370+ designers.
       </p>
 
       <p className="text-base md:text-lg text-g500 italic mt-6">
@@ -3813,7 +3814,7 @@ const blogContent: Record<string, React.ReactNode> = {
         11 Shifts You Can&apos;t Afford to Ignore
       </h2>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
-        These aren&apos;t criticisms. They&apos;re observations from reviewing hundreds of portfolios and mentoring 140+ designers through career transitions - including designers in Canada, UAE, and Ireland. If any of them sound familiar, it&apos;s because they&apos;re that common.
+        These aren&apos;t criticisms. They&apos;re observations from reviewing hundreds of portfolios and working with 3,000+ designers through career transitions - including designers in Canada, UAE, and Ireland. If any of them sound familiar, it&apos;s because they&apos;re that common.
       </p>
 
       <h3 id="shift-1" className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-4">
@@ -4035,10 +4036,10 @@ const blogContent: Record<string, React.ReactNode> = {
         <strong>Talk to someone who&apos;s seen the other side of the table.</strong> The most difficult part of this shift is that you can&apos;t see your own blind spots. You need someone who reviews portfolios regularly, who understands what hiring managers are filtering for, and who will tell you the truth - not what sounds encouraging, but what&apos;s actually blocking you.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
-        That&apos;s a significant part of what we do at <Link href="/" className="text-accent hover:underline font-medium">Xperience Wave</Link>. We&apos;ve walked 140+ designers through this exact recalibration - reshaping how they present their work, how they position their experience, and how they navigate a market that&apos;s moved faster than most people realise. If you want an honest assessment of where you stand, <Link href="https://calendly.com/xperiencewave/xw-strategy-call" className="text-accent hover:underline font-medium">book a strategy call</Link>. We&apos;ll tell you what&apos;s working, what&apos;s not, and what to do next - whether you work with us or not.
+        That&apos;s a significant part of what we do at <Link href="/" className="text-accent hover:underline font-medium">Xperience Wave</Link>. We&apos;ve walked 3,000+ designers through this exact recalibration - reshaping how they present their work, how they position their experience, and how they navigate a market that&apos;s moved faster than most people realise. If you want an honest assessment of where you stand, <Link href="https://calendly.com/xperiencewave/xw-strategy-call" className="text-accent hover:underline font-medium">book a strategy call</Link>. We&apos;ll tell you what&apos;s working, what&apos;s not, and what to do next - whether you work with us or not.
       </p>
 
-      <FreeTrainingCTA text="At Xperience Wave, we've helped 140+ designers recalibrate their positioning for the market that exists today - reshaping portfolios, interview narratives, and career strategies for senior roles" />
+      <FreeTrainingCTA text="At Xperience Wave, we've helped 3,000+ designers recalibrate their positioning for the market that exists today - reshaping portfolios, interview narratives, and career strategies for senior roles" />
 
       <h2 id="sources-references" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
         Sources &amp; References
@@ -4074,7 +4075,7 @@ const blogContent: Record<string, React.ReactNode> = {
         About the Author
       </h2>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
-        Shaik Murad is Co-founder and Head of Product &amp; Design at <Link href="/" className="text-accent hover:underline font-medium">Xperience Wave</Link>, a UX design studio based in Bangalore, working across designer mentorship, UX services for businesses, and a design community of 1,000+ designers.
+        Shaik Murad is Co-founder and Head of Product &amp; Design at <Link href="/" className="text-accent hover:underline font-medium">Xperience Wave</Link>, a UX design studio based in Bangalore, working across designer mentorship, UX services for businesses, and a design community of 1,370+ designers.
       </p>
 
       <p className="text-base md:text-lg text-g500 italic mt-6">
@@ -4319,7 +4320,7 @@ const blogContent: Record<string, React.ReactNode> = {
         About the Author
       </h2>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
-        Almas Tasneem is Co-founder and Head of Product &amp; Design at <Link href="/" className="text-accent hover:underline font-medium">Xperience Wave</Link>, a UX design studio based in Bangalore, working across designer mentorship, UX services for businesses, and a design community of 1,000+ designers.
+        Almas Tasneem is Co-founder and Head of Product &amp; Design at <Link href="/" className="text-accent hover:underline font-medium">Xperience Wave</Link>, a UX design studio based in Bangalore, working across designer mentorship, UX services for businesses, and a design community of 1,370+ designers.
       </p>
 
       <p className="text-base md:text-lg text-g500 italic mt-6">
@@ -4560,7 +4561,7 @@ const blogContent: Record<string, React.ReactNode> = {
         About the Author
       </h2>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
-        Shaik Murad is Co-founder and Head of Product &amp; Design at <Link href="/" className="text-accent hover:underline font-medium">Xperience Wave</Link>, a UX design studio based in Bangalore, working across designer mentorship, UX services for businesses, and a design community of 1,000+ designers.
+        Shaik Murad is Co-founder and Head of Product &amp; Design at <Link href="/" className="text-accent hover:underline font-medium">Xperience Wave</Link>, a UX design studio based in Bangalore, working across designer mentorship, UX services for businesses, and a design community of 1,370+ designers.
       </p>
 
       <p className="text-base md:text-lg text-g500 italic mt-6">
@@ -5558,7 +5559,7 @@ const blogContent: Record<string, React.ReactNode> = {
         <li>Baymard Institute  -  UX-Ray automated heuristic evaluation tool. Documented accuracy benchmarks for pattern-violation detection in e-commerce UX audits.</li>
         <li>Lyssna  -  &quot;2026 UX Research Trends.&quot; 48% of researchers see synthetic users as impactful, but emotional nuance and contextual behaviour remain limitations.</li>
         <li>NNGroup  -  &quot;State of UX 2026.&quot; On the evolution of generalist roles and the importance of strategic problem-solving over tool proficiency.</li>
-        <li>Xperience Wave  -  Direct observation from 140+ mentorship engagements and corporate training programmes with designers integrating AI workflows across research, design, and stakeholder communication.</li>
+        <li>Xperience Wave  -  Direct observation from 3,000+ designers across mentorship and corporate training programmes with designers integrating AI workflows across research, design, and stakeholder communication.</li>
       </ul>
 
       <h2 id="about-author" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
@@ -6746,7 +6747,7 @@ const blogContent: Record<string, React.ReactNode> = {
         But here is the thing. The stakeholders are not the problem. The way the designer managed them is.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        After mentoring 140+ designers at Xperience Wave and auditing how design functions inside organisations of all sizes, I can tell you: stakeholder management is not a soft skill you pick up along the way. It is the skill that determines whether your design work shapes decisions or decorates them. And in 2026, with design teams getting leaner and expectations getting broader, it has never mattered more.
+        After training and mentoring 3,000+ designers at Xperience Wave and auditing how design functions inside organisations of all sizes, I can tell you: stakeholder management is not a soft skill you pick up along the way. It is the skill that determines whether your design work shapes decisions or decorates them. And in 2026, with design teams getting leaner and expectations getting broader, it has never mattered more.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
         Nielsen Norman Group&apos;s State of UX 2026 report makes this explicit: successful practitioners need research, stakeholder management, and leadership alongside design craft. Not instead of it - alongside it. And Maze&apos;s Future of User Research report found that business acumen, storytelling, and stakeholder management are now the most valuable assets for anyone doing research-informed design work.
@@ -7344,7 +7345,7 @@ const blogContent: Record<string, React.ReactNode> = {
         <li>Intercom - Leadership Without Management: Expanding our Product Design Career Path. Documented parallel IC and management tracks.</li>
         <li>Fundament Design - Does every designer ultimately have to manage people? (2026). IC path allows designers to grow without moving into management.</li>
         <li>Rosenfeld Media - What&apos;s Next for ICs: Exploring Staff and Principal Designer Roles (2024). IC design leadership paths are less formalised and often self-defined.</li>
-        <li>Xperience Wave - Direct observation. Career transition patterns from 13+ years of design leadership and mentoring 140+ designers.</li>
+        <li>Xperience Wave - Direct observation. Career transition patterns from 13+ years of design leadership and training and mentoring 3,000+ designers.</li>
       </ul>
 
       <h2 id="read-next" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
@@ -7799,7 +7800,7 @@ const blogContent: Record<string, React.ReactNode> = {
         Nobody checked what you already knew. Nobody asked about your learning style. Nobody cared that your 6 years of visual design experience meant you needed strategic depth, not another wireframing tutorial. They just shoved the same outdated curriculum at you, a curriculum that was probably created by someone who stopped tracking where the industry was heading years ago.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        They&apos;ll tell you proudly: &quot;We&apos;ve trained 1,000+ designers.&quot;
+        They&apos;ll tell you proudly: &quot;We&apos;ve trained 3,000+ designers.&quot;
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
         What they won&apos;t tell you is how many of those designers actually landed senior roles, got meaningful salary hikes, or moved into positions where they drive decisions. Because if you check the success ratio honestly, you&apos;d be looking at less than 10%.
@@ -8857,7 +8858,7 @@ const blogContent: Record<string, React.ReactNode> = {
         Their conclusion: the market is harsh. Nobody cares about real UX. It&apos;s all about connections.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        Our conclusion, after working through this with 140+ designers: the job was won or lost before they clicked Apply.
+        Our conclusion, after working through this with 3,000+ designers: the job was won or lost before they clicked Apply.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
         That&apos;s the uncomfortable truth at the centre of everything we&apos;re going to cover here. Not to discourage you - but because once you understand it, everything you need to fix becomes clear.
@@ -9054,8 +9055,8 @@ const blogContent: Record<string, React.ReactNode> = {
       </p>
 
       <blockquote className="border-l-4 border-accent pl-5 italic text-base md:text-lg text-g600 mb-6">
-        <strong>ON THE 80% - WHAT WE&apos;VE SEEN AT XW</strong><br /><br />
-        Among designers who complete the full Xperience Wave mentorship program, 80% achieve their career goal - a role change, a title jump, or a significant salary increase - within the program duration.<br /><br />
+        <strong>ON THE 83% - WHAT WE&apos;VE SEEN AT XW</strong><br /><br />
+        Among designers who complete the full Xperience Wave mentorship program, 83% achieve their career goal - a role change, a title jump, or a significant salary increase - within the program duration.<br /><br />
         What separates the ones who do from the ones who don&apos;t is almost never portfolio quality. It&apos;s whether they were willing to build their visibility infrastructure before they needed it, and whether they were honest about where in the funnel they were actually losing.
       </blockquote>
 
@@ -10683,7 +10684,7 @@ const blogContent: Record<string, React.ReactNode> = {
       <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-8">
         <li><a href="https://uxbeginner.com/design-levels-junior-vs-mid-level-vs-senior-ux-designer" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">UX Beginner</a> — Understanding design levels: Junior vs Mid-level vs Senior UX Designer. The progression of questions by seniority: juniors ask &apos;what&apos;, mid-level asks &apos;how&apos;, seniors ask &apos;why&apos;. Senior designers seek holistic views, propose and advocate for research, and measure qualitative and quantitative outcomes.</li>
         <li><a href="https://blog.logrocket.com/ux-design/the-truth-about-design-titles" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">LogRocket (2025)</a> — Why some designers stay stuck at mid-level. Mid-level designers are assigned tickets defined for them. Senior designers advocate for initiatives that drive significant business or user value.</li>
-        <li>Xperience Wave — direct observation. The garnish pattern, sprint meeting dynamics, and the five conversations are drawn from 13+ years of working with design teams across India and internationally, and from mentoring 140+ designers through career transitions.</li>
+        <li>Xperience Wave — direct observation. The garnish pattern, sprint meeting dynamics, and the five conversations are drawn from 13+ years of working with design teams across India and internationally, and from working with 3,000+ designers through career transitions.</li>
       </ul>
 
       <h2 id="read-next" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
@@ -10989,7 +10990,7 @@ const blogContent: Record<string, React.ReactNode> = {
         <li><a href="https://indeed.design/article/ux-interview-advice-from-hiring-managers" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Indeed Design</a> — UX Interview Advice from Hiring Managers at Indeed, Facebook, and Google.</li>
         <li><a href="https://thegrowthuxstudio.com/interview-process-for-a-senior-ux-designer" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">The Growth UX Studio (2025)</a> — Interview Process for a Senior UX Designer. Key insight: &apos;Mid-levels seek direction. Seniors create direction.&apos;</li>
         <li><a href="https://hackajob.com/talent/technical-assessment/ui-ux-designer-interview" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">hackajob (2025)</a> — UI/UX Designer Interview Preparation Guide. Strategic thinking separates executional from senior/leadership-ready candidates.</li>
-        <li>Xperience Wave — direct observation. Portfolio review patterns and candidacy failure patterns drawn from reviewing hundreds of designer profiles and mentoring 140+ designers.</li>
+        <li>Xperience Wave — direct observation. Portfolio review patterns and candidacy failure patterns drawn from reviewing hundreds of designer profiles and training and mentoring 3,000+ designers.</li>
       </ul>
 
       <p className="text-base md:text-lg text-g500 italic mt-6">
@@ -12002,7 +12003,7 @@ const blogContent: Record<string, React.ReactNode> = {
         They are written for the West.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        I have spent 13+ years working with design teams, not just in India, but in Japan, Singapore, Dubai, Australia, and the US. I have worked with over 3,000 designers across Bangalore, Mumbai, Pune, Hyderabad, and Chennai, and mentored 140+ through career transitions. The pattern is always the same: talented designers who do everything right, learn the tools, follow the process, deliver good work, and still get stuck.
+        I have spent 13+ years working with design teams, not just in India, but in Japan, Singapore, Dubai, Australia, and the US. I have worked with over 3,000 designers across Bangalore, Mumbai, Pune, Hyderabad, and Chennai, and mentored 3,000+ designers through career transitions. The pattern is always the same: talented designers who do everything right, learn the tools, follow the process, deliver good work, and still get stuck.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
         Not because they lack skills. Because the ladder they are climbing was never built for the ground they are standing on.
@@ -12112,7 +12113,7 @@ const blogContent: Record<string, React.ReactNode> = {
         The Real Career Map for Indian Designers
       </h2>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
-        So if the standard ladder does not work, what does? Here is what 13 years across Indian, Japanese, Singaporean, Australian, and US design teams, and 140+ mentorship conversations, have taught me about how careers actually move in India.
+        So if the standard ladder does not work, what does? Here is what 13 years across Indian, Japanese, Singaporean, Australian, and US design teams, and 3,000+ designer conversations, have taught me about how careers actually move in India.
       </p>
 
       <h3 className="font-heading text-xl md:text-2xl font-bold text-carbon mt-8 mb-3">
@@ -12257,7 +12258,7 @@ const blogContent: Record<string, React.ReactNode> = {
       </h2>
       <ul className="list-disc pl-6 space-y-3 text-base md:text-lg text-g600 mb-8">
         <li><a href="https://www.hofstede-insights.com/country/india" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Hofstede&apos;s Cultural Dimensions — India</a> — Power Distance Index score: 77 (world average: 56). Hierarchies are strongly accepted, decisions are centralised, criticism from subordinates is considered inappropriate, and employees do only what they are explicitly asked to do. Hiring and promotional decisions at senior levels are often relationship-based.</li>
-        <li>Xperience Wave — direct observation. Observations on India-specific design career patterns, title-vs-authority gaps, and the fork decision at Year 5 to 7 are drawn from 13+ years of direct experience and 140+ mentorship conversations.</li>
+        <li>Xperience Wave — direct observation. Observations on India-specific design career patterns, title-vs-authority gaps, and the fork decision at Year 5 to 7 are drawn from 13+ years of direct experience and 3,000+ designer conversations.</li>
       </ul>
 
       <p className="text-base md:text-lg text-g500 italic mt-6">
@@ -13022,7 +13023,7 @@ const blogContent: Record<string, React.ReactNode> = {
         <Link href="/programs/career-transition-ux-mentorship" className="text-accent hover:underline font-medium">Ripple</Link> (career transition) includes 1 month of conditional support beyond the 3-month programme. <Link href="/programs/ux-leadership-mentorship" className="text-accent hover:underline font-medium">Tide</Link> (design leadership) includes 3 months of conditional support. <Link href="/programs/career-transition-ux-mentorship" className="text-accent hover:underline font-medium">Current</Link> (mid-level to senior) is 3 months with continued support until your goal is met.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
-        80% of our mentees achieve their stated goal. Not a single metric like placement or salary hike - because goals are personal. Some want MAANG. Some want a product company. Some want to build their own practice. Some want to lead a team. Success means you achieved what you came for.
+        83% of our mentees achieve their stated goal. Not a single metric like placement or salary hike - because goals are personal. Some want MAANG. Some want a product company. Some want to build their own practice. Some want to lead a team. Success means you achieved what you came for.
       </p>
 
       <h2 id="proof" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
@@ -13098,7 +13099,7 @@ const blogContent: Record<string, React.ReactNode> = {
         What We Will Not Tell You
       </h2>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
-        We will not tell you that everyone succeeds. 80% do. That means 20% do not - and the reasons vary. Some do not put in the hours. Some face life situations that take priority. Some realise mid-programme that their goal has changed and need to restart the process. We are honest about this because pretending otherwise would be dishonest.
+        We will not tell you that everyone succeeds. 83% do. That means 20% do not - and the reasons vary. Some do not put in the hours. Some face life situations that take priority. Some realise mid-programme that their goal has changed and need to restart the process. We are honest about this because pretending otherwise would be dishonest.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-6">
         We will not tell you it is easy. The programme demands 5-8 hours per week of real work - not passive video watching, but activities, research, interviews, case studies, and presentations. If you are looking for something you can do in the background while watching Netflix, this is not it.
@@ -13107,7 +13108,7 @@ const blogContent: Record<string, React.ReactNode> = {
         We will not tell you the mentor will do the work for you. The mentor provides the diagnosis, the plan, the activities, the review, the direction, and the push. You provide the effort. That is the deal.
       </p>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
-        But if you show up and do the work - the system works. Sheetal did it in 2 months. Shreekanth in 5 weeks. Kritika landed a Lead role at a German startup. Radhakrishna went from Lead to Principal at Informatica. The system works when you work it.
+        But if you show up and do the work - the system works. Sheetal did it in 2 months. Shreekanth in 5 weeks. Kritika landed a Lead role at a German company. Radhakrishna went from Lead to Principal at Informatica. The system works when you work it.
       </p>
 
       <h2 id="strategy-call" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
@@ -13148,7 +13149,7 @@ const blogContent: Record<string, React.ReactNode> = {
         About the Author
       </h2>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
-        Almas Tasneem is Co-founder and CEO at Xperience Wave, a UX design career development company based in Bangalore. She leads sales, strategy, client success, and the mentorship programme operations. The principles and outcomes described in this blog come from direct work with 140+ designers across the Ripple, Current, and Tide programmes. 3,000+ designers consulted. 80% of mentees achieved their stated goals.
+        Almas Tasneem is Co-founder and CEO at Xperience Wave, a UX design career development company based in Bangalore. She leads sales, strategy, client success, and the mentorship programme operations. The principles and outcomes described in this blog come from direct work with 140+ designers across the Ripple, Current, and Tide programmes. 3,000+ designers trained. 83% of mentees achieved their stated goals.
       </p>
 
       <h2 id="read-next" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
@@ -13931,7 +13932,7 @@ const blogContent: Record<string, React.ReactNode> = {
         About the Author
       </h2>
       <p className="text-base md:text-lg text-g600 leading-relaxed mb-8">
-        Shaik Murad is Co-founder and Head of Product &amp; Design at <Link href="/" className="text-accent hover:underline font-medium">Xperience Wave</Link>, a UX design studio based in Bangalore, working across designer mentorship, UX services for businesses, and a design community of 1,000+ designers.
+        Shaik Murad is Co-founder and Head of Product &amp; Design at <Link href="/" className="text-accent hover:underline font-medium">Xperience Wave</Link>, a UX design studio based in Bangalore, working across designer mentorship, UX services for businesses, and a design community of 1,370+ designers.
       </p>
 
       <p className="text-base md:text-lg text-g500 italic mt-6">
@@ -14484,16 +14485,18 @@ const blogTableOfContents: Record<string, { id: string; title: string }[]> = {
 };
 
 // Author data
-const authorData: Record<string, { role: string; bio: string; image: string }> = {
+const authorData: Record<string, { role: string; bio: string; image: string; linkedin: string }> = {
   'Shaik Murad': {
     role: 'Co-founder, Head of Design',
     bio: '13+ years experience at Credit Saison, Milaap & Yokogawa. Specializes in design leadership & growth-based design.',
     image: '/images/Murad.png',
+    linkedin: 'https://www.linkedin.com/in/shaikmurad/',
   },
   'Almas Tasneem': {
     role: 'CEO & Co-founder',
     bio: '12+ years experience at Capgemini, CloudNuro & GE. Specializes in product design & brand strategy.',
     image: '/images/almas.png',
+    linkedin: 'https://www.linkedin.com/in/almas-t/',
   },
 };
 
@@ -14651,7 +14654,7 @@ const blogMetadata: Record<string, { title: string; description: string; keyword
   },
   'why-courses-dont-work': {
     title: "Why UX Design Courses Don't Get You Senior Roles | Xperience Wave",
-    description: "Done with HFI, Designerrs, NextLeap, IIT/NID programs and still stuck? Here's why UX certificates don't land senior roles - and what 140+ designers did differently.",
+    description: "Done with HFI, Designerrs, NextLeap, IIT/NID programs and still stuck? Here's why UX certificates don't land senior roles - and what 3,000+ designers taught us.",
     keywords: ['UX design courses', 'senior UX designer', 'UX mentorship', 'UX career growth', 'UX portfolio', 'mid-level to senior designer', 'UX design certification', '1:1 UX mentorship', 'design leadership'],
   },
   'business-driven-ux-portfolio': {
@@ -14676,7 +14679,7 @@ const blogMetadata: Record<string, { title: string; description: string; keyword
   },
   'why-no-ux-interview-calls': {
     title: 'Why You\'re Not Getting UX Interview Calls (It\'s Not Your Portfolio) | Xperience Wave',
-    description: 'Sending 100 job applications and hearing nothing back? The real problem isn\'t your portfolio - it\'s how you\'re thinking about the entire process. Here\'s what we\'ve learned from 140+ UX mentorships.',
+    description: 'Sending 100 job applications and hearing nothing back? The real problem isn\'t your portfolio - it\'s how you\'re thinking about the entire process. Here\'s what we\'ve learned from 3,000+ designers.',
     keywords: ['UX designer not getting interview calls', 'UX job search India 2026', 'senior UX job India', 'UX personal brand designer', 'UX interview tips', 'hidden job market design'],
   },
   'senior-ux-designer-delivery-person': {
@@ -14751,7 +14754,7 @@ const blogMetadata: Record<string, { title: string; description: string; keyword
   },
   'inside-look-1-1-ux-mentorship': {
     title: 'What Happens in Week 1-12 of a 1:1 UX Mentorship (An Inside Look) | Xperience Wave',
-    description: 'Sheetal became Design Lead in 2 months. Shreekanth landed Wipro in 5 weeks. Kritika landed a Lead role at a German startup in 3 months. This is not what they learned - it is how they were taught. An inside look at 1:1 UX mentorship.',
+    description: 'Sheetal became Design Lead in 2 months. Shreekanth landed Wipro in 5 weeks. Kritika landed a Lead role at a German company in 3 months. This is not what they learned - it is how they were taught. An inside look at 1:1 UX mentorship.',
     keywords: ['1:1 UX mentorship program', 'Xperience Wave mentorship', 'UX mentorship experience', 'inside look mentorship', 'UX career mentorship India', 'design mentorship programme', '1:1 UX coaching India'],
   },
   'hidden-cost-promoting-ic-designer-manager': {
@@ -14767,41 +14770,50 @@ const blogMetadata: Record<string, { title: string; description: string; keyword
 };
 
 // Generate metadata for each blog post
+/** Blog titles drop the "| Xperience Wave" suffix: Google shows the site name
+ *  above each result already, and the 17 characters are better spent on keywords. */
+const stripBrand = (t: string) => t.replace(/\s*\|\s*Xperience Wave\s*$/, '');
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const post = blogPosts.find(p => p.slug === slug);
 
   if (!post) {
-    return { title: 'Blog Post Not Found' };
+    return { title: { absolute: 'Blog Post Not Found' }, robots: { index: false, follow: false } };
   }
 
-  const meta = blogMetadata[slug] || {
-    title: post.title,
-    description: post.excerpt,
-    keywords: [],
-  };
+  const legacy = blogMetadata[slug];
+  // SEO title/description (<=60 / <=155 chars) are separate from the on-page H1,
+  // which keeps the long editorial headline.
+  const seo = blogSeo[slug];
+  const title = seo?.title ?? stripBrand(legacy?.title ?? post.title);
+  const description = seo?.description ?? legacy?.description ?? post.excerpt;
+  const url = `${SITE_URL}/resources/blogs/${slug}`;
 
   return {
-    title: meta.title,
-    description: meta.description,
-    keywords: meta.keywords,
+    title: { absolute: title },
+    description,
+    keywords: legacy?.keywords ?? [],
     authors: [{ name: post.author.name }],
     openGraph: {
-      title: meta.title,
-      description: meta.description,
+      title,
+      description,
       type: 'article',
+      url,
+      siteName: 'Xperience Wave',
+      locale: 'en_IN',
       publishedTime: post.publishedAt,
       authors: [post.author.name],
       images: [{ url: post.image, width: 1200, height: 630, alt: post.title }],
     },
     twitter: {
       card: 'summary_large_image',
-      title: meta.title,
-      description: meta.description,
+      title,
+      description,
       images: [post.image],
     },
     alternates: {
-      canonical: `/resources/blogs/${slug}`,
+      canonical: url,
     },
   };
 }
@@ -14833,6 +14845,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     role: 'UX Mentor',
     bio: 'Design mentor at Xperience Wave.',
     image: '',
+    linkedin: '',
   };
 
   // Get related posts (same category, excluding current and unpublished)
@@ -14840,30 +14853,35 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     .filter(p => p.category === post.category && p.id !== post.id && isPostPublished(p))
     .slice(0, 3);
 
-  // Article structured data for SEO
+  // BlogPosting structured data with author signals (name, /about, LinkedIn)
+  const seo = blogSeo[slug];
   const articleSchema = {
     '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: post.title,
-    description: post.excerpt,
-    image: post.image,
+    '@type': 'BlogPosting',
+    headline: seo?.title ?? post.title,
+    description: seo?.description ?? post.excerpt,
+    image: post.image.startsWith('http') ? post.image : `${SITE_URL}${post.image}`,
     datePublished: post.publishedAt,
     dateModified: post.publishedAt,
     author: {
       '@type': 'Person',
       name: post.author.name,
+      url: `${SITE_URL}/about`,
+      jobTitle: author.role,
+      sameAs: author.linkedin ? [author.linkedin] : undefined,
     },
     publisher: {
       '@type': 'Organization',
       name: 'Xperience Wave',
+      url: SITE_URL,
       logo: {
         '@type': 'ImageObject',
-        url: 'https://xperiencewave.com/images/logos/xw-logo-light.svg',
+        url: `${SITE_URL}/images/logos/xw-logo-light.png`,
       },
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `https://xperiencewave.com/resources/blogs/${slug}`,
+      '@id': `${SITE_URL}/resources/blogs/${slug}`,
     },
   };
 
@@ -14899,10 +14917,30 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               {post.title}
             </h1>
 
-            {/* Meta */}
-            <div className="flex flex-wrap items-center gap-4 text-g600">
-              <span className="font-medium text-carbon">{post.author.name}</span>
-              <span className="w-1 h-1 rounded-full bg-g300" aria-hidden="true" />
+            {/* Byline */}
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-g600">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full overflow-hidden relative bg-g200 shrink-0">
+                  {author.image ? (
+                    <Image src={author.image} alt={post.author.name} fill className="object-cover" sizes="40px" />
+                  ) : (
+                    <span className="w-full h-full flex items-center justify-center text-sm font-bold text-g500">{post.author.name.charAt(0)}</span>
+                  )}
+                </div>
+                <div className="leading-tight">
+                  <p className="font-medium text-carbon">
+                    {author.linkedin ? (
+                      <a href={author.linkedin} target="_blank" rel="noopener noreferrer author" className="hover:text-accent transition-colors">
+                        {post.author.name}
+                      </a>
+                    ) : (
+                      post.author.name
+                    )}
+                  </p>
+                  <p className="text-xs text-g500">{author.role}, Xperience Wave</p>
+                </div>
+              </div>
+              <span className="w-1 h-1 rounded-full bg-g300 hidden sm:block" aria-hidden="true" />
               <time dateTime={post.publishedAt}>{formatDate(post.publishedAt)}</time>
               <span className="w-1 h-1 rounded-full bg-g300" aria-hidden="true" />
               <span>{post.readTime} read</span>

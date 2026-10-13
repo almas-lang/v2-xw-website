@@ -1,3 +1,10 @@
+/**
+ * Site-wide structured data: Organization + WebSite. Rendered on the homepage
+ * only. Per-page schema (Course on programs, BlogPosting on posts) lives with
+ * the page. Legal pages carry none. The old sitewide Course + Product/Review
+ * markup was removed in Oct 2026: Course markup on every page reads as spam to
+ * Google, and self-serving review markup is against its guidelines.
+ */
 export default function SchemaOrg() {
   const organizationSchema = {
     "@context": "https://schema.org",
@@ -8,7 +15,7 @@ export default function SchemaOrg() {
     url: "https://xperiencewave.com",
     logo: {
       "@type": "ImageObject",
-      url: "https://xperiencewave.com/images/logos/xw-logo-light.svg",
+      url: "https://xperiencewave.com/images/logos/xw-logo-light.png",
       width: 200,
       height: 60,
     },
@@ -58,65 +65,6 @@ export default function SchemaOrg() {
     ],
   };
 
-  const courseSchema = {
-    "@context": "https://schema.org",
-    "@type": "Course",
-    "@id": "https://xperiencewave.com/#course",
-    name: "90-Day UX Accelerator Program",
-    description:
-      "Personalized 1:1 UX design mentorship program to help mid-level designers break into senior and leadership roles within 90 days.",
-    provider: {
-      "@type": "EducationalOrganization",
-      "@id": "https://xperiencewave.com/#organization",
-    },
-    educationalLevel: "Professional",
-    audience: {
-      "@type": "Audience",
-      audienceType: "UX/UI/Product Designers with 2+ years experience",
-    },
-    teaches: [
-      "Portfolio Development",
-      "Interview Preparation",
-      "Salary Negotiation",
-      "Design Leadership",
-      "AI-first Design Approach",
-    ],
-    hasCourseInstance: {
-      "@type": "CourseInstance",
-      courseMode: "online",
-      instructor: [
-        {
-          "@type": "Person",
-          name: "Almas Tasneem",
-        },
-        {
-          "@type": "Person",
-          name: "Shaik Murad",
-        },
-      ],
-    },
-  };
-
-  const webPageSchema = {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "@id": "https://xperiencewave.com/#webpage",
-    url: "https://xperiencewave.com/",
-    name: "1:1 UX Design Mentorship for Senior & Leadership Roles | Xperience Wave",
-    description:
-      "Break into senior UX roles in 90 days with personalized 1:1 mentorship. Stop wasting time on generic courses. Get expert guidance on portfolio, interviews & salary negotiation.",
-    isPartOf: {
-      "@id": "https://xperiencewave.com/#website",
-    },
-    about: {
-      "@id": "https://xperiencewave.com/#organization",
-    },
-    primaryImageOfPage: {
-      "@type": "ImageObject",
-      url: "https://xperiencewave.com/images/og-image.jpg",
-    },
-  };
-
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
@@ -127,81 +75,6 @@ export default function SchemaOrg() {
     publisher: {
       "@id": "https://xperiencewave.com/#organization",
     },
-    potentialAction: {
-      "@type": "SearchAction",
-      target: "https://xperiencewave.com/search?q={search_term_string}",
-      "query-input": "required name=search_term_string",
-    },
-  };
-
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: "https://xperiencewave.com/",
-      },
-    ],
-  };
-
-  // Review/Testimonial Schema - social proof for search results
-  const reviewSchema = {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    name: "Xperience Wave 1:1 UX Mentorship",
-    description: "Personalized 1:1 UX design mentorship for senior and leadership roles",
-    brand: {
-      "@type": "Brand",
-      name: "Xperience Wave",
-    },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.9",
-      bestRating: "5",
-      worstRating: "1",
-      ratingCount: "87",
-    },
-    review: [
-      {
-        "@type": "Review",
-        author: {
-          "@type": "Person",
-          name: "Pavitra Suji",
-        },
-        reviewRating: {
-          "@type": "Rating",
-          ratingValue: "5",
-        },
-        reviewBody: "Landed my dream role as Sr. Designer at McKinsey & Company within 3 months of joining the program.",
-      },
-      {
-        "@type": "Review",
-        author: {
-          "@type": "Person",
-          name: "Kritika Singh",
-        },
-        reviewRating: {
-          "@type": "Rating",
-          ratingValue: "5",
-        },
-        reviewBody: "Became Lead Product Designer at a German startup in just 3 months. The personalized approach made all the difference.",
-      },
-      {
-        "@type": "Review",
-        author: {
-          "@type": "Person",
-          name: "Radhakrishna A",
-        },
-        reviewRating: {
-          "@type": "Rating",
-          ratingValue: "5",
-        },
-        reviewBody: "Promoted from Lead Designer to Principal Designer at Informatica in 4 months. Highly recommended!",
-      },
-    ],
   };
 
   return (
@@ -212,23 +85,7 @@ export default function SchemaOrg() {
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(courseSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
-      />
-      <script
-        type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
       />
     </>
   );

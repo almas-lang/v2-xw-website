@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 import AboutHero from '@/components/about/AboutHero';
 import ProblemsSection from '@/components/about/ProblemsSection';
 import WhatWeDo from '@/components/about/WhatWeDo';
@@ -14,41 +14,7 @@ import ReadyToStart from '@/components/about/ReadyToStart';
 import JoinConversation from '@/components/shared/JoinConversation';
 import PageSchema from '@/components/seo/PageSchema';
 
-export const metadata: Metadata = {
-  title: 'About Xperience Wave | UX Design Mentorship Company | India',
-  description:
-    'Xperience Wave is a UX design mentorship company founded in 2022. 140+ designers mentored. 95% success rate. Real mentorship, not courses. Based in India with global reach.',
-  keywords: [
-    'ux design mentorship company',
-    'about xperience wave',
-    'ux mentor india',
-    'design education company',
-    'ux mentorship program',
-  ],
-  // TODO: Create /public/images/og-about.jpg (1200x630px)
-  openGraph: {
-    title: 'About Xperience Wave | UX Design Mentorship Company | India',
-    description:
-      'Xperience Wave is a UX design mentorship company founded in 2022. 140+ designers mentored. 95% success rate. Real mentorship, not courses.',
-    url: 'https://xperiencewave.com/about',
-    images: [
-      {
-        url: '/images/og-about.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'About Xperience Wave',
-      },
-    ],
-  },
-  twitter: {
-    title: 'About Xperience Wave | UX Design Mentorship Company | India',
-    description:
-      'Xperience Wave is a UX design mentorship company founded in 2022. 140+ designers mentored. 95% success rate. Real mentorship, not courses.',
-  },
-  alternates: {
-    canonical: '/about',
-  },
-};
+export const metadata = pageMetadata('/about');
 
 export default function AboutPage() {
   return (
@@ -57,7 +23,7 @@ export default function AboutPage() {
         type="AboutPage"
         pageUrl="/about"
         pageName="About Xperience Wave | UX Design Mentorship Company"
-        pageDescription="Xperience Wave is a UX design mentorship company founded in 2022. 140+ designers mentored. 95% success rate. Real mentorship, not courses. Based in India with global reach."
+        pageDescription="Xperience Wave is a UX design mentorship company founded in 2022 by Shaik Murad and Almas Tasneem. 3,000+ designers trained and mentored. 83% of 1:1 mentees hit their career goal. Real mentorship, not courses."
         breadcrumbs={[{ name: 'About', url: '/about' }]}
       />
       {/* SEO h1 - visually hidden but accessible to search engines */}

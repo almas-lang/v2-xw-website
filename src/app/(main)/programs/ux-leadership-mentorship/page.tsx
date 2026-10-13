@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 import ProgramHero from '@/components/programs/ProgramHero';
 import ProgramStats from '@/components/programs/ProgramStats';
 import ProgramFitCheck from '@/components/programs/ProgramFitCheck';
@@ -48,42 +48,7 @@ const tideQuickWins: QuickWin[] = [
   },
 ];
 
-export const metadata: Metadata = {
-  title: 'Tide - Design Leadership Program | 1:1 Mentorship for Senior Designers | Xperience Wave',
-  description:
-    '1:1 mentorship for senior UX designers (5+ years) ready to lead teams and drive influence. Move into Director, VP, and Head of Design roles. Executive personal branding included.',
-  keywords: [
-    'design leadership program',
-    'senior ux to design lead',
-    'head of design mentorship',
-    'design director coaching',
-    'ux design management',
-    'design executive coaching',
-    'tide program xperience wave',
-  ],
-  openGraph: {
-    title: 'Tide - Design Leadership Program | 1:1 Mentorship for Senior Designers',
-    description:
-      '1:1 mentorship for senior UX designers (5+ years) ready to lead teams and drive influence. Move into Director, VP, and Head of Design roles.',
-    url: 'https://xperiencewave.com/programs/ux-leadership-mentorship',
-    images: [
-      {
-        url: '/images/og-tide.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Tide Program - Design Leadership',
-      },
-    ],
-  },
-  twitter: {
-    title: 'Tide - Design Leadership Program | 1:1 Mentorship for Senior Designers',
-    description:
-      '1:1 mentorship for senior UX designers (5+ years) ready to lead teams. Move into Director, VP, and Head of Design roles.',
-  },
-  alternates: {
-    canonical: '/programs/ux-leadership-mentorship',
-  },
-};
+export const metadata = pageMetadata('/programs/ux-leadership-mentorship');
 
 const tideFaqs = [
   {
@@ -240,7 +205,14 @@ export default function TideProgramPage() {
   return (
     <>
       <PageSchema
-        type="Product"
+        type="Course"
+        course={{
+          name: 'Tide: Design Leadership Mentorship',
+          description: '1:1 mentorship for senior UX designers (5+ years) moving into Design Lead, Head of Design and Director roles. Influence, team building and executive personal brand.',
+          duration: 'P6M',
+          audience: 'Senior UX and Product designers with 5+ years of experience',
+          teaches: ['Design leadership', 'Stakeholder and executive influence', 'Building and leading design teams', 'Executive personal branding'],
+        }}
         pageUrl="/programs/ux-leadership-mentorship"
         pageName="Tide - Design Leadership Program"
         pageDescription="1:1 mentorship for senior UX designers (5+ years) ready to lead teams and drive influence. Move into Director, VP, and Head of Design roles."

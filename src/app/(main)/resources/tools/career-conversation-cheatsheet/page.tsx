@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     'UX career growth India',
   ],
   alternates: {
-    canonical: 'https://www.xperiencewave.com/resources/tools/career-conversation-cheatsheet',
+    canonical: 'https://xperiencewave.com/resources/tools/career-conversation-cheatsheet',
   },
 };
 

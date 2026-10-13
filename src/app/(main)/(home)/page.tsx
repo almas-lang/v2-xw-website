@@ -1,3 +1,4 @@
+import { pageMetadata } from '@/lib/seo';
 import Hero from "@/components/home/Hero";
 import Stats from "@/components/shared/Stats";
 import VideoSection from "@/components/home/VideoSection";
@@ -13,6 +14,9 @@ import FAQ from "@/components/shared/FAQ";
 import BlogSection from "@/components/home/BlogSection";
 import CTASection from "@/components/shared/CTASection";
 import { FreeTrainingPromo } from "@/components/shared/FreeTrainingPromo";
+import SchemaOrg from "@/components/seo/SchemaOrg";
+
+export const metadata = pageMetadata('/');
 
 const homeFaqs = [
   {
@@ -25,7 +29,7 @@ const homeFaqs = [
   },
   {
     question: "Do you guarantee I'll get a job?",
-    answer: "No one can honestly guarantee jobs - market conditions, individual effort, and timing all play a role. What we guarantee is dedicated mentorship, honest feedback, and a structured path. 80% of our mentees have achieved their career goals.",
+    answer: "No one can honestly guarantee jobs - market conditions, individual effort, and timing all play a role. What we guarantee is dedicated mentorship, honest feedback, and a structured path. 83% of our mentees have achieved their career goals.",
   },
   {
     question: "What if I don't achieve my goal in 90 days?",
@@ -48,6 +52,7 @@ const homeFaqs = [
 export default function Home() {
   return (
     <>
+      <SchemaOrg />
       <Hero />
       <Stats theme="horizontal-light" />
       <VideoSection />

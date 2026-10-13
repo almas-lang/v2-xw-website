@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     'stakeholder workshop guide',
   ],
   alternates: {
-    canonical: 'https://www.xperiencewave.com/resources/tools/workshop-facilitation-cheatsheet',
+    canonical: 'https://xperiencewave.com/resources/tools/workshop-facilitation-cheatsheet',
   },
 };
 

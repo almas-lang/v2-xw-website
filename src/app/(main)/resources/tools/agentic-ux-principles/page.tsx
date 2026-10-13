@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     'agent handoff design',
   ],
   alternates: {
-    canonical: 'https://www.xperiencewave.com/resources/tools/agentic-ux-principles',
+    canonical: 'https://xperiencewave.com/resources/tools/agentic-ux-principles',
   },
 };
 

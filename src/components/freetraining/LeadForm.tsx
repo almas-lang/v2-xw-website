@@ -90,7 +90,7 @@ export function LeadForm({ onSuccess, onError, variant = 'default' }: LeadFormPr
       const result = await response.json();
 
       // Track events regardless of webhook response
-      trackFormSubmitted({ email: data.email });
+      trackFormSubmitted();
       const leadEventId = newEventId();
       trackLead({ lead_id: result.leadId || 'unknown' }, leadEventId);
       trackConversionAPI("Lead", data.email, "+91" + data.whatsapp, {

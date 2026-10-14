@@ -9,6 +9,8 @@ import {
   trackCongratsVideoStart,
   trackCongratsVideoProgress,
   trackCongratsVideoComplete,
+  safeHostname,
+  fileExtension,
 } from "@/lib/freetraining/track";
 import { getStorageJSON } from "@/lib/freetraining/storage";
 import { ftContent } from "@/lib/freetraining/content";
@@ -149,11 +151,11 @@ function CongratulationsContent() {
       if (portfolioUrl) {
         const normalizedUrl = portfolioUrl.match(/^https?:\/\//) ? portfolioUrl : `https://${portfolioUrl}`;
         webhookPayload.portfolio_url = normalizedUrl;
-        trackGA4("portfolio_shared", { url: normalizedUrl });
+        trackGA4("portfolio_shared", { domain: safeHostname(normalizedUrl) });
       }
 
       if (resumeFile) {
-        trackGA4("resume_uploaded", { file_name: resumeFile.name });
+        trackGA4("resume_uploaded", { file_ext: fileExtension(resumeFile.name) });
         const formData = new FormData();
         formData.append('file', resumeFile);
         formData.append('email', leadEmail);

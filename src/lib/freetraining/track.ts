@@ -84,8 +84,8 @@ export const trackFormFieldCompleted = (fieldName: string) => {
   trackGA4(`form_field_completed_${fieldName}`, { form_name: "ft_lead_form" });
 };
 
-export const trackFormSubmitted = (data?: TrackingData) => {
-  trackGA4("form_submitted", { form_name: "ft_lead_form", ...data });
+export const trackFormSubmitted = () => {
+  trackGA4("form_submitted", { form_name: "ft_lead_form" });
 };
 
 // Video progress tracking
@@ -114,6 +114,22 @@ export const trackCongratsVideoComplete = (videoId: string) => {
 // Scroll-depth milestones — fired once per threshold per page load.
 export const trackScrollDepth = (percent: number, pagePath: string) => {
   trackGA4(`scroll_depth_${percent}`, { percent, page_path: pagePath });
+};
+
+// PII-safe reducers for GA4 parameters. Google Analytics terms forbid sending
+// personal data (names, emails, phone numbers), and resume file names and
+// portfolio URLs routinely contain the person's name.
+export const safeHostname = (url: string): string => {
+  try {
+    return new URL(url).hostname.replace(/^www\./, "");
+  } catch {
+    return "invalid";
+  }
+};
+
+export const fileExtension = (fileName: string): string => {
+  const idx = fileName.lastIndexOf(".");
+  return idx === -1 ? "none" : fileName.slice(idx + 1).toLowerCase();
 };
 
 export const trackConversionAPI = async (

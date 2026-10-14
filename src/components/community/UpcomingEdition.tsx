@@ -18,6 +18,8 @@ const schedule = [
 
 const speakers = [
   { name: 'Abhimanyu Sirothia', talk: 'Design Director, Designit', link: 'https://www.youtube.com/watch?v=aDJZzBwrNSo', linkText: 'Watch His Podcast Episode', image: '/images/podcast-abhimanyu.jpeg' },
+  { name: 'Almas Tasneem', talk: 'CEO & Founder, Xperience Wave', link: 'https://www.linkedin.com/in/almas-t/', linkText: 'See LinkedIn', image: '/images/community-almas.jpg' },
+  { name: 'Shaik Murad', talk: 'Head of Product & Design, Xperience Wave', link: 'https://www.linkedin.com/in/shaikmurad/', linkText: 'See LinkedIn', image: '/images/community-murad.jpg' },
 ];
 
 export default function UpcomingEdition() {
@@ -184,7 +186,7 @@ export default function UpcomingEdition() {
           }}
         >
           <h3 className="font-heading text-lg font-bold text-white text-center mb-8">
-            Speaker This Edition
+            Speakers This Edition
           </h3>
 
           {/* Speaker cards with gradient border on hover */}

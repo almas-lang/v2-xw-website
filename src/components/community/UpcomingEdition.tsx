@@ -6,14 +6,13 @@ import Button from '@/components/ui/Button';
 import { VENUE_MAPS_URL, VENUE_MAPS_EMBED_URL } from './venue';
 
 const schedule = [
-  { time: '10:00 AM', title: 'Doors Open', type: 'start' },
-  { time: '10:15 AM', title: 'Speaker Session 1', type: 'talk' },
-  { time: '10:45 AM', title: 'Trends Segment', type: 'segment' },
-  { time: '11:00 AM', title: 'Keynote', type: 'keynote' },
-  { time: '11:30 AM', title: 'Coffee Break', type: 'break' },
-  { time: '11:50 AM', title: 'Speaker Session 2', type: 'talk' },
-  { time: '12:30 PM', title: 'Activities + Networking', type: 'networking' },
-  { time: '1:00 PM', title: 'Close', type: 'end' },
+  { time: '10:00 AM', title: 'Doors Open, Check-in & Icebreaker', type: 'start' },
+  { time: '10:10 AM', title: '10 Trends in Design Right Now', type: 'segment' },
+  { time: '10:35 AM', title: 'Speaker Talk', type: 'talk' },
+  { time: '11:00 AM', title: 'Snacks & Networking', type: 'break' },
+  { time: '11:15 AM', title: 'Panel + Q&A: Hiring, working with PMs & devs, AI, growing into leadership', type: 'keynote' },
+  { time: '12:05 PM', title: 'Activity', type: 'activity' },
+  { time: '12:20 PM', title: 'Close & Open Networking', type: 'end' },
 ];
 
 const speakers = [

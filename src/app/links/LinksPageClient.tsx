@@ -251,7 +251,7 @@ export default function LinksPageClient({ blogs }: { blogs: BlogLite[] }) {
   }, []);
 
   // Group links by type
-  const ctaLinks = links.filter((l) => l.style === 'cta-red' || l.style === 'cta-dark');
+  const ctaLinks = links.filter((l) => l.style === 'cta-red' || l.style === 'cta-purple' || l.style === 'cta-dark');
   const cardLinks = links.filter((l) => l.style === 'card');
   const communityLinks = links.filter((l) => l.style === 'community');
   const socialLinks = links.filter((l) => l.style === 'social');
@@ -271,6 +271,33 @@ export default function LinksPageClient({ blogs }: { blogs: BlogLite[] }) {
           onClick={() => fireEvent('bio_link_click', { link_name: link.title, link_position: pos, link_url: link.url })}
           className="flex items-center gap-3 w-full rounded-xl px-5 py-4 bg-accent hover:bg-accent-hover transition-all duration-200 shadow-sm hover:shadow-md active:scale-[0.98]"
           style={{ minHeight: '44px' }}
+        >
+          <div className="flex-1">
+            <div className="font-heading text-base font-semibold text-white">
+              {link.title}
+            </div>
+            {link.subtitle && (
+              <div className="font-heading text-sm text-white/85 mt-0.5">
+                {link.subtitle}
+              </div>
+            )}
+          </div>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white/80 flex-shrink-0"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      );
+    }
+
+    // CTA Purple (community/event theme, matches /community's indigo-violet)
+    if (link.style === 'cta-purple') {
+      return (
+        <a
+          key={link.id}
+          href={utm(link.url, slug, pos)}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => fireEvent('bio_link_click', { link_name: link.title, link_position: pos, link_url: link.url })}
+          className="flex items-center gap-3 w-full rounded-xl px-5 py-4 transition-all duration-200 shadow-sm hover:shadow-md hover:opacity-95 active:scale-[0.98]"
+          style={{ minHeight: '44px', background: 'linear-gradient(135deg, #6366f1, #8b5cf6)' }}
         >
           <div className="flex-1">
             <div className="font-heading text-base font-semibold text-white">

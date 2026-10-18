@@ -8,6 +8,7 @@ const EMOJI_OPTIONS = ['🔗', '📞', '🌐', '📸', '💼', '🎙️', '📝'
 
 const STYLE_OPTIONS: { value: LinkStyle; label: string }[] = [
   { value: 'cta-red', label: 'CTA (Red)' },
+  { value: 'cta-purple', label: 'CTA (Purple — community/events)' },
   { value: 'cta-dark', label: 'CTA (Dark)' },
   { value: 'card', label: 'Card' },
   { value: 'community', label: 'Community (Dashed)' },
@@ -16,6 +17,7 @@ const STYLE_OPTIONS: { value: LinkStyle; label: string }[] = [
 
 const STYLE_COLORS: Record<LinkStyle, string> = {
   'cta-red': 'border-l-accent',
+  'cta-purple': 'border-l-indigo-500',
   'cta-dark': 'border-l-white',
   'card': 'border-l-blue-400',
   'community': 'border-l-green-400',

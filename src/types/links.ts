@@ -1,4 +1,4 @@
-export type LinkStyle = 'cta-red' | 'cta-dark' | 'card' | 'community' | 'social';
+export type LinkStyle = 'cta-red' | 'cta-purple' | 'cta-dark' | 'card' | 'community' | 'social';
 
 export interface LinkItem {
   id: string;

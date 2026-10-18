@@ -124,7 +124,113 @@ const ChevronRight = (
   </svg>
 );
 
-export default function LinksPageClient() {
+type BlogLite = { title: string; slug: string };
+
+// --- Blog finder: search box + latest post + all-blogs link ---
+function BlogFinder({ blogs }: { blogs: BlogLite[] }) {
+  const [query, setQuery] = useState('');
+
+  const q = query.trim().toLowerCase();
+  const results = q
+    ? blogs.filter((b) => b.title.toLowerCase().includes(q)).slice(0, 5)
+    : [];
+  const latest = blogs[0];
+
+  function blogUrl(slug: string) {
+    return utm(`https://xperiencewave.com/resources/blogs/${slug}`, 'blog', slug.slice(0, 40));
+  }
+
+  function renderBlogCard(blog: BlogLite, badge?: string) {
+    return (
+      <a
+        key={blog.slug}
+        href={blogUrl(blog.slug)}
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={() => fireEvent('bio_blog_click', { blog_slug: blog.slug, searched: q ? 'yes' : 'no' })}
+        className="flex items-center gap-3 w-full rounded-xl px-4 py-3.5 bg-white dark:bg-[#242424] border border-[#E5E5E5] dark:border-[#333] transition-all duration-200 hover:shadow-sm hover:border-g300 dark:hover:border-g600 active:scale-[0.98]"
+        style={{ minHeight: '44px' }}
+      >
+        <div className="flex-1 min-w-0">
+          {badge && (
+            <span className="font-heading text-[11px] font-semibold uppercase tracking-wider text-accent block">
+              {badge}
+            </span>
+          )}
+          <span className="font-heading text-[15px] font-medium text-carbon dark:text-white block">
+            {blog.title}
+          </span>
+        </div>
+        {ChevronRight}
+      </a>
+    );
+  }
+
+  return (
+    <div className="space-y-2">
+      {/* Search input */}
+      <div className="relative">
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="absolute left-3.5 top-1/2 -translate-y-1/2 text-g400 pointer-events-none"
+        >
+          <circle cx="11" cy="11" r="8" />
+          <path d="m21 21-4.3-4.3" />
+        </svg>
+        <input
+          type="search"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          onFocus={() => fireEvent('bio_blog_search_focus', {})}
+          placeholder={`Search ${blogs.length} articles...`}
+          className="w-full pl-10 pr-4 py-3 bg-white dark:bg-[#242424] border border-[#E5E5E5] dark:border-[#333] rounded-xl text-carbon dark:text-white placeholder:text-g400 text-[15px] font-heading focus:outline-none focus:border-accent transition-colors"
+          style={{ minHeight: '44px' }}
+        />
+      </div>
+
+      {/* Search results */}
+      {q && results.length > 0 && results.map((b) => renderBlogCard(b))}
+      {q && results.length === 0 && (
+        <p className="font-heading text-[13px] text-g500 dark:text-g400 text-center py-2">
+          No articles match &ldquo;{query}&rdquo; — try another word from the title.
+        </p>
+      )}
+
+      {/* Default state: latest post + all blogs */}
+      {!q && latest && renderBlogCard(latest, 'Latest')}
+      {!q && (
+        <a
+          href={utm('https://xperiencewave.com/resources/blogs', 'blog', 'all_blogs')}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => fireEvent('bio_link_click', { link_name: 'All Blogs', link_position: 'blog_section', link_url: '/resources/blogs' })}
+          className="flex items-center gap-3 w-full rounded-xl px-4 py-3.5 bg-white dark:bg-[#242424] border border-[#E5E5E5] dark:border-[#333] transition-all duration-200 hover:shadow-sm hover:border-g300 dark:hover:border-g600 active:scale-[0.98]"
+          style={{ minHeight: '44px' }}
+        >
+          <span className="text-lg flex-shrink-0">📝</span>
+          <div className="flex-1 min-w-0">
+            <span className="font-heading text-[15px] font-medium text-carbon dark:text-white block truncate">
+              Read All Blogs
+            </span>
+            <span className="font-heading text-[13px] text-g500 dark:text-g400">
+              {blogs.length} articles on design careers & craft
+            </span>
+          </div>
+          {ChevronRight}
+        </a>
+      )}
+    </div>
+  );
+}
+
+export default function LinksPageClient({ blogs }: { blogs: BlogLite[] }) {
   const [links, setLinks] = useState<LinkItem[]>([]);
   const [loaded, setLoaded] = useState(false);
   const [showEmailCapture, setShowEmailCapture] = useState(false);
@@ -332,6 +438,20 @@ export default function LinksPageClient() {
                 </div>
                 <div className="space-y-2 mb-4">
                   {cardLinks.map((link) => renderLink(link, globalIndex++))}
+                </div>
+              </>
+            )}
+
+            {/* ========== SECTION: BLOG ========== */}
+            {blogs.length > 0 && (
+              <>
+                <div className="mb-2 mt-5">
+                  <span className="font-heading text-[11px] font-semibold uppercase tracking-wider text-g400">
+                    From the Blog
+                  </span>
+                </div>
+                <div className="mb-4">
+                  <BlogFinder blogs={blogs} />
                 </div>
               </>
             )}

@@ -1,5 +1,9 @@
 import type { Metadata } from 'next';
+import { blogPosts, isPostPublished } from '@/data/blogPosts';
 import LinksPageClient from './LinksPageClient';
+
+// Re-render hourly so newly published blog posts show up without a redeploy.
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: 'Xperience Wave — Links',
@@ -14,5 +18,11 @@ export const metadata: Metadata = {
 };
 
 export default function LinksPage() {
-  return <LinksPageClient />;
+  // Only ship title + slug to the client so the linktree stays light.
+  const blogs = blogPosts
+    .filter(isPostPublished)
+    .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
+    .map((p) => ({ title: p.title, slug: p.slug }));
+
+  return <LinksPageClient blogs={blogs} />;
 }

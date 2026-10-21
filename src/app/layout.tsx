@@ -1,18 +1,21 @@
 import type { Metadata, Viewport } from "next";
-import { Plus_Jakarta_Sans, Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const plusJakarta = Plus_Jakarta_Sans({
+// Fonts are self-hosted from the @fontsource-variable packages. next/font/google
+// fetched them from Google at build time, and Google intermittently returns
+// URLs Turbopack can't parse, which failed the 21 Oct 2026 production build.
+const plusJakarta = localFont({
+  src: "../../node_modules/@fontsource-variable/plus-jakarta-sans/files/plus-jakarta-sans-latin-wght-normal.woff2",
+  weight: "200 800",
   variable: "--font-heading",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
   display: "swap",
 });
 
-const inter = Inter({
+const inter = localFont({
+  src: "../../node_modules/@fontsource-variable/inter/files/inter-latin-wght-normal.woff2",
+  weight: "100 900",
   variable: "--font-body",
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
   display: "swap",
 });
 
@@ -37,10 +40,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-      </head>
       <body className={`${plusJakarta.variable} ${inter.variable} antialiased overflow-x-hidden`}>
         {children}
       </body>

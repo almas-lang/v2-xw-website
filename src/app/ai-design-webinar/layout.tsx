@@ -1,4 +1,4 @@
-import { Inter, Source_Serif_4, Geist } from "next/font/google";
+import localFont from "next/font/local";
 import "./webinar.tokens.css";
 
 /*
@@ -12,23 +12,24 @@ import "./webinar.tokens.css";
  * The .konfom wrapper carries both the next/font CSS variables and the
  * scoped Konfom design tokens (webinar.tokens.css).
  */
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
+// Self-hosted variable fonts (see note in src/app/layout.tsx).
+const inter = localFont({
+  src: "../../../node_modules/@fontsource-variable/inter/files/inter-latin-wght-normal.woff2",
+  weight: "100 900",
   variable: "--font-inter",
   display: "swap",
 });
 
-const sourceSerif = Source_Serif_4({
-  subsets: ["latin"],
-  weight: ["400", "600"],
+const sourceSerif = localFont({
+  src: "../../../node_modules/@fontsource-variable/source-serif-4/files/source-serif-4-latin-wght-normal.woff2",
+  weight: "200 900",
   variable: "--font-source-serif",
   display: "swap",
 });
 
-const geist = Geist({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
+const geist = localFont({
+  src: "../../../node_modules/geist/dist/fonts/geist-sans/Geist-Variable.woff2",
+  weight: "100 900",
   variable: "--font-geist",
   display: "swap",
 });

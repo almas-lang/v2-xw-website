@@ -92,6 +92,8 @@ export default function Header() {
     if (pathname.includes('senior-ux-designer-mentorship')) return '#E85A4F'; // Current - coral
     if (pathname.includes('career-transition-ux-mentorship')) return '#4A90A4'; // Ripple - teal
     if (pathname.includes('ux-leadership-mentorship')) return '#D4A853'; // Tide - gold
+    // Careers pages - gold, matching the "We're hiring" section
+    if (pathname.startsWith('/careers')) return '#D4A853';
     // Default - accent red
     return '#FF0023';
   };

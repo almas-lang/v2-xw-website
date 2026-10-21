@@ -11,7 +11,7 @@ const footerLinks = {
   company: [
     { href: '/about', label: 'About Us' },
     { href: '/contact', label: 'Contact Us' },
-    // { href: '/careers', label: 'Careers' }, // Hidden until page is created
+    { href: '/careers', label: 'Careers' },
     { href: '/privacy-policy', label: 'Privacy Policy' },
     { href: '/terms-of-service', label: 'Terms of Service' },
     { href: '/refund-policy', label: 'Refund Policy' },

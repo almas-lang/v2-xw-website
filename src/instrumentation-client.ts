@@ -12,6 +12,7 @@ initBotId({
     { path: '/api/guide-download', method: 'POST' },
     { path: '/api/hiring-guide', method: 'POST' },
     { path: '/api/hiring-requirements', method: 'POST' },
+    { path: '/api/job-apply', method: 'POST' },
     { path: '/api/lead-capture', method: 'POST' },
     { path: '/api/podcast-guest', method: 'POST' },
     { path: '/api/podcast-sponsor', method: 'POST' },

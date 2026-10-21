@@ -7,6 +7,9 @@ https://docs.google.com/spreadsheets/d/16mCH41EABq95gnx5gf1oQPZGSwquug5eRQf4K9lh
 The sheet gets two tabs, created automatically on first submission:
 - **Registrations** — from `/community/register` (`/api/event-register`)
 - **Speaker Applications** — from `/community/apply` (`/api/speaker-apply`)
+- **Applications – <job title>** — one tab per role, from `/careers/<slug>/apply`
+  (`/api/job-apply`). Each role has its own form (see `src/data/jobs.ts`), so a
+  separate tab keeps the columns aligned.
 
 The server posts each submission to a Google Apps Script web app attached to
 the sheet (`src/lib/sheets.ts`). If the webhook is down or unconfigured, the

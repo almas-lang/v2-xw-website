@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next';
 import { getPublishedPosts } from '@/data/blogPosts';
+import { getOpenJobs } from '@/data/jobs';
 import { indexableStaticPaths, SITE_URL } from '@/lib/seo';
 
 // Regenerate at most hourly so scheduled posts get indexed without a redeploy
@@ -25,5 +26,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticUrls, ...blogUrls];
+  // Open roles. Apply pages are noindex and left out.
+  const jobUrls: MetadataRoute.Sitemap = getOpenJobs().map((job) => ({
+    url: `${SITE_URL}/careers/${job.slug}`,
+    lastModified: new Date(job.postedAt),
+    changeFrequency: 'weekly' as const,
+    priority: 0.6,
+  }));
+
+  return [...staticUrls, ...blogUrls, ...jobUrls];
 }

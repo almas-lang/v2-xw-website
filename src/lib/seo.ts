@@ -33,6 +33,10 @@ export const SEO: Record<string, SeoEntry> = {
     title: 'Free Design Meetups in Bangalore | WaveMakers Connect',
     description: 'WaveMakers Connect is a free design meetup in Bangalore for designers, engineers and founders. Real speakers, honest talks, no hype. Join 1,370+ members.',
   },
+  '/careers': {
+    title: 'Careers at Xperience Wave | Open Roles',
+    description: 'Join a small team helping designers grow into senior and leadership roles. Remote-friendly roles in sales, design and operations. See open positions.',
+  },
   '/contact': {
     title: 'Contact Us | Xperience Wave',
     description: 'Questions about UX mentorship, corporate training or design services? Get in touch with the Xperience Wave team in Bangalore. We reply within a day.',

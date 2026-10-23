@@ -200,14 +200,14 @@ export default function CommunityHeroC() {
 
           {/* Visible Headline */}
           <div
-            className="mb-6 max-w-4xl"
+            className="mb-6 max-w-4xl lg:max-w-[calc(100%-460px)]"
             style={{
               opacity: isVisible ? 1 : 0,
               transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
               transition: 'all 0.6s ease-out 0.15s',
             }}
           >
-            <p className="font-heading font-bold text-white leading-[1.05] tracking-[-0.02em] text-4xl sm:text-5xl md:text-6xl lg:text-8xl" aria-hidden="true">
+            <p className="font-heading font-bold text-white leading-[1.05] tracking-[-0.02em] text-4xl sm:text-5xl md:text-6xl xl:text-7xl" aria-hidden="true">
               Where Product, Design, & Tech Meet
             </p>
           </div>

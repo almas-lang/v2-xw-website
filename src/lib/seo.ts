@@ -133,6 +133,11 @@ export const SEO: Record<string, SeoEntry> = {
 /** SEO title/description per blog slug. H1 on the page keeps the editorial headline. */
 export const blogSeo: Record<string, { title: string; description: string }> = {
 
+  'gopicca-designer-to-product-leader': {
+    title: 'Designer to Product Leader in 4 Months: Gopicca\'s Story',
+    description: 'Gopicca was already a strong designer. What changed in 4 months: sharper framing, a leadership identity, and influence stakeholders act on.',
+  },
+
   '12l-vs-30l-ux-designer-difference': {
     title: '₹12L vs ₹30L UX Designer: What\'s the Real Difference?',
     description: 'The gap between a ₹12L and ₹30L UX designer in India isn\'t skills. Almas explains the visibility trap and what makes a designer look valuable.',

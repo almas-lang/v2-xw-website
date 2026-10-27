@@ -55,6 +55,17 @@ export const getCategoryLabel = (category: string): string => {
 // Sample blog posts with Unsplash images
 export const blogPosts: BlogPost[] = [
   {
+    id: '63',
+    slug: 'gopicca-designer-to-product-leader',
+    title: 'How Gopicca Went From Strong Designer to Future Product Leader in 4 Months',
+    excerpt: 'Gopicca was already a strong designer when she joined us. Four months later she moved into a role at substantially higher compensation - and is en route to product leadership. What actually changed wasn\'t her craft. It was her framing, her leadership identity, and how effectively she fights for design.',
+    category: 'interviews' as const,
+    image: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&q=80',
+    author: { name: 'Shaik Murad' },
+    publishedAt: '2026-10-27T09:00:00+05:30',
+    readTime: '10 min',
+  },
+  {
     id: '62',
     slug: 'career-conversation-non-design-manager',
     title: 'How to Have a Career Growth Conversation When Your Manager Doesn\'t Understand Design',

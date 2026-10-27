@@ -22,6 +22,8 @@ export interface BlogPost {
   readTime: string;
   // Manual draft flag: keeps a post hidden regardless of publishedAt.
   upcoming?: boolean;
+  // Mentee success story: featured in the written-stories section on /success-stories.
+  successStory?: boolean;
 }
 
 export interface CategoryInfo {
@@ -64,6 +66,7 @@ export const blogPosts: BlogPost[] = [
     author: { name: 'Shaik Murad' },
     publishedAt: '2026-10-27T09:00:00+05:30',
     readTime: '10 min',
+    successStory: true,
   },
   {
     id: '62',

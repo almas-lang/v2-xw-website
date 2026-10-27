@@ -10,6 +10,7 @@ const programsDropdown = [
   { href: '/programs/senior-ux-designer-mentorship', label: 'Current', tagline: 'For mid-level designers', color: '#E85A4F' },
   { href: '/programs/career-transition-ux-mentorship', label: 'Ripple', tagline: 'Career transition', color: '#4A90A4' },
   { href: '/programs/ux-leadership-mentorship', label: 'Tide', tagline: 'Design leadership', color: '#D4A853' },
+  { href: '/success-stories', label: 'Success Stories', tagline: 'Mentee outcomes', color: '#22C55E' },
 ];
 
 const businessDropdown = [

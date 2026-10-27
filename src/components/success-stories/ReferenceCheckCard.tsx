@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface ReferenceCheckCardProps {
   part1: string;
@@ -111,7 +112,7 @@ export default function ReferenceCheckCard({ part1, part2 }: ReferenceCheckCardP
               <div className="relative flex-shrink-0">
                 <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden ring-2 ring-indigo-500 ring-offset-2 ring-offset-white">
                   <Image
-                    src="/images/Gopicca B R.jpeg"
+                    src="/images/gopicca.jpeg"
                     alt="Gopicca B R"
                     fill
                     sizes="64px"
@@ -131,11 +132,22 @@ export default function ReferenceCheckCard({ part1, part2 }: ReferenceCheckCardP
                   </span>
                 </div>
                 <p className="font-heading text-sm sm:text-base font-bold text-carbon leading-snug">
-                  Gopicca joined the program.
+                  Gopicca joined the program. Four months later, she moved into a role at
+                  substantially higher compensation.
                 </p>
                 <p className="font-body text-xs sm:text-sm text-g600 leading-snug mt-0.5">
-                  She&apos;s now a mentee writing her own success story.
+                  The designer who checked the references became the success story. She&apos;s
+                  now en route to product leadership.
                 </p>
+                <Link
+                  href="/resources/blogs/gopicca-designer-to-product-leader"
+                  className="inline-flex items-center gap-1.5 mt-2 font-heading text-xs sm:text-sm font-bold text-indigo-600 hover:text-indigo-500 transition-colors"
+                >
+                  Read her full story
+                  <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </Link>
               </div>
             </div>
           </div>

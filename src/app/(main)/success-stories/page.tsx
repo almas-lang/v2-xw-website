@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import Button from '@/components/ui/Button';
 import TestimonialCarousel from '@/components/shared/TestimonialCarousel';
 import WhatsAppWall, { WhatsAppScreenshot } from '@/components/success-stories/WhatsAppWall';
@@ -133,7 +134,7 @@ const quickWins = [
   },
 ];
 
-const menteeWall = [
+const menteeWall: { name: string; role: string; image: string; story?: string }[] = [
   { name: 'Suril Pandya', role: 'Assistant Manager at Isha Foundation', image: '/images/suril.jpeg' },
   { name: 'Shahrukh Jamal', role: 'Head of UX at Dot and Beyond', image: '/images/shah_rukh.jpeg' },
   { name: 'Pavan Muthyala', role: 'Head of Design at Bob', image: '/images/Pavan Mutyala.jpeg' },
@@ -171,7 +172,7 @@ const menteeWall = [
   { name: 'Chaitanya', role: 'UX Designer', image: '/images/Chaitanya.jpeg' },
   { name: 'Charusheela Dasari', role: 'UX Designer', image: '/images/Charusheela Dasari.jpeg' },
   { name: 'Eisa Ghaznavi', role: 'UX Designer', image: '/images/Eisa Ghaznavi.jpeg' },
-  { name: 'Gopicca B R', role: 'UX Designer', image: '/images/Gopicca B R.jpeg' },
+  { name: 'Gopicca B R', role: 'Designer → Product Leadership', image: '/images/gopicca.jpeg', story: '/resources/blogs/gopicca-designer-to-product-leader' },
   { name: 'Hari Krishnaa S', role: 'UX Designer', image: '/images/Hari Krishnaa S.jpeg' },
   { name: 'Huseini Indorewala', role: 'UX Designer', image: '/images/Huseini Indorewala.jpeg' },
   { name: 'Madhura Gadade', role: 'UX Designer', image: '/images/Madhura Gadade.jpeg' },
@@ -729,23 +730,47 @@ export default function SuccessStoriesPage() {
             </p>
           </div>
           <div className="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-8 gap-1.5 sm:gap-2">
-            {menteeWall.map((m, i) => (
-              <div
-                key={`${m.name}-${i}`}
-                className="group relative rounded-lg overflow-hidden border border-g200 bg-white shadow-sm transition-all duration-300 sm:hover:shadow-md sm:hover:scale-[1.03] sm:hover:z-10"
-                style={fadeIn('wall', 40 + i * 12)}
-                title={`${m.name} — ${m.role}`}
-              >
+            {menteeWall.map((m, i) => {
+              const tileClass = "group relative rounded-lg overflow-hidden border border-g200 bg-white shadow-sm transition-all duration-300 sm:hover:shadow-md sm:hover:scale-[1.03] sm:hover:z-10";
+              const tileInner = (
                 <div className="relative aspect-square">
                   <Avatar name={m.name} image={m.image} />
+                  {m.story && (
+                    <span className="absolute top-1 right-1 z-10 px-1.5 py-0.5 rounded-full bg-indigo-600 text-white font-heading text-[8px] sm:text-[9px] font-bold uppercase tracking-wide shadow-sm">
+                      Story
+                    </span>
+                  )}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300" />
                   <div className="absolute bottom-0 left-0 right-0 p-1.5 sm:p-2 translate-y-1 opacity-0 sm:group-hover:translate-y-0 sm:group-hover:opacity-100 transition-all duration-300">
                     <p className="font-heading text-[11px] sm:text-xs font-bold text-white leading-tight truncate">{m.name}</p>
                     <p className="font-body text-[10px] text-white/80 leading-tight mt-0.5 line-clamp-1">{m.role}</p>
+                    {m.story && (
+                      <p className="font-heading text-[10px] font-bold text-indigo-300 leading-tight mt-0.5">Read story →</p>
+                    )}
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+              return m.story ? (
+                <Link
+                  key={`${m.name}-${i}`}
+                  href={m.story}
+                  className={tileClass}
+                  style={fadeIn('wall', 40 + i * 12)}
+                  title={`${m.name} — ${m.role} — read her story`}
+                >
+                  {tileInner}
+                </Link>
+              ) : (
+                <div
+                  key={`${m.name}-${i}`}
+                  className={tileClass}
+                  style={fadeIn('wall', 40 + i * 12)}
+                  title={`${m.name} — ${m.role}`}
+                >
+                  {tileInner}
+                </div>
+              );
+            })}
             {/* "3,000+ designers trained" hero tile — fills trailing grid slots */}
             <div
               className="col-span-3 sm:col-span-2 md:col-span-3 lg:col-span-3 rounded-lg overflow-hidden shadow-md relative"

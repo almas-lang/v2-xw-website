@@ -32,6 +32,21 @@ const blogContent: Record<string, React.ReactNode> = {
         In my eyes, Gopicca is a designer en route to becoming a product leader. Not because she wants the title. Because the way she thinks about products - how they&apos;re identified, built, developed, and defended - is already operating at that level. The title will catch up. It always does for people like her.
       </p>
 
+      <div className="my-10">
+        <div className="relative w-full max-w-[380px] mx-auto aspect-[4/5] rounded-xl overflow-hidden">
+          <Image
+            src="/images/gopicca.jpeg"
+            alt="Gopicca, product designer and Xperience Wave mentee"
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, 380px"
+          />
+        </div>
+        <p className="text-sm text-g500 text-center italic mt-3">
+          Gopicca - a designer en route to product leadership
+        </p>
+      </div>
+
       <h2 id="where-she-started" className="font-heading text-2xl md:text-3xl font-bold text-carbon mt-10 mb-4">
         Where She Started
       </h2>
